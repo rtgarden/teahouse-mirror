@@ -727,6 +727,10 @@ footer a {
     .stats {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    #slideshow-container {
+        height: 250px !important;
+    }
 }
 
 /* Print styles */
@@ -750,6 +754,81 @@ footer a {
     </header>
     
     <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <!-- Photo Slideshow -->
+    <div id="slideshow-wrapper" style="max-width: 955px; width: 100%; margin: 0 auto; position: relative; background: #000; overflow: hidden; cursor: pointer;" onclick="window.location.href='/photos/'">
+        <div id="slideshow-container" style="width: 100%; height: 400px; position: relative;">
+            <img id="slide-img" src="" alt="" style="width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 1.2s ease-in-out;">
+            <div id="slide-caption" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 20px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: #B3BA5D; font-family: 'Trebuchet MS', sans-serif; font-size: 14px; text-shadow: 0 1px 3px rgba(0,0,0,0.8); opacity: 0; transition: opacity 1.2s ease-in-out;">
+                <span id="slide-title"></span>
+                <span id="slide-counter" style="float: right; color: #888; font-size: 12px;"></span>
+            </div>
+        </div>
+        <div style="position: absolute; top: 10px; right: 12px; color: #666; font-size: 11px; font-family: 'Trebuchet MS', sans-serif; text-transform: uppercase; letter-spacing: 1px;">▶ Slideshow</div>
+    </div>
+
+    <script>
+    (function() {
+        var photos = [
+            {id:"177446046",alt:"Shannon & Child"},{id:"177407238",alt:"MM"},{id:"140773501",alt:"MaryEllen Cranston-Bennett weaving"},{id:"140772020",alt:"Scan3_0003"},{id:"177402198",alt:"Willy Brewer and Sal Guardino"},{id:"177408714",alt:"sandy's 1973 rumph mug"},{id:"140772034",alt:"Giant Wild Man Show RPFS73?"},{id:"177392739",alt:"Devore (16)"},{id:"140772493",alt:"Mullah Munching a kebab"},{id:"177397335",alt:"found in shed, mom in middel & dundee"},{id:"140740406",alt:"Fratelli Bologna 'Wedding Duds'"},{id:"140739944",alt:"The Cookie Jester"},{id:"140741611",alt:"Wyman Spaulding"},{id:"140741327",alt:"Pay off!"},{id:"140741315",alt:"Michael O'Conner"},{id:"140741287",alt:"Jimmy D"},{id:"140736134",alt:"Bobby and Chuck cook brauts, Bubba Bud 09"},{id:"140736221",alt:"Bubba Bud"},{id:"140736341",alt:"Bobby Leach"},{id:"140736410",alt:"Denise Breese and Venta"},
+            {id:"1715470183",alt:"codb - Church of David Bowie"},{id:"294206463",alt:"cabana"},{id:"294206439",alt:"Donna & Roberto"},{id:"294205801",alt:"*plink*"},{id:"294207186",alt:"Maestro Roberto"},{id:"294209129",alt:"Madame Mimi"},{id:"294208928",alt:"Pirate camp"},{id:"294207471",alt:"Bellydancing in Brunos"},{id:"294205962",alt:"*blink*"},{id:"294206094",alt:"Maestro Roberto"},{id:"294207151",alt:"Donna on the lute"},{id:"294206572",alt:"Belly dancing in Brunos"},{id:"294205860",alt:"Madame Mimi"},{id:"294208828",alt:"Donna"},{id:"294208725",alt:"shish-ka-bob"},{id:"294209225",alt:"kids*play"},{id:"294206254",alt:"brunolandia"},{id:"294206788",alt:"kids*talk"},{id:"294205420",alt:"Mullitia (Oven Jockies)"},
+            {id:"140736297",alt:"Debi and Randy Carpadus"},{id:"140736247",alt:"Blue"},{id:"140736245",alt:"Venta"},{id:"140737783",alt:"Val"},{id:"140737781",alt:"Ron Sullivan"},{id:"140737873",alt:"Michael O'Connor"},{id:"140737869",alt:"Vicky Nebeker"},{id:"140734184",alt:"John Bird"},{id:"140734108",alt:"Anna Swan"},{id:"140737347",alt:"The Hunting Field"},{id:"140737335",alt:"Randy C"},{id:"140737328",alt:"Mojo, Sally and Anna"},{id:"140737296",alt:"We Need Money For Payroll"},{id:"140737548",alt:"Crew ID"},{id:"140737441",alt:"Held Over Until October 15th"},{id:"140737785",alt:"Bolonias' Poster, Northern Faire about 1980"},{id:"140732035",alt:"faire_brochure"},{id:"140732027",alt:"IMG_0474"},{id:"140731944",alt:"agoura_poster"},
+            {id:"140726651",alt:"small_mirror2"},{id:"140726555",alt:"mirror_on_wheels_2"},{id:"140726550",alt:"me & mirror"},{id:"140726653",alt:"grego_1"},{id:"140729134",alt:"bric_a_brac_3"},{id:"140729070",alt:"bric_a_brac_1"},{id:"140729036",alt:"bric_a_brac_2"},{id:"140722835",alt:"IMG_0028"},{id:"140721608",alt:"Two Moons"},{id:"140721567",alt:"Old Friends"},{id:"140721980",alt:"Beeswax and Honey Candle Works"},{id:"140716820",alt:"Doc and Catt"},{id:"140719712",alt:"Devore Sunday Parking Lot"},{id:"140719385",alt:"Hoot Owl Hollow"},{id:"140717937",alt:"Blackpoint Jousting Field"},{id:"140717861",alt:"Whiz Bang"},{id:"140717801",alt:"The Two of Cups"},{id:"140717859",alt:"The Green Man"},{id:"140717616",alt:"tongues"},
+            {id:"140712878",alt:"tequila!"},{id:"140714660",alt:"Olde Time Portrait"},{id:"140704473",alt:"Sun King"},{id:"140703813",alt:"Dundii 1977"},{id:"140703817",alt:"Tony Scotti, Dundii 1975"},{id:"140703724",alt:"Doris working on Busch Gardens Event"},{id:"140705742",alt:"Professor Djinn-Ewenphraud 1974"},{id:"140705738",alt:"Charles Perrier, Julie Meredith, Toby Bluth, Dundii 1972"},{id:"140705768",alt:"Carolie, Carol LaFleur, Evelyn Sheridan - Patterson Clay St Basement 1970"},{id:"140705630",alt:"Erin"},{id:"140705543",alt:"Giants, Procession Hill, Agoura"},{id:"140705644",alt:"The Old Bridge Agoura"},{id:"140700108",alt:"Night Security Agoura 1977"},{id:"140699208",alt:"Catt at the Party"},{id:"140693505",alt:"Jane"},{id:"140684529",alt:"Dennis Parsons and Hoop"},{id:"140666446",alt:"Mark telling stories"},
+            {id:"140655087",alt:"OAT@Dickens'77.."},{id:"140654746",alt:"Patti & Robin"},{id:"140653079",alt:"Singing Dancers"},{id:"140652992",alt:"RPFS '81"},{id:"140653010",alt:"Her Majesty Is...Pleased!"},{id:"140652928",alt:"Pryanksters"},{id:"140653234",alt:"BFFs!"},{id:"140653388",alt:"Cacafuego Dancers"},{id:"140647940",alt:"Proto - Brunos 1978"},{id:"140647918",alt:"OMG - PDA!!"},{id:"140647787",alt:"At the Well"},{id:"140612741",alt:"Baba-Ganoush4"},{id:"140595332",alt:"Next?"},{id:"140595283",alt:"out in the sun"},{id:"140595302",alt:"Treehouse in Jungleland?"},{id:"140594701",alt:"Belly dancing"},{id:"140594767",alt:"Mullah's stage"},{id:"140597542",alt:"Washing well."},{id:"140595318",alt:"Maybower Stage."},{id:"140595316",alt:"Pinwheel!"},{id:"140595300",alt:"View of the stage from the road"},{id:"140595384",alt:"Orange Crush"},{id:"140592161",alt:"Queens' Court, Agoura"},{id:"140589916",alt:"boys of broadway"},{id:"140590013",alt:"Lovely Mullettes"}
+        ];
+
+        // Shuffle photos for variety
+        for (var i = photos.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = photos[i]; photos[i] = photos[j]; photos[j] = temp;
+        }
+
+        var current = 0;
+        var img = document.getElementById('slide-img');
+        var caption = document.getElementById('slide-caption');
+        var title = document.getElementById('slide-title');
+        var counter = document.getElementById('slide-counter');
+        var timer;
+
+        function showSlide() {
+            var photo = photos[current];
+            var newImg = new Image();
+            newImg.onload = function() {
+                img.src = newImg.src;
+                img.alt = photo.alt;
+                title.textContent = photo.alt;
+                counter.textContent = (current + 1) + ' / ' + photos.length;
+                img.style.opacity = '1';
+                caption.style.opacity = '1';
+            };
+            newImg.onerror = function() {
+                current = (current + 1) % photos.length;
+                showSlide();
+            };
+            // Fade out current
+            img.style.opacity = '0';
+            caption.style.opacity = '0';
+            setTimeout(function() {
+                newImg.src = 'https://storage.ning.com/topology/rest/1.0/file/get/' + photo.id + '?profile=RESIZE_1024x1024';
+            }, 400);
+        }
+
+        function nextSlide() {
+            current = (current + 1) % photos.length;
+            showSlide();
+        }
+
+        // Start slideshow
+        showSlide();
+        timer = setInterval(nextSlide, 6000);
+
+        // Pause on hover
+        var wrapper = document.getElementById('slideshow-wrapper');
+        wrapper.addEventListener('mouseenter', function() { clearInterval(timer); });
+        wrapper.addEventListener('mouseleave', function() { timer = setInterval(nextSlide, 6000); });
+    })();
+    </script>
 
     <main>
         <div class="container">
