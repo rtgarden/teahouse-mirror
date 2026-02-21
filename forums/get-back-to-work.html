@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get back to work! - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Get back to work!</span></div>
+            
+    <div class="module">
+        <div class="module-header">Get back to work!</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Greg &quot;Grego&quot; Dana</span> | <span>May 03, 2009</span> | <span>28 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (28)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">June 19, 2009 at 04:04AM</span>
+            <div class="reply-content">So right Greggo ... but ya&#x27; know, we start talking about something, and it leads to something else, and before you know it, we&#x27;re having a discussion of the fabric someone used in their hooch behind Feather&#x27;s booth or some such, and there&#x27;s no good reason it couldn&#x27;t be in a &quot;public&quot; or at least &quot;less private&quot; group ... except it would be completely out of context and out of focus.
+Besides, Faire was where I learned how to Cag! Heck, it was also where I first heard the term.
+Nevertheless, you&#x27;re right and we can try not to get lost in the piles of old burlap and memories. Or is it old memories and burlap.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">June 17, 2009 at 08:43PM</span>
+            <div class="reply-content">I remember that someone tipped Phyllis that Ron was in the parking lot with another woman. She confronted him physically in front of his parents. I don&#x27;t recall the year, it was RPFN. I don&#x27;t think Ron was in the picture at the Cow Palace Dickens I worked in 1977. Will Wood was doing his schtick by that time.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">June 17, 2009 at 03:55PM</span>
+            <div class="reply-content">At the last Cow Palace Dickens Fair before we moved it to Fort Mason, there was a wall in the V&amp;A theatre, Ron wanted a window in it and Phyllis didn&#x27;t, or vice versa. Bruce Willey was the carpentry boss at the time, the conflicting orders led him to lay down his hammer and quit.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">June 17, 2009 at 07:19AM</span>
+            <div class="reply-content">I don&#x27;t have any knowledge of when the divorce was, but I remember working on the paint crew in the middle of it, basically, and having Ron come by and say &quot;paint this stage red&quot; and the day Phyllis come by and tell us the red was wrong and it should be brown. I think it stayed brown.
+My impression (as a young crew person) was that there was a lot of conflicting direction that year.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 28, 2009 at 03:20PM</span>
+            <div class="reply-content">before that it was theme events right?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">May 28, 2009 at 02:55PM</span>
+            <div class="reply-content">LHC date of incorporation was july 1968, not 63. it would be useful to note the divorce date, that&#x27;s when Theme Events went to Ron and stopped doing anything but owning trademarks and receiving annual royalties from Phyllis.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">May 28, 2009 at 11:59AM</span>
+            <div class="reply-content">That Dickens timeline was great. Stuff coming in from folks is bringing progress, but there&#x27;s still plenty of room for more people to tell me how full of shit I am. My graphic timeline, that is. Telling me personally how full I am has been done to death, don&#x27;t waste your breath.
+But please have another look, and lend a kibitz where possible.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 15, 2009 at 09:21PM</span>
+            <div class="reply-content">Carol had a short stint as Entertainment Director in the early &#x27;80s.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 15, 2009 at 05:32PM</span>
+            <div class="reply-content">&quot; no biggie * FOR ME*...&quot;
+I KNOW what the Beverage Revenue meant to ALL of us !! FAR be it from me to &quot;dis&quot; the Beverage Dept. !!
+I only meant to say that I personally did not notice too closely when it happened, as it did not concern my Personal Good Time.
+In later years a certain Ale Stand Manager always knew that I was NOT coming to the back room of his stand for a free beer !
+( I am probably the only Bruno in history NOT to drink alcohol.)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">May 15, 2009 at 05:27PM</span>
+            <div class="reply-content">Vytas, by all means invite them in.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 15, 2009 at 05:21PM</span>
+            <div class="reply-content">When Carol La Fleur was &quot;terminated&quot; as a result of her attempted coup at Dickens in the Cannery(1971), she started a short-lived production company for festivals. I don&#x27;t know if Bob Thomas&#x27;s venture was associated with that or not, but her company failed and she had a shirt store called &quot;The Pineapple of Perfection&quot;. It didn&#x27;t last, and she came back to the Faire in a craft booth, doing her shirts.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">May 15, 2009 at 05:01PM</span>
+            <div class="reply-content">All the time I ran the bev department, we applied each faire for a temporary permit, technically a permit to sell alcohol without a license. We never had a full-on liquor license. Any nonprofit can get the temp permit for events. I&#x27;m not sure what Theme Events did, pre-LHC. Bob Brewer and Glen Kersey are on the teahouse but not on the LEH, they have a tremendous amount of that detailed history in their noggins.
+Re. &quot;no biggie,&quot; 40 percent of the LHC&#x27;s gross cash, meaning most of its net cash, came from the ale stands. Without them, no faire. Biggie.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 15, 2009 at 04:18PM</span>
+            <div class="reply-content">Drake was &#x27;81.
+There was also a Trip to Britain taken as part of the Devon/America 400 year anniversary of Drake&#x27;s Circumnavigatio in 1980.We did performances &amp; research. It was fab.
+Those of us on that junkett paid half our fares, the LHC picked up the rest.
+I dimly remember when the Faire got it&#x27;s liquor license, 1970...&#x27;71...&#x27;72? I never have enjoyed alcohol, so it was no biggie for me.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 15, 2009 at 01:11PM</span>
+            <div class="reply-content">hey didnt Bob actually have a failed faire...brandywine or something? As I recall they started off on a venture to have an artists led faire, and spent almost the entire budget for the whole show on a shopping spree at a movie lot costume sale. I forget the name anyone&gt;? I think it falls right in there with the shopping spree thing for LHC.
+most of the rest happened about 1980 right?
+I am also curious about when beverage started, who manned the early ranks er spigots er whatever and when the alestands were built. i would guess around 1973-4
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">May 14, 2009 at 04:54AM</span>
+            <div class="reply-content">Cool, 89, thanks big.
+As other specifics trickle in, there are two areas that strike me as pivotal.
+The liquor license was a huge influence on both the consciousness of the shire and economics of Faire. Certainly deserves a thread of it&#x27;s own, but anyway what year was that?
+And the spending spree period, when we bought a Red Barn Theater, a Gold Rush show, a Horse Tourney, a cottage, and Drake Show, all in very close succession, and then, oops, found ourselves bankrupt. Those dates will be real close together, would love to nail &#x27;em down. Again, how significant that spree was in bringing on the fall, and the other aspects of the fall itself, will make for a dark and meaty thread of it&#x27;s own, so in this thread please just give me years for the graph.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">May 14, 2009 at 03:15AM</span>
+            <div class="reply-content">Right you are. 1989 was the first Devoid.....er.....Devore Faire.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 13, 2009 at 03:27PM</span>
+            <div class="reply-content">Ok - the first thing I notice, is that Agoura Timeline goes a little far; last Agoura Faire was 1988, and the first Berdoo Faire was 1989.
+I am quite certain on this, as the first year of Berdoo was when Don Mills died.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">May 13, 2009 at 11:38AM</span>
+            <div class="reply-content">Actually, I love the Wiki. Sometimes dry is right, like a nice wine. Given the subject matter, it&#x27;s guaranteed be have a sweet side anyway.
+My timeline is intended to be a a peek, an intro, a basics-at-a-glance thing, so by design it won&#x27;t ever get too crowded or complicated. Wiki will do complicated real good.
+I&#x27;d love it too if there was a more collaborative way to make it happen. Meanwhile, it&#x27;s not a big deal for me to update the color graph as more details appear, just to keep the ball rolling. Not such a big project either. We should be able to get it done pretty quickly (as opposed to bigger, ongoing projects), at which point it can be made into a jpeg and put somewhere for easy reference.
+I&#x27;ve made a few changes based on Wiki info, and Sylvia&#x27;s (thanks) post to my comment wall; &quot;...Notes for fixing up the timeline. *Hyde St. 1973; *Shindig 1976 Before Cow Palace Dickens was at the Army St Warehouse from 1971? - 1975 No Dickens 1976&quot;.
+So that stuff is now reflected in an updated graph. Further corrections could be posted right here in this discussion.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 11, 2009 at 03:35AM</span>
+            <div class="reply-content">yes like a dynamic timeline visualization tool. sooo needed. i imagine a lot of organizations have an organic community structure of contribution to deal with just about now.
+Being able to collaborate on something visual would be sweet, right away certain things are brought out by grego&#x27;s timeline.
+a time line with some granularity and a moderate amount of connectivity would be great.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 10, 2009 at 11:53PM</span>
+            <div class="reply-content">Nice &amp; visual !
+I like it !
+I can use something like that.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">May 10, 2009 at 04:41PM</span>
+            <div class="reply-content">Yep, especially a visual framework, a map, that can be automagically updated by kewl software anytime we add something to it. If you go to a museum and see those amazing timelines that show networks of specie evolution over the eons, that combines both a linear time framework marching from distance past on the left, to the current day, with pictures of one cell creatures morphing into dinosaurs, and so on. Once you can get an overview like that, suddenly all the details underneath start to make more sense because its easier to connect the dots. Sort of like that. Did you check out Grego&#x27;s link at the end of his posting that started the thread, its a rough idea of what this might look like.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 10, 2009 at 04:24PM</span>
+            <div class="reply-content">And for those of us who are frightened of too much Techspeak ?
+Are y&#x27;all discussing a framework to function within ? I like frameworks.
+Please please make it easy to understand for We, the Technically Challenged.
+Thank you.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">May 10, 2009 at 03:37PM</span>
+            <div class="reply-content">Hmmm. Downloading Personal Brain. I use mind mapping software a lot in my day job. Mind Manager in particular. Maybe we need some kind of visualization tools to move from the gorgeous chaos of the Teahouse to the structure imposed by a wiki? I find I&#x27;m much more drawn personally to the Teahouse for contributing than rolling up my sleeves on the wiki. Why is that? I use wikis, I know how to publish on them, more or less. My head&#x27;s not making a conceptual leap. Visualization really helps, and Grego&#x27;s timeline idea is a great start. We need it to be dynamic, and software driven so we can add to it spontaneously and the display is smart enough to redraw itself otherwise no one is going to keep rebuilding a static HTML table manually every time a cool time line adjustment gets made. Some kind of on line Gantt chart, as if we could rebuild the &quot;project history&quot; and use project management software to recreate the 40 year network diagram. Hmmmm....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 03, 2009 at 04:05PM</span>
+            <div class="reply-content">the problem is, the wiki is a historical document, and many of the discussions that we find important and interesting are not necessarily historic. By that I mean they may not have direct relevance to a first document which is used as actual historical support for something having happened.
+My intention so far with the wiki was to create and champion a historically accurate backdrop, or resource, which other projects could use to bring their own stories and reminiscences into focus.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 03, 2009 at 03:50PM</span>
+            <div class="reply-content">Perhaps a framework by years would be in order. For example,&quot; Discussion - beginning to 1970&quot; &quot;Discussion - 1970 to 1975&quot; &quot;Discussion - 1975 to 1980&quot; etc. Then people could plug their info into the approx. correct time frame. Also photos of documents ie: passes, fliers, apps, memos, letters, etc. could also be plugged into their correct time frame on those Discussions. Just one woman&#x27;s suggestion. Might get the story a little more focused and chronological.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">May 03, 2009 at 02:57PM</span>
+            <div class="reply-content">If we think about who we all are, and where we came from, is it any real surprise that we get off task? That said, you are right, Grego, that we need to get back to the task at hand. I, for one, have not added anything to wiki because I have not yet figured out how to do so, although I hope to figure it out this summer. In the meantime, for those of you that have the know how, please feel free to add any of the pictures and images I have scanned. That&#x27;s why I have posted them (and, of course, I want people to enjoy them!) I only ask that I be given credit for any of my photos that are posted.
+Ever onward.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 03, 2009 at 02:12PM</span>
+            <div class="reply-content">wow grego thats really cool.
+and yes...be brave...be vulnerable....dig deep. Tell the story and scan those images.
+Keep Going.
+Thats what I always tell the kids.
+Visualization is the best. very powerful.
+I have also been working with a piece of software called &quot;personal brain&quot; that is like mesh networky crazy, its another visualization tool and I hope to pull something out of it for the effort eventually. I think I am like a beta tester now or something.
+The wiki is very bony and very dry because it is meant to be plain old vanilla historical facts. Add in stuff you know, you saw yourself, any first documents like passes, lists, workshop materials and faire pamphlettes, lists of participants, booths, all that are still in the early stages. Think cast call or film credits.
+the teahouse is very fleshy and voluptuous because it is just what it is...born again in ning...pure chaos in the flesh. A saki that pours out the draught of spirit.
+Somewhere in between the two we need some muscle.
+We need to figure a way to take the pile of threads and tame it into some big hoops with lots of lovely ribbons hanging down.
+we need to take these haybales of connected stories and set them in rows so the audience can observe them properly.
+All these piles of burlap connections and events we need to raise that up in some way so people can take cover under it and remember they were part of something really big and loving.
+Every here and there I notice there are some carelessly tossed long wooden planks with nails sticking out of them that we need to get up out of the road and, and tear the nails out of it so it can be a useful piece of scrap wood.
+The stort needs to get out to the 700 who are here and even moreso the story needs to get out to the thousands who make faires (millions?) every year. It is our duty to inspire them and give them that shove in the ass out onto the street.
+The teahouse was born because we got tired of other people telling us a history we couldnt recognize when after all we were there and we lived it first hand (Danese, Artemesia and Anna asked me on tribe). We needed to be able to talk about what happened without feeling the long arm of the undertoad in every place we spoke and remembered. It was like therapy. We were there, its hard enough to make sense of it all together ...alone its impossible.
+So lets keep going...now we can further embellish the wiki, and start adding in the stories over there if that will help it become a better tool. More photos also helps.
+we need another space i think. I am getting mu chops up in drupal (a site crating open source goodness toolish thingy) so its not out of the question.
+It would be neat to sort of orient an entire presentation or project with a timeline like the one you made grego, and then have lots of stories along it in points, and images, and layers. sounds like a nice scarpone to me. Dleicious enough you might have to come back to it again and again and sort of poke at it. It would be neat if it could scale in and out a little too, so that there was a bare bones version and then the story clusters sort of emerge as you zoom in.
+it would also be great if there were some way to locate your own story on the timeline yourself so to speak. The problem I have with just editing this all up myself in any immediate concrete way is that it would then be a crafted view from my perspective rather than a view from many angles. Somehow the show was so multifarious that it takes a kaleidoscopic view to have a real look at it.(plus admittedly it would be so much work I wouldnt be able to accomplish much else...and um I need to go to grad school now soon).
+now if only someone would invent a timeline history program to make it so.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">May 03, 2009 at 07:18AM</span>
+            <div class="reply-content">Nicely put, G.
+Indeed, I think the problem is simply we forget where we are. Seven hundred of us that aren&#x27;t in this group should be hearing most of what&#x27;s been misclassified as &#x27;sensitive&#x27; by being written over here in the League group or &#x27;secret comment wall&#x27; as you so crisply put it.
+The danger is without us voluble folks chattering in here, there&#x27;s not much action out in the teahouse and the cobwebs are establishing little feathery tendrils in the corners of the tent. Let&#x27;s only invoke the cloak of secrecy when we need to, can we?
+Chai&#x27;s low and there&#x27;s an order for Turkish.
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

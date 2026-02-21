@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3aa448lsz92v2 Photos - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/photos/">Photos</a> <span>›</span> <span>3aa448lsz92v2</span></div>
+            
+    <div class="module">
+        <div class="module-header">3aa448lsz92v2's Photos</div>
+        <div class="module-content">
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/10513262_792775155380_2875855878362116411_n_134814.jpg" alt="10513262_792775155380_2875855878362116411_n_134814.jpg" loading="lazy">
+                    <div class="photo-contributor">10513262_792775155380_2875855878362116411_n_134814.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/1977brucein_theglade_145800.jpg" alt="1977brucein_theglade_145800.jpg" loading="lazy">
+                    <div class="photo-contributor">1977brucein_theglade_145800.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/1984NorthernFaireMarianneSteegerSiouxAsheDonBrown_138192.jpg" alt="1984NorthernFaireMarianneSteegerSiouxAsheDonBrown_138192.jpg" loading="lazy">
+                    <div class="photo-contributor">1984NorthernFaireMarianneSteegerSiouxAsheDonBrown_138192.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/1990sDonJP_133277.jpg" alt="1990sDonJP_133277.jpg" loading="lazy">
+                    <div class="photo-contributor">1990sDonJP_133277.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/1990sDonJP_133279.jpg" alt="1990sDonJP_133279.jpg" loading="lazy">
+                    <div class="photo-contributor">1990sDonJP_133279.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/1990sDonJP_133281.jpg" alt="1990sDonJP_133281.jpg" loading="lazy">
+                    <div class="photo-contributor">1990sDonJP_133281.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/1990sDonJP_133462.jpg" alt="1990sDonJP_133462.jpg" loading="lazy">
+                    <div class="photo-contributor">1990sDonJP_133462.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/1990sDonJP_133568.jpg" alt="1990sDonJP_133568.jpg" loading="lazy">
+                    <div class="photo-contributor">1990sDonJP_133568.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/Amanda Barrett_141846.jpg" alt="Amanda Barrett_141846.jpg" loading="lazy">
+                    <div class="photo-contributor">Amanda Barrett_141846.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/Backstage with Pro Delecto Antiquo.jpg" alt="Backstage with Pro Delecto Antiquo.jpg" loading="lazy">
+                    <div class="photo-contributor">Backstage with Pro Delecto Antiquo.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/Danesewedding_135894.jpg" alt="Danesewedding_135894.jpg" loading="lazy">
+                    <div class="photo-contributor">Danesewedding_135894.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/Don Douglasofwillbobanddonbrown_140892.jpg" alt="Don Douglasofwillbobanddonbrown_140892.jpg" loading="lazy">
+                    <div class="photo-contributor">Don Douglasofwillbobanddonbrown_140892.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/IMG_8180_141849.jpg" alt="IMG_8180_141849.jpg" loading="lazy">
+                    <div class="photo-contributor">IMG_8180_141849.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/Kevin Patterson (by catt avery)_135899.jpg" alt="Kevin Patterson (by catt avery)_135899.jpg" loading="lazy">
+                    <div class="photo-contributor">Kevin Patterson (by catt avery)_135899.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/Lelio_135697.jpg" alt="Lelio_135697.jpg" loading="lazy">
+                    <div class="photo-contributor">Lelio_135697.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/Lesliemikloslago_141403.jpg" alt="Lesliemikloslago_141403.jpg" loading="lazy">
+                    <div class="photo-contributor">Lesliemikloslago_141403.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/Miklos Lago William Quinn Barrett_141401.jpg" alt="Miklos Lago William Quinn Barrett_141401.jpg" loading="lazy">
+                    <div class="photo-contributor">Miklos Lago William Quinn Barrett_141401.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/RPFN1972 Program_141848.jpg" alt="RPFN1972 Program_141848.jpg" loading="lazy">
+                    <div class="photo-contributor">RPFN1972 Program_141848.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/Russell, Carla, Chris Carnes, Armando, Freddy, Sulyman, Steve Peterson, Rinda_140303.jpg" alt="Russell, Carla, Chris Carnes, Armando, Freddy, Sulyman, Steve Peterson, Rinda_140303.jpg" loading="lazy">
+                    <div class="photo-contributor">Russell, Carla, Chris Carnes, Armando, Freddy, Sulyman, Steve Peterson, Rinda_140303.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/Terry Collier_135896.jpg" alt="Terry Collier_135896.jpg" loading="lazy">
+                    <div class="photo-contributor">Terry Collier_135896.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/The_Holy_Bone_of_St__Peter__81_146092.jpg" alt="The_Holy_Bone_of_St__Peter__81_146092.jpg" loading="lazy">
+                    <div class="photo-contributor">The_Holy_Bone_of_St__Peter__81_146092.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/amanscarfdance_145500.jpg" alt="amanscarfdance_145500.jpg" loading="lazy">
+                    <div class="photo-contributor">amanscarfdance_145500.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/backstagecurtain_141305.jpg" alt="backstagecurtain_141305.jpg" loading="lazy">
+                    <div class="photo-contributor">backstagecurtain_141305.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/backstagerobertorr_144905.jpg" alt="backstagerobertorr_144905.jpg" loading="lazy">
+                    <div class="photo-contributor">backstagerobertorr_144905.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/bakery_109557.jpg" alt="bakery_109557.jpg" loading="lazy">
+                    <div class="photo-contributor">bakery_109557.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/bellofmain_141306.jpg" alt="bellofmain_141306.jpg" loading="lazy">
+                    <div class="photo-contributor">bellofmain_141306.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/benjohnson_145399.jpg" alt="benjohnson_145399.jpg" loading="lazy">
+                    <div class="photo-contributor">benjohnson_145399.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/blackpoint_145804.jpg" alt="blackpoint_145804.jpg" loading="lazy">
+                    <div class="photo-contributor">blackpoint_145804.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/blackpointpranksters_141304.jpg" alt="blackpointpranksters_141304.jpg" loading="lazy">
+                    <div class="photo-contributor">blackpointpranksters_141304.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/bobdotteryofbobthomas_144903.jpg" alt="bobdotteryofbobthomas_144903.jpg" loading="lazy">
+                    <div class="photo-contributor">bobdotteryofbobthomas_144903.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/bobnorthernviadavidrogers_145805.jpg" alt="bobnorthernviadavidrogers_145805.jpg" loading="lazy">
+                    <div class="photo-contributor">bobnorthernviadavidrogers_145805.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/bobt_135901.jpg" alt="bobt_135901.jpg" loading="lazy">
+                    <div class="photo-contributor">bobt_135901.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/boydcrowfeathersbooth_144904.jpg" alt="boydcrowfeathersbooth_144904.jpg" loading="lazy">
+                    <div class="photo-contributor">boydcrowfeathersbooth_144904.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/bruceschwartzagourapunchandjudy_145806.jpg" alt="bruceschwartzagourapunchandjudy_145806.jpg" loading="lazy">
+                    <div class="photo-contributor">bruceschwartzagourapunchandjudy_145806.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/burgerbruno_140305.jpg" alt="burgerbruno_140305.jpg" loading="lazy">
+                    <div class="photo-contributor">burgerbruno_140305.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/bydavidlewisjackalbeebillyscudderjudykory_140893.jpg" alt="bydavidlewisjackalbeebillyscudderjudykory_140893.jpg" loading="lazy">
+                    <div class="photo-contributor">bydavidlewisjackalbeebillyscudderjudykory_140893.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/carrielauersharlyn_148097.jpg" alt="carrielauersharlyn_148097.jpg" loading="lazy">
+                    <div class="photo-contributor">carrielauersharlyn_148097.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/coquilleclayworks_144906.jpg" alt="coquilleclayworks_144906.jpg" loading="lazy">
+                    <div class="photo-contributor">coquilleclayworks_144906.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/daleseantames_145395.jpg" alt="daleseantames_145395.jpg" loading="lazy">
+                    <div class="photo-contributor">daleseantames_145395.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/dannyrutherformofpeg_145498.jpg" alt="dannyrutherformofpeg_145498.jpg" loading="lazy">
+                    <div class="photo-contributor">dannyrutherformofpeg_145498.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/dansemacabre 1986_134625.jpg" alt="dansemacabre 1986_134625.jpg" loading="lazy">
+                    <div class="photo-contributor">dansemacabre 1986_134625.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/dbbacchus_110852.jpg" alt="dbbacchus_110852.jpg" loading="lazy">
+                    <div class="photo-contributor">dbbacchus_110852.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/dbdrumming_110853.jpg" alt="dbdrumming_110853.jpg" loading="lazy">
+                    <div class="photo-contributor">dbdrumming_110853.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/dbspikesol_110854.jpg" alt="dbspikesol_110854.jpg" loading="lazy">
+                    <div class="photo-contributor">dbspikesol_110854.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/donandspikenorthern_110855.jpg" alt="donandspikenorthern_110855.jpg" loading="lazy">
+                    <div class="photo-contributor">donandspikenorthern_110855.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/familiabologna_145397.jpg" alt="familiabologna_145397.jpg" loading="lazy">
+                    <div class="photo-contributor">familiabologna_145397.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/fionalarkturkish1_109560.jpg" alt="fionalarkturkish1_109560.jpg" loading="lazy">
+                    <div class="photo-contributor">fionalarkturkish1_109560.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/fire_109558.jpg" alt="fire_109558.jpg" loading="lazy">
+                    <div class="photo-contributor">fire_109558.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/found steel steal your face_135796.jpg" alt="found steel steal your face_135796.jpg" loading="lazy">
+                    <div class="photo-contributor">found steel steal your face_135796.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/garbosimona_148096.jpg" alt="garbosimona_148096.jpg" loading="lazy">
+                    <div class="photo-contributor">garbosimona_148096.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/gardenab2_145499.jpg" alt="gardenab2_145499.jpg" loading="lazy">
+                    <div class="photo-contributor">gardenab2_145499.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/gladasve_145802.jpg" alt="gladasve_145802.jpg" loading="lazy">
+                    <div class="photo-contributor">gladasve_145802.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/innyardminewinter_134633.jpg" alt="innyardminewinter_134633.jpg" loading="lazy">
+                    <div class="photo-contributor">innyardminewinter_134633.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/irbgershenz1986_134626.jpg" alt="irbgershenz1986_134626.jpg" loading="lazy">
+                    <div class="photo-contributor">irbgershenz1986_134626.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/janedances1977_132455.jpg" alt="janedances1977_132455.jpg" loading="lazy">
+                    <div class="photo-contributor">janedances1977_132455.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/janemullette77_132453.jpg" alt="janemullette77_132453.jpg" loading="lazy">
+                    <div class="photo-contributor">janemullette77_132453.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/janesouthern1978_141308.jpg" alt="janesouthern1978_141308.jpg" loading="lazy">
+                    <div class="photo-contributor">janesouthern1978_141308.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/janewell_141309.jpg" alt="janewell_141309.jpg" loading="lazy">
+                    <div class="photo-contributor">janewell_141309.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/janmunroparis1_145894.jpg" alt="janmunroparis1_145894.jpg" loading="lazy">
+                    <div class="photo-contributor">janmunroparis1_145894.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/janmunroparis2_145895.jpg" alt="janmunroparis2_145895.jpg" loading="lazy">
+                    <div class="photo-contributor">janmunroparis2_145895.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/jimhayes_145501.jpg" alt="jimhayes_145501.jpg" loading="lazy">
+                    <div class="photo-contributor">jimhayes_145501.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/jimhayesviajohncassel_145496.jpg" alt="jimhayesviajohncassel_145496.jpg" loading="lazy">
+                    <div class="photo-contributor">jimhayesviajohncassel_145496.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/lafamiliabologna_145495.jpg" alt="lafamiliabologna_145495.jpg" loading="lazy">
+                    <div class="photo-contributor">lafamiliabologna_145495.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/lilaburns1trap_109561.jpg" alt="lilaburns1trap_109561.jpg" loading="lazy">
+                    <div class="photo-contributor">lilaburns1trap_109561.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/lilacarl2010_109559.jpg" alt="lilacarl2010_109559.jpg" loading="lazy">
+                    <div class="photo-contributor">lilacarl2010_109559.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/luisageorgeanddragon_144907.jpg" alt="luisageorgeanddragon_144907.jpg" loading="lazy">
+                    <div class="photo-contributor">luisageorgeanddragon_144907.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/martasol Henri Besançonmando_141847.jpg" alt="martasol Henri Besançonmando_141847.jpg" loading="lazy">
+                    <div class="photo-contributor">martasol Henri Besançonmando_141847.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/matthalberdeers_145398.jpg" alt="matthalberdeers_145398.jpg" loading="lazy">
+                    <div class="photo-contributor">matthalberdeers_145398.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/meagantate_134624.jpg" alt="meagantate_134624.jpg" loading="lazy">
+                    <div class="photo-contributor">meagantate_134624.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/mendb_110846.jpg" alt="mendb_110846.jpg" loading="lazy">
+                    <div class="photo-contributor">mendb_110846.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/menjane_141307.jpg" alt="menjane_141307.jpg" loading="lazy">
+                    <div class="photo-contributor">menjane_141307.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/merry_148098.jpg" alt="merry_148098.jpg" loading="lazy">
+                    <div class="photo-contributor">merry_148098.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/michaellevinethecookiejester_140302.jpg" alt="michaellevinethecookiejester_140302.jpg" loading="lazy">
+                    <div class="photo-contributor">michaellevinethecookiejester_140302.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/milesplayingfrogger_109556.jpg" alt="milesplayingfrogger_109556.jpg" loading="lazy">
+                    <div class="photo-contributor">milesplayingfrogger_109556.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/monie_148095.jpg" alt="monie_148095.jpg" loading="lazy">
+                    <div class="photo-contributor">monie_148095.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/more_simone_148093.jpg" alt="more_simone_148093.jpg" loading="lazy">
+                    <div class="photo-contributor">more_simone_148093.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/oldwell_138093.jpg" alt="oldwell_138093.jpg" loading="lazy">
+                    <div class="photo-contributor">oldwell_138093.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/olufemayo_145803.jpg" alt="olufemayo_145803.jpg" loading="lazy">
+                    <div class="photo-contributor">olufemayo_145803.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/paganbool_145502.jpg" alt="paganbool_145502.jpg" loading="lazy">
+                    <div class="photo-contributor">paganbool_145502.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/phyllisnorthernbykim_110856.jpg" alt="phyllisnorthernbykim_110856.jpg" loading="lazy">
+                    <div class="photo-contributor">phyllisnorthernbykim_110856.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/qbeeinface_140290.jpg" alt="qbeeinface_140290.jpg" loading="lazy">
+                    <div class="photo-contributor">qbeeinface_140290.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/qpegthedirector_141302.jpg" alt="qpegthedirector_141302.jpg" loading="lazy">
+                    <div class="photo-contributor">qpegthedirector_141302.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/rehearsalcrewparvindick_141303.jpg" alt="rehearsalcrewparvindick_141303.jpg" loading="lazy">
+                    <div class="photo-contributor">rehearsalcrewparvindick_141303.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/rosa1_134615.jpg" alt="rosa1_134615.jpg" loading="lazy">
+                    <div class="photo-contributor">rosa1_134615.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/rosagitanajaliscana_134617.jpg" alt="rosagitanajaliscana_134617.jpg" loading="lazy">
+                    <div class="photo-contributor">rosagitanajaliscana_134617.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/sallyschneiderhalbadeirs_132459.jpg" alt="sallyschneiderhalbadeirs_132459.jpg" loading="lazy">
+                    <div class="photo-contributor">sallyschneiderhalbadeirs_132459.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/sallyssighnage_132457.jpg" alt="sallyssighnage_132457.jpg" loading="lazy">
+                    <div class="photo-contributor">sallyssighnage_132457.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/simonakid1_148094.jpg" alt="simonakid1_148094.jpg" loading="lazy">
+                    <div class="photo-contributor">simonakid1_148094.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/simone_and_rosa_148092.jpg" alt="simone_and_rosa_148092.jpg" loading="lazy">
+                    <div class="photo-contributor">simone_and_rosa_148092.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/simone_firedancing_on_stilts_148091.jpg" alt="simone_firedancing_on_stilts_148091.jpg" loading="lazy">
+                    <div class="photo-contributor">simone_firedancing_on_stilts_148091.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/solomonlevifeldthouse_145801.jpg" alt="solomonlevifeldthouse_145801.jpg" loading="lazy">
+                    <div class="photo-contributor">solomonlevifeldthouse_145801.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/southern86hellsmouth_140304.jpg" alt="southern86hellsmouth_140304.jpg" loading="lazy">
+                    <div class="photo-contributor">southern86hellsmouth_140304.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/tamsalancounterpoint1979_145396.jpg" alt="tamsalancounterpoint1979_145396.jpg" loading="lazy">
+                    <div class="photo-contributor">tamsalancounterpoint1979_145396.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/thebandmichael_145497.jpg" alt="thebandmichael_145497.jpg" loading="lazy">
+                    <div class="photo-contributor">thebandmichael_145497.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/theryloryanmainstage1966commedia_141845.jpg" alt="theryloryanmainstage1966commedia_141845.jpg" loading="lazy">
+                    <div class="photo-contributor">theryloryanmainstage1966commedia_141845.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/thetreefortattrollhollowmequesiebenthal_140306.jpg" alt="thetreefortattrollhollowmequesiebenthal_140306.jpg" loading="lazy">
+                    <div class="photo-contributor">thetreefortattrollhollowmequesiebenthal_140306.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/3aa448lsz92v2/thomastuba_134816.jpg" alt="thomastuba_134816.jpg" loading="lazy">
+                    <div class="photo-contributor">thomastuba_134816.jpg</div>
+                </div>
+                </div>
+        </div>
+    </div>
+    
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

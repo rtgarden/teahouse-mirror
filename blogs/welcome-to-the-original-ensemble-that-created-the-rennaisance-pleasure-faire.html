@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WElcome to the Original Ensemble that Created the Rennaisance Pleasure Faire! - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/blogs/">Blogs</a> <span>›</span> <span>WElcome to the Original Ensemble that Created the Rennaisance Pleasure Faire!</span></div>
+            
+    <div class="module">
+        <div class="module-header">WElcome to the Original Ensemble that Created the Rennaisance Pleasure Faire!</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Murray then, now aka MAX</span> | <span>July 17, 2009</span> | <span>15 comments</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Comments (15)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">[1vyj0on6r8dy4]</span>
+            <span class="reply-date">August 06, 2009 at 07:44AM</span>
+            <div class="reply-content">I f*%@king luv this place...thanks Catt...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">August 02, 2009 at 12:26PM</span>
+            <div class="reply-content">the core is more limited in my perception than even the greater ensemble, someone could jooin the ensemble in a day just with the right attitude maybe join it in five minutes, hjowever to be part of the core you had to be more savvy. Also after a certain point the context shifted and being part of the core was sort of a selling point rather than a real thing.
+The core of the show became a new group of people at some point, partly the old crowd and that group to my thinking was more resposible for holding down the transition while the Faire became a national Phenomenon. In my thinking those are two totally different patters and chapters; the creation of the ensemble and fabrication of the original show is not something people can participate in per se any longer, the first big years of Arizona and Texas, and Burningman, created a new core which had a different culture.
+Peg felt that she had successfully disseminated her basic view of educational immersion, everymany history, Improv as social art, and basic bon homme to about 3,500 people (I think Richard was at the same lecture she gave about it), Realistically I think she managed to reach many many more than that just in those few years I worked with her at least 9,000 or so. Some days I think the whole crowd of 25,000 out at Agoura &quot;got it&quot;.
+It wasnt just Peg who made the ensemble of course, however her hand was intentional, and she was very embracing and that had a deep effect on all of us and all of this during her tenure.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">August 02, 2009 at 06:39AM</span>
+            <div class="reply-content">While the extended ensemble, over the years, probably numbered in many thousands, perhaps as Randy says, tens of thousands, I wonder how many have been part of the &quot;core&quot; over the years. The definition of &quot;core&quot; varies with each person (of course), but I imagine that most of us here have a pretty good idea what it is, and if our definitions don&#x27;t exactly agree, they certainly overlap.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">August 02, 2009 at 03:23AM</span>
+            <div class="reply-content">Nah, as I said to Artimus and Danese on Twitter, it wasn&#x27;t the dust, it was the Orzan!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">August 02, 2009 at 12:40AM</span>
+            <div class="reply-content">I like what Arabis says &quot;family , its the dust in our blood that binds us&quot; (she is four). That dust in our blood is starlight, in a way our core group sent a ripple around the world and on into time.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">August 01, 2009 at 05:26PM</span>
+            <div class="reply-content">Wasn&#x27;t there a line from the intro of an old TV series “There are a hundred stories in the Naked City…”? I think we probable have close to 100 stories (in short form) already on this site! Interesting to think, a core of between 1500-3000 people but who knows how many (tens of thousands?) have come and gone over the years? How many came and worked a booth for a faire never to return? Back in the day of the dog cart booth, we could have had almost 50-75 members of our dog club rotate through in one faire, some never to come again.
+How many strands of life wove their way through and out again, forever touched in some way buy the dust and the spirit?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">July 22, 2009 at 03:55AM</span>
+            <div class="reply-content">1,000 Costumes!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">July 22, 2009 at 12:45AM</span>
+            <div class="reply-content">I say we just start lining them up and stop when we get to 100, everyone agrees that the stories will be published altogether. people could also donate their images. Could be a fun improv exercise. Like the better longer stories.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">July 21, 2009 at 03:46PM</span>
+            <div class="reply-content">That&#x27;s a thread we need !
+&quot; 100 Stories &quot;
+Would that be 100 from Agoura, 100 from Blackpoint, etc., or only 100 total ?
+The gods know how many thousands of Faire Stories there are. We each have at least 30 - 50 each, I am sure !!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">July 21, 2009 at 03:13AM</span>
+            <div class="reply-content">hey out of the big 3000 plus do you think we could come up with a hundred stories?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">July 18, 2009 at 09:50PM</span>
+            <div class="reply-content">Yes Richard I do remember the number 3,000 being sort of the top figure, she felt, of people &quot;playing along&quot;.
+That linked in thing is intense especially when you consider the quality of connection and of personal association. I first experienced the power of those numbers years ago when I signed up for myspace, thats like a walk down sunset strip compared to Linked in Which is more like everybodies rolodex back in the day.
+I know what you mean about th e reverberations, I feel it still. Right now it feels a bit jumbled up because its all just starting to find form and just starting to reverberate.
+At Reggae on the River some years back in the grand heyday I can recall a really cohesive feeling permeating the company of about 15,000 people attending the show. They were all sleeping in the river rocks, jammed in up against each other truck bed to tent and more or less all happy as clams. Of course there were some serious effects placebo and otherwise at work in that case however overall I wonder about the long tern life of these large scale gatherings.
+Bob Thomas would always admonish me &quot;Ah a teacher who teaches teachers, there&#x27;s more in that...and a teacher who teaches teachers who teach teachers who teaches teachers?
+he was a wild and exponential thinker.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">July 18, 2009 at 05:42PM</span>
+            <div class="reply-content">So, I sorta remember Peg saying something like those numbers on a good day, and adding family members, friends, lurkers in the mix, the village population in my faint recollection was about 3,000+. That would be weekend, Saturday night, and during the weeks, down to 600-800 or so give or take? The number is kind of important to get a rough consensus to, because of the ways social networks and complex systems operate, at a certain point those notions of self organizing systems, innovation from chaos, six degrees of freedom start to kick in and help us understand from the distance of decades looking back, what on earth was going on. As example, if you have a LinkedIn account with greater than 20 &quot;first order&quot; contacts, look at the network schematic and notice the 2-3 order connections can reach hundreds of thousands. When we start to think through the social/economic impact of that up and down the west coast, its not surprising we feel the reverberations of that through the years.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">July 18, 2009 at 06:00AM</span>
+            <div class="reply-content">Yup. The Boss is here and so many others of the old (if not &quot;original&quot;) cast and (esp.) crew. It certainly has grow well beyond a few Mulettes and hangers on the counter.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">July 18, 2009 at 04:15AM</span>
+            <div class="reply-content">Yes Peg counted the crew and much of the boothies as active parts of the ensemble, she would always say 1400-1800 on a good day. Of those people she could be counted on to remember about 600 names, she taught me to remember the rest. She always claimed that she and Terry Collier were too old to remember names that that was my job. I would get that familiar elbow in the rib on the approach that meant I was to feed her the name (mostly she didnt care but sometimes she wanted to know for effect). In this case I would either tell her or take the blow myself...&quot;what was your name again?&#x27; (as she acted distracted).
+Peg was full of tricks, that was one of my favorite things about her, and being a kid at the time it really impressed me.
+Once we get about 2,000 people on here, then we will be as close as we can get I imagine.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">July 18, 2009 at 03:27AM</span>
+            <div class="reply-content">&quot; Over 1,000 Costumed Entertainers!&quot;
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,2121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>how do we deal with the ugly bits and the discrepancies and all the drugs? - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>how do we deal with the ugly bits and the discrepancies and all the drugs?</span></div>
+            
+    <div class="module">
+        <div class="module-header">how do we deal with the ugly bits and the discrepancies and all the drugs?</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Murray then, now aka MAX</span> | <span>January 28, 2009</span> | <span>146 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (146)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">July 25, 2009 at 06:42PM</span>
+            <div class="reply-content">I think hose is more appropriate. I never really liked hose tourney. I thought it was stupid when I saw it at TRF and was disgusted when it came to RPF.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">July 25, 2009 at 06:38PM</span>
+            <div class="reply-content">For me,the &quot;desexing&quot; of Faire seems to have started way back when Phyllis fired Greg the Obscene Juggler (remember him &#x27;juggling five balls&#x27; ... three were in his hands, and his tights were very tight). At least, I had heard that it was Phyllis who made the call, and no one at the time contradicted that. It was a slow but accelerating decline from there. These days - sheesh, might as well be at TRF.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">July 20, 2009 at 11:04PM</span>
+            <div class="reply-content">Henry VIII was an avid fan of the lists. He went to France to participate in an event that was so elaborate that it was remembered as &quot;the Field of Cloth of Gold.&quot; He spent a good deal of the wealth that Henry VII had squirreled away in such nonsense. This was a contributing factor to his rape of the monastaries. He had spent his inheritance! I think that by the time ER I came to the throne, jousting was not in fashion any longer, at least in England.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">July 20, 2009 at 04:33PM</span>
+            <div class="reply-content">Yes Sean the main thing is to accentuate the positive without entirely whitewashing or glossing over the nasty bits. We were a part of our time even as we are at present part of the present, and part of that is creating something at least on my part that has some bite and does a small amount of justice to the time. It important especially for those of us who have family history bound up in the narrative that we be honest and kind at the same time.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">July 20, 2009 at 02:07AM</span>
+            <div class="reply-content">thanks LV that clears up a lot.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">July 19, 2009 at 11:12PM</span>
+            <div class="reply-content">Vox Dei.
+Thank you for that - it has been bugging me all these years !
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">[2dm7p3rumw1co]</span>
+            <span class="reply-date">July 19, 2009 at 08:33PM</span>
+            <div class="reply-content">Here&#x27;s what I remember about the robbery. The name of the guy who got robbed is not important let&#x27;s just call him Ron. Ron watched over the finance office during the weekends, he also made the nite drops at the bank. One the night in question, Ron left in the very early morning. I heard that the bad guys were waiting on cornell rd overlooking the farie. They followed Ron to the bank in Woodland Hills. They jumped him in the parking lot. I know they had at least a shotgun, that went off by accident. I checked out the hole in the bank&#x27;s parking lot the next day. You could see the groves of the double 00 shot on the edge of the hole. Of course the rummors were hot and heavy. In the end the crime was never solved and the faire changed the way they dropped money. Jim, remember when we jammed the nite drop in Novato and had to go to Novato P.D. with thousands of dollars? Also, it should be known that Ron got a letter from the Woodland Hills chief of police. The letter cleared him of any wrong doing and said that he had nothing to do with the robbery.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">[2dm7p3rumw1co]</span>
+            <span class="reply-date">July 19, 2009 at 07:54PM</span>
+            <div class="reply-content">Vickey you are right, his booth was where the sugar shack, was above and to the left of Ale 6. He killed himself in the S.S.F. jail . The S. guy was most likely Scott P. There had been a series of killing on the trails of marin. Scott looked just like the wanted poster. Ryan Brandenburg and I went to the task force headquarters at the civic center. We had to bring his timecards and other info. They quickly cleared him and ended up arresting the right guy a while later
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">[7xc2nriojino]</span>
+            <span class="reply-date">July 12, 2009 at 08:20PM</span>
+            <div class="reply-content">How about leaving all fine details of THAT out of any narrative, you can just use a General statement of FACT.....
+it was the 1960s..... it was the 1970s....... etc. &quot;Ditto&quot; the Sex and the STDs, so as to not descend into the Salacious
+and /or hurt people&#x27;s feelings. Accentuate the POSITIVE !!!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 25, 2009 at 09:31PM</span>
+            <div class="reply-content">yeah we used to joke around here and say that lots of people would give you a hard time if you had butter in the pasta salad at a potluck but they would drink goat piss if they thought it would get them high.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 25, 2009 at 05:44PM</span>
+            <div class="reply-content">I never used coke and campaigned against it. One of my co-workers tried to do a line on her sewing machine &amp; she got mad at me when I asked her to stop. Another friend who had a brain tumor told me not to use MSG when I cooked, but was willing to snort some powder when it was available. Howard Hamburg tried to use the costume shed for his recreation with his friends, but moved to the prop shed when I asked him to leave. My sins included acid and marijuana, so what did I know!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 25, 2009 at 05:34PM</span>
+            <div class="reply-content">Okay, back to the drug part.On a personal level. As a teenager the faire became the place to drink and get high. I recall actor&#x27;s camp at southern faire, before we had water there and we were brushing our teeth and had no water to rinse with. So we used the last of the wine left over from the night before (back when I actually would HAVE leftover booze from the previous night). We called it &quot;mouthwash&quot; ever after that. The ever present mug was such a perfect disguise for my drinking. When we started selling booze at faire there was a real crackdown on what the young folks had in their mugs.This started the endless trips to actor&#x27;s camp during the day. Later when I was of drinking age, the trips to actor&#x27;s camp were for drugging. This worked fine at southern faire but became a problem at northern with actor&#x27;s camp being at the top of cardiac hill. For drugs you could smell in use anyways.As a dance troupe leader monitering underage drinking during hours,in troupe, was rather like herding cats. My biggest tool was &quot;We&#x27;ll lose our liquor license&quot;. And believe me, I certainly heard from security if any underage troupe members got out of control with drinking at night. Actually, I heard from security if ANY troupe member caused ANY trouble, at ANY time. Now that I look back, herding cats would have been easy in comparison.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">[3tjomb2csum08]</span>
+            <span class="reply-date">May 04, 2009 at 06:39PM</span>
+            <div class="reply-content">Leonard Lake... and Charles Ng.... yes, responsible for FAR too many &quot;disappearances&quot; - best forgotten gruesomes!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">May 01, 2009 at 10:02PM</span>
+            <div class="reply-content">Bri, I&#x27;m almost certain the negative feelings I experienced back then were due to my proximity to Lake. I didn&#x27;t feel the same way when speaking to Morning Glory or Otter, and I by no means intended to vilify either of them.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">May 01, 2009 at 07:31PM</span>
+            <div class="reply-content">denial
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">[0grgrunot1fm3]</span>
+            <span class="reply-date">May 01, 2009 at 07:21PM</span>
+            <div class="reply-content">And yet, these are some of the best stories for those of us who were there...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">[0grgrunot1fm3]</span>
+            <span class="reply-date">May 01, 2009 at 07:07PM</span>
+            <div class="reply-content">I definitely agree here. Also think it&#x27;s important, as someone mentioned earlier to include cultural context.
+The kind of stories about paychecks bouncing and the political stuff, is not so unusual. Theaters often had these kinds of problems.
+Like Richard said, the manner in which it&#x27;s talked about is important. Emphasize the good stuff but a note about that being the faire that crew didn&#x27;t get paid keeps things closer to history. Often when the Faire politics get brought up, they have a way of overtaking all else and that defeats what I think is our purpose here.
+Among stories of Faire heroism... One Southern, 92? at San Bernardino, an ale stand caught a counterfeiter that the FBI had been after for a long time. This went a long way to getting the local ABC board off the Faire&#x27;s back as they were at that time, again, making problems about liquor licenses.
+The story goes the guy also dumped a bunch of fake bills in a privy and someone, not knowing they were fake went after &#x27;em.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">May 01, 2009 at 06:45PM</span>
+            <div class="reply-content">Bri: no one is vilifying Otter and Morning Glory. As far as the the Leonard Lake connection goes, they were guilty only of hiring Lake to work their booth for the one year they had Lancelot the Goat at the Faire, which was in 1980.
+Julien: I just found a copy of the Living Unicorn sheet in my binder of Faire paperwork, too. I thought about scanning it, but didn&#x27;t. It conjured strong emotion in me, too.
+Somewhere I still have a little velvet pouch with some of Lancelot&#x27;s fur that Morning Glory clipped for me. Don&#x27;t know where, but I tend to never throw that kind of stuff out.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">[0grgrunot1fm3]</span>
+            <span class="reply-date">May 01, 2009 at 06:35PM</span>
+            <div class="reply-content">Interesting... My parents knew Morning Glory and Otter before they were involved in the Faire and had good experiences with them. They were never close but there was a mutual respect between them and my observation of my parents judgment is that it&#x27;s pretty good.
+There was quite some controversy over the goat/unicorn and they came in for A LOT of flack, from media, from customers,...
+This is the first I&#x27;ve heard of serial killers at the faire, but then, I was pretty focused on whatever it was I was doing.
+I would like to think that unseemly angry reactions came out of the heap of negativity they were under and were no more sinister than that we are human and sometimes do stupid sh**, sometimes overreact...
+I could be wrong but I hope to look at a bigger picture and not vilify anyone who was not a villain.
+That does not include serial killers or any kind of killer for that matter.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">Cat Taylor</span>
+            <span class="reply-date">April 26, 2009 at 05:41AM</span>
+            <div class="reply-content">Sure, in a remote you wouldn&#x27;t possibly have seen it at ANY shire faire way, jousts are period.
+When I balance that plainly exclusionary fact with remembering that the original &quot;tourney&quot; at agoura was a way to help the horse security play with us in an inside role...well, it still comes out unlikely.
+Add to that the observation that the &quot;Joust&quot; as presented is medieval in the few parts where it actually cleaves to anything remotely historical, equipment and presentation-wise.
+Really, it always struck me as a way for horse people to participate and F*ck all accuracy in the name of facilitating that goal.
+Sas
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">Cat Taylor</span>
+            <span class="reply-date">April 25, 2009 at 01:03AM</span>
+            <div class="reply-content">I absolutely adored how some of you courtiers would sing &quot;It&#x27;s a death march, after all&quot; as you processed through the noonday faire.
+Almost as funny at the occasional noble with ice packed in their gently convex doublet and comfortable smile on their face.
+Sas
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">April 24, 2009 at 10:24PM</span>
+            <div class="reply-content">I used to do closing sweeps, you know: &quot;THE FAIRE IS CLOSED, YOU MUST HAVE A CAMPING PASS OR YOU MUST LEAVE!&#x27; We&#x27;d take turns yelling, checking passes and pointing in the direction of the exit to those who were not sanctified to stay. One evening, I started doing it in German: &quot;Das Faire ist zu, wir mussen seine papieren sehen, ob Sie keine papieren haben, dann mussen Sie ausgehen!!!!&quot; I did it for a faire and a half. Then I got word that I had to stop, because it sounded too Nazi. Well, duh! Anyway, I did stop. Although, I did requests, and there were quite a few of those.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 24, 2009 at 02:11AM</span>
+            <div class="reply-content">Dundii mentioned to me that courtiers kept fruit in their codpieces, so I carried a banana in mine and would produce it and eat during the Queen&#x27;s show. Julie put the kibosh on that, though. Too distracting from the main business...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">April 23, 2009 at 09:59PM</span>
+            <div class="reply-content">Jousting is so period to Elizabethan times - the King of France, Henri II remember, was killed in a jousting tourney by a freak splinter from a lance that went through his eye, thereby bringing Mary Q. of Scots to the throne of France.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 23, 2009 at 08:14PM</span>
+            <div class="reply-content">Horse!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">April 23, 2009 at 07:18PM</span>
+            <div class="reply-content">If I remember correctly, (and desperately trying not to beat a dead horse {grin}). Horse tourneys were still being done at that time. Emporer Maximillian of the Germanies went so far as to commission lifesize clockwork automaton jousters and horses to perform (brings a whole new meaning to getting all wound up). There was also jousting armour devised (again the Germans) to &quot;explode&quot; when the shield was struck. Extra pieces were spring loaded and attached to the main suit. These pageants continued for some time into the latter part of the sixteenth century. The tourneys, as staged, were almost historically accurate.
+I do agree with Sas, that there was a trend (that seemed to start shortly after faire was sold) towards that whorish deity of political correctness. Workshops were tailored towards the new trend. Don&#x27;t touch the customer, don&#x27;t say anything that could be considered salacious, don&#x27;t do anything that could be considered off color, remember that the faire IS family oriented, above all, no squeeky toys in the codpiece. I think that this really did stifle a lot of creativity. A lot of people decided to not come back, a lot of whom were the customers. Las Vegas tried to become family oriented and it didn&#x27;t work for them either. Outside of faire, when I would talk with people about faire, they almost always talked about the bawdiness. That seemed to be one of the biggest draws.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">Cat Taylor</span>
+            <span class="reply-date">April 23, 2009 at 06:39AM</span>
+            <div class="reply-content">The Aristocrats!
+Sas
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">Cat Taylor</span>
+            <span class="reply-date">April 23, 2009 at 06:37AM</span>
+            <div class="reply-content">Damn! There I go forgetting that there was a faire before there was a me at faire.
+Sas
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">29</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 23, 2009 at 04:54AM</span>
+            <div class="reply-content">The hose show added a lot to the atmosphere of the Faire. I remember being impressed by it when I came to visit in the 80&#x27;s. Also, the lake shows at the San Berdoo location were great, a good addition of a new texture.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">30</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 23, 2009 at 04:03AM</span>
+            <div class="reply-content">...a hint, though. Think, Skin Flute!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">31</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 23, 2009 at 03:49AM</span>
+            <div class="reply-content">The Story of the Chinese Flute player can&#x27;t be told, it has to be shown. As, if and When I can make it to a Teahouse Happening, I will be happy to demonstrate. It was Dundii, naturally, who put me up to asking Sir John to tell me the story, which I hasten to add, I stopped the telling of as soon as I realized the set-up. More will have to wait...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">32</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 23, 2009 at 03:43AM</span>
+            <div class="reply-content">um, yes and?
+I remember rightly then. My earliest memories were that SCA was court when I was a kid. I have very vivid memories watching them dance in the old glade which was actually shady.
+and of course i am a sucker for bus stories
+puleeeeez....tell the Cleeves storry
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">33</span>
+            <span class="reply-author">Richard Beard</span>
+            <span class="reply-date">April 21, 2009 at 09:49PM</span>
+            <div class="reply-content">Thank you Greig.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">34</span>
+            <span class="reply-author">Richard Beard</span>
+            <span class="reply-date">April 21, 2009 at 09:48PM</span>
+            <div class="reply-content">His name is, was, Larry Cole.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">35</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 21, 2009 at 05:59PM</span>
+            <div class="reply-content">Like it or not, the SCA members constituted the first &quot;Court&quot; at the Queen&#x27;s progress and the Maybower show. They danced, the Consortium Antiquum played, and the rest of us were (distainfully) adjuncts. If you have any doubts, recall the bus rides from Berkeley. I will never forget John of Cleves&#x27;s telling of the story of the Chinese flute player...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">36</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">April 21, 2009 at 11:19AM</span>
+            <div class="reply-content">I remember the media coverage as well, and in fact Marti Dobbs sent a newspaper article about it to us. I&#x27;m not sure if I still have it. I noticed a few &quot;facts&quot; that I knew to be untrue. As far as I remember Silver was never convicted. I have good memories of Silver as I knew him.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">37</span>
+            <span class="reply-author">Cat Taylor</span>
+            <span class="reply-date">April 21, 2009 at 07:50AM</span>
+            <div class="reply-content">A crowd pleaser? So was not mentioning spaniards in a negative fashion when we celebrated the defeat of the armada at Agoura or stomping the bawd flat for the sake of the &quot;family show&quot; in Devore.
+Non-sensical but none the less &quot;crowd pleasing&quot; changes are why I don&#x27;t DO it anymore. Stuff like that killed the show for so many, patrons and performers alike.
+Limping History.
+Sas
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">38</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">April 21, 2009 at 05:36AM</span>
+            <div class="reply-content">Just a reminder to all---We were never meant to be a Colonial Williamsburg type event. The Design assignment was always a combination of theatrical choices, historical choices, our uniqueness in the midst of many faires was our cacophany(SP?) creativeness. I personally made individual choices about even the costumes I approved for the sake of the texture of the show---We could trully never get the show completely period--we were and are limited by chosen research. Oh to have a real eye to how it really was back then. many good people came to us from the SCA. The Horse Tourney--was a crowd pleaser
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">39</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 21, 2009 at 05:14AM</span>
+            <div class="reply-content">Huzz F*ckin ah!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">40</span>
+            <span class="reply-author">Cat Taylor</span>
+            <span class="reply-date">April 21, 2009 at 03:04AM</span>
+            <div class="reply-content">The SCA as such had zero &quot;appearances&quot; at faire, period, unless one counts the completely unhistorical &quot;Horse Tourney&quot; bullshit.
+That said, people who did SCA also did Ren-Faire. How would you list that?
+I gotta think it&#x27;s up there with Rocky Horrorites and DeadHeads and Parrotheads who only incidentally also did ren-faire. Wait.... Just think about it....
+Sas
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">41</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 21, 2009 at 01:43AM</span>
+            <div class="reply-content">While I am aware that the SCA had its major &quot;life&quot; outside the faire, it is their appearances at Faire that I think are relevant and to which I was referring.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">42</span>
+            <span class="reply-author">Cat Taylor</span>
+            <span class="reply-date">April 21, 2009 at 01:29AM</span>
+            <div class="reply-content">So....which Silver are we not talking about again?
+Sas?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">43</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">April 20, 2009 at 10:37PM</span>
+            <div class="reply-content">Just to set the record straight, I just spoke with Jim Hayes. Silver&#x27;s story is untrue. According to Jim, the news got it wrong and didn&#x27;t bother to correct the story. Jim went on to say that Silver&#x27;s death was from natural causes. So, if there is anything more to add, Jim will do it. Thank&#x27;s Jim for setting the record straight.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">44</span>
+            <span class="reply-author">Cat Taylor</span>
+            <span class="reply-date">April 18, 2009 at 03:00PM</span>
+            <div class="reply-content">Could it be that you&#x27;re talking about two different &quot;Silvers&quot; here? I mean, I can remember at LEAST two &quot;Silvers&quot; at faire and I&#x27;m pretty sure neither one is the one Jim&#x27;s got in mind.
+This stuff happens all the time at burning man as there&#x27;s only so many nicknames and NO central registry. I know of four Sasquatchs there (but I&#x27;m the only Ranger Sasquatch).
+Sas
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">45</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">April 18, 2009 at 12:55AM</span>
+            <div class="reply-content">I&#x27;ve had a couple of meals with her since we started at Tribe...she&#x27;s doing pretty well. She&#x27;s very involved in caring for her father (her mother passed away a few years ago), and works in the City. She still has the most interesting vocabulary on the planet. I love her, and reconnecting was one of the big bonuses of our happy little Social Networking experiment.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">46</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">April 18, 2009 at 12:28AM</span>
+            <div class="reply-content">Jeffrey she is on facebook
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">47</span>
+            <span class="reply-author">[3c81l6i4s3fe3]</span>
+            <span class="reply-date">April 17, 2009 at 11:35PM</span>
+            <div class="reply-content">thanks I miss Vickie
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">48</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">April 17, 2009 at 10:53PM</span>
+            <div class="reply-content">I saw Ms. Akers breifly at the Pirate Fair in Vallejo--she was speaking with Darla Hitchcock
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">49</span>
+            <span class="reply-author">[3c81l6i4s3fe3]</span>
+            <span class="reply-date">April 17, 2009 at 09:29PM</span>
+            <div class="reply-content">I remember the guys from Tulsy Wop starting a Fantasy Fair back in &#x27;75(?) at the Hollywood Paladium. Mystic Nights of the Oingo Boingo, Bros. K., et all
+&#x27;saw lasers beamed off the neighbor building for the first time. Many fair folk there, same security, et all
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">50</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">April 17, 2009 at 08:30PM</span>
+            <div class="reply-content">Thanks for this, Jim. In general we need to all remember that pretty much every name that&#x27;s mentioned in this Teahouse is dear to someone here.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">51</span>
+            <span class="reply-author">Richard Beard</span>
+            <span class="reply-date">April 17, 2009 at 07:29PM</span>
+            <div class="reply-content">My friend Greg. You should get your facts right before posting anything here.
+Silver DID NOT abduct anyone and was wrongfully accused of things he simply did not do. He and I were good friends and I probably knew him better then anyone else at Faire. So please try to get your facts in order before speaking ill of the dead.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">52</span>
+            <span class="reply-author">Cat Taylor</span>
+            <span class="reply-date">April 17, 2009 at 06:11PM</span>
+            <div class="reply-content">&quot;Nicole Sullivan&quot;?
+The same one who was the Lancomme Lady on MADTV?
+Wouldn&#x27;t that be funy?
+Sas
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">53</span>
+            <span class="reply-author">[3c81l6i4s3fe3]</span>
+            <span class="reply-date">April 17, 2009 at 05:38PM</span>
+            <div class="reply-content">Do you know if Vickie is well?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">54</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 17, 2009 at 01:46PM</span>
+            <div class="reply-content">what its all about. :)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">55</span>
+            <span class="reply-author">Cat Taylor</span>
+            <span class="reply-date">April 17, 2009 at 02:16AM</span>
+            <div class="reply-content">&#x27;Ats the Patti I know : ).
+I&#x27;ll send the name direct.
+Sas
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">56</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">April 17, 2009 at 01:52AM</span>
+            <div class="reply-content">Eric, I need to know. This sounds like Darth Vader.Been on the receiving end myself. I&#x27;m emailing you my phone number. And I repeat, no interference with any audition.Your court. I&#x27;m open. Truth is pure.I believe you have important info. Call me. Because Eric, I feel like you are family. Open hand, open heart.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">57</span>
+            <span class="reply-author">Cat Taylor</span>
+            <span class="reply-date">April 16, 2009 at 06:34PM</span>
+            <div class="reply-content">Yes, I know the Northern Pryanksters carried on and still exist. I&#x27;m a member of the Merrie Pryanksters tribe on Tribe.net : ). Still, for my purposes they may as well be the Martian Pryanksters (distance reference) for all the family their continued existence afforded me.
+As for the disrupted audition reference, I wasn&#x27;t there but got the same story from many that were so I just don&#x27;t know what to believe.
+What I CAN and DO know is that about the time I got the story about the audition thing I also got a series of vile messages on my answering machine. Those messages combined with what I&#x27;d personally witnessed as well as an attack involving mace and a beating on two of my fellow dancers pretty much seemed whole cloth, so I carefully saved the tapes and looked to my personal defense. The person on those tapes and I still have a problem from my point of view and it would be best that they stay FAR away from me. The tapes are powerful evidence of a need for pro-active immediate self defense should we meet by chance.
+That&#x27;s where I&#x27;ve been and why for the last 17 years. 17 years! Could it possibly be that long!?
+Sas
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">58</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">April 14, 2009 at 03:43PM</span>
+            <div class="reply-content">Yes, I must concur. I was there. Pryankstes carried on, and still do !
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">59</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">April 14, 2009 at 01:56AM</span>
+            <div class="reply-content">Sas, I&#x27;ll confirm what Patti has just said with regards to the Pryanksters continued existence. They do indeed, still perform at various Faires and even have a web page: http://www.pryanksters.org/
+Carrie
+(never a Pryankster, but an ex-Newcastle dancer)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">60</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">April 13, 2009 at 01:34PM</span>
+            <div class="reply-content">I didn&#x27;t fire the troupe Eric. Just 3 members. I wrote a letter to Leslie P. and told LHC I wouldn&#x27;t be coming to southern. Gave high praise to quite a number of Pryanksters, which has continued as a troupe to this day.I never called,wrote nor visited faire again save for one after hours visit during prefaire workshops, where I spoke to no one and saw no dancers nor LHC staff.I was pressured by Darth Vader to call Chris S. to procure passes to the faire one afternoon. Thankfully that didn&#x27;t work out. The whole story from my point may come out.But it would involve naming names and I&#x27;m not prepared at this time to do that. But I will say that, yes, I was &quot;batsh**&quot;. But I never interfered in any way with anyone&#x27;s auditions. And while I have a whole closet full of &quot;jackets&quot; that I made myself, stitch by stitch, I won&#x27;t wear one that doesn&#x27;t belong to me.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">61</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 12, 2009 at 02:53PM</span>
+            <div class="reply-content">actually in the broader sense that totally true. One of the reasons (so many) that I drug you over here Sas in that you have been mixed uo in the ludic spray since way back on sunset at the rocky horror show. Did you go to the dead also? Still kicking up dust at burningman right?
+the dead was very much part of our scene, deeply intertwined because of Bob and Bear and the flow of workers and artist and musicians back and forth and at our summer parties. There were economic opportunities at show for some of us too. I used to sell crochet hats with stacey harris at shows.
+the Faire in many ways started as a series of parties and it always did its best when it was supported by a series of adjunct social networks (including parties) that allowed the larger group of people to meet and form stronger connections. Basically the more dating pools your social network is connected to loosely the more resilient and in some ways powerful it is. Humans have a natural social circle rate that taps out (30-70) however our social colony allows for a complexity of association that can encompass large nodal networks of these basic groups (some people tap out around 700-1000). Effectively we are all knit into one human society by these smaller groups intersecting and sharing ties.
+the Preston ranch was a big connector between us and the grateful dead also, allowing us literally to hang out and be family together.(4th of july etc)
+heck as a kid the whole west coast scene that later split into hog farm, faire and dead family and whatnot was all called &quot;the family&quot;. As in &quot;hey Kid no problem you are part of the family&quot;.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">62</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 12, 2009 at 02:42PM</span>
+            <div class="reply-content">yes VERY postmodern.
+among my postmodern artist fellows I was considered an early ice breaker for associating with the faire at the living history moment. Rachel Rosenthal was always able to verbalize this stuff in her performance art classes and we actually taught at the same summer workshops at HSU one year. The last time I saw her she even yelled at me &quot;I was the queen once you know&quot; which the surrounding students thought was rather deep however I knew she meant literally as part of that emergent experiment, also she was letting me know that she recognized me from an earlier conversation at a performance art trip downtown with shelly cook years prior.
+site specific installation
+large scale collaboration
+performance art
+instead of making a theatre that was tiny and safe and using a fourth wall we made a playspace that surrounded you, made you feel childlike and immersed in a fantastic safe place of wonder.
+postmodern almost by definition
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">63</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 12, 2009 at 03:51AM</span>
+            <div class="reply-content">There is a great likelihood that many books will be written.
+For my own part I intent to write a dissertation that will include tha faire, which is more of a scholarly act than the type of writing undertaken to create a physical limited book (which no doubt will likely come of this).
+In fact in many ways the teahouse itself is a book.
+Our origins are important, and i search for them far and wide. They are what validate us as part of an actual art movement rather than just some dog and pony show out in the dirt. Even though i was involved in the faire way back in the day I must admit I was really a kid and I couldnt follow the endless stream of names and faces very well.
+I am interested in our roots that extend back to the fifties very much. And also the roots of groups that incubated and emerged at faire. Its not so much that I would want to include all this as part of the story or the cast call, its just that it is important because it places us in the cannon, in the living stream.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">64</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">April 12, 2009 at 02:29AM</span>
+            <div class="reply-content">Well, I&#x27;m not too sure how much we want to get into the SCA. I did SCA before faire, and I know a lot of people who did and do SCA, as well as faire. However, the SCA started in the 50&#x27;s and while still going strong, only those committed to real authenticity and acting came over to the faire (I know that there are exceptions). But how much can we really cover? (Ooh, that reminds me of the story about an SCA member doing display fighting with the rest of his group. They decided to build a campfire next to their tent. They were camped on the parking lot side of horse tourney and this particular gentleman was a little soused. When security came to tell them to put out the fire, this guy decided that he wanted to pull a sword on the security guard [I don&#x27;t remember who]. It ended with no violence,but was still kinda scary. The guy decided that he couldn&#x27;t fight all of us.)
+Can we just cover their contributions that pertain only to faire? Otherwise, we could be producing a really big book. The roots of the Germans at faire started with the SCA. I was one of the founders of the Germans. I&#x27;m sure that there are others.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">65</span>
+            <span class="reply-author">Cat Taylor</span>
+            <span class="reply-date">April 11, 2009 at 10:18PM</span>
+            <div class="reply-content">May as well include Rocky Horror and the Dead. I&#x27;d guess there was as much crossover with them as there was with the SCA. Oh Oh, can&#x27;t forget the Trekkers either. LosCon ring any old bells here?
+Sas : )
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">66</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">April 11, 2009 at 10:07PM</span>
+            <div class="reply-content">The inward looking sense of the SCA I think hits the nail on the head, and why it never was really quite a fit for Ren Faire, which was of course performance based and by definition outward facing. You could really see the difference by walking past the court glade or whatever it was called. Great looking costumes, but no authentic sense of interaction outside of the little bubble created. Rather like looking at a diorama museum exhibit, perhaps historically accurate in details, but you soon move on having nothing really to pull you in. What pulled the crowds in was of course living history and environmental theater practiced with wild abandon and serious intent. That was stage craft, very different from an intent at historical re-creation, which I think almost by definition must fail, and generate a sort of egotistical inward looking attitude. Give me living history anytime, that in some ways was postmodernism in action, and way more interesting than Derrida, et al.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">67</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">April 11, 2009 at 10:05PM</span>
+            <div class="reply-content">Please consider that a generous palladian millipede may often garner and keep the decisions from occuring between a supportive society and the lowly articulated outgrowth of those confined to a conceptual framework, seen only by hedgehogs. This then, may convince the blustery berea to attempt to create some suspicion amongst the forking compatriots. Then, the beehive of an astrophysical eyeful may bewhisker, or even bungle a decorative conniption fit, and take a sleuth south to spew, or let the sliverry concertmaster stump the posthumous guidepost; and, then asilomar could muck on the northern declarator, who was slugging about and deficating in the southern swamp, infested with ticket-takers on holiday.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">68</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 11, 2009 at 09:03PM</span>
+            <div class="reply-content">yes this &quot;forking&#x27; is typical of dynamic projects. Initially everyone is just making this really generative emergent atmosphere happen and then as it becomes more crystalized people have very divergent ideas of how to carry out the concept. Our show survived quite a bit on the good natured competition for the admiration and supportive society that was needed to often keep ones ideas aloft and in the air and circulating and taking hold. Just like the times where Phyllis and Ron were in competition to garner support from the staff people are often generous of themselves when there is a bit of healthy competition for supporters...luisa pointed this out to me.
+eventually very often there are break-away forks. We didnt know this process was sort of natural so we almost always framed it negatively, even tragically.
+Part of the emergence of a new conceptual framework is the evolution of diverse articulated outgrowths. we were rich indeed in those.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">69</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">April 11, 2009 at 08:40PM</span>
+            <div class="reply-content">If you look up the orgins of the SCA on line there is a rather interesting story complete with pictures about a group of friends planning a party. Among those friends are Diana Paxton and Don Jon.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">70</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">April 11, 2009 at 08:30PM</span>
+            <div class="reply-content">As far as I know the SCA ( at least in N. CA ) was started by a group of people amongst which was our own Doug Olsen ( of Oak Ash &amp; Thorn fame ).
+I spent a lot of time as a teenager in the SCA in the 1970&#x27;s. I would joke that it was &quot; methadone&quot; to get me through to the next Faire.
+I learned a lot from those folks, but I also felt a certain undercurrent of disdain for we &quot; hippie Faire types&quot;. For my part, I eventually got tired of their inward - looking - ness and somewhat holier-than-thou attitude.
+There was a lot of good scholarship going on, but it never felt...authentic...to me.
+Give me an actual AUDIENCE any day !!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">71</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 11, 2009 at 08:25PM</span>
+            <div class="reply-content">i have been pondering the SCA quite a bit lately, one of the reasons the structure has to stay slightly simplified.
+In one way it fits into ludic spray and outgrowths, however it was firmly part of the faire for awhile. Done Jon and Denise right? Thats an important thread.
+they were atmospheric theatre as well as western martial arts
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">72</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">April 11, 2009 at 08:17PM</span>
+            <div class="reply-content">Yes - do !
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">73</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 11, 2009 at 07:44PM</span>
+            <div class="reply-content">so do tell
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">74</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 11, 2009 at 02:03AM</span>
+            <div class="reply-content">This may not be the place for this question, but I am having a hard time categorizing the Society for Creative Anachronism. Dance, yes. Music, yes. Acting? They wore SO MANY HATS!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">75</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">April 10, 2009 at 11:34PM</span>
+            <div class="reply-content">IMHO, we should cover the robbery...it was a huge piece of Faire history (and there was a conclusion to the story as well...a matter of public record). Also, since this is about the fifth time we&#x27;ve talked about it since the Tribe days, it&#x27;s clearly something people want cleared up for them. So much confusion out there about it. Fascinating.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">76</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">April 10, 2009 at 11:19PM</span>
+            <div class="reply-content">Looking back I think this was 1981, as I had just joined the Costume Crew.
+...but I could be wrong...Trent, do you remember the year?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">77</span>
+            <span class="reply-author">Cat Taylor</span>
+            <span class="reply-date">April 10, 2009 at 08:44PM</span>
+            <div class="reply-content">&quot;Didn&#x27;t they have police in those days?&quot;
+Yep, McCloud and Columbo : ).
+But seriously, they did but they had to get warrants and all kinds of inconvenient schtuff like that. Thank god we&#x27;ve chucked all that baggage...
+Sas : )
+much safer now
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">78</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">April 10, 2009 at 08:05PM</span>
+            <div class="reply-content">Yeah, I remember that. They said he went off on a Saturday with $60,000 in a bag or briefcase, supposedly taking it to the bank. Then, they said he showed back up at the faire, and said he&#x27;d been robbed??? Didn&#x27;t they have police in those days?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">79</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 10, 2009 at 05:44PM</span>
+            <div class="reply-content">its a classic part of the muck.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">80</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">April 10, 2009 at 05:34PM</span>
+            <div class="reply-content">One thing that has always bugged me was hearing about a &quot; robbery &quot; of the Front Gate Take during Southern in ... the early &#x27;80s or so ? What I remember is that a certain head ( no names here !) of S.S. got &quot; robbed at gunpoint&quot; on the way to take the weekend&#x27;s monies to the bank.This fellow was, supposedly, always armed to the teeth, so this seemed strange. What also seemed strange to me was that such a LARGE amount of money should be entrusted to a private individual, rather than a professional service.
+No arrests were made as far as I know,and this fellow kept his job for awhile...but it really hurt the Company, and I can trace a lot of money problems back to that robbery at a crucial time.
+How&#x27;s that for an Ugly Bit &amp; a Discrepancy?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">81</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">April 10, 2009 at 02:37PM</span>
+            <div class="reply-content">Morgan...no appology necessary. You are fine. Yeah, I wondered that myself, and maybe it was a cow...but, if my fading memory serves me, I think I remember horns, and thinking...what if that bull went wild, and gorged someone. Security? I thought Lance Sterling was on security?? Hah?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">82</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">April 10, 2009 at 03:26AM</span>
+            <div class="reply-content">Oh dear Trent - I never meant to impugn your veracity !! Perhaps it was a poor choice of words on my part...I think I forgot to put &quot; great &quot; in between &quot; a&quot; and &quot;story&quot;.
+I think I remember the guru guy w/ cow &amp; gopis. I too wondered how he got past security!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">83</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 09, 2009 at 09:17PM</span>
+            <div class="reply-content">they had to invent a new media for us to even start to tell the story.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">84</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 07, 2009 at 06:55PM</span>
+            <div class="reply-content">A pittance to KRSNA!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">85</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 07, 2009 at 06:50PM</span>
+            <div class="reply-content">How droll! I never heard that story. I hitch-hiked up from LA to that faire, dry, dry, dry. I was on my way in to see if I could score, but never made it past the parking lot that night. Afghan cake, as I recall. Rest of the weekend flew by!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">86</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">April 07, 2009 at 06:09PM</span>
+            <div class="reply-content">John, you know I have been agonizing for almost 12 years now, about producing a documentary film about some of the stuff that went on at the Renaissance Faires over the years...especially, behind the scenes kind of stuff. I would imagine that the stories are ENDLESS, like the one somebody told me a while back, about a bunch of people sitting around a fire circle at the China Camp faire, e.g. 1969-70, passing around a dube, and up walks a couple of local Sheriffs (Shireefs?), and there was a kind of a break in the circle, and the guy did not notice them and is sitting at the opening, and hands the dube to the Sheriff who had just stepped up....who takes it and says &quot;no thanks&quot;, but then passes it on the the other Sheriff, who takes a big puff. Then, hands it back to the first Sheriff, who then decides to have a puff, and soon, one of them draws his pistol and spins it around, and it ends up flying off his finger into the bushes, and they are crawling around in the bushes for hours trying to find it. WHAT?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">87</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">April 07, 2009 at 06:01PM</span>
+            <div class="reply-content">Morgan...yeah, some people said they thought the guy had just made the story up...but, ya know...I really didn&#x27;t have ANY doubts. My recollection was that this had JUST happened to him, and he was still in AWE! Also, had I not myself seen Krishna and his Gopis and the Bull, I may have doubted his story...and, there was the fabulous moonstone necklace, etc. I really think it was true, and in those days...10 Benjamins was quite a haul.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">88</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">April 07, 2009 at 03:59PM</span>
+            <div class="reply-content">Well, here is another funny one. It was my first faire, 1969, China Camp State Park. Gilkerson was appearing there, playing bag pipes, etc., along with the late Scott Beach, etc. He was my neighbor in Sausalito, and had introduced me to the whole gang of the Golden Toad, e.g. and others, Bob Thomas, Will Spires, Wendy Newell, Elliott Gould, Don Brown, Mickey Zekely, Sterling,etc., and the Magician Harland Towner, aka Torchy. I became Torchy&#x27;s assistant, and they found me a Robin Hood like costume, and I had two basic daily jobs to perform for Torchy. He wore a robe, and on the belt was a leather pouch, made by Sterling, which contained two &quot;cigar tubes&quot;, which I would fill each day with lighter fluid. The other job was to operate the &quot;lifting aparatus&quot; behind the curtain. Torchy apparently had acquired this amazing device somehow, and it was reportedly an authentic device owned formely by the famous magician, Harry Houdini.
+Ok, so one night, we were all sitting around, and we had taken LSD, and then we started drinking Tequila. Torchy went nuts, and was just beyond control, and for some reason, got pissed at me and fired me. OK, so fine, I&#x27;m fired...well, it was only temporarily, but anyway, the next morning, I did NOT fill his cigar tubes. Then, the first morning show opened, and here comes Torchy, hung over and probably still halucinating...I know I was.
+I am sitting at the back of the audience with Gilkerson, and we are watching Torchy. He would come out in his robe, do some card tricks or make a fish disappear in a bowl, etc. etc., and then, he would turn away from the audience and pull out a cigar tube, and fill his mouth with the lighter fluid, then turn back to the audience holding a lighted &quot;torch&quot;, hence the name Torchy, and blow the lighter fluid into the flame on the torch, thereby creating this GIANT fireball, which would just literally blow the audience&#x27;s mind.
+So, that morning, he turns away, opens the cigar tube, and what, its empty! Looking very startled and weird, he suddenly stops a small red can of cooking stove gas over on the side of the stage, which was apparently left there accidentally by this young gal Yogala, who was part of his act, and who slept there on the stage at night...more about that later. He rushes over, grabs the can, and opens it and &quot;swallows&quot; a whole mouthfull of this gas, then begins to gag, and cough, turning to the audience, and then bowing and leaving the stage. The audience is sitting there with their mouths wide open, in awe...finally laughing and applauding. I think Gilkerson and I wet our pants laughing.
+Another time, I am behind the curtain, and Torchy is in front. Attached to this huge, lifing device, which is too complicated to explain here, is a rod which sticks out through the black curtain, about 2 feet off the stage, and then is bent to one side for about 3 feet, and then bent back to the other side about 3 feet, creating what was like a giant paper clip in shape, with one end that was bent away and connected to the lifting device. He would place a colorful cloth over it, and Yogala would lie down on this, and then, given some cue, I would begin to crank the device, thereby slowly raising Yogala up.
+Torchy would have a large, hula-hoop like ring, and he would pass it back and forth, like 3/4 across from one side, and then 3/4 across from the other. The paper-clip shape allowed the hoop to appear as if there was nothing supporting her. From the audience viewpoint, it was amazingly real.
+Ok, so, there I am, cranking way, and two young boys come sneaking back behind the stage, and open the rear curtain and start pointing at me, and laughing and I am freaking out...because I obviously didn&#x27;t them to see me and go tell everyone the secret of this magic trick. I felt for that moment like the Wizard of Oz, in the scene where Dorothy discovers the Wizard back stage. So, with one hand cranking, I reach in my pouch and give them each $1, for their promise not to tell anyone what they had seen.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">89</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">April 07, 2009 at 03:06PM</span>
+            <div class="reply-content">Lord Krishna &amp; His Gopis at the Faire !?
+Handing out Benjamins !?
+What a story !!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">90</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">April 07, 2009 at 02:35PM</span>
+            <div class="reply-content">Catt: Of course I do not remember this guy&#x27;s name, but if I recall correctly, he was living or working in Sausalito at the time, around 1976-78, and I have no idea if he ever used the $ the guy gave him, to actually go to Agra. Interestingly enough, I had been to Agra, right after my first couple of years of Renaissance faire experiences at China Camp, with Gilkerson in 1972. I had tuned in and dropped out, and when my wife at the time and I split up, I decided to become a sitar player, so I went off to India for 6 months...what a trip. Agra, where the Taj Mahal is, is quite a place. I know nothing about the sewerage treatment plant there.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">91</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">April 07, 2009 at 04:37AM</span>
+            <div class="reply-content">Actually, we had Lost Kids details, mostly younger women (at the time, we called them girls) much earlier than the 90&#x27;s. My first job at RPFS was at Children&#x27;s Dell, in &#x27;76 or &#x27;77. At the time, Lost Kids detail was based at Children&#x27;s Dell, and that&#x27;s where they&#x27;d keep the kids &#x27;till they found the parents. Working with the &quot;Lost Girls&quot; of that time, one of which may have been Suzette (my brain is fuzzy on that) is one of the reasons I tried for (and got on) Security the next Southern Faire. I think I tried for Lost Kids and got Area detail, became the Backstage Guard and that&#x27;s the only post I ever did on Security @ Agoura (other than Crossroads during the week).
+Peace,
+- Sequoia
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">92</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 07, 2009 at 03:39AM</span>
+            <div class="reply-content">i have to also say that I am in the process of studying sewage treatment and infrastructure, and this is an interesting clue. Agra India eh. Another gem.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">93</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 07, 2009 at 03:36AM</span>
+            <div class="reply-content">thats a really great story trent, exactly the sort of thing that made the place sizzle and sparkle with real true magic. There was a sense of something breaking through. For one thing simply the peaceful assembly of that many people with so few security, and then on top of that all the altered states and cultural patchwork, it was indeed a wonder to behold in full glory.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">94</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">April 06, 2009 at 04:27PM</span>
+            <div class="reply-content">Catt, I am not sure this is the right category in which to mention this...but, my recollection of this incident I think is something to share...and, it relates to $.
+It was the 1970s&#x27;, I had been sitting on a hay bale with some friends, Don Brown, Mark Bell, ??? playing some kind of improv middle-eastern music. We finished up, and then everyone else got up and went away. I was just sitting there alone, and up comes this stranger and sits down next to me. He sighs, and says &quot;Wow man, you aren&#x27;t going to believe what just happend to me&quot;.
+I thought to my self, who the hell is this guy, and what does he want. Anyway, he continues saying &quot;I am an industrial engineer, and I have been working on plans for a new sewerage treatment plant here in the Bay Area, and.....&quot; I thought, holy shit, am I going to have to listen to this all day...blah balh blah...but, I listened.
+So he continues...&quot;I came here to the faire for the first time today, and I see this kind of a heavy-set guy dressed sorta like an Indian Guru, walking down the path by the washing well, with two scantily dressed maidens, one on each arm, and leading a bull on a rope&quot;
+OK, so now I am really listening, because I had just seen this same character earlier, wondering why they would let anyone in the faire with a bull...with horns?
+He continues, &quot;so, this gurulike character comes up to me, and takes out this moonstone necklace places it over my head and around my neck, and kind of bows.&quot;
+He shows me the necklace, and well, wow, beautiful!
+&quot;Then, he says to me, if you could be anywhere else in the world right now, where would you want to be? I said to him, well, Agra, India.
+He says to me, why would you want to be there. I tell him that I am an industrial engineer, and am studying how to build a sewerage treatment plant, and the best on in the world is in Agra on the river there.
+So, he says to me, how much would it cost for you to go there? I think for a moment, and say, well, I don&#x27;t know, what, a thousand dollars. So, he smiles at me, and reaches into a small bag, and whips out ten, one-hundred dollar bills and hands them to me, smiles, and then he and the maidens and the cow go frollicking off through the faire.&quot;
+Well, of course I doubted him only for a moment, until he reached into his pocket and pulled out ten, one-hundred dollars bills and showed them to me. I guess I just sat there for a while with my mouth wide-open as he walked away, waving and smiling.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">95</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">April 06, 2009 at 03:46PM</span>
+            <div class="reply-content">Also, regarding drugs at the faire, try to visualize this. I remember once at Blackpoint back in the 70&#x27;s, I was just sitting on a hay bale, looking across the pathway at the side of a puppet show booth. Oo the left in front were a group of kids and their parents seated on hay bales looking to my right at the front of the booth, watching the puppet show. I watched as the kids laughed, and thought what a nice thing this was.
+Then, my eyes followed across the scene to the right, past the puppet show &quot;stage&quot;, along the side of the booth, to the curtain at the rear of the puppet show booth. I stood up and walked over to the curtain, pulled it aside and went in, and there was someone weighing out some hashish on a scale, and someone else sitting there smoking a big bowl. Smelled great...Opeated Afgani for sure. Now, there&#x27;s a picture for you. Imagine what the parents would have thought if they had known what was going on behind the scenes.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">96</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 06, 2009 at 05:39AM</span>
+            <div class="reply-content">Silver as in Silver and Trish? Gosh, I had no idea.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">97</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 06, 2009 at 05:37AM</span>
+            <div class="reply-content">yes, thats the stuff.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">98</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 06, 2009 at 05:31AM</span>
+            <div class="reply-content">*laugh* Ugly bits like having the person who cashed your crew check take out what you owed her for drugs when she cashed your check? Stuff like that???
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">99</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">April 06, 2009 at 01:14AM</span>
+            <div class="reply-content">What drugs? Nobody did drugs at the faires...did they? Well, I confess, I did take ACID a couple of times...but, well, but...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">100</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 05, 2009 at 10:17PM</span>
+            <div class="reply-content">All these threads are fascinating, and should be included in the History, if only as a preface. It shows the community aspect of the Work, the awareness of WHAT WE WANT TO DO and loads of LOVE, which is the main theme, isn&#x27;t it? Nuggets of gold, and GOOD gossip!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">101</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">April 04, 2009 at 06:27PM</span>
+            <div class="reply-content">Aren&#x27;t we forgetting that we weren&#x27;t the only ones poking the &quot;Establishment&quot;? The first anti-establishment publication that I remember was the SF State &quot;Pelican&quot; magazine. Then there was the &quot;Harvard Lampoon&quot; that went on to become the &quot;National Lampoon&quot; that helped (along with the Canadian &quot;Second City&quot;) the inception of &quot;Saturday Night Live&quot;. Wasn&#x27;t there also a publication called &quot;The Berkeley Barb&quot;?
+The underground press has been around for thousands of years. Taste is very subjective. I know people that actually get angry when they hear a joke. (I also agree with Richard about the penis knots, when I saw them, I wondered why). Underground press, it seems to me, is the mirror of society, penis knots and all.
+Phyllis had to show an acceptable side to the public. This is part of marketing. She also had her fun side. One year, I sold Groucho Glasses out of my booth for grand ringout. I think I sold over a hundred pairs. I gave a pair to Phyllis. Not only did she wear them at grand ringout, but had her picture wearing them on a cover of the B&amp;M.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">102</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 14, 2009 at 07:57PM</span>
+            <div class="reply-content">yes i agree Richard it was always hard to defend some of the sort of reckless stuff that made it into print in the B&amp;M, the celebration of a sort of decadence and total debauchery that was really in direct conflict with the idea of a very professional show with a very well executed craft ethic (gee not to mention a place you would bring the whole family willingly). At the same time there was some decent writing in the B&amp;M . Because often editors would take over the job after they had already gotten into hot water it had a very uneven expression of shall we say historical truths versus sour grapes.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">103</span>
+            <span class="reply-author">Richard Beard</span>
+            <span class="reply-date">March 14, 2009 at 07:48PM</span>
+            <div class="reply-content">I take great exception to this reasoning for P. Patterson to dislike the B &amp; M. With editors that She thought were trustworthy there was an open discourse. I think it was in Matie &amp; Jonah&#x27;s &quot;Love&quot; issue that She gave a nice interview. She was delighted with a photo used for a caption contest, taken on the Dick Clark set, showing her head on a platter (she crawled through a hole she had me cut in the banquet table) etc. What I believe disturbed Her the most was the randomness of the drug and sex references, (such the cartoon of various knots tied in a penis), which disturbed, not Her, but the communities in which we were to be representing a clean, wholesome, family environment to which they would happily issue PERMITS. The Novato Public Library had a full set, and these issues (in both senses of the word) often proved to be the source of bad PR.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">104</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 14, 2009 at 02:22PM</span>
+            <div class="reply-content">Allison you said it very well. Some people would like to hide the parts that seem dangerous to our own reputations. First off, you did what you did, we lived how we live, we are not bound to each other to cover over each others shame.
+The real reason being the one you have given..compassion.
+we were kids! It was hard...we managed to do an amazing thing, and for those of you who were adults and who did things that seem regrettable later...i think in context it doesnt look as bad as you think.
+Id love to hear more about the connection to the happenings.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">105</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">March 14, 2009 at 05:34AM</span>
+            <div class="reply-content">Like the time my partner was called one night to get money from the gates to pay off a certain person&#x27;s bills that he hadn&#x27;t paid? Or being asked to write a proposal/script for a show that was literally handed to another to direct (I saw it in his hands), even being asked to &quot;help him out&quot; because he didn&#x27;t know what he was doing?
+The time my ex surprised me with large quantities of something I didn&#x27;t use. Getting rid of it really gave me some insight.....
+I mentioned the script thing, to someone the other day. She was surprised, but didn&#x27;t dispute that it happened. I am glad that the person is still alive, and with someone who loves him dearly, (who one time alerted me to some of the machinations that were going on, in fact).
+I have been involved with helping to preserve Allen Cohen&#x27;s poetry. He ran the SF Oracle, put on the Human Be-In that started the Summer of Love. He also worked at one of the ale booths. There are photos on his website on MySpace. But I bring this up, because there was a Reunion last year up at Table Mountain,which is where the &quot;Hippy Commune&quot; from San Francisco went. I did a slide show, and people opened up talking. They related how the Friday night meetings became known at &quot;Go At&#x27;s&quot; because they would &quot;go at&quot; each other, or how they would be too stoned to get any work done. The factionalizations, power grabs,etc. I realized all the things I had gone through in trying to emulate them, had in fact happened to them as well. As one person called it, &quot;It was a children&#x27;s crusade.&quot; A lot of guilt and regret on my part dissipated.
+This was an extremely unique time in history. In explaining it to my son, I told him it was the first time in history that &quot;women didn&#x27;t have to get pregnant, and sex couldn&#x27;t kill you. So there were new ideas that hadn&#x27;t been tried out. Not all of them worked,and some were wrong. But a lot of them were just fracking fantastic&quot;
+If there is to be a history of the Faire, it has to be in the context of the times, and the times did contain these things. And I do have things to say about the fantastic things that came out of it.
+Besides memorializing those incredible time, shouldn&#x27;t we write as much truth about it as we can, so that people are not condemned to repeat it, but so that the future can be the way it should have been, not as it was?
+Now forgive me, but frak it! Battlestar Gallactica is on.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">106</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">March 14, 2009 at 04:21AM</span>
+            <div class="reply-content">Serpent always called it &quot;that grafted goat.&quot; Last time I saw it was at Geraldine Duncan&#x27;s then I sort of dropped out.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">107</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">February 22, 2009 at 09:51PM</span>
+            <div class="reply-content">I had the same feelings, Sylvia. I remember one of my friends and I making a comment to one of the workers that the base of the horn looked infected because it was red and inflamed. The reaction of the worker was anger at us, and I didn&#x27;t understand why. I continued to visit Lancelot, but eventually stopped because it just felt too creepy.
+When I heard about the connection to Ng a few years later I was stunned to think how many times I had been in the vicinity. Last month, while going through a box of faire memorabilia, I came across the Living Unicorn info sheet. A shudder immediately went through my body.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">108</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 09, 2009 at 04:21AM</span>
+            <div class="reply-content">If we were writing for Dizny we could make up a faire with no sex or drugs.
+Har.
+But in practical terms, sure, tell it like it was, all the while remembering that the quickest way to get a rumor to reach the far end of the Faire is to whisper it to a trusted friend in the safe cover of a burlap backroom. Illusions of privacy on the &#x27;net are, of course, little more than burlap.
+Randy was on the money when he mentioned that it&#x27;s about more than just legal considerations. So I feel 100% ok talking about howmyself, how I was so far gone Saturday night that I was still looking through prisms all through Sunday&#x27;s main stage show, or referring to general vibe enhancements. But I wouldn&#x27;t assume a right to nail anybody else, as in &quot;thank God Joe Bfnl made it back from Acapulco with a couple of kilos in time to get us through the dry weekend.&quot; History lives, and poor ol&#x27; Joe could find his chances of running for city counsel scuttled, his alimony negotiations goosed, his aspirations to grow up to be a really good kindergarden teacher all trashed by some republican devil conspiracy mind terrorist cyber spies, or, for that matter, even just a gossipy friend with a myspace page.
+Fictionalizing sounds like a great story telling tool. The temptations to add clues to tip off insiders could bring us frightfully close to crossing dangerous lines, and lord knows despite the number of us that went clean, there are still plenty of reckless TUIs out there (typing under the influence). As always, common courtesy, respect, safety first, these are the seatbelts and handbrakes that make for happy cruising.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">109</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 09, 2009 at 12:33AM</span>
+            <div class="reply-content">Or...we could take the time-honored out of &quot;fictionalizing&quot; by using different names and in some cases intentionally blurring characters where it doesn&#x27;t matter so much. In the book I wrote last year (which is really just a memoir, and not about the Faire, either) I wrote down the truth in the first draft and now I&#x27;m doing an editing pass where I &quot;protect the innocent&quot; (mostly myself) before I turn it over to a publisher.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">110</span>
+            <span class="reply-author">Danese Cooper</span>
+            <span class="reply-date">February 09, 2009 at 12:24AM</span>
+            <div class="reply-content">The simple fact is that it all happened. For good and bad. The amazing thing is that more bad didn&#x27;t happen.
+The problem is that often the truth is obscured by rumor, suspicion, misinformation and partial information. I remember hearing rumors and excuses about the finances and what was going on. This while I was eating rattlesnake because our paychecks had been delayed and I was running out of food. I cannot attest to what was happening in the finance office, but I can speak about check delays and being told NOT to try and cash a check off site.
+My wife ran a newspaper for eighteen years. And this is straight from a woman who was never sued. Slander is spoken, libel is written. The latter is far more troublesome because it is documentable. With both the &#x27;aggrieved party&#x27; has to prove actual damages in order to &#x27;win&#x27; in court. However, that doesn&#x27;t mean the harassment of being sued is any less of a bother.
+But just because you get sued doesn&#x27;t mean the person can win. &quot;Truth is the ultimate defense&quot; -- especially when you can document it. As in BEFORE you write anything you have your T&#x27;s crossed and I&#x27;s dotted ... WITH documentation.
+If you personally witnessed something, you can speak of it (e.g. I saw so-and-so stuffing money into a satchel and leave the front gate). If you did something you can speak of that (e.g. I had to catch and eat rattlesnakes and groundsquirrels because paychecks were late). If you heard something directly then you can speak of that (e.g. I was standing in the room when I heard Phyllis say &quot;(fill in the blank)&quot;
+Can I attest to doing drugs with certain high ranking people in Faire? Yes. Can I say others were doing them? If I never sat there doing them with that person, I can&#x27;t -- and shouldn&#x27;t -- say it. No matter how much the rumor mill said the person was doing. Where you are on shakey ground with is ANYTHING that runs along the lines of &quot;I heard from so-and-so that...&quot; or &quot;everyone knew ...&quot;
+Take for example the suspicion that S was a serial killer. Publishing that on the Web can and will get your ass in a sling. The reason being is that S is not a public figure. If someone is a public figure all bets are off. While there are exceptions (e.g. Carol Burnett vs. The National Enquirer) Larry Flynt got away with saying Jerry Falwell screwed his mother because it was so outrageous that nobody would believe it. That&#x27;s the downside of being a public figure. That&#x27;s why comedians can get away with what they say, it&#x27;s obviously a joke.
+But it isn&#x27;t a joke to say someone is an uncaught serial killer. Keep that suspicion to yourself. You publish that suspicion -- even with the disclaimer that it is just a rumor -- and S will have grounds for suit. What&#x27;s more is juries will agree that&#x27;s damaging.
+I&#x27;ve been a published author for 20 years now providing -- what some might consider -- dangerous information. Because I took precautions about what I said, who I named and was vague about details with the shit I did, I&#x27;ve never been sued or arrested. On the other hand, I can back up and document everything I say about the subject I write about.
+If you have ANY concerns about what you are going to say run it past an attorney BEFORE you put it out there.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">111</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">February 06, 2009 at 07:32PM</span>
+            <div class="reply-content">There were also the &quot;Lost Girls&quot; in the early nineties that were on security and looked for lost kids, also those times that kids looked for lost parents. Despite those run ins between security and the rest of faire, there was usually a good rapport. In times of crisis, everybody did pull together. Although, there was the time that somebody did shoot at Eric Ammon&#x27;s trailer in the middle of the night. And as the story goes, he left faire in the middle of the night, helped by his parents. Rumors did come back that one of the actors that had a run in with Eric, saw him later on, I think in SF, and slammed Eric&#x27;s face into a wall.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">112</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 06, 2009 at 07:28AM</span>
+            <div class="reply-content">And as for &quot;all the drugs&quot; there are, in fact, a number of members of this very teahouse who have now been clean and sober for many many years and add much to their families and communities. I, for one, found the door to recovery at the Faire, even though I had to leave Faire for a couple of years for it to sink in. But had I not been at faire, I&#x27;m sure I would have found the drugs well enough, but it may have been many more years before I found the recovery.
+OTOH and again without naming names, I remember one &quot;senior&quot; crew person who, when asked by an older mark, er, customer, &quot;How do you do all of this?&quot; said with a straight face &quot;it&#x27;s all done with mirrors&quot; (very loud SNIFF) and walked off. I believe that particular crew person sobered up some years later.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">113</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 06, 2009 at 07:23AM</span>
+            <div class="reply-content">I agree that we should tread carefully on somethings and perhaps some history is best left in the past.
+Does anyone remember the name of the 3rd &quot;lost girl&quot;? There was Tabitha, Nichole Sullivan, and one more who&#x27;s name I just can recall and it&#x27;s bugging me.
+The the thing about the Lost Girl episodes is that they really showed how we all pulled together and looked out for our own. The fact that all 3 girls were found safe with friends and family notwithstanding, crew, cast and boothies all roused ourselves out of whatever rut or stupor we might have been in and pulled together to find the kids.
+There was also another incident with non-consentual relations at RPFS, I think back in the &#x27;80s. No names here, but when cast and crew found out (1) the victim was cared for and wisked off site to a safe place; and (2) (as I recall) the person suspected of being the villain in this was &quot;hunted down&quot; but made it off site and was later arrested ?? The victim didn&#x27;t come back to faire for years and years, and then only to visit. Understandable, but a loss for those of us who knew and loved her.
+My main recollection of general incidents is that we pulled together to take care of those in need. If we sometimes had to stretch some boundaries in taking care of our village and our family, well so be it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">114</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">January 30, 2009 at 01:13AM</span>
+            <div class="reply-content">Yes, this week is the 1st time I&#x27;ve heard the story. But I do remember feeling very uneasy, repulsed, by the unicorn and handlers back then. As I was a unicorn fanatic, I though my reaction very strange at the time.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">115</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">January 29, 2009 at 11:53PM</span>
+            <div class="reply-content">Yeah, Vickie Akers and I used to hand out the paychecks. They paid different rolls on different days...so the Actor&#x27;s payroll came out on a Saturday, but the Crew on a Friday and the Staff usually on a Wednesday. Note the order of those days...
+Staff checks rarely bounced. I personally had to drive to the bank in Ignacio to deliver the check that was gonna take the Crew payroll out of &quot;hostage&quot; crisis (the bank wouldn&#x27;t release the check run until it was &quot;covered&quot;) but they didn&#x27;t require 100% coverage because they were convinced that most of the checks would in fact be cashed at the show on Saturday morning. So Friday afternoon at 2:30pm we&#x27;d stand at the Scale House and hand out checks...knowing that only the first 50% of folks who hit the bank were gonna be happy on Friday. The bank closed at 3:00pm (and ATMs weren&#x27;t happening yet). The Crews would load into trucks and literally make a run for the bank...always entertaining to watch.
+Actors were well advised to cash their checks at the Finance window (which maybe what you remember, Richard).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">116</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">January 29, 2009 at 11:40PM</span>
+            <div class="reply-content">Bits of mental flotsam here. One DCF I had the honor of being paymaster, sitting in a little booth doling out paychecks. I wonder if that was the year the money ran out half way through tear down while Howard&#x27;s cousin or some such was brought in as a nepotistic foreman or something, and was summarily dealt with in a way I think back with some fondness. Or, the safety meetings. Or something about pay checks bouncing down south (&#x27;78?) and someone recently installed a time-punch clock which received full shot gun blasts a short time thereafter. Or, stories of black plastic garbage bags of cash being lugged down to main gate from various vendors to co-mingle with the bushels of cash generated by the gate and who was standing at the trough for the take off the top before it was all kaboodled down to the bank.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">117</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">January 29, 2009 at 11:24PM</span>
+            <div class="reply-content">Personally I think the weird pay history is really a critical part of the whole Crew story, but as you know we (you and I Catt) were nearly kicked off the Memories of Blackpoint Tribe for mentioning it. It was one of our current group who was uncomfortable with the mention, seeing as members of the Patterson family continue to produce shows and have to raise funding to do so...
+I contented myself then with writing about it &quot;in private&quot; without needing to make it public.
+Still, any serious study of how the whole bumblebee thing flew would have to include at least some mention of creative finances, bounching paychecks, the ticket scam, payments in drugs, banking hours while receiving unemployment checks in the Winter and various other strangenesses of the times. We&#x27;d also have to point out why the Crew put up with these conditions...its a whole can of worms. Maybe interview some of them, B&amp;M style?
+Silas told me last weekend that Phyllis hated the B&amp;M, btw, because it jeopardized our funding. Funny that it was the Crew&#x27;s fault for telling the truth and not her fault for shading dealings in the first place, eh?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">118</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">January 29, 2009 at 11:19PM</span>
+            <div class="reply-content">Leonard Lake, guys...http://www.francesfarmersrevenge.com/stuff/serialkillers/miranda.htm
+And I wasn&#x27;t even AT that Faire (it was when I was in Morocco that he was there).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">119</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">January 29, 2009 at 10:05PM</span>
+            <div class="reply-content">Some of the less pleasant stories we might recall I think are more &#x27;generic&#x27; to society overall and the human condition in its proclivity than what is unique to the Faire itself. That would be my justification for not needing to go there. I live in the fairly isolated San Juan Islands and the local communities and cultures are similar in feel to the Faire village after dark which is one of the reasons I like it here. And, basically you can leave the door unlocked and park the pickup downtown with the windows rolled down and the keys in the ignition and not think twice. We still have robberies, domestic violence, swastikas spray painted on veteran&#x27;s grave stones and a deliciously sordid ax murderer chopped up hubby in the meat freezer &quot;extreme cabin fever&quot; case from the &#x27;80s we could trot out if anyone really wants to know. But, that stuff is not about us, or what makes our close knit community here unique. Its just part of the human story.
+Actually I&#x27;ll update this a bit, the way a community responds to this kind of stuff does tell you a lot about what&#x27;s unique. The way Faire security dealt with various incidents are good stories about how Faire folk dealt with their moral imperatives. Or the bravery of a woman who held the wacko at main gate until authorities arrived. The wacko isn&#x27;t the point, its the way the community responds. Here, where we live, we have one of the best rural sheriff&#x27;s, EMTs, fire districts, etc. and they way they handle incidents with heroism, discretion and humor is pretty wonderful. Our county sheriff has been re-elected since the mid-80&#x27;s and comes from a background from UC Berkeley law enforcement academics, to being a guard at San Quentin. And this guy is good, he&#x27;s the drunk&#x27;s best friend, as long as it ain&#x27;t DUI, then watch out.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">120</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">January 29, 2009 at 09:59PM</span>
+            <div class="reply-content">First time I heard the full story of this and can now connect the dots. What I do recall most vividly was the poor deformed unicorn goat and the visceral reaction I had to that and general sense of unease around the people involved. That it looks now to be part of this larger sad affair has me thinking about the whole thing with new eyes. My god.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">121</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 29, 2009 at 02:14PM</span>
+            <div class="reply-content">hey we were kids out there we knew who the predators were.
+thats how you survived.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">122</span>
+            <span class="reply-author">Cat Taylor</span>
+            <span class="reply-date">January 29, 2009 at 05:16AM</span>
+            <div class="reply-content">I stand most ably corrected (plus I looked it up).
+Sas : )
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">123</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 29, 2009 at 04:01AM</span>
+            <div class="reply-content">I remember going to crew meetings that P decided to have every week to keep us updated as to what was happening. There was a budget crunch and pay checks were short. It was suggested that we all go to the meetings armed to the teeth and sit quietly while we were given the updates orthe state of the faire. Although that was more tongue in cheek. At the same time, plans were being made to start a 24/7 living history town(s) that encompassed ren., Dicken&#x27;s, and old Cal. Actor&#x27;s and boothies would live there. There was even a model made of the proposed site.
+How about crew checks on payday, as soon as you got it, you rushed to the bank, and the last one there found they had a rubber check.
+Don&#x27;t get me wrong, though, I still love faire and P. It was just a big dysfunctional family, with much emphasis aon love. I wouldn&#x27;t change those things, because it made faire all that more of a treat, once it did start.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">124</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">January 29, 2009 at 02:40AM</span>
+            <div class="reply-content">No, it&#x27;s the same guy. The owners of the unicorn were Morning Glory and Otter Zell (at the time they went by the last name G&#x27;Zell). Lake was one of their booth workers. They were there my first year, in 1980. I remember them bringing Lancelot (the poor, deformed goat) down in the evenings to Sheep to Coat to hang out with the sheep.
+I think that was their last year at Northern.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">125</span>
+            <span class="reply-author">Cat Taylor</span>
+            <span class="reply-date">January 29, 2009 at 02:05AM</span>
+            <div class="reply-content">Oh, I remember that. Lake and Charles Ng and their little house of horrors in the hills. Bay area for sure. Mid 80&#x27;s. Lake took cyanide when arrested for a shoplifting. Ng escaped to Canada where he was shot shoplifting. When last I followed the matter, Canada wouldn&#x27;t extradite him because we kill fuckers like him.
+Their scam was answering for sale ads for cars and Video cams, meeting and subduing their victims, disposing of the men and imprisoning and torturing with extensive video documentation the women. When they tired of them they went into the wood chipper. Just scads of bone chips were recovered on the property. In Marin somewhere wasn&#x27;t it?
+Definitely a different set of killers than the Unicorn/Deformed goat killer.
+Sas
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">126</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 28, 2009 at 08:28PM</span>
+            <div class="reply-content">Leonard Lake was from back in the late 70&#x27;s if I remember right. He wasn&#x27;t around the Faire that long and from reports, didn&#x27;t get really really weird until the early 80&#x27;s. Supposedly he married a boothie. I just looked him up on Wikipedia and the interesting thing is that his activities were centered around the Bay area from 83-85....... Sometimes our happy little world had a dark side.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">127</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 28, 2009 at 08:18PM</span>
+            <div class="reply-content">NO, Silver was a different case if I remember him correctly. This guy I&#x27;m talking about is someone who&#x27;s name I know very well. I was questioned by the law about him,I worked with him outside the Faire and my sisters (who, at the time, were on a Sheriff&#x27;s department SAR team) knew this particular person also. This guy was on a crew. I really want to just leave it at that if I could, he is still around and appears to make a lot of money suing people.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">128</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 28, 2009 at 07:05PM</span>
+            <div class="reply-content">There was also the time posters were placed around faire, concerning a participant doing bad things, I don&#x27;t remember what, but it turned out to be from a disgruntled ex, and not at all true. Yeah, damage prevention. Although, the stories about the Turk..., uh customers can be fair(e) game. There were always so many of them, that anonymity is virtually guaranteed.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">129</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 28, 2009 at 06:48PM</span>
+            <div class="reply-content">That is a wise choice. If you would be so kind as to lead the way, as I am pretty computer unsavvy. BTW, was that S name you thought of, Silver? He died by his own hand after abducting a young girl.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">130</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 28, 2009 at 06:37PM</span>
+            <div class="reply-content">i think we have to carefully decide which parts of the story are important to tell. Like the special needs of security in those days were pretty unique and part of the moment in history, I really like that story about them finding the guy at the gate.
+I always appreciated the protection, and in many ways there is no place to play unless there is a *safe* space tp play in.
+There are so many people in the regular teahouse now that i think its best we make these distinctions in private.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">131</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 28, 2009 at 06:05PM</span>
+            <div class="reply-content">Or how the clown sustained his mysterious injuries after the incident? And what of other dark events? Debi and I were just talking about an alleged rape in the mid 80&#x27;s that wasn&#x27;t, it was just an attempt to get attention from a certain high level guard.
+So where do we go with this and how do we keep from causing damage?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">132</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 28, 2009 at 06:01PM</span>
+            <div class="reply-content">Oh, I had forgotten all about him. We had a major suspect from the Mt Tam killings in our midst on one of the crews as well.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">133</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 28, 2009 at 05:36PM</span>
+            <div class="reply-content">Morning, thanks for the invite Catt. I have read the discussion, and I think that we should go through the good and bad here, and decide how much, if any is divulged. Randy is right about legal ramifications. The stalker of the harpist/singer and how the cops fumbled his arrest and released him the next day, (a Sunday) and he came back to faire. How the very young woman at the front gate managed to stall him until Ivan from parking could get to him. He was packing a .45 and they found several weapons in his car. This is a good story, I think as it shows the heroism of the people involved. The story of the clown (really, a clown) who slept with a 16 year old and she wasn&#x27;t all that consenting. He was ostracised out of faire. Maybe this shouldn&#x27;t be part of the history. Eric and Sarah Worth, bless their hearts, usually did the right thing, like the time there were about 5 streakers after hours at Northern and they made the mistake of running by security base. Eric stopped them, asked for their nite passes, which they produced. So he made them stand outside of base while he contacted their guildmaster to come down and verify that they did indeed belong to that guild. The streakers had to stand outside of base for about 20 minutes with the whole world passing by, commenting, about them, until they were id&#x27;ed. They never did it again. I think that this should be included. Soryy I&#x27;m still waking up and rambling, but I hope you get my drift.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">134</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 28, 2009 at 05:05PM</span>
+            <div class="reply-content">i meant where the *other* bodies are buried.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">135</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 28, 2009 at 04:58PM</span>
+            <div class="reply-content">yes it has been mentioned that another fellow disappeared around the same time as Sally just into thin air. I think his name was Brad? its here some where.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">136</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 28, 2009 at 04:57PM</span>
+            <div class="reply-content">thnaks i always forget.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">137</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 28, 2009 at 04:56PM</span>
+            <div class="reply-content">sure thats the thing that has to be kept in mind. legal ramifications, one reason why I made sure that several &quot;professionals&quot; are in the league.
+Randy we also have in mind a larger project, which several of us have discussed together on occasion, to create a history project book about the faire and the collaborative ensemble.
+This project extends beyond the timeline and also involves the ordering of histosrical artifacts and images with the proper time and place. Its a way for some of us to present our writing about the process and experience to the larger public.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">138</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">January 28, 2009 at 04:56PM</span>
+            <div class="reply-content">The actual serial killer that was realized that worked at faire with the unicorn guy--was
+Larry Lake
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">139</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 28, 2009 at 04:53PM</span>
+            <div class="reply-content">As far as the basic time-line itself, there is no need for going there. The base document will just be a record of what event was where. It is when the discussions start or the doc is used as a base for other time-lines. Overt mentions for specific drug use need to be keep on the &quot;down low&quot; because it is groups like these that employers, politicians and law enforcement us to check the background. Many a job applicant has lost their change at a job because of their profile on myspace and /or facebook.
+What discussions are birthed out of this are part of who we were/are and need to happen but keep in mind that there has to be a few boundaries in any polite society. Even the lot did not have anarchy. We had our own rules, codes and limits.
+I don&#x27;t see the base document as causing any problems other than a minor discussion or two (once it is set) on what was really when. It&#x27;s the meat to the bones that could be fun or painful.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">140</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 28, 2009 at 04:51PM</span>
+            <div class="reply-content">the guy I am thinking of I am pretty sure is dead.
+it was an S tho, tell me more
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">141</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 28, 2009 at 04:49PM</span>
+            <div class="reply-content">I didn&#x27;t know if anybody remembered him. you are talking about a gentleman whose first name started with an S correct? No names here because he was never officially charged and he has gone on to make a career of legal actions!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">142</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 28, 2009 at 04:06PM</span>
+            <div class="reply-content">yes all of these things are markers, how do we put it all in a cintext that is meaningful and shows the spirit of the day...the best part rather than just the propaganda.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">143</span>
+            <span class="reply-author">Cat Taylor</span>
+            <span class="reply-date">January 28, 2009 at 03:55PM</span>
+            <div class="reply-content">Yowie!!
+Sas
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">144</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 28, 2009 at 03:36PM</span>
+            <div class="reply-content">or how we had a serial killer in our midst who may have preyed on our number.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">145</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 28, 2009 at 03:35PM</span>
+            <div class="reply-content">yes exactly like that.
+historically this very teahouse was born out of an attempt to squelch a discussion danese and i were having about when the crew and actors did not get paid and the shitters did not get cleaned after northern.
+so I am interested in getting all of that square, and then deciding sort of together how much we should air of it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">146</span>
+            <span class="reply-author">Cat Taylor</span>
+            <span class="reply-date">January 28, 2009 at 03:22PM</span>
+            <div class="reply-content">Ugly bits. Like the year the organizers couldn&#x27;t pay the actors and muso&#x27;s but offered day labor rates to move them into their big new house? Or when a certain dance mistress fired the whole troupe and then busted up their audition killing it forever? Or the faire&#x27;s habit of hunting down and expelling the authors of undergrown humor pubs? Like that : )?
+Sas
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

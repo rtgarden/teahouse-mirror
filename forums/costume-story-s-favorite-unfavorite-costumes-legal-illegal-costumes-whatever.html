@@ -1,0 +1,2015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Costume Story&#x27;s, Favorite/Unfavorite Costumes, Legal-Illegal Costumes, Whatever!! - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Costume Story&#x27;s, Favorite/Unfavorite Costumes, Legal-Illegal Costumes, Whatever!!</span></div>
+            
+    <div class="module">
+        <div class="module-header">Costume Story&#x27;s, Favorite/Unfavorite Costumes, Legal-Illegal Costumes, Whatever!!</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By [1qa7et6qcxzb2]</span> | <span>December 09, 2007</span> | <span>140 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (140)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 18, 2009 at 10:45PM</span>
+            <div class="reply-content">So, you&#x27;re left handed?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 15, 2009 at 09:44AM</span>
+            <div class="reply-content">We used a commercial pattern, with slight changes. Washed muslin is strong and comfortable. Willie Brewer showed me a piece of his original shirt that he kept in a little tin box- it was as soft as velvet.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">May 15, 2009 at 09:02AM</span>
+            <div class="reply-content">Sequoia, if you don&#x27;t get an answer here, you should post in The Costumer&#x27;s Coven group
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">May 15, 2009 at 06:39AM</span>
+            <div class="reply-content">I don&#x27;t know if this is the right place to post this, but I&#x27;d like to commission a shirt. More specifically, an LHC Security Shirt. If anyone who used to work for the Costume dept. during the era that the company actually made the shirts and can replicate one in a XXL size (I like shirts loose), drop me a PM with contact info.
+I&#x27;ve never found a Faire shirt as comfortable and durable as the old Security shirts and I can&#x27;t sew more than fixing a rip or patching my pants, so I need to get one made if anyone is interested in doing so.
+Thanks
+- Sequoia
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 24, 2009 at 08:52PM</span>
+            <div class="reply-content">Leigh Brewer wore opaque dresses with no undies.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">April 24, 2009 at 12:38PM</span>
+            <div class="reply-content">Since I was attending in the paper flag time I recall being asked when I first attended faire and the colors were handed out according to how long we had been going to faire.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">April 24, 2009 at 12:34AM</span>
+            <div class="reply-content">I remember when the idea was to have the customer choose which class they wanted to be and wore a piece of material to designate by its color which social standing they were. We were supposed to treat them accordingly. I think that lasted just a couple of faires. PITA
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">April 24, 2009 at 12:28AM</span>
+            <div class="reply-content">Oh, God! The things the customers wore that they thought were snazzy. I remember Bruce Northridge and I were working in the Blacksmith&#x27;s booth in, I think &#x27;79 Blackpoint. A really good looking women approached me wearing a lace dress. Oh, and sandals. She started asking me about branding irons, small branding irons. I called Bruce over, as he did the ironwork, and as they were talking, I started looking. The was nothing under all that really open lace. Bruce, truly a gentleman, was looking her in the eye. I elbowed him in the side and I guess that made his eyes wander as well. By the time she left, we had literally &quot;seen it all&quot;. As she walked off, we were both throwing business cards after her.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 23, 2009 at 11:32PM</span>
+            <div class="reply-content">*laugh* Vytas, you DO have a way with words. And it could, indeed, have been Northern, not Southern.
+Ah, the memory loss, it&#x27;s getting worse every year.
+As many as may have trashed the things, there were FAR too many who actually put them on, thinking it made them look snazzy. Or something.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 23, 2009 at 10:54PM</span>
+            <div class="reply-content">I&#x27;m thinking it was not Agoura but in Black Point, late 80&#x27;s. I remember people were handed a rag with a hole in it and many of them dropped it in the first garbage can they passed.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 23, 2009 at 10:41PM</span>
+            <div class="reply-content">Well, I certainly could have the year wrong - they all kind of run together. But it did, in fact, happen sometime in the 80s. And maybe it was Friends of Faire who had the tables, I cannot really remember. I&#x27;ll have to ask some other folks if they recall the details.
+It WAS scary. ~shudder~
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">April 23, 2009 at 10:03PM</span>
+            <div class="reply-content">Um... I was a part of the costume crew in &#x27;80 - 82, and I remember nothing of that !!
+I did take a Faire Sabattical between 84 and &#x27;87 though.
+The whole idea sounds verrry scaaaaaary.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 23, 2009 at 06:12PM</span>
+            <div class="reply-content">Suddenly, yesterday, I remembered that infamous Southern at Agoura when it was decided that all the paying customers ought to have the chance to &quot;be in costume&quot; - and so there were bolts and bolts and bolts of awful fabric (I think it was polished cotton) just inside the front gate on tables, and Costume Department folks to help the turkeys cut out &quot;tabards&quot; to wear.
+*shudder*
+Anyone remember what year that was? I&#x27;m thinking &#x27;82, &#x27;83 or &#x27;84?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 19, 2009 at 07:29AM</span>
+            <div class="reply-content">Carol gave me nervous fits! I forgot to pick her up for a press party &amp; got a real dressing down when she had to take a taxi. My self-destruct must have locked in!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">March 18, 2009 at 02:01AM</span>
+            <div class="reply-content">At the Fishers Ren Faire in Indiana the security guards were T-shirts as well. I suggested tunics, but the powers that be decided that bright yellow T-shirts with SECURITY written on the back in large letters was more noticeable to the public. I tried.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 17, 2009 at 07:18PM</span>
+            <div class="reply-content">Louise &amp; Noel were in Houston &amp; she sent me photos. The front gate was copied from the main stage &amp; other building were obviously ripped off from photos. Their security guards wore T-shirts.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">March 15, 2009 at 01:14PM</span>
+            <div class="reply-content">Dunno if you saw my earlier thread on Marich, but a brief fun recap: We got Chriss Zaida who ran Costumes that season, to sew fly-attractant pheromone strips into Marich&#x27;s costume collar. Everywhere he went, flies followed. What a hoot!
+Vytas
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 15, 2009 at 12:25AM</span>
+            <div class="reply-content">Sean Scudder was slathering her face with cold cream because she thought it was whiteface and she didn&#x27;t understand why her face wasn&#x27;t turning white, so she kept putting more &amp; more on! When I saw her, it was so thick we had to scrape it off to help her clean up!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 14, 2009 at 10:53PM</span>
+            <div class="reply-content">thats really interesting about Rons training as an artist Richard, I had no idea. I knew he was a really talented artist, and i knew the lettering was always a big part of it for me, even as a child the lettering evoked such a sense of whimsy and fun.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 14, 2009 at 10:47PM</span>
+            <div class="reply-content">Brief correction, It was Albert Jenkins, not Richard Jenkins. And I think Bob Kamen said he&#x27;d like to shake my hand. There was always a certain &quot;Something&quot; in that slap. For a long time I felt that there were many hands behind my own. Guess I wasn&#x27;t too far off. And I always felt Phyllis didn&#x27;t like me.Given her closeness to Steve I guess maybe I wasn&#x27;t too far off on that either. Often wondered why she let me stay. I&#x27;m sure I owe that, in large part ,to Peg and Ernie. semper fi.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">Richard Beard</span>
+            <span class="reply-date">March 14, 2009 at 10:04PM</span>
+            <div class="reply-content">Speaking of faire costume crazes, remember the lawrence of arabia turbans that Rick, and most of Security sported for a few seasons (haaaated by P., but otherwise thought to be very butch)? I have often given thought to the costume crazes (and their Retail-ability/Historicity balances). My all time fave rage is dye-spot (Oh boy, was it popular!), but serious contenders include Buffy&#x27;s hats, outlandish codpieces, Casey&#x27;s fabulous plumes, and now pirate drag. Any other thoughts on these phenomena of our&#x27;s villages mico-culture?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 14, 2009 at 10:04PM</span>
+            <div class="reply-content">We used to say that the actor&#x27;s tights were so dirty that they could walk. We got some guard tunics back with the patches ripped off &amp; in one case completely cut out of the tunic with a knife!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 14, 2009 at 09:55PM</span>
+            <div class="reply-content">As costumer, I lent a hat to Peter Fonda, and I remember David Carradine playing his flute at the faire in Agoura. My friend Louise costumed Levar Burton for the Reading Rainbow episode, and gave a headwreath to Joan Baez. Rosanna Arquette was one of the faire brat pack. I lent costumes to a movie (see IMDB &quot;When I am King&quot; 1981) made in Agoura starring Paul (Bluto) Smith, and some faire folk. Johnny Carson wore a costume I made for a segment he did on the southern faire.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">Richard Beard</span>
+            <span class="reply-date">March 14, 2009 at 09:42PM</span>
+            <div class="reply-content">I think Wizzin&#x27;s Shopping Center housed the costume and design shops for a little while, as well as having the laundromat. I will never forget helping sling dozens of bags of RIPE ale and garbage shirt, sliding them down the whole length into a great stinking pile! Didn&#x27;t Laundry Day have it&#x27;s own change-fund with Mildred Holland, and weren&#x27;t security tunics the worst stragglers to get collected back up for laundry day(s). Ol&#x27; man Wizzin was Phyllis&#x27; local bete noir (not withstanding the great &quot;Widow of Walter Brennen Beast&quot;), always scheming to develop his part of the acreage.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">Richard Beard</span>
+            <span class="reply-date">March 14, 2009 at 08:59PM</span>
+            <div class="reply-content">Almost all of the early ad graphics, esp. the fonts, are Ron Patterson&#x27;s and then later, Pete Ronzonie, Debbie&#x27;s dad. Ron, early on, had earnied their living as a graphic artist, I believe this was before and after the move to Ca. from Indiana(?).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 14, 2009 at 07:50PM</span>
+            <div class="reply-content">Louise called him Steve Mare&#x27;s itch! I called his group the Moron dancers.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">[3ps78rnilakw0]</span>
+            <span class="reply-date">March 14, 2009 at 05:33PM</span>
+            <div class="reply-content">Oh great one! Thanks so much for that. Steve was like a bad penny that just kept turning up. I joined faire in 80. Worked in the Witches Wood. When Steve came back he was our coordinator. He kept hassling all the witches. When we had one of our really really bad faires (attendance wise) all us witchies went up on the hill to do a prosperity ritual for the show. (It worked.) Next thing I know, I&#x27;m up before marich on charges of trying to use the occult to kill Phyllis. I didn&#x27;t get accepted into the next faire. So I sent a check for my fee addressed and made out to Steve. You know he let me in?
+Some time later, his relatives were reading cards over near the witches wood. They were selling gypsy curse removal under the table. People were coming to us in a panic, so I went over to Louis (can&#x27;t remember his last name) who was one of PHyllis&#x27; personal friends. He had a gig called king of the gypsies, which was hysterical. I went up to him and said how worried I was that someone would mistake him for these curse removing gypsies. They were gone and their tent was down before the next weekend...
+God, what a little prick he was. We were all so relieved when he left. I think it was the s hook that did it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 14, 2009 at 04:06PM</span>
+            <div class="reply-content">THE SLAP HEARD &#x27;ROUND THE WORLD !!!!
+I remember hearing bits &amp; pieces of that story, and I remember the Famous Slap, but have never heard the entire thing.
+O Blanco - Thy Name Is Instant Karma!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">29</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 14, 2009 at 02:49PM</span>
+            <div class="reply-content">Okay, I see the Marich name has come out of the bag. Here&#x27;s the saga. In approx 1974 Steve Marich showed up at an Anglo Folke rehersal we were having in Claremont. Richard Chase was still directing us and Phyllis had sent him over to learn dance. I believe the Kahoutec comet festival was also happening at the time. Steve only attended a few, less than 5, rehersals. Some time later Steve called me at the D street house in Ontario. Steve asked about learning Morris. I gave him our schedule. No,no. He didn&#x27;t want to come and join with us. He wanted me to come to him and teach some guys he had. See, Richard Chase taught me Sword and Morris and I danced with the guys all the time, Uncle Dick just wouldn&#x27;t let me perform in public.Heck, first time Doug Burger learned a sword dance I was 1st sword.Back to Steve. I was still confused as to why he wanted me. Steve said Phyllis wanted a Morris team for faire. Well, great, I told him, she has one. We had been working on morris for a few years and if she wanted a team we could put some dances together for her. No,no. Phyllis didn&#x27;t want our guys. Well, why not? Steve claimed that Phyllis said our guys weren&#x27;t good enough.SLAM! Wait Steve, you&#x27;re telling me you want me to come teach your guys Morris because our guys weren&#x27;t good enough? YES! he exclaimed! Uh, I&#x27;m sorry Steve but YOU tell my guys that. You won&#x27;t come? he asked. No Steve. Then I hung up and called the guys, I think it was Doug Burger I called first.What a difficult time. That Spring Steve had his ballet teacher at workshops reading out of a book teaching a bunch of fellas morris. They were all paid, they were all given costumes produced by the costume department, and Marich&#x27;s Merry Morristers was born. You never saw so many pointed toes in your life. Richard Chase was furious. I believe it may have been his last faire. He returned the pewter goblet Phyllis &amp; Ron had presented him. Years later I found that goblet on a dusty shelf at the farmhouse at northern. After Uncle Dick left we changed our name to Caca Fuego.We hurt so bad.But we struggled on. Peg introduced us to a fiddler named Dave Ricker who joined us with another fiddler named Rita Bradis. Steve&#x27;s morris team disappeared. And the guys dubbed our morris team Pipe and Bowl.Then Steve Marich reappeared. This time having copped the gig of Richard Jenkins. Jenkins was as fine a Cornish man as walked the earth. He was a friend of Richard Chase, and his gig included the Hobby horse. Imagine my horror to see history repeat itself this way. I met with the troupe back at actor&#x27;s camp, which was under the big top. I told them I was going to punch out Steve and that I would probably be 86&quot;d from faire. Then I headed into faire. I found him and called his name. Steve turned and, seeing me, his face broke into a smirk of malice, gloating and distain.For some reason my fist changed to a open hand, I guess I felt it more appropriate. My hand started somewhere behind my right hip and wound up somewhere to the right of Steve&#x27;s head.A huge slap. Which today I will say was wrong of me. Steve howled, and swore, and started calling for Phyllis and security. He swore I&#x27;d answer for this. I said fine, this all has to come out, and the sooner the better. Following him we wound up at the security base which was located with the pass house. He went in and a few minutes later Bob Kamen came out. &quot;You the one who slapped Steve?&quot; Yes Bob. &quot;You know I&#x27;ve got to kick you off the lot?&quot; Yes Bob. Then I could swear his eyes twinkled. &quot;You&#x27;ll be showing up for work tonight?&quot; Yes Bob ( I was weekend night security at actor&#x27;s camp). I was directed to meet with Phyllis, Peg, and Steve on Monday. I showed. It was rescheduled to the next day.I showed, It was rescheduled again.I showed it was rescheduled again. Then Peg met with me, told me to never do that again and informed me that Steve had left to pursue his dancing career in New York. We didn&#x27;t see Steve again for 10 years. When he reappeared in the late &#x27;80&#x27;s a couple of people approached me and asked if I&#x27;d smack Steve again because it seemed to have worked before.No.that book was closed and they&#x27;d have to write their own chapter. Whew! Glad that&#x27;s out and over.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">30</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 14, 2009 at 02:29PM</span>
+            <div class="reply-content">yes my jane was in the show. Only one shower had a half curtain. I was not modest rather just trying to stay away from it all a bit.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">31</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 14, 2009 at 02:27PM</span>
+            <div class="reply-content">&quot;well kid....at least were not up to our eyeballs in shit with an empty M-16&quot; he would say to me when the show got tricky.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">32</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">March 14, 2009 at 10:07AM</span>
+            <div class="reply-content">yes, me too!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">33</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">March 14, 2009 at 10:03AM</span>
+            <div class="reply-content">I&#x27;ve been waiting for someone to mention Phyllis&#x27;s shock after it became
+the &quot;Living History Center&quot; and she was told she had to lose her paisley bodice. The horse had gotten the reins! Every once in a while I&#x27;d see her at the end of Faire, still wearing it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">34</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">March 14, 2009 at 09:57AM</span>
+            <div class="reply-content">Remember Jay Wahlrobenstein&#x27;s powder blue outfit?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">35</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">March 14, 2009 at 09:46AM</span>
+            <div class="reply-content">Remember the one about VietNam on Christmas Eve, guarding the......But I don&#x27;t want to give it away.......
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">36</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">March 14, 2009 at 09:44AM</span>
+            <div class="reply-content">AhHa! In another post I put up about how &quot;someone&quot;called me from southern calif (I had moved up north) to ask me to write a proposal/script, for a show I wanted to direct. I put it together and when I enquired, I was told it had been given to someone else to direct, and I was asked to &quot;help him&quot; as he didn&#x27;t know what he was doing? I believe that was the same name! I could only remember Steve. Could this have been in 1979?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">37</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">March 14, 2009 at 09:27AM</span>
+            <div class="reply-content">When you mentioned &quot;being invisible&quot; I had to remember rushing (I almost said&quot;streaking&quot;) off from an 11:30 country dance show in my horrible home made costume that I had made at my mother&#x27;s---I had no sewing stuff. Her scissors were rusty, so I had bundled over the fabric and hand sewn something to hold it on my waist. It put at least thirty pounds on me.
+As the guys would do their last sword dance, I would rush back stage. I was the first one on, at least of the females, so I would do the change standing just back stage, at the top. The whole change, stripping off my bodice, skirts and chemise, pulling on whatever we were wearing underneath (It may have been a body stocking, or only a g-string? I think DJ didn&#x27;t like the look with a body stocking, or it took too much time? I don&#x27;t remember.) was completely visible from back stage. I never had time to notice, but there were usually lots of interesting commentary going on during that change.
+Although I was told by several people that they hadn&#x27;t realized that it was I up there in that wisp, because no one put that relatively slender person together with the hefty dancer!
+I had originally joined the cast because I was supposed to be a fire dancer from Crete! The original costumes for that had body stockings under the bare breasted Minoan dress style. It got cut owing to budgetary contraints. Certainly what we did wear couldn&#x27;t have cost very much!
+But DonJon pursuaded me that it was still art! And how could I let him down? Shame on you, DonJon! But the show went on......
+Although now that I think about it, that was before the shower curtains went up in actors&#x27; camp anyway, so who cared?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">38</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 14, 2009 at 07:28AM</span>
+            <div class="reply-content">I dyed &amp; broomstick pleated those tunics out of gauze muslin to be authentic, &amp; Dennis dumped on me about them, so I picked him up &amp; put him into a garbage can.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">39</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 26, 2009 at 03:15AM</span>
+            <div class="reply-content">Those were called &quot;Monkey suits&quot;, but they were not in Wizard of OZ. We had some Errol Flynn outfits and the original &quot;Ben Hur&quot; costume from the silent film.Lots of &quot;Kiss Me Kate&quot;, &quot;Brigadoon&quot;, and &quot;Summer Stock&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">40</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 26, 2009 at 03:13AM</span>
+            <div class="reply-content">Still not?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">41</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 26, 2009 at 03:11AM</span>
+            <div class="reply-content">corrupted by power!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">42</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 26, 2009 at 03:08AM</span>
+            <div class="reply-content">Dundii used to tell everyone that &quot;Carolie does it for donuts&quot; I remember having Dave Swan&#x27;s shoes saved with his name on them, but he never came to claim them for 2 years.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">43</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 26, 2009 at 03:05AM</span>
+            <div class="reply-content">I carried scissors with me to cut off colored seam tape ribbons that actors kept tying around their arms. We made knee length skirts specially for the Irish dancers &amp; they wadded them up around their hips, since they said they had to show their legs when they danced. Now Irish dance troupes all wear longer skirts to perform. I didn&#x27;t make the rules about color, the pronouncements came from higher up!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">44</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 26, 2009 at 02:57AM</span>
+            <div class="reply-content">We used a laundromat in Hollywood when we worked at the Fairfax house &amp; the owner agreed to close it every Monday, so we could take over all the washers. Mac suggested the postal bins to collect it for the actors, but we used to pick up crew laundry from points around the faire in clear plastic bags, so it wouldn&#x27;t get tossed by mistake.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">45</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 26, 2009 at 02:50AM</span>
+            <div class="reply-content">We always threatened to sew horsehair in the armpits or crotches of actors who annoyed us, but Debbie Ronzoni actually did it to DB when he wanted to wear his assigned costume to a Press Party. He was twitching all thru the evening!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">46</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 26, 2009 at 02:45AM</span>
+            <div class="reply-content">Original Ram &amp; Goblet patch for Guards, I think
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">47</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 26, 2009 at 02:43AM</span>
+            <div class="reply-content">Those were Killer Elite emblems that we put on SS shirts for Peter Brewer &amp; ilk.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">48</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 07, 2009 at 06:25AM</span>
+            <div class="reply-content">My lips are sealed.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">49</span>
+            <span class="reply-author">[wenmrrvgrjwo]</span>
+            <span class="reply-date">February 06, 2009 at 08:49PM</span>
+            <div class="reply-content">Whew! That&#x27;s some memory. The oldest picture of me at Faire is from Northern &#x27;73 or &#x27;74, coming down from Main Stage in one of those suits.
+Only movie I&#x27;ve seen them in was Gene Kelley&#x27;s &quot;Three Musketeers&quot;, on some English guard-types.
+Getting ready to move to Ohio, I doubt it&#x27;s the time for me to buy something like this (and definitely not if it weren&#x27;t wearable). But I can&#x27;t resist asking what you&#x27;re asking.
+Many thanks for posting.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">50</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">February 06, 2009 at 07:07PM</span>
+            <div class="reply-content">I want at least one to copy--PLEASE
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">51</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 06, 2009 at 04:17PM</span>
+            <div class="reply-content">Was this the &quot;Pie on Progress&quot; incident ?
+I know all...but will say nothing without the consent of those involved...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">52</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 06, 2009 at 01:58PM</span>
+            <div class="reply-content">divorce can be good fun really. Mine was. I felt like i lost 165 pounds.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">53</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 06, 2009 at 01:54PM</span>
+            <div class="reply-content">wow the &quot;monkey suits&quot; we used to call them. too cool. I remember the hot tub on wheels too.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">54</span>
+            <span class="reply-author">[ec2w4rbb7y22]</span>
+            <span class="reply-date">February 06, 2009 at 10:01AM</span>
+            <div class="reply-content">I think the Hoop wore one of those once. I am thinking about officially divorcing him after all these years and wouldn&#x27;t one of those costumes be perfect present for a divorce party?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">55</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 06, 2009 at 09:40AM</span>
+            <div class="reply-content">Matthew, I&#x27;m cross-posting this to the Tottenham Halberdier group.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">56</span>
+            <span class="reply-author">[09iloxdc44l9v]</span>
+            <span class="reply-date">February 06, 2009 at 09:28AM</span>
+            <div class="reply-content">This is my first post on this forum and I seldom post in forums so please bear with me and here goes... Way back in the very earliest years there were these matched halberdier costumes. Props from old MGM movies and there are labels in most of them saying so. Whenever Betty Davis played Queen Elizabeth her guard wore them. And so did hundreds of LHC participants over a lot of years. Tan bodied with sort of orange and tan striped sleeves. orangish slops. In later years some one added chrome studs on the shoulder flaps. When they were used by the guys carrying the queen in her sedan chair a lot of them got padding in the shoulders... Well... I have what is left of them... I have not counted but there are like three pillow cases full. More tops than slops and only one of the hats. They are of course awfully ragged. After the LHC tossed them into a dumpster (because, I recall, of a crab infection spread from a hot tub on a trailer) I salvaged them, fumigated them, and used them for arena guard costumes for another decade or so. Any way I am trying to cash in on my huge equity and move to another state and I am trying to get rid of a LOT of old fair stuff including these old movie/fair costumes. I thought about E-bay but this incredible site came up and maybe there are people out there who maybe wore one of these monstrosities and might want to hang a set in a picture frame behind glass or something. Some of these might actually be &quot;wearable&quot; still. So I hope I haven&#x27;t blown it by posting about something for sale in the wrong part of the forum. I have no idea what something like this would sell for but I would rather see them in the hands of some one to whom they represented priceless memories.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">57</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">February 06, 2009 at 03:31AM</span>
+            <div class="reply-content">?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">58</span>
+            <span class="reply-author">[1eyv1wdew4ssy]</span>
+            <span class="reply-date">February 06, 2009 at 02:25AM</span>
+            <div class="reply-content">So, does Dave Swan want to recount the story about his &quot;Master of the Revels&quot; costume? I recall making up a filk-chantey about it after I heard what happened...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">59</span>
+            <span class="reply-author">[1eyv1wdew4ssy]</span>
+            <span class="reply-date">February 06, 2009 at 02:24AM</span>
+            <div class="reply-content">Oh, likewise. I don&#x27;t think the person I was referring to lasted long out there.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">60</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">January 29, 2009 at 03:50AM</span>
+            <div class="reply-content">Once, after I received my useless degree in Medieval History, I took Phyllis aside and told her, very firmly, that Calico fabric should, in no uncertain terms, be outlawed at the Faire; Phyllis heard me out, nodding gently, and said, &quot;is that so,&quot; and suddenly the costume police were out, and all those crazy, lovely hippy costumes disappeared.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">61</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">January 29, 2009 at 02:59AM</span>
+            <div class="reply-content">DItto here... Besides Vicky - we have had these discussions!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">62</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">January 29, 2009 at 02:53AM</span>
+            <div class="reply-content">When I was doing the show with Kevin and Shannon, we definitely washed out the cantelope. It would get disgusting pretty darned quickly if we didn&#x27;t!
+And I want to echo Dave&#x27;s thanks for the seemingly endless supply of clean partlets for the years I played theme characters.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">63</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 28, 2009 at 05:57PM</span>
+            <div class="reply-content">yes the thirst for innovation and to find a way to stand out really added to the confusion sometimes.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">64</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 28, 2009 at 05:45PM</span>
+            <div class="reply-content">yeah my artist friends from Latvia explained to me one night that this is everywhere. They were part of a folkdancing society in the Balkan states during Soviet oppression and things would take very similar twists and turns as to what we are describing here.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">65</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">January 28, 2009 at 05:38PM</span>
+            <div class="reply-content">Funny, I&#x27;m battling out the same issues at the Ren Faire I&#x27;m involved in here. Only the person making the comments is not in charge of costuming...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">66</span>
+            <span class="reply-author">[2ahrq5vm40bp7]</span>
+            <span class="reply-date">January 28, 2009 at 05:35PM</span>
+            <div class="reply-content">We had a mini crazy time in court. The ladies would look at the other costumes and see what color WASN&#x27;T there. Lots of blue, ok this year I&#x27;ll do green! What ended up happening is that you had a whole slew of new green outfits. We went through cycles of burgundy, blue, green.....I&#x27;ve just stuck to burgundy &amp; black. Can&#x27;t top the classics!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">67</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">January 28, 2009 at 05:29PM</span>
+            <div class="reply-content">Yes Morgan they were civil and helpful and informative--Carolyn and I relied on actual research--If
+we couldn&#x27;t show somebody in a book--We didn&#x27;t go there. When I taught my workshops I always started off
+with stating that what we did a Ren Faire was a combination of Historical and Theatrical--So sometimes
+when something was not allowed it was because of previous overkill--one year in the seventies everybody went Turquoise crazy--another yellow crazy--another black crazy--and then favor crazy--Sometimes our choices were concerning the big picture--not one person
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">68</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 28, 2009 at 05:21PM</span>
+            <div class="reply-content">I hope that none of that crap happened on OUR ( Carolyn S. Vicky, Me Debra M etc.) watch ! I remember our costume OK sessions as being quite civil and helpful.
+I hope !
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">69</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 28, 2009 at 05:18PM</span>
+            <div class="reply-content">Wasn&#x27;t the word &quot; special&quot; ...?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">70</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">January 28, 2009 at 05:14PM</span>
+            <div class="reply-content">Weren&#x27;t we costumers interesting human beings.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">71</span>
+            <span class="reply-author">[1eyv1wdew4ssy]</span>
+            <span class="reply-date">January 28, 2009 at 05:15AM</span>
+            <div class="reply-content">My favorite costume check horror story is when someone, a newbie and not your usual costume dept person, gave me grief for having a pheasant feather in my Robin Hood hat. &quot;You&#x27;re a peasant, and pheasant feathers are reserved for the nobility. It&#x27;s a sumptuary law.&quot; Never mind that the same hat had passed costume check for several years running. Never mind that there was a booth selling robin hood hats with pheasant feathers. Never mind that lots of peasants and middle class were walking around with OSTRICH FEATHERS. OK, OK, you win. Solution: remove pheasant feather, walk away, reinsert feather. Problem solved. Oy vey.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">72</span>
+            <span class="reply-author">[1o1f61cl9xgq5]</span>
+            <span class="reply-date">January 28, 2009 at 04:56AM</span>
+            <div class="reply-content">Sorry I&#x27;m probably out of sequence - Carolyn Schulz Savoy is still in Phoenix area, has joined Facebook and can be found there...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">73</span>
+            <span class="reply-author">[3ps78rnilakw0]</span>
+            <span class="reply-date">January 27, 2009 at 03:45AM</span>
+            <div class="reply-content">I remember one of the later costume mavens telling me I couldn&#x27;t have pink (faded red, really) because they didn&#x27;t have white dye. I was ROTFLMAO....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">74</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">January 27, 2009 at 02:16AM</span>
+            <div class="reply-content">The whole color thing was bogus, IMHO. It was Elizabethan England as seen in Hallmark Cards. History had naught to do with it.
+Wanting stylistic consistency is understandable, but when I saw the V&amp;A museum in London, with the finesse, polish, and sophistication of Elizabethan costume, jewelry, and furnishings exhibited there, it became clear that our &#x27;look&#x27; was medieval/Breughel, very little Elizabethan about it. It&#x27;s a peasant fantasy faire. Don&#x27;t get me started on history.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">75</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">January 27, 2009 at 12:55AM</span>
+            <div class="reply-content">Friend of mine who made and tooled her own leather bodice was told that &quot;Oxblood&quot; was not a period color - she looked at them and pointed out they had ox blood and where did they think the name came from? The have never argued with her bodice since!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">76</span>
+            <span class="reply-author">[24fzloj9jvsea]</span>
+            <span class="reply-date">January 27, 2009 at 12:27AM</span>
+            <div class="reply-content">Way back in Agoura - I was told NOT to use a leather pouch I made because it was made of tan and burgundy leather &amp; the burgundy would surely fade to illegal purple! I still use it, and it NEVER turned purple! I don&#x27;t remember who gave me this wonderful advise, but it was during my costume check.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">77</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 26, 2009 at 08:25AM</span>
+            <div class="reply-content">I was a German when I started faire in &#x27;78. I went to costuming and they didn&#x27;t know how to handle the German costumes. I remember that period of time you mentioned when costume rules changed every year. The Germans still had it pretty easy, and we seemed to have very few restrictions, but the guildmistress always made sure that we were period. Do you remember when the rule was that nobility had to wear black? It really created a stir.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">78</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 15, 2009 at 01:50AM</span>
+            <div class="reply-content">she used ta spoil me and my all my gear as stage manager. It belonged to the company but she made it for me.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">79</span>
+            <span class="reply-author">[3qvflbwyol6dj]</span>
+            <span class="reply-date">January 15, 2009 at 01:45AM</span>
+            <div class="reply-content">I remember how Vickie made all the servers get fitted for proper bodices (Ale1 RPFN84). She made them all &amp; fitted them so everybody had cleavage. Some servers squawked about paying for new bodices, but they enjoyed their new look. I think tips went up that faire, and we got the costume award. It hangs proudly on my dining room wall to this day. Someday it will go to Vickie!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">80</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 12, 2009 at 05:39PM</span>
+            <div class="reply-content">For me, it was to grab my codpiece. I never thought about using lizards.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">81</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 12, 2009 at 05:14PM</span>
+            <div class="reply-content">whatever happened to Barbara (Rheinhardt?) who had terrible luck about getting her limbs mashed during a show. First with Bologna&#x27;s and then with reduced Shakespeare...actually catapulting Adam into the role. The hustle and bustle to figure out how far to go trying to dress him up as a girl was pretty good. I think he wore some terrible yellow mop wig. Barbara was very tall and long legged and she shared some striped chemise with me and deidra and sean scudder over the years (maybe even chris too). It was too long for Adam and we were lucky that he didnt brain himself seriously tripping around in it. There was this deadly bit of sewn on trim right near the hem in the fashion of the day that could just grab your step and throw you for a loop. Especially if you were drunk (my case) or punch drunk (Adams case).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">82</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 12, 2009 at 05:09PM</span>
+            <div class="reply-content">i thought she was gonna can me for sure.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">83</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 12, 2009 at 05:08PM</span>
+            <div class="reply-content">thats a good one filed under &quot;hey asshole my eyes are up here&quot;.
+I used to find these baby lizards that would instantly fall in love with me and they would ride around on my bodice. more than once people were startled because they reached out to &quot;touch my brooch&quot; and admire it...and it would move! sometimes two or three!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">84</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 12, 2009 at 05:04PM</span>
+            <div class="reply-content">I remember when Elizabeth Pigeon was guild mistress of the Germans. She and several of the other German Campfollowers would wander around Faire with a bucket half full of ale with various and sundry bits of leaves, dirt, hay and twigs in it. They would stagger around making a great show of swigging this filthy, filthy ale. Anyway, Elizabeth and I were talking and she was upset and frustrated at all the male customers that would only look at her cleavage. I remembered that she owned a glass eye (she didn&#x27;t need one) and suggested that she put it in her cleavage. The next weekend, she came over and was quite happy, describing all the shocked looks she got when her cleavage was gazed upon.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">85</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">January 07, 2009 at 04:46AM</span>
+            <div class="reply-content">Please do! Seems my shirts have proven their longetivity--I own several different patches--Finance, Security, Staff
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">86</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 06, 2009 at 04:58PM</span>
+            <div class="reply-content">I&#x27;ve got one of those too! Mine has the SS lightning bolts but they are split up on the collar I think. I will have to dig it up and send you a pict.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">87</span>
+            <span class="reply-author">[0grgrunot1fm3]</span>
+            <span class="reply-date">January 06, 2009 at 12:31PM</span>
+            <div class="reply-content">Round about 80-81, a bunch of newly ex-washer women (we had quit en mass - ahh, the politics of Faire!) formed a group of Mik Maids. It was a great gig but didn&#x27;t stick as we had no set place to play, no center... We did heaps of really interesting research. There were copies of period wood block prints of milk maids with mid-calf skirts and long bloomers that we brought with us for costume check. It worked and we didn&#x27;t have to hold up our skirts and our milk buckets too.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">88</span>
+            <span class="reply-author">[0grgrunot1fm3]</span>
+            <span class="reply-date">January 06, 2009 at 12:26PM</span>
+            <div class="reply-content">Having gone through costume checks from about 1976-83 and then again from 89-god i can&#x27;t remember which all faires, I did pretty well with the Rule of Our Lady of the Costumes.
+There was a period where every year there was some new rule. Maybe even every faire as there were times I was working multiple. I&#x27;m not sure if the Dept. head changed or not, but each time it was something different and the last costume &#x27;problem&#x27; was forgotten.
+One time, I couldn&#x27;t wear the faded burgundy skirt for my peasant costume because it was too red -even though it was the color of old and faded sour wine. The next time, they didn&#x27;t even blink at THAT skirt but I couldn&#x27;t wear the bodice with the woven ribbons because the colors were too bright or maybe it was the orange. And the next time it was some completely different detail,... For a few years it was so annoying, going through this every time I got my costume checked!
+I never remembered getting in trouble with costumes when I wore the damn thing anyway.
+And no, Vicky, it wasn&#x27;t you. You I remember! Nor did I ever fear your spot checks.
+I do remember somewhere around 75 or 76, Phyllis getting a massage from my mother (when I was still working at her booth) and fastening her skirt with a safety pin. Somehow it made us both feel better.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">89</span>
+            <span class="reply-author">[3ps78rnilakw0]</span>
+            <span class="reply-date">January 26, 2008 at 01:17AM</span>
+            <div class="reply-content">Ahh, Steve. The psychics used to call him black bart. Does anywone wemember the S hook incident with Marich and the privy? Oohhh, too too funny...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">90</span>
+            <span class="reply-author">[2ahrq5vm40bp7]</span>
+            <span class="reply-date">January 25, 2008 at 05:50PM</span>
+            <div class="reply-content">Last I heard Carlyn was in Phoenix or somesuch. Next time I see Janet or her hubby, I&#x27;ll ask.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">91</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 25, 2008 at 05:16AM</span>
+            <div class="reply-content">I think the reason I didn&#x27;t know Agoura had laundromat(s) was that (1) my dad had a condo nearby, so that&#x27;s where I usually went to laundry; and (2) when I couldn&#x27;t go to my dad&#x27;s, there were still lots more folk nearby who I knew and who would let me do laundry and take a shower. I really didn&#x27;t have that in Novato, thus I relied on the laundromats and crew showers.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">92</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">January 24, 2008 at 10:43PM</span>
+            <div class="reply-content">I just remembered Casey Jones late on a Friday night in the laundromat nearest Agoura (in that strip mall on the right side of Kanaan Road as you head towards the Faire from 101)...fluffing the hat velvet in the big dryers
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">93</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">January 24, 2008 at 07:17PM</span>
+            <div class="reply-content">Caroyln Schultz last time I know was living in Berkeley--Still--married Peter--can&#x27;t remember married name. i beleive she had kids. I miss you to Morgan--very much lately with all the reminiscing. Somehow I need to make a trip to Northern Cali and stay for a couple of weeks. Last time in Cali I wasn&#x27;t there long enough to catch--up. When I lived in Vallejo and did the Patterson faires I missed out on hooking up with old friends--was perennially busy and going thru hard times. Love ya miss ya--
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">94</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 24, 2008 at 06:41PM</span>
+            <div class="reply-content">Hey, does anyone know Carolyn Schultz-Savoy&#x27;s location ?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">95</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 24, 2008 at 06:39PM</span>
+            <div class="reply-content">Yup. We delt with it. As Bob Thomas used to say ;
+&quot; Your rewarde in Celtic Heaven will be great &quot;
+But even at the time...I knew it was the most enjoiable job I would have. We were a tight unit, and were all fond of each other and respected each others&#x27; talents and skills. * sniff* I miss ya, Vicky.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">96</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">January 24, 2008 at 08:15AM</span>
+            <div class="reply-content">I always wondered about leaving that chemise filled with cantelope goo...I seem to remember they used to wash it out and hang up backstage between shows. But after the last show of the weekend it would get stuffed in a trash liner and dropped off with you ladies...eww.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">97</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 24, 2008 at 07:31AM</span>
+            <div class="reply-content">I never had the honor of doing Costume Dept. laundry, even tho&#x27; I too have been a beneficiary. I do recall Mon. or Tues. after Faire, Cast and Crew would basically take over the laundromat ... more so in Novato than in Agoura. Heck, I didn&#x27;t even know Agoura had a laundromat.
+But there was one customer laundromats fear more than the Costume Crew or being invaded by dozens of Crew and general Faire People, and that was The Dye Spot. I spent many a day in the lovely laundromats of Sun Valley doing Dye Spot&#x27;s laundry when I worked for Dianne. That was fun!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">98</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">January 24, 2008 at 01:50AM</span>
+            <div class="reply-content">hell yeah I remember 8 hours laundry day&#x27;s
+Builds Character--heh
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">99</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 24, 2008 at 12:34AM</span>
+            <div class="reply-content">Very soon after this the Dpt. got it&#x27;s OWN washer &amp; drier. No doubt to the sounds of huzzahs from laundromats across the state.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">100</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">January 24, 2008 at 12:17AM</span>
+            <div class="reply-content">And most laundramats complain about washing horse blankets and stuff ... that is generally recoverable - not that nightmare rotten and molding stuff is!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">101</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 23, 2008 at 11:23PM</span>
+            <div class="reply-content">Vicky, I&#x27;m having a flashback to the laundromat in Agoura after a three day weekend, (and a couple of days off to let it age nicely ), taking over said laundromat with all our Costume Dpt. laundry, and the Pyramus and Thysbe rotten cantalope mess in particular ?
+Aren&#x27;t you glad I recalled that ?
+ewoo.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">102</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 17, 2008 at 03:54PM</span>
+            <div class="reply-content">Chrissy may have been a nickname that got me confused.
+tee hee
+*sorry* my memory is just as bad as everyone elses....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">103</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 17, 2008 at 01:21PM</span>
+            <div class="reply-content">who was redhead who was tall then?
+my names are escaping me.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">104</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 15, 2008 at 01:25PM</span>
+            <div class="reply-content">The last few days I keep remembering this sort of peach striped long chemise that I wore many times. I think it may have been made for me or for Cherie who was the mistress of misrule or whatever...alonside Swan. She and I and Adam Long were the only ones to ever fit it somehow, and I think in th end Adam pretty much stole it from me.
+The neat thing was, the same fabric was used on the Giants dress for the same reason, it sort of stood out and it was clearly woven with a nice bright color that really made the cheeks stand out.
+Thankfully the last of my costume bits were passed back to the Scudder grandkids (we all passed around two skirts for the little girls that baby Apol wore). That one was a blue colored skirt, with a stripe of floral fabric around the base. Again the Scudder girls were also long legged like mine and so are the grandkids. We shared bodices also for years...Shawna and Teren and I mostly. For a couple of years right in the thick of it all I lived right down the street from them in west hollywood when they lived on Spaulding.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">105</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 15, 2008 at 05:21AM</span>
+            <div class="reply-content">Well, I thought I&#x27;d seen some tacky costumes @ RPF shows, but nothing compares with Eastern U.S. Faires. In the mid-80&#x27;s I went to TRF (Texas Ren. Fair, Houston area), aka, the King George show, to run Feather&#x27;s booth (that&#x27;s a story for another day). My Dye-Spot and hodgepodge costume never looked so good. I still remember the &quot;green polyester frog suit.&quot; The guys (yes, more than one) weren&#x27;t actually trying to look like frogs, mind you. They actually thought they were in costume. Some of them were even working the show!
+On yes, TRF really made LHC shows look good!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">106</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 16, 2007 at 01:43AM</span>
+            <div class="reply-content">Oh God I remember him now !!! He had those totaly silly effeminate Morris Dancers !! Bruno &amp; Patti Blanco had nothing but contempt for that parasite.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">107</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 16, 2007 at 01:20AM</span>
+            <div class="reply-content"></div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">108</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">December 16, 2007 at 01:06AM</span>
+            <div class="reply-content">Steve Marich was the boor&#x27;s name. Now the name comes back. I&#x27;d repressed it...
+V
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">109</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 15, 2007 at 08:11PM</span>
+            <div class="reply-content">Oh my god didn&#x27;t know about that one.
+wow--I will remember that!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">110</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 15, 2007 at 08:00PM</span>
+            <div class="reply-content">last time I talked to TC was in the 80s. He was living in redondo still, had married his landlord. He was thrilled because he was playing the innkeeper in a local theatre production of &quot;Man of La Manchia&quot;, a role he had created waaay back on broadway. or somewhere.
+I have poked around the internet looking for him, you never know.
+that guy had the greatest stories ever.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">111</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">December 15, 2007 at 08:00PM</span>
+            <div class="reply-content">Ooh, just remembered another one!
+Chriss Zaida&#x27;s time as Costumer, would have been in the mid 80&#x27;s I don&#x27;t remember if you were in on this one or not, Vicky--
+There was a fellow, name escapes me, who was put in charge of little Phyllis p.r. projects. He was Phyllis&#x27; golden boy of the moment but in truth another useless parasite. He held himself in very high esteem, but was a rude snot to everyone on the crew and anyone who didn&#x27;t have direct suck with Phyllis. So we concocted a fix for his costume. I went and bought some fly pheromones at a nursery, little wax sticks with a chemical that is a sex attractant for a variety of houseflies. Chriss sewed these into the collar of his costume for me. I never knew for certain how well this worked, but the image of this P.R. queen with a swarm of flies following him everywhere was satisfaction enough.
+V
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">112</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 15, 2007 at 07:51PM</span>
+            <div class="reply-content">what a great memory!
+What ever happened to Terry Collier
+Didn&#x27;t we lose Buck and Barbara
+I have another Costume Memory. My last year as Costume Designer a particular actor whom will remain nameless finally after many years--totally pissed me off. So we the Shop decided to get even. Every weekend for the whole faire we methodically removed 1/2 of seam allowance from their waist. This performer usually lost weight during the course of the faire. Well, the last day of the last weekend they stood in front of the mirror and said I usually lose weight during fair but this year I seemed to have gained weight. As we snickered and bit the insides of our cheeks to stifle the laughter of getting even.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">113</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 15, 2007 at 01:49PM</span>
+            <div class="reply-content">Oh yes that was a very special Glitz show. Near to the end, or the three day weekend or something. Most of the cast was half nude and then there he was our venus de milo....
+Toby joe once told me the story of Dennis after his &quot;crowning&quot; as king, of course he went in drag in the red suit. That fools parade had about twenty people in it. TOby saw him backstage, up in Terry Colliers office (probably waiting to be served those horrible lemonade and vodka cocktails). Toby said that Dennis was swaying side to side
+singing softly to himself
+&quot;I...am...the...*reaaaaal*...Queee-eeeen&quot;
+over and over
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">114</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 12, 2007 at 10:35PM</span>
+            <div class="reply-content">I DO remember that Vicky. I remember defecting from costumes to props after Carolyn left and Someone Who Shall Remain Nameless took over . Ahhh...the infighting and bitchiness !
+But I am glad to know I didn&#x27;t hallucinate Dennis on the Half Shell. That woud have been too frightening.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">115</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">December 12, 2007 at 05:02PM</span>
+            <div class="reply-content">Nope - That was your sucessor - or one or two after that. The one that used to make monstor costumes for Power Rangers. You would have given me the jewelry for the story and the fish - well who knows. I just know you would have never grabbed me to tell me it wasn&#x27;t right when I was working on the ale stand floor.
+I got over tired of the gig - getting faire participants chanting &quot;Fish Lady&quot; as I went by - never was a monger so wasn&#x27;t a good feeling. IT was a good gig and I still occasionally bring it out, but I was getting asked to do the gig everywhere and on command. That makes it a pain more than fun with men that can&#x27;t look you in the eye or are being drunk and obnoxious. I still say that if someone doesn&#x27;t react to the fish they are way to inebriated to have another.
+The funnist thing about the gig was that customers would tell me I had been doing the gig (and they were sure they knew) for 6 years. This was when I had worked faire for 4 years and hadn&#x27;t been doing the gig for 2 years. They swore they knew the dates better than I did.
+Mikey Austine allowed me to drop the gig and blame him if I wanted to when he became my stand manager. It was a case that I was more known for the fish than my wit or my serving skills. Both of which were mad skills - at least I want to believe that is so! I also had a hard time serving my customers with other servers trying to grab me to squirt someone when I was already working. Effected my income since they tipped their servers and I got stiffed for not serving fast enough. So lots went into that decision.
+Been enough time that I will use it for a slow shift or a sobriety check now. Just can&#x27;t find the squirt koi that I originally used in quantities of less than a gross to buy. They were cute little suckers and held enough water to make it a good gig. Had sherrifs bringing faire virgin officers over for a time for me to nail them. That was funny. They tried to get out or reach, but those had a range of 10 - 12 feet. Even made Charles as a puritan walk away without saying a word as he was working up to a great haraunge of the ale stand. One of my prouder moments at faire!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">116</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 12, 2007 at 06:08AM</span>
+            <div class="reply-content">No, Morgan It did happen--Yes oh yes
+and I can hear that wonderful laugh. Hey note on previous discussion--did you know that I left entertaiment and immediately changed to Beverage because of conflict with Carol Le Fleur. Just a little negative trivia.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">117</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 12, 2007 at 06:05AM</span>
+            <div class="reply-content">Tell me that wasn&#x27;t me that stopped you--please
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">118</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 12, 2007 at 04:27AM</span>
+            <div class="reply-content">Catt, do you remember the day, or were there more, when Dennis Day posed atop that clamshell for the Venus-Rising-From -The-Waves bit ? With one of those toga things ? Did it really happen ? Am I hallucinating ?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">119</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">December 12, 2007 at 12:48AM</span>
+            <div class="reply-content">That should go down as famous last words!
+The thing that got me was the stop for costume violations about the rings I was wearing - started with they were from all the husbands I had - then a shocked look by me - &quot;I never said I married them all!&quot; Was going to start the stories about who had gifted the local ale wench with trinkets. Thing that got to me was that there was nothing said about the squirting koi in the clevage - would have thought that would have been the major voilation!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">120</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 11, 2007 at 05:58PM</span>
+            <div class="reply-content">Yes actually--everything was always worth a try!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">121</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 11, 2007 at 05:57PM</span>
+            <div class="reply-content">The memories are flooding in!! Yikes
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">122</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 11, 2007 at 12:49PM</span>
+            <div class="reply-content">remember the costumed for &quot;The Glitz&quot; show,
+Those little sheer toga outfits and the paneled skirts on the guys?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">123</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 11, 2007 at 08:44AM</span>
+            <div class="reply-content">Do you remember the break-away velcro bodice that Chriss Zaida wore for &quot;The Elixer of Life&quot; show ? That thing cracked me up. You could hear that velcro RRRRRRIIIIIIIIPPPPP!! from half way across the Faire.
+I was On Progress one day when we saw someone in a dragon suit. &quot; Look you&quot;, quoth Lord Lennox,&quot; He must be most musical !&quot;
+&quot; How so, my Lord? &quot;Quoth I
+&quot; Look you at all his..scales&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">124</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 11, 2007 at 12:36AM</span>
+            <div class="reply-content">i love that stuff.
+look at the lettering...little tree branches...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">125</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 10, 2007 at 11:20PM</span>
+            <div class="reply-content">anybody remember these--I just found them while setting up my new office
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">126</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 10, 2007 at 10:55PM</span>
+            <div class="reply-content">Pop top armour yeah--Naked I would have remembered!?
+Vic
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">127</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 10, 2007 at 09:19PM</span>
+            <div class="reply-content">all i can say is &quot;pop top armour&quot;
+I kind of miss it.
+remember all the dudes naked in their pop top at Blackpoint?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">128</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 10, 2007 at 08:01PM</span>
+            <div class="reply-content">You are scaring me!
+Vic
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">129</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 10, 2007 at 07:59PM</span>
+            <div class="reply-content">yeah sure It will cost yu though--79 wow I was young then!
+Vic
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">130</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">December 10, 2007 at 07:23PM</span>
+            <div class="reply-content">The Agoura classic was Superman. Perfect costume, with the spit-curl, like clockwork every year from the late 60&#x27;s thru, maybe the mid-80&#x27;s, he&#x27;d fly in from the time-warp to visit the Queen.
+And does anybody else remember the Whistle-man in Black Point? Long dark grey cloak, head and one hand both the shape of oversized referees whistles. I think he only came once, some time in the mid 80&#x27;s
+v
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">131</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">December 10, 2007 at 07:19PM</span>
+            <div class="reply-content">Hey Vicky-
+I still have the white Faire shirt with the Ram&amp; Gob patch you made for me back in, what, 1979? It has a couple small rips.
+Could you fix it for me?
+;-)
+Vytas
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">132</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 10, 2007 at 06:34PM</span>
+            <div class="reply-content">I actually remember that costume--Even though I was stuck working the Champagne Bar upstairs--Not working in the Costume Shop at that time actually. I actually remember Dickens more fondly off all at Fort Mason. Having done them at The Cow Palace, the Fox and that horrible place in Sacramento.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">133</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">December 10, 2007 at 05:59PM</span>
+            <div class="reply-content">I was thinking just the other day about the HORRIBLE costume I had to wear at Dickens at the Fox. Magenta and black houndstooth checked &quot;all in one&quot; dress with bustle, lace collar and cuffs. It was seriously &quot;Mother Hubbard&quot;. Not sure why I got stuck with this thing, but Chris Zaida felt sorry for me and made me a special bonnet at least. I wore that dress crawling under the audience seating (if you were ever down there you know what that means) and under the Orchestra extension to the stage and in all the dusty bits around the ceiling frieze...I was trying for a Limehouse sort of finish on the dreaded thing by the end of run. Ewww.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">134</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 10, 2007 at 04:19PM</span>
+            <div class="reply-content">Althea--not sure
+I did only one George Lucas thing--2nd StarwarsMovie--But alot people ended up in ILM world. We have couple of dancers whom were in the little ILM shop in Novato at the start of the phenomenon. I just recently realized how profound of a time I was acquiring my career experience and what location. College of Marin--Scholarships from Robin Williams--All the growth in Rock &amp; Roll--I once booked a newby to the music industry at COM--Still have his cassette--Dave Mathews. Drinking with Peter Tork--holding Eddie Money&#x27;s head while he pucked, eating steak with Mettalica, Carlos Santana as a wedding singer, Dana Carvey as a 2 dollar a night comic at New Georges in San Rafeal---What I now call walking with Giants--Which I have done even more greatly in my Theatre Career. Boy could I drop names there. But above all I realized that we are all normal regular people and that some of these people were simply in the right place at the right time and became renowned. Glad to have been spawned and nurtured in this little nest called the Bay Area
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">135</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 10, 2007 at 02:48PM</span>
+            <div class="reply-content">its a small world...
+yes there seem to be faire folk tucked away in some of the more amazing spots in the world.
+lots of people got some chops outthere back in the day.
+what ever happened to Aleta (Wood sort of)? Didnt she go on to Lucas or something?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">136</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 10, 2007 at 02:41PM</span>
+            <div class="reply-content">Speaking of Mark Lewis
+Several months ago I am running Wardrobe for Ballet Idaho--also in partnership with a ballet Co on the West Coast and I see a Name Tag appear on a dressing room door for the Narrator--Low and behold it is our beloved Storyteller==telling a story--imagine that. Needless to say we spent every free minute catching up. Seems no matter where I go in the world I find old faire people. In the Med the acupuncturist was an old boothy. In San Diego--another old boothy who for 20 years ago loved around the corner from me.
+The Gorilla Suit! yikes! I was just thinking about Darth Zaida--Did you know I went to college with her--was actually once her supervisor before she ran costumes. Speaking of costumes and irony--My last show at Idaho Shakespeare was Reduced Shakespeare.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">137</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 10, 2007 at 12:19PM</span>
+            <div class="reply-content">you were the shizbat too.
+never mean or anything.
+Just serious and intent on craft and professionalism.
+a couple of the skirts that were made for the scudder kids made the rounds of the kids independent of the costume shop.
+my favorite old piece was the big Lions head prop/costume piece that Mark (something) wore.
+they wore it in Pyramus and Thisbee when I shoveled off onto maypole commons.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">138</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 10, 2007 at 03:44AM</span>
+            <div class="reply-content">Thank god--I know people used to hide from me!
+But usually they respected me!
+Being the Designer for the Faire will forever be one of the biggest honors of my life!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">139</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">December 10, 2007 at 01:04AM</span>
+            <div class="reply-content">I am sure they were not working there, but the Star Wars Imperial Troupers - a customer commented to me and I responded &quot;Oh, we never know what court will be wearing!&quot;
+Although some of the shortened pirate outfits really blew me away ... more halloween tramp than period fun. There was also someone that used a halloween middle eastern outfit as garb in the ale stand.
+And yes, Vicky these were after your time!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">140</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 09, 2007 at 08:51PM</span>
+            <div class="reply-content">we had some pretty crazy costumes back in the day.
+dare i say
+gorilla suit?
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

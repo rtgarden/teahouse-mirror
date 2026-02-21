@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive Part I - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/blogs/">Blogs</a> <span>›</span> <span>Archive Part I</span></div>
+            
+    <div class="module">
+        <div class="module-header">Archive Part I</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By [isw2k6t3av2r]</span> | <span>November 23, 2007</span> | <span>0 comments</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;">What have i gotten myself into?
+
+Wed, July 19, 2006 - 6:10 AM
+
+That&#x27;s the question i kept asking myself over and over again in the first 3 months after M was born. Now, as his second birthday approaches, it has begun to ring through my head once more but, this time, for other reasons as well. 
+
+I doubt myself on what has become too much of a regular basis. Long gone are the days that I would accept a challenge with the fervor and eagerness of a lion tearing into its catch. Now, I feel more like the cowering prey instead. 
+
+If only my foot could reach around behind me to give myself a swift kick in the ass. Maybe that would do it. I need to calm my anxiety and purge my vices. And lose some weight.
+
+birthday boy!
+
+Sat, July 22, 2006 - 8:42 PM
+
+we celebrated M&#x27;s second birthday today. He got to go in a swimming pool for the first time. I guess I&#x27;m a pretty bad mama for not taking him in one sooner but my cottage cheese thighs don&#x27;t get along with most bathing suits. Selfish or considerate of others? You make the call. 
+
+Anyhow, we celebrated with some friends of ours who have a daughter exactly one year younger than M. She&#x27;s an amazing little girl and the developmental milestones that she&#x27;s reached that M hasn&#x27;t even come close to really worry me. 
+
+I just keep telling myself: boys talk later. Boys are naturally more active. Right? 
+
+So what about not responding when his name is called or not having a word or name for me? 
+
+Please let my little guy be okay and normal. That&#x27;s all.
+
+wow
+
+Sun, August 13, 2006 - 9:40 AM -
+
+Sun,
+
+back from Lark and what an incredible experience. I feel like i finally was able to extract my head from my ass and look around at the beauty surrounding me in the forms of my husband, my son, and nature itself. Okay, okay, maybe my head wasn&#x27;t really up my ass but i feel as if the whole experience has lifted a stagnant fog from my understanding of life. 
+
+arriving back home wasn&#x27;t nearly as pleasant as we had hoped as a full blown emotional meltdown occurred between the four of us (roommates) but I think the truce is holding pretty well and now we just have to wait for their lease to be up. another meltdown (or better put, collapse) occurred in our main sewer line leading out of the house. i can only dream of the day when this plumbing shit ends. 
+
+Just so that I no longer shirk my responsibilities; I shall list my goals (as simple as they may be): 
+-declutter my physical life 
+-declutter my emotional life 
+-appreciate my family more 
+-respect myself more 
+
+I just need to maintain myself and my thoughts and continue to feng my shui. It&#x27;s good to be back; I missed myself.
+
+Puke, Raccoons, and Faxes, Oh My!
+
+Tue, August 29, 2006 - 5:34 PM
+
+woke up this morning at 4:30 to puking child in my bed. Poor kid. Poor bed and pillows (ick). 
+
+cleaned up and tried to go back to sleep. Then the phone rang. ring ring ring ---thank god for answering machines. i cuddle back down into the non puked on area of the bed. 
+
+ring ring ring --- apparently the answering machine wasn&#x27;t good enough for them the first time. I decide i will ignore the phone. Then, my cell phone goes off. WTF? that gets me out of bed once more and to my cell phone just in time for whoever was calling to hang up. 
+
+then i heard what sounded like someone messing around with stuff on our porch and discovered a family of raccoons foraging. WTH? I haven&#x27;t ever seen raccoons within city limits and i&#x27;ve lived here my whole life! 
+
+phone starts to ring again...i answer and it turns out it&#x27;s someone trying to send a fax. at least i&#x27;m getting business but i wish that people could have their faxes set up correctly to not time out...and of course, i also wish that i had gotten a bit more puke-less sleep.
+
+Tue, August 29, 2006 - 5:34 PM -
+a cautiously good day
+
+Fri, September 1, 2006 - 8:57 PM
+
+it has been one. and i am ever so cautious to even say so. i am knocking on particle board (crappy desk, that&#x27;s me) to ensure it doesn&#x27;t go all to hell. 
+
+sure, the boy threw a fit beyond any fit we could imagine. 
+
+sure, i have to clean the house top to bottom before 1pm tomorrow (property manager) 
+
+sure, the child was playing in a toilet of piss for who knows how long before i found him (at least we flush when it&#x27;s brown, right?) 
+
+But, all in all, it has been a (cautiously) good day. 
+
+That is all. 
+
+now, I must think of adding a food based course to my beer meal.
+
+Fri, September 1, 2006 - 8:57 PM -
+please don&#x27;t grill your shrimp where you heat my tortilla
+
+Tue, October 24, 2006 - 7:28 AM
+
+No, the title doesn&#x27;t have a secret sexual meaning unless you really want it to. In fact, can I just start by saying I love shellfish? It doesn&#x27;t matter though, because as it turns out, I&#x27;m pretty allergic to shrimp, crab, lobster, the list goes on. It seems my great uncle was deathly allergic to ANYTHING that came out of the water, salt or fresh. My allergy is something recent and a pain to deal with. 
+
+But, I digress. You see, yesterday I had a hankering for a bean and cheese burrito. So, in my ravenous hunger, I drove through at my neighborhood taco shop and ordered not one, but two! 
+
+Brought them home along with some food for DH and proceeded to eat. Tasty goodness. Yummy burrito. 20 minutes later, got into the car and went back to work. As i was driving, i began feeling drowsy. Then, my arms started itching along with my throat. &quot;What&#x27;s this?&quot;, I thought. First cold of the season maybe? No. Not at all. I was able to sit for about 1 hour before my throat started to close. i had to rush down to the closest 7-11 and desperatley buy a box of benadryl. Slow release capsules? WTF? I dissolved a caplet in my mouth and swallowed the disgusting mixture down. Immediate relief. 
+
+Call Dh and confirm that that shop does indeed sell shrimp burritos (bastards) and i head back home. The upside to all of this of course is that my ass won&#x27;t be gaining the additional fat from the second burrito which lays forgotten in the fridge.
+
+Tue, October 24, 2006 - 7:28 AM -
+
+Color me embarassed
+
+Sat, November 11, 2006 - 5:21 PM
+
+What a day of mixed blessings. 
+
+My small copier I&#x27;ve had for years died this AM. As I depend on it, I immediately searched for one on CL. Found almost the exact same one for $35!!! 
+
+So, I packed M into the carseat and drove the 35 minutes to get it. Transaction was smooth, the guy was nice enough to take it out to the car for me while I buckled M back in and placed my purse on the driver&#x27;s seat. We said our goodbyes and I went to strap the copier down with the seatbelt (in the front passenger seat). 
+
+As I&#x27;m struggling to get the belt around it, my cell rings. A future employee confirming our meeting later in the afternoon. I finish up with the seatbelt while on the phone, hit the lock button on the door and slam it. Walk around the other side to get in as I&#x27;m finishing up on the phone and realize the grievous error I&#x27;ve made as my hand pulls up on the door handle and I spy my purse on the front seat. 
+
+I swear, the keys were taunting me, peeking up out of the top of my purse. I realized I still had my cell and tried calling my DH. No answer. So, I run back up to the house and ask the kind copier-selling-folks if I might use their yellow pages. 
+
+I must say, I had a very hard time focusing on the numbers and calling locksmiths. I went through 5 or 6 before one of them told me I would have to call the police dept first before they could come out. WTF? And how exactly does this help me to get my 2 year old out of the car sooner? 
+
+I call the police who transfer me to the FD who transfer me to the local FD who finally come out. Their plan: break the window b/c they no longer are allowed to have the tools to unlock cars. Apparently, some rich fuck tried to sue them for scratching his car when they unlocked it for him. 
+
+By this time, I have attracted attention and the neighbors are out to see why the firetruck is on their street and to offer ideas. The firemen tell me they will HAVE to break the window unless a tow truck can get out here to unlock the car in the next 20 minutes. Too bad he can&#x27;t let himself out of his carseat and unlock the door, remarked on of the firemen who looked all of 19. LOL, not at the top of my list of things to teach my 2 year old. I don&#x27;t think he&#x27;s dealt with many toddlers. 
+
+Ugh. Do I have the money to replace the potentially broken window? No. One of the guys points out that it&#x27;s nice and cool, cloudy and almost raining. If it doen&#x27;s get too hot, we can wait as long as M doesn&#x27;t show signs of lethargy or overheating. Great. He just woke up from a nap before we went in to get the copier and he&#x27;s still A) groggy and B) sweaty. I hoped they wouldn&#x27;t notice. 
+
+Finally a tow shows and in less than 3 minutes, I have M in my arms. His only desire was to check out the big ol&#x27; fire engine and point at it. 
+
+The best part about all of it? My little guy who we worry about b/c he isn&#x27;t speaking yet uttered a new word: key.
+
+Sat, November 11, 2006 - 5:21 PM - permalink - 4 Comments
+
+post an entry
+
+edit this post delete this post
+
+4 Comments
+
+add a comment
+
+catt
+
+184
+
+Sat, December 16, 2006 - 7:31 AM
+
+on speaking
+
+In my family several emembers are famous for refusing to speak until quite late and then sort of spouting whole sentences quite suddenly. Sort of a &quot;well until then I really didn&#x27;t have much to say&quot; sort of thing. 
+
+Also reading late and yet being very advanced very quickly.
+
+delete this comment
+
+rosey
+
+34
+
+Sat, December 16, 2006 - 8:08 AM
+
+re: on speaking
+
+this is also what i am feeling. he can sign up a storm and will try and tell you a story using HIS own signs, not the ones we teach him so it&#x27;s sometimes difficult to follow :) 
+because the words he does say sound so forced and sometimes have the inflection that you might hear in a deaf person&#x27;s speech, we are off to the halls of western medicine on Monday to request a hearing test.
+
+delete this comment
+
+Danese
+
+38
+
+Tue, January 16, 2007 - 8:23 AM
+
+FWIW
+
+We had a similar panic when Adi was pre-verbal but already walking (he&#x27;s 20 now...this was years ago). We were playing a chasing game in the house (bad Mommy, I know) and he ran into our bedroom and slammed the door behind him and...it locked. PANIC! 
+
+He wasn&#x27;t strong enough to open it from his side, and I couldn&#x27;t figure out how to jimmy it from my end (no little hole for a Phillips Head...in fact no screws of any kind on my side. About the moment I was ready to break it down my housemate (who owned the house) showed up so that option was discouraged. I could walk around the outside of the house to the window in my room and see him in there crying. I called the Fire Department. They arrived (in about 5 minutes, which was a blessing) and proceeded to slip a credit card down the door jam (DUH). Kid wanted to see the shiny fire truck (it was bedtime, so lots of attention drawn by the lights swirling around on top). 
+
+But the hole incident appears to have been 100% forgotten by said kid now. So, don&#x27;t be too hard on yourself. Shit happens.
+
+delete this comment
+
+rosey
+
+34
+
+Wed, January 17, 2007 - 9:40 AM
+
+re:FWIW
+
+Yikes, I&#x27;m sure I would have been ready to break the door down too. Funny how all logic seems to escape me in moments of panic. Ok, not so funny really. Just unfortunate. Poor kiddo, glad he hasn&#x27;t been unduly traumatized. I think M is pretty much over it too, thankfully.
+
+delete this comment
+
+add a comment
+Oy. Fish to the rescue?
+
+Wed, December 20, 2006 - 11:51 AM
+
+So we finally got in to see the ped on Monday to talk to her about M&#x27;s lack of speech. She&#x27;s referred us to Children&#x27;s Hospital for a pure tone hearing test and for a pediatric neurology consult. That&#x27;s set up for a month from now. Initially, the whole visit freaked me out and made me want to cry. I had really been naively hoping that she would just tell me he&#x27;s fine and we&#x27;ve got nothing to worry about. M showed off some of his signs and completed basic tasks for her, let her look in his ear, and was generally a cute kid. I was worried because he had fallen asleep in his carseat on the way there and is usually clingy and uncommunicative when he&#x27;s just woken up but he did better than normal in that regard. After talking a bit, she called in her attending and he said something about P2 (which I&#x27;ve only been able to correlate to Piaget&#x27;s stages of cognitive development) all the while I sat just feeling rather numb to the whole thing. M on the other hand was showing signs of distress because we were in a small room with stuff he wasn&#x27;t allowed to touch. I could also sense that he was a bit dismayed that everyone was talking about him in the third person and that he couldn&#x27;t also talk to us. I left the appointment feeling weak, sad, and as if I have failed him as a parent. 
+
+Yesterday, I posted in a forum to see if anyone had feedback for me on the visit. I was feeling rather helpless and without knowledge on the subject and, by this point, googling was causing more anxiety than comfort. Someone mentioned apraxia which I promptly googled only to begin feeling more anxious. I know M hasn&#x27;t been diagnosed with it but many of the symptoms really ring true with what we have been seeing in him. Then again, if you look and try hard enough you can convince yourself of anything. Nevertheless, I have always strongly believed in diet affecting behavior and development so I googled &quot;apraxia, changes in diet&quot; and came across a site for CHERAB where I read some really great stuff. Ok, it&#x27;s not so great that kids suffer from this but the fact that others have dealt with it before me with success is great. Regardless of my armchair diagnosis, I read some extremely promising stories of parents who have begun supplementing with DHA, EPA and GLA fatty acids. So many success stories of results within weeks sent me out to the store this morning where I bought two different supplements for kids. He&#x27;s asleep right now but you can bet I&#x27;m excited for him to wake up. More to follow soon...
+
+Wed, December 20, 2006 - 11:51 AM - permalink - 1 Comment
+
+post an entry
+
+edit this post delete this post
+
+1 Comment
+
+add a comment
+
+catt
+
+184
+
+Thu, December 21, 2006 - 7:07 AM
+
+Always the best advice is to &quot;eat the rainbow&quot; and serve a lot of very fresh, cooked but still firm, veggies and fish that have omega oils predominantly. Lately I havent even been eating the fish. Probably I should supplement. 
+
+It is great that you are searching around for answers before the anxiety gets ahold of you too awfully. With Apol I knew that she was havinglearning disability type problems because of her prematurity, however I hid it from her for 18 years because I out foxed the situation by gathering resources from the library constantly. 
+
+Maybe there is a group for parents managing care of a child who is developmentally delayed with dietary. I have always had my suspicions about Jed, he did so well when we had our &quot;Salad crew&quot;.
+
+delete this comment
+
+Play by Play- Part I
+
+Thu, December 21, 2006 - 9:52 AM
+
+I&#x27;m going to begin keeping a log of developments since we&#x27;ve started the omegas so bear with me :) 
+Yesterday, I tried giving M 1/2 tsp of the Nordic Naturals strawberry scented (cause it&#x27;s not really flavored) oil and he refused. I resorted to putting some into an oral syringe and he spit most of it back out. :( We now own a pair of cute little boy overalls that smell of fish. My little longshoreman... 
+
+He may have only swallowed a teensy bit but I did notice a few things yesterday: instead of his usual &quot;BA!&quot; (bye) I caught him saying &quot;HA!&quot; and waving. &quot;Hi&quot; is a new one for him. I also noticed an increase in his babbling during playtime and instead of hearing him say only one-syllable sounds (or nothing at all which is what is normal for him), he was making quite a few 2-syllable sounds too! While we were cleaning up in the bedroom, he brought one of his toys to me and put it in my hand, pointed at one of the beads and said: &quot;GII!&quot; It took me a second but he was pointing to the green bead. (!!!!) I really need to tune into him more. I know this all may be me trying to see things that aren&#x27;t there but I&#x27;m keeping my hopes up and I&#x27;m going to keep watching... 
+
+I tried some more on him after dinner. I haven&#x27;t checked yet to see if it&#x27;s emulsified or not but I figured it wouldn&#x27;t hurt to put a small dose into a sippy of milk and disguise it with some chocolate syrup. Success! He drank half of the cup after dinner and the other half before bed. Something that struck me was how easily he fell asleep and how soundly he slept. Even though he usually checks out at 8:20 every night, he still wakes quite a bit normally (sometimes i have to go in to rub his back every 20 minutes) but last night i was able to fold all of the laundry AND watch a TV program without interruption. He didn&#x27;t stir until about 10pm when i collided with a toy outside his door. He came to bed with us (as usual) but slept much more soundly than he has for weeks, maybe months. I need to look into this to see if there are any correlations or if it just happens to be coincidence. 
+
+When I was at the store yesterday, I also bought the Nordic Naturals lemon flavored capsules because they had GLA (borage oil) in them unlike the liquid. I opened one this morning and spread it on some toast, topped it with pureed apricots and it disappeared pretty quickly (after sharing it with bear a little, of course). I think I&#x27;ll be going back to the store in January when the stocker said they&#x27;d have 25% off all supplements and buy another bottle of the capsules. The research I&#x27;ve managed to do so far seems to really favor the addition of GLA to the blend. 
+
+I&#x27;m off to the library this morning to check out a copy of &quot;The Late Talker&quot; which is referenced multiple times in the online reading I&#x27;ve done. 
+
+Looks like a long road ahead but it makes all the difference to have picked up some illumination to lead the way.
+Thu, December 21, 2006 - 9:52 AM</div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Comments (0)</div><div class="module-content"></div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

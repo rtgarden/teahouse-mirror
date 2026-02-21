@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place and Thing Names - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Place and Thing Names</span></div>
+            
+    <div class="module">
+        <div class="module-header">Place and Thing Names</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Eric Lethe</span> | <span>February 01, 2009</span> | <span>41 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (41)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 24, 2009 at 05:25AM</span>
+            <div class="reply-content">Beautiful Downtown Burlap, Queen&#x27;s Highway, Killer Elite
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">February 22, 2009 at 07:01PM</span>
+            <div class="reply-content">Do you remember the time when everybody in Pig&#x27;s Gulch was pissed off at the beverage truck for driving by at weird o&#x27;clock in the morning and crew banging on kegs? Everybody in &quot;the Gulch&quot; decided to be up before the truck came through, they lined up on the side of the road with super soakers and let the beverage truck crew have it. One of the funnier things I have seen.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">February 22, 2009 at 06:52AM</span>
+            <div class="reply-content">I remember that, Carrie. I also remember Kevin and Erik Aman having a &quot;discussion&quot; over who was the pig and who was the dog, referencing Pink Floyd&#x27;s Animals album.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">February 11, 2009 at 07:19AM</span>
+            <div class="reply-content">Probably &#x27;87 or &#x27;88 then. Dates are getting difficult to remember. For some reason, I thought that the freezer faire was later, but you&#x27;re right. I got up to Sac. for that on the day that it closed. I got the grand tour of the damage. Saw the broken pipes and stuff. That should have quite a few stories. Enough for its own chapter I would guess. I remember all the customers that were turned away, angry at not getting a refund, but a comp ticket.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">February 11, 2009 at 12:54AM</span>
+            <div class="reply-content">No Dickens in &#x27;89 due to earthquake. 1990 was in Sacramento.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">February 10, 2009 at 08:58PM</span>
+            <div class="reply-content">At one of the DCFs &#x27;89 or &#x27;90 I was out with a slight case of carpal tunnel (I took time off to let it heal). I went back to help Berkeley Ed with tear down and the alestands had cleaned out their inventory. There was a couple of hundred whipped cream cans (a perishable) on one of the bars. All of them were still full of whipped cream, but empty of nitrous. Crew was not to be seen.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 10, 2009 at 07:05AM</span>
+            <div class="reply-content">The magic privy was also a great place for certain illicit activities. You could lock it like a normal shitter, but w/o the stink (as much ... you still had the stink of the shitters on either side). It was also great fun to watch the gigs with dozens of actors (and sometimes crew) coming out of the privy. Or going in. If I remember correctly, we&#x27;d put someone on the inside, and have a &quot;secret knock&quot; or some other signal. People would go in to the privy and not come out. And the marks would just get more and more confused.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 10, 2009 at 06:59AM</span>
+            <div class="reply-content">Now that you mention it, I remember hearing about this. Never saw it in person, &#x27;tho.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 09, 2009 at 02:04PM</span>
+            <div class="reply-content">yes grego on countertop and irv on kegs (and vice versa). Everyone else just pulled right into the heart of it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">February 09, 2009 at 12:34PM</span>
+            <div class="reply-content">Yes, it was a wonderful example of Old Hollywood architecture
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 09, 2009 at 10:25AM</span>
+            <div class="reply-content">I hear Camporee was so named by BoyScouts. Not sure how Cowboy Camp got named, though
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 09, 2009 at 07:21AM</span>
+            <div class="reply-content">Well on LHC payroll it was definitely spelled Swomper...but that&#x27;s interesting where it came from. I thought it was like Hooch and Hooey and Cag (words we inherited from Vietnam vetspeak).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 09, 2009 at 07:19AM</span>
+            <div class="reply-content">I went there once too, to pick something up. Dorie and Dennis and Ernie were there.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">February 09, 2009 at 07:19AM</span>
+            <div class="reply-content">Of course! The &quot;Magic Privy.&quot;
+As kids, we used to play with it when there were really long lines waiting. One person would come out and you&#x27;d immediately lock the door behind him. A customer would try to enter and find the door locked. A few seconds later, we&#x27;d send the next person out. Etc.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 09, 2009 at 07:13AM</span>
+            <div class="reply-content">Anybody remember the famous &quot;Magic Shitter&quot; of RPFN? The one with 2 doors and no tank that parades came out of?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 09, 2009 at 07:12AM</span>
+            <div class="reply-content">I remember a King of pig gulch... Same guy maybe? When I first came south full time in 78, I set up a temp camp on the edge of the road near pig gulch. It was an army cot with a tarp cover rigged over it. An absolute failure in the rain! I converted the trunk and back seat of my car into a camper of sorts and moved onto the part of the racetrack up behind the SS crew office in western town.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 09, 2009 at 07:09AM</span>
+            <div class="reply-content">I thought it was Mildred but wasn&#x27;t sure. Althea, Fili and I lived in the pool house there for a few months. Not sure why. Might have been tear down of 78? It also might have been during the faire itself. I can rememeber livng in the trunk and back seat of a 67 Ford Galaxy that spring until &#x27;Thea and I hooked up but I can&#x27;t remember where I lived the rest of that Faire.... That castle was a cool place with the hidden bar and the secret passageway. Real prohibition era stuff.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">February 09, 2009 at 06:56AM</span>
+            <div class="reply-content">Anybody else remember Kevin Cooper being referred to as the &quot;Pig of Pig&#x27;s Gulch?&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 09, 2009 at 06:00AM</span>
+            <div class="reply-content">I thought that Pig Gulch was called that because it was an absolute mess? A Pig stye.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 09, 2009 at 05:58AM</span>
+            <div class="reply-content">Ground Zero, where it all happened... The focal point for the operations end of things. It was a cold war nuke term.
+Hootch.... A Viet Nam war term for a native hut. Also a place where Hooch&quot; (white lightning) was made.
+Clench a Wench.... the next logical step after Drench-a-Wench, or; What happened when a Drench-a-wench session went too far!
+I seem to remember Bubba Bud being an invention of either Ron Chordas or Ace as an answer to one of Phyllis&#x27; pagan Easter festivals. As in the Bubba Bud Easter Beer hunt. Bubba Bud and the Easter Weasel hid the beer for all the bad children to find.
+here is another one...Huuee or Huwee..... Allegedly a Marori term for what we wouid call a pot-luck!
+Another place name... The Coconut Grove...it was a camp/structure that I inherited in 1982 located half way back in the valley. It was an old horse tack shed for the ranch that had a deck with shelves, a picnic table, a water faucet and a small bit of lawn. It is a place that will forever be a part of Debi and I.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">February 09, 2009 at 05:48AM</span>
+            <div class="reply-content">Mildred Hollands House--I went there once.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 09, 2009 at 05:41AM</span>
+            <div class="reply-content">Swomper is actually spelled Swamper... A swamper is basically an assistant. It is an old trucking and logging term but it also refers to the ground worker for dozers doing land clearing. When I was in the army, I operated a dozer and had a swamper that watched for hazards and helped maintain it. Our inmate hand crews have an inmate that is assigned the swamper position and acts as the Fire Captains crew assistant and is responsible for transport and equipment maintenance.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 09, 2009 at 05:35AM</span>
+            <div class="reply-content">Does anybody remember &quot;The Castle&quot; in laurel canyon? Wasn&#x27;t it owned by the mother-in-law of the singer Chaka Khan?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 09, 2009 at 05:32AM</span>
+            <div class="reply-content">I believe but am probably wrong that “The Center of the Universe” was either a Bob Brewer creation or one of his miscellaneous crew predecessors. When I started on the garbage crew in 74, it was a meeting place for the crews, supply stash and home of an old Coca-Cola chest style soda machine stocked with Anchor and Tuborg. I seem to remember that it was attached to the back of the crepes booth which provided a supply of empty whip cream cans! The info booth came to be called CTU after the layout was changed and our stash area was moved.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 09, 2009 at 05:26AM</span>
+            <div class="reply-content">Jungleland was named after an old Safari park/zoo turned concert venue that was in the Thousand Oaks area. The sign was &quot;obtained&quot; sometime in the late late 70&#x27;s, possibly very early 80&#x27;s. Jim Hayes or Booby G might remember when. I was around when it was &quot;relocated&quot; but can&#x27;t remember the date or the fine upstanding fellows that embarked on the expedition. I seem remember that it had something to do with working a rock concert there. The name Jerry seems to also be connected somehow. Here is a link to the story of the original. Weird California_Jungleland
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 09, 2009 at 05:18AM</span>
+            <div class="reply-content">Heavy Karma got its name right after it was created from the cross breeding of an old dump truck and a spare ranch water tank. Because it had no baffles in the tank, and a high center of gravity, it would roll over at the drop of a hat! I believe that this was discovered either on its maiden voyage or the 2nd one. If you were messing around and driving it too fast, there would be karma payback.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 09, 2009 at 05:13AM</span>
+            <div class="reply-content">There used to be a few old timer ranchers in the area that called the front part of the property &quot;the Old Tobin Ranch&quot;.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 09, 2009 at 05:11AM</span>
+            <div class="reply-content">If I remember correctly the Long Branch was a tribute/reference to the iconic western saloon name &quot;The Long Branch Saloon&quot;. I believe that it may have also have contained either a concession stand or office for the race track that used to be there.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">29</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">February 09, 2009 at 03:20AM</span>
+            <div class="reply-content">When I think of 5 at 5 my heart aches--An amazing memory--A pulsing spirit of togetherness--another moment to tuck away in scrapbook -- the sounds ring in my memory banks.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">30</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 09, 2009 at 02:52AM</span>
+            <div class="reply-content">yes irv gershenz and greg dana playing the entire alestand. That was one fun jam jellroll.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">31</span>
+            <span class="reply-author">Danese Cooper</span>
+            <span class="reply-date">February 08, 2009 at 11:28PM</span>
+            <div class="reply-content">Five at five referred to the big drumming event at 5 pm at Ale 5 down south. There were a few times I patrolled the site while it was going on. The place was deserted. Everyone was down at the giant jam session.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">32</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 06, 2009 at 06:52AM</span>
+            <div class="reply-content">Trucks -
+Big Red, Orange Crush, and the Grey Ghost seem obvious, but how did Heavy Karma get its name? And did the IH (International Harvester) Water Truck have another name or did we always call it IH?
+The corresponding building to Tobin house at Paramount Ranch was the White House (until NPS tore it down) (opps, above post already has that)
+The Scale House in fact housed the office of the old truck scale directly in front of it.
+Cardiac Hill or Heart Attack Hill
+Crew Valley and Snob Hill
+and The Dust Bowl
+&quot;five by five&quot; essentially means &quot;loud and clear&quot; in radio talk. There&#x27;s a technical explanation, but I can&#x27;t recall. I&#x27;m not sure about &quot;five at five&quot; maybe same maybe not.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">33</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">February 02, 2009 at 06:41AM</span>
+            <div class="reply-content">Ah, Buttonwillow, the Sargasso sea for people going to Southern. Most everybody I know that made the commute had a breakdown there at sometime or other... in Buttonwillow.
+How about:
+prog
+the alestand announcement at noon
+the high road
+the Q
+ring out
+the privy monster
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">34</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">February 02, 2009 at 05:58AM</span>
+            <div class="reply-content">Safety meetings!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">35</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 02, 2009 at 05:55AM</span>
+            <div class="reply-content">ground zero
+cagging
+hootches
+live rice
+five at five
+keg toss
+bubba bud
+burlap queen
+privy sucker
+spam feed
+dragons eggs
+monday brunch
+buttonwillow
+clench a wench
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">36</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 02, 2009 at 02:52AM</span>
+            <div class="reply-content">Bruce Dick told me he&#x27;d met Earl Tobin, the last of the namesakes who lived on the ranch before it was home to our Faire. Supposedly he died in the Red Shack across the yard from the big house...but it was the big house he haunted. Anybody who worked at night in the Tobin House can tell you ghost stories.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">37</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">February 02, 2009 at 02:10AM</span>
+            <div class="reply-content">This is how I understood Ale Zero as well. The front gate was moved forward to Pig&#x27;s Cott and another Ale Stand was built. Since it was &quot;before&quot; Ale One, it became Ale Zero.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">38</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">February 02, 2009 at 02:08AM</span>
+            <div class="reply-content">I know the Bruno story (I&#x27;m assuming Richard Chase does too, or if that was after him, then Burger can tell it [is he even on the Teahouse?]). Now, keep in mind that there are many stories about how Bruno got its name and for a while that was purposefully spread. I don&#x27;t know if I should provide disambiguation for the term. It seems...wrong....somehow. But if no one else wants to do it and no Bruno objects (or shares it himself) then I will.
+As far as Tobin House goes, wasn&#x27;t that the name of the family that owned the land and lived in that house before the Patterson&#x27;s bought them? I think it was Kathi Lapora Richards who told a story of working there one day and an old woman came by who had lived in the house as a girl.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">39</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">February 02, 2009 at 01:10AM</span>
+            <div class="reply-content">I&#x27;m not sure, but I may have gotten Ale zero it&#x27;s name. At northern, the old ticket gate was falling down, it was given to the Germans and became their camp. Front Gate was pushed forward about 100 or 125 yards, where the Farkers were. A whole new structure was built and it was decided that there should be an Ale stand built there, and since the other ale stands were already numbered, I thought it should be called Ale Zero, Inn the Beginning (&#x27;cause there was the End of the World at the other end. Anyway, it may or may not have been me, but I know I did push that name.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">40</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">February 01, 2009 at 08:40PM</span>
+            <div class="reply-content">ale stand---I can spell--Duh
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">41</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">February 01, 2009 at 08:39PM</span>
+            <div class="reply-content">Longbranch was the Costume and Prop Shop and residence for April, Fili, Buck and Barbara, Stewart and Sheryl
+This one all stand that was almost never refered to by it&#x27;s number 2 The Pirate stand---Bob Wards--
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

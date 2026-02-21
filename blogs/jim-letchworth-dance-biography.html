@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jim Letchworth Dance Biography - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/blogs/">Blogs</a> <span>›</span> <span>Jim Letchworth Dance Biography</span></div>
+            
+    <div class="module">
+        <div class="module-header">Jim Letchworth Dance Biography</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By [3jiiarjwczptn]</span> | <span>February 17, 2009</span> | <span>24 comments</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Comments (24)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">[3jiiarjwczptn]</span>
+            <span class="reply-date">April 09, 2009 at 05:16AM</span>
+            <div class="reply-content">San Juan Bautista Ball canceled for 2009
+I wrote the State Park officals and volunteers last night (my introduction to this gig was through Frank Davis and Brassworks. Innitially we just transplanted our Fezziwig&#x27;s routines, then Frank I added more and more Old California music and dances. I have worked with three different bands over the years there:
+Like you, I am quite saddened at the news of the cancellation of the San Juan Bautista Ball this year. I sincerely hope for the return of this charming event in 2010.
+I understand the economic realities of today. I thank you for your kind words to me. I am grateful to you and all of the other volunteers through the years who have worked so hard to maintain this jewel of an event.
+I want you to know that the San Juan Bautista Ball has served to preserve and promote Spanish California music and dance and contributed to a revival of interest in this culture. The State Park is a very, very special place and The Plaza History Association is comprised of many special people. Over the years, interested dancers and musicians from all over California have attended and sang the praises of The San Juan Bautista Ball.
+I have a personal history with the Ball going back to the 1980’s. I remember, I had to find a substitute Dancemaster in 1989 because my wife, Marilyn, had just delivered our older son, Robert, a week before. Robert will be twenty this year.
+The Ball became an annual family tradition for the Letchworths. Marilyn joined me and added her unique sparkle to the evening’s festivities. Our boys, year after year, attended the day’s events with us. They learned a firsthand history of the town, the mission and the park. They met the re-enactors who eagerly shared their enthusiasm for San Juan. Our sons, when young camped with the Rendezvousers and eventually joined the ball. Robert became an enthusiastic dancer (especially when he discovered young ladies outnumbered the young men 3.5 to 1). Our younger son, Tommy, delighted his father when he became a fiddler in the band the last two years.
+I never made much profit, feeding and housing a family of four for the weekend, but it became a sort of working vacation for me, every Father’s Day. I never did it for the money, though the money made it happen.
+Old California music and dance continues in other venues. Please let dancers know I am leading an Old California Dance workshop at the San Francisco Free Folk Festival on June 13/14th 2009. I do not know which day yet. Check the website at www.sffolkfest.org. There will also be a Miner’s Ball in Placerville featuring Old California dance and the band “Legacy” on Saturday June 27, 2006 sponsored by the Shakespeare Club. Feel free to contact me for info for info.
+The pleasure has been mine.
+Thank You,
+Jim Letchworth
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">[3jiiarjwczptn]</span>
+            <span class="reply-date">March 11, 2009 at 01:15AM</span>
+            <div class="reply-content">I posted a couple of recent photos of Los Calicantos, one of the Old California groups I work with. I met them through the Olompoli State Park gig Phyllis set up last year. It was another one of those &quot;artistic successes&quot;. It really was a wonderful chance to network and these guys are a connection I made. The current director, Lance Beesom is desended from many of the families who made the trek up from Mexico with de Anza. My friend, Rose Berryessa is another, she has done a few fairs too. The group sings traditional songs with great harmonies, most also play and I am the Tecolero or Dancemaster. One of the photos shows a girls soccer team who joined in at Aviso adobe in Pleasenton.
+The band is my son Tommy on fiddle, son Robert on bass and friend Gavin Valasquez-Murray on guitar. It was a real barn dance. Tommy will join me for some of the Los Calicantos gigs.
+Hey you 4th grade California teachers doing the California history unit - they have product: CD&#x27;s, music books and do programs, too. Yep, we will all get rich working for California schools!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 20, 2009 at 03:07AM</span>
+            <div class="reply-content">we just jammed all three of us on drums...ed had a little frame drum. he and ronnie were happier than pigs in shit.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">[3jiiarjwczptn]</span>
+            <span class="reply-date">February 19, 2009 at 08:52PM</span>
+            <div class="reply-content">What did Ed play? Something creative, I&#x27;m sure.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 19, 2009 at 05:09PM</span>
+            <div class="reply-content">ronnie was around some after 1980, he would wear his hair in a funny topknot and his face was marked by lots of blue spots from a gunpowder accident as a boy. He ran with Bob a lot, and was active up on the ranch at preston. He was very low key about his early celebrity status so you may have just never had it pointed out to you. Also I sorely hogged him all to myself when i could. Back then I still played dumbek so we were your soundtrack. One weekend he and ed holmes and i played a 2 1/2 hr set at agoura.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">February 19, 2009 at 04:57PM</span>
+            <div class="reply-content">I stand corrected. Sorry, Catt! That was before my time. I didn&#x27;t start actually working until 1980.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 19, 2009 at 04:52PM</span>
+            <div class="reply-content">ronnie wilson...sorry honey. Ronnie Wilson was partners with Sean, and for many years he was the pipe and bowl drummer. he also started out as kit drummer playing for furf band with his cousins...the wilsons. So he was in the surfaris and they were the beach boys.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">February 19, 2009 at 04:12PM</span>
+            <div class="reply-content">Catt, I don&#x27;t know who &quot;Ronnie&quot; is. I&#x27;m assuming you mean Robbie, but he isn&#x27;t the drummer in question here.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 19, 2009 at 03:53PM</span>
+            <div class="reply-content">there was something in Ronnies drum that would get under peoples skin. There is a spirit in the drum that some people can evoke that when it leaps out and gets all rumbly people get a little unhinged. Our Chava can do that too.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">February 19, 2009 at 03:14PM</span>
+            <div class="reply-content">Jay, bless his heart, was prone to a blood and thunder approach, both off and on the boards. You&#x27;d hear bombs going off in Court/Glade and know that Mr. W was at it again. It was all sort of the &quot;manly men bellow&quot; thing. Which was odd because it was always the other gay boys who were shouting; the straight guys tended to be pretty calm. Unfortunately what often would have best been handled with a whisper (from a logistics standpoint) was often dragged out, full voice, and an attempt was made to make it a &quot;gig.&quot; Yelling at servants and groveling was another variantion on this theme which I absolutely hated. Court in the 1970s was pretty much universally detested on sight (for a variety of reasons, most of which had to do with how we were dressed rather than how we acted per se) and I recall doing a tremendous amount of pro-active fence mending (waiting on folks backstage, holding doors, being extra considerate, helping out where I could) just to try to offset this. Interesting thread.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">[3jiiarjwczptn]</span>
+            <span class="reply-date">February 19, 2009 at 06:56AM</span>
+            <div class="reply-content">Thanks Carrie, it was/is Jay. He had many more good days than bad ones.
+Sean, Beverly Thiel! Yes I remember her - unabtainalbe, I was class of 1969, El Cerrito. Crazy world.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">[7xc2nriojino]</span>
+            <span class="reply-date">February 19, 2009 at 03:00AM</span>
+            <div class="reply-content">Well just as I got all this typed out, I see Carrie came in with the Name, THANK YOU CARRIE !!!!
+geesze.... Wall-Raben-Stein ?
+Wow what a name ! He isn&#x27;t on here is he ? I should invite him to join.....NO just KIDDING......
+OK anybody here know Bohann Von Der Ravenwald ? He was a member of the SCA that I met
+at a Blackpowder Shoot at Mokelumne Hill in 1976. I was playing FIFE for the Calaveras County
+Fifes &amp; Drums, dressed up as a Billy Yank......what a great Germanic &quot;nammen&quot; Yah ?
+&quot;Johann der Dudelsackpfiefer&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">[7xc2nriojino]</span>
+            <span class="reply-date">February 19, 2009 at 02:47AM</span>
+            <div class="reply-content">Hi Jim ! Yeah it was definitely Pier 45 the Red &amp; White Boats Pier, not at Fort Mason.
+I want to say that his first name was JAY, if that&#x27;s any help. Earlier in the 1980s
+He was at a Gig I had with Sharon playing the Harp and this Jay and some other lady,
+were hired to sing Xmas Carols for a private Xmas Dinner in the Los Altos Hills. It was
+one of those uptight, but forgettable, Rich People&#x27;s Parties with appalling manners toward
+entertainers, (No water offered, no food, no directions to the Bathrooms) their Kids sat at our feet and loved the Music though, which was Positive, I got the cash (or check) and got out of there as soon as the time was up. We were in Victorian Costume, I remember that, but there wasn&#x27;t alot of &quot;Bonding&quot;
+as it was such a throw-together, one time only, Gig. This Gig was before the Pier 45 show that I do
+remember. Oh those memories......Hah-ha !!!
+As for your El Cerritto High School days, did you ever know Beverly Thiel (Class of 1968) she lived up
+on top of Grizzley Peak in Kensington, and she was my &quot;Berkeley Hippie Chick&quot; girl friend that I would meet
+up with when she would vacation up in Twain Hart, where her folks had a Cabin. I was going to
+Sonora High at the time (Class of 67). Well enough writing for now my old friend !!!
+Sean Ye Pyper in Carmel Valley
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">February 18, 2009 at 05:56PM</span>
+            <div class="reply-content">I think Jay Wallrabenstein is the man you are talking about. And I don&#x27;t believe he ever did Pier 45, just Pier 3/Fort Mason, though I could be wrong about that.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">[3jiiarjwczptn]</span>
+            <span class="reply-date">February 18, 2009 at 04:06PM</span>
+            <div class="reply-content">I think that was at Pier C at Fort Mason, though it may have been at Pier 45. Yes, I certainly remember exchange. No, I do not recall the man&#x27;s name.
+Maybe we can get some help here. He was a regular in Court as I recall, very tall, very blonde, add a little strawberry, blonde beard and yes a singer. And his name was/is...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">[7xc2nriojino]</span>
+            <span class="reply-date">February 18, 2009 at 09:47AM</span>
+            <div class="reply-content">HiHo JIM !
+I sure do remember your late 1970s &quot;Paddy&quot; character and you were great at it !
+My favorite story with You, was at the Red and White Boats Dicken&#x27;s Faire (1985 ?)
+Pier 9 ? 11 ? (whatever)where Drummer Ron Wilson and I had unknowingly drowned out the
+Carolers standing at the inside Gate,while we were ALL THE WAY UP at the very front ticket office,
+Playing the Scots GHB andthe &quot;Swash&quot; Drum. Well it echoed all the way down that enormous long Barn space, and It seems that one of the Carolers, a Man with a ruddy cheeked, English
+face and straw-Blond Hair, took offense at us and when we were back inside the Fair itself,
+we were asked to play for the QUEEN, who was coming &quot;entrain&quot; to Fezziwigs.
+Just before her Majesty arrived Mr.______? started yelling at us &quot;YOU GUYS ARE ASSHOLES,
+YOU&#x27;RE ASSHOLES, DON&#x27;T YOU EVER... DO THAT AGAIN&quot; (meaning drown out the Choir)
+&quot;OOOOh You assholes&quot; You assholes ET CETERA, whereupon you, yourself, Jim Letchworth, said,
+&quot;Shhhhhh! They&#x27;re going to play for the Queen&quot;....
+&quot;I DON&#x27;T CARE ABOUT THAT ! YOU DON&#x27;T UNDERSTAND, THESE GUYS ARE ASSHOLES&quot;, They&#x27;re ASSHOLES said Mr._____, doing a bit of solo dancing around and gesticulating.....!!!!
+He did finally clear off, just as the Royals appeared.
+In retrospect, it was really an apoplectic attack, fueled, I&#x27;m sure, by non-payment of wages,
+casual mis-scheduling of the Singing Group and assorted other &quot;sins&quot; of the management,
+but Ron and I became the &quot;Lightening Rod&quot; for his general disgruntlement.
+It was one of many negative scenes, that I haven&#x27;t forgotten, and was somehow.... horribly FUNNY !
+Do you remember any of this? Even better..... do you remember that Man&#x27;s name ???
+Your Piper IN CRIME and MISCHIEF Sean Folsom
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">[3jiiarjwczptn]</span>
+            <span class="reply-date">February 18, 2009 at 07:32AM</span>
+            <div class="reply-content">Noel, I was just another &quot;core&quot; member in 1977 with you. It was the plunge into directing and administration I was thinking about.
+You do remind me that I was just a visitor to Fezziwig&#x27;s for several years in the early 70&#x27;s. Drew, Paul Harkness, Springhorn and crew were doing their magic at Army Street. I was one of those kids heavily influenced by my high school drama teacher, Peg Long.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 17, 2009 at 10:02PM</span>
+            <div class="reply-content">Actually, Facebook is problematic just now, Noel...read my blog post here today
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">February 17, 2009 at 09:57PM</span>
+            <div class="reply-content">I&#x27;d love to see it. I was a core (paid) group person in 1977 (one year only--that was all I could take) and I remember working with Drew and you, and Lee and Paul, during that year. I never knew you weren&#x27;t yet &quot;official.&quot; Fun times, so very long ago. You should come over to Facebook. Mr. Springhorn is raising eyebrows (his and others) over there.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">[3jiiarjwczptn]</span>
+            <span class="reply-date">February 17, 2009 at 08:50PM</span>
+            <div class="reply-content">Paddy O&#x27;Reilly and whenever I said the name &quot;O&#x27;Reilly&quot; David Springhorn Fezziwig would cock an eyebrow and exclaim &quot;Oh, Really?&quot; Drove me mad - but&#x27;s it&#x27;s a short drive.
+Yeah I was playing and dancing for a couple of years before &#x27;79, but that was the year I was took on directing the &quot;auxilary&quot; - what we called the large volunteer group back in te day when te &quot;core&quot; group paid.
+I have a great photo of Paddy, I&#x27;ll have to dig it out.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">February 17, 2009 at 08:35PM</span>
+            <div class="reply-content">As I recall it, you used to go by &quot;Paddy.&quot; Or I may be getting this wrong. But I have a pretty strong memory of that.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">February 17, 2009 at 08:34PM</span>
+            <div class="reply-content">Jim, I think you plunged into Fezziwig&#x27;s a bit earlier than you think. You were around and about in 1977, when Drew was playing Topper. And Lee and Paul were there, too. Does that ring any bells with you?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">[3jiiarjwczptn]</span>
+            <span class="reply-date">February 17, 2009 at 08:24PM</span>
+            <div class="reply-content">The San Juan Ball should be Father&#x27;s Day Weekend, Sat June 20th.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 17, 2009 at 04:33PM</span>
+            <div class="reply-content">Oh Jim...I wanna learn the California Waltz Jota (although I don&#x27;t get up to Placerville so often). When is the San Juan Bautista Ball?
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

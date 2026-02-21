@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URGENT!Drakes Bay Oyster fans - time to speak up ! - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>URGENT!Drakes Bay Oyster fans - time to speak up !</span></div>
+            
+    <div class="module">
+        <div class="module-header">URGENT!Drakes Bay Oyster fans - time to speak up !</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By [16w6qn4dgjexa]</span> | <span>December 08, 2011</span> | <span>0 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;">Hey everyone,
+I’m asking for immediate help in a cause I passionately believe in: Drakes Bay Oyster Farm in Point Reyes (formerly Johnson’s Oysters, in existence for at least 40-50 years) is battling to survive in the face of an unyielding, sophisticated, incredibly costly National Park Service campaign to shut down aquaculture (and ultimately all farming) there. It’s our last chance to speak up. Please read the information below and act on it TODAY - emails must be received by Friday Dec. 9th. What we need now is a simple statement in support: Please click on the link below, please send off the statement (in bold) right now, and please forward this email to everyone on your list.
+
+This matter is now before Congress, with major support from Senators Dianne Feinstein and Barbara Boxer, as well as the very authors of the legislation that established Point Reyes National Seashore. But there has been an avalanche of lobbying by NPS-misinformed environmental groups - well-meaning, but out-of-state - who don’t know the truth. This battle is being fought thousands of miles away. Marin residents hugely support Drake’s Bay but are no match in numbers, a classic example of a centralized-government big-bucks bureaucracy versus local control.
+
+I’m a lifelong environmentalist. I personally know and hold in the highest esteem the Lunny family that owns and operates this farm . I’ve followed this saga closely from the beginning, and been shocked by a pattern of misconduct, misuse of science, dishonest and shameless behavior by NPS. Please don’t let them get away with it.
+
+Thank you for all you can do,
+Venta 
+
+_______________________________________________________________________________________________________
+From: Drakes Bay Oyster Farm [mailto:Drakes_Bay_Oyster_Farm@mail.vresp.com]
+
+Dear Drakes Bay Oyster Farm Supporters!
+
+Most importantly, we thank you for your continued patronage and support of Drakes Bay Oyster Farm. As you know from your visits to the farm, the National Park Service (NPS) is considering closing down the farm.
+
+The NPS has now published its draft report (an Environmental Impact Statement, or EIS) which requires your &quot;public comment&quot; on or before midnight Mountain Time on December 9th, 2011. 
+Here&#x27;s how you can submit your comment and help save the oyster farm:
+
+1) Use this link http://parkplanning.nps.gov/commentForm.cfm?documentID=43390 to submit this comment online: “None of the proposed alternatives are appropriate. I support a renewable Special Use Permit for Drakes Bay Oyster Company.”
+
+2) Pass this email on to your family and friends...NPS needs to hear from all of our supporters.
+
+3) Consider submitting additional comments on the suggested topics (see below) that you feel most strongly about.
+
+For more information on this issue, please visit the Alliance for Local Sustainable Agriculture www.alsamarin.org and www.oysterzone.wordpress.com.
+
+With Our Heartfelt Gratitude for Your Support Through the Years,
+Drakes Bay Oyster Company &amp; the Lunny Family
+
+1. All proposed alternatives put the oyster farm out of business - NPS should create a new alternative that supports oyster farming and maintains the renewal option. While the NEPA process mandates the consideration of a “no-action alternative,” there are no alternatives here that qualify as “no-action.” Alternative A forces DBOC out of business next year and the other alternatives shut DBOC down in ten years. The draft EIS fails to provide a valid status-quo baseline, which would include a lease with a renewal option. A new set of alternatives must be created that meet the actual criteria for this process.
+
+2. NPS should support a renewable permit. Please support the issuance of a renewable permit for Drakes Bay Oyster Company. DBOC must be allowed to continue the existing uses pursuant to the existing California Department of Fish and Game leases in place since 1934.
+
+3. NPS should adhere to its existing management policies, which support the continuation of the oyster farm. The current NPS General Management Plan for Point Reyes National Seashore, adopted in 1980, supports the continued operation of the oyster farm, as do all of the relevant Marin County planning documents. The draft EIS does not include justification for the decision to overturn the existing General Management Plan and Marin County’s planning processes. The failure to address these issues is unacceptable.
+
+4. NPS must consider the environmental benefits of the oyster farm and correct the misrepresentations. PRNS has misrepresented the facts about the environmental benefits of oyster farming. The draft EIS misrepresents those facts again, calling the removal of the oyster farm the “environmentally preferable” alternative. This fails to address the important ecological services provided by oysters, including filtering water. It also fails to address the environmental impacts of replacing a local, sustainable food source with the alternative of importing oysters in order to meet the current demand. The nation currently suffers a $10 billion seafood deficit; any loss in domestic production correlates to an increase in international imports. Comparisons of the carbon footprint of the existing food source with the replacement food source must be analyzed in the EIS.
+
+5. NPS must fully address the economic impacts of the oyster farm - the draft study fails to provide a complete analysis. The draft EIS mentions that removing the oyster farm would cause “major, long-term, adverse effects to the California shellfish market” but does not provide a complete analysis of these impacts, nor does it include these impacts in the overall analysis. Further, it does not analyze the impacts of eliminating one of the largest employers in West Marin County and the last remaining oyster cannery in California. The EIS must address the economic impacts of eliminating the production of nearly 40% of California’s oysters and the subsequent impact on the economy.
+
+6. NPS must fully address the socioeconomic impact of the oyster farm - this draft study section should be reformulated to address impacts on West Marin itself. The discussion of the socioeconomic impact of the alternatives is seriously flawed. Different geographic parameters are used throughout that chapter seemingly at random, switching from Inverness proper, to greater West Marin, to Marin, to multi-county, to statewide, to nationwide. This switching of parameters is used to argue that the job losses caused by shutting down the oyster farm would be minimal. Considered properly, in the context of West Marin, these job losses would be anything but minimal, as DBOC is one of the largest employers in the area. This section should be reformulated and corrected for the EIS.
+
+7. NPS must fully address the historical cultural role of oyster farming in Drakes Estero - the draft study is inadequate. The EIS should assess the cultural impacts of eliminating an institution that has been in operation for generations and that is important to park visitors, local restaurants, and the local foodshed.
+
+8. NPS must properly assess impacts (both actual and potential) on wildlife - the draft study makes claims of harm based on weak or non-existent evidence. The draft EIS claims that removing the oyster farm would benefit harbor seals; that claim is not supported by science. This issue has been reviewed by various agencies and individuals, including the National Academy of Sciences and many prominent scientists, with the conclusion that the impact of the oyster farm on the harbor seals cannot be determined. What is known, however, is that Drakes Estero is currently home to one of the largest harbor seal populations on the California coast and that the population seems to be stable.
+
+The draft EIS also includes a tremendous amount of discussion about special-status species and concludes that the oyster farm has or could have a negative impact on these species — yet most of the species mentioned in the report don’t even exist in the estero (plovers, terns, red-legged frogs, and leatherback turtles). The final EIS should reconsider all wildlife issues and provide a data-based assessment.
+
+9. NPS must address the oyster farm&#x27;s contributions to local habitat restoration and endangered bird restoration efforts - the draft study ignores these restoration services provided by the oyster farm. The oyster shell byproduct from the Drakes Bay Oyster Farm cannery is a critical resource for re-establishing native oyster beds and for restoring Least Tern and Snowy Plover habitat, both in the San Francisco Bay. The California Least Tern is a U.S. federally listed endangered species and the Snowy Plover is in decline due to habitat loss. These two restoration projects have relied very heavily on the philanthropic contributions of Drakes Bay Oyster Company and it is unlikely these projects would continue if shell were to be sourced out of state. The draft EIS does not address the impacts to wildlife or the environmental issues surrounding the loss of these restoration efforts.
+
+10. NPS must address national aquaculture policies when considering the oyster farm - the draft study does not discuss the various government and private efforts to encourage shellfish aquaculture around the country and around the world. Shellfish aquaculture is widely recognized nationally and globally as having a valuable role in the protection of wild fish resources. The National Oceanic and Atmospheric Administration (NOAA) is encouraging aquaculture for this and many other reasons. The EIS should take these policies into account.
+
+There are many other issues with this document, but those listed above are among our top concerns. 
+Again, please use this link to make a comment: http://parkplanning.nps.gov/commentForm.cfm?documentID=43390
+
+If you prefer to send a hard-copy letter, you may mail or hand-deliver it to the Park Service headquarters at this address: 
+Draft EIS DBOC SUP c/o Superintendent
+Point Reyes National Seashore
+1 Bear Valley Road
+Point Reyes Station, CA 94956
+
+Thank you again!</div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (0)</div><div class="module-content"></div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

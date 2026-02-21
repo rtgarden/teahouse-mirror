@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where&#x27;s Tribe.net?? - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Where&#x27;s Tribe.net??</span></div>
+            
+    <div class="module">
+        <div class="module-header">Where&#x27;s Tribe.net??</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By [29i1qxao43vgh]</span> | <span>September 08, 2008</span> | <span>27 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (27)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">[2fmhvf3f5ehyz]</span>
+            <span class="reply-date">September 22, 2008 at 10:21PM</span>
+            <div class="reply-content">And the latest...from Darren&#x27;s twitter page:
+tjcrowley tribe.net is down and it&#x27;s not my fault. Via.net had a BGP router blow up. Wait, I guess it IS my fault for buying bandwidth from a dumbass. 4 minutes ago from web
+*sigh*
+: D
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">September 22, 2008 at 03:48AM</span>
+            <div class="reply-content">Been able to access it until this evening when it comes up as not found. Sort if like trying to find Brigadoon lately!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">September 22, 2008 at 12:20AM</span>
+            <div class="reply-content">If you Google for Tribe and click on the sublink for Members, you can still access Tribe (at least I could). I am a &quot;member&quot; so perhaps they&#x27;ve just shut it down to folks who are paying them money...no idea whether that&#x27;s true...but they do seem to have redirected the main URL to an error for some reason.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">September 17, 2008 at 11:29PM</span>
+            <div class="reply-content">9 / 17 at 4:27 PM... There I was on Tribe, happily posting when SPLAT !
+Down again !
+So glad Teahouse is here.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">[2fmhvf3f5ehyz]</span>
+            <span class="reply-date">September 17, 2008 at 10:21PM</span>
+            <div class="reply-content">Me too! Total Swiss cheese brain today...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">September 17, 2008 at 10:20PM</span>
+            <div class="reply-content">Nope. Just pointing it out to folks as an alternative. Or did I already do that? Argh! My brain is gone. I can&#x27;t remember anything anymore!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">[2fmhvf3f5ehyz]</span>
+            <span class="reply-date">September 17, 2008 at 10:19PM</span>
+            <div class="reply-content">Or just pointing us to tribe refugees in general?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">[2fmhvf3f5ehyz]</span>
+            <span class="reply-date">September 17, 2008 at 10:17PM</span>
+            <div class="reply-content">Are you point us to the latest post, Carrie? Loki&#x27;s picture of (?) (zombie ballet?)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">September 17, 2008 at 08:09PM</span>
+            <div class="reply-content">Ahem.
+http://triberefugees.ning.com/
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 17, 2008 at 12:51AM</span>
+            <div class="reply-content">tribe is down and the recent twitter from ex-employee darren says
+&quot;That bang you just heard was someone finally paying attention to the clue-by-four I&#x27;ve been whacking them with.&quot;
+http://twitter.com/tjcrowley
+coincidence?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">September 16, 2008 at 12:30AM</span>
+            <div class="reply-content">Very interesting and the comments are even more so!
+Thanks for sharing.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">September 15, 2008 at 05:21PM</span>
+            <div class="reply-content">This is an interesting new development (assuming that everyone already knows that Darren tendered his resignation): http://markpincus.typepad.com/markpincus/2008/09/update-on-tribe.html
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">[2fmhvf3f5ehyz]</span>
+            <span class="reply-date">September 10, 2008 at 07:59PM</span>
+            <div class="reply-content">Hey Awen -
+Things are still not quite right with tribe. Mayhem is correct - it&#x27;s a building process. Darren installed new servers and they are taking awhile to *propagate* - should be good to go by this weekend (my thought, not tribe&#x27;s).
+Keep trying. Lots of folks still can&#x27;t get in, so you are not alone with the continued frustration : (
+Cheers, love!
+: D
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">September 10, 2008 at 12:16PM</span>
+            <div class="reply-content">Ok - checked things this morning and can read an updated blog, but access is a bit wonky - some I could view last night I can&#x27;t today. I guess it is a building process!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">September 10, 2008 at 12:04PM</span>
+            <div class="reply-content">I was able to access my page last night. It appeared some of the information was cached, but there were a few tribes I belong to with new content. Not on facecrack so don&#x27;t have access to some of the updates. Imagine there will be others with information!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">[29i1qxao43vgh]</span>
+            <span class="reply-date">September 10, 2008 at 11:02AM</span>
+            <div class="reply-content">What parts are up? I can&#x27;t access anything.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">September 10, 2008 at 03:02AM</span>
+            <div class="reply-content">Well ... parts of tribe are up now. Not everything and perhaps not everyone&#x27;s profile yet, but it is a start!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">[2fmhvf3f5ehyz]</span>
+            <span class="reply-date">September 09, 2008 at 10:21PM</span>
+            <div class="reply-content">tribe is showing signs of life! They may just be testing it, but I was able to get the log-in page. The server timed out before I got in, though, then I got the beta *error* page....
+Still, an improvement!
+Cheers!
+: D
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">[2fmhvf3f5ehyz]</span>
+            <span class="reply-date">September 09, 2008 at 07:42PM</span>
+            <div class="reply-content">(((Noel)))
+It&#x27;s true - so much info there...especially in the history snobs tribe! All that research and discussion - trapped in a box somewhere on the peninsula... : (
+Just got this message, which seems like a step in the right direction (I had just been getting *server not found* type messages):
+&lt;&lt;We are performing scheduled maintenance.
+On September 4th, we moved colo facilities. In that move, our storage device (SAN) was damaged. We are still trying to repair it and get the site working, but we&#x27;ve had to call in experts. All ETAs from here on out are dependant upon those experts.
+ETA for return of the site is 8:20pm PST on September 9. Feel free to play Connect 4 in the meantime.&gt;&gt;
+Similar to the update Darren posted on facecrack, but, to me, this means he&#x27;s got something up and running...a tiny glimmer of light at the end of the virtual tunnel ; )
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">September 09, 2008 at 07:35PM</span>
+            <div class="reply-content">I had the experience of trying to verify a Tribe-held piece of information. I knew enough components to Google it, and found the link. Instead of clicking on it (which takes you to the dead/inactive Tribes site), I opened the cache, and there was the entire series of responses.
+Rather inelegant and clunky, but I was able to answer my question. Not sure if this will prove useful to anyone, but thought I&#x27;d mention it.
+It&#x27;s amazing how much I&#x27;ve come to rely on Tribes, both for entertainment and as a repository of infomation. I&#x27;ve noticed this in its absence over the last week or so. There&#x27;s a ton of data there that is on Tribes and really nowhere else....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">[2fmhvf3f5ehyz]</span>
+            <span class="reply-date">September 09, 2008 at 06:57PM</span>
+            <div class="reply-content">*sigh*
+We&#x27;ve got good safety nets in place, and I am grateful! What I don&#x27;t have is my off-tribe contact info for the tribes I moderate (like the Rose and Stag tribe). I should have backed those threads up as soon as Darren made the announcement about being down for 24 hours...*shakes head at self*
+tribe will be back. I must have faith...
+Cheers!
+: D
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">September 09, 2008 at 05:54PM</span>
+            <div class="reply-content">This is from Darren as of 9:32 AM: &quot;Today&#x27;s update: it appears that we have a serious problem with our SAN (storage area network). I am working hard to fix it, but I&#x27;ve had to call in a consultant because it&#x27;s really outside the scope of my experience to fix. I&#x27;ll keep you updated as I find out more.&quot;
+If you didn&#x27;t know, Darren is the *only* employee that Tribe has, so he&#x27;s doing all of this work himself.
+But there has been a lot more traffic on this and other sites (Twitter, Facebook, etc). It looks like we&#x27;ve all got little safety nets in place, just in case...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">September 09, 2008 at 11:39AM</span>
+            <div class="reply-content">The buzz was that Tribe was going down for server replacements and one of the randoms message (that I am no longer getting!) is that there was a problem with the image server and that they would be up shortly. Not too much that can be done for that! Still not anything this morning.
+So I am way late on the updates! See what happens when I am without coffee!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">[2fmhvf3f5ehyz]</span>
+            <span class="reply-date">September 08, 2008 at 08:32PM</span>
+            <div class="reply-content">Just saw this on facecrack:
+From Darren -
+Someone asked that I give everyone an update, here it is:
+We attempted to move the entire site to a new colo facility this weekend. Due to a $400 late fee, our current colo would not let us move. When we re-assembled the entire site we also did some equipment upgrades, and things have no gone as smoothly as they could -- we should have the site back up today.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">[2fmhvf3f5ehyz]</span>
+            <span class="reply-date">September 08, 2008 at 08:29PM</span>
+            <div class="reply-content">4:20?
+That&#x27;s funny ; )
+(Hi Cat *waves*)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">Cat Taylor</span>
+            <span class="reply-date">September 08, 2008 at 08:27PM</span>
+            <div class="reply-content">Yeah, the work was supposed to be last Thursday and it&#x27;s been down ever since. Now they&#x27;re looking at 4:20 today.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">[2fmhvf3f5ehyz]</span>
+            <span class="reply-date">September 08, 2008 at 07:21PM</span>
+            <div class="reply-content">Thanks Awen : )
+I&#x27;ll wander over and visit you there!
+I&#x27;ve read rumors of tribe supposedly coming back up around now (12:20 pm). I&#x27;ve not checked, though...&quot;they&quot; (meaning Darren and whoever he could get to help him) were moving and replacing servers . Apparently they ran into trouble and had to wait for a new part...
+So very happy to be able to see you here : )
+Cheers!
+: D
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

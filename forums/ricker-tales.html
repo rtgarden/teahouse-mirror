@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricker Tales - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Ricker Tales</span></div>
+            
+    <div class="module">
+        <div class="module-header">Ricker Tales</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Eric Lethe</span> | <span>December 08, 2007</span> | <span>37 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (37)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 16, 2009 at 07:20PM</span>
+            <div class="reply-content">I just stumbled upon this, and thought it would be a good thing to share:
+http://www.sonic.net/~evolve/renfaire.ws/dave_ricker.htm
+*NOTE: some of the links are broken on these pages.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 02, 2008 at 01:58AM</span>
+            <div class="reply-content">thats funny that makes me &quot;Aatt Cavery an appropriate name for a hermit
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">[2ao3o6xb6daou]</span>
+            <span class="reply-date">February 02, 2008 at 01:41AM</span>
+            <div class="reply-content">Dave almost always greeted me cheerfully, with a big smile. Oh, I saw him plenty of times in his full curmudeonly splendour, but he rarely turned it on me. He was a great one for coming up with word games. My favorite Ricker word game was when he would reverse the first letter or syllable on the first and last names of the folks kicking around lot during pre-faire.
+Lots of people picked up on the game, and added variations. They became the standard for addressing each other. I was Vory Celtman. There was Trow Bobbridge, and couples like Seric and Arah. One of the biggest belly laughs I ever heard come out of Dave was one day at the teahouse, at a time when Spike and Daniel were building booths together -- they became Dike and Spaniel.
+He was particularly tickled by his own name -- Rave Dicker. I think that&#x27;s why he started the game in the first place...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 21, 2008 at 01:33PM</span>
+            <div class="reply-content">yes likely he never noticed.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">[13qe99mcck3nb]</span>
+            <span class="reply-date">January 21, 2008 at 07:28AM</span>
+            <div class="reply-content">susceptible yes, but he also like to say &quot;FUCK &quot;
+i was there when the discussion of music turned to Strauss, and D ended it pretty smart with &quot;Strauss?! FUCK Strauss!&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">January 21, 2008 at 07:12AM</span>
+            <div class="reply-content">What...the Armenian one?
+*evil grin*
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">[2c9hwt6yphj6c]</span>
+            <span class="reply-date">January 21, 2008 at 07:09AM</span>
+            <div class="reply-content">Okay, as billed: Brennan was maybe five or six years old - so it would&#x27;ve been RPF Devore around &#x27;95. It&#x27;s kinda hot and the coffee house is all but deserted. It&#x27;s a typical Monday afternoon: brunch is over, the Mullah has gone to the bank and to a movie and has left one of us &quot;in charge&quot;. This day it was David. Brennan, his mom Deborah and I are sitting on straw bales just relaxing and passing the time - you know - Artist&#x27;s Free Day. Maybe one or two others scattered around sitting on bales. Anyway, I&#x27;m noodling around on my six string and Bren asks me if he can go behind the counter and get a soda. I tell him it&#x27;s okay with me but that he should ask Dave as he&#x27;s in charge today.
+Now, DB is Bren&#x27;s uncle and the coffee house was one of the places in which he was raised. I should also mention at this point that expletives and curses were something that Brennan didn&#x27;t use - we explained to him that they had their place, like when the hammer hits the thumb or your boat sinks - but if you swore a lot you took the power out of the words.
+So he goes behind the counter and says, &quot;Dave, can I go in the ice chest and get a Hansens&quot;. Dave: &quot;NO!&quot; Brennan: &quot;Why not Dave?&quot; Dave (still reading his newspaper): &quot;Because I said so you Little Brat!&quot; Then we hear this small even voice say &quot;Dave?&quot; Dave: &quot;WHAT!&quot; Bren: &quot;fuck you Dave&quot;. I heard no reply, but Deb and I looked at each other in complete amazement, our jaws hitting the deck - we&#x27;d never heard him say anything like that to anyone. All I could say when he came out from behind the counter was that I&#x27;d get his soda. Which I did as I looked at Dave and just shrugged like, &quot;what can ya do?&quot;
+Later that week, when we talked about it, I told Brennan that I felt that his was an honest expression and not out of line but it would be a good idea if he were to address the incident with Dave and clear the air. Which he did the next weekend. Basically, he told Dave that he hoped that there were no hard feelings. I thought Dave handled it like a Mensch. He said that he&#x27;d deserved to be addressed thusly and if any apologies were due it was probably he that should give one to Brennan. Dave wasn&#x27;t known for his affinity for kids, but more than once after that day he told me how well he thought of this kid. Just when you might think ol&#x27; Ricker was monochromatic he&#x27;d show you another side. Rosin up the bow and saw that thing old son - you&#x27;re missed.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 20, 2008 at 08:08AM</span>
+            <div class="reply-content">I&#x27;ve been tryin&#x27; to remember specific Ricker tales for days. Certainly, I spent enough time around him, or with him around the Coffee House, to have some specific memories, but for some reason none have come to mind. Probably just because I&#x27;m tryin&#x27; to think of them.
+Mostly I just remember Ricker sittin&#x27; behind the counter, smokin&#x27; Bugler roll your owns, and knowing everything ... at least, to hear him tell it. I&#x27;m sure I got the sharp end of that tongue more than once, but I tried to let it roll off and usually it did. As long as he had some Green Death, Ricker was okay. Even if he did have some rather disparaging opinions of certain folk. He was interesting to listen to, that much is for sure.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">[12qb7e04dtezw]</span>
+            <span class="reply-date">January 20, 2008 at 03:07AM</span>
+            <div class="reply-content">His best and worst trait!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 20, 2008 at 01:52AM</span>
+            <div class="reply-content">Bob was always right.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 19, 2008 at 08:03PM</span>
+            <div class="reply-content">I remember he &amp; Bob , and later Brian going round and round about, oh everything, cooking, tuning, history, etc. etc., sometimes right onstage during a show.Quite frustrating for the rest of us !
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 19, 2008 at 06:46PM</span>
+            <div class="reply-content">Ah! we are the secret stash eh?
+It was like an auntie who would pepper your stew, and then tell you to fix your collar...and well it did need fixing. Never sure about the pepper.
+Once he peppered a stew of Bob&#x27;s and it made him so mad! I think he never forgot it...interrupting the sanctity of someone elses cooking pot on the stove!
+ricker would casually toss in bay leaves and beer and pepper and worsceshire sauce behind the cooks back nearly any chance.
+He had intense strange notions about the futiure, and like an old auntie he always thought that the flood was coming. Or something.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 19, 2008 at 06:28PM</span>
+            <div class="reply-content">Hehehe. You told me that story, Carrie at the CHB&amp;P. I loved it. He would have too.
+I first met Ricker when I became *involved* with a certain proto-Bruno whoshallremainnameless... and when this guy broke my heart &amp; shattered my world, Dave was a font of - would you believe it - sympathy and respect ; probably the two most needed things at that time.
+He COULD be a cantankerous old woman ex -Marine drill seargent, and I watched him excoriate many, but he never raised his voice to me.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">January 19, 2008 at 05:52PM</span>
+            <div class="reply-content">&quot;...deal was not to tell how sweet he could really be...&quot;
+Agreed. Everyone has stories of how Ricker yelled at them and I&#x27;ve sure seen enough of that myself, but for some reason I never had it directed at me. I got along with him. I liked him a lot. Sure, he was a grumpy old woman and a pain in the ass, but that&#x27;s his charm. He wouldn&#x27;t be Ricker without it.
+Catt and Morgan, remind me to tell you the story of (a tiny bit of) Ricker&#x27;s ashes. It needs the telling in person, or perhaps a private email.
+Love you guys!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 19, 2008 at 05:35PM</span>
+            <div class="reply-content">Yes he was succeptible to our rascally punk rock spirit.
+D is like Hijazz so everyone can play.
+that is what counts and in a way Ricker knew when the chips were down.
+He was a true Californio even though I dont know if he saw himself that way. Always sharp as a knife and often ready with some obscure back handed compliment that also revealed deep personal flaws.
+he was pure coyotee some times that way.
+He was a bit of an auntie Mame himself, and he put in many hours watchiing Lulu both of them engrosssed in books together behind the teahouse at BP and at Devore. He was a good auntie in many ways...always like &quot;Did you eat?&quot;. he would often give me rides to laundry and buy me burgers, deal was not to tell how sweet he could really be I guess.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 19, 2008 at 05:26PM</span>
+            <div class="reply-content">&quot;...something almost nice to say...&quot; Wasen&#x27;t that Uncle Stinky in a nutshell ? Though I DO remember a tale... I think this happened at an &quot;outside&quot; Morris Ale, where someone ELSE was being an innsufferable crummudgeon, and insisting that tunes be played in inconvenient keys as published in THE MORRIS BOOK by Mr. Bacon. The Crummudgeon was going off about &quot; Bacon says this, Bacon says that, this tune is in Bflat, etc. etc,...&quot; when Ricker pipes up in his so-familiar-to-us style &quot; FUCK Bacon! We&#x27;re playing this tune in D !!
+I believe Bruno and many other dancers gave him a big round of applause for that.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">[2vk9pswnkqroa]</span>
+            <span class="reply-date">January 19, 2008 at 05:00PM</span>
+            <div class="reply-content">It just floored me because I knew of his....shall we say rep? and for him to even talk to me was a bit of a shock and then to hear what he had to say....as I noted I just sat there kinda gap jawwed....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 19, 2008 at 01:31PM</span>
+            <div class="reply-content">probably while that crazy curly haired woman was hanging out with him.
+you know...the evil vixen.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 19, 2008 at 01:30PM</span>
+            <div class="reply-content">Yeah Dave always thought that we were both too rowdy.
+funny he should look in your direction in that regards...obviously he was making a classic Ricker surface observation since he doesnt know how even with gaffer you go girl!
+Its sweet he thought of something...erm...almost nice to say,
+(I always thought Jason was Eritrean or Etruscan or something ::tee hee::)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">January 19, 2008 at 07:47AM</span>
+            <div class="reply-content">That&#x27;s interesting. What year would this have been?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">[2vk9pswnkqroa]</span>
+            <span class="reply-date">January 19, 2008 at 01:09AM</span>
+            <div class="reply-content">I always looked at Ricker as one of those guys that I would just be pseudo quiet around and see what he was about before letting the Auntie Mame out. (even without knowing him...he made me feel like I needed to tone it down a bit), One day back in Black Point, when Dre had that wonderful hooch backstage, I was visiting with Barbara Derry and Ricker was sitting by the bar. He looked me right in the eye, slowly leaned forward and said in a very slow and serious voice &quot;You&#x27;re Armenian...&quot; I waited because with Ricker, you just never know. Then he did a deep sigh and sat up and said &quot;You need to settle Jason down.&quot;
+I was floored. I had talked with Jason a time or two, I had had a crush on him when I first started faire eons ago, but never in my conversations with close friends and confidants did I ever even talk about him, so what gave Dave the idea? Who knows... He then grabbed his drink, threw back a swallow and said &quot;yeah, you should settle him down.&quot; then he got up and left.
+Barbara and Dre were in the other room and missed the entire exchange and I sat there gap mouthed and speechless (which for me is almost unheard of). Sorry Dave, no settling down Jason, got me a Gaffer instead.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">[12qb7e04dtezw]</span>
+            <span class="reply-date">January 09, 2008 at 10:58PM</span>
+            <div class="reply-content">I remember it well- he had the last 4 cans of beer in the canoe with him. We watched with consternation as the murky waters swallowed them. It wasn&#x27;t deep (Ricker had been trying to &quot;scoot&quot; the canoe out of the mud at the lake&#x27;s edge) but it was dark. We looked for the beers the next day, but they were never found, so we wrote it off as a libation to the lake goddesses. Hope they enjoyed Rainer Ale.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 07, 2008 at 04:32PM</span>
+            <div class="reply-content">We were all up at Preston Ranch one summer, maybe it was a 4th of July bash, and Ricker was trying out some of the watercraft - with varying degrees of success. He finally chose a canoe, and getting into it said; &quot; Ahh! Canoe ! A craft I understand !
+And with that he went crashing into the water.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">[2c9hwt6yphj6c]</span>
+            <span class="reply-date">January 06, 2008 at 12:14AM</span>
+            <div class="reply-content">Coupla tales come to mind right now. Got time for one right now. Early &quot;70&#x27;s. Maybe the last Pumpkin Festival that was actually in Calabassas. Jack Farley, the promoter, gave me a handful of passes and encouraged me to bring some musical friends for street &amp; stage entertainment (we could be had back then almost as cheaply as we can be now); he&#x27;d also hired Dave as some kind of musical coordinator that season. Lotta good music came out of my booth after hours at the Agoura Renfair back then - country. blues, acoustic boogie, originals and like that...that&#x27;s why Jack invited us to the Festival. So things are goin&#x27; along pretty good. We&#x27;re playing in the street; boothies toked up our &quot;hat&quot; better than most of the marks and otherwise encouraged us to hang out and play. Remember now, at the RPF we were bound, sometimes ridiculously, by someone&#x27;s version of historical accuracy. Dave was, as were many of us, steeped in this, so I wasn&#x27;t shocked as were my five or six friends (a bit surprised, yeah) when at the end of a tune he came up to us and asked to speak to me. Certainly discreet &amp; respectful. Out of earshot of others he said, &quot; Ric, you guys sound pretty good but they weren&#x27;t singing in four part harmonies in the old west, do you think you could you keep it down to two?&quot; I figured &quot;that&#x27;s just Dave&quot; as I said Sure. My friends, however responded variously and it took a while to convince &#x27;em that it was okay and we could just continue as we were. When I related the story to Jack, who&#x27;d hired Dave, he just laughed and said he loved Dave and what he did but, &quot; He doesn&#x27;t know what it took me a while to find out: that when people come to my show they want to party. I leave that strict historical stuff to Phyllis&quot;. When I have time I&#x27;ll tell y&#x27;all about Dave&#x27;s first encounter with my son Brennan (when he was 5 or 6 years old).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 29, 2007 at 02:26PM</span>
+            <div class="reply-content">Yes he was right spry and cheerful for that summer. Bear wanted to drive me back from the ranch however I wouldn&#x27;t have any of it. He was so tickled! It was more fun for me right then to go out for burgers in Cloverdale on the way out, and sit and read the paper and discuss things. He had to share Bob with Bear a lot in those days, because Bob was mostly still liviing with Bear in the house that they were refurbishinh and flipping out in Fairfax (hose flipping is a family thing I guess). Mostly Bob was starting to live with Mary a lot at the Ranch, and by that 4th he had already set up his lathe in the barn by house at the lake and he was starting to turn chanters in there.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">December 29, 2007 at 11:48AM</span>
+            <div class="reply-content">I remember Dave playing on the porch at the Ranch that 4th of July...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">December 27, 2007 at 11:33PM</span>
+            <div class="reply-content">The first &quot;official&quot; contact I ever had with the Faire (Agoura flavor,) after years of just sneaking in, was a pre-faire workshop at Plummer Park in Hollywood. It was manned by Bob Thomas, JP, and Ricker. Pretty intimidating at first glance, the heart of the Green Death brigade those 3. Rainier Ale for everyone. Despite apperances, however, as workshops go, it turned out to be laid back, very friendly, and I resolved right then to run away with this particular circus.
+Ricker always did keep a little of that Marine DI background of his in a back pocket somewhere, and could be a cranky bossy old grandma--but he would invariably come back to his senses.
+V
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">[1rw777lryxji5]</span>
+            <span class="reply-date">December 27, 2007 at 07:26PM</span>
+            <div class="reply-content">This was the year I met our Mr. Spires too.
+Their combined natures colored my view of SF bay area musicians for decades.
+Will once said: &quot;That&#x27;s NOT what it&#x27;s called and that&#x27;s NOT the way it goes!&quot;
+So the only question to ask is:
+&quot;Has the animosity and effetism of old men changed the trajectory of old time fiddling?&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">29</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 27, 2007 at 02:55PM</span>
+            <div class="reply-content">that probably came back to haunt him later when Steeger won best new banjo player at the Topanga Canyon festival.
+Strange to note that soon after that Dave gave up the banjo mostly... and along with it lots of those good old &quot;too good for you&quot; tunes.
+One year when he and I were hanging tight at BP up in the magic hootches by caravancerai, I begged him good enough that he actually started taking it out and playing it again a little. It was really a tonic for all of us...WOW was he easy and free and cheerful on the banjo. Just totally different that his stern chiding melancholic fiddle playing. He showed me pictures of his family back in the day, and he practiced enough (&quot;I can&#x27;t play...I haven&#x27;t practiced in ten years...&quot; silence. Me &quot;Well that would be the way to start then.&quot;) he would actually sit out in front of the coffee house and play tunes. That was back when everynow and again Bear would drive up onto the lot in his excalibur and take me to Fairfax for breakfast. Dave drove me up to the Ranch for the big 4th of July party there and I do recall him getting jiggy with it on the porch at the ranch. I suspect that Carrie was there. Everyone was playing all over the lake house and I remember the Dead were there and they were like the little kids sitting in with the big bad boys. Hardly able to even keep up. Wendy Newel was rolling and smoking them with her new concertina and her oldschool gracious attitude.
+Honestly I must have seen that elitist snarl a hundred times as he snarkily said (LOUD) out of the side of his mouth at me glancing around the room for someone of authority to complain to &quot;NO!&quot;... &quot;No&quot; he would say. &quot;It doesn&#x27;t go like that.&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">30</span>
+            <span class="reply-author">[1rw777lryxji5]</span>
+            <span class="reply-date">December 27, 2007 at 07:34AM</span>
+            <div class="reply-content">When I was a young, brash fiddler, I was hanging out with Steeger and others during a folk festival in San Diego. The Highwoods Stringband was there, and Steeger offered some &quot;Damage de Kookoo&quot; to Walt Koken in order to soften him up to get him to play a tune into my tape recorder. Brian wanted him to play &quot;Mineola Rag&quot;, which was a great new tune Highwoods had been playing. We went off to the Greek theater and sat in the bleachers smoking. Another fellow joined us. He had a banjo, a leather hat (!) and a big, leather-bound can of Bugler pipe tobacco hanging from his belt.
+We were getting along fine and Brian suggested Walt play that tune into my &quot;time machine&quot;. Walt said: Sure thing, that&#x27;s a great tune. Just as he was about to put the bow to the strings, Ricker ( Yes, it was he ) said: &quot;Better not play that one for them, that&#x27;s a pretty good tune!&quot; Walt looked at him uncertainly and paused. Then he said: &quot;OK, Dave&quot;.
+That sort of elitism was completely against why anyone even goes to a festival like that!!!
+That&#x27;s how I became acquainted with Dave Ricker.
+Later, when Dave was off somewhere else, Walt came by where Brian and I were sitting in the Lobby and played the tune next to us without saying a thing. We turned on the recorder and got it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">31</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 10, 2007 at 12:54AM</span>
+            <div class="reply-content">OK Here&#x27;s another, rather the antithesis of the first.
+This one is via the Infamous Sue Carney, who was in a vehicle travelling with Ricker and Bob Thomas. This was back before Dave finally got his teeth fixed, and he was having dreadful digestive troubles.
+So David lets fly witha GNARLY fart. Sue says the chrome inside the car lost its&#x27; sheen, and the air turned green.
+Bob, in his inimitible way, waits a theatric beat and then says, dry as dust: &quot; David ? Did you die ? &quot;
+I guess this is a Bob Thomas story, too.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">32</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 09, 2007 at 07:27PM</span>
+            <div class="reply-content">I have so many, it&#x27;s hard to know where to begin.
+I knew I had Arrived as a Serious Musician when I pointed out to him an accidental in a key signature that changed the way we all played a certain tune. He was - gracious and interested. I was treated as an equal. What a rush !
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">33</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 09, 2007 at 03:17PM</span>
+            <div class="reply-content">Dave kept a tremendous lending library which he carefully handed out to all sorts of people. Thurel told me about it (Thurel could describe everyone by their libraries...inner and physical). Dave liked to beat me a lot at scrabble, but he would have to humor me with stories to get me interested. They were mostly narrow scrapes and banjo tales and tales of his deep admiration for Bob. He would be sure to let something good slip. some pearl that would keep me coming back (I hate losing endlessly repeatedly without fail at games...he would never *let* you win or anything).
+One day, at the little spool table, Mitch came by, and stopped to chat Dave up about some obscure science fiction. After he left (cough cough puff puff), dave says
+&quot;Oh yeah...he is one of the smartest guys out here....welll except for Thurel&quot;.
+I gave him one of those catt looks like &quot;well smart yes....&quot;
+&quot;I mean he has read a *lot* of books&quot;.
+after that I just saw things differently.
+Uncle dave really helped me see that there was more going on than I thought.
+and he did it in way that t was very typically gentle for him at that time.
+He was my auntie.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">34</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 09, 2007 at 03:04PM</span>
+            <div class="reply-content">quaaak
+is very specific
+Bob would say
+&quot;If it walks like a duck, and it quacks like a duck
+treat ot like a duck
+(or alternately dont treat it like a chicken)
+even if
+you like the eggs.
+(all assembled would together solemnly say)
+&quot;Quaaaaack&quot;
+so it became an expression
+that Dave got swept up in
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">35</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">December 09, 2007 at 10:03AM</span>
+            <div class="reply-content">As the man himself would say: &quot;QUAAAAACK!&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">36</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">December 08, 2007 at 07:00AM</span>
+            <div class="reply-content">(comment lifted from Carrie&#x27;s blog post. Why don&#x27;t they give us Permalinks for our blogs, btw?)
+Oh, man! Ricker&#x27;s cough will linger in my memory like a bad dream. Especially that &quot;first thing in the morning&quot; hack that he had, clearing out his lungs. *shudders*
+Did I tell you that Nell has his travel Scrabble board? She and I played once, a few years ago at a party at Malaika&#x27;s (using Lot Rules). She trounced me royally, three games in a row. Nell is a scrabble shark, I&#x27;m warning you.
+But it made me think of hanging out in the library at the gray barn.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">37</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">December 08, 2007 at 06:54AM</span>
+            <div class="reply-content">I bought Ricker&#x27;s trailer on Snob Hill, parked permanently under a huge Madrone tree between Bob McGowan&#x27;s and the K-Pat trailer that became Bud Coffee&#x27;s at one point. I paid Ricker $200 in cash for it, which I thought was an amazing steal since my tent at Jungleland in Agoura cost that and was only a tent, right? Anyway, when I moved into it...it had one wall covered with carefully decoupaged beer labels...and it was done so carefully and with such reverence that I had to leave the wall as it was. Aside from that one Rickerian feature, it was remarkably clean and I didn&#x27;t have to disinfect it, as many suggested I would have to. Dave was always extraordinarily kind to me (not sure why). I lived in the trailer for 3 years I think, then sold it to Dwight Lloyd for Twinkie to live in.
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

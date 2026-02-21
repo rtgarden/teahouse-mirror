@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humboldt Nation Under Fed Seige - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Humboldt Nation Under Fed Seige</span></div>
+            
+    <div class="module">
+        <div class="module-header">Humboldt Nation Under Fed Seige</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Murray then, now aka MAX</span> | <span>June 26, 2008</span> | <span>7 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (7)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">June 30, 2008 at 03:43PM</span>
+            <div class="reply-content">again from the blogs this morning:
+Real Property writes:
+The invasion of the Lost Paradise property , crudely called BuddhaVille, is the most recent example of the governments new strategy of prosecuting property owners.
+The federal government has been using the RAVE Act USSC 856 to prosecute many property owners in California. You can find information about the RAVE act at the following sites:
+http://en.wikipedia.org/wiki/RAVE_Act
+http://bbsnews.net/bw2003-06-12.html
+The theme of most federal prosecutions in this regard is to charge a defendant with conspiracy and 856 (RAVE ACT). Conspiracy is governed by mandatory minimum sentencing. If you are convicted in a conspiracy with over 100 marijuana plants you will be sentenced to five years, in a conspiracy with over 1000 plants you will be sentenced to ten years. Unfortunately the judge and jury have no discretion over your sentencing in a mandatory minimum case. Most defendants when facing mandatory minimums decide to plead guilty rather than face an uncertain outcome in court which could lead to lengthy prison terms. When pleading the government typically agrees to reduce the sentence to a non mandatory minimum charge; the RAVE Act USSC 856 is a non mandatory minimum charge. What is important to note is that the federal government indicts using charges that will lead to a guilty plea, the longer the sentence the more likely a defendant pleads guilty (whether or not they are actually innocent).
+Recently the government has been focused on targeting real property owners in order to put a dent in marijuana crime. Unfortunately this is quite effective because a property owner has both their freedom and their finances to lose. You can read more at the following sites:
+http://www.canorml.org/news/LA_DEAletter.html
+http://www.sfgate.com/cgi-bin/article.cgi?f=/c/a/2008/02/07/BAE4UTGBG.DTL
+Humboldt County has a major housing shortage. There is very little land available for new families to homestead. This shortage combined with a difficult regulatory environment has led to property owners using other forms of ownership. The same thing has been happening for sometime in San Francisco and the people have responded by creatively following the law so that they can have a form of home ownership. The following website explains a lot about California models of co-ownership:
+http://www.andysirkin.com/Index.cfm
+Equity or ownership co-operatives are an effective form of land ownership. Their organizational framework is usually established by the developer of each project and its lawyers.
+Co-owners have been called something more than a tenant , and something less than an owner. Typically, a corporation owns the property, and each purchaser receives a share in the corporation, together with a non exclusive long-term right to use in one particular area. That right is usually documented by an “occupancy agreement.”
+One can investigate what form of co ownership “Lost Paradise” is using the following website:
+http://kepler.sos.ca.gov/corpdata/ShowAllList?QueryCorpNumber=C2581198&amp;printer=yes
+Contrary to reports, Lost Paradise is not an LLC, it is a corporation. A corporation is not the best current model of ownership for real estate. In fact most real estate investors use LLC’s because of the favorable tax regulations that corporations do not enjoy.
+A corporation in Humboldt that owns land in the same way as Lost Paradise is: The Big Lagoon Park Corporation. The Big Lagoon Park Corporation has enabled the co ownership of approximately 50 acres of land with 76 shareholders on the coast just north of trinidad for over fifty years. The Board of Directors has done a great job in helping to make sure that this corporation runs efficiently through proper by-laws and governance.
+It is important to note that just because you are a shareholder of a corporation that may be involved in illegal acts, you are not necessarily responsible for the corporations actions. The Enron case is a great example of this. It would be a shame if the federal government used 450 agents to investigate shareholders of the Lost Paradise corporation solely because they were owners. All of the shareholders of Enron were not investigated.
+There are many working models of co ownership through out Humboldt and California. It is unlikely that the reason for this attack on civil liberties was because of the manner in which title to the property was held. More likely is that the federal government is all about seizing assets. Real estate owners typically have very visible non liquid assets that are easy to take and assess. Real estate owners are usually the most political for this reason: government is constantly stealing from them. Property owners in Humboldt county should be outraged at this recent invasion and should be worried about what is next. Will we see an increase in civil forfeiture like we saw in the late 80’s?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">June 30, 2008 at 12:32PM</span>
+            <div class="reply-content">Sometimes it has to happen. Hoping the small growers managed to keep undercover. When done discretely there is much to be said for it. Again it is all caculated risk. Just bad when they get so obvious that it a given. Hope they start getting all of this and the fires under control. Had it all down here in the past few years - know how bad it can get.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">June 30, 2008 at 01:21AM</span>
+            <div class="reply-content">I ganked the above opinion out of a local blog. apparently we have those now. I could have written it though as it puts to form many of the observations that I have had. In this community It upsets us almost more to have to approve of such an action by the fed...however by and large many people are sick of the people in huge vehicles crazed on white powder dominating the highways and byways.
+It is still very strange, like seeing all sorts of guys in camo in the gas station and realizing that they are in full military (?) because they are some sort of military-ish. It was an interdepartmental task force so that includes some exotic personnel. Usually I would just assume they were Military Reserve traveling through however not so today.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">June 29, 2008 at 11:41PM</span>
+            <div class="reply-content">Bravo Catt,
+Not a popular view point in your neck of the woods, no doubt. Very brave of you to express it. It&#x27;s an unfortuate truth of the human condition that there are always people ready to exploit others, even their beliefs, for profit. If we are ever to mature into a responsible/respectable species, we&#x27;ll have to realise that we are in this together and it&#x27;s not a race to the bank.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">June 29, 2008 at 01:44PM</span>
+            <div class="reply-content">http://humboldtherald.wordpress.com/
+Vere Tay Says:
+June 29, 2008 at 1:43 am
+Welcome to Buddhaville: A case study in what happens when local criminal profiteers gain the sympathies of naive, well-meaning civil-libertarians.
+While standing up for constitutional rights and the hard-won legalization of medical marijuana, don’t become one of Buddha’s Fools!
+When neighbors don’t have the authority and/or the fire-power to “police their own” as proposed on KMUD (6/26/08), thank goodness there exists a well-organized, un-intimidated and (somewhat) neutral agency that can step in to do the job for us!
+While there are certainly historical occasions when police/FBI/DEA/IRS, etc have over-stepped the boundaries of citizens’ civil rights,
+there are times when these same agencies can prove helpful in restoring a certain element of law and order within communities that find themselves in over their heads at the hands of self-styled black market mega-profiteers.
+For all of those who have, over the years, found themselves confronted with neighbors and community “members” who challenge the boundaries of common courtesy, respect, good sense and safety, not to mention land stewardship, the arrival of the feds this week might have actually come as a long-awaited relief.
+While my sympathies are certainly with those “small fry” folks/families who found themselves swept up in Operation Southern Sweep, there is a certain amount of responsibility for one’s own actions that needs to be taken: If you were growing marijuana for profit of any kind, you were not acting in accordance with the law. It doesn’t matter if you have a 215, you were breaking the law as it was voted on democratically by the citizens of this state. If you feel that that law needs to be changed, then, by all means, work towards that goal (keeping in mind that with full legalization, profit margins will become even slimmer than they are currently). If one CHOOSES to break the law in the pursuit of financial speculation, one has chosen to take that risk in the process. There are many people who weigh the risks and some decide to accept those risks and some decide against it. The main point is that if you chose to take a risk, you can’t then argue with the outcome when it isn’t to your liking. It makes you look like a sore loser (or, worse, it reflects poorly upon your good sense).
+This same thing can be said regarding the situation of those who “bought in” to the Lost River/Lost Paradise, LLC. property: Did you research what kind of scene you were buying into? I personally know people who initially jumped at the opportunity to get a piece of this prime real estate and then decided against doing business with those people who were in charge. These decisions were based on many things BUT, most notably, on an understanding of the reputation and history of those people. I personally would not buy into a legally questionable land scheme that involved marijuana cultivation (even under 215 “protection” ;) with people who had already been busted by the feds in the relatively recent past (Which is a whole other part of the equation in question at this point.) If you are someone who bought into this situation and didn’t have the local insider info, once again, my sympathies are with you, but that’s what research is for.
+Thus, when I heard on the local news Friday morning that the Feds described the main target of their operations as a “Home Grown Cartel”, I knew exactly what they meant. Not only that, I’m reasonably confident that those in question not only agree with this characterization of themselves, but are now wearing it proudly like a badge of honor.
+This is the kind of element we are talking about here: People who actively, repeatedly and flagrantly break the law in pursuit of excessive profit and the strengthening of their “outlaw” identities. Their actions are not designed to highlight social justice issues (such as Cannabis legalization for medical use), it is profit and power.
+How unfortunate that generic community mistrust of organized law enforcement and, in this case, misguided human rights concern, has led many well-intentioned social activists into unwittingly defending those people who have little concern for those issues themselves.
+So, once again, welcome to Buddhaville!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">June 26, 2008 at 11:01PM</span>
+            <div class="reply-content">http://humboldtherald.wordpress.com/
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">[3ps78rnilakw0]</span>
+            <span class="reply-date">June 26, 2008 at 06:53PM</span>
+            <div class="reply-content">Got any links I can post on other sites?
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

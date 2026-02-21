@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topics for Welcome Document - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Topics for Welcome Document</span></div>
+            
+    <div class="module">
+        <div class="module-header">Topics for Welcome Document</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Eric Lethe</span> | <span>April 02, 2009</span> | <span>16 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (16)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 12, 2009 at 02:57PM</span>
+            <div class="reply-content">here is a nice example of a welcome letter:
+something to ponder:
+(many of these were linked)
+----
+Welcome To Ravelry!
+Sent at 12:10 AM Today
+Hi there rtgarden!
+I just wanted to take a moment and welcome you to Ravelry. If you have questions while you’re setting up your notebook and getting involved in our great community, you can visit the friendly folks at the Help Group. There is also a Wiki with answers to a lot of FAQ’s. Ravelry is a fun and friendly place – please take the time to read our Community Guidelines.
+If you’d like to meet the couple who created Ravelry, and learn more about the website and how it got started, please visit About Ravelry. You’ll meet Jess, Casey, and their dog, Bob! We think Ravelry is a wonderful idea, and are so glad they’ve invited us all to be here!
+While you’re exploring the site, be sure to check out This Week in Ravelry for the latest news. And, don’t forget that The Welcome Mat is always out for newcomers and all of our Ravelry friends. Drop by and get comfortable while you explore Ravelry!
+If you’re looking for more groups to join? Check out the groups page – there are thousands of interesting groups here on Ravelry.
+I’m looking forward to seeing you in the forums, and if you have any questions, please don’t hesitate to ask. Feel free to add me to your Ravelry friends!
+Welcome!
+Nikoleta
+The Welcome Wagon
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 12, 2009 at 01:55PM</span>
+            <div class="reply-content">yes thats excellent, making it clear what willhappen is key. The thing is the slideshow can be set several ways so that pictures are promoted to the front page, or even favorited and then run together like right now. I think we can work around people sudden fits of creativity and somehow absorb whatever they manage to mnake and share. The main thing is that as you know (its sorts secret) this is a literacy project for our community. I would like to keep the sandbox feeling here very free, keep it very welcoming in attitude like the way it felt on the streets at faire in the old days. Some people havent had much outlet for their creativity in awhile and when it comes it comes in fits and starts.
+if we could get an extended activities list then it would be easier to follow the pics as they come in and switch back and forth and enjoy the new pics.
+its hard because at certain times there will be certain behaviors and we want to limit that by example rather than much by decree.
+more and more i am thinking it would be neat to have a map suitable for printing, of course styled after Sally&#x27;s with some whimsical and totally newish ideas of place thrown in. Possibly reflecting our current interest and pursuits.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">April 12, 2009 at 07:23AM</span>
+            <div class="reply-content">It&#x27;s just a guideline...no? Perhaps the current event stuff isn&#x27;t undesirable then? I sure get a lot of side comments about them from the peanut gallery. In general I just want to point out to newbies that the slideshow can only be the 100 latest pics long, so keeping one&#x27;s personal per-day pic posting down to 20% of that seems a pretty fair guideline, no?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 12, 2009 at 04:13AM</span>
+            <div class="reply-content">thats pretty harsh.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">April 12, 2009 at 03:59AM</span>
+            <div class="reply-content">Are we agreed then to add advice to the Welcome Doc about an individual posting no more than 20 historical pics in a day...and also about keeping &quot;current event&quot; pics (like &quot;My grandchildren&quot; and &quot;My vacation&quot;) shots down to 5 a day?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">April 08, 2009 at 02:32PM</span>
+            <div class="reply-content">Naw, of course not getting everything. It was never possible to see the whole faire either. Some folks occasionally stumble through, amazed at every turn. Others want a map, have specific interests, maybe even want to help create something beyond doing what comes naturally when we&#x27;re together. So far this is a grand party, beautifully inclusive. random, organic. We&#x27;ve broached ideas for ordering the chaos, but the main thing that actually came out of that not an organizing of the teahouse, but the birth of the wiki. Could that be the way to go, to have teahouse be the mulch from which stuff is pulled to build well other ordered formats? The wiki and the seductive sounding homemade thingy where everything is kept at home rather at ning sound like cool ways to do that. That could offer a clear difference in ownership issues.
+Or do we want to work on better ordering here on this venue? I guess I&#x27;m looking for definition of purpose in these existing and planned venues.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 07, 2009 at 02:22AM</span>
+            <div class="reply-content">how to use search on the site to unfold past topics and history. lot of ppl dont use search. Personally redundancy doesnt bother me its just I worry they arent getting everything from the site.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 07, 2009 at 01:06AM</span>
+            <div class="reply-content">ok here is something I am jotting down to remember. Mark Lewis needed me to point out how to turn off the message alerts for groups, and it occurred to me that there is a lot of functionality and profile information buried underneath the change&quot;my photo&quot; link. For people who already understand what a profile is and that all of your stuff is stashed in there it sort of makes sense to look there, however in the teahouse we have the interesting influx of people who are forcing themselves to become more computer literate just to participate here (I have intense admiration for this effort). So basically there needs to be like a game tutorial made more formally that will actually take you through the steps in levels and basically explain more what a profile is, and how these sites create a user profile and user interface.
+Now that I am having some luck using drupal I am having an easier time myself moving around on a lot of these sites. In the past I often flailed around a lot just trusting that eventually I would figure out a more direct and realistic route to what I was looking for. NOw I am more able to just find a direct link in adrop down menu, stuff that seems really obvious however for lots of people its like that burlap curtain trick where the shortcuts keep eluding them.
+basically helping people as theya rrive set their levels more carefully so they do not feel deluged by the site when it gets active. Emphasizing to them that the normal protocol is for them to participate at their own comfort levels. There is a whole set of ettiqjuite and expectations that it might be possible to convey some of, I will ponder it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">April 03, 2009 at 06:33AM</span>
+            <div class="reply-content">Completely agree, Sylvia. Threaded discussions are hard to do, and Ning&#x27;s aren&#x27;t great. Tribe&#x27;s were better, but only marginally as we used to complain sometimes where they inserted comments too. The Welcome Doc should definitely at least mention this problem, so it&#x27;s not surprising to the Newbies.
+What else? I&#x27;m thinking of big sections:
+a. Customizing your Profile
+b. Finding Friends (making Friend requests)
+c. Pictures (everything to do with...from the slideshow to how to look at all the pics, to uploading your own).
+d. Participating in Groups / Forums / Discussions
+e. How to figure out what&#x27;s happening
+f. Archiving Policy for content
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">April 03, 2009 at 06:26AM</span>
+            <div class="reply-content">The sort of mouseover-context help you&#x27;re suggesting would be a feature enhancement at Ning. We can certainly suggest it. If implemented, I&#x27;d like to see it in &quot;Newbie&quot; mode that could be turned off in preferences after one has gotten used to things. Ning is cumbersome at best now (due to Flash playing slideshows, etc.) so wouldn&#x27;t like to see additional features that make it a pain in the arse to view for the initiated.
+I don&#x27;t go to the Main page much either anymore, but most Newbies start there (as a Ning default).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">April 03, 2009 at 02:01AM</span>
+            <div class="reply-content">And as for &quot;overwhelmed when they log in&quot;, well, of course. Most of us have spent a lifetime practicing the art of ignoring signs. &quot;Don&#x27;t do this&quot;, &quot;Don&#x27;t go there&quot;, &quot;Do this or else&quot;, blablabla. Like rules and laws, that stuff is for other people. Then we come to the &#x27;net, with all it&#x27;s banners, pop-ups, and blinking crap. Especially old timers, who are used to print media, con be expected to freak out when confronted with rich pages. To me the symptom &quot;overwhelmed&quot; equals the remedies &quot;simplify&quot; and &quot;clarify&quot;.
+I wonder if mouse-over pop-out explanations would be appropriate for the top menu row, at least items that aren&#x27;t self-explanatory. For example, mousing over &quot;pages&quot; could offer something like &quot;help in how to use and enjoy the teahouse&quot;.
+These impressions concern the main teahouse pages, but might apply to a welcome letter. Brief, simple, lead the horses to water, make it easy to drink.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">April 03, 2009 at 01:42AM</span>
+            <div class="reply-content">One of the hardest things to understand is how the discussions thread, and how to decide where to reply vs. where it will show up.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">April 03, 2009 at 01:14AM</span>
+            <div class="reply-content">Egads, Danese, until you said that I had never seen the wiki link there, for the simple reason that I wasn&#x27;t in the habit of looking at that page. I&#x27;ve been through phases of how I relate to the teahouse. Checking in, it open at my page, and I go from there. At first i thought all new posts would show up in the &quot;latest Activity&quot; bar, so I missed lots of stuff that wasn&#x27;t there. I used to just look at that and photo additions, or the occasional video. I ignored places like &quot;notes&#x27;, &quot;pages&quot;, and &quot;main&quot;, thinking essentially &quot;been there, done that&quot;.
+So when I suggested that the wiki (or other important announcements) needs a link, banner, whatever, I guess I meant on my page where I&#x27;ll see it right away. In light of this realization, alternatively the welcome letter could point out where to find teahouse news and announcements.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">April 02, 2009 at 06:38PM</span>
+            <div class="reply-content">The idea is to create a document we can point newbies to...which would be linked off the Main (home) page like the link to the wiki is (at the top of the page).
+Since you&#x27;ve admitted to still being at a loss...could you possibly just make a list of the things you feel you still don&#x27;t understand? And if you can remember maybe the things you had to figure out to participate on Teahouse?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">Danese Cooper</span>
+            <span class="reply-date">April 02, 2009 at 04:47PM</span>
+            <div class="reply-content">The tech stuff is very good idea ... in fact, on that subject, I&#x27;m still at a loss with many of the fine points. I suspect there are many others who have run into the same problems.
+If I might suggest, as well as sending the information in a welcome document, also post it somewhere easily accessible on the main page itself for quick reference.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">April 02, 2009 at 06:28AM</span>
+            <div class="reply-content">Hi, I just joined a few weeks ago. So hopefully I will be able to remember. I will be out of town for the next few days, but I will try to write up the stuff, and then paste it here when I get back.
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preston - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/blogs/">Blogs</a> <span>›</span> <span>Preston</span></div>
+            
+    <div class="module">
+        <div class="module-header">Preston</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Carrie Smith</span> | <span>February 14, 2009</span> | <span>41 comments</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Comments (41)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 13, 2009 at 10:28PM</span>
+            <div class="reply-content">I remember going to that mulberry - it was huge - and gathering the wonderful berries . They were very fragile &amp; would burst easily, sending mulberry goo over everyone. Our hands, arms &amp; faces were several shades of purple, and those berries were soooo delicious !
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 13, 2009 at 09:47PM</span>
+            <div class="reply-content">i still have feathers and crystals from the land
+also an edwin box made of madames mulberry tree wood
+this last winter my son in law planted my mulberry tree here, I have had it in a huge pot out back for almost ten years. It provides a link between a large cherokee plum that got toppled over in the hurricane (cyclone?) a year ago and a small oak tree i have been carefully saving for 20 years (from weedwhackers). Together the three trees provide a new canopy level for the mountain jays and house larks, tieing them in with the golden bamboo and the hillside. best part is I can see them right here from the livingroom lounge and studio.
+mulberry tress are important in persian medicine, especially the non-wild type. They give leaves for silk worm cultivation, tasty berries you can dry and make into a sort of flour, and they have a bark that is pretty good at staving off fever. Madame had lots of very medicinal trees and shrubs well established.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">[289vh4fy065qv]</span>
+            <span class="reply-date">March 13, 2009 at 03:41PM</span>
+            <div class="reply-content">Funny,
+I also swam in that lake hugely pregnant and finding a Blue Heron feather and Edwin telling me to hold onto it for guidance through the birth. I still have that feather 23 years later.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 13, 2009 at 03:08PM</span>
+            <div class="reply-content">I remember living in the hospital...it, mansion,medicine house,Bob Thomas&#x27; house, all the cabins on the road leading up to the Mansion were burned.
+I was so surprised that the Church &amp; it&#x27;s buildings survived.
+Not to mention Madam&#x27;s mulberry tree.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 13, 2009 at 02:25PM</span>
+            <div class="reply-content">yes the lake house, and all the lathes in the barn survived. The lathes were what bob used to make the chanters...also very hard to comeby. It is in rough shape though.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">March 13, 2009 at 07:11AM</span>
+            <div class="reply-content">Ran into Edwin at Lark last year and in chatting he confirmed that the Lake House is still intact, FWIW.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">March 13, 2009 at 07:09AM</span>
+            <div class="reply-content">I&#x27;d have to look in my journal for 1988 to be sure, but I think the only thing that remained intact was the Lake House, since it was so far removed. I believe everything else was destroyed. Someone else may be able to confirm that.
+Joyce, you are more than welcome to use the photos for your memoir. Just give me credit for taking them! If you&#x27;d like higher resolution copies, let me know and I can email them to you.
+Once I unearth the rest of my photo boxes and albums, I&#x27;ll post more. I know have quite a few others, both pre and post fire.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 13, 2009 at 05:51AM</span>
+            <div class="reply-content">Carrie thank you for posting the pictures of post Preston, I have never heard weather the hospital or medicine house survived???
+Also would like to know if you would mind if I copy these to use in the memories I&#x27;m writing (of my life) and I&#x27;m have been doing it cronologically and have just got to 1972 when I moved to Cloverdale and then to Preston. It will probably never be published, its mainly for my grandchildren.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">March 12, 2009 at 08:56AM</span>
+            <div class="reply-content">Just letting everyone know (in case you missed the most recent blog post) that I&#x27;ve put up a few photos from the ranch in an album. It&#x27;s heavy on post-fire photos because that&#x27;s all I&#x27;ve been able to locate for now. I have more from the Ranch when it was intact, I just can&#x27;t find them right now.
+The album is here.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 20, 2009 at 02:49AM</span>
+            <div class="reply-content">i still have some of the amethyst from India that Madame had brought out for her healing efforts. One very nice piece with a nice tip on it that mary helped me find in the old junkyard (actually just a flat spot)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 20, 2009 at 02:45AM</span>
+            <div class="reply-content">yes the threads on this thing are odd
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 20, 2009 at 02:36AM</span>
+            <div class="reply-content">Okay good, I thought I had missed something! Like wow maaaaannn that was trippy man.........
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">February 20, 2009 at 02:29AM</span>
+            <div class="reply-content">Catt: Another &quot;Ronnie Wilson&quot; anecdote above, I noticed. The threads are starting to mesh.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">February 20, 2009 at 02:29AM</span>
+            <div class="reply-content">Hi, Morg. I think that Kalia&#x27;s comment should follow Joyce&#x27;s on this thread, entitled &quot;So There I Was...&quot;: http://teahouseofthedonkey.ning.com/forum/topics/so-there-i-was?page=8&amp;commentId=1573234%3AComment%3A69047&amp;x=1#1573234Comment69047
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 19, 2009 at 11:04PM</span>
+            <div class="reply-content">Here is Kalia&#x27;s story;
+When I try to follow the link to see the discussion, I just keep winding up here. Not quite sure why I can&#x27;t get through. The goose in Question was named Goosolini, one of those giant, hissing, monster geese that give geese everywhere a bad name. On the day of the Attack, I was carrying a giant armload of bedding out to Edwin and Lisa&#x27;s little trailer, which is where Jon and I were sleeping. In Gussolini&#x27;s defense, the bedding was largely composed of goose-down products, but still... I had enough stuff in my arms that I couldn&#x27;t see where I was going very well, and since it was bedding I didn&#x27;t want to drop it in the dirt, so when Gussolini grabbed a corner of a bedspread and started whacking me with his wings and growling I was pretty much stuck. I seem to recall that it took a while for the other folks around to stop laughing and come get the goose off of me.
+This was his final attack, as it happened. They had had their eye on him for a while, and this one precipitated his being invited in for dinner. He was delicious. Later that weekend I made a decorated goose egg in his memory, showing Gussolini in full attack mode. I think Edwin and Lisa still have it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 18, 2009 at 03:27PM</span>
+            <div class="reply-content">oh sure. we roasted a whole huge hunk of meat on the indoor fireplace first time i was up there. It was all fitted out for it with built in iron implements. I learned that (Bob made me learn everything) and also how to use greenwood to boil the little woodfired kitchen stove up and make coffee for everyone. All those little espresso pots in a row. Edwin and Liza had a marvelous kitchen garden and we would spoil ourselves silly on fresh tomato salads. The lake house had a nice slow rhythm to it, everything happened like it was happening in honey or molasses, there were so many little chores to do and often so many interesting people coming by that it sometimes would take us most of the day to have breakfast.
+Liked it a lot when it was just me and Ronnie wilson floating around on the lake. He left one of his old surfboards out there, and it was like being reunited with a battle charger. he could talk endlessly about the waves that they had rode together and the final wipe outs that cracked the fin from it and put it to rest.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 18, 2009 at 03:20PM</span>
+            <div class="reply-content">Hmmm....watercress &amp; greens from the stream behind the Lake House, pie &amp; breads...
+Jon Berger was with me at the time ( mid &#x27;80&#x27;s ) ,no slouch as a cook himself, and we ate ourselves silly.
+Don&#x27;t forget the wild boar that Lisa would occasionally bring down . She saved a boar tongue for me for my birthday one year. ( does that sound odd? it was delicious !)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 18, 2009 at 01:04PM</span>
+            <div class="reply-content">yes and with the turkey what did you have? do go on.
+Madame Preston estabished a large antebellum property, in the fashion and the style of the Celtic south on the property. She had a sort of last chance healing facility there, as part of the Utopian movement in California. Another part of our history that connects us directly toa previous movement. Once i download the new version of google eart i will check it out Randy.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 18, 2009 at 05:49AM</span>
+            <div class="reply-content">Oh yes, chanterelles at the lake !
+I cooked a Thanksgiving Feast one year on the big wood burning stove. Mulberry glazed turkey, chanterelle stuffing...I could go on!
+Lisa always called it the Preston International Gourmet Society, or PIGS.
+Oink!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 17, 2009 at 05:19AM</span>
+            <div class="reply-content">going out in the little boat, first thing in the morning just after Dawn with Liza (and of course after a strong cup of coffee freshly roasted on premises by Edwin for Liza), the mist was very thick on the hillside, river mist from the Russian river, and it made a tangible ground hugging soupy curtain that parted as we rowed through it: our quarry and chase so early in the day? nothing other than freshly picked Chanterells to go with our steak for breakfast. It was my first time ever finding wild mushrooms, identifying them and eating them promptly (something I am lucky enough to do every now and again( i know chantrells, hedgehog, oyster and maitsutake).
+We were looking for spots of orange in the oak leaf duff of the large trees across the lake from the summer house. Trees most likely planted by indigenous people who used that section of the golden trail. Ronnie Wilson told me that the lake was one of the few natural bodies of water of its kind in that whole section of California (non man made) and that the golden trail or Hyapom went right around it and along its merry way up the coast. My knowledge of the lake and of the trail is what cozied me in so quick with my Yurok adopted kin.
+We saw a little patch of orange, and Liza told me to carefully fan out &quot;they are like a tribe&quot; she said &quot;Once you see a bit of one you know others are right around&quot;. She moved right up on the chantrell and right around it sure enough there was more. I was having a hard time seeing the other mushrooms under all the fallen oak leaves, and Liza said &quot;look at the lay of the land and look for any bumps&quot;. Right away I got the peculiar sensation that I understood exactly what she meant and I could right away see three or four bumps clearly rising in the duff. Sure enough there they were! These were the wild kind that are bright bright orange. We picked about five pounds or so and headed back through the mist quite victorious, just in time to get properly chilled by the sun breaking through the fog. No matter breakie was due to be cooked on the kitchen woodstove which Eddy was quite good at working. Steak and eggs and chantrells, strong Ethiopian coffee roasted on the spot in a home-made roaster.
+(and PS: post all photos! there is no limitation on content, i prefer content to be worksafe however I cherish every creative contribution and I have deep respect for the vulnerability and personal effort that it takes to post content. Sometimes people post in large batches and that is natural since it takes a lot of Wa to get it together to post so once people do it they do a bunch at a time. It makes it so you have to hop around and visit peoples pages more which is fun).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 15, 2009 at 07:15PM</span>
+            <div class="reply-content">Somebody more up on Google Earth needs to add some content on it. I have the genral area located but would like to know more.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 15, 2009 at 06:29PM</span>
+            <div class="reply-content">I found a Preston Road off of Old Redwood Hwy north of town. I used to go through that area a lot as a kid and don&#x27;t remember hearing about the colony. That would have been something my family and I would have been very interested in. What I have found is very cool. Wish I had had the chance to see it in it&#x27;s heyday.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 15, 2009 at 02:46PM</span>
+            <div class="reply-content">Found it ....never mind....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 15, 2009 at 02:41PM</span>
+            <div class="reply-content">Link??
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 15, 2009 at 10:43AM</span>
+            <div class="reply-content">BTW, Lisa&#x27;s pages about Preston are hosted on Deb and Ernie Fishbach&#x27;s lovely website with much information about people we all love(d) including a very nice memorial page for Bob Thomas and one for Chris Carnes...so click around in the links after you&#x27;re done reading about Preston.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 15, 2009 at 10:33AM</span>
+            <div class="reply-content">There is still a turnoff for Preston just as you&#x27;re leaving Cloverdale (same turnoff for going over the mountain to the coast from there, just go East instead of West). Lisa and Edwin still live in the town of Preston, just not on the Ranch anymore. Its been converted to vineyards now.
+The 1988 fire was caused by PG&amp;E negligence and they eventually paid some restitution to some of the artists whose work was destroyed, but of course it didn&#x27;t account for the huge loss. Here is some info about Preston Ranch (and the town of Preston) from Lisa&#x27;s website
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 15, 2009 at 04:58AM</span>
+            <div class="reply-content">where on the river ( i know the area) and which fire?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 15, 2009 at 04:51AM</span>
+            <div class="reply-content">It was another magical place, like the faire. North of Cloverdale, I&#x27;m sure everyone has a story that came in contact in any way. The music, the fellowship, the great parties, the creative energy.
+It had been a spiritual commuinity in the mid 1800,s, Madam Preston, the head of it, she was into wholestic and herbal healing and remidies. There is a lot of info &quot;historic&quot; info at the Cloverdale Library, as far as how it all came about as a place for much of our commuity, there are others much more knowledgeble then I. that I feel would be the ones to answer that further.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">29</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 15, 2009 at 04:43AM</span>
+            <div class="reply-content">It was ( is ) just north of Cloverdale on the Russian River, in northern Sonoma County.
+It was a healing community in the 19th Century ,an artists&#x27; community in the 20th, and was in a state of Genteel neglect by the time I got there in the late &#x27;70&#x27;s.Beautiful 19th century Italianate architecture, burned in the fire, along with all Bob Thomas&#x27; artwork &amp; musical instruments.
+* sigh *
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">30</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 15, 2009 at 03:47AM</span>
+            <div class="reply-content">I heard about the Ranch but never was invited and had no idea where it was. What was Preston and where was it?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">31</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">February 15, 2009 at 01:32AM</span>
+            <div class="reply-content">Yes, please. I never made it there meself, but clearly the ranch was a cradle of our art and community. So many stories. so many giants.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">32</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">February 15, 2009 at 01:24AM</span>
+            <div class="reply-content">Thanks for those wonderful comments and your thoughts, everyone. I&#x27;ll scan the photos that I have immediate access to and get them posted within the next few days. The T1 is down at my house (I&#x27;m actually posting at a friend&#x27;s house) and it is expected to be back up within 48 hours.
+Keep the memories coming! It&#x27;s really fabulous to hear everyone else&#x27;s experience there. I need to write some more stories down, myself.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">33</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 15, 2009 at 01:07AM</span>
+            <div class="reply-content"></div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">34</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 15, 2009 at 01:05AM</span>
+            <div class="reply-content">I had a vision in the church once, but it was in broad daylight, and not nearly as scary !
+That&#x27;s quite a story Joyce !!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">35</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 15, 2009 at 12:59AM</span>
+            <div class="reply-content">Ah, the ghosts of Preston, so often seen, heard, felt. And ah, the spirit of Preston, still felt.
+Far too big a chink of history to be left in a drawer. We&#x27;re hungry for those pics.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">36</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 15, 2009 at 12:15AM</span>
+            <div class="reply-content">Oh I would like to see them!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">37</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 15, 2009 at 12:12AM</span>
+            <div class="reply-content">I lived there for about 9 months in 1972,73, My son Rusty and I had the room above the dining room. It was a huge room, and a couple of the guys had helped built a loft for Rusty in the front corner. Rusty recently told me it was a real gift in his life to have the experences he had there.
+I remember one stormy night in the house when everyone was gone off to do Dickens, and it was just Rusty and I in the house, in fact I think we were the only ones on the hill. IT WAS SO SCARY! the wind would get under the tin roof and rattle, I was pretty new there then and didn&#x27;t have a clue what I was hearing it was really spooky. That night I actually saw someone in the foyer, a man,in clothing of another era, and just as I was going to speak to him, poof, and he disapeared before my eyes. I ran back up the stairs so fast, got up in the loft with Rusty and laid awake all night listening to foot steps in the hall and on the steps. I saw another materialzation during the day a few weeks later. I have a lot more memories of Preston to share at another time.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">38</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 14, 2009 at 10:56PM</span>
+            <div class="reply-content">Please post anything you have dear.
+I heard about it on the radio. I started crying.
+I went up soon after, and remember Lisa had found a cache of letters from Madam Preston&#x27;s day, but these were rather non-flattering ones that Madam had , apparently, stuck down a crack in the floorboards.
+I cherish the time spent there, and can&#x27;t wait to see your photos, even the post-fire ones.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">39</span>
+            <span class="reply-author">[3tjomb2csum08]</span>
+            <span class="reply-date">February 14, 2009 at 08:52PM</span>
+            <div class="reply-content">I never got to see the ranch, although I would have loved to... I was living in Sonoma County when the fire happened, and recall seeing the article on the fire in the Chronicle which Carrie mentions. I recall thinking how totally bogus it was of P.G. &amp; E. to just cop out like they did, not really seeming to care that it was this great little community that their utter carelessness had destroyed, sheesh! I also recall seeing the exhibit at the Sonoma County Library on Bob a few years ago when I was still living in Santa Rosa. I for one, vote YES, please post the pics you have, please please, Carrie!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">40</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">February 14, 2009 at 07:18PM</span>
+            <div class="reply-content">I remember there was at least one benefit done, I think on the lot, for &quot;Ye Olde Faire Burn-Outs.&quot; Not sure if there were any others.
+The only photos I have access to immediately are a handful that actually made it into photo albums (including some post fire) but I have a huge box of loose photos that I need to find at some point soon. I&#x27;ll scan what I have next week. Just not sure how people would feel about the post fire ones, especially people who actually lived there (Don, Buffy, Morgan, Burger) and weren&#x27;t just a transient some-time guest like me.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">41</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 14, 2009 at 07:05PM</span>
+            <div class="reply-content">Hey Carrie,
+Funny, I&#x27;ve been thinking about the Ranch as well...probably because I drove past last week. My memories are of 4th of July parties with the band playing lazy on the porch of Lisa and Edwin&#x27;s house...of preparations for their wedding...Going up to the mansion (well, the barn) to visit Buffy and Don Brown and to pick up the wedding veil and glovelets she made for me...dropping off a hat whose veil was in need of repair (which never came back to me, lost in the flames along with her huge collection of needlework books and nearly everything else they owned).
+I remember swimming in the Lake hugely pregnant with Adi (the first time in that pregnancy that I&#x27;d gotten a chance to swim...blessed relief of boyancy) and losing a winged heart pendant Binky had just given me the weekend before, hearing storied of all the wonderful things lost in the Lake and later washed up on the banks (victorian toilets and brass instruments and all manner of things)...deciding it was safer in the Lake than on my neck, I&#x27;d always know where it was :-).
+When the fire happened I was working for a Law Firm and I actually contacted the REX Foundation to see if they would consider doing a concert to benefit Bob and the other artists dispossessed...but they weren&#x27;t interested. I personally would be interested to see all your pictures, even post-fire pictures (but then I&#x27;ve also visited Blackpoint several times since we lost it, so I might not be a great judge of appropriateness).
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

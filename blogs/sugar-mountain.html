@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugar Mountain - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/blogs/">Blogs</a> <span>›</span> <span>Sugar Mountain</span></div>
+            
+    <div class="module">
+        <div class="module-header">Sugar Mountain</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Eric Lethe</span> | <span>September 25, 2010</span> | <span>0 comments</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;">FROM BURLAP TO KASHMIR
+
+Part of the transmogrification that took place for me at the Faire
+was an exposure to many different people. Young and old, they
+had done things and had been places that I only dreamt about, or
+read about or seen on TV.
+So when I met people who knew Ken Kesey &amp; the Merry
+Pranksters, or people who had been to the free concerts in Golden
+Gate Park with the Dead, and the Airplane &amp; Janis &amp; Carlos &amp;
+Jimmy…the rock n roll heroes, icons, that I knew or would come
+to know…
+And that was the thing --- it expanded my horizons, my mind, and
+seemed to be the helping hand, not only putting the pieces of the
+puzzle together, but more importantly, giving me new pieces…
+After the initial ‘Wow!’ luster wore off, I was still infinitely
+intrigued by the people I met and would continue to know.
+
+[ An aside --- it takes years --- but, it’s a fact of Faire, that certain people
+
+will continually reappear in your Life there, and they will either know you,
+or…vaguely remember you.]
+
+‘Catt’ Avery, is an example of both of the above. I was never
+interested in her as a ‘Mulette’ really – in any way.
+
+One night, on my usual rounds as night security [or was i a
+stage manager?], ‘back in the day’ when Don Brown’s was at
+Caravansary Stage; looking for Mulette Vicki, who used to grind
+carbondunm for the coffee and I used to watch, to see her very
+nice, large breasts jiggle and sway with every turn of the crank.
+
+With no Vicki there, I needed to justify my presence hanging out at
+
+the Mullah’s.
+The Tonight Show with Johnny Carson was playing quietly on
+the radio as I had already become accustomed to: “The Late Night
+Insomniacs Club” as Catt had called it…but she wasn’t making
+her usual cynical, snide comments on Hollywood &amp; the world in
+general, but was intensely, and with timbre in her voice, espousing
+her admiration and empathy for David Bowie.
+I was immediately drawn in. It was not so much a conversation as
+a diatribe voiced by a devoted fan, but more importantly---a fellow
+human being.
+
+Only a few years before, John Lennon had been shot &amp;
+murdered in the streets of New York. Bowie at this time was living
+(among other places) in Berlin, in Germany---before the Fall, and
+apparently in the Turkish sector.
+And here is Catt, a person who had been to these places---
+recently! She’d lived in Paris, been to Turkey, seen Berlin &amp;
+New York. Here is Catt, screaming under her breath --- “Get
+outta there! Hide! Get out! Don’t go to New York---go home or
+move here [LA] !” This was a person I knew I wanted to know.
+And know better…This was the kind of person I’d come to the
+Renaissance Faire to meet. Even if I didn’t know it.
+And later, as now, I can see how that experience, by chance,
+made so many pieces of the rock ‘n’ roll world fit for me…. I saw
+the music in a New Light: I Understood. The Music was in Me.
+And yet, she had handed me new pieces.
+
+Some have passed, and some remain
+
+There are, and were…many people who I can and can not name
+that I met there who touched my life in this way. And in other
+ways…
+The people that come &amp; go in your Life: there was a time in
+my early years at Faire and first meeting “the Northern People”
+
+probably, that I thought, nay, knew that I would stay in touch
+with…be a part of, for the rest of my Life.
+When I met Michelle (through the Faire, and that’s a story unto
+itself!), that was the clincher. I knew.
+A person like Suzi Kaplan --- when we came together in the
+City --- for me it was magic --- I was living the dream. Sex, drugs,
+and rock ‘n’ roll! Baby!
+Someone like Phredd Weiser who was again, part of my
+Life Outside of the Faire. And it was very important for these
+relationships. That you could (and can) maintain them OUTSIDE.
+Outside the Illusion.
+The Play. The Show.
+Which somehow validated the friendship. That you could maintain
+interest outside of the Faire. You met, what they now call in
+Hollywood, ‘socially.’
+You goto parties.
+You see the same friends.
+You share a connection.
+You know the same dealer.
+
+And so, as in The Real World, you move in certain circles. Ever
+expanding ellipses --- crossed paths of experience….and you
+always move on as long as you’re ‘connected’.
+Becoming disconnected is as strange as the first realization
+that you are part of the team---that it’s all inter-connected,
+and you are just doing your part---you’re accepted for who
+you are and your part And that’s why you came here…
+It’s happened to me, a few times, some not so intense as
+others. It’s kinda like Willie Wonka: An old man looking through a
+candy shop window…
+
+Once, when I went back to Southern Faire after not going for
+
+a couple of years, I thought it would be like Homecoming. The old
+turf --- my sandbox.
+Our playground!
+It’s vague now, but it obviously impressed me enough because I
+took journal notes on the experience.
+[see Kevin’s Journals – small, yellow spiral]
+
+The experience is similar to an older man looking through a
+candy shop window where he used to buy sweets as a child, seeing
+a group of children crowded around the counter buying lemon
+drops and chocolates. Being able in his mind and memory to feel
+the emotions, but hindered by the knowledge that he can never
+really experience it again.
+
+For me, there was also a certain sense of expectation: my friends
+knew I was coming --- it was okay they weren’t surprised. And
+they welcomed me, granted me all the attentiveness that was due---
+but nothing more.
+Okay---I’ll surprise people! Time to Ambush those that
+weren’t expecting me---barrage them drugs or money or anything
+to get a party going. Or keep one alive. It didn’t matter. No one
+occasion sticks out now, and I’m sure not then….
+Nothing positive to say except that the shoe was on the other foot
+--- I knew what it felt like, not be an outsider, wanting to get in,
+but, as someone who had once been inside and was now ‘stuck’
+outside knowing all you could do was look in.
+So---as a result, you realize that it all depends on HOW you’re
+connected to this whole web. Which circles you move in.
+[verbal puns are rare in writing since you see the word – but that one was definitely
+intended]
+Which circles you move in becomes just as important as moving at
+all.
+When you are a true Migrant Faire Worker, you travel back
+&amp; forth up and down the coast of California to set up, run and tear
+
+down both the Faires. With an occasional Dickens Fair thrown in
+every now and then. True Migrant Faire Workers lived on the lot.
+Until later, when some got married or real jobs and lived “off
+lot.”
+This can put a major strain on relationships. People see each
+other sometimes only once a year – and then only for 6-8 weeks
+and then….’Pouf!’ they’re gone.
+Boy meets girl, girl meets girl….and….
+You can see where this is going. This is the stuff of high drama
+– and I’m not talking Shakespeare. But it is set in Shakespearean
+England for eight hours a day.
+I mean at some point when you’re seeing a real-life moment unfold
+you actually expect to hear him say, “What light from yon window
+breaks…”
+
+It’s (was, is) like Life On the Road with the Dead or Ken
+Kesey &amp; the Merry Pranksters when they went “FURTHER” except
+the road doesn’t take them anywhere. Just back and forth, the
+same two locales, even the buildings are used over and over.
+The trip is the thing. It didn’t matter we never physically
+travelled ‘further’ than our own backyard – but that [it] made us
+feel comfortable in travelling further in other ways: with people
+and relationships – drugs and sex and rock ‘n’ roll !! Expanding
+your mind and your horizons – travelling on imaginary journeys
+that were both terrifying and inspiring.
+True, some of the Deadheads got on board for the trip and
+just never got off. They were (and still are – those mostly are in
+elder-care centers) in it for the long haul and still don’t care that
+it’s going nowhere. As long as it doesn’t move too quickly, then
+we all have a chance to keep up.
+
+At some point, you begin to see the subtleties of how the web
+
+is connected. As Time has passed, the more you recognize the
+different people and see who was still doing it, the deeper you are
+connected.
+It becomes kinduva private club. You nod or wave or wink
+or ‘Hey’ someone you know just to let them know you know them.
+And you especially do this in front of rookies or girls you want to
+impress.
+I mean they call it ‘Show Business’ !
+OK, so we’re not Hollywood, we’re not even Summer Stock or
+off-Broadway – but we still have a show to do. So you know the
+ropes, you feel apart of the web, it’s as much a part of you.
+It protects you.
+It holds you.
+It feeds you.
+
+It is at these moments when you feel inspired. You know you
+are part of a bigger whole. And you want to make it better, new,
+stronger.
+You struggle and stumble
+You fall and you climb.
+
+In these attempts you find love and loathing and inspiration.
+There’s pain and regret and discovery.
+
+One suddenly quiet evening after a particularly big, blow-out
+End-of-Faire I was walking up through the slot toward the Center
+of the Universe and the Roast Beef booth when I thought I heard a
+single guitar playing one of my favorite songs from ‘Godspell.’ I
+slowed, then stopped for a moment to get a fix on where it was
+coming from…
+Definitely hearing it – it’s coming from directly ahead at the roast
+beeg booth. There’s this guy [don’t think I ever knew him, he may
+not have been “one of us”] with a guitar playing “All Good Gifts”
+– and sitting next to him on the counter was a girl I had a serious
+crush on. I just walked up and joined in on the chorus and then
+soloed the speaking part…
+
+*O’Shaughnessy,
+
+Arthur William Edgar; “Ode” from “Music and
+Moonlight” (1874)</div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Comments (0)</div><div class="module-content"></div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

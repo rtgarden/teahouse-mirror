@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mullah Stories - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Mullah Stories</span></div>
+            
+    <div class="module">
+        <div class="module-header">Mullah Stories</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Eric Lethe</span> | <span>May 17, 2009</span> | <span>76 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (76)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">[29p7u2atfcx87]</span>
+            <span class="reply-date">February 20, 2010 at 11:32PM</span>
+            <div class="reply-content">The Story of Bambi at Mullahs:
+I was working the early morning &amp; evening shifts at the Coffee House serving breakfasts &amp; dinners and also during the week when Faire was closed to the public. One day a friend of ours (Bobbi Enos) brought some deer meat, an entire hind leg. There was so much meat we served it all week long. I remember Jude coming up with names on the menu like,
+Bambi &amp; Eggs, Bambi Tacos, Bambi Pasta, Bambi Burgers, Bambi Steak, and so on and so on till we finally got rid of it all. I think everyone was ready to kill us by the end of the week and didn&#x27;t care if they ever saw venison again.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author"><a href="/members/susie-marceau.html">Susie Marceau</a></span>
+            <span class="reply-date">February 20, 2010 at 10:52PM</span>
+            <div class="reply-content">Well , My favorite memory of the Mullah booth stars FREDDIE!!
+It was at the Agoura site and it might have been the first Mullah Coffee booth. Freddie was hunkered on TOP of the counter top making coffee wearing just a loincloth-his hair long and wild . George Dawson , my partner at the time threw Freddie a coin while he was in the middle of pouring a cup over the fire . Somehow, with his eyes flashing and his teeth gleaming, Freddie deftly caught the coin while not missing a step of coffee making and , with a huge grin, nodded back his acknowledgement.
+Really one of my most favorite Faire moments!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 20, 2010 at 09:12PM</span>
+            <div class="reply-content">yes there used to be a lot of don brown lone wolf stories that Bob Thomas would tell.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">February 20, 2010 at 03:51PM</span>
+            <div class="reply-content">Yep, I met Don in 1969, at the faire at China Camp State Park. Bill Gilkerson, my neighbor in Sausalito, had turned my life around. I tuned in, turned on and dropped out, left my job as an Executive at ATT, and ran off and joined the circus. I became a member of the Golden Toad, and tried to compete with Don as a drummer for the Toad, but did not succeed. I then became their chef for a while, Torchy&#x27;s assistant, and doing many other things at the faires over the years. I moved up to Preston Ranch and lived up there with Don for a number of years. He was a dear friend, and yes his transition to becoming the &quot;Mullah&quot; was quite interesting. In those days, we both were fixated on reading a lot of Sufi books, e.g. &quot;The Exploits of the Incomprable Mulla Nasrudin&quot;, &quot;Tales of the Dervishes&quot;, The Pleasantries of the Incredible Mulla Nasrudin&quot;, and &quot;Wisdom of the Idiots&quot;, all written by Idries Shah. Those were a major influence on Don to call himself the Mullah, albeit he spelled it differently.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author"><a href="/members/susie-marceau.html">Susie Marceau</a></span>
+            <span class="reply-date">February 20, 2010 at 01:34PM</span>
+            <div class="reply-content">Before he was Mullah, Don was a lone wolf lurking about the fair under the wing of Kitty the Fortune Teller in the late 60&#x27;s. It was really amazing to witness his self-manifestation of the Mullah.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 19, 2010 at 04:29AM</span>
+            <div class="reply-content">I think I remember the Beached Sea Cow. Maybe it was you, maybe it was someone else. The years tend to run together. As do memories of things I&#x27;ve seen vs. memories of tales I&#x27;ve heard. But the Tale of the Sea Cow Beach definitely lived on!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">[24qnrwrde3u7f]</span>
+            <span class="reply-date">January 16, 2010 at 06:00AM</span>
+            <div class="reply-content">I worked at the Mullah&#x27;s for years, after hours, Friday nights and sometimes Monday mornings. I think it was 1983 the first year, or it might have been &#x27;82. In about &#x27;87 or &#x27;88 we followed the Faire for a couple years, living on lot and I worked during the week too.
+Sometimes the food was excellent, sometimes only passable, but there was always filling food. One of the mullahtos used to refer to some of the ubiquitous stews and soups that were less than successful as: &quot;Boiled sea cow. It&#x27;s not very good, but there&#x27;s lots of it.&quot; One night we had one of these meals and the comment was oft-repeated. That night, after all had been cleaned up and everyone gone to bed (&quot;Last call, we never close),&quot; Barry and I drove out to the beach and filled up a garbage bag with sand and one with seaweed. We went back to the tea house and poured the sand in little piles in front of the tea house and draped seaweed artfully on the ground in front and a few pieces on the counter. In the morning the tea house opened up and found it had been visited by the legendary sea cow. Until now, we never said a word, just let people wonder.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 09, 2009 at 05:00AM</span>
+            <div class="reply-content">&quot;Some of us are better people today, myself included,for just having the priviledge of being a friend of Don Brown.&quot;
+I was just re-reading this thread when I came across that again and this line jumped out. I too often didn&#x27;t care whether or not I got paid for working the coffee house, in fact for several years I wouldn&#x27;t accept a wage. but eventually I did. Later @ Devore, I would once again work for no more than meals and tips, but I felt richer when I left a weekend of working the coffee house that when I began ... even if I had less money in my pocket than when I started. But it was not only at Faires and Lark, were DB had coffee houses, that his friendship enriched my spirit and my being. I felt honored when DB invited me to Preston - it didn&#x27;t matter that part of his purpose was so that I could help load, unload, or work on the coffee house equipment in the barn. I still cherish the time I spent at The Ranch.
+And then there was the awful season I ran Feather&#x27;s booth at TRF. I was staying in the un-screened room above the booth, with the nightly invasion of the Texas Air Force (mosquitoes) and was miserable. DB &amp; Buffy were staying in their trailer behind her booth and allowed me to use the room above the booth. It had a rickety (perhaps dangerous) staircase, but it was fully screened! And they shared meals with me more often than not. And when Feather finally arrived at the show on the 5th weekend (she was &#x27;sposed to be there on the 2nd weekend) and I was feed up and ready to go home, Don and Buffy drove me to the airport in Houston 35 miles away. I flew to SF and took a bus back up to Cloverdale to pickup my car at the Ranch. Without Don and Buffy, TRF would have been even more of a drag. Having Don and Buffy there gave me a solid connection to The Real Faire.
+I miss him still. I&#x27;m sorry we couldn&#x27;t get up to the Casa and Dickens memorials. It may sound hokey, but I believe I am a better person for DB having been in my life.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">December 07, 2009 at 07:42PM</span>
+            <div class="reply-content">Last Saturday night we had the memorial for Don at the Dicken&#x27;s Faire, and I was very touched by some of the stories I heard. In particular the stories of Anna and David (my teenaged compatriots); I was just about to get the courage to speak up again when the whole crowd sort of blew away. Anna was mentioning that she wouldn&#x27;t even admit for years that she was a mullette, which of course she is now very proud to be. I too avoided becoming a mullette. While all my friends were running off to become mullettes I was trying to keep my head down and not get noticed, definitely didn&#x27;t want anyone to know I was related to anyone else who might be on crew. :P
+So I did the massage booth instead. But of course all my friends worked at the counter and slowly but surely I got to know the rest of the crew. I was honored to find that Don did indeed know who I was and no one else at Faire had that quiet aura around him that could make one feel right at home and accepted without even saying a word. Catt pointed this out to me and after that I felt every bit at home as anyone else who was welcome behind the burlap curtain. I would have been honored to work for Don Brown, I just didn&#x27;t like being in the limelight too much back then, self esteem issues I guess.
+I think it was after Blackpoint closed that I finally succumbed to working for the Mullah, just once though. This was in the years after BP but before Dickens was really rolling again, even before Stafford. Mullah and a few others of us were doing a little rinky-dink christmas faire at Cell Space and I worked for my dinner in the chow line serving food. During that fair I had a chance to really hang out with the Mullah and with Catt and Ralph and a few others. I was cozy and away from the main fair scene. I felt more comfortable coming out of my shell.
+As I&#x27;m getting older, I feel more confident to let my true acting talents come out and sparkle. And as health issues are arising, doing elderly care is less of an option for me as a career so there&#x27;s a good chance that you&#x27;ll all see more of that side of me than when I was younger. I know I&#x27;d never get off my ass and do it if not for this very loving and supportive family of crazy actors and entertainers. And one way or another I WILL dance for Darius again!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">June 20, 2009 at 07:12AM</span>
+            <div class="reply-content">I remember this. Uh-huh.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">[29p7u2atfcx87]</span>
+            <span class="reply-date">June 12, 2009 at 08:57PM</span>
+            <div class="reply-content">Hi Laura.......how you doing after all these years? Glad to see you&#x27;re still in the loop. I really miss it and everyone in our big family of Faire friends. Just love this site and thank Catt for creating it! Such a wonderful way to keep in touch with everyone and oh the memories looking back at all these wonderful photos everyone is posting! Were you able to see Don before his passing? How fortunate if so. Unfortunately I&#x27;ve been living up in Alaska for the past 9yrs and rarely get down to the lower 48 or I definitely would of been there too. Love to you and all. Please say Hi from me to any of our old friends you might see.................Luv Mish
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">[1h2cm8400h64v]</span>
+            <span class="reply-date">June 12, 2009 at 04:01PM</span>
+            <div class="reply-content">Hi Mish-Mish!
+Thank you for sharing your memory. Yes, the Scooty Bay symbolized Trust. You knew Don had assessed you as trustworthy when he placed it around your neck. It was an award we wore with a smile (even if it was morning.)
+L
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">June 12, 2009 at 12:06AM</span>
+            <div class="reply-content">Jesus Christ spike...I can still hear you hollering at morning coffee...the coffee&#x27;s up...your&#x27;e an institution in your own right and the perfect counterpoint to the mullettes....Don never had a choice about employing you....you evolved into the coffee house....too bad he burned you...get over it kent....trust me on this my friend....don did appreciate you.....but cash was never his forte...you know that as well as me........and remember, just like you and me,Don was an aquired taste...casey
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">[29p7u2atfcx87]</span>
+            <span class="reply-date">June 12, 2009 at 12:00AM</span>
+            <div class="reply-content">I first met Don at the Dickens fair in 1972. At that time I think he was calling his Tea House &quot;The Persian Tea Room&quot;.
+It was my first year performing with Bal Anat at the Faire and he invited us to perform in his Tea Room at Dickens. I even have a video of that show. Darioush had been playing Santour for us and got into a disagreement with Jamilia and ended up quitting. There was a replacement of musicians and I remember Sol was playing Saz, someone new on Santour and Mark Bell and Don played drums. He was a gracious host to all of us and it wasn&#x27;t until the following year at Southern Faire that I saw him again. I remember him warming his way into our hearts back then.
+I danced at the Faires from 72-75 with Bal Anat and then Babaganoush. Took leave for a while and returned in the
+mid 80&#x27;s to work with The Bells, other guest musicians &amp; Sage. That year (85?) was when I first became a Mullette.
+Don let me build my hooch in back of the Coffee House so that it would be convenient for shows and work the booth.
+I&#x27;ll never forget this first hooch. I remember trying to dye my fabric a kind of brown/burgandy color and for some reason it came out a flaming pink! Don dubbed it &quot;Mish&#x27;s Pink Palace&quot;. Every time he&#x27;d walk by, he&#x27;d just give me that look of OMG. Wouldn&#x27;t say anything, one always knew just by a glance if he disapproved of something. But then he&#x27;d shake his head, through his arms in the air, look up at the sky, shrug, and laugh.
+I loved dancing in all the shows but couldn&#x27;t wait for them to end and start my shift end of day in the Coffee House and then again in the mornings. I loved all the interaction working behind the booth and meeting such an incredible group of customers and ending up becoming part of this wonderful family of co workers and new friends. Some for life.
+I think my days at Faire are some of the most memorable and happiest days of my life.
+As many others, I didn&#x27;t care if I got paid it was something I felt just to be able to be a part of Don&#x27;s generosity.
+Working for him, I admired the whole set up and scene he was trying to create and am so grateful to have been allowed to be a part of it.
+It was such an honor the first time he handed me the Sooty Bag. I knew then that I had his trust as a friend and worker. It amazed me too how loving he was to everyone. He gave so much away. People had tabs that we kept written down in a little box that somehow sometimes would magically disappear. A few time I watched him tearing up someones card that couldn&#x27;t pay him back due to hard times. He knew at sometime they&#x27;d be there for him.
+And just look at all the love and support being paid in honoring his memory. He was and is still loved by so many.
+We will all miss him so. Some of us are better people today, myself included,for just having the priviledge of being a friend of Don Brown. Rest in Peace Dear Friend. I love you and miss you but will always remember you. Thank You for being you and who you were to me.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">June 11, 2009 at 11:39PM</span>
+            <div class="reply-content">boy, you know vytas, I have some incredible memories of my many trips up and down that ladder....Linda and I would often go together to visit don and buffy in the evenings at blackpoint....I&#x27;m still amazed how the four of us managed to fit in there....two conver....sations going at once....mountains of raffia...pillows ,hats shawls blankets...linda and buffy would giggle and titter...don and I would roar,mutter,deliver veiled threats, roll our eyes at the women,who would in turn simply ignore us,until they needed something,they would crochet,Don would pass me the bottle of tequila...I would pass a much smaller bottle over to him...the girls would shake their heads....then they would quickly intercept....and we would laugh..laugh and laugh....not quite apropos these days..but we sure did enjoy one another...and yes Vytas I did usually leave there feeling refreshed and serene.......my sense of smell declined rapidly in that decade.....but my memory of all of those wonderful scents is clear as a bell....those california bays.....wow...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">June 11, 2009 at 08:03PM</span>
+            <div class="reply-content">Thanks for this, Trent, and for all your great postings about Don in the past few weeks.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">June 11, 2009 at 07:55PM</span>
+            <div class="reply-content">Well, I thought I already put something up here about Don....but, anyway we were good friends, and he was a great guy. I first met him at the Faire in China Camp, in 1969, and he was playing the base drum for the Toad. I was a pretty good bongo &amp; conga drummer, so I wanted to play the drum with them too...I tried, but i was not very good at all on the base drum, so that didn&#x27;t work out. However, Gilkerson and Bob Thomas invited me to become a Toad and so I did, and served as their &quot;artists agent&quot; and cook, etc. etc., and, was a &quot;torch bearer&quot; at the Grace Cathedral event. After that, I moved up to Cloverdale to Preston, and lived for a while in the Mansion, up in the Rose Room with Madeline, who was an airline stewardess who I had met in Sausalito. We bonded as a couple, and she moved in with me for a while. Don was there during much of this time, living in the barn and/or the &quot;medicine house&quot; or &quot;hospital&quot;, I can&#x27;t remember precisely which and when. We used to go up to the Geysers together, do the baths, chase the babes, etc. I worked for him as a chef at Lark Camp on a number of occasions, and cooked after hours in his kitchen at the faire many times. I recently placed a memorial video here on the Teahouse of the Donkey site, with what I had in my archives of him, mostly playing music at the various faires. We will miss you Mullah, rest in peace.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">[7xc2nriojino]</span>
+            <span class="reply-date">June 11, 2009 at 07:02PM</span>
+            <div class="reply-content">My first meeting with Don Brown was on a bright sunny Spring afternoon at Preston in 1976.
+I was there, in the Church, playing Irish Music with my dear Sharon, Cathie Whitesides, and Jeremy Kammerer.
+Later, I toured the Mansion, then walked across to the &quot;Hospital&quot; and out of the shade under the porch
+came a young, thin, Don Brown.
+We exchanged greetings &amp; introductions, and I showed him my Instruments. As I had my 1972 Tunesian &quot;Magrunah&quot;
+(or mizwid) Hornpipe in my Case, I handed it to Don so he could try it, and he immediately played a couple of tunes.
+He gave the Magrunah back to me, and waved me into his room, so he take his little Egyptian Arghul (from Luxor with a tin bell on the Drone), off the Peg on the wall, and play some more tunes in a very animated fashion.
+It was a perfect start of a long friendship.
+Peace be to You, Don Brown !!!
+Sean
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">[3ps78rnilakw0]</span>
+            <span class="reply-date">June 11, 2009 at 05:35PM</span>
+            <div class="reply-content">Mullah was a loving man but he was also very cheap. We had huge arguments at Vacaville about him having to pay his help, and why it was not OK to play poker when the staff hadn&#x27;t been paid. In some ways, in later days, he did come round to my view, and mostly paid his help. He was a very complicated and very human being. Mullah used to break up with me every year right before sweetsmill. I don&#x27;t think a wife to be and his memories of free love could coincide. I&#x27;ve never been there, and am not likely to. I could go on, I was certainly closer to the day to day operation for a while than some, but it wouldn&#x27;t really serve the purpose, would it? And yes, we all served the music...that&#x27;s what it was all about.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">[tihrvb7lyzv9]</span>
+            <span class="reply-date">June 11, 2009 at 05:07PM</span>
+            <div class="reply-content">probibly not, its a money thing.cody eats and the price of feed. please give my regards to all.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">[1h2cm8400h64v]</span>
+            <span class="reply-date">June 11, 2009 at 05:00PM</span>
+            <div class="reply-content">Thank you, Spike, for sharing your story. Life has its shades of grey. Don could be gruff and inscrutably non-communicative, but he appreciated you. If he didn&#x27;t know he could count on you, he would not have had you keep coming back. When people die, going over the good with the bad in our memories is healthy. When it becomes really one-sided, we are not acknowledging the full spectrum of life, learning, being. It is what it is.
+Will we see you at Lucia and Trevor&#x27;s on the 4th? You are part of the family, so get your butt up here. We can grieve, share whatever, and rejoice in having known the big man together.
+~Laura
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">[tihrvb7lyzv9]</span>
+            <span class="reply-date">June 11, 2009 at 04:43PM</span>
+            <div class="reply-content">it is with a brused heart that i write this missive,so keep that in mind as you read.i am not a musican, iam a builder and fixer of things.as graham so aptly put it a mullah bee.to almost all don was a generous man. not if you were a mullah bee.the fact that we still built/fixed is the proof that we loved him.but it was hard.im conflicted with this because to you he was kind to me he was mean. but i loved him any way. i never saw sweetsmill with any one there don picked me up and droped me off to make the shower into a kitchen and build the coffee house out of what i could findlaying around,thus the glass doors it took a week when he droped me back at home he ave me a envalope and left. when i opened it it contained 57 dollars. i was pissed but i would work for him again and again.when he left me in charge of the kitchen at harbin ,on his return he came to my tent and got the briefcase and left. no thanks did i get. and still i worked for him again and again.i dont know if i was serving the music.i just dont know.at the end of the shows he would be all alone packing his boothno one to help him( vaca,devore) all gone. and i would work for him for no pay to come.i and a stupid man.i look at the pic of his final days and see his kind face and i feel warmed by him. i am a stupid man.blessed be his passing was softer than bud moodys.i know in times to come ill remember the funny times but for now im conflicted.to all that made his journy full of music and love i can not thank you enough, meby some day i can work for you.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">June 01, 2009 at 05:40AM</span>
+            <div class="reply-content">I recall the buck and mug issue with the half page addenda of all the people who owed don money and hadn&#x27;t paid after the first paychecks....following the list was a short comment by the mullah &quot;now there wouldn&#x27;t be any deadbeats out there I trust&quot;...I so love the lad....I don&#x27;t even know where to start with the stories...I mostly remember the last cup of coffee that Don made for me....early morning in devore...I stumbled by and said &quot;I need a good cup of coffee&quot;....more of a whine actually...Don took one look at me and started grabbing the brass..in five minutes He had delivered to me the best cup of turkish coffee I ever received in my thirt ysome years at the faire...hand nmade byn mr coffee and delivered witha smile and a flourish....this ones on me bub he said...always a pleasure.........but you can tip the girls...
+casey
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">May 26, 2009 at 03:43PM</span>
+            <div class="reply-content">Photos from Don&#x27;s party are here. Please add the names I&#x27;d forgotten in the comments. Enjoy!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 26, 2009 at 01:11AM</span>
+            <div class="reply-content">i think it was a night when we all hung out and partied at the teahouse, and Bob stayed up late. He was wandering around the lot and he said he overheard to women say &quot;Did you have the boiled sea cow?&quot; and the other said &quot;It wasnt very good...but there was a lot of it!&quot;
+He also claimed in that night to have seen a coyote walking through the shire in the moonlight, tricking everyone that it was fezors dog. I can still remember the sound of Bob&#x27;s own coyotee howl that night, he would sing with the coyotees on the hill and most of the crew all over would answer. I always loved having a home where you could recognize your pals by their howls.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">[2yv5l8k5j655s]</span>
+            <span class="reply-date">May 25, 2009 at 08:28PM</span>
+            <div class="reply-content">My booth was in the Traders Market at Blackpoint when I first started Ancient Amulets... I fondly remember when I could no longer keep my eyes open sitting around the Teahouse listening to the fabulous music and watching the dancers, sipping my chai.... I could walk up the hill to my hooch and lye down to sleep still hearing the the Flamenco Dancer as she danced all night on the table to the music that never seemed to stop....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">May 25, 2009 at 06:13AM</span>
+            <div class="reply-content">my computer ate the last update (I wonder if it tasted like boiled seacow?) ... Anyway, to be fair, the batch of Seacow (fish stew, actually, no marine mammals were ever injured in the production of boiled seacow) I dumped in the privy may or may not have been the one Bob Thomas originally tagged. I think that fish soup or stew was ever after called boiled seacow at the coffee house. As I said, I never ate any so I don&#x27;t know whether the &quot;not very good&quot; part was accurate - but I remember the lots of it part.
+Also, could have been late &#x27;70s ... the fog of time, you know.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">May 25, 2009 at 01:09AM</span>
+            <div class="reply-content">My first year of Northern was what I call the Red Barn Year, i.e. the year Mullah&#x27;s was in the Red Barn &#x27;cuz no one was allowed inside the Faire Site Proper after hours. Among other gigs, I washed pots and pans and cleaned up the kitchen for Spires, who had the food part of the coffeehouse. I wanted badly to be &quot;part of&quot; DBs circle then, but &#x27;tho he was always nice to me, it was &quot;from a distance.&quot; The next year, DB was back inside the Faire, and I made my way into the coffeehouse, grinding coffee, grating ginger, and grinding cardamom (in the mortar and pestle). I worked for food and so I be close to the gorgeous Mullettes, but I was in and Don treated me as one of his family. DB was like my godfather at Faire and later Lark for the next many years. I refused to be paid (by the hour, at least - I let DB &quot;tip&quot; me when he wanted to) for several years, I think because I didn&#x27;t want to ruin the &quot;high&quot; of just being a part of the magic of DB&#x27;s coffeehouse.
+Eventually, I came to my senses and took my wages. Whether I had other jobs or not, DBs was my home at Faire and Don was both boss and mentor. I worked Faires on and off until DB stopped doing the coffeehouse in Devoid. I was too tied down to L.A. by then to go north, and Devoid w/o Mullahs had nothing that I wanted.
+More to come (it&#x27;s movie time).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">29</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">May 24, 2009 at 11:20PM</span>
+            <div class="reply-content">Boiled Sea Cow ... it&#x27;s not very good, but there&#x27;s lots of it!
+Agoura, early 1980&#x27;s ... Pagan made it. It stank (as in smelled very much like fish). I didn&#x27;t and don&#x27;t eat meat or fish, so I don&#x27;t really know how it tasted. I believe I dumped the leftover seacow in the privy (we used to just take leftovers &quot;for a walk&quot; but then Health Dept. said we couldn&#x27;t) ... there was still lots of it ... even tho&#x27; a fair number of folks actually did eat it! It was good for a laugh.
+And even &#x27;tho we had just thrown away $$ worth of food, Don didn&#x27;t get upset; he just laughed over it and said something like &#x27;glad that&#x27;s out of here.&#x27;.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">30</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">May 24, 2009 at 11:05PM</span>
+            <div class="reply-content">Yeah, I heard Don tell that story too. Or was it Bob? or Johnny? Well, it was one of them, anyway. I don&#x27;t think I ever heard the part that Trent told below!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">31</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 24, 2009 at 04:59PM</span>
+            <div class="reply-content">So, I was mulling about times at the Mullah&#x27;s, and recalling how the roasted coffee beans were put through a big old grinder that was hand cranked. Sure kept the mullette arms strong and toned. Then I get up to grind my beans for my morning espresso when my electric grinder conks out on me!!! I had to pull out the mortar and pestle!! Wow, suggestion is sure a powerful thing! Maybe Don will finally approve of my kitchen practices!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">32</span>
+            <span class="reply-author">[38grc5p4872o1]</span>
+            <span class="reply-date">May 24, 2009 at 04:16PM</span>
+            <div class="reply-content">It was Bob Thomas who commented one dark evening about the food &quot;The boiled sea cow is not very good, but there Is Plenty of it!&quot; Bob was rather good at tossing out memorable one liners.
+As a closing til closing &quot;We never close...Last Call!&quot; mullette for 5 years, it seemed I worked pretty independently with Sequoia. Don would occasionally come down from his hootch, check the scooty bag, look around the coffee house &amp; if all was well he would tell us a sufi story. He was gruff &amp; distant, though his approval was always sought after. As Mullette Emeritus ever after Don allowed me to come &amp; go in the coffee house when I wanted or needed. His trust a priceless treasure as it meant still belonging to his vast family though not working for him any longer.
+Don&#x27;s home was our home &amp; we his family. That family sheltered, fed, nurtured &amp; lifted us because of Don&#x27;s generous heart. He encouraged each of us to shine...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">33</span>
+            <span class="reply-author">[0ux3m1oiawzks]</span>
+            <span class="reply-date">May 21, 2009 at 09:18PM</span>
+            <div class="reply-content">Done, and done, and done. And will be done every day at 7. I&#x27;ve been reading these stories, checking Don&#x27;s website for updates, even considering coming to his party on the 23rd, tho probably won&#x27;t REALLY know a soul there.
+You are absolutely right - there are so, so many empaths, healers, and energy workers amongst us. We just might be able to move mountains. If nothing else, it will be an incredible rush for Don! :)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">34</span>
+            <span class="reply-author">[1px2v4xt0ch43]</span>
+            <span class="reply-date">May 21, 2009 at 06:14AM</span>
+            <div class="reply-content">There are so many of us who have been blessed by having Don Brown in our lives. I was a Mullette for many years and have zillions of fond memories of Mullah. I understand people need closure, and are mourning, it&#x27;s part of the process. But Don is still with us , and while he is still here we should expect a miracle, why not? What could it hurt? Instead of feeling sad for his impending passing, please, focus your love for Don on seeing him well and happy, healthy. Use all those great memories of him to vibrate in joy. Maybe it&#x27;s a long shot but collectively we have so much healing energy to give. Try to see Don in joy and health, imagine him having a remarkable recovery, and how happy you would be to hear the fantastic news. I just think remaining hopeful is more productive than accepting the &quot;inevitable&quot;. Perhaps if everyone set aside a few minutes a day at the same time say 7pm ?(if not do it when you can) He would receive a big whopping dose of healing, loving energy everyday. Just a thought...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">35</span>
+            <span class="reply-author">[1wcyzp8bjdk89]</span>
+            <span class="reply-date">May 20, 2009 at 11:47PM</span>
+            <div class="reply-content">You never went o Mullahs for a simple cup of coffee. First of all, it was never simple. It seemed that he was always uphill from where ever you were coming from. While that made the walk to the counter a little bit harder, it was always worth the effort.
+Most of the time you got good service from a Mullette. (I was one, briefly, during workshops for southern faire, once.)
+When you were really fortunate, Don served you. It gave you a chance to pass a word, in greeting or in awe. He got both. (yes, from me.) Wisdom, friendship, being the wise man (&quot;You look like you need coffee.:)
+We will miss the man, and continue to revel in the spirit.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">36</span>
+            <span class="reply-author">[3ps78rnilakw0]</span>
+            <span class="reply-date">May 20, 2009 at 06:09AM</span>
+            <div class="reply-content">mullah, you make me crazy. you make me love you. you taught me to drum. you bathed my kid in the back in the kitchen sink, you took him out to play in the waves at the beach. i was your almost wife for four years....mullah is a a confirmed bachelor. he loves women too much to pick just one. mullah, i&#x27;m pissed off at you, did the chemo really help? what&#x27;s the use of dating a witch if you don&#x27;t listen to her? how can we carry on without you? I know you trained us, and gave us a wonderful family to draw on. i wish we had more time to play. i wish you would decide to live and give a miraculous comeback. i wish we could play on your stage forever. i guess the Great Sufi Camp in the sky needs someone to run the teahouse. i&#x27;m too close to tears writing this, and too tired from watching you battle your demons all night. i heard, when i finally slept that you cursed at me in your sleep. it&#x27;s good to know you still love me. i love you too, forever and always, and you make me crazy. i&#x27;m gonna kick your ass when i get to that sufi camp in the sky, and then i&#x27;m gonna dance. just you wait
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">37</span>
+            <span class="reply-author">[3ilffg5pkjthp]</span>
+            <span class="reply-date">May 20, 2009 at 05:10AM</span>
+            <div class="reply-content">The Mullah was a river to his people. We were Don Brown&#x27;s people.
+The river was his welcomingness, his beingthereness, his creating a space-to-gather-in-ness.
+My second booth was right across the road from his tea house. Mad musicians playing all night, crazy flamenco that I didn&#x27;t then appreciate but now treasure. He was always needing paper for another sign. I kept making it for him. He gave me free chai for life. I don&#x27;t think he knew how young I was or how long he was going to keep doing the faire. After about ten years I began to feel the debt was paid and started buying my chai. But there is one debt, one thing Don Brown gave me that can never be repaid. Love. He loved us. That the tea house was the center of the fair was evidence. The big hugs and kiss on the cheek more evidence.
+Late nights with flamenco dancers or belly dancers, early morning with fiddle and accordion. Those were some of the best moments of the faire.
+Peter Papermaker
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">38</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">May 20, 2009 at 01:36AM</span>
+            <div class="reply-content">Laura: Sorry I missed you all, and Will. I went up again today around 4PM, and ran into Jefferey Weissman and Kimbel who were just leaving. Ernie, Deb and Melissa Fischbach were there, along with Lenore. I arrived JUST as they were moving him upstairs to an different room. Then Ernie played a Los Cal tune on his mandolin, and I captured a short bit of him playing and Don on video. Just as we were about to start partying, the Dr. arrived and ran us out so he could do some tests, whatever. He was much more coherent today, smiling, and again, it was great to see him again, as always.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">39</span>
+            <span class="reply-author">[1h2cm8400h64v]</span>
+            <span class="reply-date">May 20, 2009 at 01:25AM</span>
+            <div class="reply-content">I just got back from visiting Don and it was great to see his smile. He was alternately sleeping, fuddling around with all the hospital contraptions and talking in coherent sentences here and there. He responds well to humor and music (then again, who doesn&#x27;t?). Mostly, there&#x27;s a point when he realizes who you are and he gets really happy, like the Don Brown &#x27;perennial school-boy/sphinx&#x27; that I know. He knows he is loved and he loves us all back.
+When Lara Duchnick and I arrived, we sat with Don, Allwyn and Kristi while Don snoozed away. We discussed the probability and logistical issues involved with getting Don moved to a Hayward facility where he is more central for visitors. Will Spires came in and played a lovely Greek (Turkish influenced) song on the banjo. I cried and laughed, especially when Will explained what the song was about. (I won&#x27;t do justice to the telling so will allow Will, the maestro, to do so when he plays it again.)
+It would be great if lots more people could visit Don once he&#x27;s mid-Peninsula. Because Medi-care does not kick in until August, he will be on custodial care in Hayward. What this means is he won&#x27;t be getting the type of hospice care he might get if he was just a few more months advanced in age -- it&#x27;s just a different level of attention or visits from the RN. What it also means is that we, as his family, can take turns being with him for a handful of hours at a time. Our love is the hospice. We&#x27;ll need to coordinate a schedule to make sure we have coverage when Kristi and Jeremy cannot be there to caretake for him. We&#x27;ll work on that schedule later. Please check http://www.mullahsteahouse.com/DonHealthUpdates.html .
+It was great to be with Don today.
+~Laura
+Please check this URL for update
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">40</span>
+            <span class="reply-author">[3evxs1khmjm6j]</span>
+            <span class="reply-date">May 19, 2009 at 10:13PM</span>
+            <div class="reply-content">I&#x27;ll never foreget when Mullah let me in his family.And when he let Sierra in too.He loved all of us and we him.I love you big brotheer drink one for me.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">41</span>
+            <span class="reply-author">[2f3igmp4ogsnh]</span>
+            <span class="reply-date">May 19, 2009 at 08:31PM</span>
+            <div class="reply-content">I was encouraged to take up bellydancing and join the mullettes by Don and Dariush when I introduced myself to them at the Dicken&#x27;s faire in &#x27;95. I had been in an english guild at northern faire since &#x27;89 and felt way more at home in the teahouse atmosphere. Yes, I found my home, and so did my kids. Our Mullah was so good to my kids. He always made sure they were well fed and sent off to their faire jobs so that I could start my 9 am shift. OK, he had one thing in mind - to keep things running smoothly (always the business man). And, in his gruff way of course, but I knew his heart was gold. He would come bellowing in from time to time in his deep voice to check in, but that was our Mullah. Our master. And we would do anything for him. To me the biggest Mullette honor was to hold the scootie bag, and then the time in Vacaville that he asked me to teach some new mullettes how to properly hawk in our flirty mullette way...
+When Don didn&#x27;t follow the faire to Casa de Fruita, I stopped working the ren faire. I felt if I couldn&#x27;t work for Don Brown, it wasn&#x27;t worth working. So when Dicken&#x27;s faire opened at the Cow Palace, I came back on with him in 2003. And he welcomed both my kids as well. Now they&#x27;re Mullettes too. How could they not be, when most of their lives were spend in the tea house. My daughter started at Dicken&#x27;s at 13 years old and fell right in with the swing of mullettehood. Don was proud of her and his edges would soften and he&#x27;d nod his approval. My son found his place working in the back and being harrassed of course by David Wagner and Don. Eventually in 2008, my son finally got over his stage fright and was willing to help out in front...That - I wish Don could&#x27;ve seen.
+We miss you a lot Don. And I regret not taking up your invitation to work at Lark camp and Sweets Mill...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">42</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">May 19, 2009 at 05:43PM</span>
+            <div class="reply-content">In the 80&#x27;s when I ran Beverage, we delivered bags of ice to all the caterers every day and Mullahs always got a big load. I&#x27;d come around a couple of times a faire to collect the payment, and it was always a sweet ritual. I&#x27;d come upstairs to his hooch and just relax. Time would stop for a while. We&#x27;d sit and have a cup of chai, talk about everything and nothing, it was like going to a rug merchant in Morocco, except with chai instead of mint tea. All the hustle and drive of zooming thru a faire day just dissipated, and i&#x27;d come down the ladder refreshed and serene. Just remembering it, I can smell the bay trees and briny peat bog of Black Point.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">43</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">May 19, 2009 at 05:29PM</span>
+            <div class="reply-content">Vanderploeg. Mary Vanderploeg.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">44</span>
+            <span class="reply-author">[31te9gnwzgefw]</span>
+            <span class="reply-date">May 19, 2009 at 05:25PM</span>
+            <div class="reply-content">Bob &amp; I went to visit Don last night. Many people were there, with more coming as we left. At one point we were all laughing too lound &amp; were told to quiet down-I guess hospitals are &quot;no fun&quot; zones! I should have brought a deck of cards for a nice, friendly game of poker! At any rate, the conversation turned to &quot;boiled sea cow,&quot; but I don&#x27;t remember that event well enough to share it &amp; do it justice! I will always remember needing an extra big cup of coffee on Sunday morning, and Monday brunch. I always had a lot of work to do at the EF office on Monday morning, but never so much that I couldn&#x27;t wait for breakfast, conversing with friends &amp; shaking the cobwebs out of my head!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">45</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 19, 2009 at 04:44PM</span>
+            <div class="reply-content">My first memory of Don was when Rusty and I moved to Preston in 1972. We had taken a walk up to see the lake,
+and when we got up there Don was out in a boat rowing about the lake. Rusty and I started wandering around the lake exploring and Don rowed over and asked if we wanted to get in the boat with him. I didn’t know who he was and he had that little bit crazy look he would get sometimes. So I was a little skeptical about getting in the boat with a mad man, especially since I can’t swim well enough to save my life. Rusty was only five and a good swimmer by then. So I reluctantly got in and Don rowed us all around the lake and told us it was a crater lake and bottomless. Then he started rocking the boat to scare us, Rusty loved it but it really did scare me and I got pissed off and told him to stop, he kept it up for awhile still, until he saw that I was about to cry, then he apologized and rowed us to the shore. I steered clear of Don for awhile after that.
+A few weeks later there was a faire over in Albion, and a bunch of us from Preston went over for the weekend and that’s when I saw another side of Don , that was a turning point in my starting to really like him, I think it was one of his first coffee houses set ups, and it was the most popular place at that little fair. I was not a coffee drinker but I wanted to try the Turkish coffee, so Don gave me one of his fine china cups the little ones specially for Turkish coffee, it didn’t seem like enough to really decide whether I was going to like it or not, so I asked for a second cup, Don warned me not to, that it was strong and if I wasn’t used to it I might have an adverse reaction, but I had one anyway, who me take advice from the sage of coffee, I got so wired I was up all night and I had terrible heartburn as well. I found a place near the Mullahs to camp that night and Don came several times to check to see if I was ok, he was very sympathetic even though I had gone against his advice, he didn’t make me feel worse.
+Big hugs, Don
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">46</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 19, 2009 at 01:50PM</span>
+            <div class="reply-content">Yes, generous, wise, talented, oh so handsome.But perverse girl that I am, I adore all the parts that make the whole.Grumpy, churlish, pontificating, with a delicious streak of scoundrel. While living on Caterer&#x27;s row with Pooka and our great dane Joshua Jack in 1977 I committed two felonies in Don&#x27;s eyes. First I used a Bauer bowl for my dog&#x27;s water, second, I used soap and water to wash an iron skillet.Such disrespect for kitchen tools appalled him. Years later he still jibbed me about it. (shaking head, chuckling).You all probably remember the &quot;No dogs or Christians allowed&quot; sign in the Teahouse. One night ,being grumpy and churlish myself, I said I&#x27;d have to leave because I wasn&#x27;t welcome and pointed to the sign. It was a big coming out of the closet for me to publicly profess my Christianity at faire.Not the &quot;cool&quot; nor acceptable thing to do or be. That sign got moved to a non public part of the teahouse by morning (at least for a few years). Don&#x27;t know if it was because of what I said, but in my selfish head I presumed so. In any case, I felt loved and accepted, and respected for being being who I am. And I felt more loving, accepting, and respectful of who Don is. Thanx big guy.Big, big, big, squishy hug.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">47</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">May 19, 2009 at 09:27AM</span>
+            <div class="reply-content">The late nights at DB&#x27;s, the communal feelings, the sense of belonging. There were the after hours dinners, with the best thing of all, MYSTERY MEAT. There were always jokes about that. All around were hay bales and spool tables. All semi-lit with whatever was handy. The low murmurs of folks in conversation the raucus laughter, the music, the friendships, the family.
+There was also Monday brunch. It was my day off from working on inventory and being on the job at faire. So, off to faire to see everyone out of costume and relaxing. The Mullets let their hair down, Don Brown smiling and talking with people. If DB wasn&#x27;t there, what would we have done? He is the force that created all this. The sanctuary of the teahouse, the family of the teahouse.
+Best of all, for the guys, Racey Mullette Day!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">48</span>
+            <span class="reply-author">[0ux3m1oiawzks]</span>
+            <span class="reply-date">May 19, 2009 at 04:28AM</span>
+            <div class="reply-content">This last post made my eyes tear up. See, I know of Don, I&#x27;ve made small talk with him many, many times, but i&#x27;m sure he doesn&#x27;t know who I am. I was first introduced to &quot;Don Brown&#x27;s&quot; at Agoura in 88, but didn&#x27;t spend much time there. I was young, I was drinking it all in - it was my first faire, my first time away from home, my first of SO many experiences. The next fall was my first full run of faire at Blackpoint, and I quickly learned my favorite spot to hang out after hours was &quot;Mullah&#x27;s&quot;. And I didn&#x27;t connect, for a while anyway, that it was one and the same as Don&#x27;s coffeehouse down south. Imagine my surprise...
+As time progressed, I spent so many early mornings &amp; late nights at Mullah&#x27;s. So many evenings I would wander up the road to find dinner, sitting with random strangers, finding out we had so much in common, listening to stories, music playing softly, the scents, the sounds, the wonderful tastes at that spool table. Breakfast every morning was Mullah Mush - with honey and cream, nommity nom! And I loved to listen to the banter at the booth before faire opened. And Don was always so warm and gracious, and I thanked him profusely so many mornings - I needed that coffee &amp; mush!
+No, I didn&#x27;t really know him personally. But oh my gosh, how I loved his place. I loved the people, the food &amp; drink, the conversation, the hum of conversation, the hugs, the smells...
+Well, I&#x27;m preaching to the choir. You remember...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">49</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">May 19, 2009 at 04:11AM</span>
+            <div class="reply-content">From Sandra
+He will never be gone, as long as there are children of the Faire who can wander into our midst, tired and hung over from dancing, loving and tasting the magic that is our little world ,looking for that place where there is laughter, music and community. He will always be there with a dark rich mug as black as Hell, strong as death, and sweet as love to hand to each of us along with his wide and infectious grin.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">50</span>
+            <span class="reply-author">[3t2mz9rdwk6ti]</span>
+            <span class="reply-date">May 19, 2009 at 03:43AM</span>
+            <div class="reply-content">Don Brown taught me all I know about camp cooking and running a traveling catering operation. He is an amazing organizer, to whom no detail was too small to think about. At Southern Fair &#x27;99 or so I helped Don drive the trucks full of equipment down from storage in Novato. Dig holes for telephone poles to erect a structure. Frame the whole thing up. Paint it. Intall drainage and plumbing, electrical wiring. Then decorate and construct hooches. Only then did I start cooking. It was a boot camp for people learning to build and sustain/ a community. I still use methods I learned from Don today/ everyday.
+I met Don socially through my friendship with Pagan Neil. He invited me out to Black Point. I did&#x27;nt have a ride out so I took public transit out and walked in from Novato. Don seemed suprised I had shown up and I was given an apron and told to make a soup under Judes&#x27; supervision. That began five years of working for Don and quite a bit of adventure, a lot of work and a whole lot of fun.
+The first few Northerns I would get picked up by the Mullah and help him load the veggies and meat and keifer and paper goods from the various suppliers in SF. There would also be little lists from Buffalo, Ralph, Moungi and others for supplies. Don never failed to get those items.
+Loading impossible amounts of supplies and cafe parts into big truck and Don&#x27;s van is a major memory I have of my time with Don. He worked so hard to get this cafe and kitchen around the state. While transporting the cafe from Southern to Sweetmill along the desert section near Barstow- Don had to avoid an unsafe driver in a fully loaded/ overloaded u-haul. David Wagner, Moungi, Jeremy and I watched in horror from the following vehicle as the whole truck tetered and almost tipped over- but Don corrected at just the right time and all was well!
+My first time cooking at Sweetsmill, Don broght me up after I had helped out at another gig- and he took me along at the last minute. I was completley unprepared for camping. It was getting dark by the time we unloaded the Van and trailer. Don gave me some rope, some canvas, a rug and a flashlight. He then said a very &#x27;Don&#x27; thing, &quot;Well, lucas. . . . .survive&quot; And then gave me that smile of his, half mocking me.
+Don likes eating steak with his bare hands. He won&#x27;t drink because of his faith- so he will rub his hands with liquor and slap it on like cologne. Don always suppoted the artists/ musicians around him. I tried to count the number &#x27;back-door&#x27; meals Don gave away once and gave it up as a lost cause. Don really cared for his community and there is nothing he wouldn&#x27;t do for his people. Which is something I really learned from Don
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">51</span>
+            <span class="reply-author">[1h2cm8400h64v]</span>
+            <span class="reply-date">May 19, 2009 at 02:54AM</span>
+            <div class="reply-content">Don is always listening and observing, although he may be speaking less than before. Perhaps saying something is not always accurate of what one thinks/feels -- to say nothing and smile can be a most eloquent and authentic response. Don was there with you in his own way. Thank you for being there for him and relaying the story.
+Let me know where he&#x27;s moved to in Hayward and I&#x27;ll visit him later this week. Do we need to call first?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">52</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">May 19, 2009 at 12:49AM</span>
+            <div class="reply-content">I just returned from the Queen of the Valley Hospital in Napa, where Kevin Patterson and I spent a good while this afternoon with dear Don. What i truly amazing, is that while he was rather unconscious part of the time , when he would open his eyes, he would smile and acknowledge us. Apparently, according to David Hakim, who had been there overnight with him, he had not slept much last night. It was great that he seemed so happy, and responded to our presence. We had some laughs, and Kevin told him a kind of Mullah Nasrudin Sufi tale, and while he was speaking, Don seemed to be asleep, but as Kevin finished his tale, Don&#x27;s eyes opened and he smiled. It was very touching and I do only hope for a miracle. Apparently they are going to move him to some place in Hayward soon.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">53</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">May 18, 2009 at 08:29PM</span>
+            <div class="reply-content">Sadly, I don&#x27;t really have any DB stories. We have known each other for a long time. The only thing I can express is the warmth that he brought with him. For me, it was just the quiet smile and the hi. I know we had conversations, but I can&#x27;t remember anything in particular. Just his presence was enough. The quiet joy he always seemed to have and the adoration of so many people. Thank&#x27;s Don.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">54</span>
+            <span class="reply-author">[1h2cm8400h64v]</span>
+            <span class="reply-date">May 18, 2009 at 07:10PM</span>
+            <div class="reply-content">When I started working Faire (after years of being taken by my parents from the 60&#x27;s on), I heard being a Mullette was the most &#x27;happening&#x27; job. Of course, I didn&#x27;t think I&#x27;d qualify (not being skinny or cool enough). I got a job working as a cashier in ale stands, then approached Don Brown to negotiate work for my old friends Claudia Colodro and Tracy Sabin. (It&#x27;s so much easier to act as an agent for others than oneself, right?) It was probably Spring &#x27;84, RFS. I extolled what great workers both my friends were and Don offered them a chance to grind coffee and ginger and join the Coffee House. Then he asked me if I wanted to work, too. At first I deadpanned, I am just the negotiator. Then I said I had already committed to the Ale Stands (isn&#x27;t it usually the other direction we start in? Mullette first, then ale wench?) Be things as they may be, I always hung out with the Mullette&#x27;s and even slept in the Mullerium (the place the Mullette&#x27;s slept and men were not allowed in.) One morning at 6:15 AM on the second or third weekend, I was shaken awake by Mary Thomas. She said no Mullette&#x27;s had shown up for the morning shift, so I was on. I stuttered that I don&#x27;t really work here; she countered: &quot;Here&#x27;s a scarf. You do now.&quot; Don Brown came into coffeehouse a coupla coffee urns later, noticed me working away behind the counter, and said: &quot;Good to see you finally made it. You make a good Mullette.&quot; I felt welcomed and this immense sense of belonging. Thus, started my knowing Don and loving to work the morning shifts at Mullahs.
+Don is in my heart and prayers, always.
+~Laura
+(PS This may be a repost as I think I posted in the RSVP place only. BTW, Mary&#x27;s last name was not Thomas, but something much more complicated and hard to remember. So, I called her Mary Thomas.)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">55</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">May 18, 2009 at 06:58PM</span>
+            <div class="reply-content">Joey: Wow, did you by chance record this? Sounds hysterical. Yep, I cooked for Don at Lark Camp for several years, until someone reported me for not wearing rubbers gloves. Oh my, I am SO glad they reported me, because everyone knows how DIRTY I am. Anyway, cooking is one of my passions, and I did a lot with Tapas, etc. He was a pleasure to work for. I am off today to see him in Napa.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">56</span>
+            <span class="reply-author">[116ei0wmupl46]</span>
+            <span class="reply-date">May 18, 2009 at 06:26PM</span>
+            <div class="reply-content">We were hanging out behind the kitchen in Camp 1 at Lark Camp one year playing Pinnochio Thingamie (sic?) when Don walked by laughing about something. He had this amazingly boisterous baritone laugh. It sounded almost like a musical instrument. So we came up with the idea of having a band comprised of people laughing at the talent show. Danese stood behind a bunch of folks on chairs, running behind them, tickling them in musical order, so that we created a song, of sorts, from their laughter. It was a big hit.
+Everytime I hear a great baritone laugh, I think of Don. Thanks, Don!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">57</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">May 18, 2009 at 05:49PM</span>
+            <div class="reply-content">Catt: Thanks, I called and he is still at the hosptial in Napa, so I am going up today and visit him.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">58</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 18, 2009 at 05:39PM</span>
+            <div class="reply-content">Thanks Cat for cluing me in I feel really horrible about the miss understanding, my love and blessings to you Don.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">59</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 18, 2009 at 03:07PM</span>
+            <div class="reply-content">here is Dons site which Kristie and Jeremy maintain for him:
+http://www.mullahsteahouse.com/DonHealthUpdates.html
+some of his writings and his recent health updates are there.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">60</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">May 18, 2009 at 02:39PM</span>
+            <div class="reply-content">This may be connected to the story I knew about Bob Thomas. I believe it was he, and Owsley and one other we know that I won&#x27;t mention, but they had an LSD lab in Berkeley. The cops busted the place, and went in, and went into the lab, and there was a huge pile LSD on a table, were they would just sit there and put it into little plastic caplets. When the cops went into the lab, one of them said, &quot;hey, stay away from there and don&#x27;t touch anything&quot;, and the cops told them to sit down and shut up. Then, they put them in the squad car and started to drive them down to the jail. Half-way there, the cop who was driving, who had been in the lab and messing around with the pile of LSD, came on, could not drive, and had to pull over and was totally out there. Ha ha!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">61</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">May 18, 2009 at 02:32PM</span>
+            <div class="reply-content">Anna: Where is he, can I go and visit him?
+Trent
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">62</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 18, 2009 at 01:21PM</span>
+            <div class="reply-content">Don is still with us, he is preparing for hospice care, I thought he would like to hear some stores from all of his beloved pals while he is able and Danese pretty much had the same idea at the same moment (we were chatting). She went ahead and set it up and sent out invites so that we could share story now, rather than wait until its too late for him to hear them.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">63</span>
+            <span class="reply-author">[14v7nt0cp72b0]</span>
+            <span class="reply-date">May 18, 2009 at 05:08AM</span>
+            <div class="reply-content">Thanks Anna send him my love next time and tell him, my Dua&#x27;s My Salats all have his name in them big hugs and kisses My brother Don Brown
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">64</span>
+            <span class="reply-author">[2ku8crr2rafcy]</span>
+            <span class="reply-date">May 18, 2009 at 05:02AM</span>
+            <div class="reply-content">When I first came to faire at Agoura with my now grown children in tow, Shannon Wade and Hawk introduced me to Mullahland. Over the next few years I worked as a mullette and fed my children his substantial dinners. We didn&#x27;t talk very often, but I worked hard, showed up when I said I would and did what I was asked to do... So , when I took a flying leap and showed up at Lark In The Morning one year, with no job and no money and no reservation, I really needed Don to extend to me his scepter of acceptance and gainful employment... and he graciously did. It was a wonderful time. One of those years I went to the last Sweetsmill Music festival and while wandering about during the evening I heard the sounds of arabian drums and the smell of magic coffee, low and behold, it was the Mullah’s place...In my opinion, Faire is diminished irreparably without his coffeehouse centering all of our evenings and mornings as the village hub.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">65</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 18, 2009 at 05:00AM</span>
+            <div class="reply-content">Anna, please give him my love. I hope he remembers me at this late date, but I have not been around in a very long time, so he may not.
+Like many others, I was put off at first by his Gruff Act at the Faire, but discovered that he was a sweet &amp; giving human being.
+Much love to him.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">66</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">May 18, 2009 at 04:59AM</span>
+            <div class="reply-content">Thanks for writing about it, Anna. Sounds like a lovely time.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">67</span>
+            <span class="reply-author">[2xnemqyqyep1e]</span>
+            <span class="reply-date">May 18, 2009 at 04:51AM</span>
+            <div class="reply-content">My Visit with Don today.
+Today was actually one of the most beautiful days I have ever spent in my life. I love him so much.
+I got there early afternoon and Dariouce and his daughter were already there. They said they had only been there for a short while, and he had been sleeping.
+Then Don woke for me and gave me that, oh I&#x27;m really glad your here smile, everyone in the room couldn&#x27;t help themselfs but to smile a big funny smile back at him.
+Then I saw a look of concern on his face and realize they had strapped his hands down. Apparently, when it is only him and the nurses he is a bit of a handful.
+I undid the straps.
+I read him a rumi poem, The Art of Breadmaking.
+After that we called Rosemary. They needed to say I love you out loud again. and they did.
+We watched a movie and talked about dancers and Disneyland, and more deco for the stage.
+Talking is a bit difficult for him, but he has never been a man of many words, So our personal style of communication where I do all the talking and he says yes or no....thats the same.
+He is so tired. He falls asleep and then wakes up a few minutes later.
+His cousins came to see him for a short visit.
+Then just as if it were planned dinner arrived and so did a wonderful handful of his closest friends, Ralph and Lisa, Lucy, Trevor and Zephera.
+Hakiem came and saved the day with Hummas and Tabuli, cause that hospital food sucks.
+Nel and Jude arrived.
+WendyBird came too.
+I said, &quot;See I told we were having a party tonight!&quot;
+I am so glad there was no one in the other hospital bed next to him, because our family took the room over.
+I left, I will go back tomorrow.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">68</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 18, 2009 at 04:04AM</span>
+            <div class="reply-content">I do not remember if it was Don or Bob Thomas that told me this story,but Mullah, Bob Thomas &amp; Johnnie Jones were stopped by a cop ( imagine that ! ). The officer asked for names &amp; I.D.
+Don Brown. John Jones. Bob Thomas.
+The officer KNEW that these HAD to be pseudonyms,and that this trio was Up To No Good.The had some &#x27;splaining to do before the cop finally let them go.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">69</span>
+            <span class="reply-author">[1acc21o2dcbli]</span>
+            <span class="reply-date">May 17, 2009 at 09:14PM</span>
+            <div class="reply-content">Denase,
+Thank you so much for letting me know!!
+God Bless you and your kindness for Looking after him.
+God Bless his loving heart
+I will surely miss his kisses and hugs and sweet smile!
+and coffee that would take the chrome of any bumper hitch!
+very sad news I was just reading his page and all was fine!
+how quick it can change!
+As I know to well!
+A good reminder each day is a gift!
+Be happy you have it!
+God bless you and keep you!
+Thank you again
+please do give him a Hug and kiss!
+I am still reeling from the loss of Bud Moody!
+At least Don will have a good Mate Bud there already.
+The world was a Kinder gentler Place with Don Brown in it!!!
+I looked forward to seeing him! it really made your day!
+His smile made your heart sing!
+His Smile was so inviting, Kind, warm, and so really genuine!
+He always inspired you to want to be a better person!
+Aileen xoxoxoxox
+I will keep up on the page to see how it goes!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">70</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">May 17, 2009 at 09:04PM</span>
+            <div class="reply-content">From Josh Fisher,
+Hi all,
+Got a call from the Mullah a few weeks ago, he was planning a train trip north and wanted to visit us along the way. Long of the short, I picked him up at the train station in Albany and thus commenced a wonderful 48 hours of having Don all to ourselves. He was in good spirits, ate well, if not as much at might have been his habit in former days, said he slept well and he regaled us with stories from sunup to sundown. Saturday he went with us to my son&#x27;s soccer game and we attended ten short plays by Shel Silverstein that evening. Sunday was easy and slow and I then I drove him south to meet up with Billy, with whom he stayed the next few days before taking the train North again to Seattle.
+We&#x27;re feeling so blessed to have had such a nice visit. Don&#x27;s memory was sharp, he was uncomplaining and gracious and it was a shock to get word this morning that he had declined so sharply. I know that he had to have known this was close and traveling up to see old friends was important. Please know that he mentioned many of you as he recalled and regaled us with stories from the early days and I wish that everyone could have had such a fine visit. Don is all heart and there is a lot of Don.
+Josh
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">71</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">May 17, 2009 at 09:02PM</span>
+            <div class="reply-content">Marianna &amp; Fredie: I remember Freddie and me up at Sweets Smell. I think somewhere I have an audio recording, and there are some more photos which I will put up on my page on this site. I remember something about Freddie and I crawling around in the bushes at night, making weird noises, or singing or something. Ask him if he remembers that.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">72</span>
+            <span class="reply-author">[2sk15g05jiyux]</span>
+            <span class="reply-date">May 17, 2009 at 08:24PM</span>
+            <div class="reply-content">Don Brown gave me my first Belly Dance tip! The first year I came to the Mill in the early 70&#x27;s, I was a new belly dancer. I was in the height of joy, dancing to the beautiful music by the fire in the middle of the night. And Don Brown made my night!
+Marianna Mejia
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">73</span>
+            <span class="reply-author">[2b7v9jgunvzsn]</span>
+            <span class="reply-date">May 17, 2009 at 07:51PM</span>
+            <div class="reply-content">I started doing the faire in 1974 as a craftsperson making leather bound books with my late ex husband Tom Darnell.
+My first experiences with Don were of the musical variety. We were both in Montrebi (formerly The Rolling Rug Review) playing Middle Eastern music for Siouxashe and Amanda Karnes, in Agoura in 1975. We played music together for over 20 years. He used to scare the hell out of me...he never really spoke to me only grunted. I was terrified to go into the coffeehouse so Sioux would go in and get me coffee or chai. Who knew what the future held...
+My son Josh was 6 or 7 when Don started letting him sit in the coffeehouse grinding coffee for hours a day. When he was in his teens he played music with Don and me. When my husband ran off with one of Don&#x27;s 18 year old Mullettes, in 1983, he gave me a big hug told me Tom wasn&#x27;t good enough for me and that I would always be welcome in the coffeehouse. That was one of the first conversations we ever had and it was then that I realized that he was really a very sweet kind man under all of that gruff exterior. I started helping him with some catering gigs at Harbin then in 1989 I started cooking for him at Southern faire and the rest is history or herstory...for the next decade we never looked back. We spent every waking minute making Mullah&#x27;s all that it could be through the 1990&#x27;s. I remember one time Don came out of his hootch and I came out mine at the same time, we were wearing the exact same clothes and Siouxashe said &quot;You two spend way to much time together!&quot; Maybe we did. Perhaps that&#x27;s why things fell apart in 2000. Who knows. But for over 25 years we had quite the dance. I am happy to say that I am one of the lucky few who learned how to understand and speak Doneeze. I will love and miss you forever my dear sweet Wazoo.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">74</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">May 17, 2009 at 07:47PM</span>
+            <div class="reply-content">Danese: Thanks for a great idea, about a truly wonderful friend and faire colleague. It would take several YEARS to tell all of the stories about my friendship with the Mullah. He and I lived up at Preston Ranch in Cloverdale. I remember once returning from San Francisco around 1973-4, with a nice used car that I had just purchased...I think it was like an old late 60&#x27;s Chevrolet Stationwagon, and as I drove up the hill just past the turn to the Preston Church, there was Don and some others, and he ran over an &quot;jumped&quot; up on the hood of the car, and then jumped down laughing. Of course it was dented slightly, I was pissed; but none the less, we were and are still friends. From like 1989 till 1996, while I worked as Director of Marketing for the Faires, I used to cook at the Mullah&#x27;s at Blackpoint, and play drums there with Dariush, etc. etc. I remember Don used to sleep up above the Tea House. I also remember having sex with some cuttie pie in one of the little rooms off to the left of the Teahouse, right about high noon on a Faire weekend...amazing what went on there.
+I actually think I WORKED for him at the Southern Faire in Aguora. There is a picture of me on my page, playing the dumbec there. That was like Spring of 1974.
+I will keep thinking and post more as I can remember. &quot;Hey Trent, what is the name of that pill you are taking for memory loss?&quot; Mmmmmm, well, mmmmm. well, what is the name of that flower with red petals?&quot; &quot;Rose? &quot;Yeah, hey Rose, what is the name of that drug I am taking for memory loss?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">75</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 17, 2009 at 06:39PM</span>
+            <div class="reply-content">I first came to Preston with Lena Dun in the fall of 1978.Plans made had fallen through, and I had no where else to go. I was not exactly welcomed with open arms by all the members of that community...except for Bob Thomas, Ricker &amp; Mullah.
+He was so sweet. Hugs &amp; kindness were dispensed, and he had a little song he sang to me that went &quot; My name is Morgan , but it ain&#x27;t J.P...&quot;
+Much magic flowed from Mullah&#x27;s Teahouse at the Faire.Many many fond memories of performing, listening or just plain hanging out. Mullahburgers!!
+Much love to Don Brown.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">76</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 17, 2009 at 05:49PM</span>
+            <div class="reply-content">I remember Don always making sure that the musicians could get in through the gate. If he could do it through proper channels he would and if he had to ask a favor for that tab box he would do that too. All the worlds top traditional musicians knew that if they could just get to the lot, they could get together and play and share out what they had discovered in the past year. This was a tremendous engine in the yearly procession of talented musicians and artists that graced our days and nights at faire. Mullah always kept track of our merry band and made sure we could get together and share the special times, at faire, at mill, at lark, at harbin and many other places along they way.
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therl O&#x27;Ryan - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Therl O&#x27;Ryan</span></div>
+            
+    <div class="module">
+        <div class="module-header">Therl O&#x27;Ryan</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Murray then, now aka MAX</span> | <span>November 23, 2007</span> | <span>20 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (20)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">[23qr5gkhu5bo7]</span>
+            <span class="reply-date">April 09, 2009 at 08:53PM</span>
+            <div class="reply-content">I just heard o Therl&#x27;s passing from J Paul, I am sorry to hear of it he was great spirit of man. Ah yes...let me remember Oh yeah, Therl tried to do that with me when I played Capitano Spevento Della Inferno from the Commedia Troupe as well but I convinced him that I could be more use to him alive introducing him to lovely virgins than being a limp longuini.
+He made me his official shirt washer which I never did, but it was a running joke between us. Creating great street theater whenever we crossed paths.
+Do you remember when one of your clan got shot in the face with a low charge musket someone brought to the faire?
+Or when the Vikings road gang of ex-football players, showed up at the the southern faire, and you all had a great time ravaging the place. Ah what merry old time we had...sure glad we all survived them.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 06, 2009 at 05:24AM</span>
+            <div class="reply-content">is that the graveyard above the train station?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 05, 2009 at 10:19PM</span>
+            <div class="reply-content">I remember being caught in the middle of a SS food assault with the musical cue &quot;Fly Me to the Moon&quot; but it was Army St &amp; not at Mad Sal&#x27;s!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 05, 2009 at 09:24PM</span>
+            <div class="reply-content">It happened to Dennis both years, but the Battle of Mad Sal&#x27;s was at the Cannery Fair.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 04, 2009 at 03:33AM</span>
+            <div class="reply-content">Och, that Theryl. What a character.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 04, 2009 at 03:30AM</span>
+            <div class="reply-content">I remember being sent by Carol La Fleur to Therl for dried flowers. He ran a supply shed full of purple stock for decorations. I recall being intimidated by him because of his moods!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 22, 2008 at 04:52PM</span>
+            <div class="reply-content">i laughed out loud a lot at this.
+&quot;Hey Greggy, let&#x27;s us go down to Sally&#x27;s Army and work the marks.&quot;
+Thats my Thurel.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 22, 2008 at 12:20PM</span>
+            <div class="reply-content">In another thread it was said that fairy rings made by witches may have protected Caravansary Canyon. If so, the fairies never lacked a stubborn little warrior in their corner. Some of Theryl&#x27;s ashes are there.
+He would drop by my camp during lunch break. Sweltering days they were, and I would offer him one of what I was drinking, fizzy spring water.
+&quot;Too rich for my blood&quot; he&#x27;d answer.
+Bob Mcgowen had another way of saying that: &quot;Costs more than beer and doesn&#x27;t DO anything!&quot;
+So out from the cooler would come a Guinness, which met with no such excuses. Knowing how little I drank, he could easily have surmised that he was the main reason I kept stocked.
+It was at one of those times that he taught me the difference between blarney and bullshit. Blarney, he maintained, is never malicious. He was so full of it you could squeeze any part of him and it would be like milking a ripe cow. You you&#x27;d drink deep, and get some of it on ya, but you could never believe any of it. On the other hand, doubt him at some peril. He had lots of facts alright, but created and lived within an aura in which, as in poetry, mere fact was trumped by something, well, as BobT would say, &quot;else&quot;.
+One scroungy day at downtown Wizzin&#x27;s me and him were cruising the thrift shop. I guess maybe we weren&#x27;t in our Sunday best, probably a comb shy of impeccably groomed. So as I browsed the shirts this kindly church lady type suddenly steps up to me and hands me a couple of dollar bills, wishes me well, and blesses me. She was so danged sweet, so sincere about wanting to help out, and I coincidentally had my wits about me at the moment, so I just accepted and thanked with a matching sincerity. Watching from a discreet distance, Theryl was busting at the seams over me having been pegged as a waif in need of charity. Not only did I hear about it in blazing technicolor all the way home, but from then on it was a standard end of the month routine. As thoughts turned towards empty cupboards and skinny wallets he would lean towards me and say &quot;Hey Greggy, let&#x27;s us go down to Sally&#x27;s Army and work the marks.&quot;
+On a fine Blackpoint day, just before launching a Bones Band set, I filled in the gang regarding the route dejour, mentioning a couple of special hauntings that would occur along the way. Later that day, in a private moment after the dust had cleared, he leaned into me in that way he does and said, almost in a whisper, &quot;Greggy, you were directing!&quot; Now ya gotta know that I, the crowned King Cag, headed up an ad hoc band that famously never rehearsed. So the intimacy of Theryl&#x27;s tone implied that if this anomaly he had noticed ever went public reputations would be at risk. The secret would be safe with him.
+He was wrong, of course. I was just passing along some information.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">[1rlkj4ppbtgim]</span>
+            <span class="reply-date">December 07, 2007 at 08:05PM</span>
+            <div class="reply-content">Nah....the tomatoes wern&#x27;t at the Cannery show.....they were at the Navy Warehouse.
+I remember Dennis singing about being rescued from some sorta shipwreck, from behind a pillar to avoid said tomatoes. Nothing like having a faire near the produce mkt......hmm? SS crew emboding/channelling the spirit of plebians at all times.
+Remember how bloody COLD it was that year? Ice on the puddles as noon in SF.....now That&#x27;s COLD!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 02, 2007 at 12:10AM</span>
+            <div class="reply-content">yes very much so.
+He was like my irish auntie...
+&quot;oh get you a chai while I am up...&quot; he would say,
+always laying a hand on my shoulder or on my knee in justthe perfect intimate way.
+He was so folded into himself...yet he knew that we met in the middle in the land of books where he truly lived. Once I told him that when I was eleven I read ten books a day nearly every day and he sort of winket at me and said &quot;Oh yes I knew that about you already...&quot; I said &quot;How?...&quot; wondering &quot;Have I told you before?&quot;.
+He said
+&quot;mrmmmknr&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 01, 2007 at 11:04PM</span>
+            <div class="reply-content">Interesting, Therl was your key to sanity and he was my key to letting loose and improvising and walking on the wild side. I had until that time been a tightly rehearsed, stick to the script and do it like rehearsed. He introduced me to improvisation, and his flights of fancy made me be ready for anything on the stage. He was truly a Janus!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 01, 2007 at 10:53PM</span>
+            <div class="reply-content">Right when I came home, around 1996 was just after he passed. My pal Starline has been hanging very tight with him, she ended up going back to New Mexico. She was like one of my bridges to sanity. She was like my first Moulette wife coming home.
+When I came home, I knew about Thurel and Bob, and it was like just me and Dave Ricker holding down the book club. Ricker was still a bit pissed at Thurel for cutting out on him when I showed up. I had a rough time because I had never found out about my pal Ronnie Wilson dying (Bruno muso and Surfari&#x27;s drummer). I asked after him to Buffy and she said &quot;OH Ronnie? hes been dead ten years&quot; and I kind of freaked. That was when I started grabbing the kids and saying stuff like &quot;YOu are my Thurel now &quot; and &quot;You are my Bob&quot; and so forth. I nearly lost it until my pal Tess came to visit. She and I were having G&amp;T with Emory at the site of the old Mullahs Hoochatoria. Tess laughed at me that funny street way
+&quot;Ha HA&quot; she said, gesturing to our all sitting and hanging out&quot;All *your* friends are dead!&quot; I began to laugh immediately. Most people thought that it was a cruel comment, however she was merely pointing out that previously it was hard for anyone but Bob to get my attention.
+It made me feel so much better.
+It saved me...I woke up somehow.
+After that I could sort of deal with it.
+Starline is your key there pal.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 01, 2007 at 10:41PM</span>
+            <div class="reply-content">Another thing that Therl and I got into with the Houndsditch Thespians was producing parades. It started at the RPFS when the Punch and Judy Show needed a way to gather an audience for their morning show. With the help of Carolie, a bunch of us got dressed up in random fantasies, along with the two guys who were doing the show. We had a big bass drum, various noisemakers, etc. Then we would gather at the main gate and form a procession. Of course, a crowd would follow, and we ended the parade at the Punch &amp; Judy booth/theatre. We re-created this for the second Dickens Faire, where the show was renamed Punch &amp; Toby. My dog Glorfindel was in that parade, too, wearing a ruffled collar. He had an entertainer&#x27;s pass, in the name of Glorfindel Dogge. The gate guard insisted on stamping his paw... He was the only dog in Fairshire history to have a gate pass.
+Another parade we created was for the RPFN. In the afternoon the merchants in the upper arm were complaining that no customers were finding their way up there. Therl, Ginger and I put together a Druidic Procession. We had a big gong suspended from a pole, borrowed from Willie Brewer, conch shells and assorted strange noisemakers. Dressed in black robes, we would proceed from Main Gate up through the faire, to the end of the upper arm. There we would burn incense and mutter cryptic nonsense charms. When we were through we would disappear behind the burlap, leaving the bewildered crowd that had followed us scratching their heads, and free to find their way back down the lane and to the mercy of the booth hawkers.
+There was a time we did a variant of that Procession at RPFS. There was a booth selling little whistle type thingies that you held in your mouth and it made a whirring whistle. These things drove Carolie Tarble up the wall. She talked to the booth people several times, trying to dissuade them from selling the things. They were&#x27;n period, and were commercially produced, not a craft. All to no avail. Finally, Carollie gathered together a group of people together backstage, dressed us up in black, hooded robes. Sporting the aforementioned gong and conch shells, and carrying a brazier of hot coals, we wound our way to the booth in question. Without a word, we surrounded the booth, and with the mournful music, ceremonially Carolie dropped some of the whistle thingies onto the burning coals, where they went up in smoke. The rest of us turned around and filed away, leaving Carolie to say the only words spoken; &quot;This is your final warning,&quot; she said. Then she turned around and walked away.
+The next morning the booth was struck, the vendors had gone, and they never returned to Fairshire.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 01, 2007 at 10:20PM</span>
+            <div class="reply-content">There was a night show at the northern faire one year, and my partner in the Houndsditch Thespians, Therl O’Ryan, said we had to have an act, but it had to be one no one at the Faire had ever seen before; everyone at the Faire had seen all of everyone’s acts and wanted something completely different.
+It was after morning progress, and I was in my Guard uniform backstage when I got the news. I thought what the heck, I’ll write about Hyde Street Fair. So, I picked a tune, &quot;Paddy West’s House&quot; and started out. After a While, Woz comes up to me &amp; sez “I hear you’re writing a song about the Hyde St. etc. There better be something in there about a six inch fireboat hose connection.”
+“‘Scuse me, sez I. What exactly is that?” He explained that the S.F. fire department had required Service &amp; Supply to provide a six inch pipe with a connection that a fireboat could connect to in case there was a fire at the fair. They spent all of their budget on that, and that’s why there were no drinking fountains on that site (answering a complaint of mine at the time!)
+I also have to note, that there is one verse of this which Therl refused to sing with me at the time, out of better judgement; He was probably right, but I went ahead anyway. I’ll let you guess which verse that was.
+The Ballad of the Hyde St. Faire
+As I walked down through Aquatic Park
+I came to the Hyde Street Faire
+They said I could work as a Volunteer
+And they pumped my hopes up with air
+They gave me some pamphlets to pass to the crowd
+And a beat up old megaphone
+Saying, “Now you can be an actor, too,”
+And left me all alone.
+Put on a striped sailor sweater
+And lead the crowds in a cheer
+You can tell ‘em that you’re an actor now,
+And a Hyde Street Volunteer.
+Now when I’d hawked for an hour or two
+And my voice was getting raw
+They sent me up to the Eureka,
+A costume for to draw
+But when I got to the Eureka,
+Carolie there filled me with awe
+Saying, “We don’t have costumes for Volunteers”
+No matter how many you saw!
+“Don’t stand in front of the table
+It’s cash if you want a beer!”
+You can tell ‘em that you’re an actor now,
+And a Hyde Street Volunteer.
+The whores were leaning out the window
+Yelling at the boys
+And downstairs the merchants were trying
+To sell their musical toys
+That smoke that’s getting into your eyes
+It comes from the Whorehouse too
+But the Fire Scene was an hour ago
+They’re up there smoking BOO!
+Keep passing it ‘round in a circle
+No smoking out on the pier
+You can tell ‘em that you’re an actor now
+And a Hyde Street Volunteer
+The wind was a hundred miles an hour
+Blowing from the nor’west
+And someone has ripped off my hat and my shirt
+And my pants and my coat and my vest
+But they left me my socks and my underwear
+‘Cause the temperature’s not getting higher
+So I went to the CHAINLOCKER for a drink
+And joined the bitching choir!
+Wear all of your costumes together
+Keep warm by drinking cold beer
+You can tell ‘em that you’re an actor now
+And a Hyde Street Volunteer
+Now, the Services they were well Supplied
+From the garbage to the beer;
+But I thought that the drinking fountains
+Were positioned rather queer.
+They looked a little like shower heads
+When the Marshall gave ‘em inspection
+And it never rained until I drank
+From a six inch fireboat hose connection!
+We didn’t need overhead water
+We needed overhead beer;
+You can tell ‘em that you’re a PLUMBER now
+And a Hyde Street Volunteer!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 26, 2007 at 11:08PM</span>
+            <div class="reply-content">I haven&#x27;t seen Captain Hook, so I can&#x27;t comment. I&#x27;ll have to give it a gander. When did Therl die? I talked to Cody Grundy in 2000 or so, and he said Therl was dead, but didn&#x27;t say when. There is a Hollywood actor that is a ringer for Therl, I&#x27;ll try to get his name.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 09:57PM</span>
+            <div class="reply-content">yes I can see how Thurel always needed to be reminded that there were other intellects out there like his.
+Of course at the time we were hanging out he was writing &quot;jesus Christ The Untold Story&quot;. It was some compendium of gnostica and other matters.
+isnt that Thurel in Captain Hook? One of the Pirates? I know that the boys all got a lot of work out of that one because fools Andy davis and Jonnathon Cripple took me to the premeire. Does anyone know?
+Yes he read so much that you could just jump around books and subjects with him like crazy. He had all sorts of stuff memorized.
+I remember his strange delight at discovering that he ould just sleep underneath vehicles and that would keep the dew off. That always worried me.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 08:37PM</span>
+            <div class="reply-content">Therl was always quoting some arcane source. I sometimes suspected he was just making it up, and creating an authority for his ramblings. As I have grown older, some of these sources have fallen into my hands, and I have had to revise my opinion of his knowledge. He was probably one of the most widely-read people I have ever known. He showed me his poetry once. A ring binder volume of typewritten pages of the most ecstatic writing I have ever seen. I wonder what happened to it?
+When Therl was living in Willie Brewer&#x27;s basement in Martinez, I stayed there for a time. He had just broken up with Ginger Osburn, and was in the pits. Willie had laid in a stock of Bass, Steam Beer, Mead, etc. left over from a Dickens Faire. It was enough to have lasted him the winter. Therl had gone through it in several weeks. My job was to pull him out of the depression. We would do things like go up to the cemetary, which is on a hillside on the west side of Martinez, sit by some grave and do poetry improvisations. Therl thought of them as &quot;Battle of the Poets.&quot; He would start a theme, then I would respond, he would reposte and we would go on for hours that way. There was a bay laurel tree there, and when we were finished, we made laurel crowns and presented them to each other.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 08:24PM</span>
+            <div class="reply-content">man you guys were rascals.
+Thurel was always a ready mullette atthe counter, and mostly during the week out at faire Thurel and Dave Ricker and Bob and Mary would hold down the fort while we all went off to school and day jobs. We really rarely ever closed in those days.
+For several years we had a loose thursday afternoon book club. thurel was the task master...every year we had a list of assigned reading...really hard to find esoteric stuff at the time. &quot;Morals and Dogma&quot; by Albert Pike, &quot;The Gospel According to Thomas&quot; and even more modern books like &quot;The Furhest Shore&quot;. In order to stay in the book club you needed to procure the titles from year to year. It took me two years to read PIke!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 07:57PM</span>
+            <div class="reply-content">The Hells Mouth was made originally for a production of an old English Easter Pageant at RPFS. The play was about the Passion, Death and Ressurection. Instead of having pageant wagons, the crowd followed the main player (J.C. Himself) from place to place about the Faire, where the scenes would be presented. The players in that scene would then join the procession. It all wound up at Main Stage where the Hells Mouth waited. In this scene, Christ was to call forth Satan and Beelzebub and open the gates of Hell, bringing forth the Saints and Sages who had died before him, and transporting them with him to heaven.
+I played Satan and Therl WAS Beelzebub. The entire show was concieved and dressed as a Masque. We all wore paper-machie masks of our characters, and nicely costumed by Carolie Tarble (of whom not enough is being said). My costume was all flowing black gauze. One day Therl talked me into smoking a long, crooked cigar as part of the act. He was always improvising, as you are well aware. When you went onstage with him, be ready to go with the flow. It was your job to bring the scene back to it&#x27;s path, after whatever diversion he wanted to throw out.
+So... I got one of those long matches for lighting fireplaces, and went out onstage with the cigar, swiped the match across the stage floor, and set my costume on fire!!! We managed to get it snuffed before I went up in flames, but after that I told Therl... &quot;No more cigars!&quot;
+Another intersting story about the Hell Mouth took place at 3rd Dickens Faire. We were building it in a warehouse on some old Navy property. I was the electirician, and didn&#x27;t have a helper. Working loooooong hours. One night abut 2am I was looking for somewhere to crash. It was cold and damp, and I finally crawled into the Hell Mouth which, was being stored by the construction office, and bedded down for the night. Next day I was talking to Woz, who had been on guard that night. He told me that the Hell Mouth was Haunted! He had heard loud moaning and weird noises coming from it the night before.
+Did I mention that I snore?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 07:56PM</span>
+            <div class="reply-content">1970 Unspecified warehouses near the Embarcadero near Union &amp; Battery (first faire - 3 weeks) (I think it was the Old Icehouse, now gone). 5:00 to 11:00 pm, Tuesday through Friday, noon to 11 pm Saturday &amp; Sunday.
+The article mentions Jay Paul and James Kahlo, as well as Consortium Antiquum. It also says that Ron &amp; Phyllis &quot;have done a total of 12 Faires, here and in Los Angeles&quot; Yikes! Such babies. My favorite quote from the Pattersons references both fairs, Renn &amp; Dickens: &quot;Our favorite periods and both times when there were queens.&quot; Well, yes, and....LOL.
+I WAS AN ENTERTAINER AT THIS FIRST DICKENS FAIRE. THE WAREHOUSE WAS BETWEEN THE VORPAL GALLERY AND BLUE PETER&#x27;S SHIPYARD. IT WAS ACTUALLY SEVERAL WAREHOUSES AND YOU HAD TO GO OUTSIDE AND AROUND THE CORNER TO GET FROM ONE TO THE OTHER.
+IT WAS THE FIRST TIME THE ENTERTAINMENT DEPARTMENT COMISSIONED PLAYS. SEVERAL OF US RPF REGULARS WERE DETAILED TO DO A VICTORIAN MELODRAMA, &quot;BLACKEYED SUSAN.&quot; THERE WAS A CAROLING PARADE WHICH KEPT GETTING INTERRUPTED BY THERL O&#x27;RYAN AS SCROOGE, I REMEMBER A SKITTLES BOOTH, OF COURSE MAD SAL&#x27;S WHERE WE PERFORMED &quot;BLACKEYED SUSAN&quot;.
+I PLAYED DOGGRASS, THE VILLAIN; JUDY ? PLAYED SUSAN, GINGER OSBURNE PLAYED HER FRIEND, (FORGOT THE CHARACTER&#x27;S NAME), AND THERL LATER JOINED THE CAST WHEN ONE OF THE PLAYERS DROPPED OUT. BLACKEYED SUSAN WAS AN INTERSTING PIECE, BECAUSE WE WERE ALL MORE OR LESS METHOD ACTORS, BUT WE ADOPTED THE DEL SARTE TECHNIQUES IN VOGUE DURING THE VICTORIAN ERA. WE BROKE THE PLAY DOWN INTO BEATS USING METHOD, THEN CHOREOGRAPHED IT WITH DEL SARTE TECHNIQUES. IT WAS AS TIGHTLY BLOCKED AS ANY BALLET YOU WILL EVER SEE.
+J. PAUL MOORE WAS THE MASTER OF CEREMONIES, AS I RECALL, LEADING THE PARADES AND DOING CLOSE-UP SLEIGHT OF HAND. HE WAS GOOD!
+I ALSO DID SIDEWALK CHALK DRAWINGS. THERE WAS A SWAP BOOTH THAT STARTED OUT WITH JUST A FEW CHEAP TRINKETS, AND BY THE TIME THE FAIR WAS OVER, HE HAD A LARGE INVENTORY OF JEWELRY AND GOLD ITEMS. THE GUY WAS AMAZING...
+1971 Wharfside, next to the Cannery, Fisherman&#x27;s Wharf. As I recall, this was when the Cannery was still in construction (more or less) and the fair was in the base of warren of brick buildings. Cold as hell. I was 13 or so and went with my sister in costume. Thursday and Friday, 5-11, Saturday noon to 11, Sunday noon to 8:00
+WE GOT THIS EMPTY GROUND FLOOR OF A WAREHOUSE TO BUILD THE FAIRE IN. IT WAS STREET LEVEL ON THE EAST, BUT BELOW STREET LEVEL ON THE WEST. THERE WAS A SECOND STORY BUT IT WAS USED FOR STORAGE AND ADMINISTRATION, SIGN SHOP, ETC. I WAS THE ELECTRICIAN. SINCE THE CANNERY WAS STILL UNDER CONSTRUCTION, THE TRANSFORMER AND POWER POLE FOR OUR SITE WAS TAKEN OUT THE WEEK BEFORE WE WERE TO BEGIN CONSTRUCTION. THE PLAN WAS THAT WE WOULD PLUG INTO THE POWER AT THE HYDE STREET PIER RANGER STATION JUST ADJACENT IN THE SAME BUILDING. THEY HAD A SYSTEM THAT REQUIRED US ORDERING A SPECIAL PART FROM SQUARE D IN CINCINNATI OR SOME SUCH PLACE. THERL WAS THE PURCHASING AGENT, AND HE KEPT ME POSTED ON THE STATUS OF THE PART (THERE WAS ONLY ONE IN EXISTENCE, AND WE HAD BOUGHT IT!) AS IT WOUND ITS WAY THROUGH THU UPS LABYRINTH. THIS WAS WAY BEFORE THE WEB... IN THE MEAN TIME, WE RAN THE CONSTRUCTION OFF OF A GENERATOR OUTSIDE ON THE STREET, WHICH I HAD TO KEEP FILLED WITH FUEL. THE PART KEPT DISAPPEARING EN ROUTE. THERL HAD BOOKED ME A SEAT ON A QUANTAS FLIGHT TO AUSTRALIA, IN CASE THE PART NEVER ARRIVED. WHEN THINGS WERE GOIN WELL, I&#x27;D WALK UP TO HIM AND SAY, &quot;CANCEL THAT FLIGHT!&#x27; THEN NEXT DAY THE PART WOULD ARRIVE IN SF, BUT GET LOST IN TRANSIT. I&#x27;D RUN UP TO THERL AND SAY, &quot;DON&#x27;T CANCEL THAT FLIGHT!&quot;
+IN THE MEAN TIME I HAD TO WIRE THE ENTIRE SITE WITHOUT BEING ABLE TO TEST ANY OF THE CIRCUITS. FINALLY THE PART ARRIVED, AND WE HAD A BIG CEREMONY WITH ALL THE SS CREW IN ATTENDANCE. I HAD WIRED INTO THE CIRCUIT A FLASHPOT THAT EXPLODED WITH SPARKS AND FIRE WHEN WE THREW THE SWITCH. BIG CHEERS. UP AND RUNNING.
+THERL, GINGER AND I HAD FORMED A COMPANY, &quot;THE HOUNDSDITCH THESPIANS,&quot; AND WE PRODUCED A SERIES OF THREE MELODRAMAS BASED ON THE CHARACTERS FROM &quot;BLACKEYED SUSAN&#x27; WE HAD PLAYED THE PREVIOUS YEAR. IT WAS COMMEDIA IMPROVISATORE STYLE THEATRE, WHICH IS TO SAY THAT THE CHARACTERS AND PLOTS WERE SPECIFIED, BUT THE SCRIPT AND ACTION WERE IMPROVISED EACH TIME. THE SAME PLAY, BUT A DIFFERENT SHOW EVERY TIME. THERE WAS ALSO MISS LYDIA PINKHAM ON THE PIANO. SHE WAS A POLYMATH MUSIC/MATH GENIUS FROM BERKELEY. SHE IMPROVISED MUSIC TO GO WITH OUR PLAYS, AND ACCOMPANIED ALL THE OTHER SINGERS AND PERFORMERS AT MAD SAL&#x27;S. THE HOUNDSDITCH THESPIANS ALSO DID A TAKE-OFF OF JEKYLL AND HYDE CALLED, &quot;SEEKING MR. HYDE.&quot; J. PAUL MOORE AND THE CHAMBER COMPANY DID A MEDICINE SHOW. BILLY SCUDDER DID SONG AND DANCE NUMBERS. JUDY WAS JUDY... THERE WAS A FORMER MOUSKETEER IN THERE SOMEWHERE, DENNIS DAY. WE ALSO DID &quot;PICKWICK CLUB,&quot; WITH EVERYBODY DOING THEIR SOLO BITS, SORT OF MODERATED MUSIC HALL STYLE. THERE WAS A &#x27;PUNCH AND TOBY&#x27; PARADE IN WHICH MY DOG &quot;GLORFINDEL&quot; PARTICIPATED, WEARING A RUFFLED COLLAR. HE WAS THE ONLY DOG EVER TO GET AN ENTERTAINERS PASS AT THE FAIRE, TO MY KNOWLEDGE. IT SAID &quot;GLORFINDEL DOGGE.&quot;
+THE SS CREW TOOK TO THROWING TOMATOES AT ME DURING OUR PERFORMANCES, AND I WOULD RETURN FIRE WITHOUT INTERRUPTING THE ACTION. ALL A PART OF THE ACT. HOWEVER, THEY THREW AT THE MOUSKETEER, WHO COMPLAINED TO CAROL, AND THE WORD CAME DOWN... NO MORE TOMATOES. EVEN SS WAS AFRAID OF CAROL. THERE WERE NO MORE TOMATOES... UNTIL... THE LAST DAY OF THE FAIRE I WALKED INTO MAD SAL&#x27;S TO FIND A CRYSTAL PUNCH BOWL FULL OF TOMATOES, AND ON TOP WAS ONE WITH MY STAGE NAME ON IT... MR. JUSTIN CASE. THERL ALLOWED AS HOW WE WERE IN TROUBLE. I AGREED. WE MADE A PLAN, AND IN MY NEXT POST I WILL TELL YOU THE TALE OF &quot;THE BATTLE OF MAD SAL&#x27;S.&quot;
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

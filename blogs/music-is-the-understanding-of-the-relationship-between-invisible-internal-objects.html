@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music is the understanding of the relationship between invisible internal objects. - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/blogs/">Blogs</a> <span>›</span> <span>Music is the understanding of the relationship between invisible internal objects.</span></div>
+            
+    <div class="module">
+        <div class="module-header">Music is the understanding of the relationship between invisible internal objects.</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Murray then, now aka MAX</span> | <span>March 05, 2009</span> | <span>0 comments</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;">The welcome address given to parents of entering freshmen at the Boston Conservatory, given by Karl Paulnack, pianist and director of the music division:
+
+&quot;One of my parents&#x27; deepest fears, I suspect, is that society would not properly value me as a musician, that I wouldn&#x27;t be appreciated. I had very good grades in high school, I was good in science and math, and they imagined that as a doctor or a research chemist or an engineer, I might be more appreciated than I would be as a musician. I still remember my mother&#x27;s remark when I announced my decision to apply to music school-she said, &quot;You&#x27;re WASTING your SAT scores.&quot; On some level, I think, my parents were not sure themselves what the value of music was, what its purpose was. And they LOVED music, they listened to classical music all the time.
+
+They just weren&#x27;t really clear about its function. So let me talk about that a little bit, because we live in a society that puts music in the &quot;arts and entertainment&quot; section of the newspaper, and serious music, the kind your kids are about to engage in, has absolutely nothing whatsoever to do with entertainment, in fact it&#x27;s the opposite of entertainment. Let me talk a little bit about music, and how it works.
+
+The first people to understand how music really works were the ancient Greeks. And this is going to fascinate you; the Greeks said that music and astronomy were two sides of the same coin. Astronomy was seen as the study of relationships between observable, permanent, external objects, and music was seen as the study of relationships between invisible, internal, hidden objects. Music has a way of finding the big, invisible moving pieces inside our hearts and souls and helping us figure out the position of things inside us. Let me give you some examples of how this works.
+
+One of the most profound musical compositions of all time is the Quartet for the End of Time written by French composer Olivier Messiaen in 1940. Messiaen was 31 years old when France entered the war against Nazi Germany. He was captured by the Germans in June of 1940, sent across Germany in a cattle car and imprisoned in a concentration camp.
+
+He was fortunate to find a sympathetic prison guard who gave him paper and a place to compose. There were three other musicians in the camp, a cellist, a violinist, and a clarinetist, and Messiaen wrote his quartet with these specific players in mind. It was performed in January 1941 for four thousand prisoners and guards in the prison camp. Today it is one of the most famous masterworks in the repertoire.
+
+Given what we have since learned about life in the concentration camps, why would anyone in his right mind waste time and energy writing or playing music? There was barely enough energy on a good day to find food and water, to avoid a beating, to stay warm, to escape torture-why would anyone bother with music? And yet-from the camps, we have poetry, we have music, we have visual art; it wasn&#x27;t just this one fanatic Messiaen; many, many people created art. Why?
+
+Well, in a place where people are only focused on survival, on the bare necessities, the obvious conclusion is that art must be, somehow, essential for life. The camps were without money, without hope, without commerce, without recreation, without basic respect, but they were not without art. Art is part of survival; art is part of the human spirit, an unquenchable expression of who we are. Art is one of the ways in which we say, &quot;I am alive, and my life has meaning.&quot;
+
+On September 12, 2001 I was a resident of Manhattan. That morning I reached a new understanding ofmy art and its relationship to the world. I sat down at the piano that morning at 10 AM to practice as was my daily routine; I did it by force of habit, without thinking about it. I lifted the cover on the keyboard, and opened my music, and put my hands on the keys and took my hands off the keys. And I sat there and thought, does this even matter? Isn&#x27;t this completely irrelevant? Playing the piano right now, given what happened in this city yesterday, seems silly, absurd, irreverent, pointless. Why am I here? What place has a musician in this moment in time? Who needs a piano player right now? I was completely lost.
+
+And then I, along with the rest of New York, went through the journey of getting through that week. I did not play the piano that day, and in fact I contemplated briefly whether I would ever want to play the piano again. And then I observed how we got through the day.
+
+At least in my neighborhood, we didn&#x27;t shoot hoops or play Scrabble. We didn&#x27;t play cards to pass the time, we didn&#x27;t watch TV, we didn&#x27;t shop, we most certainly did not go to the mall. The first organized activity that I saw in New York, that same day, was singing. People sang. People sang around fire houses, people sang &quot;We Shall Overcome&quot;. Lots of people sang &quot;America the Beautiful.&quot; The first organized public event that I remember was the Brahms Requiem, later that week, at Lincoln Center, with the New York Philharmonic. The first organized public expression of grief, our first communal response to that historic event, was a concert. That was the beginning of a sense that life
+
+might go on. The US Military secured the airspace, but recovery was led by the arts, and by music in particular, that very night.
+
+From these two experiences, I have come to understand that music is not part of &quot;arts and entertainment&quot; as the newspaper section would have us believe. It&#x27;s not a luxury, a lavish thing that we fund from leftovers of our budgets, not a plaything or an amusement or a pastime. Music is a basic need of human survival. Music is one of the ways we make sense of our lives, one of the ways in which we express feelings when we have no words, a way for us to understand things with our hearts when we cannot with our minds.
+
+Some of you may know Samuel Barber&#x27;s heartwrenchingly beautiful piece Adagio for Strings. If you don&#x27;t know it by that name, then some of you may know it as the background music which accompanied the Oliver Stone movie &quot;Platoon&quot;, a film about the Vietnam War. If you know that piece of music either way, you know it has the ability to crack your heart open like a walnut; it can make you cry over sadness you didn&#x27;t know you had. Music can slip beneath our conscious reality to get at what&#x27;s really going on inside us the way a good therapist does.
+
+I bet that you have never been to a wedding where there was absolutely no music. There might have been only a little music, there might have been some really bad music, but I bet you there was some music. And something very predictable happens at weddings-people get all pent up with all kinds of emotions, and then there&#x27;s some musical moment where the action of the wedding stops and someone sings or plays the flute or something. And even if the music is lame, even if the quality isn&#x27;t good, predictably 30 or 40 percent of the people who are going to cry at a wedding cry a couple of moments after the music starts. Why? The Greeks. Music allows us to move around those big invisible pieces of ourselves and rearrange our insides so that we can express what we feel even when we can&#x27;t talk about it. Can you imagine watching &quot;Indiana Jones&quot; or &quot;Superman&quot; or &quot;Star Wars&quot; with the dialogue but no music? What is it about the music swelling up at just the right moment in &quot;ET&quot; so that all the softies in the audience start crying at exactly the same moment? I guarantee you if you showed the movie with the music stripped out, it wouldn&#x27;t happen that way. The Greeks: Music is the understanding of the relationship between invisible internal objects.
+
+I&#x27;ll give you one more example, the story of the most important concert of my life. I must tell you I have played a little less than a thousand concerts in my life so far. I have played in places that I thought were important. I like playing in Carnegie Hall; I enjoyed playing in Paris; it made me very happy to please the critics in St. Petersburg. I have played for people I thought were important; music critics of major newspapers, foreign heads of state. The most important concert of my entire life took place in a nursing home in Fargo, ND, about 4 years ago.
+
+I was playing with a very dear friend of mine who is a violinist. We began, as we often do, with Aaron Copland&#x27;s Sonata, which was written during World War II and dedicated to a young friend of Copland&#x27;s, a young pilot who was shot down during the war. Now, we often talk to our audiences about the pieces we are going to play rather than providing them with written program notes. But in this case, because we began the concert with this piece, we decided to talk about the piece later in the program and to just come out and play the music without explanation.
+
+Midway through the piece, an elderly man seated in a wheelchair near the front of the concert hall began to weep. This man, whom I later met, was clearly a soldier-even in his 70&#x27;s, it was clear from his buzz-cut hair, square jaw and general demeanor that he had spent a good deal of his life in the military. I thought it a little bit odd that someone would be moved to tears by that particular movement of that particular piece, but it wasn&#x27;t the first time I&#x27;ve heard crying in a concert and we went on with the concert and finished the piece.
+
+When we came out to play the next piece on the program, we decided to talk about both the first and second pieces, and we described the circumstances in which the Copland was written and mentioned its dedication to a downed pilot. The man in the front of the audience became so disturbed that he had to leave the auditorium. I honestly figured that we would not see him again, but he did come backstage afterwards, tears and all, to explain himself.
+
+What he told us was this: &quot;During World War II, I was a pilot, and I was in an aerial combat situation where one of my team&#x27;s planes was hit. I watched my friend bail out, and watched his parachute open, but the Japanese planes which had engaged us returned and machine gunned across the parachute chords so as to separate the parachute from the pilot, and I watched my friend drop away into the ocean, realizing that he was lost. I have not thought about this for many years, but during that first piece of music you played, this memory returned to me so vividly that it was as though I was reliving it. I didn&#x27;t understand why this was happening, why now, but then when you came out to explain that this piece of music was written to commemorate a lost pilot, it was a little more than I could handle. How does the music do that? How did it find those feelings and those memories in me?&quot;
+
+Remember the Greeks: music is the study of invisible relationships between internal objects. This concert in Fargo was the most important work I have ever done. For me to play for this old soldier and help him connect, somehow, with Aaron Copland, and to connect their memories of their lost friends, to help him remember and mourn his friend, this is my work. This is why music matters.
+
+What follows is part of the talk I will give to this year&#x27;s freshman class when I welcome them a few days from now. The responsibility I will charge your sons and daughters with is this:
+
+If we were a medical school, and you were here as a med student practicing appendectomies, you&#x27;d take your work very seriously because you would imagine that some night at 2 AM someone is going to waltz into your emergency room and you&#x27;re going to have to save their life. Well, my friends, someday at 8 PM someone is going to walk into your concert hall and bring you a mind that is confused, a heart that is overwhelmed, a soul that is weary. Whether they go out whole again will depend partly on how well you do your craft.
+
+You&#x27;re not here to become an entertainer, and you don&#x27;t have to sell yourself. The truth is you don&#x27;t have anything to sell; being a musician isn&#x27;t about dispensing a product, like selling used Chevies. I&#x27;m not an entertainer; I&#x27;m a lot closer to a paramedic, a firefighter, a rescue worker. You&#x27;re here to become a sort of therapist for the human soul, a spiritual version of a chiropractor, physical therapist, someone who works with our insides to see if they can get things to line up, to see if we can come into harmony with ourselves and be healthy and happy and well.
+
+Frankly, ladies and gentlemen, I expect you not only to master music; I expect you to save the planet. If there is a future wave of wellness on this planet, of harmony, of peace, of an end to war, of mutual understanding, of equality, of fairness, I don&#x27;t expect it will come from a government, a military force or a corporation. I no longer even expect it to come from the religions of the world, which together seem to have brought us as much war as they have peace. If there is a future of peace for humankind, if there is to be an understanding of how these invisible, internal things should fit together, I expect it will come from the artists, because that&#x27;s what we do. As in the concentration camp and the evening of 9/11, the artists are the ones who might be able to help us with our internal, invisible lives.&quot;
+
+&quot;Derange pas ta tendresse&quot;
+
+don&#x27;t break your tendernes
+
+(thanks to Sylvia)</div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Comments (0)</div><div class="module-content"></div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

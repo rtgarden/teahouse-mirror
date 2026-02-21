@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presidential debate - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/blogs/">Blogs</a> <span>›</span> <span>Presidential debate</span></div>
+            
+    <div class="module">
+        <div class="module-header">Presidential debate</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By [3g5ty1oueh4fv]</span> | <span>October 16, 2008</span> | <span>18 comments</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Comments (18)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 02, 2009 at 08:20PM</span>
+            <div class="reply-content">I agree with you. I voted Democrat all my life until W ran against Gore. I grew up in California and soon came to realize that the Liberals make everybody equal by taking away rights. Just look at everything you can&#x27;t do in California. I am a gun owner, and I own (I don&#x27;t want to shock anyone but...) just under 70 guns. I also have a concealed gun permit. I moved to Nevada, where this is all perfectly legal. Nevada treats you as an adult, but if you break the law, ya go to jail. I also must say that I hate killing and violence (I won&#x27;t even kill a spider unless I have to). In California, I would be denied the concealed gun permit and would have to turn in some of the egregious guns (by California standards) and tools that are associated with CA illegal guns (like wrenches and screwdrivers). I would also have to turn in night vision binoculars, laser pointers, double edged knives and some ammunition. I realize that guns are politically incorrect to some people, but I am only using them as an example. When I moved to Nevada, I came torealize that most of the country hates Californians (you should see some of the bumperstickers). So, after years of being unsure, I thought that Republicans would be better. Gore scared me, so I voted W. The next election Kerry scared me too (at least, more than W). This last election, I saw red flags with both, but felt the Republicans were more predictable. I like Palin a lot, and I think that she needs more experience. I do like Obama and hope that he will do better than anybody has for a few decades. As for the Republicans name calling, and chanting &quot;Kill him&quot;, I don&#x27;t agree with it, but I notice that the liberal community name calls far more than the Repubs. All the putdowns and belittling remarks, really piss me off. Patricia is right in saying the destructive anger should be done away with. I would like to propose the re-installment of the &quot;Bull Moose Party&quot;, the party of Teddy Roosevelt. To me the new party would be middle of the road and ONLY do what&#x27;s best for the country, not special interest (both liberal and conservative), also the candidate would have to sign a binding agreement that states: if that official does not live up to the best interest of the country, they will step down.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 02, 2009 at 05:53PM</span>
+            <div class="reply-content">The original topic was re: drilling for oil. I am registered as &quot;Decline to State&quot;. I view the two major parties as equally dirty and equally clean. Like the lawyers in a divorce, they rile up their clients(read-party members) into a frenzy of hatred and intolerance. The longer they carry on, the fatter the wallets of both lawyers. And at the end when the family(read-the nation) is broken, broke, dead or wounded, the children messed up beyond belief, these two lawyers(read -party leaders) meet up at at the club, shake hands, and gleefully discuss the new boats(or vacations,or cars,or houses etc.) they are going to buy with their blood money. Now,&quot;Imagine&quot; if these two lawyers had done everything in their power to really mediate with their clients. To calm the heated emotions, to find an solution to best serve ALL parties involved. To help their clients through a very difficult time, while creating no more harm. To leave this family with a chance to move forward on whatever path with a sense of peace and closure. For me I choose the latter. Now as to drilling. We use oil. We must supply our own. We can&#x27;t continue to be NIMBY about it. Yes, we must eliminate dependence on oil.Duh. We have done much to clean up our air.Yes,of course there&#x27;s much to be done. The job is never done. If we drill here we can better regulate the technology to do it cleanly.Not so in other countries.What, dirty up another county so we don&#x27;t have our million dollar views obstructed?Supply the elite of other,often hostile countries,with our money? Their poor don&#x27;t benefit any more than most of us do. We must stop being hypocrites.Fund wind,sun,hydrogen technologies, held by US,the citizens.If we use it, we supply it. So yeah, drill baby drill. And I for one love Sarah Palin. She empowers me as a woman. And I found her the most honest of all the candidates throughout the entire election process. And I will love and support our next president,Barak Obama. The American presidency is the most difficult and thankless job on the entire planet. Just ask the guys who had the job. I prefer to believe in the basic goodness of all, including lawyers and politicians.I know,that seems simple, but it is better than believing in the worst. I can&#x27;t afford to be hateful. I tried it. Doesn&#x27;t work for me. Our differences make us great. How we work through them to find a benefit for all defines us. Can we truly find our way without destructive anger? I believe the answer is &quot;Yes, We can&quot;.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">[3g5ty1oueh4fv]</span>
+            <span class="reply-date">October 29, 2008 at 06:49AM</span>
+            <div class="reply-content">Being an Alaskan Native, and having eaten Muktuk (which is whale by the way), I am not surprised. My relatives say there are no honest Alaskan politicians.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">October 29, 2008 at 05:23AM</span>
+            <div class="reply-content">I came across this a few days back:
+That Sarah Palin is one unreal Alaskan
+by By Seth Kantner, Alaska Dispatch
+http://www.alaskadispatch.com/tundra-talk/1-talk-of-the-tundra/235--that-sarah-palin-is-one-unreal-alaskan.html
+And the L.A. Daily News, hardly a liberal newspaper, has endorsed Obama/Biden. I believe they did so before Powell did.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">October 17, 2008 at 01:34AM</span>
+            <div class="reply-content">Thank you I needed a good laugh!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">October 17, 2008 at 01:15AM</span>
+            <div class="reply-content">Seen on a bumper sticker: Frodo Failed; The Republicans Have The Ring
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">[3g5ty1oueh4fv]</span>
+            <span class="reply-date">October 17, 2008 at 01:05AM</span>
+            <div class="reply-content">I don&#x27;t know how any veterans could be following the republicans at this point. Good Old George, cut the funding for Vererans hospital coverage, just before he sent those soldiers into Irac to be killed.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">[3g5ty1oueh4fv]</span>
+            <span class="reply-date">October 17, 2008 at 01:03AM</span>
+            <div class="reply-content">They are inciting Violence on purpose, as far as I can tell. They also don&#x27;t have anyone left on their side but the lunatics too I think. Hopefully their lunatic terrorist republicans won&#x27;t be killing him, once he is in office.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">October 17, 2008 at 12:48AM</span>
+            <div class="reply-content">I had problem with McCain&#x27;s response to Obama saying that people at the Republican rallies were chanting &quot;terrorist&quot; and &quot;Kill Him&quot; when Obama was mentioned. McCain said he was proud of everyone at the rallies. Sort of condones the behavior. I imagine he was trying to convey that he was proud of all the veterans that attended, and he should be. He just needs to think about how his words come out of his mouth.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">October 17, 2008 at 12:38AM</span>
+            <div class="reply-content">Part of my smart ass core wanted to look at McCain as he drilled on Acorn and Obama needing to be responsible if they are fraudulently registering voters - wants to respond &quot;Well then Senator - are you responsible for the irresponsible blatherings of you running mate. She has been inciting violence among her supporters.&quot;
+Then I went to the tangent of holding Jesus and Mohammed for the insane actions of their followers. Perhaps I am going for right-wing accountability? It does amaze me when my brain starts doodling!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">October 17, 2008 at 12:29AM</span>
+            <div class="reply-content">If I recall, he didn&#x27;t really win either election. Ballots not counted, intimidation of African-American voters by the Republican party. It&#x27;s already started here again. Democrats who are voting by absentee ballot are being mailed fake ballots and then being accused of trying to vote fraudulently. It&#x27;s disgusting, really.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">[3g5ty1oueh4fv]</span>
+            <span class="reply-date">October 17, 2008 at 12:28AM</span>
+            <div class="reply-content">W had to rig a bunch of voting machines in those swing states to get re-elected, hopefully they won&#x27;t get away with as much of the crap as they did last time.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">October 17, 2008 at 12:12AM</span>
+            <div class="reply-content">I keep hoping, and yet still fear what ignorance and bigotry will bring this country. You know the old story - the power of large groups of people that are mostly ignorant is amazing and to me terrifying. I couldn&#x27;t believe W got re-elected!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">October 16, 2008 at 11:44PM</span>
+            <div class="reply-content">Living in Indiana I&#x27;ve seen more McCain-Palin yard signs than I care to. Obama spoke at a rally here a week ago, and my mother took my kids to hear him speak. I had an appointment I couldn&#x27;t miss so I didn&#x27;t go. Thousands, however, were in attendance. Indiana allows early voting and so far many have taken advantage of it. New voter registrations have broken records here.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">October 16, 2008 at 12:37PM</span>
+            <div class="reply-content">What scares me is that this actually does appeal to a broad level of fundamental christians. My brother probably among them. The training in church of sheeple gives them a large base so remember to get out there and vote and encourage others to do so.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">October 16, 2008 at 10:12AM</span>
+            <div class="reply-content">To listen to McCain, Palin is all for the advancement of women&#x27;s causes. Talk about out of touch....!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">[3g5ty1oueh4fv]</span>
+            <span class="reply-date">October 16, 2008 at 07:19AM</span>
+            <div class="reply-content">Scary people, Do I want my girls to be regulated to 2nd class citizens again, I don&#x27;t think so. Sarah Palin, is the most unpro-woman, they could have found. What is she a Bedford wife?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">October 16, 2008 at 06:32AM</span>
+            <div class="reply-content">Apparently, &#x27;tho, at the Sarah Palin rallies, &quot;Drill Baby Drill&quot; is taking a back seat to &quot;kill him!&quot;
+Charming people, no?
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

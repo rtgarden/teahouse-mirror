@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive Part II - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/blogs/">Blogs</a> <span>›</span> <span>Archive Part II</span></div>
+            
+    <div class="module">
+        <div class="module-header">Archive Part II</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By [isw2k6t3av2r]</span> | <span>November 23, 2007</span> | <span>0 comments</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;">Fishy Oils and Flaxy Oils and Hempy Oils
+
+Sat, December 23, 2006 - 9:47 AM
+
+This morning, M requested &quot;EYH(g)&quot; for breakfast. So cool! My days online are now filled with more pages and tabs referencing apraxia and EFA&#x27;s than anything else. I read up on omega plant sources this morning and found this from Dr. Robert Katz of the Omega-3 Research institute: 
+&quot;Flax seed oil or freshly ground flax seeds are an excellent source of 
+the essential omega-3 alpha-linolenic acid (ALA or LNA) which is the 
+quintessential parent member of the omega-3 family of essential fatty 
+acids (EFAs). The body transforms it into EPA and the EPA into DHA. 
+This transformation is very inefficient (the yield is about 10%) and 
+is further inhibited by over consumption of omega-6 fatty acids from 
+most vegetable oils or certain disease states. Therefore, it is 
+advisable to independently consume also ready made EPA and DHA from good quality fish&quot; 
+
+I find this both interesting and disappointing at the same time as I&#x27;d much rather depend on plant sources but oh well. Hemp oil on the other hand (from Rawganique.com): Hempseed oil contains 54.4% linoleic acid (Omega-6), 18.3% linolenic acid (Omega-3), 2-5% gamma-linolenic acid (GLA) and 1-2% stearidonic acid; and as such is one of only 4 oils to do so: hemp oil is also the most economical of the group. 
+
+It also resists spoilage much better than other plant sources. 
+
+As for the log on M: 
+He has been engaging in a lot more imaginary play. One game he likes in particular is &quot;Action fingers&quot; where our fingers &quot;do the walking&quot; like the old yellow pages ads and accomplish all sorts of tasks and play. We use our action fingers to clean up, practice commands like jump, run, walk, dance, etc. and they are our new favorite on-the-go toy. Gotta love action fingers. He has also been vocalizing alot more, playing his kazoo and whirly tube like a trumpet. 
+
+I updated his vocab list this morning and when I looked it over, I was pretty impressed. It has easily doubled since the last time I updated it in October: 
+Spoken Vocabulary (followed by his pronunciation) 
+Broom BOO(m) 
+Bubble BUB(l) 
+Cat KIH-EE 
+Egg EYH(g) 
+Bye bye BAH 
+Blue BOO 
+Bob the builder BABU 
+Apple PUL 
+Ball BUL 
+Purple PURL 
+Green GII 
+Hungry (more?) MAMAMAMAMA 
+Key KEY 
+Hi HA 
+Drum DAH 
+Duck DA(k) 
+Hello WOH WOH WOH 
+Makes sounds to identify dog, elephant, train, etc. 
+
+Uses Signs for: 
+Fish 
+Car 
+Squirrel 
+Train 
+Bicycle 
+Mouse 
+Together 
+Chair 
+Thirsty 
+Hungry 
+Bird 
+All done 
+Come on, let’s go 
+Run 
+Sleep (and makes snoring sound) 
+Wash hands 
+Bath 
+Pig 
+Cow 
+Horse 
+Think 
+Smart 
+Flower (sniffs air and says “ah”) 
+Drum 
+Shirt 
+Pants 
+Poop 
+Brush (teeth and hair, 2 different signs) 
+Helicopter 
+Oh no 
+Count! 
+(Plus a lot more which I have not been able to figure out yet) 
+UNDERSTANDS: Countless words and phrases, commands, requests, etc.
+
+Sat, December 23, 2006 - 9:47 AM -
+
+Ho Ho Ho
+
+Sun, December 24, 2006 - 6:36 AM
+
+I stayed up later than I should have last night finishing making all of the gifts I&#x27;m giving out to family. This mama is one tired elf. 
+M wakes up earlier and earlier these days, regardless of how much extra food I get him to eat before bedtime. Just a growing boy, I suppose. The frustrating thing of course is that after I drag myself out of bed at 5 am and make him breakfast, he doesn&#x27;t want to eat it. Or, eat what I&#x27;ve made him anyhow. He hasn&#x27;t got a sign for his chewable vitamins yet but he will sit there and point to them on the shelf and gently make noises requesting one. As I watched him do it this morning and observed his untouched breakfast on his tray, something occurred to me. Lately I have been squeezing the contents of the capsules onto his food and then seeing them laying there, a few precious drops left inside that won&#x27;t come out as hard as I try. On a whim, I gave him an emptied capsule this morning when he started to request his vitamin. To my delight, he gobbled it down. At last a solution to the empty capsules (other than eating them myself which I had been doing before)! I shouldn&#x27;t be surprised being that he loves chewy foods like raisins and dried fruit so much. If they weren&#x27;t so big, I would try giving them to him whole. Maybe soon. 
+
+Looking out my window now at gentle waves of pink and orange, violet and blue through the silhouettes of the palm trees. Fading stars in the darker sky. The ravens will be here soon to bathe in the puddles, chase the squirrels, and forage for palm berries. I love the quiet of the dawn. 
+
+(New) word of the morning accompanied by fervent arm flapping: BUHR (bird)
+
+Sun, December 24, 2006 - 6:36 AM - permalink - 1 Comment
+
+catt
+
+184
+
+Sun, December 24, 2006 - 7:34 AM
+
+thedawn was splendid here as well. No Crows nagging me...yet. Hummingbirds tho.
+
+delete this comment
+
+Post Holiday Blahs
+
+Wed, December 27, 2006 - 10:48 AM
+
+Actually, I&#x27;m not too blah, just tired really. Which means that we still have bits of wrapping paper all over the living room and i still haven&#x27;t put aside some of the new toys M got (I stick them up in the closet and get them out for him around the springtime so that he has &quot;new&quot; toys). I don&#x27;t know what I was thinking when I realized in a panic we&#x27;d be tight for cash this holiday. It&#x27;s like I forgot that he has incredibly doting grandparents or something. 
+
+Updates before the fun stuff: M started to deny the fish oil snuck into his favorite foods and so I&#x27;ve started giving the whole little capsules to him. Apparently , he enjoys them quite alot and loves to pop them in his mouth and chew up the capsules. More power to him (and me too, it takes a ton of planning off my shoulders). This morning he was very talkative, asking again for an egg (his fav for breakfast) and commenting on anything that was blue in the kitchen. He took me by the hand and walked me around showing me what was blue. Then we made a game of it, looking for more colors and different shapes. His newest word: PIHG! He also got a hold of the phone the other night while we were sitting at the table wrapping gifts together. He picked it up and put it to his ear: WOH WOH WOH? ZEE! BAH! A whole conversation! I&#x27;m not what ZEE refers to yet but he has never tried to do anything with a phone other than hand it to Jed or I and make us talk. I am glowing with pride for my little guy. :) 
+
+Christmas day was pretty hard on him towards the end. It was fun getting up with him at 5:30am and seeing his half asleep eyes light up with amazement at the train table we set up for him the night before. He has been loving trains lately so it was a real treat for Jed and I to be able to pull that off for him. I made the first grievous error of the day by providing a small pack of cookies and a little bag of fruit snacks in his stocking. The errors followed pretty quickly after that once we reached my aunt&#x27;s house for brunch. All he would eat was pan dulce and then he got a hold of chocolate (first time for him) which is what really set him off in the wrong direction (featuring lots of back arching fits) for the rest of the day. 
+
+He got the hang of ripping wrapping paper off eventually. We&#x27;ve had so many book ripping and ingesting incidents in the past that I think he was initially a bit hesitant to indulge since ripping paper had been &quot;not good, not nice&quot; so many times in the past. I&#x27;ve got to say, once he realized that the pretty packages we were handing him had awesome surprises inside for him, he was all about the presents. Afterwards when we were having a small dinner at our house, he was walking zombie Christmas boy, marching around the living room and snatching up emptied boxes and ripped paper, protesting when he found they were not more presents for him. It was actually pretty cute to watch although I really did feel bad for him because I could see how tired he was. A car ride to drop grandma off at her house quickly remedied the sleeplessness and we all proceeded to have a well deserved rest. 
+
+Yesterday we celebrated Boxing Day with our extended &quot;family&quot; down in OB. Penny, Nancy, Alexandra, Sam, Jer, Lis, James, Debbie, my mom, Jean...we were lucky enough that M fell asleep on the way there and slept through most of the festivities. It felt like my first night out in a long time. Jer and I reflected on how he, Lis and I used to be the kids passing out on the bed in the back room at gatherings from years past. It was one of those truly magical holiday gatherings where all was right. The night was only made better when Darcy and Richard showed up bearing a bottle of wine that Richard had unearthed from the canyon. Jer and James documented the opening of the &quot;pirate&#x27;s booty&quot; on video and Jer insisted on finishing the insipidly vinegared glass he had poured so that &quot;no one else [would] be tempted to drink it and get sick&quot;. I have yet to find out how he is faring this morning. I sure as hell wasn&#x27;t about to drink any, even if the cork was &quot;intact&quot; and the bottle was nothing short of a &quot;Christmas miracle&quot; according to the filmmakers. I think the only miraculous thing will be if neither of them get sick (also miraculous that Jed resisted trying any), LOL. 
+
+As the evening wound down, Penny got out her guitar and my mom her autoharp, we sang Las Mananitas and lots more to Jean for her birthday and all celebrated the pending arrival of the newest addition to the tribe care of Lis and James. It&#x27;s beautiful to see us all grown up with our own families. It has not changed anything but added a wealth.
+
+Wed, December 27, 2006 - 10:48 AM - 
+
+The demon hath emerged
+
+Sun, December 31, 2006 - 8:58 AM
+
+Previously unbeknownst to me, EFA&#x27;s can have a negative behavioral side effect. This piece of information which I&#x27;ve only learned this morning has at least helped me to make sense of what we&#x27;ve been seeing the last few days. I now understand a bit better why my mellow little guy has turned into a fit thrower at the drop of a hat. This has worn Jed and I down quite a bit. A one hour trip to the grocery I took yesterday left Papa wanting to tear his hair out in the end. 
+
+On the plus side, I am still seeing great things! Yesterday, he was playing with his back to me and started saying &quot;DEEHG&quot; at first softly and then louder until he was yelling it. He finally turned and ran over to me with his yellow plastic shovel, bent down to the ground and started &quot;digging&quot; while he excitedly shrieked &quot;DEEHG&quot; over and over again. It made me want to shriek excitedly too! I know all this may seem like nothing to a lot of parents but this is huge for M. He previously had made VERY few attempts in his 2.5 years of life to communicate anything with spoken language. 
+
+Another great moment came yesterday afternoon when he and I were reading the gorgeous animal book that M&#x27;s great grandma sent to him from OK. He climbed up into his table-seat with the book and beckoned to me to come and sit down with him. I took the book and we looked at while I asked him: &quot;Can you show me the...?&quot; We must have gone through 30 animals or more that he correctly pointed out before he got tired of the game. Then, we moved onto him pointing at the animals so that I would make the accompanying noises. He likes my turkey gobble a little too much unfortunately. His favorite noise to make is: &quot;KEEK&quot; for anything that resembles a mouse (including hamsters and chinchillas). Before, he wouldn&#x27;t even play ball when we tried to sit down and read a book together. it had always turned into him grabbing the book and slamming it shut after looking at just one page. It was a refreshing change. 
+
+I&#x27;ve also noticed significant improvements in his fine motor skills. The best example I can recall off the top of my head is walking into his room two days ago to find him putting his socks on. Another plus in this area is his recent interest in actually trying to use a spoon and/or fork during meal times. He&#x27;s also become less opposed to wearing hats in the last few weeks. 
+
+One interesting note in his language development, two babbles that I haven&#x27;t heard for almost a year have returned: &quot;eelahdeedyadee&quot; along with &quot;gilleeyagilleeya.&quot; 
+
+The train table that he got has been a source of endless entertainment for him. The act of accurately placing the cars on the tracks or connecting the wooden track together is a bit of a challenge still but doesn&#x27;t incite a fit on M&#x27;s part (yet) so I am happy. 
+
+Given his leaps in development, I have begun to scale back how much of the EFA&#x27;s I&#x27;m giving him with the hope that his language development will continue with the same success without the ornery boy we&#x27;ve seen the last few days. 
+
+As for me, I am trying desperately to find my copy of &quot;Clear your clutter with Feng Shui.&quot; Apparently, it has gotten lost in the clutter on my desk but i am eager to find it as i need an accelerated kick in the butt to organize my life. I am very attached to re-visiting my artistic side that I&#x27;ve forced into seclusion and hibernatio0n. I can feel my spirit suffering because of this neglect but I feel I need to situate reevaluate my belongings and my surroundings before I can successfully approach this desire. My mom has a full sized floor loom that she wants to get rid of and it&#x27;s making me dance inside. I never thought I would want to weave since I have always felt a strong connection to large scale metal sculpture. If i do get into weaving, I will want to make it a collaborative project using recycled textiles from anyone and everyone that will send me their &quot;found&quot; items and their project scraps. Both of these paths are now inspiring me to move on in my life.
+
+Sun, December 31, 2006 - 8:58 AM - permalink - 1 Comment
+
+post an entry
+
+edit this post delete this post
+
+1 Comment
+
+add a comment
+
+catt
+
+184
+
+Sun, December 31, 2006 - 5:18 PM
+
+Definitely the other side of the kids growth is the rough edges as the teeth emerge. 
+
+Having space to create in is essential. My advice, first make a cd to isten to (or ipod playist) that will keep your motor running while youn clean up. I have found that it is not so important that I have my own space to work in all the time as it is that there is a table space that is cleared off every day. EVERY DAY. 
+
+Lists help too.
+
+delete this comment
+
+resolutions
+
+Mon, January 1, 2007 - 11:08 AM
+
+-do art 
+-eat better 
+-be better
+
+Mon, January 1, 2007 - 11:08 AM -
+
+deep breaths
+
+Fri, January 5, 2007 - 11:07 AM
+
+we had a big wind last night. it started gently. a whispering reminder. before you knew it, clouds were flying across the sky, slipping over the moon in a strobing effect. rain joined in and all was washed away. this morning, the skies were cleaner and clearer than i have seen them in a long time. the wind is still here. 
+
+M is down to one efa cap per day. the decreased dosage has greatly helped in the area of emotional outbursts without (it would seem) interfering with the benefits of the efa&#x27;s. 
+
+change can be a scary thing and, though i should be happy about his developments, they scare me a little. parenting has been a bit daunting the whole way through. this is no different. one day I&#x27;ll feel braver about it along with everything else.
+
+Fri, January 5, 2007 - 11:07 AM - permalink - 1 Comment
+
+post an entry
+
+edit this post delete this post
+
+1 Comment
+
+add a comment
+
+Tany...
+
+402
+
+Fri, January 5, 2007 - 12:54 PM
+
+i send you multitudes of hugs and good thoughts!
+
+delete this comment
+
+Gotta love the way things work
+
+Mon, January 8, 2007 - 12:01 PM
+
+M loves his reflection (with good reason, he&#x27;s a handsome kid :-) but we haven&#x27;t been able to find a large unbreakable mirror for him without breaking the bank. Found one today, within 5 minutes of our house off of freecycle. Picked it up and he&#x27;s already playing with it in his room. 
+
+I&#x27;ve had interesting luck with freecycle lately: on Saturday, I saw a post for a free sewing machine and I was thrilled. I emailed and managed to get first dibs. set up a time for Sunday to pick up and dreamt that night of actually sewing and mending stuff around the house instead of stuffing it into the growing closet bag of &quot;whoopsies.&quot; 
+
+The next day, i got a call from my cousin who ended up with our grandmother&#x27;s Singer when she passed away almost ten years ago now. Turns out, she doesn&#x27;t want it anymore; needs something smaller for her apartment. Apparently my grandmother was meticulous about her sewing machine; kept every manual, every attachment. Plus, it&#x27;s a Singer from the days of the good machines. My cousin is taking it in to get a tune up and then bringing it to me. No need for two machines, especially if I have Grandma&#x27;s. I wrote back to the woman who had offered the freecycle machine and she was able to pass it on to another person interested. Sweet. 
+
+Now, to make a place for a sewing machine...
+
+Mon, January 8, 2007 - 12:01 PM - permalink - 1 Comment
+
+post an entry
+
+edit this post delete this post
+
+1 Comment
+
+add a comment
+
+catt
+
+184
+
+Mon, January 8, 2007 - 1:17 PM
+
+getting rid of my &quot;to-do&quot; pile sewing wise has been the greatest freedom. Recently about three itsems which had some refashion potential...however just didn&#x27;t work out...went down the line. Definitely I try and mend and re-fashion as I go now. 
+
+Of course Lulu is sixteen!
+
+delete this comment
+
+add a comment</div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Comments (0)</div><div class="module-content"></div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

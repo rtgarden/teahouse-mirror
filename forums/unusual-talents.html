@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unusual talents - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Unusual talents</span></div>
+            
+    <div class="module">
+        <div class="module-header">Unusual talents</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Eric Lethe</span> | <span>November 23, 2007</span> | <span>23 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (23)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">June 24, 2010 at 06:02PM</span>
+            <div class="reply-content">so many great skills, its interesting how we start to value certain skillsets more.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">[2u6d2akd4226i]</span>
+            <span class="reply-date">June 12, 2010 at 10:39PM</span>
+            <div class="reply-content">Besides learning so many of the things you all have already mentioned, including the skills of working on security at night (though recently my vision is not what it has been), I learned some other fab things. I learned that if I want to be heard, sometimes the best choice is to speak more quietly, not louder. Surround yourself with people you trust, stay out of other people&#x27;s romantic relationships (and &quot;open&quot; relationships are not for me, or the majority of the people I have ever known.
+When I worked for the LHC doing Accounts Payable and Petty Cash management, there was a big sign on the wall that said, &quot;Remember, this is a non-profit educational foundation. Everybody learns something, even if it&#x27;s only patience.&quot; I learned that I can connect with almost anyone from any walk of life and find some common ground. And, at the end (though this is by no means a comprehensive list of things I learned), but in the end, I learned that I need to just say No, thank you. (just saying no is rude.)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 24, 2010 at 12:47AM</span>
+            <div class="reply-content">I learned how to wrap my braid with a ribbon, then holding it in place with one hand, I tied a bow using the other hand and my teeth. Came in handy when tying vines to a stake in the nursery. Who knew?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author"><a href="/members/kevin-cooper.html">Kevin Cooper</a></span>
+            <span class="reply-date">March 23, 2010 at 08:13AM</span>
+            <div class="reply-content">...hhmmm...as Fagan would say : &quot;I think i&#x27;d better think it out again...!&quot; Because i had a lot of the camping skills and walking in the dark experience from my Explorer Club years in Jr. High and HS...that was not new to me. What was new and what makes me double-think is the application of theatrical skills to Real World Life &amp; jobs...the uniqueness of the two Faire Sites (as) being a &#x27;village&#x27; - during the show and after hours...the sense of community and the ability to improvise (MacGyver) in situations that demanded immediate action (or lack thereof) and maybe an awareness of the extra-sensory connection with the people and the place. That, I believe we all shared. I know whether it was drug-induced at the time or not, i always felt &#x27;at one&#x27; with the people and the site...something, as you said, i&#x27;ve never felt anywhere before (or since)....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 23, 2010 at 03:39AM</span>
+            <div class="reply-content">LOL
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">March 22, 2010 at 11:43PM</span>
+            <div class="reply-content">Mark Lewis told me recently that he&#x27;s worked out that we were all together before...which fits quite nicely with my beliefs. All I know for sure is that I was absolutely compelled to find a way back to the Faire after visiting just once when I was a child. I remember that feeling so clearly. It was way more compelling than Disneyland or in fact any place I&#x27;d ever visited before (or since).
+To me this point speaks to your musing about whether the skills were already in you and the Faire just brought them out or if it gave them to you. I held many jobs at the Faire over the years (from Games to Court to Halberdier to Stage Manager to Company Stage Manager (and Asst. Payroll Coordinator) to Privvy Queen, to Food Boothie, to Crafts Boothie...pretty much every job except Security and Parking...and each of them taught me lessons and gave me skills I use to this day. But the ones that intrigue me most are the traits we all share...like walking in the dark without fear, like whipping up a great meal on a camp stove, like decorating a hooch with a few scarves and odds and ends, like being able to change clothes without showing much...and then deciding that we don&#x27;t actually care who watches us change after all :-)...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 22, 2010 at 11:22PM</span>
+            <div class="reply-content">yeah hey where is Clay at I wonder?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author"><a href="/members/kevin-cooper.html">Kevin Cooper</a></span>
+            <span class="reply-date">March 22, 2010 at 08:19AM</span>
+            <div class="reply-content">So many good things that people shared---dont know if i can really add more...but especially agree with what Amy said about &quot;people&quot; skills. And on so many different levels. But those things i learned working in so many different jobs at the Faire definitely aided me in the &quot;real&quot; jobs i had later in life, as Danese mentioned. The things that i learned, or &quot;honed&quot; if you prefer, as a night security guard are things that dont neccessarily translate into the Real World---unless you are in law enforcement, but i have to also agree with Sequoia [who led by example] re= learning to spot fake IDs, using my intuition to know if someone &quot;belongs&quot; in a certain situation or location, and most of all---the ability to discern different types of light, sounds, movement. You taught me alot, &#x27;Trees&#x27; whether you know it or not, Thank You!
+As an actor, i learned to project and also to listen to my fellow players, to relax and pay attention to the scene---which was essential since we mostly did improve on the streets. I learend self-confidence and lost my stage fright the time we did an improve with Clay and i made the entire crowd laugh without saying a word...
+I learned what it meant to be part of something bigger than myself and how to do my part.
+But i wonder, as someone before this mentioned, if these &quot;skills&quot; weren&#x27;t already in me and a part of me, and the Faire just allowed me to use and perfect them, that I just needed a venue where it became necessary, and i felt comfortable and safe enough, to let these God-given talents grow into fruitition.
+All in all, i have to agree with Danese, that our unique skill set proabably serves us better in the things we now do outside of Faire than most people...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">[1k7yfe86iwp1h]</span>
+            <span class="reply-date">February 25, 2010 at 06:00AM</span>
+            <div class="reply-content">The theatrical experience has extended into my daily life. I am a shy, timid person (generally disguised by an air of aloofness), but bravely confronting total strangers in character has made me far braver in general.
+Finally, being chosen to lead a group of performers has allowed me to grow in confidence as a person and a leader.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 06, 2009 at 04:00PM</span>
+            <div class="reply-content">yes it was always sweet to all eat together and work together.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">November 04, 2009 at 07:53AM</span>
+            <div class="reply-content">I miss the VILLAGE.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 02, 2009 at 10:08AM</span>
+            <div class="reply-content">I guess the walking by starlight thing wasn&#x27;t a &quot;guard&quot; gift, but one we all learned that we had.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 02, 2009 at 10:04AM</span>
+            <div class="reply-content">It&#x27;s not that I learned &quot;TO&quot;, it&#x27;s that I learned that I &quot;KNEW&quot; already, somehow. I think the guard thing taught us all similar skills... to walk by starlight, to sense what was right and what wasn&#x27;t right, to LISTEN to what was happening, (seeing without eyes), to let intuition guide my feet and actions (spirit vision). The entertainment work taught me to improvise, to listen to others, to project to a big crowd on the hill, to get along with (other) difficult personalities. It is the only VILLAGE I have ever belonged to, and it taught me the power of the grapevine, of instant coming together to solve enormous problems, that it is OK to be who I am, that I am needed and that I belong.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Danese Cooper</span>
+            <span class="reply-date">November 02, 2009 at 06:05AM</span>
+            <div class="reply-content">I learned to stay calm in a crisis
+I learned how to communicate with people that their &#x27;really good idea&#x27; really wasn&#x27;t ... like no, you really don&#x27;t want to do that because we don&#x27;t need a &#x27;carbon condition.&#x27; And to do it without losing my cool or hurting their feelings.
+I learned how to listen
+I learned how to become &quot;Uncle Animal&quot; when need be
+I learned how to make a hot tub out of car radiators and watering tank
+I learned how to sword fight
+While I didn&#x27;t learn how to sew, I got purdy durn&#x27;d good at it.
+I learned how to stay calm and casually carry on a conversation with a naked woman.
+I learned how to be a friend.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">September 08, 2009 at 04:35AM</span>
+            <div class="reply-content">- It appears that it&#x27;s not that usual, but I also learned night walking w/o flashlite @ Faire. On Night Security, to be specific. Sure, I knew how to get around w/o a flashlite before that, but that&#x27;s when I learned to walk the length of the Black Point site, no lite, no moon, and actually see what was around me.
+- I also learned to tell the difference between the light from a white gas lantern, propane lantern, kerosene lantern, candle, flashlite, battery-lantern, etc., at 30 paces (and if it wasn&#x27;t propane, flashlite, or battery, it was my job&#x27; to get you to put it out).
+- I came to faire w/ what I thought were decent cooking and cleaning skills, from a few year&#x27;s restaurant experience. But at Faire was where I definitely learned to do more, and feed more, with less (sometimes a LOT less). And (coffee house in specific) where I learned to clean to food service standards, but using very little hot water.
+- I got fairly good at spotting fake IDs and even better at determining if someone &quot;belongs&quot; in any given situation.
+- I learned to say what was needed in very few words (Security / Walkie-Talkie)
+- I learned to say what I wanted to say to you in words that you understood but didn&#x27;t quite recognize (BFA)
+- l learned to speak to a large audience w/o a microphone or amplification. It&#x27;s amazing how many people I meet who are &quot;public speakers&quot; or &quot;performers&quot; and can&#x27;t function w/o a mic, especially if the audience is more than say, 10 people.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 06, 2009 at 04:21PM</span>
+            <div class="reply-content">Terry said &quot;when you HAFTA roll and drive you better be able to&quot;
+true.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">[2rwkjlvel97js]</span>
+            <span class="reply-date">September 06, 2009 at 04:01PM</span>
+            <div class="reply-content">Ah, yes, Having what you need without even noticing that you were preparing for anything. McGiver skills beyond comprehension. Rolling and driving...I&#x27;ve impressed many with that skill. Mostly though, it&#x27;s the ability to keep moving forward with the ball even though you hit bumps. You can always get it perfect next Faire. Right now just get it done. Then of course you get to see how perfect what you have done already is. And you can improve on it next time.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">September 05, 2009 at 01:06AM</span>
+            <div class="reply-content">So many lessons learned - how to brew good coffee and make dinner on a camp stove. How to share with those traveling through and feeling the connection that come from sharing and not expecting anything back. I started really learning where things were my stuff and where people were expressing what they needed. And how to move back from it and let them reach their potential or crash and burn without saying I told you so or even needing to track it.
+I learned the gift of intuiton and when to offer an ear and when to offer words and how to not take it personally if any of it is rejected or not used. I learned to say my peace and let it go. Skills that allowed me to keep true to myself and not put my expectations on others.
+I learned how to become my own paging system at faire and how to speak quietly. All those years singing and suddenly finding out that it is all about the structure of the vocalization and the projection.
+I learned to be a real friend that would come to another friends rescue and not ask questions until they are in a safe place. Writing this down reminds me of all these lessons and skills and that I need to use them more often on the regular world. Thanks.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">[126ln5dg00p4l]</span>
+            <span class="reply-date">September 04, 2009 at 06:42PM</span>
+            <div class="reply-content">In addition to the packing-for-a-weekend skills, over the years working on Faire stages I learned to create an entertaining show on a bare stage, out of whatever was at hand. We had our own costumes and a few props for the shows, but it was essentially a bare stage, and when we moved around from Lydian Grove to the Ale Garden we learned to make use of whatever &#x27;set&#x27; there was. When I went to work for the little community theatre across the street from me, I wrote and directed a few shows---and the staff and crew there had serious doubts: but it was nothing I hadn&#x27;t been doing for decades. I used my old Faire-learned skills and it all came together beautifully. At the Faire and in front of a live (sometimes &quot;raw&#x27;) audience you can see in full daylight you understand that its the characters and the story and the style that make it work. If you can make them want to sit still for twenty minutes amid all the noise and distraction, you&#x27;ve learned something. No big costumes, no flashy lighting design, no moving sets or special effects. Just people.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">August 31, 2009 at 03:30AM</span>
+            <div class="reply-content">i learned how to roll and drive at the same time. terry said it was imperative.
+Early on I was the crew cook at the coffehouse and from that I learned how to comfortably cook for 20-50 people. I can do more, however I can really pull out a dinner party on a scale that is beyond most people.
+More than anything I learned about social capital, about the power of a favor and also the power of a gesture given in kindness with no expectation of reward.
+I also learned the rule of the desert: if someone asks for water, salt or food and you have it you share.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">[12nlp8yxz3ul8]</span>
+            <span class="reply-date">August 31, 2009 at 02:40AM</span>
+            <div class="reply-content">I also can see better in the dark than others. But, I have big pupils. I learned how to pack for the day. When you have to lug everything you may need for a day and a two mile hike ahead in one basket or bag, you learn how to be prepared. Doing the faire helped my camping skills, too. It also really helped my &quot;people skills&quot;. That is... I learned a lot about people and how different , special they can be. How we can all live together in a &quot;shire&quot; and make it work. My skills for thinking on my feet and problem solving were honed at the faire, too.
+I learned a lot about family and what it means to share and love so much from my Ren Faire family. There is no other place, no school, no scout troop, summer camp...nothing that could compare with the life experience gained at Ren Faire.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">November 24, 2007 at 12:21AM</span>
+            <div class="reply-content">I too can walk in the dark, I think I used to scare some of the guys I fooled around with out at faire when I could find them in the dark of a trail or in a crowded party behind a booth. I saw them long before they saw me. :)
+I think I got the throwing a party and being able to pack for the weekend at the drop of a hat thingy from faire too. I really rather like having my sleeping bag and portable picnic suitcase (modern version of a picnic basket) sitting in the car at all times, ready to go! Dunno if this qualifies as a talent though? I just took to the gypsy life like the &#x27;wandering jew&#x27; that I am. :)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">November 23, 2007 at 03:00PM</span>
+            <div class="reply-content">So for example...I can cook and serve an impressive meal while camping. I surprised the heck out of my husband Joey the first time we went camping and I served Eggs Benedict in bed the first morning. I can also throw a killer party at the drop of a hat (which came in handy when I worked for Apple) and I can walk through a forest on a moonless night without a flashlight. I actually prefer not to use a flashlight in the dark.
+Okay, enough about me. What are your unusual talents?
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

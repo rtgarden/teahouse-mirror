@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>89 earthquake - where were you on lot at the time - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>89 earthquake - where were you on lot at the time</span></div>
+            
+    <div class="module">
+        <div class="module-header">89 earthquake - where were you on lot at the time</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By [16qhi4zlqjpux]</span> | <span>February 12, 2009</span> | <span>14 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (14)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">[u27mqhvfbw9b]</span>
+            <span class="reply-date">July 15, 2009 at 03:00AM</span>
+            <div class="reply-content">Hippie Jim wrote: Yes!I was in Petaluma at a bar.I had just been handed a drink when all hell broke loose.I found myself outside on the street.I remember the buildings looked like they were dancing.So when everything stopped moving I went back in to the bar walked up to the bartender pointed at my drink and said,&quot;I said stirred not shaken&quot;.It seemed so quiet for a moment and than the place busted up every one started laughing.Wouldn&#x27;t have been funny at any other time but at that point I think that we were just relived and glad to be alive.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">[u27mqhvfbw9b]</span>
+            <span class="reply-date">July 14, 2009 at 06:52PM</span>
+            <div class="reply-content">Hippie Jim was in Petaluma at the time. I was in the City just starting to Massage school at NHI. I was over on that freeway getting kinda lost for one of my first days in Bezerkly looking for a job, and that freeway that fell was so close to where I had driven the day before. That part of Oakland was very poor too and as I drove south it got darker and scarier!!! The next weekend was the last of the Blackpoint Ren Fair for the Northern 1989.
+I remember feeling as if the air was very strange. My first experience with green acid rain falling from the sky, not nice.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">[2whkg3ixozg90]</span>
+            <span class="reply-date">April 13, 2009 at 05:02AM</span>
+            <div class="reply-content">i was fishing with mike beard on the baby b in tomalas bay we got back and i went to the pay phone to call our wifes and the phones wernt working a old man told us there was a earth quake the bridge fell down hundreds of people are dead so we turned on the raidio dumped the boat and trailer and raced back to the lot to find every thing ok. in the ocean earth quakes arent that bad dident feel a thing!!!!!!!!!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">April 04, 2009 at 03:32PM</span>
+            <div class="reply-content">Me? Safe in SoCal. But terrified for all my friends. The pictures on the telly were horrific. And I couldn&#x27;t reach anyone for days by phone. Lots of kneel time. And Julien, that comment about tears of relief at the sight of lights on in S.F? My response at the sight of the first non military plane in the air after 9/11. Thanx for all the first person stories people. The rolling waves of the parking lot?! Dust rising over the Cypress freeway?! Thoughts of all those times I was creeped out over driving the double decker freeways. Glad ya&#x27;ll made it through.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">[1ko42xhlxlfoq]</span>
+            <span class="reply-date">April 04, 2009 at 06:57AM</span>
+            <div class="reply-content">You forgot that Hal Taylor was on the back of the Flatbed yell at me to stop moving it. I&#x27;ll never forget his look when he saw us running pass.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">[31te9gnwzgefw]</span>
+            <span class="reply-date">March 26, 2009 at 08:24PM</span>
+            <div class="reply-content">Bob &amp; I were in Aubin&#x27;s trailer (next to Cheri &amp; Jefe), getting ready to watch the world series (battle of the Bay). As Candlestick Park began to rock &amp; roll I knew what was coming, and about 15 seconds later the trailer bagan to dance on its springs. I looked outside &amp; the hills were rolling-it was all quite surreal.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">March 20, 2009 at 04:00PM</span>
+            <div class="reply-content">At my funky little house in Petaluma, where you, Grego, and Bird, and most of the Carpentry crew had recently helped me put a foundation under the house, crawling in a claustrophobic crawlspace with a hose pumping concrete.
+We felt the first big roller, then Chris and I marched the girls out to the back yard to await the many subsequent aftershocks. Petaluma was far enough away from the epicenter so there was no damage, just things falling off shelves and such. But had we not that new foundation under the house, who knows what might have slurped into the mud below.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">March 20, 2009 at 03:50PM</span>
+            <div class="reply-content">Headed south from Novato with Ruth, I was going to introduce her to Santa Cruz for dinner. Parked just off the mall near Laurel st. and took off walking. Lovely, old time feel to all those un-reinforced brick buildings downtown. Lots of stylin razzle dazzle behind big display windows. I had just bought a so-cool spider puppet in a groovy shop, and we continued up the mall when the velvet hammer vibe started building. It came on pretty quick, with a roar, like being surrounded by locomotives. Big windows began to ripple, wave, and explode. I pulled Ruth to where I could pin her back to a tree and cover her body with mine. Heh. Might sound like a fine position to be in, but thoughts of the whole town, maybe the whole coast going surfing, all those old predictions of Cali sliding away were flashing through my quaking head as the glue that holds everything together slipped under the strain. Dust filled the air, visibility a matter of yards, so there was a roaring invisible world that shook like a lot bomb with shattered shocks, and nothing to do but ride the sucker out. When things got suddenly quiet it took a moment for my mind to clear (street hippie truckin by going &quot;wo, where can I get some more of that shit&quot;), and a few more moments for the air to clear. Everybody dazed. Scoop of ice cream on the asphalt. Looking up the road in the direction we had been walking I could only see about 30 paces. A pile of bricks that had been a building blocked the view beyond that. If I hadn&#x27;t stopped for a moment to buy that spider...
+We had soup and sandwiches at a church emergency set up, with lots of &quot;know how to show a girl a good time&quot; talk, and spent the night at chez Paul Thomas, sans electricity, amid chunks of fallen wall plaster. Next morning a transistor radio had rumors of a possible southbound escape route. Back road through Watsonville might be open, anybody&#x27;s guess on where the next gas would be available. Well, shit, we had just finished the ?th annual last ever RPFN, and just survived a disaster movie, so we were no strangers to risky adventures. We bid farewell to those who had helped us, left the town to fend and cope for itself, and shamelessly rolled off towards the next chapter.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">March 02, 2009 at 06:01PM</span>
+            <div class="reply-content">I was in Oakland, on the 16th floor of the Ordway Building where I was working for a law firm. My office didn&#x27;t have a window, but I wasn&#x27;t in my office...I unwisely ran to the window so I could watch whether Adi&#x27;s preschool (which had been built in 1907) was coming down. I grew up in Cali, have been through *lots* of earthquakes and they seldom scare me. Of course I knew I wasn&#x27;t supposed to be that near a window...but...just had to make sure Adi&#x27;s building was standing. Anyway, the Ordway is built on rollers, so it sort of smoothly tilts like a pendulum in a quake.
+Because I was looking that direction, I happened to see the Cypress Freeway crumble. It was far off in the distance, but I could see plumes of dust rising and thought &quot;...Oh dear, that can&#x27;t be a good thing...&quot;.
+Then the shaking stopped and I gathered up my crew and my traumatized kid and put them all in my truck (six guys in the back) and we drove to my house in Richmond because none of them could get home to the City. They all wore my nightgowns that night. We ordered pizza and watched the news. The next day I went back to the building and found every book in the law library on the floor, and all the files as well (the downside of pendulum action). Took about a week to sort out.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">March 02, 2009 at 04:42PM</span>
+            <div class="reply-content">I was on vacation from my weekday job, and had been on the lot since the previous Friday afternoon. Butch and I were supposed to go to Santa Cruz that day to visit one of my friends, but decided to postpone the trip until Wednesday or Thursday. I went into San Francisco to take care of personal business including leaving a message for my friend saying our plans had changed. I had returned to the lot at about 4:30 and was in Butch’s pop-up trailer in front of the Red Barn when the quake hit. I was debating whether it was wise to remain inside, but as I looked out the door and saw Graywater rocking side to side under the water stand I decided to stay put. As I listened to the coverage on the radio and learned of the increasing damage I realized just how lucky I truly am. Had I been in Santa Cruz, I most likely would have been on the UCSC campus (my alma mater) or on the Mall at the Cooper House or in Book Shop Santa Cruz, all of which sustained major damage. I worked in San Leandro at the time and lived in S.F., and my normal route to and from work included the Bay Bridge and the Cypress Structure, both of which collapsed.
+The day after the quake I went with Butch, Hoop, Michael Beard and others on Michael’s boat to check out the damage to Pier 45. We arrived just as the sun was setting. For as long as I live I will never forget the eerie site of San Francisco in total darkness save for the flashing lights of emergency vehicles and the flames from the many fires. The only other lights came from the Presidio.
+On Friday evening, when I finally headed back to my apartment in San Francisco, as I came down 101 approaching the Golden Gate Bridge, and once again could see the lights of The City, I literally cried with relief.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Michael Kimball</span>
+            <span class="reply-date">March 01, 2009 at 09:17AM</span>
+            <div class="reply-content">~shaking head~ ya, I had a trailer full of someones booth, going past cheese witz... with the lurching trailer knocking the car around I had no idea until cross-bows Julien came running up babbling how the quake fairly threw him off a ladder, and then someone at security gate was wide-eyed and saying how the parking lot looked like waves at Malibu.
+I was there and had missed it, sort of.
+Teri Knisley of Boars&#x27; head was returning from Oakland airport and had cleared the Cypress Structure by maybe 200 yards... I think that was when he found his new religion, he certainly was a different guy after that.
+Funniest thing related to the disruption it caused was the next year when we found a pickle barrel that was supposed to have been returned and that had never been picked up at Cheese witz. It was unopened and when we opened it the &#x27;crisp hard pickles&#x27; had all deflated (limp pickles!)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">February 13, 2009 at 04:34AM</span>
+            <div class="reply-content">I (Larissa) was sitting in a trailer near mechanics: it was warm in there and I was just starting to fall asleep when the trailer started rocking hard - Steve Helm (mechanic) and his girlfriend (can&#x27;t remember her name) had just left and I thought that they were being mischievous and rocking the trailer to wake me up. Later, I heard one of the Party Girls talking to her mother (:those &#x27;private&#x27; phone calls from the Scalehouse, remember?...), telling her that she had been sitting on a haybale in the middle of a field and couldn&#x27;t have been in a safer place. I felt the same - couldn&#x27;t have been in a better or safer place.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 13, 2009 at 02:41AM</span>
+            <div class="reply-content">I was at the State Park Ranger&#x27;s Academy down in Asilomar (Pacific Grove) when it hit. I had just finished class and was in my room when the world started to rattle. You could pretty much see the area of the epicenter from where we were (across the bay from Monterey) but PG sits on a granite outcrop so damage was light. My roommate yelled to get in the doorway but (knowing how old those buildings were) said F--- that and bolted outside to a clearing. One of my classmates saw a deer freeze for a sec then bolt head on into a large tree killing it&#x27;s self. I really started to worry when I couldn&#x27;t get KGO or KCBS on the radio. I had listened to those two stations when ever I lived in the area since the early 60&#x27;s and the fact that they were off the air told me that something was really wrong. They were going to swear us in as Rangers (we were about a week or 2 away from finishing P.O.S.T.) and send us to Monterey or the Bay area but didn&#x27;t. If they had, my life might be totally different now as I was hurt just before graduation and terminated. If I had been a &quot;sworn peace officer&quot;, they wouldn&#x27;t have been able to do that.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">[112khxhf7hjvg]</span>
+            <span class="reply-date">February 13, 2009 at 12:58AM</span>
+            <div class="reply-content">Venta Leon, Joel Ficklen, and I were in the Gray Barn (this was just weeks after Don Mills died down south), we were surrounded by Don&#x27;s bottle collection, which lined every ledge surrounding the rooms larger than ½&quot;. Every bottle in the room was clinking and clanking together, threatening to crash on our heads. I was transfixed. Joel came running in, grabbed me, and carried me out like a bag of sand. When we got out to the corp yard, all of the telephone poles were swaying like they were riding waves. Bruce Bramson was waiting in the yard with a radio, the only thing that came through was static. It was a bizzarre few moments.
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beaucoup timelines, easy like this - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Beaucoup timelines, easy like this</span></div>
+            
+    <div class="module">
+        <div class="module-header">Beaucoup timelines, easy like this</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Greg &quot;Grego&quot; Dana</span> | <span>February 03, 2009</span> | <span>31 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (31)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">April 14, 2009 at 03:08AM</span>
+            <div class="reply-content">but don&#x27;t leave me out!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">April 14, 2009 at 03:07AM</span>
+            <div class="reply-content">so when is your next stateside romp?grego me lad..
+I&#x27;m afraid that as much as I&#x27;d love to be a historian I &#x27;m much better at creating than remembering...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 07, 2009 at 07:25PM</span>
+            <div class="reply-content">SIGN for Sign Shop
+BS for BackStage (just kidding)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 07, 2009 at 07:19PM</span>
+            <div class="reply-content">On a recent interview, Carrie Fisher said, &quot;Where are all the Acid Flashbacks they promised us?&quot; Come to think of it...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 06, 2009 at 02:54PM</span>
+            <div class="reply-content">aAs mentioned in another topic thread, I&#x27;m a brand-spanking new member here, so there&#x27;s a lot for me to caqtch up on. Forgive me, then, if this has already been linked to, discussed, etc.: Friends of the Paramount Ranch.
+That website has a nice collection of info, pics, etc.
+Here: http://www.dragondance.com/faire/
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">February 25, 2009 at 01:26AM</span>
+            <div class="reply-content">How much do you want to bet that &quot;courtly costumed horsewoman&quot; was our own Aurie Bradley? She&#x27;s magnificent, to say the least.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 25, 2009 at 12:56AM</span>
+            <div class="reply-content">I&#x27;ve never considered myself to be particularly enamored with the Renaissance period, but one morning when I was with Doris at the front gate of the San Bernadino faire, a courtly costumed horsewoman rode up out of the morning fog. The image made me mist up &amp; I realized the fantasy had taken effect!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">February 22, 2009 at 07:16AM</span>
+            <div class="reply-content">When I worked Northern in 1981 I didn&#x27;t yet have my license, let alone a car. I lived in Daly City and would get up at about 5:00 am in order to take Sam Trans into SF, transfer to a MUNI line to the SF Depot, in a very nasty part of town, and then take Golden Gate Transit up to Novato. From there, like you, Richard, I would walk along the railroad tracks and pray for a ride. I learned quickly that if I wore at least my faire shirt with my jeans I would usually be spotted by another worker and given a ride. I never had to walk all the way out to site at least. I never did this alone; I was always with my sister and other friends.
+When deciding whether or not to accept a ride I would often ask to see a gate pass to confirm they were a participant (future security guard at heart even back then!) One particular guy looked highly questionable, and when my sister and I asked if he worked the faire he said &quot;What fair?&quot;, to which we said &quot;Bye!&quot; A moment later a lovely young Scotsman pulled up who recognized me and offered us a ride.
+I recall one time walking along the tracks and hearing a very loud voice saying to get away from the tracks. My first wild, completely absurd thought was that God was speaking. Of course, I quickly realized it was a CHP officer trying to make sure my friends and I didn&#x27;t get flattened by a train.
+Riding Golden Gate Transit was always interesting. Sonia and Lani and I would sit in the back singing bawdy faire songs and war protest songs and writing poetry to pass the time. On one occasion some young girls kept staring at us. Granted, if the singing didn&#x27;t draw enough attention, the faire shirts certainly did. Just as the kids were getting off the bus, they looked at us and one of them asked &quot;Why are you running away?&#x27; After we stopped laughing, we realized that our clothes were a bit dirty from spending the day in workshops, and we had backpacks with us.
+In retrospect I realize just how risky a way it was to get to faire, especially for teenage girls. We were lucky indeed.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 21, 2009 at 12:20AM</span>
+            <div class="reply-content">ok i added in the tags and now i have started on the page of unique terms. Also i have started to add in the basic first documents that i know i have access to, travelers guides, maps, brochures and press clippings. later on i may add in some of the other physical stuff for now i am being somewhat specific. Most of the art is residing under the &#x27;dates&#x27; so that eventually we will be able to click through to the program for every year.
+right now I am working quite a bit to include the craft ethic stuff, because i am working on creating an artists profile for Sally Schneider. This is a pressing concern for me qand one reason that I am pressing ahead to organize visual materials right now, before we have even announced the wiki. Typically i am using the wiki as a tool to gather my own thoughts. Eventually i would like to expand th eartists portfolios of various people including Bob, and hopwfully start a collection of images of props and signage, murals and so forth.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">February 18, 2009 at 05:05PM</span>
+            <div class="reply-content">Dewey Decimal ? 132980.2618.8885 could be, shit I forgot, too many numbers. Your idea sounds good. Ockham&#x27;s Razor: the simplest is usually the right answer. I&#x27;m sure that the initial set-up will distill itself further as it goes. You know how these things take on a life of their own, after a while. This is already happening with the newer topics being added to the League. What about a tree system? Like Ron and Phyllis&gt; Phyllis&gt;Phyllis and Kevin&gt; Kevin . Each could be a hyperlink to a different timeline? Branches and all.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 18, 2009 at 10:54AM</span>
+            <div class="reply-content">Geeky, academic tagging won&#x27;t be everybody&#x27;s idea of a swell time, and might belong at the wiki more than here. But we might get some milage locally out of idiot-friendly keywords, So here&#x27;s an update of suggestions for both, abbreviated tags followed by keywords (RPF and DCF probably stand as is, eh?).
+MAJOR EVENTS
+RPFSXX (eg RPFS77 for Renaissance Pleasure Faire 1977)
+RPFNXX (Renaissance Pleasure Faire Northern year)
+DCFXX (Dickens Christmas Faire year)
+OSFP17XX (Old San Francisco Pier 17 year)
+OSFWFXX (Old San Francisco Waterfront year)
+SDXX (ShinDig year)
+DSXX (Drake Show year)
+OCXX (Old California year)
+PRTXX: party (a catch-all for famous after-hours recreational events; spam feed, bubba bud, too much fun to remember)
+What other &quot;main show&quot; designations would we need?
+CREWS and DEPARTMENTS could be shoehorned into
+CRW: crew
+STF: staff
+or more detail:
+SS: Service and Supply (maintenance)
+BEV: Beverage (and Plumbers)
+CARP: Carpenters
+PLC: Parking Lot Cags
+MEC: Mechanics
+ENT: Entertainment
+SEC: Security
+FIN: Finance
+PS: Planning Staff (what did they do in those offices all day long anyway? Is Finance part of that? Should we call it &quot;BR&quot; for the Brass, or BS for Bosses?)
+DEC: Burlap &amp; Decor
+PROPS: Props (Maybe deco falls more in this catagory, maybe DES for &quot;design&quot;)
+COS: Costumes
+BTH: Booth (If more specific, CAT: Caterers, GA: Games, CR: Craft, ALE)
+CUS: Customers
+IOU: People who never payed me back
+What departments have we missed?
+FAIRE COMPANIES
+INDY (The early days)
+TEL (Theme Events Ltd)
+LHC (Living History Center)
+REC (Renaissance Entertainment Corporation)
+SHOWS
+STR: street show
+STG: stage show
+(If more specific, MUS: music, ACT: actors DNC: dance, GLD: Guild stuff)
+NS: night show
+CS: crew show
+TIME FRAMES will come in handy. When we don&#x27;t know exactly:
+EXXS Early &quot;decade&quot; (70s, 80s)
+MXXS Mid...
+LXXS Late...
+PRE: Pre-Faire
+TD: Teardown
+OFF: Off Season, between shows
+MISCELLANEOUS
+DOC: Document (the search engine will tell us file types, but scanned documents will show up as photos)
+LIST: Lists (duh)(vehicle names, lingo, births, ...)
+ART: art (crafts, signs, sets, t-shirts, buttons, ...)
+RIP: ...
+ED: Educational (If more specific, WKS: workshops, WW: workshop in the woods, WS: workshop school programs)
+LS: lifestyle - (privies, hay bales, rain outs, hooches, on the road...)
+This list of potential labels has turned into a rather large bowl of alphabet soup. There will always be another idea for something to include, but if it gets unwieldy it will flounder. Don&#x27;t want to leave any important categories out, but a lot of more specific keywords naturally turn up in titles and comments anyway. What should we add? And if it&#x27;s already too much, how should we condense?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 13, 2009 at 02:29AM</span>
+            <div class="reply-content">Extreme caution needs to be exercised because there is no &quot;statute of limitations&quot; on background investigations. There are many employers, colleges and governmental orgs (white work or black) that are looking online for information about persons. When you apply for certain jobs, they can and do ask for the username and passwords to myspace and facebook. If I want to promote into the Prevention section of CalFire, I cannot ever have used &quot;hard drugs&quot;. Ever. No statute of limitations, never used. When I was looking to get into the State Parks Service as a Park Ranger, there was a bit of an issue with the fact that they could not a) Get on to the lot other than to the Tobin house, b) find anybody that would talk to them and c) they were concerned with my contact with what appeared to be the &quot;drug culture&quot;. In addition, everything here can be subpoenaed for use in an investigation into someone’s “character”. Now some of you may not care and be all into freedom of expression and openness and anti-censorship etc, but there is another world out there that still does not approve of free sex and drug use and some of us have to work in that world.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 09, 2009 at 07:31AM</span>
+            <div class="reply-content">Grego,
+I agree about the hybrid approach...RPFN RPFS and DCF seem to be in common use these days anyway. Just realize that we&#x27;ll get misspellings and other interesting artifacts that will either need to be cleaned up or will mess with machine manipulation of resulting data...so for instance if I spell it &quot;hooey&quot; and Randy spells it &quot;huey&quot;, we&#x27;ll not get a match when we go to match the tags.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 09, 2009 at 04:00AM</span>
+            <div class="reply-content">Danese, thanks for bringing us back to the project itself. Boy, when we get side-tracked sometimes we can really get on a wordy bit of a roll.
+These acronym tags would be cool if there&#x27;s agreement on a committed academic approach, with a little manual for reference. Fits with the &quot;tag&quot; theme, which gives it a slightly geeky slant. Benefits would include clean efficiency, easy use once familiar with the system. It would be automatically controlled by fact of it&#x27;s academicness scaring away flakes from messing with it.
+From a more egalitarian, less geeky perspective, we could dump the commitment to &quot;tags&quot; and specific acronyms, and instead just invite everybody to input certain kinds of info. Benefits include an easy use of common language (ie RPFN 85 prefaire security), making the process as easy as possible for the whole gang to grasp, use, participate in.
+Not being one to limit myself to only two possibilities, we could also combine those two approaches in a sort of open process of label nomination and an official tag-team.
+Adding to catagories that might rate inclusion:
+Show ( possibly broken into stage and street)
+Red barn event: (at least public ones) I&#x27;m only remembering Quilters, but weren&#x27;t there others?
+Workshop in the Woods (and related community ed outreach)
+Tv/radio spots (other media coverage would probably fall under &quot;documents&quot;)
+Planning staff (takes more than field grunts to build a faire)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 09, 2009 at 03:10AM</span>
+            <div class="reply-content">thanks for giving me a leaping off point to frame some of that stuff up that has been rolling around in my inner thoughts like a lonesome tumbleweed for some time.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">Cat Taylor</span>
+            <span class="reply-date">February 09, 2009 at 03:02AM</span>
+            <div class="reply-content">&#x27;Ya know, I HAVE to stop posting while straight. I meant this to go to another group : ).
+I would never want to hurt the life (current or otherwise) of anyone with my bent for factual diligence. Nor do I think that all creativity arises from an altered state. I simply mean that it was undeniably a strong influence in the stew that was all our efforts combined and omitting any mention of that influence is a fear based decision based on 50 years of drug war rhetoric.
+Sas
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">February 09, 2009 at 12:42AM</span>
+            <div class="reply-content">If my memory does not fail me, the quarry was sold around &#x27;90 and faire was sold in&#x27;93. The last RPFN was in &#x27;94. At which time their was a change in leadership and the property was sold to make a golf course and condos. The new owners leased the property back to faire for the next several years (the dates are unclear to me as I had left faire as a boothie and security at the end of RPFN &#x27;94 and did RPFN &#x27;95 as an EMT in first aid and was escorted off the lot before the end of that faire)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 09, 2009 at 12:29AM</span>
+            <div class="reply-content">that reminds me to sort out the land ownership on the venues.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">February 08, 2009 at 10:47PM</span>
+            <div class="reply-content">Only one Great American Shindig, GAS (?), in &#x27;76. Also, RENCO JJ coined this one for the souvenirs sold by LHC and RBP. JJ was always joking about having blue light specials at the info booths. Also, How about something to do with the several farewell-last Blackpoint shows?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">February 08, 2009 at 10:27PM</span>
+            <div class="reply-content">BPOTMF (Blackpoint Old Time Music Festival) - there was only one of these
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 08, 2009 at 10:17PM</span>
+            <div class="reply-content">something for:
+drake show
+hell week
+spam feed
+bubbu bud
+grand ring out
+buncha guild stuff
+velvets
+recreational settings
+rain outs
+tear down
+vendors
+backrooms
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 08, 2009 at 09:58PM</span>
+            <div class="reply-content">Okay. so to the practical...
+Can we agree on:
+RPFSXX (eg RPFS77 for Renaissance Pleasure Faire 1977)
+RPFNXX (Renaissance Pleasure Faire Northern year)
+DCFXX (Dickens Christmas Faire year)
+OSFXX (Old San Francisco year (actually there may only have been one of these))
+SDXX (ShinDig (cheating, I know) year)
+etc.?
+What other &quot;main show&quot; designations would we need?
+Likewise, can we agree on:
+SS: Service and Supply (maintenance)
+BEV: Beverage
+ENT: Entertainment
+SEC: Security
+FIN: Finance
+DEC: Burlap &amp; Decor
+PROPS: Props
+COS: Costumes
+(There may have been other departments as well)
+Faire Companies:
+TEL (Theme Events Ltd)
+LHC (Living History Center)
+REC (Renaissance Entertainment Corporation)
+(I know there were at least two companies between LHC and REC...what were they called?)
+What other Folksonomies would we need?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 08, 2009 at 03:53AM</span>
+            <div class="reply-content">It wasnt really that many miles from my high school to the show. Agoura high was even the staging for hiring I think once or twice. As a child it was the strangest thing to live next to, I grew up one more offramp down the road up Lindero Canyon. The faire was close enough away that eventually Simone and I would even ride our bikes up there. The faire was there and not there. It was like it was swallowed by earth. I grew up like all children do outside of seasonal festivals understanding the cyclical aspects of seasonal time and temporary space.
+I first worked faire as a child as a guest participant with AMAN!. I already understood that it was faerie land. I was always the akward kid at home on my street, yet somehow I led this double life for a couple of years and I performed as a dancer with AMAN! And I became a musician at school. Theatre and its continual mystery of transformation were revealed to me in spades. At least tastes.
+I wanted more so I got my first job. Bless Laurie Rose you should have seen the look on her face when I approached her on the very last day or workshop weekend with my girlfriend in tow. She just sort of relented. That year went by in a strange dream where your mom drops you off at the top of the driveway and you sort of march into this bubble of cheer.
+BY the next year Mama Lee had taken me in some and I had a sort of staging at her majesties home for wayward women (and girls). By then I was in High School Proper and KImi&#x27;s Poppy paul would brave the guards and drive us all the way down to the bone yard where he would turn around his blue vw van and deposit us with proper parental flair. It was a big wide world of Faire. The cast was phenominally huge and already there was tis thick sense of an interior fairytale. A sort of rockstars and players among everyone that were unknown to the outside world. Like people that were too busy having fun and making stuff to care if the rest of the world followed their whimsy enough to be celebrated. These were artists and performers celebrated among and by their peers, and that is what they craved, and that is what they yearned for, and that is what was delivered faithfully served in big steaming bowls of dust with sun motes and cheering crowds and banners waving all above.
+The faire was an intensely psychedellic thread of other self and other world dancing with several in a sort of braid around my year. After southern we all went to the strip on the weekends for midnight shows of Rocky Horror, a continuation of my own sort of &quot;adult&quot; life at faire. Because I had learned my attitude out at the mainstage backstage and with people the caliber of Terry Collier I never cared too much what other people thought of me on this very basic very needy level that turns people away so most of the people on the strip were sort of instantly curious about me. The riot house (or HYatt house) was right down the street and the end of the beginning of the rock trip was still pouring out into the other parties. I never went or hung out it was not my thing. I would play cards with Michael at Wizards T shirt shop or see how fast I could get kicked out of Ben Franklins.
+So a drive by commute was the sort of surreal pusuit that being a kid in Agoura I had sort of cut my teeth on that.
+Nothing prepared me for the rabbit hole down the crazy place experience of the Actors Bus to Northern. Once Glad and I had managed to plot our way into monger reality soup we also plotted to get me and Kimi (so her dad would drive us to Glendale) onto the bus. Immediately Terry made me his bus aide, which meant I was supposed to make sure someone was awake when we hit all the freeway crap in the east bay after the Kettleman city stop so we didnt end up in like Sacramento. This was an actual real and serious danger and something which YTerry had great experience in. Its one thing to arrive on the lot at 1 or 2ish and trundle off to bed with a show to do the next day, and quite another when you arrive at dawn.
+So I was terrified. This kept me pretty sober and gave me an excuse to avoid most of the potential trouble. I am pretty sure that was the very moment that we started calling Marc &quot;Animal&quot; because he was doing this spot on version of the Muppet character one seat over.
+This was not like stepping back in time, this was not like being transported to another dimension, this was like being hit right in the face with a large wave of ludic spray and being tumbled ass over teakettle onto the beach. Gasping for air, gasping for a sense of self among the sudden appearance of so many people oddly *like* me. People who laughed at my jokes.
+By the next weekend i was already absolutely flashing alive at every nerve and so aware that I can still taste the pavement outside th liquor store as we exited the Glendale freeway in Glendale where the bus was getting loaded up at that stage. The air was already pulsing with this strange gold and then silver light and I could hear the blood pumping in my veina. A warm rush of familiarity and sensation and acceptance and wonderment and familial tang hit me all at once.
+It was not just a commute, it was a magic spaceship ride. Right this moment I can remember almost every single minute of it all at once. walking down the street to buy soda with Kimianne and seeing Terry Collier exit the freeway in his little white bug, cap in place and intent look on his face. Walking the long block back to the parking lot I could easily recognize Glad Pickering&#x27;s swagger even though at a distance it just looked like a fifteen year old boy standing confidently in a Glendale parking lot.
+Out of the wood work the magic players would come. It was like a game to see how fast you could spot people as they made their way from the straight world to our magic spaceship ride.
+Every weekend was different. Every day itself was epic. Jokes were born and ruled and thrown down by new jokes sometimes five in a day. Someone would forget a towel or a shirt and so they would wear something funny on their head on the way back to their tent from the showers. I learned that if you rocked it right it always looked good. I learned how to not fall awake or asleep on the bus so that we never once got lost through the tangle of mislabeled and horrendous freeway ,madness that stressed us every single time.
+The commute was a magic rocket ship ride, and it revealed early on something to me that I have always tried to keep in mind, Our worlds collide.
+So one part of the week I would be walking the institutional halls of Agoura High, sneaking cigs behind the Drama building or more likely ditching school outright and holding court at Denny&#x27;s having coffee. The other part of the week I was in an other world, a place where the horns were in the air and the ground smelled like chamomile and soft hay when you walk on it first thing in the day. It was back in time and it was forwards in time and every now and again I could swear we went sideways real good and the minutes stretched to hours and the hours stretched to days and the days were like months and each season was like shedding a skin and becoming a whole new person and then pulling the whole of coastal California through the eye of a needle with us and dancing on the head of a camel just to prove that they also had been remade anew
+It was like we got turned inside out so that everyone else could get turned right side in.
+This is a hard concept for most people to grasp, and one i carried with me in a special sort of secret place. After I attended my first dances downriver in Hupa, dances that have changed little in form or location in maybe 30 or more thousand years, that i started to grasp that we were actually having some sort of giant ant colony like human colony like behavior. It was intense because it seemed like even the places we were gathering had been used prior to us to gather...moreso Agoura.
+Ronnie Wilson once told me about growing up in West Hollywood with hit surfing records on the charts and their own worl in full tilt boogie. He always felt like he could relate to me because when he was a kid in school they were cutting class to surf with hot chicks and hearing themselves on the radio. They had plenty of cash so they even rented their own apartments out at the beach just so they would have a place to party and shag and shower and change clothes after surfing before they would head to school at Fairfax High.
+Partially it was unique to our experience and partially it was something that is part of old ways that we have of moving on the land. Horns have been raised in the air here for a long long time.
+the first time they danced out the white deer skins (and grey ones and a few brown) at a Jump dance I really cried because even though most of the guys were wearing Boxers under their deerskin flaps, and there were logging trucks rumbling by just a couple hundred feet from the dancers, the right feeling was coming through.
+sometimes you travel outside of time.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">February 07, 2009 at 11:58PM</span>
+            <div class="reply-content">Thank you Sylvia, I confess that I wasn&#x27;t thinking about those folks that were always straight. I&#x27;m very glad that you said it. I could not do my metalwork drunk or stoned. I would have burned myself or worse. This is one reason that I mentioned the AA meetings at faire, because there were those that tried to rid themselves of those demons, and many succeeded. Faire is a panoply and we should include all sides.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">February 07, 2009 at 11:44PM</span>
+            <div class="reply-content">I think the most mind-altering experience was the weekend way-back machine traveling to Faire in some of the earlier years before I was on site most of the time, and living there through off-seasons. Here&#x27;s what I mean: I would work at some southern California blue collar warehouse job all week, Friday afternoon hop on my motorcycle and burn to the Ontario airport to barely catch a jet to SF (Pacific Southwest Airlines, and pretty cheap back in those days with ashtrays on board, an acceptable and encouraged addiction of the day). Getting to Blackpoint required several bus hops from the airport, through the City and across the Golden Gate Bridge to some off ramp near Altamont I think it was, then walking down traintracks or trying to hitch a ride away from the interstate out to the site. Oh, and Sunday late afternoon, the whole process in reverse, back to Ontario for a few hours sleep before hopping back on the motocycle to that blue collar day job. I can think of other examples. Fridays were surreal. Battling rush hour traffic through Lost Angeles to finally arrive in Agoura to be taken back to some other world of 400 years ago. Reality was by far the strangest experience of all.
+I&#x27;d be very interested to hear of other &quot;commuting&quot; experiences and what they were like.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">February 07, 2009 at 11:08PM</span>
+            <div class="reply-content">Yes, many many people did drugs but MANY of us didn&#x27;t. There are those of us that didn&#x27;t who stand among the creative driving forces. So I don&#x27;t think you can lay it off to the drugs one way or another. Their existence is a fact like many others and at points certainly influenced the show. But there are some highly creative people in our midst that would find the suggestion the they needed alteration in order to produce offensive.
+Greig is right, Phyllis is our mother figure with all that entails. I&#x27;m busy raising my own child now (only 1 not thousands); and even though I&#x27;m doing my best at every moment, I&#x27;m quite sure he will spend his thirties complaining about me (possibily to a therapist). I personally find that I am quite grateful towards Phyllis for all the opportunity that she provided me, and all of my life skills and growth that flowed on from there.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">February 07, 2009 at 04:42PM</span>
+            <div class="reply-content">I believe that there is a statute of limitations on stating or reminiscing about prior drug use. We have a lawyer in our midst, Paul Spiegel. He can be asked. For me, I know that I did not do faire from &#x27;78 until &#x27;84 sober. At that time, brandy was my drug of choice. I did choose recreational drugs too, but only at faire. That lasted until &#x27;91. The alcohol was my real demon and this also brings me to mentioning the AA meetings at faire on Saturday mornings. I also had mini meetings with Six Pack, just the two of us in his or my car, just talking about staying sober. I know that faire was instrumental in keeping me sober, as it was for probably many others. One of the lessons I learned from this experience, was that if you wanted to get from point A to point B at faire, all you had to do was pretend you were really drunk, and the crowd magically parted.
+Substance abuse, was part of society, and as such should be addressed in the same light as it is in societal history. Just a statement, or as it relates to a story. It doesn&#x27;t need to be aggrandized. Our roots are varied with some rotten ones and some growing ones and some matured ones. Taken in its entirety it forms the base of what the &quot;Faire Experience&quot; was and is.
+Phyllis... She is the juggernaut that got faire to what it became. 4500 people worked faire in it&#x27;s heydey. A large village...a small town, but more important a family. Families have their good days and their bad ones. Ever notice how every faire (season) had its own personality? Or the one joke that made the rounds. Anyway, families, all dysfunctional in some way, have love and trust in their foundation. (well not all, but that isn&#x27;t what I&#x27;m trying to say.) Phyllis was the mother figure, and like all families you may get really pissed off at her, but the love and trust always remained. She has her flaws, but she still had the vision and kept to it. She shook the world and she changed our lives forever.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 07, 2009 at 01:57PM</span>
+            <div class="reply-content">the point is not to sanitize the experience , however to put it in perspective by framing it in context.
+Many many of us left the show because of the drugs, the altered states and the decadence that was therein.
+In some ways our story mirrors the story of the introduction of LSD to popular culture because Bob and Bear personally engineered it, engineered it within our midst. Intentionally.
+We were manipulated. We were kids too.
+It was cool...we were easy...I get it. Did you know freeway rickie was supplying us with columbian? yes the same guy who supplied inner city black neighborhoods with crack for conintelpro. We were put up and set up sas more ways than one. I know for sure about that one and it has always made me wonder about the possible loss of my best friend Sally (an important artist in our midst) to a serial killer who used a cyanide capsule rather than be captured. There is more to our story I would love your help in sorting out. There was even another disappearance around the same time.
+Personally I dont want the story to just read &quot;drugs make good art&quot;. I dont also want the story to read &quot;:drugs ruin everything and control your life&quot;.
+Later Bob had his own regrets about opening Pandoras box how and when they did. He told me that it was important to remember that they had given people a premature view of what was possible. He felt that they had used training wheels too long or revealed a door where there was not one yet. He felt it was more important for people to pursue the inner work themselves to reach some of those states.
+Spirit was the order of the day. Many people in very altered, often self-medicated states have caused havoc as well as wonder to ensue.
+The story sits over on wikipedia already totally sanitized. We are not responsible for that. The phyllis patterson story, which many also assume to be our origin story (despite the contribution of thousands of other people to those seminal agoura years) is a story that has been entirely crafted without regard for this spirit of inquiry and self exploration that I see as the heart of the drug experimentation that many of us were undertaking.
+Its not my place to *out* anyone for their drug use. Really I have no idea how the statute of limitations really works these days. When I went to jail as a political prisoner they changed the laws so that once I came out everyones rights were so reduced it felt like i never got mine back even though we plead our way out of it all pretty slick (too sick for a trial).
+Personally I dont want to publish a book and then end up in jail. I also feel that we need to look at our situation from an educated, broad anthropological and sociological view as well as a historical one.
+There is more than just history at stake. We are shaping the vision of a next generation of youth (mostly who are unseen to us) who really admire us from afar. That is a tremendous responsibility.
+If you learn about this stuff in the underground, you see it very much like Sas says. Take a social situation with lots of young people, put them in a semi wilderness situation, add lots of new brain chemistry and inhibition removing stimulation, and you get a festival. Some people say TAZ is the way i disagree.
+not.
+There were also ideas at hand. Consciousness didnt come in a straw. You can actually move much faster and jump much higher without the distraction and manipuation of exogenous drug sources especially metabolically addictive ones. The entire chemical factory resides within and can be reached quite intentionally. There are other simpler ways.
+Personally I am interested in revealing the ideas underneath it all, while giving a nod to the influences of an era. We weren&#x27;t the only one guys... ever been to a Hollywood movie from the time? For awhile (afterwards) the best place to get work was the Sunday meetings for AA and NA at the Hollywood Presbyterian.
+And here we are. Living in the aftermath. About to tell all in a tell all?
+Phyllis is a good example. Historically she is this odd bird. A woman at the head of one of the biggest dog and pony shows of its era. An ice breaker and a maverick. Would anyone expect her to be normal? She kept the show together during a volatile political moment, despite extreme personal difficulties. having been entirely schooled in how much people love to complain about this woman I must say I was really taken aback in person by how much charisma she exudes when she wants you to notice her. She is coming up on an important milestone, and it would be neat to find a way to put her contribution in some sort of perspective with the ideas and players that we all have ready at hand, and present it in a way that means we can all wear a white hat and stand tall in the photo.
+The tag system is great because what Grego is suggesting is a way to make it so that we can all be as independent in our pursuit of our own writings on this as we want to be, the same sort of independence that often made the show fun for us. Also we can use people to tag who are not going to contribute directly to the project however they want to support the efforts of the league.
+I would like to make a book or online publication that reflects our experience accurately, yet also doesn&#x27;t get anyone here on the league in particular fired.
+I was going to say &quot;anyone fired&quot; however I am not to sure about that in a larger context.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">29</span>
+            <span class="reply-author">Cat Taylor</span>
+            <span class="reply-date">February 07, 2009 at 08:57AM</span>
+            <div class="reply-content">I have a problem with most any attempt to edit out things that were and did influence the creative triumph that I consider the last 7 or so years at Agoura to have been.
+Face it people. Bad for us individually it may have been at times, drugs were a great deal of what we did there in that time. So much of the over the top creativity that I witnessed or participated in there had a great deal of it&#x27;s inspiration in an altered state I was enjoying in that particular time.
+To present it otherwise would be to communicate the idea (mistaken) that all worthwhile creativity arises strictly from a sober attitude. We ALL know THAT is bullshit, even those in recovery.
+We were extreme escapists on the edge of just a metric buttload of societal taboos (exotic erotic lingerie show anyone?) and any specific case involving that influence that fails to mention it where for truth&#x27;s sake it deserves mention is fundamentally dishonest and thereby historically without value. It perpetuates a false and thereby unduplicatable phenomena.
+To start the timeline with an agreement to leave out that aspect and it&#x27;s affect, good and/or bad, is to guarantee an historically worthless result.
+Sas
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">30</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">February 03, 2009 at 03:22PM</span>
+            <div class="reply-content">The taxonomy of the Faire ...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">31</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 03, 2009 at 01:42PM</span>
+            <div class="reply-content">Well done grego. This is a method that reflects our groups previous history of shared tasks that allow for independent completion or approach.
+Its something that the wallflowers can do as well which is always nice.
+I like rpfn and rpfs as tags, I also like the idea of tagging things as historic, like artifacts, direct reminiscence, and of course first documents.
+Lets mull it and then I will announce it on th main page.
+Any plans to head stateside grego so we can start to co-ordinate the league&#x27;s &quot;Annual Ball&quot;?
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

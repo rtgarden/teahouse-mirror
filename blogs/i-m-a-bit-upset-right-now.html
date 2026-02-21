@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I&#x27;m a bit upset right now... - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/blogs/">Blogs</a> <span>›</span> <span>I&#x27;m a bit upset right now...</span></div>
+            
+    <div class="module">
+        <div class="module-header">I&#x27;m a bit upset right now...</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By [2y95eojlcah8o]</span> | <span>February 20, 2009</span> | <span>18 comments</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Comments (18)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">[2y95eojlcah8o]</span>
+            <span class="reply-date">March 01, 2009 at 10:16PM</span>
+            <div class="reply-content">Dear Mike,
+Thank you. Really. It&#x27;s very useful to know about the Radio-Iodine from someone who&#x27;s had close contact with it. My mother&#x27;s going to speak to a surgeon friend tomorrow in Sydney (AU) to ask for advice for me and my cousin, who had the op. 20 years ago here in Poland, and I spoke at length about what she went through and how she&#x27;s coped since. (She also offered to email her friend who is her Endo. for me - he now lives in the UK, while she lives in Cali. USA - to ask any questions I may have.
+So, overall, I have been talking to a bunch of people and I go see the Endo. on Tuesday. I think my condition is quite acute. Though you never can tell with doctors. I think some medical treatment along with alternative support will probably be the best solution.
+I also found a good Mongolian healer in Torun (north of here) that is very reasonably priced. (Plus I can visit friends when I go up!)
+Again thank you.
+*bows*
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">Michael Kimball</span>
+            <span class="reply-date">March 01, 2009 at 12:55PM</span>
+            <div class="reply-content">Mostly, I&#x27;d echo what Randy has offered you, but Thyroid disorders can be SERIOUS! my dad was unable to eat enough to match his screwed up metabolism and was (rapidly) wasting away. My mom had uncontrollable cramping and was having musculature problems for it, so she had the parathyroid removed... I&#x27;ve several friends with Graves and that have had Western Medicine Cures without issue.
+if you&#x27;re merely borderline, I&#x27;d be more inclined to try lifestyle changes and dietary changes to see what happens before an irreversable operation. (I ended up changing stress levels and my diet and eventually I got &quot;level&quot;)
+But, Please please please, if you are NOT ~borderline~ hyper/hypothyroid, listen to the &quot;medical professionals&quot;...
+My thoughts, though - given your concerns from what you&#x27;ve indicated, and what I&#x27;ve heard, I might seek another opinion about your current treatment: I&#x27;d not myself heard anything limiting Thyroid pills to control Graves to two years - my friend has been off and on hers as long as I&#x27;ve known her (maybe eight years?) - and Radiation therapy shouldn&#x27;t take as long as that - it should be a pair of sessions about a month or six weeks apart and the radioisotopes are only in your system a day or two. maybe three, and you shouldn&#x27;t be &#x27;hot&#x27; to the point of being a threat to those around you. (I may be wrong, my doctors are at best uncommunicative, but a second opinion never hurts)
+As for living with the western Cure:
+My dad went the Chemo route, My mom the operation. both take Thryoid supplement daily and seem OK with it.
+-note that he medical community ~must~ make you aware of the risks to cover thier asses - the risks are there but they are statistically small... Thyroid pills have been around a very long time and have been very effective. The only issue is &#x27;getting it right&#x27; for the doseage that your metabolism needs - and for you to get into the proper habit of taking them at the &#x27;correct&#x27; time of day. My own experience with hypothyroidism (I don&#x27;t generate enough T3) was that I had crap for doctors and that the &quot;feedback&quot; in order to get dosing right was lengthy and in the end I learned more from the web than I ever would have from my HMo-driven expletive deleteds ... as previously mentioned I was able to adjust my lifestyle to make things better, but I was only a few points low in thyroid production, and my levels were stable at that low level.
+in all, you must do as your heart directs, and I wish you well in this time of crisis.
+Blessings, ~mike~
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">[2y95eojlcah8o]</span>
+            <span class="reply-date">February 26, 2009 at 11:06PM</span>
+            <div class="reply-content">Cabbages abound. I will have to check out Kale. I&#x27;m going away for 2 days tomorrow, up North, to where I used to live. Will be a nice break away from the big city and all it&#x27;s toxins, including work.
+I agree with using alternate and &#x27;western&#x27; medicine to compliment. I also spoke with my mother who works with a lovely surgeon who does Thyroidectomies and knows me well (he did a check up on my nasal polypectomy - which has now been successful for around 20 years - no regrowth). He will hopefully tell me what I should insist on, well that&#x27;s what I&#x27;ve asked for via Mum. I haven&#x27;t even had a biopsy of the thyroid nodule so who knows. There may be a lot of hope yet. :)
+Kx
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 26, 2009 at 10:53PM</span>
+            <div class="reply-content">yes because women naturally have more fat in their system and involved with endochrine function they are more at risk from disease associated with toxic chemical exposures.
+I think you are right to be pragmatic, I also think that the &quot;vexing&quot; part is a very fascinating component. Its easy to assume that people who &quot;vex&quot; are more susceptible however more and more now we see these states as a sign of a inner process that has cascaded out of bounds.
+One reason I often recommend Chinese medicine approach is that it can work well side by side with traditional western procedures that can often have dramatically positive effects. The connection to brassica&#x27;s is very interesting, I would imagine you can get cabbages in Poland. Can you also get kale and such?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">[2y95eojlcah8o]</span>
+            <span class="reply-date">February 25, 2009 at 10:02PM</span>
+            <div class="reply-content">Oh I&#x27;m not being &#x27;so&#x27; hard on myself Cat. More being honest. I think that&#x27;s important for me. :)
+Talking to a few people around the world, including my Polish cousin who now lives in Cali, has really helped. Also reading that article that Alwyn posted was really useful too.
+Whatever road I take now, I want to have all the info.
+Alwyn&#x27;s article also addressed something I was thinking about myself.
+NUCLEAR RADIATION HAZARDS for THYROID HEALTH and FUNCTION
+In an unintended nuclear war, thyroid glands and hormones are being continually assaulted by Iodine 131.
+Iodine 131 is a radioisotope artificially produced from the fission of uranium. Iodine has no natural isotopes. Uranium nuclear reactors continually release Iodine 131 into the atmosphere(3). This is legally permitted by the various nuclear industry regulators worldwide. These ongoing obligatory Iodine 131 releases are officially considered safe and harmless(3). There is no apparent effort to stop these releases. I believe that for 60 years, Iodine 131 releases from nuclear explosions, accidents, and nuclear facilities have been a significant factor in the worldwide increases in thyroid pathology.
+Poland experienced a lot of the deadliest waste from Chernobyl, being the Ukraine&#x27;s direct neighbour. One of my cousin&#x27;s already died from a seriously vicious cancer - he was in an area at the time where a lot of fallout happened. His sister (the cousin in Cali) had her own thyroid partially removed 20 years ago.
+The stories I hear from people who live here of how little they knew and how many days afterwards they were even aware of it. (And the bullshit remedies the Communist party fed them and their kids.) I&#x27;m not surprised at the virulence of both Graves&#x27; and Hashimoto&#x27;s here in Poland. It&#x27;s a sad situation. So many women in their 20&#x27;s to 40&#x27;s have so many signs of radiation poisoning - from Thyroid issues, to trouble getting pregnant, miscarriage, PCOS, etc etc etc... and the men too. It&#x27;s horrific. Tragic even.
+It makes me wonder about China and Tibet and what is going on there. Poor people.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 25, 2009 at 03:02PM</span>
+            <div class="reply-content">when you were diagnosed you had other stress factors, and you had not yet found your community here. So go easy on yourself. Mongolian massage sounds nice, they have a neat food/herbal approach to medicine that is very powerful.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">[2y95eojlcah8o]</span>
+            <span class="reply-date">February 25, 2009 at 09:31AM</span>
+            <div class="reply-content">Wow this is amazing information. Thank you so much!!
+I&#x27;m feeling a bit more hopeful. I have also found a Mongolian massage therapist (they are generally schooled in Tibetan medicine) which I am going to try to visit once in a while.
+Even if I go for a treatment - and of the two, I&quot;m leaning more towards Radioiodine than the operation - I will have other &#x27;alternate&#x27; treatments to try to help my body cope overall.
+Silly me should have started this looking for alternates way back when I was originally diagnosed. Oh well, better late than never I guess.
+thanks again guys.
+xxx
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">[3ps78rnilakw0]</span>
+            <span class="reply-date">February 25, 2009 at 09:13AM</span>
+            <div class="reply-content">Oh yeah, here&#x27;s his website, there is more info there: http://www.ryandrum.com/
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">[3ps78rnilakw0]</span>
+            <span class="reply-date">February 25, 2009 at 09:12AM</span>
+            <div class="reply-content">This is posted from Ryan Drum&#x27;s site. He is a talented herbalist, and has been researching Thyroid for quite some time. I have it at hand, because I am working on the same issue from the other side, too low, Hashimotos. Personally, I think we can beat this. Here&#x27;s his info:
+HYPERTHYROIDISM
+1. In non-acute hyperthyroidism I recommend iodine starvation as a simplistic approach to quelling thyroid hormone production. T4 and T3 thyroid hormone production is completely iodine dependent. Less iodine from dietary and topical sources means less iodine for MIT, DIT, T3 and T4 production. The human body usually responds to severely reduced iodine intake by becoming extremely iodine conservative, reducing iodine excretion and increasing iodine recycling.
+The practical steps to encourage patient compliance are:
+a. Remove iodized salt from the household and, control visits to restaurants and households where iodized salt is used. Iodized salt is usually not used in salted snack foods. Canned, frozen, dried foods may or may not contain iodized salt.
+b. Reduce or eliminate all seafood: fish, shellfish (clams, oysters mussels, true scallops) crustaceans (shrimp, crabs, lobster), echinoderms (sea urchins, sea cucumbers), cephalopods (octopus, cuttlefish, squid), and all seaweeds from diet.
+c. Reduce or eliminate all milk-based dairy products. Whey and milk solids in any prepared food will likely be unlabeled sources of iodine. Most milk and milk products originate in milk factories where cows’ teats and udders are washed before and/ or after each milking with a strong iodine solution, which can drip into the milking apparatus. Iodine is never listed as an ingredient of milk and milk products; this includes so-called organic milk. Manure-caked teats must be washed and disinfected somehow, even organic teats. (Butterfat contains very little iodine unless salted with iodized salt.)
+One curiosity is the occasional listing of cacao beans as a source of iodine, when the likely source of the iodine is from milk in processed chocolate.
+d. Reduce or eliminate all commercial flour products: breads, crackers, cookies, pasta unless labeled as iodine-free. Iodine is used as a dough conditioner and antimicrobial; it is never listed as an ingredient.
+e. Eliminate all red meat and red meat products, especially blood products (blood pudding and sausages). I do not know if globulin-bound thyroid hormones in red meat are destroyed by cooking. Rare or raw red meats will have thyroid hormones available for human absorption when eaten.
+f.For a somewhat different view of the relationship between dietary iodine intake and thyroid pathology see: www.optimox.com (10)
+2. Increase consumption of raw, leafy green brassicas. Kale, cabbage, collard greens, mustard greens, rocket, cress, turnip greens all have constituents causing a mild thyrostatic effect by reducing iodine uptake. Excess raw cabbage consumption (R. Weiss’ “one-sided cabbage diet”)(5) can induce goiter.
+3. Use of one or more of three thyrosuppressive mints; lemon balm (Melissa officinalis), bugleweed (Lycopus spp.), and motherwort (Leonuris cardiaca). These can be used as fresh plant, freeze-dried capsules, and/or tinctures (6). Fresh material used as a green drink or in tincture must be finely chopped prior to use to release the active constituents, which then can bind directly to TSH-specific receptor docking sites on thyroid cell surfaces. (Thanks to Kerry Bone, plant chemist). Freshly juiced Melissa, an ounce or two, daily, has been very effective in moderate chronic Graves’ non-responsive to tinctures. A few drops of tincture under the tongue can be effective in a few hours; for other patients, several weeks may pass before any obvious symptom improvement.
+4. In immune-driven Graves’ hyperthyroidism, immune tonics, not stimulants, are recommended. A mild immune tonic can be prepared as a strong, slowly cooked broth made with finely chopped or powdered dried Ganoderma mushroom ( G. lucidum. G. aplanatum, G. tsugae) also known as Reishii. I use a crockpot with 4-8 hours of cooking at low heat. Tinctures and capsules of Ganoderma spp. and Eleuthrococcus are also helpful.
+5. Sourcing the hyperthyroidism. What is the patient’s role in generating the pathology?
+Robert Graves, the Irish physician who first clearly described the syndrome bearing his name, wrote in an 1850’s paper that many if not most of his patients suffered from severe ”vexations”; a wise observation. Today we might say most Graves’ patients are burdened with excessive stressors, particularly stressors perceived as unpleasant, persistent and intractably irresolvable. This certainly has been my continued observation. Often, a particular event or events cluster is clearly associated with sudden onset Graves’. Stressor mitigation or resolution may reduce or resolve Graves’. A troubling question: what might be the secondary gain to the patient from maintaining the pathology? Is the immune-modulated hyperthyroidism a natural response to increased life demands? Rather than pathology, hyperthyroidism may be an attempt to increase resources available to cope with increased stressor loads. On the other hand, it may be that the Graves’ is actually generating the sense of too much stress, rather than the stress precipitating the Graves’ condition.
+6. Even though soya isoflavones are thyrodisruptive, I caution against their use therapeutically to control thyroid activity.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">[2y95eojlcah8o]</span>
+            <span class="reply-date">February 20, 2009 at 09:23PM</span>
+            <div class="reply-content">Thanks guys. xxx
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 20, 2009 at 07:12PM</span>
+            <div class="reply-content">I have a friend who went through the radioiodine treatment a few years ago with good result. She is a massage therapist by trade, but was taking care of everybody *but* herself. So my advice is whatever road you decide to take, please try to learn to take time for self-care and self-nuturing (and drinking more water).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 20, 2009 at 06:23PM</span>
+            <div class="reply-content">i think the radioiodine sounds like something to look into.
+hugs
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 20, 2009 at 04:23PM</span>
+            <div class="reply-content">Being a Firefighter, dehydration is a big no no. Among other things, it adds stress to the body. Please keep up on your hydration, especially if you are going the RadioIodine treatment as the body needs to be able to flush itself. Since you mentioned carbs and sweets, you might look into the Glycemic Index diet/lifestyle. It is a method of monitoring/controlling the production and utilization of glucose&gt; there are a lot of amazing benefits to the lifestyle change (I hate to call it a diet because that implies restrictions and negativity). I do not know much about Graves disease but I do know that a healthy diet, plenty of fluids and a healthy loss stress lifestyle are keys to healing. Have you looked for a support group in your area? Maybe you can find someone who has been through this to be with you and help ease fears and provide support. We will push positive thoughts your way. .
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 20, 2009 at 04:14PM</span>
+            <div class="reply-content">Oh Khrystene I am so sorry ! I am having my own auto - immune issues, and it sucks, don&#x27;t it ?!
+I have nothing other than love &amp; moral support for you,and hope you can find someone there to talk to.
+Courage, dear lady.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">[2y95eojlcah8o]</span>
+            <span class="reply-date">February 20, 2009 at 01:32PM</span>
+            <div class="reply-content">I had a big detox with my retreat a little while ago, but there is a big limit on greens here... mostly frozen and even then horrid. I really really miss the variety of Asian greens we have in AU. Goodness I never knew how good we had it, or maybe I did. Still, I am in a situation where I have to decide on something and frankly I am leaning towards the Radioiodine, for various reasons - not the least of which is the invasiveness of the surgery. Though the surgery would be immediate... I dunno. I just can&#x27;t go through this on my own. The medical system is not great here, sorry to say.
+If I could find some alternate health practitioners, and there are some, probably more Chinese herbalists, I have a budgetary issue. We shall see...
+I&#x27;m not that overwhelmed, just a little... well. You know. :P
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 20, 2009 at 01:10PM</span>
+            <div class="reply-content">yes i think you will just have an easier time dietarily in India.
+probably miso is hard to get there?
+yes try and create a more basic balance to your overall blood. Sweets and easy carbs create an acidic balance. Greens and fresh food help make it more basic again. Ume Plum is good for that too...eden foods carries them. Spendy little devils. Also using kombucha in a mild and regular way might help. like not too much at a time because you want to detox slowly.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">[2y95eojlcah8o]</span>
+            <span class="reply-date">February 20, 2009 at 01:04PM</span>
+            <div class="reply-content">You&#x27;re a doll. yes it&#x27;s autoimmune disease and the stress factor 2 years ago, was what brought it on big time... though perhaps it was latent for a while or for ever in me...
+I have to be careful of seaweed due to the high Iodine content, plus I don&#x27;t really fancy it. I have found myself moving away from carbs and sweets, which I now read can be not so good anyway.
+As to India, I want to move over there later this year, but I need to get healthy enough to do so... will update as I go. Just a little overwhelmed now.
+xxx
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 20, 2009 at 12:55PM</span>
+            <div class="reply-content">first off, its an autoimmune disorder right?
+autoimmune disorders have all sorts of expressions. Usually stress is a factor that has a big impact.
+the immediate dietary approach would be to embrace a very ayervedic, satvic diet which primarily consists of : Brown rice, fresh veg (steamed), fruit, dried fruit and nuts, and fresh curd cheeses like cottage cheese, ghee, mozerella and tofu. Miso and seaweed are also a big part of the methods that traditional Chinese healers would use to directly get you moving ahead.
+It would be good if you could spend some time in India. Go to the Chisti temple.
+do you have access to any sorts of traditional or alternative healers there? like say homeopathy? Osteopath? or even acupuncture are good places to start. I have no clue what is over there...in Europe... Bri might know better you are in some unknown territory to me that is in the dark ages about food from my rather Asian influenced perspective.
+I will look in some books and comment more specifically after some research.
+hugs and support from your homies.
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

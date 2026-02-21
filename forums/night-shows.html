@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Night Shows - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Night Shows</span></div>
+            
+    <div class="module">
+        <div class="module-header">Night Shows</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By PatriciaBlanco</span> | <span>December 20, 2008</span> | <span>78 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (78)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">[b5s6ko7u0ug7]</span>
+            <span class="reply-date">September 22, 2010 at 11:48PM</span>
+            <div class="reply-content">Check out the Crewel and Unusual Show video from 1986, I just posted it (in 7 pieces) If you want a copy of the whole thing, let me know and I can point you to a spot where you can download the whole 2 gig file.
+Doug.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">[b5s6ko7u0ug7]</span>
+            <span class="reply-date">September 02, 2010 at 12:27AM</span>
+            <div class="reply-content">I found a copy of the Crewel &amp; Unusual Show from &#x27;86 if you can believe it! I&#x27;m trying to figure out how to get it off VHS and into a format I can post.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">[b5s6ko7u0ug7]</span>
+            <span class="reply-date">September 02, 2010 at 12:25AM</span>
+            <div class="reply-content">Yes, I do have many excellent and not so excellent photos from the EEUC&#x27;s. Maybe someday I can post a few.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author"><a href="/members/kevin-cooper.html">Kevin Cooper</a></span>
+            <span class="reply-date">March 19, 2010 at 09:07AM</span>
+            <div class="reply-content">and we thank you for your service, Sequoia! otherwise theyre would have been no hot chai for afterwards....God bless you man!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author"><a href="/members/kevin-cooper.html">Kevin Cooper</a></span>
+            <span class="reply-date">March 19, 2010 at 08:59AM</span>
+            <div class="reply-content">First Exotic Erotic was on Actor&#x27;s/Cardiac Hill (ill never forget lugging that keg up the hill in the 90 degree heat!) under the green parachute...the next one was at Southern Faire Main Stage and i wore the pig costume for the occaision, that, i believe (99% sure) was the first year Stacey FLANDERS wore the all red teddy/stockings garters outfit which drove everyone wild...and of course she loved the attention. I was the &quot;usher&quot; ---on stage in pink velvet pig costume, to direct the contestants off-stage (like they do at the Oscars after they&#x27;re all flustered and dont know where to exit) to keep the &quot;flow&quot; going, since no one wanted to be on stage longer than necessary in practically nothing. I ll never forget one young lady who was absolutely gorgeous (wish i could remember her name!!) with big, brown frizzy hair in spike heels who was headed the wrong way, i stepped up to turn her stage right and slipped on a big pile of whipped cream and did a perfect prat fall on my ass! The crowd laughed but it hurt like hell and i was embarrassed beyond belief because i had had such a crush on her...
+The next E.E.U.C. was at Black Point was a full-on production with lights provided by Ed and i think Birdman---but anyway we had electric light for the first time and twice the turnout of an audience. Stacey again MC&#x27;d, Doug Jones got lots of pictures (can you say blackmail?) and our judging panel got more distinguished---that was the year i think Patti was a judge...and the rest...as they say...is history....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author"><a href="/members/kevin-cooper.html">Kevin Cooper</a></span>
+            <span class="reply-date">March 19, 2010 at 08:42AM</span>
+            <div class="reply-content">Yeah...i remember that, but it was sort of a culmination, Adam had been doing the Muh-lah muh-lah schtick for a while and i think we dared him to do it for a night show...he said he would only if DB would be Ok with it and someone persuaded Don to give his blessing by doing the bow at the end...if I can remember it, and it was at Southern...musta been around 85, 86, 87?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author"><a href="/members/kevin-cooper.html">Kevin Cooper</a></span>
+            <span class="reply-date">March 19, 2010 at 08:28AM</span>
+            <div class="reply-content">What a trip down memory lane this one is...! Totally remember being there for both of those...Bob Brewer AND mitch...could not have described it better Greg...that was at the Fox was it not? seems to me the silence was deafening also when Bob got his...but the roar of laughter probably still echoes in the bowels of the 18th Street BART station...!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 19, 2010 at 06:15AM</span>
+            <div class="reply-content">fo-to fo-to fo-to!
+I liked the sushi night at archery, too surreal but delicious.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">[2jbc92i0v72qc]</span>
+            <span class="reply-date">March 19, 2010 at 05:38AM</span>
+            <div class="reply-content">ah yes...sister Shrill...on a hay bale in front of archery with flashlight and the dubiously devious doll s of death and delight constucted by Richard Dupell and assisted by varous bolognas and fans all fueled by smoke drink and a crowd in the dark circlin the dim lit bale with aghasted attention to the mirthful macbre scene of torture to poor doomed sister shrill....presaging south park&#x27;s Kenny.... in unavoidable distaster. It was messy. It was inspired mock madness. It was Dupell&#x27;s fault!!! He made me do it!! i may have a photo.............
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">[zdy8zqzv6kce]</span>
+            <span class="reply-date">November 11, 2009 at 08:29PM</span>
+            <div class="reply-content">My only night show was acting in J. Paul&#x27;s wizard show on Mountebank stage, Agoura, 1980. With all the cars lined up top of the house for lighting, and all the revelers in the crowd it was AMAZING. Add to that the fact that we were all out of our heads on SOMETHING (I had dropped acid that night just for the occasion), and I&#x27;m not sure what was the show, us or everyone else..... We ad libbed much of the show, and it was probably a horrendous performance, but huge fun nevertheless....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 21, 2009 at 03:33PM</span>
+            <div class="reply-content">I am going to tie two threads together here, and ask if anyone remembers a night show from Agoura. I think it was Adam Long &amp; Co. maybe doing a Robin Hood or something...however at the end of the show they had a &quot;commercial&quot; - for Mullah&#x27;s !
+They all started singing this song( Mul-lah mullah mullah Mul - lah ) , dancing around like silly people, and at the end The Mullah Himself came out onstage and took a bow to rapturous applause.
+Am I recalling this aright?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">May 19, 2009 at 03:37PM</span>
+            <div class="reply-content">I remember the Blue Muumuu show!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">Jacques (Jack) Tate</span>
+            <span class="reply-date">May 19, 2009 at 03:21PM</span>
+            <div class="reply-content">Speaking of the master, did anyone out there see Q and my shadow puppet show, the last year at Agoura?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Jacques (Jack) Tate</span>
+            <span class="reply-date">May 19, 2009 at 03:18PM</span>
+            <div class="reply-content">Who sang &quot;Stand by your Can&quot;? By far, the best faux lyrics I ever heard. I laughed. I cried.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">Jacques (Jack) Tate</span>
+            <span class="reply-date">May 19, 2009 at 03:14PM</span>
+            <div class="reply-content">Mille grazie for that, Miz Morgan. You, by the by, totally rocked the house that night with Grego.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">Jacques (Jack) Tate</span>
+            <span class="reply-date">May 19, 2009 at 03:12PM</span>
+            <div class="reply-content">There was someone, years later, perhaps inspired by Joreth, who had all the heads of the Voodoo Bolognas, eviscerated in the mother of all Sister Shrill shows, Morte dell&#x27;Arte, heretofor referred to as the Blue Muumuu show. They hung from this guys belt as so much pelts. Actually, it was a bit of an honor.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 19, 2009 at 04:48AM</span>
+            <div class="reply-content">I remember that show. It was when I first joined the ranks of the Wild English Dancers, and just as my heart was being broken by someone who will remain nameless...so this would have been NRPF 1978.
+I remember Civille as Che Guevarra . I remember the mummers Play with little Angie &quot; How many heads must a Maiden give??&quot;as the Bud Maiden.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 19, 2009 at 03:15AM</span>
+            <div class="reply-content">oh Fifi, I will always be your Bubbles la Blanc
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 19, 2009 at 03:12AM</span>
+            <div class="reply-content">Wasn&#x27;t that lass Angie Luna, our own Angel Moon? Wife of Leonard Melendez,who I believe is the older brother of Tom (De Zombie Wolf). Freeking Richard!! Always with the Guerrilla Theater. I thought we were supposed to be jumping out of the trees with machine guns or something. I was always a couple of steps behind and he&#x27;s still a couple of steps ahead of the curve.Brilliant madman, I wanna sneak up and tickle him just to hear his insane laugh!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">[2uqv0xae7cpcv]</span>
+            <span class="reply-date">May 19, 2009 at 12:14AM</span>
+            <div class="reply-content">One of our night shows that stand out for me was at Northern Faire, when we were still HOME at Black Point, in the late 70’s. I do not remember what we were calling ourselves, I know it was pre-Prankster! After we had parted company with Uncle Dick, we went through a series of names. I think we were moving through the alphabet for a while there, I remember the Brehman Dancers and Caca Del Fuago (we were flaming shit hahhaha).
+Anyways, insane Uncle Richard Civille devised a plan for us to take over the Mountebank stage guerrilla style. We even came up with an assortment of camouflage clothing. We consumed copious amounts of mind-expanding recreation and snuck into faire at dusk in small groups like the infiltrators we were!
+Back stage we continued with our recreating and painted each other’s faces al-la 60’s. We performed the John Barleycorn story with a twist. We had a lovely Native American lass from the troupe all dressed in white with a HUGE garland of fresh Northern bud in her hair. We had a number of camp followers sitting stage side rolling and rolling and rolling. The smoke poured off the stage and from amongst our audience and crept out from the trees like a deep fog. The sacrifice and resurrection of Maria Sativa was glorious!
+love, pooka
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">[2uqv0xae7cpcv]</span>
+            <span class="reply-date">May 19, 2009 at 12:14AM</span>
+            <div class="reply-content">Patti, I was the MC for the underwear show. You named me FiFi la Flame, I was in black lace and lepord print with a HIGE joint smokin the whole show! hahahha
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 12, 2009 at 04:49AM</span>
+            <div class="reply-content">&quot;We&#x27;re the kind of clown who likes to fall down,
+Kick us in the head, we&#x27;re bound to hit the ground,
+And when we&#x27;re in your neighborhood, your village or your town,
+You better pick your daughters up from school, take &#x27;em home &amp; tie &#x27;em down,
+Cause we&#x27;re the Bolognias, Don&#x27;t get any onyez...&quot;
+...exerpt from Fratelli Bolognia &quot; Blue Mumu &quot; Night Show
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">[0y1p971drc7x2]</span>
+            <span class="reply-date">May 12, 2009 at 01:34AM</span>
+            <div class="reply-content">Cruizin thru old comments.... found &quot;underwear thru the ages&quot; OMG! Too very much fun! Gypsy
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">April 18, 2009 at 06:54PM</span>
+            <div class="reply-content">Never Apologize For Great Art !!!
+It was one of the high points ( ahem ) of my Faire career.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">Jacques (Jack) Tate</span>
+            <span class="reply-date">April 18, 2009 at 03:16PM</span>
+            <div class="reply-content">That was the Blue Mumu show. After Springhorn shot Gary Randall, the Bolognas danced on to the Grego and Morgan version of the &quot;Tighten-Up. Springhorn followed Sister Shrill. Everybody got wet. We apologized the next night.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">April 11, 2009 at 08:32PM</span>
+            <div class="reply-content">&quot; Semper Ubi Sub Ubi &quot; !
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 11, 2009 at 08:07PM</span>
+            <div class="reply-content">Penny got a photo of Catana during a Flamenco twirl that revealed her &quot;natural&quot;!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">[9qafj6ehmh0l]</span>
+            <span class="reply-date">April 11, 2009 at 07:28PM</span>
+            <div class="reply-content">Here is one of the posters for that show on the Ship at Northern. Morgan played with the bones band.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">29</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 10, 2009 at 08:22PM</span>
+            <div class="reply-content">Thanks - I&#x27;m honored!
+But I still want to collect on some smooches. I&#x27;ll make a list.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">30</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 10, 2009 at 06:56PM</span>
+            <div class="reply-content">yes you get gold stars, and a position on my team of fishers of folk.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">31</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">April 10, 2009 at 06:38PM</span>
+            <div class="reply-content">LOL !
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">32</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 10, 2009 at 06:30PM</span>
+            <div class="reply-content">musta been terry that knew the milk trick. i remember it was so cute and fun backstage and then very scary. only terry and i knew for a moment (and whoever had poured the diesel no 1), so Sandey you were horribly alone for a few seconds as ppl thought you were making the show interesting by blowing huge streams of fire.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">33</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 10, 2009 at 05:55PM</span>
+            <div class="reply-content">I&#x27;m going to selectively collect on that, I&#x27;ll have you know!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">34</span>
+            <span class="reply-author">[21yor8fwldqdg]</span>
+            <span class="reply-date">April 10, 2009 at 05:53PM</span>
+            <div class="reply-content">HI all. Hey! I remember that night (lol)
+That was before we had cars drive up to the back of the audience and light the stage with their headlights so we used Coleman lanterns (and waving flashlights - boy, those worked great!) placed around the stage instead. Cat&#x27;s right, someone had obviously just filled their lantern with a beer cup filled with white gas (not kerosene) and left about half of it in the cup, on the stage. It&#x27;s also true that people would always put a drink downstage for Q or me (maybe Billy as well but I just never pictured Belvanore as that much of a partier) and I had no reason to believe that this wasn&#x27;t exactly what it looked like; a cup of beer. I started to drink it but, being a fire eater back then, I knew what it was and spit it out before swallowing much. I started that show completely sober because, as a parody of the children of the Mayor and his wife (J. Paul and Judy) presented during the queen show that year, I was backstage putting Murkmouth make-up on ten eager faire kids. The effects of the gas hit me as I was introducing &quot;my children&quot;; I had horrible names for the first few (and I apologize in advance) - vagina breath, penis drip, etc. - but then like a wave I was incredibly stoned and the next name came out &quot;um...Joey&quot; and it got worse. That night Cat and crew forced me to drink gallons of milk back stage (thanks) while onstage I forced the audience to sit through the most drawn out and maudlin version of the &quot;Pardon Me Roy&quot; joke the world has ever known. The night for me was great but the person who should be teased (or better yet, shot) for the mistake should be the idiot who left poison in a beer cup in front of a a thirsty actor.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">35</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">April 10, 2009 at 05:41PM</span>
+            <div class="reply-content">Big Smootches from everyone !!!
+Thanks Kathe !
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">36</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 10, 2009 at 05:34PM</span>
+            <div class="reply-content">Wow - THAT took no time at all - I actually contacted Sandey through his official website, and he&#x27;s joined already. I think I&#x27;m setting records for least time elapsed between posting here that I&#x27;m inviting someone, and them joining.
+Do I get a prize???
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">37</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 10, 2009 at 04:25PM</span>
+            <div class="reply-content">Golly, I haven&#x27;t thought about Sandy in ages - we went to High School together, although he was two years ahead of me. As far as I know from a reunion site, he still lives in Los Angeles. I&#x27;ll drop him a line through the reunion site and see if he wants to join the Teahouse.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">38</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">April 10, 2009 at 01:35PM</span>
+            <div class="reply-content">Along that same line, we filmed a couple of our country dance plays. When playing it , Randy G. did a freeze frame during a dance with swirling skirts and commented &quot;See, she&#x27;s a natural redhead&quot;.hmmm, would explain cheers from the front row.Believe me, we were careful about that from then on. Sorry folks. That part of the show is over, catch us at our next night show.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">39</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">April 10, 2009 at 03:11AM</span>
+            <div class="reply-content">Then surely, she was the ONLY one not highly amused.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">40</span>
+            <span class="reply-author">[2eyy6v7k9yoch]</span>
+            <span class="reply-date">April 09, 2009 at 08:04PM</span>
+            <div class="reply-content">A bit worthy of a night show actually happened during the day. There was a show in the late afternoon featuring some lovely ladies (don&#x27;t remember the details) that also involved Dennis Day as Newington Butts (&quot;Two Ts and one S&quot;!). I thought it would be funny to rush the stage and, instead of grabbing one of the ladies, I&#x27;d grab Dennis. It was cleared with the director, but no one else knew I was going to do this. I ran on at the end and hoisted Dennis into a &quot;carrying over the threshhold&quot; stance, but what I didn&#x27;t know is that Dennis had no underwear on, and when I hoisted him, he was completely exposed to a rather large audience. Phyllis was not amused.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">41</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">April 04, 2009 at 07:25PM</span>
+            <div class="reply-content">One year, I won tackyest . This was back when I still drank and couldn&#x27;t have been sober to do it (and backstage, nobody was sober). I did a dance onstage wearing nothing but groucho glasses as my g string. Stacey gave me my trophy, a rubber chicken in lingerie.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">42</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">March 13, 2009 at 08:19PM</span>
+            <div class="reply-content">I was #L, because all of the numbers I wanted had already been taken, so I was given a letter instead. I have a vivid memory of Animal as one of the judges.
+Those were such great parties!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">43</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 13, 2009 at 03:14PM</span>
+            <div class="reply-content">Was that underwear or bikini? I remember &quot; Bikini Morris &quot;
+I remember being really glad that my mando was so big - a musical coverall!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">44</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">March 13, 2009 at 05:07AM</span>
+            <div class="reply-content">Who remembers &quot;Sister Shrill?&quot;
+Richard Dupell and I think maybe Ed Holmes was involved. A few other Bolognas too. It was at Archery and was a take off on &quot;Mr Bill&quot; from the old SNL skits. They utterly eviscerated a rag doll. For years Joreth Toropov had a leg from the doll that he wore on a cord around his neck as part of his costume.
+The whole audience chanting: &quot;Who will save our Sister?&quot; before the next vile act befell the poor doll. Brilliant stuff.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">45</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">March 13, 2009 at 05:04AM</span>
+            <div class="reply-content">Hah! I&#x27;d forgotten about that.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">46</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">March 13, 2009 at 05:03AM</span>
+            <div class="reply-content">I remember going to the first one or two Exotic Erotic Lingerie Comps at St Paul&#x27;s!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">47</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">March 13, 2009 at 05:02AM</span>
+            <div class="reply-content">It was great to see Mark at Danese&#x27;s birthday. We made it rain and did the sparking lifesavers bit. I went up and hugged him afterwards, thanking him for bring us back to Witches Wood, if only for a little while.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">48</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">March 13, 2009 at 05:00AM</span>
+            <div class="reply-content">Danese, there was nothing more exciting than watching the cars line up and turn on all the headlights. It was like the stage lights at a theater, building the anticipation of the audience that something wonderful was going to happen.
+And when Red Rose Morris did their underwear Morris, you could&#x27;ve heard a pin drop the minute they came on stage, before the whoops and whistles began and never stopped. It was thrilling!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">49</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">March 13, 2009 at 04:57AM</span>
+            <div class="reply-content">Do you guys remember the crew show where they sang &quot;The Actors and the SS Should be Friends?&quot; to the tune of &quot;The Ranchers and the Cowboys&quot; from &quot;Oklahoma?&quot;
+I even remember some of the words:
+&quot;Oh the actors and the SS should be friends
+Oh, the actors and the SS should be friends
+The actors are a bunch of fags
+The SS sleep with garbage bags...&quot;
+That&#x27;s all I remember.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">50</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">March 13, 2009 at 04:54AM</span>
+            <div class="reply-content">I remember Billy doing a dive roll from the top of the stage! Amazing!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">51</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">March 13, 2009 at 03:08AM</span>
+            <div class="reply-content">Beach Blanket Bingo ushered in a bold new era in night shows. There had been a stink-flinging SS spectacle known as &quot;the Garbage Show&quot;, which forked off to become Garbage Wars on the last day of run for SS etc., and the &quot;Crew Show&quot;, which hit the big time on southern main when Mike Oconnor started Michael J. Serious Productions. At a time when we were still reeling and healing from the gnarly departmental conflicts of the &quot;aggot factor&quot; era, Mike started a snowball rolling in hell. Crew, staff, and boothies all jumped on board together with enough enthusiasm to &quot;burlap the ocean&quot;. M. J. Serious Prod went on to make a series of winning shows, providing some of the best moments I can almost remember.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">52</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">March 13, 2009 at 02:45AM</span>
+            <div class="reply-content">AGGOT FACTORS!!!!
+Sshhh, don&#x27;t tell anybody what that means.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">53</span>
+            <span class="reply-author">[3hq0pujw9a5rv]</span>
+            <span class="reply-date">March 12, 2009 at 05:54AM</span>
+            <div class="reply-content">Today I uploaded a night show flier to my photos. I think it was for the 1982 Novato Faire.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">54</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 25, 2009 at 08:18AM</span>
+            <div class="reply-content">I think that was Anita Bryant. Before Reagan. She was pied while doing an anti-gay announcement.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">55</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 31, 2008 at 05:58AM</span>
+            <div class="reply-content">I too remember Mark Lewis telling stories as if it was yesterday ... oh wait, it was yesterday. At least, it was last spring. Mark did his gig at the Damn Faire this spring one fine evening and most of the audience was either old enough to have seen the shows in Agoura, or at least Devoid, or said old Faire Folks&#x27; kids. It was still magical, and I still cried when Mark sang &quot;And the Band Played Waltzing Matilda.&quot; Of course, I also recall Mark&#x27;s shows in Witches&#x27; Wood in Agoura and a few in Black Point, but I missed many of those, and other nite shows, &#x27;cuz someone had to work in the Coffeehouse.
+Peace,
+- Sequoia
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">56</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 25, 2008 at 05:29PM</span>
+            <div class="reply-content">Not a nite show...but I remember a certain Master of the Revells that got pied during Queens Progress...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">57</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 24, 2008 at 01:28PM</span>
+            <div class="reply-content">i loved the pies and hid many pie throwers. Darn republicans wrecked that...hey wasnt it a guy from Humboldt cuonty that pie-ed Reagan and wrecked it? like made it a felony.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">58</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 24, 2008 at 05:54AM</span>
+            <div class="reply-content">Two of the greatest moments in the history of world theater came from &quot;Pie-a-Boss&quot;. In Agoura Bob Brewer was too much of a man to take it in the face, and all agreed when he turned and revealed that such a moon is rarely seen. That the pie hit the mark so perfectly was the best proof I&#x27;ve ever seen of Gpd&#x27;s existance. Bob spent the rest of the night suffering for his art.
+Then there was the time when Mitch&#x27;s number came up at Dickens. There was a pin-drop silence for the little eternity it took him to realize he held the winning ticket. But when his &quot;heh heh heh&quot; announced the miracle from the back of the house as he made his way forward there was no mistaking the source of the sound, or the significance of the moment. The reaction from the audience welled up slowly like an outside wave as he closed in on the stage, but by the time he hit, the walls of the hall bowed from the tsunami like force of the hellacious roar. Was that the Evil Dwarf he was aiming at?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">59</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 24, 2008 at 04:08AM</span>
+            <div class="reply-content">yeah nothing like a guy in a full beard who suddenly looks like he has ladies parts
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">60</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 24, 2008 at 04:00AM</span>
+            <div class="reply-content">Oh yeah. The Assistant said &quot; I must expose myself !!&quot;
+In the Day show the Wizards would cover him with thier robes, but THIS time they both stood there, looking at Q, as if to say...&quot; OK...go ahead ! &quot;
+He gave SUCH a look ( oh nooo ! I have to do this now !! ) and in true Q fashion let it ALL see the light of day...er..night...whatever...and SUCH a roar from the crowd.
+I was proud to be there.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">61</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 24, 2008 at 12:29AM</span>
+            <div class="reply-content">oh an Q didnt just moon he &quot;tucked&quot; one time...remember?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">62</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 22, 2008 at 05:21PM</span>
+            <div class="reply-content">the garbage show!
+almost the best one ever
+Michael Foxworthy
+&quot;You garbage belongs....youe garbage belongs....your garbage belongs to MEEEEEEE&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">63</span>
+            <span class="reply-author">[3tjomb2csum08]</span>
+            <span class="reply-date">December 22, 2008 at 05:08PM</span>
+            <div class="reply-content">That was actually meant to come from me...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">64</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 22, 2008 at 05:00PM</span>
+            <div class="reply-content">The two crew shows that I&#x27;ll admit to having partipated in were &quot;Crewel &amp; Unusual&quot; and &quot;A-crewed Interest&quot; (I&#x27;m thinking these happened in &#x27;86 and &#x27;87, respectively...but I could be a year off), wherein we all came out and sang &quot;We Are The Crew.... We Are the Damaged&quot;, to the tune of (of course) &quot;We Are The World&quot;, and then the following year did the Pope&#x27;s U.S. visit (thanks Bruce &quot;Il Papa&quot; Branson!), and the Harmonica Virgins... I was never so nervous performing before a crowd as I was in front of all of &quot;us&quot;... sigh! Fortunately (?!?) these shows were videotaped very nicely by Vytas for posterity and still exist on VHS somewhere...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">65</span>
+            <span class="reply-author">[31te9gnwzgefw]</span>
+            <span class="reply-date">December 22, 2008 at 04:35PM</span>
+            <div class="reply-content">Night Shows (and other lot activities) were the best. Cat Taylor singing &quot;Is that the Truck that Sucks the PooPoo&quot;, the &quot;four-skin&quot; song, John Bird &amp; Bob singing &quot;There Ain&#x27;t no Porches in Peking&quot;, a cast of people singing &quot;The Agoura Hillbillies&quot;, best buns contests, blend-offs, Spam Feeds, etc. These are more things that are hard to describe to those on the &quot;outside&quot;!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">66</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">December 22, 2008 at 10:58AM</span>
+            <div class="reply-content">The Exotic Erotic Lingerie Competition was indeed hosted by St Paul&#x27;s at actor&#x27;s camp under Phredd Wieser&#x27;s parachute. Phredd was MC and wore purple babydolls trimmed in black lace ( a sight to behold!). After a year or so it became a stage show.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">67</span>
+            <span class="reply-author">[02v9sfrs8abuf]</span>
+            <span class="reply-date">December 22, 2008 at 02:52AM</span>
+            <div class="reply-content">I can still remember as though it was yesterday listening to Mark Lewis tell stories, make rain and show us how to spark wintergreen lifesavers in our mouths. The night shows were the best.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">68</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 22, 2008 at 02:42AM</span>
+            <div class="reply-content">Ah yes,Underwear through the Ages, Exotic Erotic Underwear Contest and Lingerie Morris were three different shows.*Lingerie Morris included a Frank Zappa sing along and was graced by a one time only guest lingerie morris performance with Sally, hence the secret practices. She wanted her appearance to be a surprise. She rocked. *I was a guest judge at the E.E.C.C. along with Dave Springhorn and Greg Propst(Prisoners of Fun). We were driven up to the stage in Randy Gordon&#x27;s taxi cab.It was based on an event held at actor&#x27;s camp top of cardiac hill.*I produced Underwear through the ages.I believe Pooka M.C.ed that one. Highlights included Gypsy in loincloth with strategically held basket,Karen Sanz in &quot;Latex-Mex&quot;(heavy white 50&#x27;s latex girdle,cone bra and nurse&#x27;s cap)and yours truly in black 40&#x27;s merry widow vamp(stripped off gloves, lace penoir,stocking&#x27;s,&quot;You can leave your hat on&quot;). And we did end with Randy &amp; Mardeen wrapped in saran wrap, with tin foil cuffs and storm trooper helmets(In the future no one will wear underwear. Heck, we were mild compared to today&#x27;s prime time t.v.I remember it was like pulling teeth to get people to commit. By show time EVERYBODY wanted in.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">69</span>
+            <span class="reply-author">[tihrvb7lyzv9]</span>
+            <span class="reply-date">December 21, 2008 at 02:00AM</span>
+            <div class="reply-content">my one skin lays over my two skin,
+my two skin lays over my three
+my three skin lays over................................
+coaker,mcmillin,okai
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">70</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 20, 2008 at 09:08PM</span>
+            <div class="reply-content">how about the mountebank show where I gave Adam Long free reign on the intro to the show (you get 15 minute...terry collier style).
+He had almost all of peasants on stage, the guys were all dressed in tye-dye, and they sang the entire thrifty drug store song, which was very detailed and really long, sort of grateful dead style with accoustic guitars. I think like 20 accoustic guitars although it may have only been ten. At the end of the song they all shredded and hopped around the stage pte townsend &quot;the who&quot; style strumming madly. I almost fell down laughing. (oddly I hardly knew who the dead were at the time I thought they were a garage band).
+mostly it was Mark Sellin, and Dan and Adam.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">71</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 20, 2008 at 08:34PM</span>
+            <div class="reply-content">Oh ! Oh !
+BEACH BLANKET BINGO GOES BURLAP!!!
+The full production...songs, dances, Don Mills as &quot; Pflagrant&quot;, April singing &quot; Stand By Your Can &quot;...&quot; Let&#x27;s Go To The Lot...&quot;John Bird as that pinhead charicter...
+They obviously went to SO much trouble &amp; rehersal, and it was just a one - off.
+If we only had some of these gems on film !!!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">72</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 20, 2008 at 08:29PM</span>
+            <div class="reply-content">The Saran Wrap !!
+That was Randy &amp; Mardeen Gordon.
+That show also had Tom Melendez ( &quot;Zombie Woof&quot; ) in a fur g-string.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">73</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">December 20, 2008 at 08:25PM</span>
+            <div class="reply-content">I worked a few Night Shows as Stage Manager. I remember us lining up cars behind the house to shine headlamps on the stage.
+I worked the RPFN Crew Show where Mitchell Wade Aronowitz, dressed in a tux, quiet seriously destroyed a bolsa wood hammer dulcimer with sledge hammers. That was the same show when Roger Senn first sang &quot;Stand By Your Can&quot;...probably 1982?
+I also worked the RPFN Bologna show where they sung &quot;Blue Mumu&quot; in accapella 4-part harmony with Carol LaFleur in the audience. (&quot;...There she goes in her Blue, blue, blue, blue...Mumu&quot;...&quot;)
+And of course I worked more than one &quot;Underwear Through the Ages&quot; show. The second one in Agoura was the first time we saw Faire ladies dance the Morris (remember the secret rehersals?) and in bloomers and camisoles (since it was an Underwear Show). I remember Stacey (what was her last name? We called her Stacey Delicious) all in red lingerie doing the MC job. I remember the last &quot;exhibit&quot; was naked people tightly wrapped in saran wrap.
+My favorite &quot;extra&quot; shows were actually the auditions, though. I remember the magical Familigia Bologna (before the boys scared off all the female cast members) auditioning for Northern Faire one Agoura late afternoon (Drury Creek seemed to be the venue for most of those auditions). Although of course the original &quot;Reduced Shakespeare&quot; audition was held out in the Western Town (as famously memorialized on Adam Long&#x27;s DVD).
+Great thread, Morgan. Thanks for thinking of it :-).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">74</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 20, 2008 at 07:57PM</span>
+            <div class="reply-content">how about when i set up the innyard for a show (elixir?) and the opening act was bruno pipe and bowl. we got those light wands wendy bird was flogging off and had them do hankies with them. We kept it pretty secret and when they came out there was a huge gasp of awe. It was perfectly dark and the band geared up and the boys went to it with nothing but the optic fillament colored light wands in their hands.Thats my favorite thing making that delighted sound happen in a performance with some mild trickery. Entertainment.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">75</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 20, 2008 at 07:09PM</span>
+            <div class="reply-content">I remember that show too...Sandy was really stumbling onstage. I heard about the kerosene almost immediately...did he ever get some kind of first aid ? I remember seeing him doing his normal shows the next day as if nothing had happened.
+Trooper !
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">76</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 20, 2008 at 07:02PM</span>
+            <div class="reply-content">how about when we were using old fashioned vaudeville style lights, coleman lamps with cardboard box and aluminum foil as reflectors. Someone was using (no names) a beer cup to fill the kerosene (it wasnt me tho) in the lamps. In those days people would lavish Sandey Grinn with gifts and beer all day, and so he saw the cup and thought it was a drink meant for him. At the same exact moment his throat seized up and he chocked.
+saw this one from the backstage sidelines, and Terry told me right away what was up.
+Grinn took a big big swig of the kerosene.
+And then, in full murkmouth grumblemore style proceeded to blow fire like a true pro.
+It was really nasty and TC and I were transfixed...what to do?
+Grinn was such a pro that there was no way to get him offstage and out to a hospital or whatever. I forget if he threw up but I do remember that he blew fire for several minutes and that it was really surreal because everyone was pretty loaded and they all thought it was a planned trick.
+TC knew otherwise and was wringing his hands like mad.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">77</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 20, 2008 at 06:53PM</span>
+            <div class="reply-content">I REMEMBER THAT !!!
+Faire Folk audiences were the best.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">78</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 20, 2008 at 06:50PM</span>
+            <div class="reply-content">My first nigh show in service as an asst stage manager was with TC in agoura on main. It was a Salami show, and he was very tight lipped in the corner w scudder. That was the show that Billy jumped from the second story and a very convincing dummy landed *tuhud* on the cleverly lit (ghetto style) stage. The entire audience gasped noticeably, we were all shocked and freaked a little, then Billy jumped up and everyone cheered.
+It was magic.
+It was mischief.
+It was whimsy.
+I was hooked.
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulation: Liberal, Conservative and Media Style - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/blogs/">Blogs</a> <span>›</span> <span>Manipulation: Liberal, Conservative and Media Style</span></div>
+            
+    <div class="module">
+        <div class="module-header">Manipulation: Liberal, Conservative and Media Style</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Danese Cooper</span> | <span>April 30, 2009</span> | <span>14 comments</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Comments (14)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">[1aiz7zhciigtt]</span>
+            <span class="reply-date">May 05, 2009 at 06:14PM</span>
+            <div class="reply-content">Thank you for a well written description of a growing problem. While there has always manipulation of the media I find it distressing that the attitude of “if it&#x27;s on the internet it must be true” is becoming common. Because of the rapid development of the Web for the first time in history we (people in general) are confronted with a massive information source without the tools to winnow the wheat from the chaff.
+What is needed is critical thinking. This is especially true in politics. During an election cycle just about anything can be circulated as an internet rumor with impunity. As we all know, once something is available on the internet is doesn&#x27;t go away.
+As one of the KGO talk show hosts ends his show “Don&#x27;t believe everything you know”.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 03, 2009 at 12:14AM</span>
+            <div class="reply-content">its the Grey parts that weave in and out and make it all beautiful. Thats where most people live who can sleep at night rather than in the extreme contrasting realm of black and white. In community planning we always say *the perfect is often the enemy of the good*
+not sure where that is stolen from. At faire we would say *Its good enough for rock and roll*. It expresses for me the idea that comfort with compromise and also with ambivalence is the code of bravery for many of us struggling in the modern world.
+We live in interesting times eh?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 03, 2009 at 12:08AM</span>
+            <div class="reply-content">i would love it if Marc did a podcast...i really dont listen to radio at all. Actually it would be neat for one show to be you and Richard.
+Infrastructure is what its all about. In my world its all about drawing the line at peoples need for water, too many thugs holding that down and too many innocent people at the mercy of the water waste stream.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 02, 2009 at 07:37PM</span>
+            <div class="reply-content">hey Catt, I love that 5 muscles of the brain thread. How accurate a description of my thinking process. And that concept of the &quot;radical center&quot;, spot on. I have a coworker who is a great friend to me. She can spot my &#x27;isms coming before I&#x27;m even aware of them. And she speaks up. One thing she she explained to me once, (holding a hand out to her left) &quot;This is one crazy&quot; (holding her hand out to her right) &quot;This is the other crazy, 180 degrees from crazy is still crazy&quot; (brings her hands together over her head and back out) &quot;This is were most of life exists, there&#x27;s a whole lot more life to live in besides crazy&quot;. Then, hats on, we head back out into the nursery. To live a life in the other 358 degrees.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">May 02, 2009 at 04:53PM</span>
+            <div class="reply-content">Well, this is starting to look like fun, may weigh in with more thots if I have a spare hour to compose something off line over the weekend and hoist it up here. Till then, and if I do, part this thread reminds me of something John Perry Barlow once said, during the start-up days of the Electronic Frontier Foundation, I was there in the cubicle next door, about 1992: &quot;In cyberspace, the first amendment is a local ordinance.&quot; Overall, we&#x27;re pretty darn fortunate with what we&#x27;ve got, and can no more force free speech on the rest of the world than democracy on Iraq. I hear what Patti is saying, I&#x27;ve become a political polyglot over the years, vote different sides of the aisle, just as comfortable having a weekly lunch with a bunch of rightwing nuts as fretting about global warming with a bunch of chardonnay sucking libs. I think Marc would make a terrific AM talk show host. I truely think there is a huge untapped media market for populist voice that sort echoes a bit of &quot;a pox on both their houses&quot; attitude. That may be the best balance these days we can hope for. Finally, I missed my local tea party due to some travel and work that got in the way, and from that perspective cannot get the Alice in Wonderland image of the Mad Hatter&#x27;s Tea Party out of my mind. An old friend of mine had posted something on her Facebook wall recently, titled &quot;Folks I&#x27;m Not Inviting to my Birthday Party&quot;, it was a photo of your typical tea party crowd at a busy street corner with their no taxes signs and what not. Little red arrows and call out boxes in the photo pointed to various near by features you could see such as: &quot;Stop Sign&quot;, &quot;Public Park&quot;, &quot;Entry to Fire Station&quot;, &quot;Road Infrastructure,&quot; &quot;Storm Drain Grid&quot;, &quot;Side-walk,&quot; &quot;Street Light&quot; and so on. The irony is hilarious ...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 02, 2009 at 02:28PM</span>
+            <div class="reply-content">we have had so many folds here in Eureka I forget if we have a paper anymore.
+Humboldt is a good example of pure chaos on the matter.
+The biggest local blogger Humboldt herald is anonymous. They interact a lot with several locals were are known to the public, in general I stay out of the whole mess. Its funny why though: my older sister is a screenwriter in Hollywood. Her best friend is a blogger here and they interact (I taught her to blog of course). My older sister Max Adams has to constantly pretend to be much younger than she is in order to keep working in the youth obsessed trade (or whatever) of Hollywood screenwriters guild. My online presence is a bother to her because I clearly state my age everywhere (so as not to confuse any youth). So how can I be 45 and she be 29? especially if she is my older sister?
+All part of the wonders of the modern world.
+I agree about the brain being like a muscle in its need for constant attention and habitual behaviors that reinforce its workings. What people also don&#x27;t realize is that unlike a muscle the brain does not go slack when you are sitting in a chair taking in other peoples stories and images in the magic boxes. Our mirror nuerons are an amazing and intriguing thing. We actually lay down the same sort of nervous system pathways just by empathetically watching something happen as if it has happened to us in real life. Especially if the writing is good and its not all trite cliche. There are parts of our brain that cannot really distinguish between the reality and good theater.
+Really the brain has more like five muscles that must work together: you need to be able to have critical thinking skills, you need to have an active imagination, you need to be able to be syncretic and connect things together, you need to be able to tolerate disruption and ambiguity (n order to take in new ideas), and you need to constantly be able to interpret a huge amount of signals and create a calculating series of future forecasts internally with that data.
+Five is probably not enough. The Sufis talk about the &quot;seven Nafs&quot; or organs of perception in the body, that there are clearly seven organ voices that must be in turn mastered and contained for total self mastery. Like get friendly with your liver it speaks to you...that sort of thing.
+I think there is still an unnatural reverence for Print, more so in the older generation.
+I still remember how much it messed with my head when my hacker pal eric taught me how to change all the titles in window to say stupid shit like on startup it says &quot;Windblows&quot;, and then you have funny stuff in your menu&#x27;s like &quot;catts vault of deadwood&quot;. It was an important conceptual link that print onscreen is just a tool.
+Online interaction is more sloppy than print. Oddly even though it is printed it is more ephemeral like conversation, not as concrete or as much of a real statement even though it can be printed and potentially never goes away. Basically there is a much greater chance for all the attentionhoes to grab their sound byte while everyone is getting used to the new media. The only way TV will survive is in deals like the Disney Hulu deal where they can come online and fight over those advertising dollars. Meanwhile advertising is probably at an end. A company can get more traction investing in a development project and having a thousand volunteers blog about it than hiring a bunch of ad time on &quot;TV&quot;. Advertising on the internet has always been a joke...because...um...its an information tool all you need to find what you want is right there anyway.
+Oh one thing we joke bout here is what we call &quot;radical center&quot;. thats the group that has gone so far right, or even so far left, that pretty soon they are on the same end of the parking lot frothing at the mouth about the same stuff they heard from some guy. Eventually we started calling all of them the &quot;tinfoil hat&quot; crowd, however its somewhat baffling how much the extremes resemble each other.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">May 02, 2009 at 11:51AM</span>
+            <div class="reply-content">In 1984-85, I studied in France. While I was there, I subscribed to Newsweek International. I was surprised to find how different it was from the magazine I was used to in the U.S. The articles were presented in a more global perspective. When it was time to return to the States, I wanted to continue my subscription. I was very disappointed to learn that was not an option. Newsweek International was not delivered to the U.S. That was no doubt to keep it from competing with the local magazine. That was the year I began to pay attention to how news was presented.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">May 02, 2009 at 08:04AM</span>
+            <div class="reply-content">Thank&#x27;s Marc, I agree with what you wrote 100%. Even Imus, with his comments about Nappy headed...I really believe that was just a stunt, someone in the media pointed that out as well. And Gee, Imus is back again. Greed is what motivates.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">Danese Cooper</span>
+            <span class="reply-date">May 02, 2009 at 07:21AM</span>
+            <div class="reply-content">Cat, in response to your question, I honestly don&#x27;t know. I see a couple of huge issues.
+One of which is the mind is like a muscle. It must be exercised to stay in shape. Unfortunately a lot of people believe that because they went to college their minds are still in shape. My response is back in the day, I could party and screw all night then get up and work all day. That was then, this is now. Just because someone went to college doesn&#x27;t mean that they haven&#x27;t gotten mentally flabby.
+A friend and I were discussing this issue and he came up with the following analogy. Every car has a blind spot when you are driving it. You can&#x27;t see into it unless you physically change your position. Yet how many drivers really bother to do that? In the same vein, how many people really step outside of their social circle, lifestyle and perspective? OR, and this is important, how often do people tell themselves that they do?
+It&#x27;s easy to tell yourself that you are informed by sound bites and blogs, but are you really? How many people have actually researched a subject in depth (and from all sides) vs. just reading a blog and op/ed piece or two and consider themselves informed?
+The second issue is something that my wife and disagree on. I am of the opinion that with the decay of journalistic standards people have lost the ability to tell news from op/ed from blogging from propaganda from entertainment. My wife believes that the majority of people can tell the difference.
+If hadn&#x27;t met met people who tell me that Rush Limbaugh and Michael Moore &#x27;tell the truth&#x27; while mainstream news sources are lying, I&#x27;d have more faith. Realistically, I think that the shifting of journalism from reporting to commenting, interjecting opinion and spicing up the news was in response to the pressure of competing with the entertainment industry. In doing so though, they began to undermine their own credibility.
+In the same vein, I&#x27;m pretty much of the opinion that the news media shot themselves in the foot by editorializing about the news to the point that they opened the door to blogging. What happened is the electronic pundit and internet blogger eclipsed legitimate journalism because they could produce and distribute pieces faster than stories that had to be researched and checked.
+So I really don&#x27;t know what the future of journalism is going to be. I do know that we just had a major newspaper fold here in Denver. It will be interesting.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 02, 2009 at 05:02AM</span>
+            <div class="reply-content">ooops, wrong key. I had one more point. Months ago , right on this site, I had made the comment &quot;Tea party anyone?&quot; I had not heard that term used in the media. It was a pure thought. To my surprise I found that there is an actual &quot;California Tea Party&quot; group a few months later. My daughter and I attended a tax revolt rally back in early March ( her picture swinging a sledgehammer at that event is in my photos on this site). It wasn&#x27;t about which party was right or wrong, it was about corruption and waste. Next thing you know April 15th rolls around and it&#x27;s Tea parties across America! Baby, this sprung up out of a collective passion that expressed itself in a way that NO political party, in it&#x27;s wildest dreams, could have planned or envisioned. To hear some of the Sunday morning pundits dismiss it as &quot;Anti Obama &quot; rhetoric was appalling. I don&#x27;t think Obama was even talked about at our rally. But the folks sure were pissed about supporting Octomom.Sheesh! Thanks for the dis, Sam Donaldson!What a maroon(yes, I spelled what I meant). So, thanks for the blog Marc. Try as they might otherwise, the media (and our elected officials, ALL of them) will soon have to face the fact that we aren&#x27;t all that stupid. Some of us pay attention, and we even talk to each other.Even if we&#x27;re different parties, or religions, or what have yous. Now THAT&#x27;S a revolution.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 02, 2009 at 04:38AM</span>
+            <div class="reply-content">&quot;There is a principle which is a bar against all information, which is proof against all arguments and which cannot fail to keep a man in everlasting ignorance--- that principle is contempt prior to investigation.&quot; Herbert Spencer. This quote is no doubt familiar to many here and sums up,in part, some of what you state here Marc. I am registered as &quot;Decline to state&quot;. In recent elections I have voted Democrat, Republican, Green and Libertarian. I gather news from radio, television, newspapers, internet, books... basically everywhere I can. I feel I stand a better chance of understanding whats happening around me if I can access as many sources as I reasonably can. And, oh boy, I sure cringe a lot at what I encounter. But even though I can be a stubborn blockhead sometimes, even I can change my mind on issues because I truly what to know and understand our world. There are very few things I am locked in about. Certainly this has not always been the case with me. But part of my growth has been the recent ability to actually say &quot;Hey, I&#x27;ve been wrong about that!&quot;.What a relief.I,too, have heard some outrageous things. Sometimes it takes a lot of patience (to say the least) to just politely ignore the insanity once you have determined that rational thought just won&#x27;t work in a situation.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 01, 2009 at 02:58PM</span>
+            <div class="reply-content">also:
+Breaking the News
+The Political Brain
+1,000,000 Dead Iraqis report
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 01, 2009 at 02:56PM</span>
+            <div class="reply-content">thanks Marc. really insightful writing at a timely moment.
+One breakthrough I had was when I was studying the Free Speech movement. I realized that what motivated the real change that came as a result of a thousand people sitting down together to protest the removal of a spealker adjacent to campus at Berkeley wasnt so much Mario DeSilva jumping on top of a police car to speak to them all. What was really the agent of change in the matter was that most of those 1,000 students were regular old normal people.
+when the people want change it happens.
+personally I dont watch &quot;TV&quot;. We do have a few itunes subscriptions to comedy central shows which help to heal the burn a little. Of course I started getting my own news off of the internet when it was a secret war in Africa that everyone was ignoring (during Clinton), and when getting news from the indigenous of mexico or South America was a rather complex process more difficult than: search---&gt;Google---&gt;news which is pretty darn easy.
+The idea that we are concerned about the true nature of censorship is hard to take, it sounds like a very privileged point of view. As one friend of mine says &quot;significance not sustenance&quot;...which is his very proper californian way of saying &quot;they never suffered for a meal in their life&quot;. For the most part out internet viewing is not behind a wall like in China, and we do not have to pay two years wages for an operating system like windows xp like they do in Bangladesh.
+we are makers not just consumers.
+The news is all about being a future teller, its like all the dog and pony show madness without even a good astrological forecast sometimes. Thats why I like grazing the internet for news...I can be sure to balance it with something whimsical and inspiring as well as the regular grind of doom and gloom.
+Great points about the history of journalism in this country, I am sure there was a residual effect of the Civil War since it co-coincided with the surge forwards of print technology in general.
+I am interested in what you think about the emerging information technology and its implications for the shape of journalism after the sea change. There will always be a sort of generation bound to the Tv so to speak however as the age of the population not so centric rises I wonder what will happen to that pundit view.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Danese Cooper</span>
+            <span class="reply-date">April 30, 2009 at 12:36AM</span>
+            <div class="reply-content">Oops the links didn&#x27;t come through
+Breaking the News
+http://www.amazon.com/Breaking-News-Undermine-American-Democracy/dp/0679758569
+The Political Brain
+http://www.amazon.com/Political-Brain-Emotion-Deciding-Nation/dp/1586485733/ref=sr_1_1?ie=UTF8&amp;s=books&amp;qid=1241051588&amp;sr=1-1
+1,000,000 Dead Iraqis report
+http://www.projectcensored.org/top-stories/articles/1-over-one-million-iraqi-deaths-caused-by-us-occupation/
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

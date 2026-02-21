@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainy Days - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Rainy Days</span></div>
+            
+    <div class="module">
+        <div class="module-header">Rainy Days</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Eric Lethe</span> | <span>February 03, 2008</span> | <span>28 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (28)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">April 27, 2008 at 09:24AM</span>
+            <div class="reply-content">I&#x27;ll leave her a message tonight or tomorrow. She hasn&#x27;t noticed my arrival yet.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">[29p7u2atfcx87]</span>
+            <span class="reply-date">April 27, 2008 at 06:11AM</span>
+            <div class="reply-content">Hi Sylvia
+Just a quickie to let you know am still trying to hunt down Carol too.
+I last spoke with her in 1999 before moving up here to Alaska.
+She was still in Gualala at the time.
+Have you spoken to Judy Kory yet?
+Mish Mish
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">April 26, 2008 at 09:30AM</span>
+            <div class="reply-content">I&#x27;d also love to find Carol, She was one of my teachers at Summerhill West when I was 12. Ran into her years later at Northern faire. Judy Kory might know, haven&#x27;t asked her yet.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">February 07, 2008 at 06:13PM</span>
+            <div class="reply-content">Yes, I do. Years later, in Devore, I got a radio call while I was in the office, went out to the office parking lot and found my little red Honda Civic up on haybales, with a bunch of my Goon Squad pals standing around chuckling. I was flattered. Well, pissed, but flattered nonetheless.
+As for the sandbag brigade, it might have been a different year. It seems to have rained a lot in Agoura in the late 70&#x27;s.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 07, 2008 at 06:35AM</span>
+            <div class="reply-content">I wonder if we&#x27;re remembering the same sandbag brigade or different ones? I remember that the crossing held and our work helped save it, so either (1) my memory is fogged from the grog and from the years, or (2) more than one sandbag brigade ... or (3) both of the above.
+I also wasn&#x27;t quite as adventurous with my VW. I had a beat up &#x27;67 fastback and while it did purty good on the roads with a little bit o&#x27; mud, when it was really &quot;lot snot&quot;, the VW was rather scary to drive around the lot &#x27;cuz it liked to play slip and slide.
+Do you remember putting Ryan&#x27;s car (Puegot?) up on haybales in the Corp. Yard?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 07, 2008 at 06:21AM</span>
+            <div class="reply-content">No, the collection is of dolls and jester pins. I don&#x27;t know if I have any pics, unfortunately. I do have a few pics of the dolls ... I&#x27;ll upload those sometime soon.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">February 06, 2008 at 06:14PM</span>
+            <div class="reply-content">I remember being in that sandbag brigade, but I think it was Frank Stoneh supervising. I could be wrong. I remember stacking sandbags and watching the river rise until it broke through, so all our work was for nothing. But we were laughing all the way. Dan and George Segda and some of the other SS guys put brown garbage bags on with holes for head and arms, and used duct tape to decorate the front and back with a teutonic cross (the kind with two crossbars, top and bottom.)
+The mud in Agoura was famous for being pure thick snot, that would accumulate on shoes or tires until you were two inches taller. It was always fun slip and sliding around the roads in a Volkswagen, because they were light and easy to dislodge with a few friends. Man did we laugh a lot in the rain. That was the soundtrack, whoops, hollers, and laughter.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">[29p7u2atfcx87]</span>
+            <span class="reply-date">February 06, 2008 at 06:00PM</span>
+            <div class="reply-content">I loved her as a friend and was in awe at watching her create her dolls. Was good friends with Bobby Enos who supplied her with a lot of the bones she used in some of her artworks. Another Gualallaite been trying to find out what happened to him too.
+When you say collection of Carols, do mean photos? If so, it would be great to see some. Why not upload a few of them and her on your page.
+Mish Mish
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">[3c81l6i4s3fe3]</span>
+            <span class="reply-date">February 06, 2008 at 05:41PM</span>
+            <div class="reply-content">do it..get jane here to start her stories.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 06, 2008 at 07:29AM</span>
+            <div class="reply-content">Unfortunately, I lost touch with Carol and her whole family a while back. I think the last time we visited was the last time I did Lark, which has to be about 12 years ago or more (gads). I have a nice collection of Carol&#x27;s work, but no 411. Sorry.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">[29p7u2atfcx87]</span>
+            <span class="reply-date">February 06, 2008 at 06:12AM</span>
+            <div class="reply-content">Hi Sequioia................noticed you mentioned Carol Williams. Been trying to find her for a couple years.
+Last phone number I had for her in Gualalla has been disconnected. Any chance you two might still be in touch?
+Thanks......Mish Mish
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">[tihrvb7lyzv9]</span>
+            <span class="reply-date">February 06, 2008 at 05:12AM</span>
+            <div class="reply-content">and the cups,shoes and asorted bits and pieces, year after year
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 06, 2008 at 03:58AM</span>
+            <div class="reply-content">thanks for saving out the brunos little wooden crate table. Jason gave it back to me...it used to be my fancy diningroom table underneath when I lived under innyard. Peter Brewer gave it to me...the sparklets water used to come in them...we used to keep drinking water on hand.
+I love that little crate because it has heard so many good tunes and good tales and because it has the ugly pink nailpolish on it that kimianne and I spillled.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">[tihrvb7lyzv9]</span>
+            <span class="reply-date">February 06, 2008 at 01:13AM</span>
+            <div class="reply-content">i can remember inbetween down pours collecting all the brunos stuff that washed out of inyard stage. mineing jewlers road for finds and returning what we could.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 05, 2008 at 12:33PM</span>
+            <div class="reply-content">wow Sequoia I forgot that you were like a pioneer rennie.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">[3c81l6i4s3fe3]</span>
+            <span class="reply-date">February 05, 2008 at 06:45AM</span>
+            <div class="reply-content">rain cancelled a northern faire in the mid-late &#x27;70&#x27;s, and we that had been bused up were doled out to local directors with extra couches or beds. I got to go to the home of the inimitable Ian McKenzie..who had an air of intimidation that was pretty daunting to us street performers...but the man was a gentleman host and excusite racantour that made all feel welcome and safe. I&#x27;d like to know more about his library.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 04, 2008 at 02:52PM</span>
+            <div class="reply-content">Paul moved to hawaii some time back.
+It would be great to get him here...his brother dale is here too.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 04, 2008 at 06:37AM</span>
+            <div class="reply-content">What really surprised me, after being so used to both Agoura and Blackpoint sites becoming unusable with just a little rain, was going to other Renn. Festivals (I don&#x27;t like to call &#x27;em Faires) and finding that they did NOT close for rain. In the mid &#x27;80s, I flew out Houston for Texas Renaissance Festival (TRF, also known as the King George Fair) to run a booth for Feather (that&#x27;s a story and a half in itself - some other time). It would rain almost every weekend and it didn&#x27;t really phase anyone. Not the boothies, not the customers, no one. The fair just kept going unless the rain got rather heavy. The amount of rain that would turn Agoura site to mud soup just drain away like water off a duck. People kept their goods out of the rain, but not, necessarily, themselves.
+A year or two later, I drove my 1972 VW bug (w/ a cart on top that looked like a coffin) to Colorado to run a cart selling Carol Williams jester dolls. The cart thing was not a good idea, &#x27;cuz it rained there almost every weekend as well. And the mgmt. there was really not inclined to call a rainout, even when it was amply justified. The cart did not provide a waterproof sales space, so it was rather hard to sell jester dolls in the rain. For that and many other reasons, the venture was not a financial success. But back to rain ... unless TRF, when it rained at Colorado, the site did get quite muddy, and it was almost all on a slope, which made the mud that much more interesting. Also unlike TRF, the rain in Colorado was COLD, which made the rained-upon COLD.
+One saving grace was that in the camps surrounding the actual Festival site, campfires were allowed. I shared a campsite with Pagan and Gene and we had a nice firepit. Of course, when it was raining it was rather difficult to start a fire.
+Overall, I was happy to get back to California ... both times.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 04, 2008 at 06:20AM</span>
+            <div class="reply-content">I know Adam (Paul&#x27;s brother) is here at teahouse -- have you heard from Paul lately? Anyone heard from Early (sp?) ?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 03, 2008 at 10:46PM</span>
+            <div class="reply-content">yes you were in the shop together for a bit right?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">February 03, 2008 at 10:10PM</span>
+            <div class="reply-content">yes you should Her and I were buddies but lost touch I would love to contact her
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 03, 2008 at 09:59PM</span>
+            <div class="reply-content">she lives in Shadow Hills with her daughter and husband who is an actor.
+She did really well actually...she dances still and is in contact with my aunt marta.
+If I lived in LA we would hang out.
+i should write her and tell her about the ning teahouse
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">February 03, 2008 at 09:06PM</span>
+            <div class="reply-content">whatever happend to jane
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 03, 2008 at 03:39PM</span>
+            <div class="reply-content">I just remembered sitting out a rainy afternoon in Steve Cohen&#x27;s bus with Loretta Gamble and Thea Baker (and the little pot-bellied stove blasting so the windows were all fogged up). We were all working on our beading. Lots of craft time during the winters on Snob Hill.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 03, 2008 at 03:36PM</span>
+            <div class="reply-content">Either way, Spike :-)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 03, 2008 at 02:07PM</span>
+            <div class="reply-content">Walking through the roaring creek with beautiful Jane (Pollack) , our skirts pulled high up to our knees, our hair piled on our heads, Paul Reed the proto bruno and juggler (with doug barnard) Holding a purple paper parasol over us as the rain poured down and the sun broke through all at once.
+It was a very green year, 1977? 1978?
+we were both so stunned with the sudden beauty of the moment that Jane and I nearly went down in the creek.
+After that Paul and I were fast friends.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 03, 2008 at 07:55AM</span>
+            <div class="reply-content">No, DB was not there, most of the time anyway, during that rainout in the 80&#x27;s. But I was, with several other mullettes who didn&#x27;t have anyplace offsite to go (or that we cared to go). I remember how, if you started walking at Passhouse, you&#x27;d have a good couple inches of mud on the bottom of your shoes by the time you got to the Coffeehouse. We spent lot&#x27;s of time sittin&#x27; in the coffeehouse (it was relatively dry), drinking coffee (or Green Death, dependin&#x27; on who you were), smoking cigarettes or whatever else there was to smoke (for those who did such at the time), and watchin&#x27; the rain.
+I remember one year, can&#x27;t recall which one, when workshops rained out. All the participants were parked in the lot closest to the site ... the one you had to drive down to the earthen bridge to cross the creek, then back up. To get out, of course, you had to drive up to the racetrack from the earthen bridge. I remember this &#x27;cuz I was in the parking lot w/ assorted other folk helping people get their old clunkers up that muddy road. Helpin&#x27; consisted mostly of pushing while the rear tires spun and splattered mud all over those who were pushing. I think I went to my father&#x27;s condo in Liberty Canyon for a hot shower after that one.
+And I think the &#x27;77 rains were during my first year on crew. It rained prefaire then, too, and someone woke me up one morning so I could come down to help save the creek crossing below Passhouse (again, an earthen crossing). We filled and stacked sandbags in the pouring rain while Bruce Bagnoli supervised and passed around a flask of some type of hootch (wiskey? scotch?) to help us keep warm. Yup, that was fun. I&#x27;m purty sure I couldn&#x27;t get my car off lot that time to get to my dad&#x27;s place for a shower. Trekking in the mud and rain to the crew showers, just to get muddy and wet on the way back was kind of counterproductive.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">[tihrvb7lyzv9]</span>
+            <span class="reply-date">February 03, 2008 at 06:13AM</span>
+            <div class="reply-content">rain in general? of faire rain?
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

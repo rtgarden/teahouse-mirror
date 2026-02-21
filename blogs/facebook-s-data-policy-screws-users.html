@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook&#x27;s Data Policy Screws Users - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/blogs/">Blogs</a> <span>›</span> <span>Facebook&#x27;s Data Policy Screws Users</span></div>
+            
+    <div class="module">
+        <div class="module-header">Facebook&#x27;s Data Policy Screws Users</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Eric Lethe</span> | <span>February 17, 2009</span> | <span>18 comments</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Comments (18)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">[1rw777lryxji5]</span>
+            <span class="reply-date">February 21, 2009 at 04:40AM</span>
+            <div class="reply-content">Makes Rupert Murdock&#x27;s ownership of Myspace look benign!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">[2t3c9i4b7h4fi]</span>
+            <span class="reply-date">February 19, 2009 at 03:38PM</span>
+            <div class="reply-content">Does what happens in FB stay in FB? see :: http://www. albumoftheday.com/
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 19, 2009 at 03:12AM</span>
+            <div class="reply-content">Can&#x27;t believe that FB could have defended this legally. Like a restaurant with valet parking suddenly declaring that &quot;since we have the keys, we&#x27;ll feel free to take your wheels out on the town.&quot; That don&#x27;t fly. Don&#x27;t even drive. It should walk. To nowhere.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">[31fbpnust8bpu]</span>
+            <span class="reply-date">February 18, 2009 at 06:04PM</span>
+            <div class="reply-content">Switch to Ning, that is. I did see your recommendation of Flicker....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">[31fbpnust8bpu]</span>
+            <span class="reply-date">February 18, 2009 at 05:27PM</span>
+            <div class="reply-content">Thanks Danese; entendu. I wasn&#x27;t seeing your post as an exhortation to switch; my preoccupation with where and how to best post my pics for the widest concerned audience just bubbled up. It&#x27;s awkward dividing limited time and energy across platforms, but I don&#x27;t want to leave anyone out or miss out myself on any shared memories.
+I&#x27;m looking at protecting my pics--and more importantly their subjects--on two fronts: changing to a more flexible venue like Flicker and adding digital watermarking to all pics posted in future. While watermarking is no magic bullet, it is at least a protection that we the posters can control that doesn&#x27;t depend on the claimed benevolence of our venues.
+( I&#x27;ve downloaded ADP Tools&#x27; SignMyImage for evaluation: their license appears to combine watermarking batch functions with a spider to seek out straying copies of your pix. I understand that later versions of Photoshop also provide this ability using techonolgy licensed by Digimarc, though not--I think--in a batch mode.)
+Both options involve removing my current postings from FB, and probably losing all the rich comment threads that have already developed on that site. I&#x27;m loathe to do that, but don&#x27;t see any way around it. There really aren&#x27;t any good answers here, are there ;-)
+Thanks again for starting this hare, and for your excellent advice and counsel.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 18, 2009 at 04:21PM</span>
+            <div class="reply-content">yes i agree about keeping with ning, and I also agree we should get them to clarify so that we are not impeded.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 18, 2009 at 04:13PM</span>
+            <div class="reply-content">Weird, the first time I posted this comment it got eaten...okay...here goes again.
+Yes, the protest worked reasonably well :-) I think it was the mass media coverage that really forced them to cave. There is still a problem with Facebook, though that is fundamental to the way it mashes content intent...it will be interesting to watch them try to work out the best way to manage ownership when they continue to share copies of posts and pictures across ownership lines. They are asserting that people you have designated as &quot;friends&quot; should have equal access to you and they claim they are protecting that equal access after you may have changed your mind about what you&#x27;ve shared. I suspect this question will end up in court eventually.
+Meanwhile, I found this comparison of terms of service for various social networking sites. I&#x27;m posting it here because it shows the differences between Flickr&#x27;s approach (we won&#x27;t use your content for advertising, and you can take it down at any time) and Picasa&#x27;s (we may use your content for advertising). Ning isn&#x27;t covered in this analysis, but obviously the Ning overlords should respond to Facebook&#x27;s faux pas by posting a reassuring letter to their subscribers RSN, and if they don&#x27;t we should ask.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 18, 2009 at 04:05PM</span>
+            <div class="reply-content">yes tom we need to advocate for a more open use of the CC liscence that has already been hammered out.
+It would be great to move this site to my own realm that is not ning, and I am starting to investigate drupal to that purpose eventually.
+the sea change in the world we live in is making it very confusing for sartists who want to share work without becoming suddenly &quot;owned&quot; and pwnd by their hosts who suddenly become &quot;publishers&quot;. Indicidual artists retain all rights to their work on this site. I admit i gank image from time to time and use them here however i never set to profit and in fact i pay to maintain the site monthly (otherwise ads and limits on uploads).
+the shell game indeed
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 18, 2009 at 03:53PM</span>
+            <div class="reply-content">Tom, I wasn&#x27;t advocating that you switch to putting your pics on Ning, although the situation is slightly different...I was advocating that you put them on Flickr because they give you the choice of affirmatively selecting how the system as well as how other users should treat your copyrights.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 18, 2009 at 01:28PM</span>
+            <div class="reply-content">from fb
+&quot;Terms of Use Update
+Close
+Over the past few days, we have received a lot of feedback about the new terms we posted two weeks ago. Because of this response, we have decided to return to our previous Terms of Use while we resolve the issues that people have raised. For more information, visit the Facebook Blog.&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">February 18, 2009 at 08:04AM</span>
+            <div class="reply-content">First I&#x27;ve seen of this, Danese. Thank you.
+This whole issue was one of the reasons I hesitated for a long time before joining Facebook, and one that sparks great concern for me now.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">[31fbpnust8bpu]</span>
+            <span class="reply-date">February 18, 2009 at 07:37AM</span>
+            <div class="reply-content">Thanks for your vigilance, Danese!
+I did go and re-read both Facebook and Ning&#x27;s Terms of Service. Sadly, or confusingly, I still don&#x27;t find much to choose from between them. Both include almost identical boilerplate allowing them, should they choose, to profit from or derive works using content posted while you are an active member. Both preface the boiler plate with conflicting reassurances that users &quot;retain all rights to their content&quot;. Both &#x27;may retain archival copies&#x27; of your content even after you&#x27;ve closed your account and think you&#x27;ve removed your content. Both do contain language meant to reassure posters that their rights are respected, and Ning does attempt to couch this in more verbose and comforting terms, but the claims and assignments appear to be identical.
+&quot;Don&#x27;t Run! We are Your Friends!!&quot; Mars Attacks
+It&#x27;s easy to forget that behind Catt&#x27;s benevolent visage, the Internet jungle is still lurks. The Teahouse looks and feels cozier and folksier, but the Princess Bokharas and Kilims are still spread on the shifting sands of the Net as she is evolving.
+Is there already a more secure model for rights management on the web that does in fact take into account the provenance issues that that services like chat and twitter and &#x27;applications&#x27; like &#x27;Gifts&#x27; and &#x27;Pokes&#x27; and &#x27;Walls&#x27; etc etc ad nauseam raise? I confess I&#x27;m not all that familiar with the Creative Commons licensing. If it does address these issue, could/should FB, Ning, et al just slot it in instead of the current legal shell game...and is this perhaps what we should be agitating for?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 18, 2009 at 04:26AM</span>
+            <div class="reply-content">In my world, this response from Zuckerberg is generally seen as &quot;Corporate, not Community, focused&quot;. We think of this action on their part as a clear trial balloon for limitation of user rights with respect to data. Its clearly easier for Facebook to assume ownership, but its not a consumer responsible approach to solution of their complexity issues.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">[1vq1znqs5rwbi]</span>
+            <span class="reply-date">February 18, 2009 at 03:23AM</span>
+            <div class="reply-content">I rummaged around on Facebook&#x27;s site a few minutes ago and found this response about the data ownership issue from one of the folks there. It comes across a bit as &quot;Trust us. We&#x27;re here...to...help...you...&quot; It&#x27;s long, and I apologize for that, but it&#x27;s pertinent to the discussion and I thought some of you might be interested to hear what They had to say. Here ya go:
+On Facebook, People Own and Control Their Information
+Share
+by Mark Zuckerberg Yesterday at 2:09pm
+A couple of weeks ago, we updated our terms of use to clarify a few points for our users. A number of people have raised questions about our changes, so I&#x27;d like to address those here. I&#x27;ll also take the opportunity to explain how we think about people&#x27;s information.
+Our philosophy is that people own their information and control who they share it with. When a person shares information on Facebook, they first need to grant Facebook a license to use that information so that we can show it to the other people they&#x27;ve asked us to share it with. Without this license, we couldn&#x27;t help people share that information.
+One of the questions about our new terms of use is whether Facebook can use this information forever. When a person shares something like a message with a friend, two copies of that information are created—one in the person&#x27;s sent messages box and the other in their friend&#x27;s inbox. Even if the person deactivates their account, their friend still has a copy of that message. We think this is the right way for Facebook to work, and it is consistent with how other services like email work. One of the reasons we updated our terms was to make this more clear.
+In reality, we wouldn&#x27;t share your information in a way you wouldn&#x27;t want. The trust you place in us as a safe place to share information is the most important part of what makes Facebook work. Our goal is to build great products and to communicate clearly to help people share more information in this trusted environment.
+We still have work to do to communicate more clearly about these issues, and our terms are one example of this. Our philosophy that people own their information and control who they share it with has remained constant. A lot of the language in our terms is overly formal and protective of the rights we need to provide this service to you. Over time we will continue to clarify our positions and make the terms simpler.
+Still, the interesting thing about this change in our terms is that it highlights the importance of these issues and their complexity. People want full ownership and control of their information so they can turn off access to it at any time. At the same time, people also want to be able to bring the information others have shared with them—like email addresses, phone numbers, photos and so on—to other services and grant those services access to those people&#x27;s information. These two positions are at odds with each other. There is no system today that enables me to share my email address with you and then simultaneously lets me control who you share it with and also lets you control what services you share it with.
+We&#x27;re at an interesting point in the development of the open online world where these issues are being worked out. It&#x27;s difficult terrain to navigate and we&#x27;re going to make some missteps, but as the leading service for sharing information we take these issues and our responsibility to help resolve them very seriously. This is a big focus for us this year, and I&#x27;ll post some more thoughts on openness and these other issues soon.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 17, 2009 at 10:29PM</span>
+            <div class="reply-content">i saw this coming awhile ago, they have been leaning this way ever since they started using user recommendations for products without their permission. I have very few photos over there, mostly images related to my childhood. my daughter has her entire wedding album over there though, which is partly my work.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">February 17, 2009 at 10:20PM</span>
+            <div class="reply-content">I was just reading about this over the weekend and am still in disbelief at the audacity, especially since none of the users had the chance to opt out, as you said.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 17, 2009 at 10:19PM</span>
+            <div class="reply-content">Which is why you Facebook users should consider protesting. Consumer pressure can absolutely have an effect. Its the principle upon which Open Source has successfully influenced the richest software company in the world, afterall.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 17, 2009 at 10:13PM</span>
+            <div class="reply-content">Heard about this on national news this morning. be intersesting to see if this will stand up to either public pressure or a legal challenge. Reminds me of a Robt Heinlen word from his book &quot;The Moon is a harsh mistress&quot;, Taanstafaal. It means &quot;no free lunch&quot;. Put your stuff out in public &amp; you take your chances as to what can happen to it or be done with it.
+Hey don&#x27;t worry folks, it&#x27;s not big brother! Just put your trust in Giant Mega Corp and everything will be fine......Trust us!!!
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents from the Faires - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Documents from the Faires</span></div>
+            
+    <div class="module">
+        <div class="module-header">Documents from the Faires</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By PatriciaBlanco</span> | <span>February 01, 2009</span> | <span>22 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (22)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 08, 2009 at 02:53PM</span>
+            <div class="reply-content">jpeg it will be, then.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 08, 2009 at 02:53PM</span>
+            <div class="reply-content">Thank you - and thank you for reiterating the goal of this group. I&#x27;m very happy to be included in this project.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 08, 2009 at 02:24PM</span>
+            <div class="reply-content">i agree its cheaper to just buy a scanner.
+jpg or png is really good format for the wiki.
+all of the documents you mention are very much of interest.
+Basically we are doing two things at once, we are laying out a physical timeline and cast call crew list, as well as gathering the real documents that create a sort of rough caricature of the show. Newspaper clippings, direct artifacts from the ludic spray from the show (stuff like quizzes and night show flyers), photos of artists, artworks, design features from the show and so forth.
+Once we have those two elements sort of roughly assembled in good amount, then we can consider what we might want to add to that to make a publication that can be printed on demand.
+As far as publications my hope is that we will have many many iterations of books and that the teahouse will foster the creation of a more genuine online book that will have within it a myriad of contributions reflecting the myriad participants and creators of our experience and tribe.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 08, 2009 at 02:19PM</span>
+            <div class="reply-content">jpeg or png
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 07, 2009 at 09:20PM</span>
+            <div class="reply-content">Thanks, all of you. I guess I&#x27;ll have to see what&#x27;s available near me.
+I&#x27;m also wondering what format would be best, to upload here after it&#x27;s all neatly scanned and put onto a disc.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 07, 2009 at 07:10PM</span>
+            <div class="reply-content">The Brother 420C is really good, has Optical Character Recognition software to convert PDF files to editable word files, too!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 07, 2009 at 07:08PM</span>
+            <div class="reply-content">At Office Depot for as low as $89. But the Ink is expensive!!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 07, 2009 at 07:05PM</span>
+            <div class="reply-content">The power of images!... Looking at this made me homesick!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">April 06, 2009 at 05:21PM</span>
+            <div class="reply-content">Kathe: Where are you located? If you were nearby, I could scan something for you...if not, well, there are a number of new printer/scanners now available at like Staples, CostCo, etc...probably for a low as $189. Other than that, I don&#x27;t know where to direct you. Trent Anderson
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">April 06, 2009 at 03:26PM</span>
+            <div class="reply-content">Sounds like a good idea. I have a bunch of old stuff from the faire days...what format would be best to use to upload them...jpg, tiff, etc?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 06, 2009 at 05:27AM</span>
+            <div class="reply-content">I guess I&#x27;d best introduce myself here before anything else. I&#x27;m Kathe (pronounced KAY-teh) Walters Scott, and I worked, variously: Docents, Pass House with Uncle Murray, Pass House after Murray left, with Beth Ann McCoy and Paul Postal; Night Security; Ale 6 for one Northern; and Maintenance, as a crew lead and then as Butch&#x27;s assistant.
+Now, to documents: the really glorious thing I have that I&#x27;m thrilled to have re-discovered is the *original master* of the &quot;Garbage-Gram&quot; memos, with Uncle Filthy and Theryl listed as President and Secretary.
+It&#x27;s priceless.
+I have other things that are less exotic but may be of some interest: the original of a quiz that I wrote (I believe with Phredd) for one of the B&amp;M issues, a triplicate &quot;LHC SECURITY VIOLATION&quot; report form, blank; a &quot;No pass in possession report&quot; original form, also in triplicate and also blank; A copy of the Draft after Stake Out for the 1991 Devore Faire site layout; and some other stuff.
+Speaking of which, I have a question. I do not have a scanner, myself, and want to get these things scanned as image files onto a CD so I can upload them here. Does anyone here have recommendations as to where I ought to have this done?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">April 06, 2009 at 01:11AM</span>
+            <div class="reply-content">Speaking of faire T-shirts...I remember once an old friend of mine, who came out to the faire, and we hung out and had some fun, and then he called me and said that he thought that a great T-shirt for the garbage crew, would be &quot;Waste is a terrible thing to mind&quot;. I think I submitted that to someone, but it was ignored.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 23, 2009 at 12:59AM</span>
+            <div class="reply-content">Thanks Tom!
+I&#x27;ll try to keep my files smaller, then, following your guidelines. What&#x27;s important to me is that the artwork, text, and small print (especially the copyright date) is all clear and easy to read. That way we can use the image to get specific historic information correct.
+For instance, this flyer establishes that the 1974 RPFS was at the Paramount Ranch, in Agoura, held on the dates of April 20 through May 26th, was the 12th Annual Faire, and how much it cost to spend a day at the Faire.
+Of course there is lots of other info here, too.
+In the meantime, I&#x27;ve also started uploading document images directly to catt&#x27;s wiki, as that gives the images a place in the context, or &#x27;timeline&#x27;, from when they were first published. So, this image above would next land in the LEH Wiki within the timeline &quot;1974&#x27; and then sub-linked to &quot;RPFS&#x27;74.&quot;
+Where ever these images are collected, I feel strongly that they will help in *many* ways to keep our timeline and history more or less stable and/or self-consistent.
+In the meantime, I can has cheezeburger? Nom!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">[31fbpnust8bpu]</span>
+            <span class="reply-date">February 01, 2009 at 07:34AM</span>
+            <div class="reply-content"></div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">[31fbpnust8bpu]</span>
+            <span class="reply-date">February 01, 2009 at 07:32AM</span>
+            <div class="reply-content">You can has cheeseburger if you just re-size or scan to around 120dpi for the web. Most monitors max out at 72-96dpi, so any more detail is wasted (if you or the publishing robot constrains the display in the or tags) or you get monstro displays that blow the formatting to smithereens.
+150 dpi will give you decent results if you want to print from the scan or allow others to do so. Most printers max out at around 300dpi, so scanning to a higher detail that that is, for (re)printing purposes, wasted time and HD space.
+Put another way, an image that is 800x600 pixels will fit comfortably on most modern monitors, with some room left over for framing, sidebars, etc. Anything bigger will get shrunk by the browser/html display.
+Hope this helps as a general guideline. Here&#x27;s a re-sized version of your post, taken down to 72dpi (800x1035 pixels). I think you&#x27;ll see little difference in the display here on the web. The file size however is down from 13MB to around 600k.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">February 01, 2009 at 03:40AM</span>
+            <div class="reply-content">You are probably right. And, I&#x27;m afraid that I remember so little about them, aside from the purchase, that I don&#x27;t think that I would be a whole lot of help with them. If you have been reading the discussion about sex&#x27;nstuff, there is a lot coming out of there especially with Jonestown, Milk and HIV. That period, for me, is pretty devoid of memories, as I was fighting my own addictions, but the conversations are bringing a lot back.
+As always, you are quite eloquent. It has always been a pleasure knowing you, and trusting your judgement. Although, the photo needs to be resized as it is rather large. LOL
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 01, 2009 at 01:55AM</span>
+            <div class="reply-content">Again, I think crew and PR t-shirts are things that *everyone* would enjoy, so I think they ought to be on the regular, public forum. If one can post a note here that there is a new entry there, that would be great.
+Also, while I find the t-shirts, buttons, bumper stickers, and such WONDERFULLY amusing, I personally would like to know more *background* about them, ie, which Faire were they first distributed, by whom, any background anecdotes (if publishable) behind the origin of artifact, that sort of thing.
+For the general public, the t-shirt image (or button, et al) is probably enough. For here, I think the background is important, not because the item can necessarily be used to officially date an event, per se, but rather as documentation of the *culture* during the time period it represents (and therefore a broad range would be acceptable, i.e., &#x27;this was popular around RPFS&#x27;85 through approximately RPFN87 -ish&quot; )
+Did I state that okay? Sometimes I wonder if I communicate my ideas and/or intent well in text. So much body language is lost (perhaps just as well ... )
+BTW: I, too, have a neckerchief from the IBM corporate picnic - don&#x27;t know where it is right now, but I LOVED seeing yours posted on the teahouse recently.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 01, 2009 at 01:45AM</span>
+            <div class="reply-content">I&#x27;m thinking that B&amp;M&#x27;s are of such general interest, they should be posted on the regular, public site, and then here post a note to all to check out the latest, etc. This is just so we XHL (Extraordinary Historian Legionnaires) know where to go to see the good stuff.
+I do believe that B&amp;M&#x27;s *are* genuine documentation and artifacts from the Faires, and can be used as such for time-lines, dating people and events. Double posting, however, might take too much HD space, and or .ning server space.
+Catt: what are the limitations of the .ning server?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 01, 2009 at 01:40AM</span>
+            <div class="reply-content">Oh! It *did* work (d-OH!) Just takes a bizillion seconds to load! (Whoa) Still too big a file?
+Ah me, well; give me points for trying, anyway. What I want to do is get the best resolution possible, without dragging down the whole network.
+Help! (Or, if you are into LOL cats or dogs: Halp!)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 01, 2009 at 01:24AM</span>
+            <div class="reply-content">Okay, here&#x27;s my first salvo into the fray: a full color scan of an advertising flyer for RPFS&#x27;74. To give this artifact some background, this (and others like it) were printed by the thousands and circulated in as many major shopping centers as possible before the opening of any given Faire. I first started out as a costumed &quot;leaflet - er&quot; around 1973 (when Ray Tatar was Entertainment Coordinator), and later, for S&#x27;74, I got the actual (hourly) job of coordinating the teams of costumed &quot;leaflet - ers&quot; throughout the greater LA area. Our job was to go to an assigned area (Mall or shopping district) and, in costume, merrily convince the shop owners that they were *very* lucky indeed to have the opportunity to post a flyer in their front window. With a BIG smile, winkie-eyes, and other entertaining subversive techniques, a successful &quot;Leaflet-er&quot; could cover a huge area, say like Rodeo Drive in Beverly Hills, or Wishire Blvd, in WLA. Shopping Malls were a bit more tricky, as we had to cousin our way past the Mall management, first, and *then* cover as many windows as possible. Paid quite well, actually, and was a whole lot of fun. So, here is my scan of the RPFS&#x27;74 Window Flyer (as seen by thousands throughout LA): Oh poopers ... didn&#x27;t work ... probably too big a file ... er ... I&#x27;ll be back in a couple of minutes ... or so (blush-blush-blush) Okay - back again: One More Time! 
+ Ah shoot! Didn&#x27;t work (again!) hmmmmm ... drat ... what was it I did last time I posted an image here
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">February 01, 2009 at 01:20AM</span>
+            <div class="reply-content">I&#x27;ve got a bunch of faire crew shirts and a couple of security crew shirts, how about those? I also posted a scarf from the last &quot;old California&quot; that was passed out at the end of the last day, when we hosted a bunch of IBM people.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">[15eq2ug3npsz6]</span>
+            <span class="reply-date">February 01, 2009 at 01:15AM</span>
+            <div class="reply-content">So Luisa...you&#x27;d like the B &amp; M&#x27;s posted here as well as on the &quot;regular&quot; site?? Debi
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

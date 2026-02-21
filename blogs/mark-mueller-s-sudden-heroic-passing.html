@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Mueller&#x27;s sudden, heroic passing - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/blogs/">Blogs</a> <span>›</span> <span>Mark Mueller&#x27;s sudden, heroic passing</span></div>
+            
+    <div class="module">
+        <div class="module-header">Mark Mueller&#x27;s sudden, heroic passing</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Murray then, now aka MAX</span> | <span>March 26, 2010</span> | <span>34 comments</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Comments (34)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">[u27mqhvfbw9b]</span>
+            <span class="reply-date">April 07, 2010 at 02:15AM</span>
+            <div class="reply-content">We need to try and use this sadness to each in our own way continue on the path that Mark was on. He never asked to get sick he only wanted to be accepted, respected and loved.
+When a man turns 40,50 or 60 he wants to know that he has a home friends and all the things that makes us whole. Some of us were lucky enough to have some of these things, growing up but not all of us!
+For me I will follow in his steps by giving ,growing and planting trees, flowers and veges to help save the planet!!. Lets start a new page of life with purpose toward harmony. Azulita.
+Please join us in the quest for 10-10-2010 things you can do to Save The Planet by planting a tree or a garden and dedicate it to Mark as he was a real master of the plants. He gave me some nice plants that have multiplied and grown so fast. I will always miss and Love him. We so wish that he could be here to see how much he was loved! Goddess Bless Mark always!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">[0ena9h0rjamxi]</span>
+            <span class="reply-date">April 06, 2010 at 08:02PM</span>
+            <div class="reply-content">Roger (smacky Duck) and Robin would like me to express that they too are greiving over Mark&#x27;s death.
+They send their love.
+They do not have a computer, their phone number (509) 684-6926
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">[0ena9h0rjamxi]</span>
+            <span class="reply-date">April 05, 2010 at 09:06PM</span>
+            <div class="reply-content">I will miss you Mark, it has been many years since I have seen you but the tears just fall. You touched many people you lovely man.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">[123464ylav785]</span>
+            <span class="reply-date">April 04, 2010 at 10:31PM</span>
+            <div class="reply-content">Hey Family, We sure lost a Big part of us! Man, he was a Trip; wonderful, hardcore, hard working, lovable man I&#x27;ll miss so much! As he always;s called me his sister as others. I still can;t believe he is gone. I have the most believable pot he made for me in my yard that I just planed flowers in it. I now every time I walk by it have to touch it and say ,&quot;HI MARKY I LOVE YOU&quot;. He will always be in my heart forever!!!Love Suzette aka Zette
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">April 04, 2010 at 09:18PM</span>
+            <div class="reply-content">Check out the Events page for information Lauretta just posted about a memorial for Mark on May 1st.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 29, 2010 at 10:24PM</span>
+            <div class="reply-content">I am really thankful that our community is this united, vocal and accepting of each other. The newspaper story reflects this which is amazing.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">March 29, 2010 at 07:52PM</span>
+            <div class="reply-content">We should send a thank you to that reporter. It was a nice thing he did (and thanks Mojo for making them aware of the backstory).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">[2ubgj119dmdss]</span>
+            <span class="reply-date">March 29, 2010 at 07:16PM</span>
+            <div class="reply-content">Just read the article by Nathan Halverson at the Press Democrat; beautifully done. Mark would be okay with it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">[2aeadbfi98t5d]</span>
+            <span class="reply-date">March 29, 2010 at 03:46PM</span>
+            <div class="reply-content">Blessings to you Mark... sorry I missed the service, and I&#x27;m going to be out of town for the Bubba Bud, but my hat is off to you..., travel swiftly on the other side. The Press Democrat has a good article in today&#x27;s paper... http://tinyurl.com/y85699y
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">Richard Beard</span>
+            <span class="reply-date">March 28, 2010 at 11:14PM</span>
+            <div class="reply-content">I can&#x27;t find the words to express the loss I feel. Mark was a good and true friend. I know he is missed by all who knew him. He will never be forgotten.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">[0oeoyvmg16t6c]</span>
+            <span class="reply-date">March 28, 2010 at 10:53PM</span>
+            <div class="reply-content">I just returned from Mark&#x27;s memorial service held at the Park &amp; Ride in Guerneville. It was really beautiful. Pastor Pam had all of us say something about our life with Mark. I told how Jim and Jeff and myself had known Mark for years and tried to help him. He always called me &quot;Mom&quot; and use to love coming to the house for Thanksgiving dinner. We will miss him.
+Along with many of the homeless that I recognized there were many Faire people present. Mojo, Hippie Jim and Blue; his sister Sally; John Bird and Loretta and many more that Jim and Jeff knew, but I can&#x27;t seem to recall.
+Pastor Pam served communion and her church (Guerneville Community) served a lunch which included sandwiches, salad, macaroni and cheese, chips and Oreo cookies. It was really a lovely time and I&#x27;m sure Mark would have been delighted.
+Kathleen A Dumas (Jim and Jeff&#x27;s and Mark&#x27;s Mom)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">[2uydvl507q41q]</span>
+            <span class="reply-date">March 28, 2010 at 09:04AM</span>
+            <div class="reply-content">Darling Catt,
+I am so glad I updated my spaced out password to tea house. If I never see one more facebook game post It&#x27;ll be too soon. I love you so.
+The Street Church is having a small memorial for Mark Tommorro / Today/ Sunday at 1 PM the Park n Ride Parking Lot in Guerneville.
+I anyone is in the vacinity, it will be a sweet gathering and there will be food.
+We will toast and honor him at the Bubba Bud in Tomales on Easter Sunday.
+John Bird thought about not doing B.Bud and then he felt Mark sputter in spiritual agast.
+However! Lorrettta wants to send him out with a Mark Mueller worthy bang! So that will be.
+I&#x27;m going to this little event tommorow and I will speak more with the people that Mark saved. I&#x27;m greatful for this little Street Church congregation and all the resources for the Homeless out here in Guerneville.
+So like Mark, he was amazingly beloved by the homeless community before this, and respected by the church people. People would stop me ALL the time and tell me how cool my &quot;brother&quot; Mark was and how he helped them.
+I sent an e-mail to the local story editor and told him the whole story. How many people do we know who actually died saving 2 lives? Maybe they will write more.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">[2ubgj119dmdss]</span>
+            <span class="reply-date">March 27, 2010 at 09:20PM</span>
+            <div class="reply-content">So,So So like Mark to die helping others. I spent yesterday with Lauren and Lauretta and Debbie Jean; we toasted his honor and wished him Godspeed on his heavenly journey.Many tears shed for this wonderful human being. I know plans for a memorial are afoot; please keep me informed via this site, as I don&#x27;t do facebook. Thanks.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">[2ivhpluf94j7r]</span>
+            <span class="reply-date">March 27, 2010 at 03:13PM</span>
+            <div class="reply-content">I am so sad to hear of Mark&#x27;s passing. We spent a lot of time together during my faire years and I always hoped the best for him. He was a sensitive sweet soul that was very giving. I am sorry i won&#x27;t get the chance to see him again.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 27, 2010 at 01:41PM</span>
+            <div class="reply-content">Grego the contrast between that article, and my own here is what this place is all about. Mule was always on point, always ready to fall out and jump to if needed. And he did. he was our guy. He had Madeline Anna and Mojo with him right at one side and Michelle Yvette Rosa and Elexion on the other side. I like to think of it that way anyway. I actually cant help but think of it that way.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 27, 2010 at 12:57PM</span>
+            <div class="reply-content">Sadly Grego, I think thats our guy. He heroically saved two other &quot;homeless&quot;, Barbara and fisherman Mike. Of course that was not noted by the press. He was part of the local street church as well. Hard times our guys fall on.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">March 27, 2010 at 12:18PM</span>
+            <div class="reply-content">From the Press Democrat: can this possibly be the same story?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">March 27, 2010 at 06:55AM</span>
+            <div class="reply-content">Okay, I cried at first, but now I think I&#x27;m clear enough to tell this story. I hope someone finds it funny. When I was a Privy Queen for that one year in &#x27;82, I used to hear Vytas&#x27;s name all the time whenever I was floating by the Ground Zero turning in my keys for the TP holders. So for some silly reason, I always thought that Mark was Vytas (Mark may have started it as a joke, I don&#x27;t really remember anymore) I got the wrong face hooked-up with the wrong name. I&#x27;d completely forgotten about all that until recently when (in the last few years) I got online and could actually places Vytas&#x27;s face with his name, and then ran into Mark out in Guerneville at a party. The more I think about it, the more it does seem like a joke Mark would have played on me, and I can almost hear him laughing about it still.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">[0ie60xkpicxxl]</span>
+            <span class="reply-date">March 27, 2010 at 05:31AM</span>
+            <div class="reply-content">.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">[3ps78rnilakw0]</span>
+            <span class="reply-date">March 27, 2010 at 05:16AM</span>
+            <div class="reply-content">I didn&#x27;t know him well, and I regret that. He was always there, helping keep the Faire running smoothly, part of the warp that holds the weft of magic. He embodies the best of us, such a part of the Working that he could be invisible. Masters work for years to acheive this. That he stepped out of life still thinking and acting of Service is worthy of song.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 27, 2010 at 04:15AM</span>
+            <div class="reply-content">yeah I keep thinking he just jumped right through to the other side.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author"><a href="/members/kevin-cooper.html">Kevin Cooper</a></span>
+            <span class="reply-date">March 27, 2010 at 02:38AM</span>
+            <div class="reply-content">My heart was at once lifted to confirm LaRissa confirm as friend on FB, then sank again when her first message to me was that Mark was gone from the land of the living...i will miss him very much...he was one of the first &quot;hardcore&quot; crew members who made me feel &quot;part of&quot; and he was always good for a laugh when you needed it most. It is perhaps fitting that his last act was one of selflessness...he was such a giving person. I can see his face in my mind as though it were yesterday, and i know he is sitting at the spool table in the Caravansary with DB and the others, saving me a strawbale...Luv ya man!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">Lydia Villescas</span>
+            <span class="reply-date">March 26, 2010 at 11:31PM</span>
+            <div class="reply-content">I knew Mark while being part of the faire family and knew him to be a kind and giving soul. My heart aches that I will not see him again. God&#x27;s speed, my friend
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">March 26, 2010 at 08:31PM</span>
+            <div class="reply-content">I struggle to write this-with a heart full of sorrow--Mark was a beautiful part of my experience at Faire--He would drop everything to help those in need of assistance. He was truly one of the good ones--I can hear his voice in my head.I love you Mark! Rest in Peace--my hero--and much to Mojo Anna and Madeline for being there at the end. Peace
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">[3ps78rnilakw0]</span>
+            <span class="reply-date">March 26, 2010 at 07:10PM</span>
+            <div class="reply-content">another hero, not unsung, thank god...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">March 26, 2010 at 05:58PM</span>
+            <div class="reply-content">RIP Flower Face. I will wear flowers in my beard this S. Faire in your memory. And good on you for acting without fear. We will miss you, but you have made us proud.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 26, 2010 at 05:27PM</span>
+            <div class="reply-content">he was as Bob would say a &quot;knight of the round table&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">[2rwkjlvel97js]</span>
+            <span class="reply-date">March 26, 2010 at 05:14PM</span>
+            <div class="reply-content">Mark quietly helped me when I needed it. He made me feel worthy. He helped me learn to laugh at myself. I am not surprised he lost his own life while saving others. He had no concept of his own worth. I, too, will miss running into him. There is way too much feeling for words.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">29</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">March 26, 2010 at 03:54PM</span>
+            <div class="reply-content">Another brother gone. Incredibly sad news. We shared so many laughs, so much intensity, so many alive, alive, alive moments.
+He was funny, he was crazy, he was wise. This guy was a blessing in my life.
+I always looked forward to randomly seeing him, now that&#x27;s been taken away.
+Fuck!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">30</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">March 26, 2010 at 03:08PM</span>
+            <div class="reply-content">Binky called me with this news at midnight, but I couldn&#x27;t write about it until today. Thanks Catt for blogging. Poor dear Mark. Sounds just like him to notice someone was in danger and take action. He was sensitive to what was happening in the periphery. Lighting a candle today for Mark (and for Lauren, for whom he was &quot;Papa Mark&quot;)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">31</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">March 26, 2010 at 02:00PM</span>
+            <div class="reply-content">May the delights that are said to await martyrs of war also welcome this martyr of love for life.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">32</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">March 26, 2010 at 01:42PM</span>
+            <div class="reply-content">I was so shocked to hear this this AM on FB. I am proud to say I knew him. What a heroic way to go. I hope those he saved carry his memory onwards.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">33</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 26, 2010 at 01:39PM</span>
+            <div class="reply-content">Stunned. Heartbroken, and Grateful. He will now walk a giant among mighty in the Garden of Eternity. Beautiful photo of him with Marty, Catt. Thank you luv,
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">34</span>
+            <span class="reply-author">[tihrvb7lyzv9]</span>
+            <span class="reply-date">March 26, 2010 at 01:39PM</span>
+            <div class="reply-content">crap.another one down,gods bless him. ill pass the word to thoes down here on site.
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

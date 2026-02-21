@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for the Faire Record - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>for the Faire Record</span></div>
+            
+    <div class="module">
+        <div class="module-header">for the Faire Record</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Murray then, now aka MAX</span> | <span>April 25, 2008</span> | <span>72 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (72)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">[1o1f61cl9xgq5]</span>
+            <span class="reply-date">January 28, 2009 at 05:10AM</span>
+            <div class="reply-content">Morgan - didn&#x27;t Ritchie go to Chico 1974 - 1978? I remember something about the bus and the Craig Hall dorms
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">[0grgrunot1fm3]</span>
+            <span class="reply-date">October 28, 2008 at 01:51AM</span>
+            <div class="reply-content">I remember Sally at the well. But it&#x27;s pretty blurry. My first year there coincided with the Halberdiers so that must have been 77.
+David Springhorn was definitly involved with the peasants at least part time, that year.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">[0grgrunot1fm3]</span>
+            <span class="reply-date">October 28, 2008 at 01:47AM</span>
+            <div class="reply-content">That first year is really a blurr. and yet there are indelible impressions.
+Oak Ash and Thorn singing at the well.
+Food spewing, riotous theater with Springhorn and Dena? or Sally at the well...
+Salmon Socks, a Halberdier whos name I don&#x27;t remember (Gary?), doing his passed out drunk bit at the well.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">[0grgrunot1fm3]</span>
+            <span class="reply-date">October 28, 2008 at 01:27AM</span>
+            <div class="reply-content">The Halberdiers were active when Dena was directing the well. My mind is a bit fuzzy,... She and David Springhorn would do these afternoon food spewing fights. Totally amazing.
+That was my first year at the well in 1976.
+Amy Farrell (Jessie as she was called later) diercted after that. I don&#x27;t remember the year. But I worked with her the years she directed. In 1980, I was her assistant and actually got paid!
+Then the Faire hired Rowena and they directed together one year. When Rowena took over, I started working at the Dun Cow. Lisa Jogawaard and I were there all day as assistant stage managers and actors, keeping the theater going. Keeping the place from turning into a drunken hang out.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">[0grgrunot1fm3]</span>
+            <span class="reply-date">October 28, 2008 at 01:13AM</span>
+            <div class="reply-content">Chris Hardman, yes,... amazing puppets and theater. They did mixed-media and sight specific instalation shows outside of Faire. He ran for mayor of Sausalito at one time and I think, still lives on the waterfront.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">October 07, 2008 at 01:08PM</span>
+            <div class="reply-content">yes Lincolin was at childrens dell, pretty sure.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">October 07, 2008 at 05:48AM</span>
+            <div class="reply-content">The guy who sold buttons with slogans ... &quot;Button Glen&quot;?
+used to run into him in the (San Fernando) valley from time to time. Haven&#x27;t seen him in quite a while.
+Lincoln Spector tickles my memory too. I&#x27;m sure I knew him. If he was involved in Children&#x27;s Dell &#x27;74 - &#x27;75, might be from there, as I started @ Children&#x27;s Dell in &#x27;77 or was it &#x27;76? Anyway, I&#x27;m sure I knew most of the performers around that time, as I started doin&#x27; backstage Security a couple years later (&#x27;78 or &#x27;79 ?). Names, though, they slip through my mind like sand.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">September 23, 2008 at 08:37PM</span>
+            <div class="reply-content">Yes, Vicky, it is small indeed!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">September 23, 2008 at 06:09PM</span>
+            <div class="reply-content">Julian--I definitely have a very clear memory of you at faire. Paul and I have been friends all these years--since we met in 1980--he was dating my roomate Lynda Godden. Small World heh
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">September 23, 2008 at 05:32PM</span>
+            <div class="reply-content">My friends and I wore black armbands to fair when John Lennon was killed. A sad day indeed.
+I remember G.Paul and the other sailors dancing in Mad Sals at Fort Mason. I also recall he gave one of the best insults I had heard during a workshop for Dickens in 1980. We were supposed to give each other insults. He walked up to my friend Sonia, stared right at her chest and said &quot;Nice, very nice. Too bad they&#x27;re not yours.&quot; We&#x27;ve been friends ever since.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">September 23, 2008 at 07:05AM</span>
+            <div class="reply-content">Fort mason the year John Lennon was killed--Very sad day that day at fair. yeah I used to dance around The keg tables with Paul Giomi--one of the Sea Dogs and with the Chimney Sweeps..LNR as Toozie--Nobody like here ever since--with her bottle of Run.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">September 23, 2008 at 01:49AM</span>
+            <div class="reply-content">Ahh, yes French Postcards. I remember the first time my mother brought my sister and me to Fort Mason to rehearse for The Isle of Jewels and she saw the rehearsal for French Postcards. Terry Collier assured her we would be practicing far away. Thank the gods she let us stay...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">September 23, 2008 at 12:24AM</span>
+            <div class="reply-content">Vicky, for some reason I can&#x27;t reply to your message. Must be threaded as far as it will go. At Fort Mason I worked for Eleanor at Sal&#x27;s. I never saw Postcards then, since I was under 18!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">September 23, 2008 at 12:15AM</span>
+            <div class="reply-content">Yes my dear I was the Cook in Fezziwigs at Fort Mason and the Fox--and then a whore later in the day----Always surprised that I could move like that back then--Do you remember the famous incident when I went topless in the naughty french postcards and Mariylyn L went running out of the theare screaming my name in infamy--that is if you did Fort Mason. I was also on the design team that year and that was when I made my first set of Stage curtains--Just like I did at the Cow Palace the first two years presently
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 22, 2008 at 11:07PM</span>
+            <div class="reply-content">thanks carrie, that explains it it must have been right up mulholland from the mulholland cornell crossroads.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">September 22, 2008 at 09:46PM</span>
+            <div class="reply-content">will geer&#x27;s place was out in Topanga.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">September 22, 2008 at 08:59PM</span>
+            <div class="reply-content">http://www.21stcenturychivalry.com/
+For all you wanna-be Amy stalkers, that&#x27;s a URL at which you can see a picture of the lovely critter, and send her an e-mail....
+I&#x27;ve already stalked her, and received a lovely reply!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">[tlvy10fzmxwr]</span>
+            <span class="reply-date">September 22, 2008 at 08:39PM</span>
+            <div class="reply-content">Loved Amy she was always fun.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">September 22, 2008 at 07:34PM</span>
+            <div class="reply-content">By 1980, David was playing Ned Courage, the sheriff. I am suspecting Halberdeers was probably 78/79, but this is just speculation. The Halberdeers were fading by 1980 and mostly gone by 1981.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">September 22, 2008 at 07:28PM</span>
+            <div class="reply-content">Oh my god, it was *YOU*! You were Prissy at the Fox Dickens too, weren&#x27;t you? I was part of Fezzy&#x27;s &quot;Maid Brigade&quot; (since there was no Sal&#x27;s the first year there for me) with Carolyn Schulz, Marilyn Letchworth and a young girl named Dawn as the scullery (can&#x27;t remember her last name).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">September 22, 2008 at 07:26PM</span>
+            <div class="reply-content">Ooohh, I remember Amy. I was about 14 and thought she was incredibly hot! I had a huge crush on her.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">September 22, 2008 at 07:25PM</span>
+            <div class="reply-content">Do you mean Eleanor Harrold? She and Sally were friends. She ran Sheep to Coat, Props and the Sign Shop at various times. She&#x27;s my cousin, BTW.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">September 22, 2008 at 07:24PM</span>
+            <div class="reply-content">Richie is at the Dickens Fair every year, still fiddling!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">September 22, 2008 at 07:23PM</span>
+            <div class="reply-content">Catt, I am in touch with Don Jon. Shall I invite him to the teahouse?
+He came back to Dickens last year as Mr Macawber.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">September 21, 2008 at 04:29AM</span>
+            <div class="reply-content">Yes!!!
+&quot;Grandpa Walton&quot; ,That was it !!!
+Hooray for your Little Grey Cells , Catt.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 20, 2008 at 11:37PM</span>
+            <div class="reply-content">yes yes that would be so amazing!
+I think you can just send it off maybe
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 20, 2008 at 11:33PM</span>
+            <div class="reply-content">was it will greer who had the malibu actors scene that sean was in?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">September 20, 2008 at 10:18PM</span>
+            <div class="reply-content">Michael Cawelti as far as I remember showed up in 1976 with Lindsey Jackson in the Halbrediers.
+He was also in the Counterpoint show - he died rather bloodily every day at noon.
+Sean Hannon was my beautiful Italian Prince.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">29</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">September 20, 2008 at 10:15PM</span>
+            <div class="reply-content">You guys keep showing me how senile I&#x27;ve become. Each name mentioned wakes up stuff that I didn&#x27;t even remember I forgot. Sean Hannon and I stayed friends for a few years after I left the fair. He lived in Echo Park and I was in downtown. He was doing the movie FIre and Ice for director Ralph Bakshi about this time.
+I agree with Noel,I think Cawelti came later, but it could be that I just didn&#x27;t know him when he 1st arrived. I&#x27;m pretty sure Sally did a stint at the well.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">30</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">September 20, 2008 at 04:06PM</span>
+            <div class="reply-content">...I have some old-fashioned regular ( NOT super) 8mm film of it...if I could only find a way of transfering to DVD.
+My Mom took a bunch of home movies at Southern in or around 1975 - 1978.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">31</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">September 20, 2008 at 04:04PM</span>
+            <div class="reply-content">I distinctly remember you Catt, in the crowd-control part of Counterpoint, yelling your head off as the English &amp; Italians sparred &amp; parried.
+Good times.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">32</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 20, 2008 at 03:49PM</span>
+            <div class="reply-content">yes that must have been 77, probably 76 was mostly a blur to me, and now that i think about it 77 was my first real workshops.
+thanks for that Noel.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">33</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">September 20, 2008 at 03:37PM</span>
+            <div class="reply-content">Hmmm. I think you need to check your dates. In 1976, David Springhorn was play Hatton in Court, pretty much to the exclusion of everything else. By 1977, he&#x27;d might have started the Halbadeers. I believe Gillian Bagwell was involved, too, as was Chris, the very tall and gorgeous blonde gal.
+But I have pictures of Dave in 1976 in the Hatton suit. Check out my pictures on Tribe. He and Duffy were sort of co-forces in those days. Cawelty came a bit later, too. Probably 1977 or so. I remember this pretty well because the Letchworths worked with David at Dickens (David was Fezziwig in 1977; there was no Dickens in 1977) and the Letchworths were also part of that.
+I don&#x27;t mean to sound like a know-it-all a--hole about this, but, as I&#x27;ve said before, my &quot;run&quot; with Faire stuff was sooo short that I&#x27;ve had to really concentrate of who was were, when, and this is pretty easy in that I was only around from 1971 to 1979, and only in a semi-official (rather than volunteer) capacity from 1975 to 1979.
+There&#x27;s that wonderful post on Fools about the battle with the Celts by one of the Letchworths, but I&#x27;m pretty sure that David was still a courtier (full-time) in 1976 and, possibly 1977, although I have no pictures of this.....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">34</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 20, 2008 at 03:18PM</span>
+            <div class="reply-content">more on the washerwomen:
+when i started in 1976 Laurie Rose was my director.
+At that exact moment in time David Springhorn was heading up the halbadeers, along with tho katzoff and the then wendy katzoff. I think also Sally May have been a washerwoman or at sheep to coat with Elinor and carrie? In the ranks of the halbedeers were michale cawelty, Lindsay Jackson and Sunny&#x27;s nephew Christian (my 1st bf). Sunny(or her sister) later married Mark Lewis the story teller?
+In those days Mark was known most as the headsman, fingering the big scalloped blade of his head-chopping axe dramatically and playing the role big and silent and sinister.
+That first year I showed up to be crowd control for Montagues and Capulets, and there immediately met Glad Pickering and Jane Pollack who was and still is &quot;my jane&quot;. Also I remember meeting Cora and tom pickering and Sean hannon I think. SEan was active in a local malibu acting trip with the guy who played grandpa on the Walyons tv show...i forget the name.
+At that time I also remember the rat seller (terry colliers best friend..name?) and serpent playing some middle class role.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">35</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">September 20, 2008 at 01:25PM</span>
+            <div class="reply-content">No, thank you Noel, some more names I wouldn&#x27;t have pulled from the ether alone; Greg Davies geez. If you could send me the link you found for Amy, I would love to rattle her cage. Ta, as we say here in OZ
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">36</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 19, 2008 at 11:21PM</span>
+            <div class="reply-content">i remember you and sally gigging. I think as fishmonger i even got in on it once or twice. Part of where my recall of you fell so dear. Somehow I always feel like i really know someone after i have gigged very well with them. There is no other exhilaration quite like it. As Plato says &quot;You can learn more in an hour of play than you can in a year of conversation&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">37</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 19, 2008 at 11:18PM</span>
+            <div class="reply-content">vivky as my pal Bebo says &quot;You ain&#x27;t seen nothin yet!&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">38</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 19, 2008 at 11:16PM</span>
+            <div class="reply-content">liz did lead the way. she and david pascal who had just got back from london and had a sex opistols shirt and blue hair. He is the one who started me our on my bead collection for mongers, still going strong and I still have some from him.
+technically i was &quot;second wave&quot;, in those days there was still some vague idea of everyone who was a punk...it was like an early social network for sure.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">39</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">September 19, 2008 at 10:39PM</span>
+            <div class="reply-content">Funny just found Amy online (still at it in Badger, CA) and Deena Gornick, who appears to be working in the UK....The Internet is pretty amazing.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">40</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">September 19, 2008 at 10:33PM</span>
+            <div class="reply-content">Were we not the coolest--And look what happened to us--I feel blessed by my timing of the experience of THE FAIRE
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">41</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">September 19, 2008 at 10:21PM</span>
+            <div class="reply-content">Sylvia, thank you for remembering those folks for me. I always love Amy Farrell and her lesbo-cowgirl thang she used to do. And Dena....Jeeze, she could pitch it across a crowd, pull focus, and hold it like nobody&#x27;s business. Dana looks EXACTLY the same. She and Gregg Davies (who used to love to dress as a girl, and Liz Meechem (another washerwoman and the Faire&#x27;s first bona fide punk rocker in 1978) used to live together in SF with rabbits. Next time I see Dana on the street, I&#x27;ll send her your &quot;hellos.&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">42</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">September 19, 2008 at 09:26PM</span>
+            <div class="reply-content">Amy&#x27;s last name is Farrell, I brought her to the faire from my high school drama dept. Dena Gornick a wonderful actress, and OMG what projection! I discovered her at the washerwoman&#x27;s workshops at RPFS and cast her as the fisherman&#x27;s wife in Story Theatre when Althea Krim got too busy in the prop dept. to do it amymore. I also remember Dana, now that you mention her, but don&#x27;t know her last name.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">43</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 19, 2008 at 05:26PM</span>
+            <div class="reply-content">you are still my priss
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">44</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">September 19, 2008 at 04:44PM</span>
+            <div class="reply-content">and don&#x27;t forget that many quilds and gigs sprang from Mongers humble beginnings--example--Pie powder Court--?Puritans--etc.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">45</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">September 19, 2008 at 04:41PM</span>
+            <div class="reply-content">Yeah I forgot to add the crowd control thing--that was our main purpose. And yes I remember Donna going in and out of Court and Mongers--and was it Maggie--too! My character Priscilla Edwington Farmer Banger--followed me for years--doing Monger&#x27;s-Dirty Street fights with Carolyn Schultz-(very popular)--
+to being featured in the opening of Faire commercials for several years--to herself--Prissy-- was cast in bit&#x27;s with the Lord Mayor and Sir Francis Drake in the the Noon Show and the Mayor Show.
+Kept the character after I switched to the Beverage Dept. As a matter of fact I made my Dicken&#x27;s Character a descendant of Prissy--as the Cook in Fezziwigs.
+Occasionally even now I run across someone who remembers me only as Prissy
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">46</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 19, 2008 at 04:31PM</span>
+            <div class="reply-content">yes glad was fishmonger, and then when we worked out st pauls...thieves guild with Tim then I took over for a couple of shows. It was a good gig because it was a &quot;stock&quot; character, so you got a seat on the bus, plus food tickets plus a small paycheck.
+I forget that guy Tims last name however he went on to also create the town criers which were very cool.
+my very first show as monger I was the bead seller talimain, sisters in tow.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">47</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">September 19, 2008 at 03:40PM</span>
+            <div class="reply-content">I was looking at some pictures of the Faire down in Irwindale and lo and behold, there was Ritchie. With a fiddle. Looking great. So I was thinking of him. The other person I remember was Janet Beckerman (redhead, loud voice, hysterically funny) and a gal named Eleanor (there&#x27;s a picture of her in Catt&#x27;s photos). Eleanor was much more serious, with a dryer sense of humor, but I believe she used to hang out with Sally Scheider.
+I remember Sally very well because she would alway torture the Earl of Lennox with particularly nasty things, and I&#x27;d torture her back by acting very, very interested in purchasing, rather than being disgusted. It was soooo much fun.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">48</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">September 19, 2008 at 03:32PM</span>
+            <div class="reply-content">Catt was there at the beginning of the Mongers.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">49</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">September 19, 2008 at 03:30PM</span>
+            <div class="reply-content">Black Guy Who Used To Play Fiddle :
+Ritchie van Healey. He has friends up here in Butte Co. and I see him every once in a while.He still plays the fiddle!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">50</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">September 19, 2008 at 03:26PM</span>
+            <div class="reply-content">Sally Schneider was also a monger (of squid and octupus if I recall), as was the black guy who used to play the fiddle.
+There was a lot of tooing and froing between Cutherbert&#x27;s and the the mongers and folks would do multiple gigs during the day. Donna Moran, for instance, would go from Court to mongering and so on. During the tough times (1978) Court folks were required to re-suit up after progress in something else and work the streets. You were not allowed to get into civies and hang.
+I, too, haven&#x27;t thought of Lincoln in years. Also, there was an African-American chick named Dana (I still see her in SF downtown every once in a while) who was friends with Liz Meechem (washing well with Amy, the lesbo cowgirl, and that other wonderful woman--Deena Gornick???-who could wiggle her breasts independently!!!!) And for a big ol&#x27; &#x27;mo like me to remember that, it must have been noteworthy. These were the good things about 1978.....
+This was long before everthing got so codified and stratified and people cross-worked various shows/gigs all day long.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">51</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">September 19, 2008 at 03:07PM</span>
+            <div class="reply-content">Glad WAS the fishmonger...the mongers began life as crowd control for a swordfight show in 1978 ( Counterpoint, RPFS, costumes by Yours Truly), and then took on a life all it&#x27;s own.
+Glad was the director of both , as well as the nastiest fishmonger I had ever known.
+Lincoln was involved with the Childrens&#x27; Dell when I first met him...oh long about 1974-&#x27;75.
+I miss Glad.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">52</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">September 19, 2008 at 08:57AM</span>
+            <div class="reply-content">OMG Yes, Lincoln Spector now there&#x27;s a name that hasn&#x27;t crossed my consciousness for a few decades. I thought Glad was the fish monger, at least in the begining.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">53</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">September 19, 2008 at 04:55AM</span>
+            <div class="reply-content">Lincoln Spector? right?
+There was another women slighlty large?
+Rob Landisman--long blondish total hippie
+for food tickets no less--you were special if paid..
+Do you remember our wares--me sausage--
+You were fish?? waht Years--Just remember dimly
+taking breaks under mainstage--because it was cool there
+My costumes were completely wrong back then.
+Cardiac Hill--At some point Binky at back gate with huge Mohawk
+-and the guy who sold buttons--with slogans
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">54</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 18, 2008 at 06:03PM</span>
+            <div class="reply-content">also
+Donna Moran
+Catt Avery
+Lincoln the sand seller
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">55</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">September 18, 2008 at 04:46PM</span>
+            <div class="reply-content">Early Mongers
+Glad Pickering
+Tom Pickering
+Vicky Nebeker
+Cora Steinberg
+Caolyn Schultz--later director
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">56</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 17, 2008 at 03:17PM</span>
+            <div class="reply-content">Thats true about Chris Hartman, Ed Holmes worked with him in Antenna theatre right before he got hired into San Francisco Mime troupe (where he still directs and acts).
+Thos performances deeply influenced me as a kid. The one where the giant cries a giant crystal tear and then his heart goes to the other giant...dim memories.
+Don Jon...we need more on him.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">57</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">September 17, 2008 at 10:06AM</span>
+            <div class="reply-content">Thanks Noel, for helping to fill in the blanks. Yes that parade was very dark! and yes Sam &amp; Tracy were involved. Did Sean mention that we were in the same High School Drama class?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">58</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">September 17, 2008 at 06:06AM</span>
+            <div class="reply-content">Sylvia, you are, as usual, correct. According to Sean Sharp, who was there, Duffey&#x27;s initial foray was indeed in 1974 as a middle-class (and well-meaning) group who chose to entertain the Queen. This morphed into a Court gig in 1975 (Southern) and the rest, as they say, is history. By RPFN 1975, Duffey, et al. were in full spring, and I was hot on their trail.
+Sean was also in that early (1974) penitents parade (a sort of precursor to Danse Macabre), as was your friend Barry (who&#x27;s in one of your pictures) and David Springhorn, with his face &quot;trussed up like a roast&quot; (according to Sean). That parade was TRULY frightening (very Ken Russell/The Devils/Marat Sade OTT) and I think Phyllis &amp; Co. pulled it for being way tooooo dark. I think Samantha Johns and Tracy Zimmer might have been involved, but I was just a geeky, map-passing youngin&#x27; in those days.
+And to fill up a post earlier upstream, I believe that the Chris (puppeteer) was none other than Chris Hartman from what turned into Antenna Theater (passed in Sausalito and big in the later 70s for installation/headset/puppet/environmental theater things. I remember going to some during punk rock in the late 70s in SF. Very arty and very fun.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">59</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 17, 2008 at 03:09AM</span>
+            <div class="reply-content">tr
+thats definitely ringing some bells.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">60</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">September 17, 2008 at 01:37AM</span>
+            <div class="reply-content">Actually, Duffy&#x27;s court began as a middle class to address the fact that most at the faire were peasants. This was also the beginning of the 1st Guild, St Cuthbert&#x27;s (Mastered by Don Jon), as the middle class were required to march in the parades.
+It may have been the very next faire or year that Duffy&#x27;s troop went upper crust.
+I also have a very fuzzy memory of Duffy directing some sort of Death/Penance parade/pagent???
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">61</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 17, 2008 at 12:44AM</span>
+            <div class="reply-content">tracy bush on tribe:
+Re: St. George &amp; Court - Northern Faire - Fall, 1987
+Tue, December 5, 2006 - 9:35 AM
+Nelson Snook was Sir George Carey
+Rory was Peregrine Bertie, Baron Willoughby D&#x27;Arsby
+Robin was Gilbert Talbot
+Mark Donnelly was Sir John Harrington
+William was Steven Worthington, Groom
+Jay Stone was ... something Stonecastle, Groom of some sort.
+Bill Batty was Daniel Weaver, Groom
+Paul Donnelly was Sebastian Greentree, Groom
+I was James Fletcher, Groom
+James Myers was Jamie Crawford, Man to the Sussex
+Kathleen Myers was Emilia Bassanio
+Lester Slusser was Sir John Fortescue
+Tom Willey was Sir Martin Frobisher
+Robert Young was Sir James Melville, Ambasssador to Ireland, I believe
+Gretchen Heinrich - dont&#x27; remember character name
+Andrew Small - Earl of Bath
+Pamela Small - not playing Baroness Willoughby D&#x27;Arsby yet, a lady of some sort.
+PJ Lacy - don&#x27;t remember the character name, keeper of the keys to the spice chest for Lord Burleigh.
+Mychalene was Douglass Howard, Jane Xavier was Francis Howard.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">62</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 17, 2008 at 12:41AM</span>
+            <div class="reply-content">Roll Call of the Ages....
+topic posted Fri, December 1, 2006 - 3:58 PM by Noel on tribe
+I&#x27;m floating this out there. Let me know what y&#x27;all think.
+Given that history seems to belong to those who write it down (whether or not it&#x27;s true seems, at times, moot), I thought it might interesting in this Alumni Tribe to post a roll call of sorts. Rydell&#x27;s post in my Phil Robledo thread got me thinking seriously about this.
+There seem to be lists out there. As we all get older, and busier, and fuzzier, it would be nice to not have to reinvent the wheel each time we think about taking the old memory chariot out for spin down memory lane (like that extended mixed metaphor?)
+I started keeping a &quot;list&quot; about 10 years ago when I realized I was forgetting more than I was remembering. It&#x27;s worked (to an extent), but it might be nice to have something for this particular group of lunatics to refer back to. St. George uber alles.
+No contention, no grandstanding, no flaming. I&#x27;m seeing a year by year, by Northern and Southern, sign in sheet. Each of us has very strong (and oftern different) recollections of what was what, but we all might be able to agree to disagree about who was where and when.
+The numbers won&#x27;t be that large (there were never that many of us Georgians and Proto Georgians) and I&#x27;d like to keep it as apolitical as possible. None of that &quot;they did this to me, or not, or whatever.&quot;
+If anyone&#x27;s interested in this this, post here. This is will be a collaborative effort (&quot;Do you remember that guy with the glasses....&quot;) and a communal one. We can build it ourselves and just sort marvel at it as it develops. Recall lost friends. Honor them.
+As Dido sang, &quot;Remember me, but not my fate!&quot;
+Gail and I (and Donna Moran if she&#x27;s still here and Bruce Roberts) are uniquely situated to list the Oldest of the Old Guard (1974 or 5 to 1979). After 1979, I&#x27;m out of the picture.
+I&#x27;m not sure what the drop dead date would be (it gets political there), but I&#x27;d leave that open for discussion with those who were there. I wasn&#x27;t.
+I&#x27;ve been thinking about this for quite awhile. It first raised it&#x27;s head when I started reading about punk rock and found that my history had been co-opted by folks who I don&#x27;t even remember being there.
+It came up again for me when my honey Brandon was watching the Cockette movie. He turned to me and said &quot;Those people weren&#x27;t really Cockettes--they were just hangers on!&quot; I just had to laugh. Everyone gets so exclusive, but I think there&#x27;s plenty of room for everybody, just so long as we keep it civil.
+So, what do you think?
+As I say, I&#x27;ll take a crack at Northern 1975 (I&#x27;ll need a lot of help here) and then 1976, 1977, 1978, and to some extent 1979.
+Be rigourous with yourselves. Check it what you think you know. I&#x27;ve been shocked at something I thought I was certain about turning out to be completely, totally wrong. It&#x27;s very humbling.
+Noel Gieleghem
+Earl of Lennox (1976-1979)
+I&#x27;m going to keep soldiering on here for a little bit, although I suspect this may be classed as a &quot;vanity&quot; thread on my part.
+In other words, yes, I know this is all about me and my skewed perceptions, but I&#x27;m making my obsession public as perhaps my navel-gazing might be of interest to others for hysterical purposes.
+Everytime I read &quot;official&quot; Faire history (I just made the mistake of reading some of Phyllis/Paul cross-posting and it seemed a tad self-serving on everyone&#x27;s part), it&#x27;s usually so biased that it makes me gnash my teeth.
+By list-making publically (and collaboratively--thank you for your excellent input, Gail), it makes filling in the canvas a bit easier and, I hope, paints a truer picture.
+All of this doesn&#x27;t really mean squat diddly to anyone else but me, but I find it a fascinating exercise in memory and rememberance, sort of public hypnotherapy or regression.
+Again, I kick myself for not keeping my journals and not having more pictures!!!!!!!!
+I think I have Fall, 1976 worked out sufficiently well that I can &quot;work&quot; it as a matrix for 1975 (Gail, you&#x27;ll have to help me here as Spring, 1975 was the era of the not-quite-hostile take over by Patrick, et al., of the Court after his initial test flight of the Earl of Oxford at Northern, 1974. I know he deus ex machinaed his way into Southern, aided and abetted by Peg, did his turn on the stage, and then vanished into the mists of time.)
+That period (1974-75) is truly the Ur Court (a branch of Duffi&#x27;s dance show - wish I had more of that history, but I was a fraidy-cat 16 year old at that time and much too terrified and awestruck to ask any questions).
+Specifically re Fall, 1976, I don&#x27;t recall Bruce Dick that first year. Definitely @ Southern in 1977 (I have photos)
+St. George &amp; Court - Northern Faire - Fall, 1976 (12-05-06, 7:03 AM - Version 6)
+Alice (last name? Olson) - (Lady Hundston, playing her very old and crochety)
+Andrews, Silas (playing? he was a manservant) (part of Duffy&#x27;s cadre)
+Ayer, Hillary (? not sure - she&#x27;s not in the pictures, but was definitely at Southern 1977)
+Bradley, Aurie (who did she play? - a dancing goddess!)
+Bigglestone, Janet (Lettice Knollys) (aka Janet Winter) (another costumer)
+Breckenridge, Kate (?) (Attendant to Lady Huntingdon)
+Breckenridge, mere (Blanche Perry)
+Callicott, Gail (Lady Huntingdon) (Southerner - stared the whole Court thing really)
+Duffy, Patrick (Edmund de Verre, Earl of Oxenford) (one of the moving forces)
+Evans, Lee Evan (Countess of Warwick in a Kelson costume - worked LHC info)
+Fletcher, Kathryn (Lady in Waiting to Lady Lennox) (my high school chum)
+Gieleghem, Noel (Charles Stuart, Earl of Lennox) (yours truly)
+Giampaoli, Mychaelene (PA to Lady Ann Vavesour) (Ian of Clan Colin&#x27;s step daughter)
+Grignachei, Julie (?) (very tall, later hooked up with Michael Parvin - lived together in SR)
+Harper, Phillipa ( playing??) (student of Pam Phelan)
+Johns, Samantha (Lady Ann Vavesour) (friend of Duffy -incredibly nearsighted!!!!)
+Kelson (Duffy&#x27;s costumer extraordinary - would hang at Court - He and Don Jon.....)
+Lagle, Kristin (Elizabeth Cavendish, Lady Lennox) (we still lunch every Thursday!)
+Long, Peg (Her Maj in a white dress and dreadful crown)
+Moran, Nancy - (playing ? in a scary dark wig)
+Morgan, Susan (Lady Mary Sydney, the younger)
+Olson, Karen (playing???) (Pam Phelan&#x27;s student)
+Orser, Aaron (page at large) (Gerry Orser&#x27;s son)
+Orser, Sterling (page ot Earl of Lennox) (Gerry Orser&#x27;s son)
+Aaron &amp; Sterling&#x27;s Dad (name???)
+Parvin, Michael (Sir William West, later Jean de Simier, le petit singe, with a huge, floppy cavalier hat with a white plume!)
+Phelan, Pamela (Lady Deveraux? - living with Dave Swan at the time)
+Roberts, Bruce (Lord Derby) (Bruce, were you there in 1976 - you were there in 1977)
+Serpent (Aristotle Bruin) (spouse of Kathy/Baisa?)
+Springhorn, David (Christopher Hatton) (in a Kelson costume)
+Swan, David (Sir Philip Sidney) (later drifter to Oak, Ash &amp; Thorn, where he remains)
+Walrobenstein, Jay (Oxenford&#x27;s barber surgeon - not yet a noble, Duffy&#x27;s mignon)
+Wright, Bob (Lord Burleigh) (Southerner)
+Wright, Margaret (Margie) (Kat Ashley) (Southerner - my evil queen!)
+Zimmer, Tracy (Lady Burleigh) (lived at Greyhaven, part of the Zimmer-Bradley crew)
+Zwiefler, Stefan (Lord Hungtindon - and he didn&#x27;t like me one little bit!!!! says Noel LOL)
+The two horsewomen (in think they were a couple) who managed the Percheron which Peg rode (shudder–that horse was a nightmare!)
+Oak, Ash &amp; Thorn (Doug, Dale, and Tom) were always hanging out at Court in those days (Alice/Doug connection, Parvin would sing with them, as would Dave Swan, eventually) in funky costumes. Kelson later made them much nicer drag (1977 or 1978????)
+I believe in 1976 Patrick Porter and Luisa were doing the Il Principe thing (I have to check my notes from Luisa and Patrick), which was sort of an adjunct. Michol was hanging with them and the two groups (Court and Il Principe) used to swirl about each other.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">63</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 16, 2008 at 04:39PM</span>
+            <div class="reply-content">yes i think thats them.
+There was a huge audience standing all in the street behind the main stage backstage area, and all up on the hillsides and in the lanes leading through. When that chrystal tear went down it glinted, and you could hear the whole crowd give a huge collective sigh.
+It was big magic, the red curtain was so strong that you forgot where you were...what you were doing...if you were human...what was in your hands.
+the only thing you could remember was your own heart.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">64</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">May 16, 2008 at 02:39PM</span>
+            <div class="reply-content">Yeah, that crystal tear was big magic. I heard that those folks were a spinnoff from the famous early politico-spiritual, performance as ritual group, Bread and Puppet Theater. (?)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">65</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 16, 2008 at 03:15AM</span>
+            <div class="reply-content">i remember giant puppets and a story and one of the big puppet guys had a crystal tear fall from his eye, and one gave his heart on a string to a giant puppet lady
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">66</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 16, 2008 at 03:05AM</span>
+            <div class="reply-content">Hmmm... different puppets.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">67</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 16, 2008 at 02:44AM</span>
+            <div class="reply-content">Yes! Chris Hardman (spelling may be wrong, could be Hartman or something else similar) and company.
+At RPFS&#x27;72 - 74 the puppets were intermixed with live actors to do a fantastic and utterly *weird* pagan vs church Spring Pageant. Lot&#x27;s of drums, &#x27;native&#x27; pipes and whistles, 16th C wind instruments (think that was the first time I ever heard a shawm, etc.). WONDERFUL!
+Oh! My &#x27;Little Chef&#x27; Anton, is telling me that dinner is ready. Will post more anon.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">68</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">May 16, 2008 at 01:33AM</span>
+            <div class="reply-content">I remember them in the north. The director was a guy named Chris, don&#x27;t remember his last name, but he had a shop (home?) in Sausalito. I auditioned once in &#x27;73 or &#x27;74 to work with them, anything to get a paying gig at faire, but didn&#x27;t get the job.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">69</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 15, 2008 at 07:50PM</span>
+            <div class="reply-content">...&#x27;74 ? That sound about right. I was still in high School then, and LIVED for my Faire weekends.
+We must have started about the same time, Luisa.
+Do you remember the street show with the 16 - foot tall puppets ?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">70</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 15, 2008 at 06:24PM</span>
+            <div class="reply-content">Ooooh, good question, Morgan. IIRC Theme Events got a liquor license fairly early (sometime in the 1960&#x27;s, before I ever started working Faires).
+However, also during the late 1960&#x27;s (or possibly early 1970&#x27;s), there was the infamous Mrs. Walter Brenden fiasco, where Ms. B (I *think* a resident of Lake Malibu, just down the road on Cornell a short way) objected to County Officials about the &#x27;drunken and drugged&#x27; crowds emerging from the Faire.
+This complaint led to an equally infamous video tape (or actual film footage) of a rather young female who *looked* totally out-of-it while at Southern Faire, and also *looked* like she was both under-age *and* was holding a suspicious bottle that suggested she as a minor who had been &#x27;served&#x27; alcohol.
+That footage then became the justification to revoke the liquor license, and just about cost Theme Events the possibility of being shut down entirely.
+Fortunately, no one could *prove* anything about the image, the girl&#x27;s *actual* reason for &quot;wild&quot; behavior or even how it was that she had that bottle in her hand in the first place. Theories abounded that the entire scene was a set-up, and/or that the girl was handed the bottle *by* the folks shooting the footage.
+Anyway, that *did* cost TE the right to sell liquor for several years, seriously impacting Faire income, and it wasn&#x27;t until RPFS&#x27;74 (the third Faire I ever participated at) that Theme Events got a *partial* liquor license again.
+The partial, or restricted, license meant that each Ale Stand had to have a visible and physical barrier around it in which adults could purchase *and* consume alcohol beverages. Guards were posted at the exit of each &#x27;Ale Garden&#x27; (defined by a large circle of hay bales) to make sure that absolutely NO beverages were consumed outside of the legal boundries of the license.
+I *think* that meant that Ale stands had actually two working sides, ie, for non-alcoholic beverages, one could go to an &#x27;outside of circle&#x27; side, purchase whatever, pay, and just walk to where-ever to consume it.
+However, I&#x27;m not sure that system was all that obvious to a lot of customers, so I don&#x27;t know how that may have affected over-all sales.
+The other drawback was, if one did indeed purchase a beer, or whatever, inside the legal &#x27;ale garden&#x27; then one was &#x27;trapped&#x27; until drink was consumed. So if one was a participant on a schedule, one could find oneself having to &#x27;knock back&#x27; a beverage faster than what would be prudent, and then ... ak-BOING! Instant &#x27;fuzzy head.&#x27; Same thing for ale customers. Either they were away from the shows and/or they just got drunker faster.
+Of course this doesn&#x27;t answer your question at all, does it?
+Any old time beverage folks on the teahouse list? Yoo-Hoo? Any help you can give us here?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">71</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 12, 2008 at 02:26AM</span>
+            <div class="reply-content">What year did Theme Events get a liquor license ? I vaguely remember that pre-alcohol era,and the hoopla when they got the license, but I have no memory as to WHEN it actually occured.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">72</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 01, 2008 at 05:54PM</span>
+            <div class="reply-content">from the foolslist-jolly roger writes:
+nd I remember my first Northern booth. in 1970 Verna Pedrin was the Games Coordinator. (a wonderful woman who put up with a lot of nonsense and adjusted many things to make her
+dept. work well). I had a space in the front (the flat area near where the market cross ended up)
+And this wild guy , Willie Brewer, had &quot;Hay Toss&quot; way in the back (near the Ale Stand in front
+of Barbara Butcher&#x27;s). He wasn&#x27;t doing so good, and I only needed the flat area at night
+(for Clench-A-Wench). So Verna introduced us, and asked if I would be gracious enough
+to switch spaces with Willie.
+We did, and as we were both living full-time on the lot, Willie became my older brother. He
+taught me many things about style and conserving that I use to this day. I miss him a lot.
+It was also a time of great IDEAS and PLANS! Willie and I and Theryl Ryan would sit
+at the waffle booth (I think that was it. Built in and around a big tree. Desmond?? was
+the owner). We had decided to build a wonderful permanent village that the Faire could
+wrap around each year. We had figured out how to do it. And all we needed was
+permission. (Willie had several ideas about where to get the concrete and stones from.
+And I knew where to get lumber.) Phylis passed on it. Said she wanted to change the
+faire each year. [We should have got wise then, but we were having too much fun.]
+In those days, Claus was still making and selling Toads, there was the authentic PorkPie
+booth (shut down after leaving all the cases of porkpies out in the sun all week). Micheal
+Vengihatis and Susie made Quiche and Coquille San Jacque (terrible spelling) fresh
+all day long. Carl Arena was El Capitano (in the commedia&#x27;s), Hay Toss made money,
+and the Faire would live in that spot forever.
+things change. And still some of us continue.
+jolly roger
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,2502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite RenFaire Sensory Memories? - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Favorite RenFaire Sensory Memories?</span></div>
+            
+    <div class="module">
+        <div class="module-header">Favorite RenFaire Sensory Memories?</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Eric Lethe</span> | <span>January 06, 2008</span> | <span>190 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (190)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">[2uqv0xae7cpcv]</span>
+            <span class="reply-date">March 27, 2011 at 09:21PM</span>
+            <div class="reply-content">I agree, the last grand ring out at Agoura was indeed a spiritual moment in history that resounds in our souls for all that were there
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 01, 2010 at 10:07PM</span>
+            <div class="reply-content">yeah I used to do that with the kids on really long drives...like so hum to camarillo for the parental visit twice a year. The kids only spent a couple seasons out there however i think to them it feels more like they grew up there because I used to take them there so often in their minds that way. A great diversion and many curious tales.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">[tihrvb7lyzv9]</span>
+            <span class="reply-date">February 26, 2010 at 04:21PM</span>
+            <div class="reply-content">in the fox hole of my passed in rain,snow or staggering heat i would get my men comfortible and tell them stories of the &quot;valley where the beer went begging&quot; i could take them from the hole to the valley and keep them there for hours. at the builds red ,i and some others play walk up the valley in year____. we wlak up the valley and decribe the booths and folks that were there that year.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 25, 2010 at 10:42PM</span>
+            <div class="reply-content">yes I am still there often, with those same sounds and sights of progress.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">February 25, 2010 at 08:32PM</span>
+            <div class="reply-content">God bless you Rydell for wonderfully placed words. I occasionally have to drive by the site in my adventures. And I am tempted to stop at the side of the road and just look into the horizon and allow the spectors in my memory banks to materialize. From afar I see the building where I became a designer in the middle of a cow field--Still there--and the Ant Farm building also where Scenic and Prop Magic flourished. The Ghost that looms huge and large in my head is that of the Red Barn and a feeling of being proud of being a part of it all.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 25, 2010 at 06:58PM</span>
+            <div class="reply-content">Yes, as do we all!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">[1k7yfe86iwp1h]</span>
+            <span class="reply-date">February 25, 2010 at 05:45AM</span>
+            <div class="reply-content">I&#x27;m unable to be in an oak/laurel forest and not be brought back to BP. The scents are embedded deep in my memory.
+Because I was in countless progresses and Queen&#x27;s Shows, I can hear the sounds that accompanied them as if I were still there. The drums and bells and dialogues and the voices of the principals are still clear to me. If I were in a coma, all you&#x27;d have to do to revive me would be to shout &quot;God save the Queen&quot; and I&#x27;d sit bolt upright and reply.
+In my imagination I walk the sight and can still see, hear, smell and feel it as if it were all before me. The smell of burlap and freshly watered dust. The feel of the wind kicking up in the late afternoon, blasting adobe dust in my face as I squint my eyes against it. And the following cooling fog.
+Thinking about this is making me a bit misty.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">[b5s6ko7u0ug7]</span>
+            <span class="reply-date">February 22, 2010 at 07:33PM</span>
+            <div class="reply-content">I too heard the great &quot;Pig of Pig Gulch&quot; was alive and well and stashed up on grey barn hill near the end of Blackpoint. Never made it up there to see it. Having grown up with it&#x27;s legend, I would give my eye teeth for a photo!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 21, 2010 at 10:09PM</span>
+            <div class="reply-content">I probably saw the effect in the magic privy and never understood what I was seeing. One of my Profs in school Dr Sheila Ross the art historian taught that Carravaggio and Artemesia Genteleschi used them to create some of the larger more dramatic paintings at the start of the Italian Rennaisance in Northern realms.
+Interesting that you have seen the effect in costume heads as well.
+I always liked being up top of main and watching the designs and patterns that the dancers and actors would make on the stage below.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 18, 2010 at 09:01PM</span>
+            <div class="reply-content">Kear is in Monte Rio
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Jacques (Jack) Tate</span>
+            <span class="reply-date">February 18, 2010 at 06:45PM</span>
+            <div class="reply-content">Now, for me, the magic privvy was the first one on the first bank of privvies after entering the Blackpoint lot. I discovered it the summer we built the Drake Show. Late in the afternoon, there would appear a Camera Obscura, a pinprick of light from behind, that would show, ostensively, a color movie of what was going on behind the privvy wall, broadcast onto the door.
+It wasn&#x27;t the only Camera Obscura on that lot, either. I happened to be riding, one day, in the back of a container truck (not the least bit legally) back toward the Novato shop. Not having a whole bunch to do, I watched the light and shadows that a tiny hole in the top of the container was making. Suddenly, a flock of birds flew over the truck and I was shocked to notice that they were blue. As we passed the Red Barn, I noticed the green leaves&#x27; &quot;shadows&quot;, then the red of the Red Barn.
+Yeah, yeah, okay. There were a few sensory enhancers active in my life, but never at work &#x27;cause I was so paranoid about my hands and power saws, having had two bad meetings of those two elements earlier in my as yet young life. So, no, I wasn&#x27;t enhanced.
+So powerful were these two happenstances that I have been on the lookout for Camera Obsurae for the rest (so far, so what) of my life to date. I have found many more, most significantly in the bizarre costume heads that I wear professionally.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 18, 2010 at 08:02AM</span>
+            <div class="reply-content">The in-house keyword search app is in the extreme upper-right corner of every page in the teahouse. And what a fantastic tool it is! Knows and can reveal almost as much about us as Joe the bartender.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">[tihrvb7lyzv9]</span>
+            <span class="reply-date">February 17, 2010 at 11:15PM</span>
+            <div class="reply-content">just talked to liqd and he sez the kear has/had it. when the lot(BP) closed down it was just sitting there up at the grey barn so he took/rescued it. lq seems to think that venta might know where he is(kear)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 17, 2010 at 06:42PM</span>
+            <div class="reply-content">Ah, the Pig! I&#x27;d thought it was destroyed while I was still living on the Lot (with a forklift by an angry Kear one night when there wasn&#x27;t any propane for the showers because it had all been used up by &quot;hot tubbers&quot;)...but then somebody told me it had been repaired and was in use after my memory (which would have been around 1984). That&#x27;s all I know about it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 17, 2010 at 06:12PM</span>
+            <div class="reply-content">After some looking around (this site needs a keyword search app!) I figured this might be a good place for this question (since it was sparked by LV&#x27;s Facebook post comments on walking through the lot at night with someone special). What ever happened to the steel pig hot tub?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">[3rz3dskepkuut]</span>
+            <span class="reply-date">November 30, 2009 at 04:59AM</span>
+            <div class="reply-content">At Renaissance Faire, I miss &quot;Il Salami dell&#x27; Amore&quot;. At Dicken&#x27;s, I especilly miss 2 songs, &quot;When Father Papered the Parlour&quot; and I think the other was &quot;Damn Me Eyes&quot;.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">[12nlp8yxz3ul8]</span>
+            <span class="reply-date">August 31, 2009 at 02:27AM</span>
+            <div class="reply-content">I have strong recall for the bay leaves and the fresh damp smell, too. My favorite memories are of the mornings (at Blackpoint) before the faire opened. I loved how it looked like an authentic shire waking up in the morning. Folks getting their shops ready, etc. I was a stage manager, so that meant sweeping my stage. I loved to quietly sweep my stage. It was so peaceful. I also recall the great brekfasts I would have at the faire.
+I miss those mornings...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 25, 2009 at 02:36AM</span>
+            <div class="reply-content">At Agoura -
+* taking a shower late at night with the stars and moon as my only companions
+* the quality of the heat there was almost caressing - yes, it got very hot, but it seemed to touch the skin lightly
+* aromas - oh, gosh. Turkey legs as they cooked, the smell of the dye vats, the early-morning wet hay-bale scent
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">March 25, 2009 at 08:48AM</span>
+            <div class="reply-content">yes you did,and that&#x27;s a suckling pig as I&#x27;m sure you are aware.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">[26kgu3wb8vyq7]</span>
+            <span class="reply-date">March 25, 2009 at 05:07AM</span>
+            <div class="reply-content">I never knew you were a young pig...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">March 21, 2009 at 01:00PM</span>
+            <div class="reply-content">shoat... a young pig..but not a piglet...the rings were to stop excessive rooting..
+never worked on me..especially around burlap queens
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">March 21, 2009 at 12:56PM</span>
+            <div class="reply-content">yes yes yes...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">[26kgu3wb8vyq7]</span>
+            <span class="reply-date">March 20, 2009 at 10:28PM</span>
+            <div class="reply-content">I know the rusty red that you speak of...fond memories and me go ...way back
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 20, 2009 at 02:47AM</span>
+            <div class="reply-content">The crew singing &quot;Whistle while you work&quot; as they were hammering away on an Ale Stand!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 15, 2009 at 02:36PM</span>
+            <div class="reply-content">yesterday there was a piece of crystal from the agoura lot, right in my path again and again. a little pixie lump of quartz crystal that I found in one of the magic spots. Its stained a rusty red the way the lot crystal was sometimes. I have it here in plants and pots and tucked around there was so much of it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">[2bxg1pa0vr8c7]</span>
+            <span class="reply-date">March 15, 2009 at 08:32AM</span>
+            <div class="reply-content">Once upon a time...before houses were built and some trailers still existed my good friend Jim Hayes and I took a walk into the Black Point forest on a beautiful winter day. He said to me if you look for round objects you might just find coins that are worth money. The rains had come and washed through the valleys and things had been uncovered. Recently I found myself walking in the woods and decided to seek out round objects on my walk. I never found anything round but smiled at the thought of our past walk through those wonderful woods where I once felt so safe and secure. I drove by those same woods today and was so thankful that a huge part of those woods still exist as they once were. I can only hope that the wild life that still lives there can live on and never be invaded on by humans. One can only hope.
+My friends and I have had many discussions about winning the lottery and taking back Black Point Forest and making it our own again......It&#x27;s so much fun to fantasize.... But what if really.....and the discussions/fantasies go on......and on and on.....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">Richard Beard</span>
+            <span class="reply-date">March 15, 2009 at 01:22AM</span>
+            <div class="reply-content">Orzan was an aliphatic resin powder, synthetic wood &quot;rosin&quot;, with the happy attributes of cheap and effective. When dry the roads were hard as timber. The devil&#x27;s bargain was it&#x27;s water solubility. Add rain or water-truck and you had instant adobe, complete with straw tred into it. To be fair, we did snake a bag or two for props to use making daub and wattle, it was born for that! The agricultural suppliers had a simple solution to the dilemma, &quot;Stay off when wet&quot;. Mac probably found the stuff where-ever he got Anabol.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">[3cxf25rtxlt8k]</span>
+            <span class="reply-date">March 15, 2009 at 01:20AM</span>
+            <div class="reply-content">And here most of us were insinuating there were turkeys, we had so many of..........
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">29</span>
+            <span class="reply-author">Richard Beard</span>
+            <span class="reply-date">March 15, 2009 at 12:30AM</span>
+            <div class="reply-content">Theryl was very proud of a letter we once received from Hill, the company that manufactures the best hog rings. After placing our usual bulk order with them, the follow-up thank you note from them said &quot;you people must sure have a lot of hogs out there in California, you are our largest account!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">30</span>
+            <span class="reply-author">[26kgu3wb8vyq7]</span>
+            <span class="reply-date">March 14, 2009 at 07:46PM</span>
+            <div class="reply-content">The smells never so sweeet, as when accessed thru a stone, or a shower in the night air...I too could not comprehend the small space that was an entire universe housing all sorts of loving kindred spirits...I still have that piece of jade found on my walk home to camparee
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">31</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 12, 2009 at 05:29PM</span>
+            <div class="reply-content">it was an amazing chinese puzzle wasnt it? it expanded and became this huge place when we articulated the show there.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">32</span>
+            <span class="reply-author">[3hq0pujw9a5rv]</span>
+            <span class="reply-date">March 12, 2009 at 05:47AM</span>
+            <div class="reply-content">Christmastime (about fifteen years ago) I went back to the Faire site in Agoura. I was all alone, and standing on the road above the Drury Stage. Nature had taken over, and there was little to account for what had once stood. It all looked so small, and much too tiny an area to have held so many people, stages, booths, plus ten years of my life. I walked most of the paths, and tried to imagine what had been there - overcome with the same nostalgia that I&#x27;m feeling right now as I&#x27;m writing this. The aroma of the trees and shrubs were still there, but I really missed the smell of the ribs on the grill - my sweaty costume - the remaining scent of someone who had just hugged me. I came upon where the washing well had stood (which had been long gone). I dug around in the dirt and discovered the foundation was still there. I pried off a small piece of stone, which remains in my office to this day.
+Anytime I need to go back to the Faire, I simply put my hand on that stone.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">33</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 12, 2009 at 12:14AM</span>
+            <div class="reply-content">I was bored backstage, so I put on a short black wig for a while. Phyllis sat next to me &amp; didn&#x27;t notice me until I spoke to someone. Then she was looking around for me since she recognized my voice!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">34</span>
+            <span class="reply-author">[2b9fvunfove9x]</span>
+            <span class="reply-date">March 10, 2009 at 11:44PM</span>
+            <div class="reply-content">Sometimes people who didn&#x27;t know us would get Judy Drury and I mixed up. She was a coordinator on staff...either crafts or food? We used to smile to think that the Drury Creek stage, on the low road in Agoura, might have been named after her. ( Drury Lane Theatre in London?)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">35</span>
+            <span class="reply-author">[2b9fvunfove9x]</span>
+            <span class="reply-date">March 10, 2009 at 11:44PM</span>
+            <div class="reply-content">I remember that night show, Carolie...Patty was a great producer. I remember getting dressed with the other women putting on 1940&#x27;s dresses, Wearing pompadours, Joan Crawford lips, as we sang the Andrew Sisters&#x27; hit &quot;Bei mier bist du schoen&quot;. That was SO much fun..My disguise was effective, until somebody later said, &quot;Was that YOU Judy?&quot;
+Keny Millikan, Carl Arena and I did a fairy tale show where I played a witch. I painted my face white, and drew colored lines all over it...a red wig..I went all around the faire improv-ing with friends and nobody knew it was me.
+In another fairy tale, Carl played a spider, under a spell by a witch (Keny). Carl was tall and thin, in black leotard and tights. Doris Karnes make him wonderful eight-legs, that moved with him. He had no time to costume change, so at the end, when the witch&#x27;s spell was broken, he changed into an eight-legged prince!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">36</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 10, 2009 at 11:03PM</span>
+            <div class="reply-content">Debbie Fishbach, Patty Farber &amp; other Golden Toad ladies singing Andrews sisters songs at a night show &quot;Fish&quot;!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">37</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 09, 2009 at 01:44PM</span>
+            <div class="reply-content">its pretty big.. we pay
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">38</span>
+            <span class="reply-author">[1vyj0on6r8dy4]</span>
+            <span class="reply-date">March 09, 2009 at 08:05AM</span>
+            <div class="reply-content">Uh...this will take a long time...how much storage is on this this Ning site anyway?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">39</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">March 09, 2009 at 05:08AM</span>
+            <div class="reply-content">Hey Laurie...don&#x27;t forget about those Privy Queen finds. Especially late in the day when folks had partied maybe a bit too much? I used to wonder how it was they didn&#x27;t miss those $100 bills rolled into little tubes ;-).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">40</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">March 09, 2009 at 05:06AM</span>
+            <div class="reply-content">Judy Drury was Crafts Coordinator for some years in the late 70&#x27;s to early 80&#x27;s.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">41</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 09, 2009 at 04:58AM</span>
+            <div class="reply-content">Judy drury...was she a washerwoman? that name is ringing bells
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">42</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 09, 2009 at 04:57AM</span>
+            <div class="reply-content">bob playing french tunes like a caliope set on fire...while wendy would keep steady time hauling the water wagon. jars in the window dripping.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">43</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 09, 2009 at 03:57AM</span>
+            <div class="reply-content">Amazing Grace being sung at sunset on the hill at RPFN. Judy Drury &amp; Jane singing in the talent show at the second annual Easter Bunny Barbecue: &quot;I know a dark secluded place, a place where no one knows your face, You knock three times and in you jump, You&#x27;re in a filled up Andy Gump!&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">44</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">March 01, 2009 at 04:18AM</span>
+            <div class="reply-content">&quot;Listening to the creaks &amp; groans of Mainstage [South] as folks were bouncing on and off ... wondering if it would last through the run ...&quot;
+That&#x27;s was especially interesting when my hooch was under Main Stage. The moans and groans were the same, but the wondering if would last when I was directly under it ... well, didn&#x27;t think about it much. It was a cool, if dirty, hooch.
+&quot;The soft murmur of conversations mixed with the smell of Turkish coffee at Don Brown&#x27;s at 5am as the world was beginning to stir ...&quot; and the wonderful, peaceful presence of Mary V. as she serenely but competently brought the coffee house up to speed.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">45</span>
+            <span class="reply-author">[1djvudwh2pik8]</span>
+            <span class="reply-date">February 28, 2009 at 05:46AM</span>
+            <div class="reply-content">Kind of a weird one, but here goes ...
+I had to go out to the site on a Wednesday evening after work, to get something, or drop something off - don&#x27;t remember. As I walked up to Main Stage, I realized that of all the sounds that I could hear, *none* of them was something I couldn&#x27;t have heard in the 16th century - it was very surreal in a way, but also very grounded. There were animal sounds, the birds, the critters at Sheep to Cote; someone was hammering, there were a few voices, though not a lot of people were there. It&#x27;s stuck with me, that memory.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">46</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 22, 2009 at 12:53AM</span>
+            <div class="reply-content">pretty sure it was richard beard or he would know.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">47</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">February 22, 2009 at 12:25AM</span>
+            <div class="reply-content">That&#x27;s brilliant! takes it to a hole &#x27;nuther level -
+I love that image!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">48</span>
+            <span class="reply-author">[qni6gmcenoxz]</span>
+            <span class="reply-date">February 21, 2009 at 11:44PM</span>
+            <div class="reply-content">I used to go through the magic privy on stilts both as a member of the bones band and as a separate character (this was before the bird). Additionally, I used to pretend I was going to enter any of the privies as if sitting that far down would be a possibility. Then I would say oops, no, can&#x27;t do that and leave with the audience probably wondering about a bunch of things. Never give the audience the answer to the questions. Does anybody know who made the magic privy? Easy to imagine the idea occurring to anyone on crew. Those were fun days. Creativity simply exploded into wild and crazy creations and events with that mixture of people.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">49</span>
+            <span class="reply-author">[7xc2nriojino]</span>
+            <span class="reply-date">February 21, 2009 at 01:16PM</span>
+            <div class="reply-content">It seemed like I was practicing all my life to get to the Faire and Sharon impressed on me the need for us to
+go there, to Agoura in April of 1977, as &quot;subbing&quot; Musicians for the Irish Dancers on the opening weekend.
+I got a kick out of that Quasi Modo/ Lepper guy with his begging bowl scaring the Public....what Laughter
+I had at his antics. Later, I saw a Tree turn to Gold as I played Music with Kathy and Jeremy, with Sharon singing
+&quot;Paddy&#x27;s Green Shamrock Shore&quot; with the the Half-long Pipes (bellows) and 2 Fiddles.....a wonderful Mystic
+Experience (by the way I never used LSD, and I don&#x27;t smoke, I don&#x27;t like Alcohol because I can&#x27;t play Music on any of it).
+While I was there, Ernie Caswell told me about the Faire in Novato in August/September, so on the way home,
+Sharon and I planned to play with Kathy and Jeremy at the Northern Faire and do stage shows under our band name
+&quot;Sheila na Gig&quot; ! I met all these wonderful Musicians: Roy Torley of &quot;Troika Balalaikas&quot;, Bob Thomas, Arrigo D&#x27;Albert, with his Vielle a Roue (Hurdy Gurdy) Bill Gilkerson on his Dudelsack,Tim Rued and his Nykelharpa, and last but not least, Drummer and Showman.... Ron Wilson. We&#x27;d play out in front as all the people
+went home, and get some more money out of the Party Goers....both Kinds of Participants paid and unpaid, costumed and un-costumed, that part of the Public that wanted to &quot;Get Off&quot;! We Pipers were all playing the Scots Pipes, with
+as many as 4 Pipers: Myself, Alan Keith, Kevin Carr, even Mickey Zekley one time. Ron was on his &quot;Swash&quot; (a Bass
+Drum with Rawhide heads). Assorted hand Drums: Sharon and Paul Ehrhorn on their Bodhrans, Tambourines, etc.
+Dancing and Dancing in 2/4 and 6/8 right into the night. After 2 seasons we were told we couldn&#x27;t do this anymore
+because of security........one guy said &quot;We gotta get these Turkeys off the Lot&quot; I said, &quot;Buddy, these &quot;Turkeys&quot;
+pay for your wages&quot; I might of been talking to a wall. Well we got away with having a Real Good Time for those 2 years
+1977-1978. I stopped being a paid performer, and just came by on various weekends and &quot;Busk&quot;
+I loved to come by on Labor Day Monday, which was more Fun, as I was &quot;Fresh&quot; when everybody else was &quot;Glazed Over&quot;
+A Picture in my mind just now.....The Dancers raising all this dust as the Sun goes down, and we are just Playing and Playing. Ray Strain doing Rebel yells in my ear, and him giving everybody big gulps of Beer from his helmet.....
+some people had tears in their eyes, to see such ENJOYMENT. White Guys who were doing American Indian-style Eagle dancers with little animal skulls strapped onto their foreheads acting &quot;Freaky&quot;
+Ron Green as PAN Sylvanus, dying and being resurrected by my Chanter on his chest......
+Oh My, will any of this ever happen, ANYWHERE AGAIN ? I HOPE SO !!!! SEAN FOLSOM
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">50</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 21, 2009 at 10:55AM</span>
+            <div class="reply-content">Rumor control:
+I&#x27;m afraid I can&#x27;t take the credit for either making or making up the brilliant prop known as the &quot;magic privy&quot;. Many are the happy gags born of it&#x27;s fertile interior, many the priceless faces of those who were in the right place at the right time to get a faceful of it&#x27;s splendor. It was just friggin good luck that it happened to be a blind stumble from the morgue. A more convenient and appropriate entrance facility for Bones could scarcely be imagined. The fragrance was a real mood-booster too. I like to think it gave us an air of authenticity.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">51</span>
+            <span class="reply-author">[2rwkjlvel97js]</span>
+            <span class="reply-date">February 18, 2009 at 03:49PM</span>
+            <div class="reply-content">I thought Orzan came first and Dust-off was the more irritating of the 2. Orzan was some sort of sap derivative and dust off might have had a more chemical make-up. any one out there know the facts?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">52</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 18, 2009 at 06:34AM</span>
+            <div class="reply-content">Was Orzan the same as &quot;Dust Off&quot; or were they different brands used at different times? I always figgered LHC stopped using Dust Off &#x27;cuz they were too damn cheap.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">53</span>
+            <span class="reply-author">[3cxf25rtxlt8k]</span>
+            <span class="reply-date">February 18, 2009 at 06:33AM</span>
+            <div class="reply-content">Until now, I had forgotten working at Steak on a stake. I also had forgotten how grateful I was for the one evening worth of work. Thanks Dave, where ever you are now.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">54</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 18, 2009 at 02:26AM</span>
+            <div class="reply-content">Catt, this post so reminds me of ice massages in the Halberdier Palace...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">55</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">February 17, 2009 at 11:36PM</span>
+            <div class="reply-content">That was always fun to see. I &quot;learned&quot; about the magic privy from Martin Harris.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">56</span>
+            <span class="reply-author">[b5s6ko7u0ug7]</span>
+            <span class="reply-date">February 17, 2009 at 11:25PM</span>
+            <div class="reply-content">Ah the Privy Queens, that brings me back to the &quot;Magic Privy&quot; in Blackpoint. Back when the privies were made of plywood and not plastic. In Privy Bank 2 in the center of the universe there was one privy that was always locked. I believe it was Greg Dana (daddy bones) who cut the back off and took out the tank. The back wall of P2 basically opened up into the bones band hooch. We would bone up and &quot;appear&quot; en mass out of the magic privie (someone would run around and lock it behind us). The look on the faces of the customers as 30 black garbed &quot;dead heads&quot; playing music and dancing materialized out of the privy bank with no visible means of entry was priceless!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">57</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 17, 2009 at 03:01PM</span>
+            <div class="reply-content">i got my pliers. also I have a shoat ring on a scarf that baby apol stole from me that was put there by a burlap queen as a love shoat. For the baby to have and play with.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">58</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 17, 2009 at 03:28AM</span>
+            <div class="reply-content">drinking daquiries in the heated iron pig.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">59</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">February 16, 2009 at 04:44AM</span>
+            <div class="reply-content">Playing music with Ronnie Wilson at the end of the day at the Front Gate and nearly missing the actor&#x27;s bus going south. Falling asleep in the Red Barn after furiously sous-cooking an elegant Saturday night dinner at Fiddling Will&#x27;s..
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">60</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">February 16, 2009 at 04:39AM</span>
+            <div class="reply-content">And...playing music with Leslie Cohen, Michael Collver and Kip Higgensen on the Actor&#x27;s bus..accompanying on the sopranino recorder Jay Cimo singing a twisted version of Star-spangled Banner at the back of the bus and everyone else screaming along with various orchestral parts..sitting quietly next to Patrick Porter at the very front of the bus, Patrick using the oncoming highway 5 car lights to illuminate shadow puppets which spoke only to me in the chairoscuro. Dundee egging me on to play a lively gavotte with a broad grin, and pretending he had something special dancing in his lap under a blanket.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">61</span>
+            <span class="reply-author">[3cxf25rtxlt8k]</span>
+            <span class="reply-date">February 16, 2009 at 04:32AM</span>
+            <div class="reply-content">You too huh. I may have replaced mine, but I think I have the set form doing the &#x27;Eat Shoats and Dye&quot; crew, Black Point 1984, or was it 85...... It was the year Gail got her toyo truck.
+I used that set to do the first &#x27;burlap&#x27; of the Loch Lomond Highland games, and Alex Mederios, who ran the Scots Camp, was sure that the burlap he donated that year......1996, was from the year I did crew. Gary Esser, rope walk guy, is still using the last tattered pieces of that at the 13th games last year.
+I&#x27;m afraid to smell the stuff anymore...... it&#x27;ll either bring back great memories, or rip my throat out!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">62</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">February 16, 2009 at 04:30AM</span>
+            <div class="reply-content">ahh, how beautiful that was. How exhausting, shlepping up that insane hill at 3am, and how very gratifying to wake up under the magnificent oaks! the ultimate slumber party.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">63</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">February 16, 2009 at 04:27AM</span>
+            <div class="reply-content">One of my gigs was playing at that old front gate. I&#x27;d pick out what I called &quot;Transition tunes&quot; to gently break through the fading sounds of water trucks, walkie-talkies..and then to sweetly seduce those early-comers into our world.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">64</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">February 16, 2009 at 04:19AM</span>
+            <div class="reply-content">Sitting with Wendy Newell and John Paul at Don Browns in the chill of twilight, both of them playing French tunes, guarding my wedge of haybale so I could keep close enough to memorize the music.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">65</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">February 16, 2009 at 04:12AM</span>
+            <div class="reply-content">I finally got a Makita..last xmas. Finally. Sometimes I just take it out and admire it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">66</span>
+            <span class="reply-author">[b5s6ko7u0ug7]</span>
+            <span class="reply-date">February 14, 2009 at 12:20AM</span>
+            <div class="reply-content">Swords that could have been forged 1000 years ago laying next to a battery powered blender.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">67</span>
+            <span class="reply-author">[1o1f61cl9xgq5]</span>
+            <span class="reply-date">February 07, 2009 at 06:08AM</span>
+            <div class="reply-content">... seeing glowing orbs adrift in the mist, not quite aware they were attached to earthly beings until one turned into my friend Eleanor Greymantle (as I was wont to call her, from our LOTR game at CSUC and her wonderful grey cape), appearing to be attached at the fingertips to such an orb... which slowly became her candle-lantern...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">68</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 03, 2009 at 02:27PM</span>
+            <div class="reply-content">and mountains of instruments, many hundeds of years old and worth thousands of dollars, piled under what appears to be a girls bed underneath a stage (or two since danese also fed and housed muso).
+Perhaps they will be more like us than we think and they will just say again and again
+&quot;and this is where the tradition of..&quot; comes from. Like &quot;and this is where the tradition of rolling out the beer kegs and drumming on them comes from &quot; . At ocf the garbage crew looks just like &quot;our&quot; crew.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">69</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 03, 2009 at 02:16PM</span>
+            <div class="reply-content">our pathways are opening again. smile my sister. we may walk those mist shrouded morning streets cobbed with the feet of merry travelers once more.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">70</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 03, 2009 at 04:53AM</span>
+            <div class="reply-content">Mirrors and funny paper bindles, hand made pipes and plastic baggies! Period costumes and cameras!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">71</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">February 03, 2009 at 03:44AM</span>
+            <div class="reply-content">and then the condoms, toothbrushes and toothpaste tubes
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">72</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 03, 2009 at 03:26AM</span>
+            <div class="reply-content">I don&#x27;t think they would have any idea. I am thinking of the poor guy who has some idea of twhat the 20th century was like then finds us! Man would that be funny as hell! Hand made armour in a primitive forge and 2 booths over, beer kegs!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">73</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">February 03, 2009 at 03:20AM</span>
+            <div class="reply-content">Maybe, just maybe, they could get a remote idea of our world. But it would be impossible to capture the feelings and emotions that were, are, there, all that is Faire.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">74</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 03, 2009 at 03:17AM</span>
+            <div class="reply-content">But just imaging you are some future archeologist and are trying to explain burlap over a vehicle, generators next to the dye spot pots, bota bags and mirrors with razor blades, the different dress (some in simple garb and others caring radios, wearing sunglasses, black hearts and leather cowboy hats!), Orange Crush and Caravansary stage? The dichotomy, Imagine the confusion? The world they would imagine?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">75</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 02, 2009 at 10:24PM</span>
+            <div class="reply-content">that is sort of what we are doing, however we are somewhat informed. Some of the task is to look at our situation with fresh eyes.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">76</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 02, 2009 at 08:22PM</span>
+            <div class="reply-content">The other thing about the Faire was that we were an almost completely self contained village! Our own rules and customs, law enforcement, merchants, services, etc. Evan a ruling class! Of course it was a monarchy instead of a democracy or republic but still. I used to joke about what it would be like for some future archeologist if the faire was hit Pompeii style, say just before opening, and they were excavating the site several hundred years from now and were trying to figure us out! Imagine what kind of conclusions they would draw!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">77</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 02, 2009 at 08:17PM</span>
+            <div class="reply-content">Funny that you mention Brigadoon, that is exactly what the faire meant/was to me in my youth. Somewhere earlier here I touched on that. The Northern Faire used to disappear, on the last da, into the fog and when I would come back for teardown, it was gone. The buildings were there but Brigadoon was gone...Until next year!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">78</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">February 02, 2009 at 08:12PM</span>
+            <div class="reply-content">I think that those of us who visit the new faires are in search of feeling as you did that very day! We were
+an amazing combination of abilitites, those who protected us, those who kept us clean, those who paid us, those who entertained us and the list goes on. I remember standing on procession hill in Agoura all those years ago and seeing the site rising from the fog and realized that I had found my Brigadoon--hooked for the rest of my life. Forever being proud to have been included in the experience. We growed up into a great group of people--I wonder how many of us are babyboom babies--I digress. when visiting and doing these faires since Agoura and Blackpoint--the one that came close for me was--The Santa Barbara Faies with the Patterson&#x27;s.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">79</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 02, 2009 at 06:23AM</span>
+            <div class="reply-content">Sitting during a week day in the Grey Ghost or LV&#x27;s pickup on procession hill at dusk, eating Chinese food and watching over our little world. The sounds of the ocarina person (sp?) and somebody playing a fiddle drifting out of the flats below as the lanterns twinkled on.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">80</span>
+            <span class="reply-author">[1a33fzowsnsho]</span>
+            <span class="reply-date">December 13, 2008 at 10:36PM</span>
+            <div class="reply-content">What I miss is the quiet time as everyone was waking up and just strolling. Down south it was the tule fog around the lake. Up north, I miss everything, being able to walk lot any time of year I wanted. All the friends that aren&#x27;t with us anymore. The smiles, the greetings. Getting dressed on the tailgate of my little Blazer. OK now I&#x27;m officially sad.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">81</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 13, 2008 at 08:04PM</span>
+            <div class="reply-content">Thanks for asking guys, as I mentioned to Birdman, Danny is not doing as good as could be hoped I am sad to say. He is living in Rohnert Park (my baby sister basically bought him a condo and the state makes part of the mortgage) and because of his smoking and his acciden, is suffering from emphysema and congestive heart failure. He also has some serious spinal deterioration, with arthritis and was in a great deal of pain, but just had corrective surgery (which, if he can be kept from falling over, he should do a lot better). He is pretty well known to the local emergency services people there unfortunately but luckily, two of his/my sisters are dispatchers for Rohnert Park DPS and keep tabs on him and a leash on the cops (most of whom are pretty cool but....). I think my mother has finally got him to quit smoking but we will see. He does live pretty much on his own. He has a neighbor (old high school classmate that is paid to come over and see that he has had breakfast, his treatments and gets off to his therapy/work/daycare then there is a person that comes over at night to make sure he is back inside, not out harassing somebody (like I said, everybody knows him a little to well!), that he doesn&#x27;t set fire to his house while cooking/reheating (she preps meals for him) and to make sure he is taking his meds/treatments, etc. I will be seeing him next week at the family Christmas. I will tell him that you guys asked about him. He will get a kick out of it!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">82</span>
+            <span class="reply-author">[tihrvb7lyzv9]</span>
+            <span class="reply-date">December 13, 2008 at 06:46PM</span>
+            <div class="reply-content">WAKE UP AND SMELL THE COFFEEEEEEE
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">83</span>
+            <span class="reply-author">[vb69j6eb76pl]</span>
+            <span class="reply-date">December 13, 2008 at 06:00AM</span>
+            <div class="reply-content">Yeah, good question, Vytas! I didn&#x27;t want to ask, but I sure want to know! Randy?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">84</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">December 13, 2008 at 04:27AM</span>
+            <div class="reply-content">hey,Randy, great to see you on here!
+How&#x27;s Danny?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">85</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 13, 2008 at 04:25AM</span>
+            <div class="reply-content">You always made me feel safe---!!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">86</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 13, 2008 at 12:02AM</span>
+            <div class="reply-content">Mornings….The smell of Orzan ad wet straw bales, the sounds of the morning Ale stand crew keg runs, coffee at the Mullahs, breakfast at Stan’s and seeing who&#x27;s head popped out of who&#x27;s hooch/camp/tent/sleeping bag…..
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">87</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 13, 2008 at 12:02AM</span>
+            <div class="reply-content">Another sensory experience that I really miss was walking through both lots at night. Both were different but the music, the voices, the smells and the flickering lights were like magic. Of course in the later years on security, some nights weren&#x27;t so magical but hey what can I say. I really miss walking from booth to booth and through the camps talking with everybody and being a part of their plane of existence, their space. Sometimes I had to bring a jarring taste of reality and bring them into the real world (or at least my world) but in a way, I think that that helped keep the magic. Once resolution was obtained, it returned and all was right.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">88</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 13, 2008 at 12:01AM</span>
+            <div class="reply-content">One of my oldest Faire sensory memories was from my booth brat days of the early 70&#x27;s. It was Amazing Grace on bagpipes and the faire disappearing. Back then the Faire was Brigadoon to me. Once a year (Dickens was an entirely different affair), it would appear, it would save me, welcome me, entertain and educate me, then six weeks later would disappear in to the mist. On the last day, we would be packing the dogs up, loading the carts on the van and saying our goodbyes. Out in the front meadow (the front gate was near Ale 1 in those days) a piper named Richard (Thistleshire?) would be playing Amazing Grace. As we pulled away, the fog would be rolling in around him and the flags and canopies of the front area until it disappeared into the mist and Brigadoon was gone. Sure, we would come back the next weekend for tear down but it wasn’t the same place, Brigadoon was gone.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">89</span>
+            <span class="reply-author">[vb69j6eb76pl]</span>
+            <span class="reply-date">December 12, 2008 at 10:42PM</span>
+            <div class="reply-content">Betty, it IS OK. It must be.
+I&#x27;m reminded of a saying from the Forest People, the baM&#x27;buti pygmies of the Ituri rain forest in central Africa:
+&quot;There is darkness all around us. But if the darkness is, and the darkness is of the Forest, then it MUST be good.&quot;
+We made our world. It is still with us, wherever the location, and we are in it. It must be good.
+There is no other way. It&#x27;s OK.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">90</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 12, 2008 at 10:24PM</span>
+            <div class="reply-content">Mark Lewis and the Story Of Word Pictures in the front area southern faire on an overcast day. A circle of sunlight appeared in the clouds overhead and remained until he was done....then the gray crept back in...Pure magic.........
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">91</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">October 30, 2008 at 03:32AM</span>
+            <div class="reply-content">Mornings and hugs...
+gee, the conversation lately is making me very homesick.
+I too come here 1st thing most mornings... it feels like a little slice of home.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">92</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">October 29, 2008 at 10:57PM</span>
+            <div class="reply-content">OK, this one hit home. Can totally relate to that quiet sense of wandering around, saying hello, nursing coffee, being caressed by that welcoming feeling of early Faire, the morning mists of Agoura canyon, the long September dawn light at Blackpoint, for some reason remembering the creosote smell of the water trucks spraying down whatever gawd-awful dust retardant they were allowed to use at the time. Or to paraphrase, God how I love the smell of dust retardant in the morning!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">93</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">October 29, 2008 at 10:02PM</span>
+            <div class="reply-content">I have to confess it&#x27;s been way too long! So long, in fact, that I cherish and covet the ones that I still get, which aren&#x27;t as often as I&#x27;d like. Yet, the memories linger still...heavy sigh....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">94</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">October 29, 2008 at 09:37PM</span>
+            <div class="reply-content">yes i mean we still get to hug sometimes, but honestly when was the last time yuou had like a dozen, or two or three of those sorts of hugs in ONE DAY.
+and then the habit, for instance of the repeat. Like Morgan and I used to scream and hug and greet each other like four or five times a day.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">95</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">October 29, 2008 at 07:20PM</span>
+            <div class="reply-content">Catt, I have to agree that the hugs at Faire were always the best. How I miss them.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">96</span>
+            <span class="reply-author">[3cxf25rtxlt8k]</span>
+            <span class="reply-date">October 29, 2008 at 06:00PM</span>
+            <div class="reply-content">A borrowed pike I note too.....I recall some person of great importance on a certain hill worried we&#x27;d get one more talking to for something we hadn&#x27;t &#x27;personally&#x27; done.....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">97</span>
+            <span class="reply-author">Danese Cooper</span>
+            <span class="reply-date">October 29, 2008 at 05:56PM</span>
+            <div class="reply-content">HEY NOW! That was the security truck (the Grey Ghost) NOT the water truck. And it was a pike, I didn&#x27;t shoot it. Randy &quot;Carpy&quot; Carpatas didn&#x27;t want to explain to Larry V why there was a spear through the radiator, so he chickened out first.
+Sheesh! That story has a longer shelf life than the one about the line &quot;I thought you&#x27;d be bigger&quot; (from the movie Roadhouse) &#x27;being about Animal.&#x27;
+And I still do view mornings that way.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">98</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">October 29, 2008 at 05:53PM</span>
+            <div class="reply-content">yes the best part of being physically proximal to each other for that interval was always being able to ramble around and check in. The shared intimacy and welcoming feeling as is a whole ensemble had just rolled out of bed.
+I like checking in here in the am too. It feels familiar.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">99</span>
+            <span class="reply-author">[3cxf25rtxlt8k]</span>
+            <span class="reply-date">October 29, 2008 at 05:26PM</span>
+            <div class="reply-content">Yeah, you use to take to mornings like a personal confrontation with a water truck...... you didn&#x27;t think that had washed out of everyones memories yet had you?
+Scott
+aka Alaisdair, Pyper
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">100</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">October 29, 2008 at 04:21PM</span>
+            <div class="reply-content">Although I am a morning person, I *still* miss the mornings, too. Something about freshness of the chill in the air and the way the light was gentle...and the smiles and well-wishing (even from people who had every right to be grumpy). Thanks for the memory, Mark.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">101</span>
+            <span class="reply-author">Danese Cooper</span>
+            <span class="reply-date">October 29, 2008 at 04:09PM</span>
+            <div class="reply-content">Mornings ... and if you know how viciously mornings and I hate each other, you&#x27;ll know how amazing it is that I miss mornings at Faire. (I often joke that I always blamed it on the hangover. Then I quit partying and realized something ... it&#x27;s not a hangover, mornings just plain hurt). Oddly enough, mornings always seemed to hurt less at Faire. The sun would come up and I&#x27;d just wake up knowing I was in a good place.
+What I miss/remember is the calm before the storm on the stroll to DBs. Oh there was always activities preparing for the day and the occasional truck rolling by. But there was a kind of morning mellow. It was a time to greet and see friends and calmly make plans for the day. Fun/chaos/excitement had happened the night before, fun/chaos/ excitement would happen later in the day ... but this was a different sort of &#x27;a good time.&#x27;
+I think the best way to describe Faire mornings would be love. Not the wild passion and excitement of an fresh relationship. Or the &#x27;I&#x27;m so happy to see you&#x27; after a long time apart. Instead the comfort of a good long-term relationship. Mornings at Faire were a time and place where you know you belong and you not only are accepted, but you accept others. Heading for my first cup of coffee/chai was that time.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">102</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">October 14, 2008 at 10:17PM</span>
+            <div class="reply-content">HUgs.
+I really miss the hugs.
+with my pal Jay gone its really obvious how much I loved getting so many warm and truly welcoming hugs a day.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">103</span>
+            <span class="reply-author">[1dtbspch35yyt]</span>
+            <span class="reply-date">September 10, 2008 at 04:46PM</span>
+            <div class="reply-content">Sensory memories ...
+Mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm ...
+Grabbing a hot shower at 1am up in Sherwood Forest after finishing swing shift ... then falling in to bed [ok, falling in to sleeping bag in tent] ... it was so peaceful. All the actors were asleep [or making odd, squishy noises] and there was a feeling of being the only person awake on the whole planet ...
+Listening to the creaks &amp; groans of Mainstage [South] as folks were bouncing on and off ... wondering if it would last through the run ...
+The soft murmur of conversations mixed with the smell of Turkish coffee at Don Brown&#x27;s at 5am as the world was beginning to stir ...
+Mmmmmmmmmmmmmmmmmmmmmm ...
+Faire ...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">104</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">August 21, 2008 at 11:18PM</span>
+            <div class="reply-content">Thank you so much for the info Danese!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">105</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">August 21, 2008 at 04:27PM</span>
+            <div class="reply-content">That horn dance is called the Abbot&#x27;s Bromley. Here&#x27;s a website all about the history of it http://www.thehorndanceofabbotsbromley.co.uk/index.html
+And here you can watch Pipe &amp; Bowl dancing it at Faire a long time ago http://jp.youtube.com/watch?v=GKN0j4b9oU0
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">106</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">August 21, 2008 at 11:08AM</span>
+            <div class="reply-content">Too many wonderful memories to possibly list them all.Some of the most precious memories of my life. But I hold on to the idea that I have them forever, no one can ever take them away, and they can warm my heart whenever I choose. Or, make me cry.
+At Blackpoint, actors camp emerging from the early morning fog
+The sounds of the drummers returning after ring out
+The beautiful harmonies of Grand Ring Out.
+The haunting sounds of the horn dance (sorry, I don&#x27;t recall the title).
+Being blessed by Father Ernie.
+The smell of wood polish in a well tended trailer.
+I must also pay homage to Dickens, as that is where I got my start in &#x27;79:
+The smell of churros
+Cock and Bull ginger beer
+Being part of a &quot;mobile security unit&quot; (thanks guys!)
+But mostly I recall the sounds of The Brass Band warming up backstage at the V and A at Fort Mason. To say the made an impression is an understatement. Johannes, Bobby, Jim, George and Bob. Brilliant musicians. Many happy memories. Loved them dearly, miss them terribly.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">107</span>
+            <span class="reply-author">[qni6gmcenoxz]</span>
+            <span class="reply-date">April 24, 2008 at 07:43PM</span>
+            <div class="reply-content">Thank you for your beautiful, poetic comments dear Luisa. One of the best things about our time in Black Point is that I know you, still laugh at your quick wit and turn of the phrase, and joy of interacting with every single person. I&#x27;m so fortunate to have shared that time and place and experience with all of you.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">108</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">April 24, 2008 at 04:19AM</span>
+            <div class="reply-content">Yes, and yes, but I still feel the loss...on a very real physical level. An ache that can never be assuaged.
+Oh Betty, I howl and weep as well. I dream of a place where we can all be together again, doing our strange &amp; wonderful art.
+At least we have this space.
+I thank the gods ( and Catt !) for it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">109</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 20, 2008 at 11:47AM</span>
+            <div class="reply-content">yes luisa and yes Betty it is Ok and also *not*
+All of those moments belong to us all still. They are our cherished stories and we have more yet to come.
+when Peg left I didn&#x27;t think that I could do the show anymore, it was too painful and too wrong somehow.
+However we carried on and made a brilliant show and left enough of an impression that the brilliance carries on and on in many dark places in the world.
+I drift with it also Luisa.
+We are all so knit together it is lovely to actually be all knit together again.
+Of course it helps that i live in bay and oak trees.
+my connection to the land helps me through
+we are all holding hands together again...except look! there are so many here from earlier and later times. It is a river that never stops flowing. Our doors are still open to the new.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">110</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">April 19, 2008 at 10:47PM</span>
+            <div class="reply-content">Dear Betty:
+Oh how I hear you, howls and all. Yes, it rocks me to my soul as well.
+Yet I just want to hug you, Betty, and tell you that &quot;no, it&#x27;s not okay,&quot;
+*AND*
+&quot;Yes, Betty, it *is* okay, but in a different way from when it was ... what it was ... so long ago.&quot;
+Oh Betty, I feel like I&#x27;ve been floating in a river on my back, gently rocking with the ripples and occasional rapids. Dawn turns to day turns to night and I passively watch the stars, moon, and sun go overhead as I drift further away and along. How long has it been? How has it been so long?
+Every so often I look to once side or another and am surprised at how the shores have changed ... and I have changed ... and somehow I have become at peace with all that.
+I love looking up and out, floating along, wondering at everything, and visiting the past virtually here with everyone who is also floating into the teahouse dock.
+I love what happened, and how we were a part of it, and how it stays in pieces with each of us. I love the sharing of each piece.
+Betty, I love you. I love the memory of your big chicken on stilts, as well as your lovely Angel at Dickens. More, I love the lovely woman that you are today.
+Peace be with you, My Friend, among all the pieces we share here together.
+Luisa
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">111</span>
+            <span class="reply-author">[qni6gmcenoxz]</span>
+            <span class="reply-date">April 19, 2008 at 03:35PM</span>
+            <div class="reply-content">i read the sensory memories and tears fill my eyes. my resistance to giving in to the memory gives way. the tension that tries to make the present to be ok also gives way. the shoulders wilt. it&#x27;s not ok. not ok without black point. ok without the aroma of crushed laurel leaves giving me a special sensory aura inside and out. ok without the hugs and music, the dust and mud, ok without the wonderful people we have loved and lost, ok without the annual trek to our heritage, our hope. ok without the trek to the very tip of witches wood to greet the quiet, pure space, the nights under the stars, the teahouse, the people, the smelly mechanics pad, the raccoon spreading my dozen eggs out across my camp in the back 40, ok without the ant farm and bob and mary and theryl and mary jo and wally. it&#x27;s not ok.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">112</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 19, 2008 at 01:10PM</span>
+            <div class="reply-content">oh yes
+Mark Lewis story night
+making it rain....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">113</span>
+            <span class="reply-author">[b5s6ko7u0ug7]</span>
+            <span class="reply-date">April 19, 2008 at 02:59AM</span>
+            <div class="reply-content">Wow, so many memories, so little time. I&#x27;ll pick a couple special ones.
+Stumbling through the front of faire one night in Agoura, very much in an altered state. All at once, someone started to play the sax solo from Dark Side of the Moon. I dropped right where I stood and floated away.
+Curled up with someone special under the big oak, listening to Mark Lewis tell stories.
+Madeline&#x27;s magic cookies... ;-)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">114</span>
+            <span class="reply-author">[3tjomb2csum08]</span>
+            <span class="reply-date">April 07, 2008 at 01:40AM</span>
+            <div class="reply-content">I recall arriving late one Friday night onto the Agoura Paramount site in the mid-70&#x27;s, and have a distinct recollection of the place looking like a gypsy encampment, all aglow with lantern-light peeking through the burlap here and there. I also recall sitting on Ground Zero doing the radio (I was on Miscellaneous Crew that year), and watching a very active community of groundhogs in the little dale just up the way maybe 75 yards from the Faire... quite a juxtaposition, actually - some hundred-plus little groundhogs doing their groundhog thing right there next to the Faire... it was quite a site, I&#x27;ll say!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">115</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 31, 2008 at 03:34PM</span>
+            <div class="reply-content">blisters from the shovel
+hot day
+barely a breeze
+mustard smell of it crushed underfoot
+the taste of a mustard flower
+cold beer!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">116</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 28, 2008 at 05:00PM</span>
+            <div class="reply-content">RIght on Vicky, and all the rest who stuck with the arts, wherever it took you.
+Yessiree, the Faire nurtured my creativity glands like the mother of all teats.
+As for sensory memories, they started at waking, and didn&#x27;t necessarily stop once safely back to sleep. That climb from the pits between waking Monday morning and getting fixed up at Bobby&#x27;s brunch was among the worst. Won&#x27;t even go into details about the best.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">117</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">February 25, 2008 at 05:15PM</span>
+            <div class="reply-content">Wow Judy at the moment I find myself grasping out for more memories--Another one pops up! Answer to &quot;how did your Faire experience enhance your creativity at the Faire and in your life?&#x27;&#x27;
+Deeply ever so deeply--ever step of the way--I always saw faire as an extreme theater experience. The extreme we sometimes had in volumn of production of costumes has stayed large in my experience. Everything seems so small in comparison and I do Opera and Musical theatre--imagine that. As an artist --oh my God -- enhanced to this day--sense a wonderful combination of authenic reproduction and theatrical license, I could go on!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">118</span>
+            <span class="reply-author">[vb69j6eb76pl]</span>
+            <span class="reply-date">February 25, 2008 at 05:09PM</span>
+            <div class="reply-content">OK. Some people are strange. Why would anybody put up a page under the name of a dead friend and correspond with folks as though he were alive?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">119</span>
+            <span class="reply-author">[2b9fvunfove9x]</span>
+            <span class="reply-date">February 25, 2008 at 04:35PM</span>
+            <div class="reply-content">I miss the huge space and place where I could make up anything I wanted to in the moment. Creating fun and mischief in conversations with customers...creating shows instantly on the stage and street. Doris Karnes once said, &quot;Why don&#x27;t you do a show about Lady Godiva?&quot; I Looked up the facts in an Encyclopedia (no google way back then) got stage time, and made the show up on the spot, refining it with subsequent performances. I used what was at hand: audience members pulled on stage to play Godiva and other parts, and the audience itself to be the citizens of medieval Coventry. This compleat freedom to improvise came from Rachel Rosenthal&#x27;s Instant Theatre Workshops, and the playfulness of the Faire and it&#x27;s people. Ron, Phyllis, and I attended Rachel&#x27;s workshops the first years of faire. Rachel was the first Queen E. at Paramount Ranch.
+This year, I will miss the reunion at Agoura. After my mother Molly died, (nee Ripps), i went on line and found a Dr. Ripps, (at last, a doctor in the family!.. tho&#x27; I can&#x27;t use his specialty: fertility) in Mobile, Alabama, y&#x27;all. I CREATED
+a family reunion of Ripps which takes place on the eldest Ripps&#x27; 90th birthday on Sunday, March 23rd, and i don&#x27;t know the people! Trumpet fanfare, drumroll..... SO, my question to y&#x27;all is, how did your Faire experience enhance your creativity at Faire and in your life?
+A thought: Back then, we DID life, we HAD to do life, but, at Faire, we could also play with the freedom and joy of kids. &quot;Olley, olley, exum-free!&quot; ( from Hide and Seek...what &quot;IT&quot; shouts for all to come home.)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">120</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 25, 2008 at 01:24AM</span>
+            <div class="reply-content">Paul, somebody is kidding you with that Ning peronsona. Toby Joe is indeed gone.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">121</span>
+            <span class="reply-author">[2rwkjlvel97js]</span>
+            <span class="reply-date">February 25, 2008 at 12:34AM</span>
+            <div class="reply-content">I was always so busy helping to create the illusion for others, I took it as a special gift when nature and circumstance conspired to create a moment of surreal, timeless magic for me. We were so lucky to be a part of those special times.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">122</span>
+            <span class="reply-author">[vb69j6eb76pl]</span>
+            <span class="reply-date">February 24, 2008 at 09:36PM</span>
+            <div class="reply-content">Lenore, the Toby Joe I&#x27;m thinking of has a page on the Teahouse and is sending comments regularly. If he&#x27;s passed on, he&#x27;s doing a remarkably good job of channeling himself on the internet.
+There could be another Toby Joe, but it&#x27;s hard to imagine. :-)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">123</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">February 24, 2008 at 09:02PM</span>
+            <div class="reply-content">Seems we were doing the same fairs all these many years. Karamazov Brothers, Daniel Singer and his boys created the The Reduced Shakespeare--The Complete Works of Shakespeare(abridged) now regularly performed on Shakespeare Festival&#x27;s of the USA if not abroad. Dicken&#x27;s Fair on Dock&#x27;s frigger&#x27;n awesome I say.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">124</span>
+            <span class="reply-author">[2bxg1pa0vr8c7]</span>
+            <span class="reply-date">February 24, 2008 at 07:35PM</span>
+            <div class="reply-content">You didn&#x27;t know about Toby Joe&#x27;s passing? That was a few years ago now,,,,I don&#x27;t recall the date exactly. I just remember he was in the hospital with pnemonia and I found out he had died the morning after he had come to me in a dream and I heard his laughter for the last time. He had such a great laugh.......We are talking about the same Toby from the Garden of Earthly Delights right. Is he making comments from the beyond?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">125</span>
+            <span class="reply-author">[vb69j6eb76pl]</span>
+            <span class="reply-date">February 24, 2008 at 03:58AM</span>
+            <div class="reply-content">Lenore, bobcats are pretty resourceful. Unless someone shot, trapped or poisoned the poor thing (not likely), he&#x27;s probably still up there, development or no. There are plenty of woods to hide in. Remember the Alta Street landslide of some years ago on Telegraph Hill in San Francisco? It unearthed a family of foxes that had been living up there probably since the Gold Rush. They disappeared after the slide, and nobody found any dead foxes, so they&#x27;re probably still there too.
+On another subject, what&#x27;s this about Toby Joe&#x27;s passing? Last I recall he was on the Teahouse list and making critical comments about my picture. Did I miss something?
+And Catt, if people are dying on us, maybe a memorials section is in order?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">126</span>
+            <span class="reply-author">[2bxg1pa0vr8c7]</span>
+            <span class="reply-date">February 24, 2008 at 03:25AM</span>
+            <div class="reply-content">I miss my hooch behind/next to the Garden of Earthly Delights It was an outdoor hooch that I kind of inherited from Toby Joe (before his passing) and I at one point ended up living there for an extended period of time, it was actually my home. The occasional skunks and other wild critters did not bother me but one night I got up to mark my territory (pee) in the middle of the night and saw a large black bobcat making very strange noises in the sand box with only me and the snowfence between us. After seeing this cat I decided to just go immediately back to bed and not draw his attention to me. The next morning I had to make sure I was not dreaming and went next door to look for footprints. Sure enough there were quite large prints that had been left in the sandbox and that morning I realized that my magic chocolate truffles had been devoured by some critter. I have always wondered if it was the same critter that found my goodies and if that critter has managed to survive the encroaching housing development on that magical piece of land in Black Point.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">127</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 23, 2008 at 11:35PM</span>
+            <div class="reply-content">That middle part was called &quot;CTU&quot; for &quot;Center of the Universe&quot; by the crew...it was the Info booth for awhile, Sheep-to-Coat for another while and Court Keep towards the end of Blackpoint. That year that Leigh over-fertilized was also the same year the real wattle and daub fences showed up (after a staff trip to the UK during the Winter).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">128</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">February 23, 2008 at 11:17PM</span>
+            <div class="reply-content">There are so many. I remember a full lunar eclipse in Agoura just before the Faire opened. Dance Macabre processions watching the world go by through two eye-holes of a skeletal mask, banging on a string drum. Early morning coffee at Don Brown&#x27;s. Dancing faster and faster through a Baca&#x27; Pipes Jig to see which of us would finally crush one of the two crossed long stem clay pipes, and buy a round for everyone. Impromptu late night bagpipe and hurdy-gurdy orchestras that must have inspired Lorena McKenna. A night show in Agoura where a young group of yet-to-be famous and fabulous jugglers and jokesters tossed flaming torches under a burlap stage awning, a singular event that truly launched their career off to the crowned heads of Europe, fame and fortune. Dickens Christmas Faire, on the docks in San Francisco, chilly December gray fog dawn, smells of rich coffee and hot cross buns, performers wandering around in costume before opening, walking out on the pier docks, women in hoop skirts, men in top hats all swirling through the thick mists, when slowly out of the gloom, out in the bay emerges an enormous ghostly white clipper ship in full rigging, likely a training vessel of a foreign navy visiting port, but the total picture of that magnificent ship in the early morning fog framed against a pretty convincing Victorian back drop is something I will never forget.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">129</span>
+            <span class="reply-author">[26kgu3wb8vyq7]</span>
+            <span class="reply-date">February 11, 2008 at 11:46PM</span>
+            <div class="reply-content">Speaking of a lovely discription of flora any year
+as well , I too did a bit of watering; on site midweek...
+magic and quiet love*
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">130</span>
+            <span class="reply-author">[2b9fvunfove9x]</span>
+            <span class="reply-date">February 11, 2008 at 10:24PM</span>
+            <div class="reply-content">Hi Jeffrey,
+No, I have never lived in the Dragon. That was after me. When we lived in Oregon, in the early 70&#x27;s , we traveled to Northern and Southern Faires in the 1949 Red Studebaker Dumptruck with a cabin on the back. Very nice. Maroon velveteen seats in the cab with antimicassers. (19th century doilies which were &quot;anti&quot; Micasser, hair pomade.) Between faires, the truck was parked partially under the A -Frame cabin wich Keny built on Green Mountain, 45 minutes from Portland. We could crawl into the eye (a window above the cab) for an extra room. All propane: the motor and the 1920&#x27;s green and beige enamel single stove and oven. I used to tell people, when we lived in the dumptruck, that I cleaned house by opening the back door, and pushing a lever which tilted the cabin so&#x27;s all the dirt just slid out. Keny built it all. Just brilliant. Just like the booth: the House on Chicken Legs, only it came out a House on Drumsticks.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">131</span>
+            <span class="reply-author">[3c81l6i4s3fe3]</span>
+            <span class="reply-date">February 11, 2008 at 09:42PM</span>
+            <div class="reply-content">nice description of the flora Dame Judith...in the late &#x27;70&#x27;s when I lived on site, I&#x27;d take care of water for Lady Dee, and other&#x27;s booths during the week....were you living in Kenny&#x27;s Camper Dragon?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">132</span>
+            <span class="reply-author">[2b9fvunfove9x]</span>
+            <span class="reply-date">February 11, 2008 at 09:30PM</span>
+            <div class="reply-content">Keny Millikan and I lived in a fisherman&#x27;s shack overlooking the Petaluma River, just south of hwy 37 in &#x27;74 - &#x27;75.
+I used to walk to the Faire site in Spring. It was my private park. I remember tiny green baby fern on black wire stems, the kind florists use, and blue irisis growing beneath the orange trunks of the madrone trees. One year, Lee Brewer had planted around the cottage that was an info/souvenir booth that stood in the middle. (What was that middle called?) She had used lots of fertilizer the previous Faire, and now, all the &quot;weeds&quot; around the cottage were now giant-sized! Miners lettuce the size of Gerbera daisies. Tho&#x27; the setting was right, there was no beanstalk to climb. alas.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">133</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 07, 2008 at 06:40AM</span>
+            <div class="reply-content">As I recall, about the same time they put doors on the showers, they also put the first &quot;floors&quot; outside of the showers ... plywood nailed on pallets ... but it helped keep the mud off as you were getting dressed. There were still no walls on these &quot;dressing rooms&quot; and most of us liked it that way.
+And the showers on cardiac hill draining to the grey barn just made the hillside nice and green
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">134</span>
+            <span class="reply-author">[vb69j6eb76pl]</span>
+            <span class="reply-date">February 07, 2008 at 05:44AM</span>
+            <div class="reply-content">Oh, the memories! The Actors&#x27; Hill showers at Black Point were also open to the sky. I set up my camp at Gravel Grove right nearby, so I could see if there was a line without getting out of bed!
+Night-time showers! Nothing like them!
+Of course, they also drained straight down the hillside toward the Grey Barn. &quot;Building codes? We don&#x27;t need no steenkin&#x27; building codes!&quot;
+Things just ain&#x27;t the same without a permanent site.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">135</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 06, 2008 at 07:53PM</span>
+            <div class="reply-content">I will always miss the crew showers in Agoura and night time showers &quot;under the stars&quot;. My pals and I often waited until the late afternoon / early evening shower rush was over and opted for a &quot;before bed&quot; shower when nobody growled at us to &quot;Hurry the f**k up&quot;. The stars overhead (and nobody to watch who you were showering with) were a huge bonus.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">136</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">February 06, 2008 at 07:19PM</span>
+            <div class="reply-content">wow right there with you
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">137</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">February 06, 2008 at 07:13PM</span>
+            <div class="reply-content">I remember 2, 3 or maybe 4 of us at a time in one shower stall--Interesting memories
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">138</span>
+            <span class="reply-author">[vb69j6eb76pl]</span>
+            <span class="reply-date">February 06, 2008 at 06:02PM</span>
+            <div class="reply-content">Oh, yes, the showers! Back in the days when the Agoura showers had no doors, we used to hustle to be waiting in line when certain babes were in there getting clean. My favorite was a little blonde cutie named Rosanna. Her last name, Arquette, didn&#x27;t mean much to us back then. Just another cutie in the shower.
+Waiting in like became much less fun when they put the doors on. Damn Puritains!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">139</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 06, 2008 at 07:36AM</span>
+            <div class="reply-content">Living in &quot;Actor&#x27;s Camp&quot; at the top of cardiac hill one year. Sometime mid week, Cathy (Rodney&#x27;s then ex-girlfriend) came up the hill from the Faire valley side with a couple of young guys, I don&#x27;t remember who they were. Cathy was, shall we say, completely ready to take a shower -- I don&#x27;t remember &#x27;bout the guys.
+Hey, you didn&#x27;t say which senses!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">140</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 06, 2008 at 03:47AM</span>
+            <div class="reply-content">chugging up cardiac hill at two am arriving on the actors bus. Everyone together, too tired and too wasted to even really complain about the cold or the difficulty of the hike (Kathleen B Bitched some), just all marching and struggling up to sweet bed and something like sleep.
+My chest would just be buzzing and squeeging in anticipation of the weekend ahead. Hard to say what would happen...enough to know SOMETHING would happen.
+trudge trudge happy heart full to bursting, lungs bursting with cold damp air.
+and then
+the moon above the oak branches.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">141</span>
+            <span class="reply-author">[vb69j6eb76pl]</span>
+            <span class="reply-date">February 03, 2008 at 05:59PM</span>
+            <div class="reply-content">Walking in from the Black Point parking lot early in the morning before the gate was moved out to the front. There was an old dirt road with redwood fence posts, and the empty field and valley that was later the Horse Tourney area narrowed, drawing you in like a funnel as the outside world receded from your perception and the real world beckoned from inside. This was particularly wonderful when the mist was up and the woods were cool and the sounds of set-up presaged the sounds of the day to come.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">142</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">January 27, 2008 at 08:37PM</span>
+            <div class="reply-content">For some reason, this made me remember listening to the wind wailing through the trees on a moonless night under the big canopy at Mainstage...it sounded like Miwok ghosts crying (and sent me running to sleep in Chris Zaida&#x27;s tent over by Lake Cotrozo that night instead of my own hooch up there where the ghosts were howling).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">143</span>
+            <span class="reply-author">[1elf57jh7r0d5]</span>
+            <span class="reply-date">January 27, 2008 at 08:23PM</span>
+            <div class="reply-content">Sitting/swinging on the big swing on a super hot day.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">144</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 25, 2008 at 05:54AM</span>
+            <div class="reply-content">Ragweed in the ditches @ Blackpoint. It was really cool to look at, however ...
+had to have the Sudafed.
+Oh yes ... &quot;balling&quot; at the Falafel booth. Making falafel balls that it. We had little scoop like things, but the mix still got all over hands and arms and everything (well, most everything; if you were dressed appropriately, there were some places it didn&#x27;t go).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">145</span>
+            <span class="reply-author">[mmv0eh5ajs31]</span>
+            <span class="reply-date">January 18, 2008 at 01:42AM</span>
+            <div class="reply-content">Ah, yes. The magical mists. I remember many winter nights walking up the faire valley in fog so thick at ground level that I could not see fifty feet. But, above me the stars were sharp and clear. High magic, indeed.
+BT
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">146</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 13, 2008 at 03:37PM</span>
+            <div class="reply-content">for some reason this morning all I can think of is how amazing it was to be wet out there on a hot day. My first official gig at faire beyond dancing with AMAN a bit as a kid was as a washerwoman, which was great because most of the hot days at Agoura I was able to get away with being both barefoot and wet from slapping the wash up on the rock and singing with everyone else. We ran to get to our time on the well, we loved it so. Laurie was a naturally brilliant director and we had the rare pleasure of layers of direction at that point with Peg holding the threads.
+Later I worked for Duelling Buckets, even when I had the pan pipes booth I would spend afternoons tossing buckets of water at customers from the top balcony because it was fun, and after all I was good at it. After hours Adam and Daniel and I would have a swim in the tank while baby apol had her nap in the bee hive hootches just there.
+Somehow it is so contrary t being warm and cozy inside in the winter that I think of it now.
+That slight lift in the afternoon breeze in Agoura when you have water on you was a rush, in the midst of the crowd and the hustle bustle and mash of it all it was like this comforting hand that breeze.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">147</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">January 13, 2008 at 05:52AM</span>
+            <div class="reply-content">Hey, I&#x27;m glad you liked it. Those of us who did the arranging the first year were blown away by how hugely and wonderfully the final parade grew. Last February I had to point out to some latter-day &quot;Rennies&quot; (on one of the Tribes) who were bitching about Casa GRO (apparently everybody uses this TLA to describe the ritualized end of a run now) that at one time it was a truly transcendent affair and the most wonderful thing to be a part of...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">148</span>
+            <span class="reply-author">[3oefrto8fzcmi]</span>
+            <span class="reply-date">January 13, 2008 at 05:45AM</span>
+            <div class="reply-content">The very Last Grand Ring Out at Agoura, Being part of MacColin. I lost count of how many times we made the circuit, and the last circtuit being just MacColin...everyone else lining the road and cheering us as we went by.
+AS Judy said it did feel immense, proud too to be part of something that seemed so large, and very very sad.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">149</span>
+            <span class="reply-author">[2rwkjlvel97js]</span>
+            <span class="reply-date">January 13, 2008 at 03:48AM</span>
+            <div class="reply-content">yes, definately. his name was Gregg, he was from the Thousand Oaks area and didn&#x27;t last long at faire. He was a perfectly nice guy, just no match for Tracy, duh. I don&#x27;t remember Tracy having any other boyfriends, just sex until she &quot;came out&quot;...she has had many girlfriends, several of them could even be considered long term.
+I&#x27;m sure many people remember her wailing for a bone every morning in cowgirl camp. I think it pissed off a few people, ooops! Poor Don Mills, he had to work hard to contain his irritation, often. Venta just went ahead and let her have it. Of course the minute she was out of earshot Tracy was going off about how maybe she just needed a bone. Damn I miss the Tracy that was my best friend so many years ago. Lost forever I&#x27;m afraid.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">150</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">January 13, 2008 at 03:35AM</span>
+            <div class="reply-content">Okay, the first time I remember being aware of Tracy was in Blackpoint crew showers one Saturday early evening. She was cursing because she&#x27;d just broken up with her boyfriend and &quot;needed a new bone&quot;. I remember being prudishly shocked and a little afraid of her (of course she turned out to be a sweetheart in her way)...Wonder if that was the same boyfriend?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">151</span>
+            <span class="reply-author">[2rwkjlvel97js]</span>
+            <span class="reply-date">January 13, 2008 at 03:27AM</span>
+            <div class="reply-content">I still giggle when I think of Odd Organ
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">152</span>
+            <span class="reply-author">[2rwkjlvel97js]</span>
+            <span class="reply-date">January 13, 2008 at 03:24AM</span>
+            <div class="reply-content">thanks for that little refresher, Sequoia, I think that was my first year at Black Point, also. I still have a perfectly clear picture of my first meeting with Tracy. I think she was cursing her boyfriend at the time. I don&#x27;t remember meeting Lenore, she&#x27;s just always been there. Was that Creature&#x27;s first year, too? mmmmm.....yummy memories
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">153</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">January 12, 2008 at 05:49PM</span>
+            <div class="reply-content">Oh, the bladder! Kind of like a waterbed 10 x 40 feet long. People did occasionally crash on it. Its original owner was the US Army, original use a portable jet-fuel tank. For transport, it came folded up in a long skinny metal box, and was deployed in Black Point in the quarry, and in Agoura on a flattened hilltop out towards Camporee, if I recall. One of the gnarliest tasks moving North or South was for a crew of 4 to 8 people to fold the sticky nasty thing back up into the impossibly small box. Even though it was rinsed and flushed repeatedly, the inside still kept in its folds a few gallons of the sticky goo, that would get all over everything. But yes, fun and bouncy. Like most fun and bouncy things at the faire, it got replaced by costly convenience, a handy phone call to the Dust-off contractor. Dust-off not only was less fun, it didn&#x27;t work. Orzan was gooey, like molasses, and stuck to the ground, Dust-off was chemical and broke up after a weekend and needed constant re-application. The use of Orzan went away about the time of the Todd Morgan fiasco, along with the coming of Boo-boo owned watertrucks, mostly because Todd had no idea what Orzan was or how to get it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">154</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 12, 2008 at 07:34AM</span>
+            <div class="reply-content">If I remember correctly, you hit the lot with Amethyst and shared a camp with her in the lovely Dust Bowl Camp.
+I camped in the Dust Bowl that year, too, but my memories of it center around my lean-to pseudo shelter gettin&#x27; flooded out, trying to sleep in the front seat of a Ford Courier that smelled like goats, and being stung by yello jackets walkin&#x27; back from Faire site to camp with some watermelon or grapes or some kind of fruit the buggers really liked.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">155</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">January 12, 2008 at 05:30AM</span>
+            <div class="reply-content">Orzan was the brand name of a dust retardant they used for a couple of years. The year after the flood they mixed it with some kind of disinfectant and sprayed heavily using Big Red during the weekdays...it made most of us cough and wheeze and some people actually got pretty sick from it. They kept it (at Blackpoint anyway) in a huge white bladder in the quarry that when full was tall like a giant marshmallow pillow and it was really fun to jump on (trampoline style).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">156</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">January 12, 2008 at 04:50AM</span>
+            <div class="reply-content">Oh wow Denise! I can totally feel the whole faire changing, from the day-time music of the stringed instruments to the night-time feel and sounds, people relaxing, getting out of their costumes, becoming themselves again. Of course there&#x27;s always some clown who never stops talking in BFA long after hours......
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">157</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">January 12, 2008 at 04:44AM</span>
+            <div class="reply-content">Yes, please explain Orzan? Oh, and privy queens unite! LOL
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">158</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">January 12, 2008 at 04:37AM</span>
+            <div class="reply-content">Bleating in the wind
+Soft tinkling bells, sheople..
+Cut hay in my nose
+(I learned to write Haiku at age 12, at Centering school in Arcata)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">159</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 12, 2008 at 03:39AM</span>
+            <div class="reply-content">odd to think of how important a simple hammer was then. or a set of digging clams.
+we practically used rocks back then...
+now because of faire you can buy pre-made tents and booths that look actually pretty cool. Check out sister Julia&#x27;s pics of English gatherings.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">160</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">January 12, 2008 at 02:44AM</span>
+            <div class="reply-content">O yes, among the pleasure was a lot of pain. Shoat ringers in particular were carpal-tunnel killers. Tendonitis everywhere. Nowadays building a fair must be slick, with the availability of cheap and easy pneumatic tools and 18- volt portable tools everywhere.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">161</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 12, 2008 at 02:18AM</span>
+            <div class="reply-content">I don&#x27;t know if it&#x27;s my &quot;favorite&quot; sensory memory, but Vytas&#x27; thread &#x27;bout Shoat rings brought back the memory of standing behind DB&#x27;s in the (very cold) morning @ Black Point, runnin&#x27; my hands under hot water to try to get the fingers moving again &#x27;cuz I&#x27;d spent the last however many weeks w/ shoat ringers, rope, dykes, and come-alongs as a rigger on Burlap crew and felt like I had arthritis like an old man.
+As I said, not my fave memory, but it came to me anyway.
+The hot water took &#x27;bout 5 mins. to bring the hands back to life.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">162</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 12, 2008 at 02:12AM</span>
+            <div class="reply-content">I still have my shoat ring pliers and my shoat ring cutters.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">163</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 11, 2008 at 11:28PM</span>
+            <div class="reply-content">fru fru juice!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">164</span>
+            <span class="reply-author">[2rwkjlvel97js]</span>
+            <span class="reply-date">January 11, 2008 at 11:07PM</span>
+            <div class="reply-content">orzan..need i say more?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">165</span>
+            <span class="reply-author">[2rwkjlvel97js]</span>
+            <span class="reply-date">January 11, 2008 at 10:19PM</span>
+            <div class="reply-content">what sort of Privy queen would I be if I didn&#x27;t remember the joy and aroma of smoking joints in the handicrapper? What of lounging, exhausted, on piles of garbage not knowing which smells worse, me or it? Most of my fondest memories of that time are unrelatable in the world i now live in. Such a joy to find kindred spirit.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">166</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 10, 2008 at 07:08PM</span>
+            <div class="reply-content">The intense smell of post-rainfall wet grass and wild flowers in Agoura during pre-Faire workshops.
+The comfortable reliability of the dusty &#x27;Four O&#x27;Clock&#x27; winds off the parking lot at Black Point Forest.
+The noise. The music. The magic.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">167</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">January 10, 2008 at 06:35PM</span>
+            <div class="reply-content">Amazing sunsets in Blackpoint...oh yeah. Standing on the front steps of the Tobin House, it looked just like Gone With The Wind some nights.
+I was thinking about sounds this morning...I&#x27;ve written before about waking up in the loft of Drury Creek and hearing the Ocarina Lady on the high road warming up with that two-note ditty she played over and over all day. Of course the dulcet morning tones of the Garbage Crew and the Beverage Crew. I was thinking this morning about waking up in my Blackpoint hooch to Sue Carney and Lisa Emmons warming up on Mainstage (Sue on whistle, Lisa on Breton bagpipes)...daytime Bruno tunes and then flourishes of crumhorn and sackbutt at Queen&#x27;s Show...and finally drifting off to sleep to the Crew blasting the Cramps, the English Beat and (incongruously) Stevie Ray Vaughn at top car-stereo volume for Ale 3 parties. Oh, and the sound of the radio in the NIght Security truck as they cruised the sleepy-time lot after everybody finally wound down...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">168</span>
+            <span class="reply-author">Michael Kimball</span>
+            <span class="reply-date">January 10, 2008 at 04:46PM</span>
+            <div class="reply-content">I was six years old when I first attended faire in 1968 and I will never forget those earliest sensory memories: eating smoked chicken that tasted almost like ham, standing waist deep in what was then a real creek (!), my fingers eagerly digging out the sand-candle I had made, the loud &quot;shkewwww&quot; sound when the nice man poured a ladle of molten lead into a pool of water, then the wonderment I felt as he showed me the shape of my hunk of lead and read my fortune in the twisted bumps and greeblies.
+Later sense memories (not in chronological order) include the cool round shape of the keg under my ass while kagging in the back of the ale stand; the hotness and helpful spring of plywood under my feet while dancing on stage; the joy of removing footwear at the end of the day; the sound of the Steak on a Stake fellow perpetually calling &quot;Steaaaak on a StaaaaaAAAAAke&quot;; the delicate silvery feel of dulcimer strings under my fingers at Capritaurus; the amber light at Don Bown&#x27;s making everyone look beautiful; the thrill of serving ale on a hot day when the counters are five deep, everything&#x27;s flowing, I&#x27;m adding like a maniac in my head while my body is fluidly twisting and darting around my fellow servers, everyone carrying multiple cups and not a drop spilled, and that wonderful drummer is in the stand giving us a steady beat (buppa-duppa-duppa-da BUP aduppa, buppa-duppa-duppa-da BUP aduppa). Anyone else with Beverage exerience remember that beat? (Stacy? Bob?)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">169</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 10, 2008 at 02:58PM</span>
+            <div class="reply-content">Kevin you know not everyone has the special secret power of being able to reso
+rt to Haiku when they are searching to express themselves.
+Remember sitting in Lances office at the very first tourney, him regaling us with rancontuer tales fromthe bad old days. Remember the golden seat on the privy with the fleck gold wallpaper?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">170</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">January 08, 2008 at 11:34PM</span>
+            <div class="reply-content">Visual sensory moment--a visual costume scenery transport me back into time moment. The Battle fought on the hill in San Berdo--a true Braveheart type of beauty in the clanging of swords and the smell of manly sweat and testosterone. After leaving the faire when actually watching Braveheart I cried at the remembrance it sparked in my brain.
+The horse tourney at it&#x27;s best especially in Blackpoint was a beauty for the eye to behold. I almost see it in slow motion in my head.
+The sound of Habai Ru and the flow of the costumes and the smell of eastern star, and coffee, and incense, mixed with smell of spice.
+If you walkd through the streets of Black point it was as though you were flipping thru postcards of the life of Renaissance England every 30 feet changing the smell from food, perfumes, leather, people, ale , WOW what a blend of life we created. A joy to have felt it, created it, be within it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">171</span>
+            <span class="reply-author">[397quio7xsqz]</span>
+            <span class="reply-date">January 08, 2008 at 11:14PM</span>
+            <div class="reply-content">The way the fog crept over the hills like fingers caressing the mountains and the fabuolous sunsets from my first summer spent camping in the Black Point parking lot before moving up to Sherwood Forest in the summer of 1978.
+Just A few years later, I bought my own Makita drill.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">172</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">January 08, 2008 at 09:14PM</span>
+            <div class="reply-content">It&#x27;s spelled &quot;shoat&quot;.
+A small pig is a shoat. There were different sizes of rings, from shoat to hog. Some supplier in the midwest thought we had the biggest hog farm in the west.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">173</span>
+            <span class="reply-author">[3tzvsoeqsy2g]</span>
+            <span class="reply-date">January 08, 2008 at 09:01PM</span>
+            <div class="reply-content">Couldn&#x27;t focus on anything as everything kept getting in the way, so I resorted to hiku:
+Our forest village
+Ground Zero sunrise, copy?
+Guinness for breakfast
+Just a leaf off the tree really...
+We are all so fortunate to have shared that amazing time and place together. The memories do get better with age though...
+Okay, one more (inspired by Catt):
+For our Forest Family Chef&#x27;s who now live only in our hearts (and Pavlovian memory):
+Stan&#x27;s breakfast humor
+Bill and Joan Cook always there
+Constintine, MANNY!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">174</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 08, 2008 at 08:14PM</span>
+            <div class="reply-content">and schote ringers...
+chote?
+hog rings.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">175</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 08, 2008 at 08:13PM</span>
+            <div class="reply-content">oh yes...best of all mama Galina waving &quot;come here&quot; because she has something impossibly delicious to taste and eat and those steps out the back.
+I actually put those steps in a friends garden so that I could just sit on them some more.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">176</span>
+            <span class="reply-author">[26kgu3wb8vyq7]</span>
+            <span class="reply-date">January 08, 2008 at 07:24PM</span>
+            <div class="reply-content">All the hot babes with Makitas (Mackitas )( power tools)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">177</span>
+            <span class="reply-author">[26kgu3wb8vyq7]</span>
+            <span class="reply-date">January 08, 2008 at 07:22PM</span>
+            <div class="reply-content">I always loved to run as fast as the wind and my feet would carry me along the freeway
+merging with the rest of our town down by Piroshki..............ah Mama Galina
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">178</span>
+            <span class="reply-author">[31te9gnwzgefw]</span>
+            <span class="reply-date">January 08, 2008 at 06:35PM</span>
+            <div class="reply-content">I miss the way the trees danced on the hillsides in the afternoon breeze at Blackpoint.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">179</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">January 08, 2008 at 06:25PM</span>
+            <div class="reply-content">Some cold mornings in Black Point, the marsh would be covered with a low fog of magic. Herons, white egrets, a mist you&#x27;d drive through northwards up highway 37, with the sun rising low over the bay. I get goosebumps right now just remembering that magic mist.
+V
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">180</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 07, 2008 at 03:49PM</span>
+            <div class="reply-content">trudging up procession hill with the slight soft damp smell of c,amomile being crushed under so many feet. Holding a bit of a mustard flower with the stem in your mouth just biting it to taste the the sharpness as you push up the last rise to the flat..
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">181</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">January 07, 2008 at 06:55AM</span>
+            <div class="reply-content">Hmm, Morgan, one of my all time favorite memories of faire is spending many an evening kneeling somewhere near dariouj and &quot;dancing&quot; from the waist up. I worshipped that man&#x27;s hands, the way they fairly flew over the strings and sang to my soul! There&#x27;s at least a dozen memories as clear as any Dickens this year, even though I did not see him play this dickens, but I did get to hug him! I love the way that man plays he always inspires my soul.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">182</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">January 07, 2008 at 06:27AM</span>
+            <div class="reply-content">Wow, until you said this, and I think Danese said something similar to me a few months back, I didn&#x27;t really realize that I have always had this perspective, I just didn&#x27;t realize that other people didn&#x27;t see it that way... till you just commented on it? I mean I can&#x27;t remember a time when I didn&#x27;t see it as it&#x27;s own social phenomenon, but to me it was one facet, like a rose petal, of the whole flowerchild generation. The birth of faire, the summer of love, and the whole change over from the beatnik generation to the hippy generation. I was born in November &#x27;65, and my parents were 30 (mom&#x27;s b-day is the day after mine, so exactly 30) , and dad was 36, so they were old for being hippies, but they identified with the flowerchildren old hippies long after it wasn&#x27;t stylish to be a hippy any more. I even still i.d. as a Hippy to some small degree, or at least the child of...
+I remember hitchhiking to Berkeley from Santa Monica Blvd when I was about three. We got a ride with a guy who had a flexiglass porch swing in his van, and I rode on it all the way to Berkeley, yee haw! I remember that and riding on the Green Tortoise back then. It was way cool. To me these memories are intertwined with memories of faire in the early years.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">183</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 07, 2008 at 06:22AM</span>
+            <div class="reply-content">What I most remember is hearing the music from Mullahs&#x27; after hours. Drums mostly, heard from actors camp in the sweet moonlight.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">184</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">January 07, 2008 at 06:15AM</span>
+            <div class="reply-content">Oh Catt! You had me right there at the counter of the Eastern Star Creme booth once again!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">185</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 06, 2008 at 04:02PM</span>
+            <div class="reply-content">yes those shows were like our baptismal party.
+One of the first places that we realize that we were doing more than recreating a movement...we were ourselves a phenomenon.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">186</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">January 06, 2008 at 03:41PM</span>
+            <div class="reply-content">What seems to enter my mind many time over the years--was the wonder of the Red Barn on the Blackpoint site. Of all the places we choose to do faire--this was the one place where we could all truly meet. The magic of who we were, what we were, what we were living thru--pulsed inside that humble place. Relationships, friendships, even children were made in that place. It brought together people who could have done faire for 20 years without meeting each other--the crew, the performers, the alestands, the executives, security, the parking lot. i believe that what made Blackpoint such an amazing place, may have been in part affected by this phenomenon. many a time I was able to set up in the lighting loft and see an amazing group of human beings--whom will effect my life to the end of my existence.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">187</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 06, 2008 at 02:16PM</span>
+            <div class="reply-content">The general bounce and the Bee Buzz of it. The way the boards used to shake with the laughter from the audience like a big whalloping fist of joy.
+the smell of chocolate chip cookies and steak on a steak and and dirt and eastern star all at once.
+Being driven easily as if in a funhouse carriage ride into a hypnogogic trance by the layering of music and laughter and crowd cheers and outbursts. Just dependable. Keep your arms and hands inside the car at all times ...and by the way...that handrail is there for a reason...
+Most of all I miss laying in the mustard with our Pan (Ron) and having a nice long thoughtful silent smoke. Wordless of course however silent is not really accurate...he could make birds sing with his eyes.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">188</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">January 06, 2008 at 06:26AM</span>
+            <div class="reply-content">I have to say, one of my strongest memories is the first time I went to faire at age seven, not being inside the faire itself, just walking through the maze of the parking lot, over hill and dale just to get to the front gate, the fences all along the walk way, and the bits of colored ribbons on the wooden stakes. The smell of hay and cut grass everywhere, the sound of tinkling bells tied on the necks of sheep and goats you could hear in the distance! Yes, the smell of oaks and home!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">189</span>
+            <span class="reply-author">[2b9fvunfove9x]</span>
+            <span class="reply-date">January 06, 2008 at 06:19AM</span>
+            <div class="reply-content">1. I miss hearing Indus Arthur playing her harp and singing on the hill towards Witches&#x27; Wood. What was that high path called? I would stop in my wanderings and, in character we would meet/greet and laugh. Such a pretty laugh.
+2. Walking through tall grass before stakeout, with Carl Arena, Billy Scudder, Susie Marceau, Marque and Keny and Carol, pulling a commedia wagon toward Drury Creek stage for a Faire film. It felt as if we really were wandering players.
+3. The excitement of not knowing what we were going to say next, Improvising comedy with Ron Patterson on a tiny stage beneath an Oak Tree. We had so much fun together.
+4.. Walking the &quot;streets&quot; and feeling the peace and quiet under the stars.at night, visiting strangers and making new friends with them. It was quiet and safe, unlike the &quot;real&quot; world.
+5. The bells of Grand Ring Out. Seeing so many costumed people at once. I was a part of a big parade with everyone. It felt immense...and sad also.
+Judy
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">190</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">January 06, 2008 at 04:00AM</span>
+            <div class="reply-content">The first amazing sensory memory for me was in Agoura. When newly experienceing the faire I marveled at how the faire site seemed to appear each day of every weekend as Brigadoon from the mist. The sounds of setting up each morning along with kitchens firing up there ovens. By opening the village was fully revealed in all it&#x27;s glory.
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

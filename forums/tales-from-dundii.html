@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tales from Dundii - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Tales from Dundii</span></div>
+            
+    <div class="module">
+        <div class="module-header">Tales from Dundii</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Murray then, now aka MAX</span> | <span>November 23, 2007</span> | <span>56 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (56)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 13, 2010 at 04:42AM</span>
+            <div class="reply-content">Dundii had a magnificent white tent at the RPFS selling Capes and Caftans before he got bitten by the Bug and started producing theatricals.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author"><a href="/members/susie-marceau.html">Susie Marceau</a></span>
+            <span class="reply-date">February 13, 2010 at 04:06AM</span>
+            <div class="reply-content">Now back to Dundii...........
+Opening day of the Northern Faire- 1970-first time at the Novato site. Wondering- how will this place with it&#x27;s narrow intersections be able to bring the magic of the multi-level wandering pathways of China Camp? 9am -crafters artfully displaying their wares. A stirring of the air flowing down the watershed roadways bringing the dampness of the morning dew to culminate at the Market Cross with the heady fragrance of familiar Bay Laurel---to the left- beautiful young men trying on sumptious cloaks as they arrange them for sale - A rush of air intensifying the intoxication of the Laurel ---from out of nowhere magnificent Dundii swoops down and takes his place -the Sun of this solar system -THE PEACOCK of Peacock Gap . The site is instilled with magic.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author"><a href="/members/susie-marceau.html">Susie Marceau</a></span>
+            <span class="reply-date">February 12, 2010 at 01:38AM</span>
+            <div class="reply-content">She was lovely
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 11, 2010 at 11:21PM</span>
+            <div class="reply-content">lovely, I remember that show from the audience view.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 11, 2010 at 10:08PM</span>
+            <div class="reply-content">The little Court was headed by Zelda Rubenstein as the Faerie Queen. She recently passed away. In my photo of Dundii on his hobby horse, you can see part of the Faerie Court behind him.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author"><a href="/members/susie-marceau.html">Susie Marceau</a></span>
+            <span class="reply-date">February 11, 2010 at 12:21PM</span>
+            <div class="reply-content">One of these encounters took place on the Main Stage at the Queen&#x27;s Show in 1973 where Dundii was magnificently portraying Mars in a little Allegory. Somehow I had been given the task of organizing a group of Little People who were &quot;invited&quot; by the Queen to attend. I rounded up a couple of kids, some more short people and an actual midget who was dressed to the nines in a court dress. At the last moment I recruited Peter Kapp to pipe us up to the stage for the entrance. His height also helped convey our littleness.We seated ourselves stage right. When Dundii made his grand entrance engulfing us with his great swirling red cloak, he realized that he had narrowly missed trampelling the Fairy Folk. I will never forget how (without dropping a beat from his lines) he conveyed to us with one look -an expression of genuine apology and deep love .
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author"><a href="/members/susie-marceau.html">Susie Marceau</a></span>
+            <span class="reply-date">February 11, 2010 at 04:20AM</span>
+            <div class="reply-content">The thing I want to say about Dundii is this:
+Every encounter we had was extraordinary and multi-dimensional : and most of all-- instilled with absurd comedy. I miss him greatly
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 27, 2010 at 04:34AM</span>
+            <div class="reply-content">Its always been an intricate balance, as the faire was both depicting a history and literally living a little of the old vaudeville ourselves. We were both a means to share history and a conduit for variety arts revival which today is very strong.
+This early History of Morris in California is really important, I mean who would have thought that we would end up with Morris sides all over the country? Well who besides Bob Thomas I dont know. By the time I remember seeing the horn dance it was the Pipe and Bowl revival of the procession hill gig.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">Richard Beard</span>
+            <span class="reply-date">January 26, 2010 at 08:30PM</span>
+            <div class="reply-content">Although I haven&#x27;t read the book, I remember another influential trope was Huysmans&#x27; notion of a sense organ which one &quot;played&quot; to produce a liqueur, blended of scents, colors, and flavors. The closest He could come to that was the best stocked liqueur cabinet possible, when we discovered a new one, He had to add it (Acvat, yuck!)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">Richard Beard</span>
+            <span class="reply-date">January 26, 2010 at 08:13PM</span>
+            <div class="reply-content">Dundii was friends with the good Dr., whose real name I forget,. He had a shop , A-1 Record Collector&#x27;s, which Dundii used to haunt for his collection of OCR, original cast recordings of not just Broadway but any and all that he could find. His design books &amp; record collection, of which he was rightly proud, went to George Alspauch, who died shortly after and the books/records were lost to all. One of the sections of the collection he called &quot;music to speed the parting guest&quot; and was the most strange and strident stuff He could find: Yma Sumac, The world&#x27;s largest Salvation Army band playing Broadway hits, The spanish version of &quot;Grease&quot; called &quot;La Vaselina&quot; (to his delight).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Richard Beard</span>
+            <span class="reply-date">May 06, 2009 at 11:47PM</span>
+            <div class="reply-content">Richard Chase had a falling out with the faire over the Horn Dance. Now is probably the time for the Morris Historians to step to the front of the comment line, but I have read his letter to Ron, still in the company files, and he expresses grave disappointment in the Patterson&#x27;s interest in making the dance more appealing to the general public (you have to admit, it&#x27;s a very slow, somber, and some might say staid dance). Richard Chase had personally reconstructed the living dance from historical sources and would broach no discussion of variations to his set choreography and so He parted ways with Theme Events. This lesson has always tempered my thoughts about LHC and the old faire being true to history. Authenticity is indeed in the eye of the beholder and we sought to make it both accessible and authentic, but not slavishly so.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">Richard Beard</span>
+            <span class="reply-date">May 06, 2009 at 10:52PM</span>
+            <div class="reply-content">John, You sure keep me LOL with the stories you remember! I only met Patsy a couple of times and didn&#x27;t know about Winnie Logan&#x27;s interest in Sidereal Astrology! When asked Dundii would always say &quot;I&#x27;m a Leo...I used to be a Virgo but I got it fixed&quot;! Dundii took great pride in his &quot;method costuming&quot;, demonstrated by the fact that his court ladies&#x27; dresses weighed 60 pounds with all their undergarments, such as solid cotton bumrolls, not foam or poly batting! Dundii said he earned his name in college from a waitress at the local coffee shop. It seems that he was so fond of Dundee cake that she took to saying &quot;Here comes Dundee&quot; when He showed up. Later the spelling underwent a &quot;hollywoodization&quot;, of course! Jim Kelly has named his new poodle after Dundii, and it&#x27;s quite nice to speak his name every day. I have had several conversations with people thinking the poodle is named for Crocodile Dundee, and have met two other Dundees since Jim named him. When hearing of their names, my standard question is &quot;after the city or the cake?&quot;. One was another dog, a scotch terrier, with a sister named Aberdeen, and the other was a girl with Dundee as her middle name. When asked, she said it was her clan&#x27;s name, so I guess, the city was named after her family. The last film that I can think of that Dundii worked on was &quot;Paint Your Wagon&quot; with Lee Marvin.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">April 10, 2009 at 03:26AM</span>
+            <div class="reply-content">Not a Dundii story, but that line reminds me of Dorn, in the glade next to S ale 5. The ensemble was providing background music for a full house of customer buns on bales, relax time in the shade.
+Dorn, putting on classy airs: &quot;The next piece shall be a lovely Italian one entitled &#x27;Exceta della Amoure&quot;, the excretions of love. I was fombl (falling off my bale laughing), but was probably the only person present who was paying enough attention to catch it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 02, 2009 at 08:25PM</span>
+            <div class="reply-content">One of Dundii&#x27;s banners for his St Cecilia show read &quot;Acqui Mes Feces Est&quot; which translates to &quot;I&#x27;ve got my sh*t together&quot; in Latin.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 14, 2009 at 03:24AM</span>
+            <div class="reply-content">I spent many afternoons at Dundii&#x27;s Seward St apt listening to the Dr Demento Show.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 23, 2009 at 12:00AM</span>
+            <div class="reply-content">Hi Richard- My first thoughts (after you &amp; I were on the same bus when you first applied to the faire) were that you should meet Dundii, but You probably would have met him anyway. I remember fun times, like you guys getting me into Alan Trugman&#x27;s costume when he was in drag for the queen&#x27;s show on the last day of the RPF.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">Richard Beard</span>
+            <span class="reply-date">February 22, 2009 at 09:56AM</span>
+            <div class="reply-content">Dundii&#x27;s apt. on Seward was between the Walter Lance Studios and the factory, or as he used to say &quot;I have woodpeckers on one side of me and rubber peckers on the other!&quot; The silver dildo lampshade was a proud possession of his long after he moved from that apt. to our shared house on Reservoir. Trivia Alert: One of the tenants in the cottage in our garden was in a band, Player, then billed as the &quot;American Bee-Gees&quot;. Their #1 hit &quot;Baby Come Back&quot; has now been picked up for a Swiffer ad. The music didn&#x27;t end up being Ron Moss&#x27;s claim to fame, but he hasn&#x27;t done too bad, he has starred for +/- 25 years as Ridge on daytime soaps.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 21, 2009 at 01:38PM</span>
+            <div class="reply-content">I would love to bump this up, and also see if we can find some tales of serpent as well.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 07, 2007 at 06:02PM</span>
+            <div class="reply-content">When I first met Dundii, in 1961, he was paling around with a cilque from Texas: Joy Moffett, a film producer, Gary Travis, a director, and Patricia Magurno, who masqueraded as his sister, but was not related, and not from Texas, either. She was an extra and double (for Tina Luise). One of the fun things that they were doing was that Dundii, Gary and Patricia all had Jaguar XK 120&#x27;s. The only difference was the color. Gary&#x27;s was blue, Dundii&#x27;s was white, and Patsy&#x27;s was red. That was about as patriotic as they got.
+Several years later, Dundii sold his Jaguar and bought &quot;something sensible&quot; that he could haul wardrobe in. The rest he invested in a small silver chandelier, with lead glass crystals. It hung over his cutting table in the Seward apartment. He would say, &quot;I turned the Jaguar into a chandelier.&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:44PM</span>
+            <div class="reply-content">catt
+catt avery
+online 190
+Re: dig this:
+Wed, November 14, 2007 - 1:17 PM
+in response to: Re: dig this:
+Oooh the thing sounds amazing. Dimly somewhere in my memory Thurel told stories about it. He really loved that library.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:44PM</span>
+            <div class="reply-content">catt
+catt avery
+online 190
+Re: dig this:
+Wed, November 14, 2007 - 1:15 PM
+in response to: Re: dig this:
+I am into a somewhat comprehensive faire shire book. Sort of like a superstars of Faire book.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:43PM</span>
+            <div class="reply-content">john...
+johnniZanni
+offline 8
+Re: dig this:
+Wed, November 14, 2007 - 11:33 AM
+in response to: Re: dig this:
+The Cyclotron, indeed. Dundii called it a &quot;Light Organ.&quot; It was made of bits and pieces of cardboard covered with aluminum foil, and these were mounted like mobiles hanging from slow-turning gearmotors. The illumination was by small spotlights of various colors, these connected to circuitry that separated the audio input into bandwidths (bass, medium and high). Due to all the randomness in the motion of the mobiles and the music, it truly never repeated itself. All this was contained in a floor to ceiling enclosure with a thin translucent plastic screen. I spent many a stoned hour gazing raptly. Mis-spent youth? Naaaahhh!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:43PM</span>
+            <div class="reply-content">john...
+johnniZanni
+offline 8
+Re: dig this:
+Wed, November 14, 2007 - 11:26 AM
+in response to: Re: dig this:
+Catt, I&#x27;m not sure I understand what you mean by &quot;four chapters away,&quot; and &quot;part out chapters.&quot; Do you mean that you need 4 more chapters about Dundii? Or are you talking about a more comprehensive FaireShire Book? Help me to understand better what you are proposing, and of course, you can count on me!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:43PM</span>
+            <div class="reply-content">catt
+catt avery
+online 190
+Re: dig this:
+Tue, November 13, 2007 - 3:09 PM
+in response to: Re: dig this:
+John we are four chapters away from realling being able to print something on demand as it is. Maybe we could part out chapters and get about five of us together and just hammer it out. Sort of a little window.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:42PM</span>
+            <div class="reply-content">J. Paul
+J. Paul Moore
+offline 25
+Re: dig this:
+Tue, November 13, 2007 - 2:15 PM
+in response to: dig this:
+Ah, Dundii! A gentelman of the first order and a strong influence on my artistic career. I was living in the Hollywood Hills in a house my lady and I called Unicorn Manor. We came to a parting with my explosion at 1520 AD (Dinner with Henry VIII &amp; company - Dinner Theatre). Therl was living with Dundii at the Seward house, reading his library (Therl liked to move in to people&#x27;s houses, read their library and move out) and creating fabulous Robin Hood &amp; Merry Folk costumes for our Hood shows at Faire. (Yeah, yeah, authenticity later). He talked to Dundii &amp; I moved in. What an incredibly packed house, with fabric, books, fish tanks and amazingly impressive The Cyclotron! It was a nearly floor to ceiling translucent-latex screen with mobiles of light and shapes behind it that moved in rythm with what-ever music was being played. or, at least it seemed so.
+Dundii gave me the full length white, velour (?) Kaftan that I wore as Father Charlatanus in the Montebank Show. He also gave me, or rather loaned me, a full length electric blue velour cape which i used to wear up and down Hollywood Blvd. in the early 70&#x27;s. He brought to Faire a grandeur of pagaentry that has never been equaled to this day. Dundii holds a reverred space in Faire Vallhalla. along with Bob Thomas and a short list of truely greats.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:42PM</span>
+            <div class="reply-content">john...
+johnniZanni
+offline 8
+Re: dig this:
+Tue, November 13, 2007 - 1:50 PM
+in response to: dig this:
+Thanks, Catt. It&#x27;s been years since I read it, and look forward to doing so again. Excuse the delay in my posting more stories of Dundii. I have made a list of about 20 or so tales to tell. Hopefully, as I work my way through those, more recall will surface, too. I will get back in the saddle anon.
+johnniZanni
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:41PM</span>
+            <div class="reply-content">catt
+catt avery
+online 190
+dig this:
+Tue, November 13, 2007 - 7:04 AM
+in response to: Re: Dundii &amp; Inigo Jones
+The novel Dundii so admied is now an ebook at gutenberg:
+À rebours
+Against the Grain by J.-K. Huysmans
+www.gutenberg.org/etext/12341
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:41PM</span>
+            <div class="reply-content">john...
+johnniZanni
+offline 8
+Re: Dundii &amp; Inigo Jones
+Mon, September 10, 2007 - 9:53 AM
+in response to: Re: Dundii &amp; Inigo Jones
+Yes to all of that, Catt! I left California in 1980 and haven&#x27;t made it back since. There has been a big hole in my heart, and I have been missing news of my friends from the Faires. In sharing these stories, we are doing a work of healing for all of us.
+Many years ago, I commented to Bobcat that someone should write a history of the Faires, and his response was, &quot;Yes, but anyone who really knows what is going on wouldn&#x27;t dare to write it.&quot; Well, the statutes of limititation allow the telling of at least SOME of the story. The rest, as they say, is silence...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">29</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:40PM</span>
+            <div class="reply-content">catt
+catt avery
+online 190
+Re: Dundii &amp; Inigo Jones
+Mon, September 10, 2007 - 9:26 AM
+in response to: Re: Dundii &amp; Inigo Jones
+oooh I always wanted to make a mosaic story of how the faire came to be.
+It always seemed to big for one person to tell, plus it is like our song, like the Yurok songs, it has its own life and it has its own way and ceremony and presence.
+something about the tea and toast.
+Its magic to be able to hang out altogether again. This socialnetworking thing is no hoax.
+I feel somehow knitted firmer together again. As if the world had started to pick me apart.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">30</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:40PM</span>
+            <div class="reply-content">john...
+johnniZanni
+offline 8
+Re: Dundii &amp; Inigo Jones
+Mon, September 10, 2007 - 8:49 AM
+in response to: Re: Dundii &amp; Inigo Jones
+Yes, I love the comments and clarifications and fill-ins that come through this companionship. Thanks to you, Morgan and Patrick and Catt, and all. What a wonderful Mosaic we are creating, piece by piece. Thank you all !!!!!! I can recall a lot of the events, but am rather hazy about the timeline. Any and all help there is greatly appreciated.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">31</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:40PM</span>
+            <div class="reply-content">#
+catt
+catt avery
+online 190
+Re: Dundii &amp; Inigo Jones
+Sun, September 9, 2007 - 2:31 PM
+in response to: Re: Dundii &amp; Inigo Jones
+yes Picasso says &quot;great art steals...mediocre art borrows&quot;
+That work on the mummers plays certainly sifted down to me through many enthusiastic storytelling sessions of Bob Thomas. The story about the &quot;Fire fire fire&quot; he only told out at the the Preston Ranch where you could have...er...full artistic freedom in a good yarn (I love hearing it again in printed words...I was sorta spun drunk that day at the Ranch). Its great stuff that research, and thanks Morgan for that concise reminder of our folklorist roots. Thats the sort of thing...well its mothers milk if you know what I mean.
+Even to this day I say &quot;carbon condition&quot;. The idea was to really sensitise everyone to the word I guess. probably Lance Sterlings idea. It was like part of our religion out on the lot, like not touching soap to the black iron pans or knives.
+My own process is so deeply influenced by this group you speak of. Definitely I have these periods of research...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">32</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:39PM</span>
+            <div class="reply-content">Basi...
+Basileus
+offline 11
+Re: Dundii &amp; Inigo Jones
+Sun, September 9, 2007 - 9:56 AM
+in response to: Re: Dundii &amp; Inigo Jones
+I knew Richard Chase in Agoura; I wasn&#x27;t a student really, but you couldn&#x27;t help being a student around him. I mentioned I wanted to do Punch and Judy, and he told me all about his P&amp;J puppets, and he wanted me to go out to Claremont to learn more about it, and I never found the time. Dumb of me, because he was such a good resource and wanted to share.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">33</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:38PM</span>
+            <div class="reply-content">Morgan
+Morgan McDow
+offline 40
+Re: Dundii &amp; Inigo Jones
+Sat, September 8, 2007 - 10:22 PM
+in response to: Dundii &amp; Inigo Jones
+I can insert a little lore here... the name was Richard Chase, and he was a student of Cecil Sharp. He taught my teachers: Doug Berger, Patti Blanco, Richard Civille, Etc. Our Faire Tradition, as far as Country and Morris Dance are concerned, has it&#x27;s roots in the ninteenth century British Folklore revival. Richard Chase was a respected Folklorist and Author in his own right.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">34</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:38PM</span>
+            <div class="reply-content">john...
+johnniZanni
+offline 8
+Dundii &amp; Inigo Jones
+Sat, September 8, 2007 - 7:25 PM
+in response to: Re: Dundii
+Dundii got interested in the masques presented at the court of James the I &amp; VI, by Inigo Jones. Shakespeare did a send up of the courtly masques of the time in the tinkers play in &quot;Midsummer Night&#x27;s Dream.
+There followed a period of research (all Dundii&#x27;s interests led to periods of research) in the history and origins of these Courtly entertainments. The Masques originated from the Mummers/Guizers plays... traditional celebrations of the vernal equinox. At the Agora Faires these were represented by the Morris Dancers of Richard (....?), the old man with the staff, goatee, remember him. First off, then Dundii and I went to see him and get resource material &amp; references. The Guizers (pronounced, geezers) Plays were passed down orally, and they are still a living tradition in some places. Ginger Osburn used to say, &quot;What happens on Hobby Horse Day is not grounds for divorce!&quot;
+After grounding in this source material, Dundii then researched Inigo Jones himself, his production techniques, costumes, scripts, etc. All very thorough in his usual manner. Then he wrote a masque, the one with himself as Apollo. It was structured along the lines of P.D.Q. Bach&#x27;s oratorio &quot;The Seasonings.&quot; I recall there were songs for the four elements, Earth, Air, Fire, Water. Fire&#x27;s song contained the words &quot;Fire, Fire, Fire....&quot; sung at the top of his lungs. This was first performed at Blackpoint, in the middle of a burn ban, and even the word &quot;Fire&quot; was forbidden. We had to say &quot;Smoke&quot; instead. Well, at the first performance of the Masque, that song brought the Guard crew running! Dundii was forced to tone it down, and the performer was forced to mime saying the words.
+This was just the beginning of his forays into the Masques. Then came Faust, and maybe others I don&#x27;t know about.
+Dundii&#x27;s musical heroes included Jules Hoffnung, Spike Jones, and P.D.Q. Bach. He only stole from the very best.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">35</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:37PM</span>
+            <div class="reply-content">Morgan
+Morgan McDow
+offline 40
+Re: Dundii
+Wed, September 5, 2007 - 4:14 PM
+in response to: Re: Dundii
+My earliest Faire memories are of Dundii and P.D.A. ( Good Old Fashoned Fun! I love it! Can I steal it?) I have a disjointed memory of Dundii on main stage...in my swiss cheese brain I&#x27;m seeing a Boticelli - like Venus-on-the-half-shell pose and a huge shit-eating grin.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">36</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:37PM</span>
+            <div class="reply-content">john...
+johnniZanni
+offline 8
+Re: Dundii
+Wed, September 5, 2007 - 9:34 AM
+in response to: Re: Dundii
+Noel, I have been wanting to spin these tales for a long time. Thanks for being an interested audience. Here&#x27;s a website Dundii would have loved... giantcrystals.strahlen.org/amer....htm.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">37</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:36PM</span>
+            <div class="reply-content">catt
+catt avery
+online 190
+Re: Dundii
+Wed, September 5, 2007 - 4:56 AM
+in response to: Re: Dundii
+Noelley
+ach I could never get it to load. Priodically I get so borked. They just dole out the mb by the tablespoon I swear.
+Can you find me the link again? I should have it on the rtgarden.com anyway.
+Seriously I think that they have waaay oversubscribed, and that they (Hughes net) are not ready for the heavy use load that comes with web tv and services like second life.
+Big pipe is good to have
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">38</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:36PM</span>
+            <div class="reply-content">Noel
+Noel Gielegem
+offline 53
+Re: Dundii
+Mon, September 3, 2007 - 5:53 PM
+in response to: Re: Dundii
+Citty Catt: You did get a chance to view that big download from the Buck &amp; Mug guy, right? A long sequence of the Faust show from about 1972.
+Just asking....
+John, I love your stories. Thank you so much.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">39</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:35PM</span>
+            <div class="reply-content">catt
+catt avery
+online 190
+Re: Dundii
+Mon, September 3, 2007 - 5:24 PM
+in response to: Re: Dundii
+cats on the roof huh,
+I ove that they waited for you to show your really whimsical side before introducing you to the pipe. Somehow that sense of restraint is easily lost.
+He left a big mark on that part of hollywood somehow, some sort of bohemian peak-climbing experience.
+Its true about the oboe. I played bassoon for awhile in University (I couldnt resist). They wanted me to take it up, but I was already relly full with pre-med and photography...I also was showing paintings that year.
+Oh what I would give for a photo of the old PDA. Its like i remember but already young I wore out the memories.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">40</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:35PM</span>
+            <div class="reply-content">john...
+johnniZanni
+offline 8
+Re: Dundii
+Mon, September 3, 2007 - 9:51 AM
+in response to: Re: Dundii
+What I recall of Dundii&#x27;s early life...
+He was born on September 11, 1934. I assume it was in Galveston, though his mother&#x27;s side of the family came from &quot;Greenwood on the Yazoo,&quot; as he used to say. That&#x27;s in Mississippi. An early memory he recalled was collecting rainwater for his Grandmother to use for shampooing. She would give him a penny a mason-jar full.
+When he was young, he was of average height, and plump. When he was I guess about 13, going through puberty, during one summer, he contractet Scarlet Fever and Rheumatic Fever at the same time, which kept him in bed for the summer. The combination of the two diseases and puberty kicked his pituitary into high gear. When he got out of bed, he had grown to 6&#x27;9&#x27; and was the tall endomorph we all know and love. It also suppressed his pubic hair. He was unable to grow a beard until he took Testosterone treatments sometime during the 70&#x27;s. Good old Dr. Basil ...? (he was part of the Texas mafia, too. A friend through Gary Travis, he graduated from Baylor Medical School as an Osteopath, but California won&#x27;t license Osteopaths, so he had to practice as a GP. He was Dundii&#x27;s lifelong physician.)
+As I said, during WW II there were anti-german mobs protesting at his house. This led to psychological problems that he dealt with in analysis some time later. He said that during High School he was straight and sexually active with girls. He attended the Cincinatti Conservatory, playing the oboe. He gave it up, according to him because the double reed vibrating inside the head produces insanity. Whether that&#x27;s true or not, I don&#x27;t know; Dundii was convinced that it was so. This training is where his considerable ability in reading and orchestrating the music from the Fitzwilliam Harpsichord Manual for the PDA came from. An influence in that direction was John Runge&#x27;s collection &quot;It Was a Lover and His Lass,&quot; which is a setting of the songs from Shakespeare&#x27;s plays to airs from the Fitzwilliam collection.
+I wish I could tell you more about his early life, but he didn&#x27;t talk about it much. When he did, it was as &quot;give and take&quot; when he was getting me to tell him about my formative influences. One of the things he liked about me was my love of poetry, and efforts to write. When I first began living with him late in 1961, we lived in an old two-story house on Sunset by Western. The apartment was the second story of the house. At that time he had a number of cats, there were about 6 or 7 of them, as well as an apricot standard poodle &quot;Caesar.&quot; One day he was talking about Dorothy Parker, and a poem of hers that he loved: &quot;Pigeons on the grass, Alas!&quot; He said he wished there were one about cats on the roof. This is because the cats were fond of sitting on the roof of the house. How they got there I will never know, it was a two story house. Cats never let you see them fly... I came up with &quot;Cats on the roof, Aloof!&quot; and Dundii loved it. It was as a result of that he and Patsy taught me how to smoke the Pipeweed. We had lived together for several months, and there was not a hint of it until then.
+When he was younger, like in High School, I&#x27;m thinking Dundii was a force to be reckoned with, in a way that he later outgrew. Vindictive, you did not want to cross him. One of the ways of revenge he told me about was to get an oyster shell (easy to come by in Galveston) and walk around the person&#x27;s car dragging the shell along the paint. It&#x27;s true, even when he was in his maturity, you didn&#x27;t want to cross Dundii, but he would let you know right then, in no uncertain terms if you did. He outgrew the passive-aggressive way of dealing with things.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">41</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:35PM</span>
+            <div class="reply-content">john...
+johnniZanni
+offline 8
+Re: Dundii
+Sat, September 1, 2007 - 1:51 PM
+in response to: Re: Dundii
+There&#x27;s a website you may be interested in, devoted to the writings of Dr. Serge Raynaud de la Ferriere. Especially the book &quot;Yug, Yoga, Yoghisme.&quot; It is an encyclopedic tome about the history and practice of Yoga, with tie-ins to numerology, kaballa, and just about every other branch of occult knowledge. It is available as a download, in 16 blocks for Adobe. You may find it an interesting resource. Go to www.aquarius-studiesenter.no/e/b...htm. Enjoy!
+There are more of his writings at www.newageofaquarius.net/.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">42</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:34PM</span>
+            <div class="reply-content">catt
+catt avery
+online 190
+Re: Dundii
+Fri, August 31, 2007 - 7:55 PM
+in response to: Re: Dundii
+Dr Dee was in search of the Enochian language. essentially the written language of the angels. He felt that the symbols of astrology were remnants of that secret system of writing that was known to the ancients.
+Early on he was well knows as a mathematician as well as a succesful astrologer (no doubt sidereal). He was even imprisoned early on in life for having predicted the final triumph of Elizabeth I.
+Once Glorianna ascended the throne he was taken in as a fixture of court. he rode hard with Phillip Sydney and that bunch. His wizardry extended to navigation as well as most of all of what was then still thought of as &quot;natural Magic&quot;. Somehow he seemed to also have a finger on the other type as well, and he had a mysterious and typically Welsh hand in the shaping of even the idea of the &quot;British Empire&quot;. He had a steady heavy hand in the events at court during a very intense period.
+Eventually he met up with the strange and somewhat mysterious Edward Kelly. An alchemist and a scryer Kelly had the secret to the Enochian Language, and Dr Dee was certain that indeed he was having a direct conversation with angels, using Dr Dee as a sort of gathering rod. The combined effect of Kelly&#x27;s copious writings and Dee&#x27;s certainty helped to push Elizabethan efforts over the lip of the cup so to speak.
+The angels told Kelly to seek recognition further afeild. By the end of the eighties they were wandering in Europe looking for support from the Polish King, or some other monarch who could grasp the significance of the angelic transmissions. In the end there was a sort of bitter parting of the ways. The book I read had a more detailed and reasonable version than is often told.
+Eventually he returned to Mortlake where his instruments lay in ruin and his ibrary&#x27;s were ransacked. Elizabeth set him up as warden of Christs College of Manchester. It was a difficult position to bear, with the onrush of protestant and puritanical leanings in the politics easily overlapping into the local opinion of him as a self-proclaimed Magus.
+Essentially Dr Dee felt that numbers themselves had magic, a god given magic that was deeply intertwined with their individual nature. Like most hermetics he felt that he each number corresponded to an angel and in turn a sort of set of characteristics. He was inspired by his understanding of the mystical nature of the given numbers to try and bring together the bloody divide between Protestant and Catholic, he even delved greatly into what could be understood at the time of Islamic scripture and philosophy around numbers and navigation and caballistic angeology.
+Essentially eventually he was treated in court with scorn. Once the deed was done, once the British Empire was invented, it had no place for the inventor. He was part of the world which he himself cracked open and stepped out of.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">43</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:33PM</span>
+            <div class="reply-content">johnniZanni
+Re: Dundii
+Fri, August 31, 2007 - 3:02 PM
+in response to: Re: Dundii
+Dundii once referred to me as &quot;a rhinestone in the rough,&quot; when I had disappointed him about something. He shone so brightly that the rest of us seemed dim, but only by comparison.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">44</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:32PM</span>
+            <div class="reply-content">Rydell Downward
+Re: Dundii
+Fri, August 31, 2007 - 12:02 PM
+in response to: Re: Dundii
+I&#x27;m just dim. That&#x27;s my excuse and I&#x27;m sticking to it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">45</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:32PM</span>
+            <div class="reply-content">Rydell
+Rydell Downward
+offline 193
+Re: Dundii
+Wed, August 29, 2007 - 12:46 PM
+in response to: Re: Dundii
+Why don&#x27;t they make them like that anymore?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">46</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:31PM</span>
+            <div class="reply-content">johnniZanni
+Re: Dundii
+Fri, August 31, 2007 - 8:22 AM
+in response to: Re: Dundii
+Tropical Astrology assumes that March 21 (Vernal Equinox) falls on 0 degrees Aries. That was true, about 4000 years ago. Due to the precession of the Equinoxes, however, the sun enters a new sign at the spring equinox roughly every 2160 years. 4000 or so years ago, the sun was in Aries at that equinox, and the religious symbolism was the Ram (Sheep). This coincided with the rise of Judaism, the lamb sacrifice, the Shofar(ram&#x27; horn), and the Ram&#x27;s horns of the Faire are a nod to this era. Symbols tend to self-perpetuate.
+Roughly 2000 years ago the sun entered Pisces at the Vernal Equinox, and for the Age of Pisces we got the fish as a symbol. &quot;I shall make you fishers of men...&quot; The fish scrawled in the dirt as an early Christian recognition symbol, seen even today on the backs of cars and pick-ups. Eating fish on Fridays...
+On March 21, 1948 the sun entered 0 degrees of Aquarius on the occasion of the Vernal Equinox, which initiated the Age of Aquarius! The symbol of the sign, the two wavy lines, represent the harmony of science and mysticism that will emerge in this age. The image of the water bearer is that of Ganeymede pouring out the divine elixir. The vessel is the Grail. The divine elixir is knowledge of our oneness with the All. Samadhi. Satori. Self-Realization
+Now it&#x27;s your turn. I have never heard about Dr. Dee. Please enlighten me further.
+Rydell, &quot;They&quot; didn&#x27;t make Dundii. He created himself. Better to ask, why are we all such mental conformists?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">47</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:31PM</span>
+            <div class="reply-content">catt
+catt avery
+online 190
+Re: Dundii
+Wed, August 29, 2007 - 6:46 PM
+in response to: Re: Dundii
+ah yes the occult.
+One of the reasons I became fascinated with him is a comment that Bob made early on. Heonce said to a group of sadly nodding cronies in my company...that Dundii was the real Dr Dee of the modern age.
+About seven years ago while I was working on some art history credits I came upon a book about Dr Dee. Now as I recall Kevin Brown played Dr Dee at one point...at times when I was away i would think that I had Dundii mied up with all these fantastical characters...like maybe he wasn&#x27;t real. Part of the horror show of the nineties was this type of amnesia.
+Dr Dee wa into angeology, and astrolgy and all of that. He used a sort of divined language of angels to determine some pretty stellat points of English exploration and military advancement at sea. Of course later he was badly treated, and essentially that was also what Bob may have been implying.
+Whats the distinction of siderial astrology?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">48</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:30PM</span>
+            <div class="reply-content">johnniZanni
+Re: Dundii
+Wed, August 29, 2007 - 11:30 AM
+in response to: Re: Dundii
+As near as I understand, he became Dundii when he started doing wardrobe. He wanted a name that would stand out. After he came to Hollywood, he started going to costume parties. He told me about going to a party as a lamp, once. He painted his body with white shoe polish, and held a lighting fixture which was then plugged in with a long extension cord. He would just stand there, like the statuary mimes of today. He said that he had to go to the party standing up in the back of a pick-up, because if he sat down it would destroy the make-up. After some adventures like that, he got a job offer to go to work for Logan Costume Company. Why he chose &quot;Dundii&quot; is a mystery to me. Patsy always called him &quot;Dudley&quot;... Back when it was permitted, his telephone was listed as Dundii. Later the telephone company required first and last name. He was then listed as &quot;John Huhn.&quot;
+When I first met him, it was in August of 1961, not 60 as I mistakenly said earlier, Logan had done wardrobe for a production of &quot;The Cherry Orchard.&quot; It was performed by a company of Method Actors. I got to see the show. Perfect Period wardrobe. Dundii always claimed to be a &quot;Method Costumer.&quot; If the period required corsets, the actors wore corsets. Dundii made them from scratch. The only bow to modern technology was that the stays were made of spring steel, not whalebone. Hoop skirts had spring steel hoops, too. The next show I watched him dress was a period piece about Abraham Lincoln, with Tex Ritter singing ballads as set-ups for the scenes. The ladies were all dressed in hoop skirts. Ruffled Pantaloons. Real hoops under the dress, not crinolines! There were miles of fabric in those skirts, if you count the ruffles. The ruffles had to be sewn on by hand. I got that task, as I was/am pretty hopeless when it comes to operating a sewing machine.
+One of Dundii&#x27;s favorite Logan Costume stories was about a young man who came in looking for a Lion costume. It couldn&#x27;t be just any lion costume, either. He wanted to wear THE Lion costume from the Wizard of Oz. Wellllll..... the customer is always right. They found a lion costume and swore up and down that it was THE lion costume. It fell to Dundii to conduct the fitting. And, wouldn&#x27;t you know, the young man had an orgasm while he was being fitted. That&#x27;s actually more than I wanted to know.
+Logan Costume Company was run by a man/wife couple, Jamie and Winnie Logan. Jamie was a tall, pink and strawberry blond Scotsman, an old time second rate film actor. Winnie was as wide as she was tall, which was about 4&#x27;5&quot;. Her mother was a world class Siderial Astrologer. During WW II she was one of the astrologers the Government retained to tell them what Hitler&#x27;s astrologer was tellling him. Top Secret, at the time!
+It was from her that Dundii and Patsy got their interest and instruction in Siderial Astrology. Dundii had a deep interest (and Knowledge) in things occult. The names of the Angels... The Sephora... Mentalism... Astrology!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">49</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:30PM</span>
+            <div class="reply-content">catt
+catt avery
+online 190
+Re: Dundii
+Wed, August 29, 2007 - 10:59 AM
+in response to: Re: Dundii
+Galveston...that gives a whole new meaning to a couple of folk tunes that I know.
+On the Avery side, we had a good dose of German that we had to keep pretty quiet about during the war as well. Not being alive then I never understood it. Later we found out that it was mostly Hessian, from Canada...the same Hessian mercenaries that had been called over to put down the stamp act rebellion. They promptly ran to the woods and the semi-welcoming arms a of the natives over the border just about as soon as they sussed out the situation.
+There is a great book of essays called&quot;Gone To Croatan: The origin of North American Dropout Culture&quot; which has an essay that goes into some detail about the Lafitte battle. The reasoning being that pirates invented out modern idea of democracy and by this means of gauging the crews involvement in a stake won several of our major wars for us including the revolutionary war.
+How did he ever get to be Dundii?
+(I mean the name although everything about him always fascinated me&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">50</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:29PM</span>
+            <div class="reply-content">johnniZanni
+Re: Dundii
+Wed, August 29, 2007 - 9:49 AM
+in response to: Re: Dundii
+Patsy and Dundii were not related... she was of Italian extraction (Magurno), and Dundii&#x27;s real name was Johann Christian von Huhn. Galveston german. One of Dundii&#x27;s ancestors was a pirate in the crew of Jean La Fitte. La Fitte and his crew helped out Andrew Jackson during the battle of New Orleans, war of 1812. As a reward, they received pardons and were given the island of Galveston to settle. During WW II, the family dropped the &quot;von&quot; due to anti-german sentiment. Dundii told me that one of the things that shaped his psyche was the memory of anti-german mobs outside their house. It was one of the things he had to deal with when he went through analysis. This was all before I knew him, when he was growing up. Dundii was born on September 11, 1934.
+Back to Patsy &amp; Dundii... By the time I met them they had stopped being Beatniks, but they told me that they had used to get dressed up wearing black turtle neck sweaters, black trousers, and berets, and &quot;Go be beatniks.&quot; I asked why they had stopped, and the answer was that the clothes were too expensive! Black cashmere turtle neck sweaters... Dundii always had to dress the part! And, only the best...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">51</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:29PM</span>
+            <div class="reply-content">catt avery
+Re: Dundii
+Wed, August 29, 2007 - 6:34 AM
+in response to: Re: Dundii
+this is just perfect John, you understand intuitively exactly what this space is for.
+Tell me more about the terryfying beatnicks.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">52</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:28PM</span>
+            <div class="reply-content">johnniZanni
+Re: Dundii
+Sat, August 25, 2007 - 4:57 PM
+in response to: Re: Dundii
+With your permission, I would like to hereby copy over some posts I made to other RPF sites here, so all the Dundii stuff can be under one thread.
+IN NO PARTICULAR ORDER========
+As I can best recall, the first appearance of HRH QE 1 was at Agora, the fourth RPF, would that be 64 or 65? The event was an afternoon Main Stage Performance of &quot;1603&quot; by Mark Twain. Julie Meridith played HRH for the first time. I played Sir Francis Drake. The next year, I heard through Dundii that Carole La Fleur wanted me to play Shakespeare, and I needed to know a sonnet. At the time I had been hanging around SF, so I went to the City Lights Bookstore and memorized a sonnet. &quot;Shall I compare thee to a summer&#x27;s day?&quot; And then hitchiked to Hollywood just in time to get my costume and audition for Carole. She approved the choice, and a couple of days later the Faire opened and the first Queen&#x27;s Progress took place. Julie rode a horse, followed by The Firesign Theatre who were playing Lord Mayor, Lord High Sherrif, etc. Also, there were sundry SCA members from Berkeley who passed for &quot;The Court.&quot; I followed the horse as groom, and pushed its rump next to the stage while the wrangler who led the horse kept its nose fixed. This was so HRH could dismount directly onto the stage. Later in the show, after proclamations, guild presentations, etc., I was introduced as a writer of sonnets as well as stablehand, Master William Shaxpur, did my bit, and that was it. This was wayyyy before PDA. The SCA group educated us in etiquette. But it took Dundii and PDA to bump it up a notch, and there was no rivalry between SCA and PDA that I know of. Mutual admiration mostly.
+I once offended an SCA member at a northern Faire, and was challenged to a duel. I had Therl for my second. We met behind the burlap curtain at the extreme end of the fair, just past David Teske&#x27;s star map. As the challenged person, I should have gotten choice of weapons, but it was decreed that we would fight with rapier and dagger. I had done a little fencing with foil and saber in college, but that was new to me. Then we squared off, and they realized that I am left handed, and he didn&#x27;t want to fight me like that, so I had to switch hands, with the rapier in the right and dagger in the left. As a result, my opponent got in the first few hits, but I got the hang of it and after that we were hitting each other about even. After a little while, he declared himself satisfied, and the duel was over. To this day I do not know what I did to offend him... One side effect was that Dutch Smith passed by during the duel and stopped to watch. A couple of days later it was his birthday, and a surprise party was held for him at night. The Guards wanted me to get drunk and disorderly so they could bring me before him for Judgement as a treat before they sprang the surprise on him. I had a great time &quot;fighting&quot; Bobcat and Woz, and then they presented me to Dutch... and he let me go!!! Therl later said any other actor would have been beat up and 86&#x27;d. I guess he liked the duel. It was the next year that I was asked to join the Guard crew, they wanted someone who knew the entertainers to guard backstage. That began my second career at the Faires.
+The PDA did play some gigs at Disneyland, but as a turn of the century Brass Band Ensemble, in parades and I think a Gazebo. I tried to get Dundii to put less energy into the Faires and go for more LA gigs, but he resisted. It was the main reason we parted company...
+Patricia Smyth nee McGurno was Dundii&#x27;s &quot;Sister.&quot; They had been &quot;Beatniks&quot; together even before I met them in 1960. They loved to dress up the same and go places and terrify people. She was an accomplished Astrologer (Siderial). Patsy had a long career as an extra and stand in. She was stand in for Tina Louise, etc. She was tall, slender, long black hair, and loved to laugh. She and Dundii kept each other entertained. When they were together, unless you could keep up, stay out of the way! On her applicaton for extra work in the space where it asked if she could drive, she answered, &quot;All makes and models, Foreign and Domestic.&quot; For example...
+was at Dundii&#x27;s memorial. I don&#x27;t remember the year exactly. I knew Dundii from about 1972 when he rode the Faire bus (which stopped at his house on Seward in Hollywood); I later wrote and directed one of the PDA shows on main stage. The story was that Dundii had not been seen or heard from in several weeks, and somebody (I think George Alspaugh, the choreographer for the PDA) went to Dundii&#x27;s house to check on him, only to find that he had been ill for several weeks and may have been trying to keep out of the public eye. This was in the early 80&#x27;s when many people were getting sick. Eventually they got him to a hospital where he was diagnosed with pneumocystis, and he later died. Looking through his apartment later they found a typewritten parody of &#x27;Kublai Khan&#x27; by Coleridge (it was a big poke at the Faire) which I had written and forgotten about---so that ended up being read at the memorial service by Luisa (Lois A. Plug, Dundii used to call her). The memorial was at an Anglican church in Los Feliz (in LA) and was crowded with Faire people---and also Dundii&#x27;s sister, a very nice, genteel lady from Texas who I remember looking something like Lily Tomlin. Somebody who was up near the podium said that during all the speeches, he noticed a big black spider had lowered itself down from the ceiling and it just hung there awhile, as if listening. When the speeches were over, the spider ascended back toward heaven. Afterward we all talked, then several went out for a big Tex-Mex dinner in the neighborhood somewhere, telling Dundii stories. I remember Don Brown was with us, and Luisa, I don&#x27;t remember who else. I know Richard Beard is on some of these Tribes, maybe he remembers more.
+Oh, Disney. Yes, Dundii did a lot of work for Disney. I remember one of his favorite costumes of all time was when he made some wardrobe for an elephant for Disney. He was a master cutter. A designer could show him a sketch of ANYTHING and Dundii could cut the cloth for it. He was provided with a team of sewers for these projects, mostly if not all ladies of hispanic persuasion. He called them &quot;My Tacos.&quot; I never went to that shop, but got the impression it was a sort of Disney Subcontract Sweat Shop, although Dundii never exploited anyone who worked with or for him. Used, yes, but only in the very best way. When a Genius uses you, you find that you can do things you never would have imagined. From what you tell me, that must have been wardrobe for the Electric Parade, although he never really went into what it was being used for.
+I remember Bob Thomas, and the Golden Toad. I remember one night show especially, they were doing a rhythmic, repetitive piece which kept winding and winding, and progressing chords, and finally they came to a climax by changing rhythms and keys simultaineously that sent chills up my spine. The crowd went wild. It was a musical education for me. The only time I have ever seen anything remotely similar was at a YES concert at Hollywood Bowl. Dundii and Bob met at the Faire.
+No, the Queen&#x27;s Progress was a fixture from the second or third faire on. Originally she rode on a horse. As Shakespeare, I first appeared as a groom, and part of my job was to push the horse&#x27;s rear up next to the stage, while the wrangler who led the horse held its head. This was to allow HRH to dismount directly onto the stage. Then, later in the show, I was introduced as a lowly stablehand who also happened to write sonnets. I would perform one, she would receive me, and a star was born...
+By the way, did you know that the first group of Fairshire Officialdom (Lord Mayor, Lord High Sherriff, etc.) was played by the Firesign Theatre?
+Later, HRH began being carried in a sedan chair, with a bunch of SCA and Entertainers and Guild Members walking through the Faire to the Main Stage. Dundii dressed it up with elegant Ladies in sedan chairs, each accompanied by her Lord. But you knew that!
+I had gone on to other things just as the LHC was being created, so I never have even been there. Sadly, I know nothing of the PDA after 1976. But it sounds like the kind of thing Dundii would have done. Although I was never a PDA member, there was a certain bond there, and I did encourage Dundii to stop doing the Faire (he was becoming displeased with things, and when Dundii was displeased...), however it was not as a result of my urging that anything happened. Our last conversation on the subject ended with him agreeing to stop working the faires and promote the PDA in the LA arts scene. Then as he turned and walked up the hall, I heard him think, &quot;I&#x27;ll say yes, and do it anyway.&quot; I thought back at him, &quot;If you do, I won&#x27;t be here when you come back.&quot; And sadly, that&#x27;s the way things fell out. That&#x27;s one of the few moments in my life I wish I could recall... He did work the next Faire, and I did move out.
+How PDA came to be is an interesting story in itself. It starts with Dundii trying to shame the Faire into doing better wardrobe by making a stunning Shakespeare costume for me. Then he began making stellar wardrobe, first for himself, and selected friends. After several years of this, it was around 1971 or so if I remember correctly, he decided to present an offer to Phyllis. He would create an ensemble to dress up and authenticate the Queen&#x27;s Progress and Main Stage Show. He would make the wardrobe, have period music instruments made, and orchestrate period music from the &quot;Fitzwilliam Harpsichord Manual&quot;, all of which would be owned by the Faire. Of course, he would do all this for a fee.
+I was sent to SF to make the proposal to Phyllis. Phillys was having nothing to do with it. She would not see me. She would not speak to me on the telephone. She totally stonewalled me.
+Dundii was not to be denied, however. He raised the money to buy the cloth, and made the costumes. He raised the money and had the period instruments made. He assembled the membership, created the PDA, orchestrated the music (he had me writing out the sides!) and trained the musicians, Lords and Ladies. I think he did talk the Faire into providing sedan chairs for the ladies, I don&#x27;t recall our having to make them. And then he rented the lot out to the Faire at a higher fee than he would have given it to them for. That is how the Faire came not to own that wardrobe, instruments, etc.
+I was never a member of the PDA myself, but was on the scene during its creation. It was a supreme act of will on the part of a polymath genius and his friends and admirers and students. Did you know Dundii was a graduate of the Cincinatti Conservatory of Music? He was a self taught designer, cutter and maker of wardrobe. I remember going with him to the LA County museum, and stalking the Renaissance section. Once when he was looking at an especially elaborate gown, he said, &quot;There&#x27;s a copy of my very next original.&quot; His motto was, &quot;When you stand on the shoulders of Giants, you see farther.&quot; He also was fond of saying, &quot;I only steal from the very best&quot;
+In re: meeting Dundii. I was 20 years old, wet behind the ears, and attending Midwestern State College in Wichita Falls, TX, when a former student of the ballet school run by Frank &amp; Irina Pal, one Joy Moffett came to town to make a film of one of their original ballets. I had served my Equity Apprenticeship at the Alley Theatre in Houston, and gone back to school for an acting degree, and was able to help them with the lighting of the project. As they were leaving to return to Hollywood, where she had offices at Paramount, Joy spoke to me those fateful words, &quot;If you&#x27;re ever in Hollywood, look me up!&quot;
+That was near the end of the summer session, and it came to pass that three weeks later, I boarded a bus for Hollywood, and never looked back. When I got off the bus in downtown LA, I was met by Gary Coster, who had directed the ballet epic. There at the table in the cafeteria sat the strangest looking person I had ever encountered. Long face, pointed chin, widow&#x27;s peak long black wavy hair with a slight green tinge. He stood up: unfolded, I should say, and rose to his full 6&quot; 9&quot; height (the tallest person I had ever encountered.) Later he told me that I looked like I was about to run back to the bus and head for Texas again. That I was totally intimidated, I will admit, &#x27;twas true.
+I settled in as a roommate with Gary, and Dundii began calling to talk with me, (we were a Texas trio: Gary from Waco, me from Pasadena, Dundii from Galveston) and so we became friends. He was working for Logan Costume Company, and got me on helping during the Halloween rush. Gary convinced some ranchers to fund a movie (a western: Sundown at Devil&#x27;s Flats) which we collaborated on writing. I was made Production Manager/Assistant Director, a job which I learned by doing. Dundii, naturally did the wardrobe. A good time was had by all. The picture was a Dog and never enjoyed release. Gary and I had a falling out, and Dundii invited me to become his housemate. I did so, and thereby, as the saying goes, hangs a tale...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">53</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:27PM</span>
+            <div class="reply-content">Basileus
+Re: Dundii
+Sat, August 25, 2007 - 4:26 PM
+in response to: Re: Dundii
+Yes, &#x27;Entertaining&#x27; was certainly one of the aspects of Dundii&#x27;s character: he wanted me to do Dickens as a bearded woman, once, he was vastly entertained by the idea of furry cleavage and hairy shoulders and a lacy chemise. I remember the apartment where he used to live in Hollywood was in front of a shop that manufactured dildoes, and he had apparently made artworks out of the throwaways left in the dumpster--- I remember a dome of dildoes of many sizes poking out. Not to mention his infamous smoking equipment.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">54</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:26PM</span>
+            <div class="reply-content">JohnZanni Sat, August 25, 2007 - 3:42 PM tribe.net teahouse
+---
+&quot;A History of Famous Greeks and Romans,&quot; no doubt. Dundii also loved the Tales of Tiberius. One of his great regrets was that it was illegal and unwise to have a swimming pool full of naked cherubs... &quot;Tiberius&#x27; Tadpoles!&quot; Not that he would have found them sexually intersting, but it would have been so ENTERTAINING!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">55</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:25PM</span>
+            <div class="reply-content">Noel Sat, August 25, 2007 - 2:33 PM tribe.net teahouse
+---
+Thanks for that, John. It explains something I&#x27;ve never quite understood.
+When I started doing Court, a bunch of my schitck for Lennox was borrowed either in part or lifted in whole from &quot;A Rebours.&quot; I made Lennox the proud papa of bejeweled tortoise (which, of course, never truly existed at Faire, but which we searched for endlessly as I was supposed to lost it). If recollection serves me, the tortoise (and it&#x27;s demise) was a motif in the book.
+Duffy used to get a huge kick out of all this, (he, David Springhorn, and Kevin Brown would alway used the same line: &quot;You&#x27;re a sick little man!&quot; which at my height and theirs was a bit odd), but I never really knew why.
+I sort of took &quot;A Rebours&quot; as sort of my own private domaine. I knew nothing of Dundii&#x27;s obsession.
+It figures in &quot;A Picture of Dorian Grey&quot; if I&#x27;m not mistaken, and took a bit of tracking down on the part of my 17-year old brain. Special ordering it from the highschool library, etc. It&#x27;s really a piece of crap (of the most wonderful sort). Completely self-indulgent. My high school French teacher (a very uptight conversative Piedmontese) was horrified. I was thrilled!
+My other inspiration was/were the Roman historians with their descriptions of the debaucheries of Tiberius.
+God, I wished I&#x27;d had the balls to approach Dundii, but, alas, he was too daunting.
+Thanks for sharing that. It explains so much!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">56</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 02:23PM</span>
+            <div class="reply-content">JohnZanni
+Fri, August 24, 2007 - 7:27 PM tribe.net teahouse
+With your permission, I&#x27;d like to start a new thread, so we can collect our memories of Dundii under one heading, instead of them being spread out through the other threads, which are all so fine.
+Where did Dundii get his way of thinking? He was an obsessive fan of J.K. Huysmans&#x27; novel &quot;A rebours&quot;, or &quot;Against the Grain.&quot; He totally identified with des Esseintes. Before I had the chance to read it (Dundii had lost his copy) he told me about the character and the parts of the book that moved him most. Foremost were the bits about collecting real flowers that looked artificial, and then artificial flowers that looked real; that des Essientes decorated his rooms in leather of a particular color of orange-brown. The part where he takes a young man in off the street and gets him used to fine foods, wine, high living, and then kicks him back out onto the street (the goal being to create a criminal). Des Esseintes was the ultimate esthete, and Dundii lived his life in emulation of that lifestyle. Always redecorating, inventing new styles, extreme attention to detail in re-creating historic styles, love of fine food and essences, these are all examples of his attempt to BECOME des Esseintes. He told me he admired Madam de Pompadour because in her chalet she had nothing that was not contraband...
+Since we are all fans of his works, I thought you might enjoy knowing the source of his inspiration. His goal in life was to die of gout.
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

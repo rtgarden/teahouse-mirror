@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rumi quotes - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>rumi quotes</span></div>
+            
+    <div class="module">
+        <div class="module-header">rumi quotes</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Murray then, now aka MAX</span> | <span>November 22, 2007</span> | <span>40 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (40)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 14, 2008 at 02:19PM</span>
+            <div class="reply-content">WHERE EVERYTHING IS MUSIC
+Don&#x27;t worry about saving these words and songs!
+And if one of our instruments breaks,
+it doesn&#x27;t matter.
+We have fallen into the place
+where everything is music.
+The strumming and the flute notes
+rise into the atmosphere,
+and even if the whole world&#x27;s harp
+should burn up, there will still be
+hidden instruments playing.
+So what if the candle flickers and goes out.
+We have a piece of flint, and a spark.
+This singing art is sea foam.
+The graceful movements come from a pearl
+somewhere on the ocean floor.
+Poems reach up like spindrift and the edge
+of driftwood along the beach, wanting!
+They derive
+from a slow and powerful root
+that we can&#x27;t see.
+Stop the mind and words now.
+Open the window in the center of your chest,
+and let the spirits fly in and out.
+-Rumi
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">August 17, 2008 at 12:47PM</span>
+            <div class="reply-content">This is love:
+to fly toward a secret sky,
+to cause a hundred veils to fall each moment.
+First to let go of life.
+Finally, to take a step without feet
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">July 21, 2008 at 04:07PM</span>
+            <div class="reply-content">This is how the Mathnawi (Mesnevi) starts:
+Listen to the story told by the reed
+of being separate.
+&quot;Since I was cut from the reedbed,
+I have made this crying sound.
+Anyone separated from someone he loves
+understands what I say.
+Anyone pulled from a source
+longs to go back
+At any gathering I am there, mingling
+in the laughing and the grieving,
+a friend to each, but few
+will hear the secrets hidden
+within the notes. No ears for that.
+Body flowing out of spirit,
+spirit up from body. We can&#x27;t conceal
+thar mixing, but it&#x27;s not given us
+to see the soul.&quot; The reed flute
+is fire, not wind. Be nothing.
+hear the love-fire tangled
+in the reed notes, as bewilderment
+melts into wine. The reed is a friend
+to all who want the fabric
+torn and drawn away. The reed is
+hurt and salve combining.
+Intimacy and longing for
+intimacy in one song
+A disastrous surrender,
+and a fine love, together.
+The one who secretly hears this
+is senseless.
+A tongue has one customer,
+the ear.
+The power of a cane flute comes
+from its making sugar in the reedbed.
+Whatever sound it has
+is for everyone.
+Days full of wanting, let them go by
+without worrying that they do.
+Stay where you are, inside
+such a pure, hollow note.
+-Rumi
+(interpretation by Coleman Banks)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">July 18, 2008 at 03:30PM</span>
+            <div class="reply-content">A World with No Boundaries
+With every breath the sound
+of love surrounds us,
+and we are bound for the depths
+of space, without distraction.
+We’ve been in orbit before
+and know the angels there.
+Let’s go there again, Master,
+for that is our land.
+Yet we are beyond all of that
+and more than angels.
+Out beyond duality,
+we have a home, and it is Majesty.
+That pure substance is
+different from this dusty world.
+What kind of place is this?
+We once came down; soon we’ll return.
+A new happiness befriends us
+as we work at offering our lives.
+Muhammad, the jewel of the world,
+is our caravan’s chosen guide.
+The sweetness we breathe on the wind
+is from the scent of his hair,
+and the radiance of our thought
+is from the light of his day.
+His face once caused
+the moon to split in two.
+She couldn’t endure the sight of him.
+Yet how lucky she was,
+she who humbly received him.
+Look into your heart and see
+the splitting moon within each breath.
+Having seen that vision,
+how can you still dream?
+When the wave of “Am I not?” struck,
+it wrecked the body’s ship;
+when the ship wrecks again,
+it will be the time of union.
+The Human Being, like a bird of the sea,
+emerged from the ocean of the soul.
+Earth is not the final place of rest
+for a bird born from the sea.
+No, we are pearls of that ocean;
+all of us live in it;
+and if it weren’t so, why would
+wave upon wave arrive?
+This is the time of union,
+the time of eternal beauty.
+It is the time of luck and kindness;
+it is the ocean of purity.
+The wave of bestowal has come.
+The roar of the sea is here.
+The morning of happiness has dawned.
+No, it is the light of God.
+Whose face is pictured here?
+Who is this shah or prince?
+Who is this ancient intelligence?
+They are all masks . . .
+and the only remedy is
+this boiling ecstasy of the soul.
+A fountain of refreshment
+is in the head and the eyes -
+not this bodily head
+but another pure spiritual one.
+Many a pure head has been spilled
+in the dust. Know the one from the other!
+Our original head is hidden,
+while this other is visible.
+Beyond this world is a world
+that has no boundaries.
+Put your water skin away, brother,
+and draw some wine from our cask!
+The clay jug of perception
+has such a narrow spout.
+The sun appeared from the direction of Tabriz,
+and I said, “This light is at once joined
+with all things, and yet apart from everything.”
+Rumi (version by Kabir Helminski)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 19, 2008 at 01:40PM</span>
+            <div class="reply-content">Poem 18
+Be fair.
+Admit that love has in it all the righteousness
+that we need.
+Confess that you&#x27;re willing to forget
+and be numb enough to call some low
+desire a holy name.
+Live as evidence that there is a way
+from wanting to longing.
+Rumi
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 25, 2008 at 01:08PM</span>
+            <div class="reply-content">An Open Sky
+After all
+the prayers
+have been said,
+and the tears shed
+and the uncomfortable silences,
+when we cannot respond,
+endured
+there remains
+the soft, tender sorrow
+that time does not heal.
+And in that sorrow,
+Fatah,
+an opening
+to the genuine sadness
+of being alive ---
+open to
+the absolute necessity
+of letting go
+of everyone
+and everything
+we love.
+we can close off
+this deep sadness
+or open
+our tender hearts
+so wide
+that our heart
+becomes as an
+open sky ---
+no borders,
+nor boundaries,
+just
+an open sky.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">[26kgu3wb8vyq7]</span>
+            <span class="reply-date">April 11, 2008 at 07:43AM</span>
+            <div class="reply-content">Does anyone else love Hafiz too?
+Let us be like
+Two falling stars in the day sky
+Let no one know of our sublime beauty
+As we hold hands with (love) God
+and burn
+Into a sacred existence that defies--
+That surpasses
+Every description of ecstacy
+And love.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">[26kgu3wb8vyq7]</span>
+            <span class="reply-date">April 11, 2008 at 07:24AM</span>
+            <div class="reply-content">I&#x27;m lovin&#x27; this one &#x27; deem no ruined place empty of treasure&#x27; pure harmony
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">[3oefrto8fzcmi]</span>
+            <span class="reply-date">April 11, 2008 at 12:55AM</span>
+            <div class="reply-content">www.KPCC.org show Speaking of Faith explores Rumi - rebroadcast 04/10/08 at 8pm
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 10, 2008 at 11:31PM</span>
+            <div class="reply-content">A notable amongst the Companions (of Muhammad) fell ill,
+and in that illness of his became (thin) as a thread.
+Muhammad went to visit him, since his (Muhammad&#x27;s) nature
+was all kindness and generosity.
+There is profit in your visiting the sick: the profit thereof is
+returning to you again.
+The first profit is that the sick person may perchance be a
+Qutb and a glorious (spiritual) king;
+And if he be not a Qutb, he may be a friend of the (Sufi) Way;
+if he be not the king he may be the cavalier of the host.
+Deem it, then, incumbant (upon you) to attach yourselves to
+the friends of the Way, whosoever it may be, and whether (he
+be) footman or rider.
+And if he be foe (to you), still this kindness is good, for by
+kindness many a foe hath been made a friend.
+And though he does not become a friend, his enmity is lessened,
+because kindness becomes the balm for enmity.
+There are many profits besides these, but I am afraid of being
+tedious, good friend.
+The gist (of the matter) is this: be the friend of the whole
+community (of Sufis): like the idol-maker, carve a friend out of
+the stone,
+Because the throng and multitude of a caravan will break the
+backs and spears of the highwaymen.
+Inasmuch as you have not the heart&#x27;s two eyes, O
+contumacious man, so that you cannot distinguish firewood
+from aloes-wood,
+(You may despair of finding the true friend of Allah; but)
+since there exists a treasure in the world, do not grieve: deem
+no ruined place empty of treasure.
+Betake yourself to every dervish at random, and when you
+find the mark (of the true saint), frequent (him) assiduously.
+As the inward-seeing eye was not (granted) to you, think
+always (that) the treasure (may be) in everybody.
+Rumi, Mathnawi Book II, 2140-2155
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 26, 2008 at 06:03PM</span>
+            <div class="reply-content">Spiritual Windowshoppers
+These spiritual windowshoppers,
+who idly ask, &#x27;How much is that?&#x27; Oh, I&#x27;m just looking.
+They handle a hundred items and put them down,
+shadows with no capital.
+What is spent is love, and two eyes wet with weeping.
+But these walk into a shop,
+and their whole lives pass suddenly in that moment,
+in that shop.
+Where did you go? &quot;Nowhere.&quot;
+What did you have to eat? &quot;Nothing much.&quot;
+Even if you don&#x27;t know what you want,
+buy something, to be part of the exchanging flow.
+Start a hugh, foolish project,
+like Noah.
+It makes absolutely no difference
+what people think of you.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">[2ao3o6xb6daou]</span>
+            <span class="reply-date">January 25, 2008 at 10:52PM</span>
+            <div class="reply-content">This is one of my favorite quotes! To me, it is a reminder to feel fully what I feel, not basing it on anyone&#x27;s else&#x27;s reaction or opinion. Thanks, Catt!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">[2ao3o6xb6daou]</span>
+            <span class="reply-date">January 25, 2008 at 10:49PM</span>
+            <div class="reply-content">Today, like every other day, we wake up empty
+and frightened. Don&#x27;t open the door to the study
+and begin reading. Take down a musical instrument.
+Let the beauty we love be what we do.
+There are hundreds of ways to kneel down and kiss the ground.
+(Coleman Barks translation)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 17, 2008 at 01:28PM</span>
+            <div class="reply-content">that is so yum.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">[3ps78rnilakw0]</span>
+            <span class="reply-date">January 17, 2008 at 06:54AM</span>
+            <div class="reply-content">love you schatzie, where do you find these gems?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">[26kgu3wb8vyq7]</span>
+            <span class="reply-date">January 17, 2008 at 04:40AM</span>
+            <div class="reply-content">An eye is meant to see things.
+The soul is here for its own joy.
+A head has one use: for loving a true love.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">[26kgu3wb8vyq7]</span>
+            <span class="reply-date">January 17, 2008 at 04:37AM</span>
+            <div class="reply-content">O K here&#x27;s another...
+Badly hurt but flying.
+Everybody&#x27;s scandalous flaw is mine
+I have such a teacher
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">[26kgu3wb8vyq7]</span>
+            <span class="reply-date">January 17, 2008 at 04:35AM</span>
+            <div class="reply-content">Late, by myself,
+in the boat of myself,
+no light and no land anywhere.
+Cloud cover thick.
+I try to say just above the surface, yet I&#x27;m already under
+and living within...
+the ocean
+translation Coleman Barks
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">[2ao3o6xb6daou]</span>
+            <span class="reply-date">January 15, 2008 at 01:35AM</span>
+            <div class="reply-content">Sweet Honey in the Rock put this Kahlil Gibran poem to music. I can&#x27;t recall the name of the album, but I believe the song is called &quot;Your Children&quot;.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 15, 2007 at 08:04PM</span>
+            <div class="reply-content">A thousand half-loves
+must be forsaken to take
+one whole heart home
+Let the lover be disgraceful, crazy,
+absentminded. Someone sober
+will worry about things going badly.
+Let the lover be.
+Lovers don&#x27;t finally
+meet somewhere.
+They&#x27;re in each other all along.
+-rumi
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 11, 2007 at 01:42AM</span>
+            <div class="reply-content">&quot;Love is reckless; not reason. Reason seeks a profit. Love comes on strong, consuming herself unabashed.
+Yet in the midst of suffering love proceeds like a millstone, hard surfaced and straight forward.
+Having died to self interest, she risks everything and asks for nothing.
+Love gambles away every gift God bestows.
+Without cause God gave us Being; without cause give it back again.
+Gambling yourself away is beyond any religion.
+Religion seeks grace and favor, but those who gamble these away are Gods favorites,
+for they neither put God to the test nor knock at the door of gain and loss&quot;
+(translation by Edmund Helminski)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 08, 2007 at 07:28PM</span>
+            <div class="reply-content">One night a man was crying Allah! Allah!
+His lips grew sweet with praising,
+until a cynic said, “So!
+I’ve heard you calling out, but have you ever
+gotten any response?”
+The man had no answer to that.
+He quit praying and fell into a confused sleep.
+He dreamed he saw Khidr, the guide of souls,
+in a thick, green foliage.
+“Why did you stop praising?” “Because
+I’ve never heard anything back.”
+“This longing you express
+is the return message.”
+The grief you cry out from
+draws you toward union.
+Your pure sadness
+that wants help
+is the secret cup.
+Listen to the moan of a dog for its master.
+That whining is the connection.
+There are love dogs
+no one knows the names of.
+Give your life
+to be one of them.
+Rumi
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 04, 2007 at 03:56PM</span>
+            <div class="reply-content">Love comes with a knife, not some shy question.
+And not with fearing for it&#x27;s reputation!
+Love is a madman working his wild schemes,
+tearing off his clothes, running through the mountains,
+drinking poison and quietly choosing annihilation.
+You&#x27;ve been walking the ocean&#x27;s edge, holding up your robes
+to keep them dry.
+You must dive naked under, and deeper under, a thousand
+times deeper and deeper under.
+Love flows down, love flows down.
+The ground submits to the sky and suffers what comes down, love flows.
+Tell me, is the earth worse for giving in like that?
+Don&#x27;t put blankets over the drum. Open completely.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 03, 2007 at 12:51PM</span>
+            <div class="reply-content">I swallowed some of the Beloved&#x27;s sweet intoxicant, and now I am ill.
+My body aches, my fever is high. They called in the Doctor and he said, drink this tea!
+OK, time to drink this tea. Take these pills! OK, time to take these pills.
+The Doctor said, get rid of the sweet intoxicant of his lips! OK, time to get rid of the doctor.
+It is your turn now, you waited, you were patient. The time has come, for us to polish you.
+We will transform your inner pearl into a house of fire. You&#x27;re a gold mine. Did you know that,
+hidden in the dirt of the earth? It is your turn now, to be placed in fire.
+Let us cremate your impurities
+When we talk about the witness in our verse, we talk about you.
+A pure heart and a noble demeanor cannot compete with your radiant face. They will ask you
+what you have produced. Say to them, except for Love, what else can a Lover produce?
+By day I praised you and never knew it. By night I stayed with you and never knew it.
+I always thought that I was me--but no, I was you and never knew it.
+This is a gathering of Lovers. In this gathering there is no high, no low, no smart, no ignorant,
+no special assembly, no grand discourse, no proper schooling required.
+There is no master, no disciple. This gathering is more like an intoxicated party,
+full of tricksters, fools, mad men and mad women. This is a gathering of Lovers.
+I wish I could give you a taste of the burning fire of Love.
+There is a fire blazing inside of me. If I cry about it, or if I don&#x27;t,
+the fire is at work, night and day. People make clothing to cover their intellect,
+but the heart of Lovers is a shroud, inflamed in golden hues of His Love.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 02, 2007 at 04:31PM</span>
+            <div class="reply-content">“The Many Wines”
+God has given us a dark wine so potent that,
+drinking it, we leave the two worlds.
+God has put into the form of hashish a power
+to deliver the taster from self-consciousness.
+God has made sleep so that
+it erases every thought.
+God made Majnun love Layla so much that
+just her dog would cause confusion in him.
+There are thousands of wines
+that can take over our minds.
+Don&#x27;t think all ecstacies
+are the same!
+Jesus was lost in his love for God.
+His donkey was drunk with barley.
+Drink from the presence of saints,
+not from those other jars.
+Every object, every being,
+is a jar full of delight.
+Be a connoisseur,
+and taste with caution.
+Any wine will get you high.
+Judge like a king, and choose the purest,
+the ones unadulterated with fear,
+or some urgency about &quot;what&#x27;s needed.&quot;
+Drink the wine that moves you
+as a camel moves when it&#x27;s been untied,
+and is just ambling about.
+Coleman Barks
+One-Handed Basket Weaving
+Maypop, October 1992
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 02, 2007 at 03:08PM</span>
+            <div class="reply-content">Ghazal 119
+i don&#x27;t need
+a companion who is
+nasty sad and sour
+the one who is
+like a grave
+dark depressing and bitter
+a sweetheart is a mirror
+a friend a delicious cake
+it isn&#x27;t worth spending
+an hour with anyone else
+a companion who is
+in love only with the self
+has five distinct characters
+stone hearted
+unsure of every step
+lazy and disinterested
+keeping a poisonous face
+the more this companion waits around
+the more bitter everything will get
+just like a vinegar
+getting more sour with time
+enough is said about
+sour and bitter faces
+a heart filled with desire for
+sweetness and tender souls
+must not waste itself with unsavory matters
+Translated by Nader Khalili
+Rumi, Fountain of Fire
+Cal-Earth, September 1994
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">[3ps78rnilakw0]</span>
+            <span class="reply-date">November 28, 2007 at 06:19AM</span>
+            <div class="reply-content">We began as a mineral. We emerged into plant life and into the animal state, and then into being human, and always we have forgotten our former states, except in early spring when we slightly recall being green again.
+That&#x27;s how a young person turns toward a teacher. That&#x27;s how a baby leans toward the breast, without knowing the secret of its desire, yet turning instinctively.
+Humankind is being led along an evolving course, through this migration of intelligences, and though we seem to be sleeping, there is an inner wakefulness that directs the dream,
+and that will eventually startle us back
+to the truth of who we are.
+(from the Essential Rumi, Coleman Barks &amp; John Moyne translations)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 27, 2007 at 01:52AM</span>
+            <div class="reply-content">We come spinning out of nothingness,
+scattering stars...the stars form a circle,
+and in the center we dance.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">29</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 27, 2007 at 01:50AM</span>
+            <div class="reply-content">Pale sunlight,
+pale the wall.
+Love moves away.
+The light changes.
+I need more grace
+than I thought.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">30</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">November 24, 2007 at 08:35PM</span>
+            <div class="reply-content">This isn&#x27;t Rumi, unless Rumi and the Prophet Kahlil Gibran are one in the same? But I swiped this from my blog in tribe.net.
+&quot;Changing times
+In thinking about children, my friend Yvette has left behind a child I have never known, and I was reminded of this quote that I carried with me when my sons were still small, knowing I would miss these their younger years altogether. I believe it is a quote from the Prophet, Kahlil Gibran.
+&quot;And a woman who held a babe against her bosom said, Speak to us of Children.
+And he said:
+Your children are not your children.
+They are the sons and daughters of Life&#x27;s longing for itself.
+They come through you but not from you,
+and though they are with you yet they belong not to you.
+You may give them your love but not your thoughts,
+For they have their own thoughts.
+You may house their bodies, but not their souls,
+For their souls dwell in the house of tomorrow, which you cannot visit, not even in your dreams.
+You may strive to be like them, but seek not to make them like you.
+For life goes not backwards nor tarries with yesterday.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">31</span>
+            <span class="reply-author">[13qe99mcck3nb]</span>
+            <span class="reply-date">November 24, 2007 at 06:59PM</span>
+            <div class="reply-content">then take a look at &#x27;sleep &amp; waking&#x27; on my blog page... you might like it...
+here&#x27;s the first part [by rumi]:
+Jelaluddin Says:
+Those who don&#x27;t feel this Love
+pulling them like a river,
+those who don&#x27;t drink dawn
+like a cup of springwater
+or take in sunset like supper,
+those who don&#x27;t want to change
+let them sleep.
+This Love is beyond the study of theology,
+that old trickery and hypocrisy.
+If you want to improve your mind that way,
+sleep on.
+I&#x27;ve given my brain.
+I&#x27;ve torn the cloth to shreds
+and thrown it away.
+If you&#x27;re not completely naked,
+wrap your beautiful robe of words
+around you,
+and sleep.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">32</span>
+            <span class="reply-author">[2y95eojlcah8o]</span>
+            <span class="reply-date">November 24, 2007 at 03:58PM</span>
+            <div class="reply-content">All day I think about it, then at night I say it.
+Where did I come from, and what am I supposed to be doing?
+I have no idea.
+My soul is elsewhere, I&#x27;m sure of that,
+and I intend to end up there.
+~ Jalal al-Din Rumi
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">33</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 12:26AM</span>
+            <div class="reply-content">Come, come, whoever you are,
+wanderer, worshipper, lover of leaving.
+This is not a caravan of despair.
+It doesn’t matter that you’ve broken
+your vow a thousand times, still
+come, and yet again, come.
+-rumi
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">34</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 22, 2007 at 07:02PM</span>
+            <div class="reply-content">Tender words we spoke
+to one another
+are sealed
+in the secret vaults of heaven.
+One day like rain,
+they will fall to earth
+and grow green
+all over the world
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">35</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 22, 2007 at 07:02PM</span>
+            <div class="reply-content">Come to the orchard in Spring.
+There is light and wine, and sweethearts
+in the pomegranate flowers.
+If you do not come, these do not matter.
+If you do come, these do not matter.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">36</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 22, 2007 at 06:59PM</span>
+            <div class="reply-content">Very little grows on jagged rock,
+be ground,
+be crumbled, so wild flowers will come up where you are.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">37</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 22, 2007 at 06:58PM</span>
+            <div class="reply-content">I was dead, then alive.
+Weeping, then laughing.
+The power of love came into me,
+and I became fierce like a lion,
+then tender like the evening star.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">38</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 22, 2007 at 06:58PM</span>
+            <div class="reply-content">Why are you so afraid of silence,
+silence is the root of everything.
+If you spiral into its void
+a hundred voices will thunder messages
+you long to hear.
+from Rumi &#x27;Hidden Music&#x27; translated by Maryam Mafi and Azima Melita Kolin
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">39</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 22, 2007 at 05:16PM</span>
+            <div class="reply-content">I would love to kiss you
+¨The price of kissing is your life ¨
+Now my love is running towards my life shouting,
+¨What a bargain, let ´s buy it!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">40</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 22, 2007 at 05:10PM</span>
+            <div class="reply-content">Trust your wound to a Teacher&#x27;s surgery.
+Flies collect on a wound. They cover it,
+those flies of your self-protecting
+feelings, your love for what you think
+is yours.
+Let a teacher wave away the flies
+and put a plaster on the wound.
+Don&#x27;t turn your head. Keep looking at
+the bandaged place. That&#x27;s where the
+light enters you.
+And don&#x27;t believe for a moment
+that you&#x27;re healing yourself.
+from &quot;Childhood friends&quot;
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

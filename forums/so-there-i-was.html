@@ -1,0 +1,2174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So there I was... - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>So there I was...</span></div>
+            
+    <div class="module">
+        <div class="module-header">So there I was...</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Danese Cooper</span> | <span>December 11, 2008</span> | <span>160 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (160)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">[0ayboje496mbt]</span>
+            <span class="reply-date">May 30, 2011 at 05:56AM</span>
+            <div class="reply-content">Aah,  Rick and Wolf!
+ I remember when Sandy &amp; I were at Matthew Cross&#x27; booth bartering for some armor pieces when Phyllis happened to walk by and one of the twins, both excessively drunk, fell off of the roof while the other proceeded to puke on Phyllis&#x27; shoes. She was not amused.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">[0ayboje496mbt]</span>
+            <span class="reply-date">May 30, 2011 at 05:30AM</span>
+            <div class="reply-content">My late wife Sandy Tremblay grew up with geese and she showed me that trick, works every time!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author"><a href="/members/katie.html">Katie</a></span>
+            <span class="reply-date">September 23, 2010 at 02:02AM</span>
+            <div class="reply-content">So there I was, tired from being up all night with Gillan and the others. I am running to the front gate and still have to go down cardiac hill and get to the gate on the backside before the opening yahoo begins. I don&#x27;t think I can make it and why on earth do I like talking to those folks so much, they are so amusing. Damn!
+I bump into RIck. He hands me a bottle of Laphroig and tells me to take a sip.
+I think I just landed in paradise. First time ever getting a taste of this elixer. A taste is all that is needed. I am revived and have a fantastic day of acting, water-girling, and dancing for the Clan, crowd and Queen.
+This ritual of a morning taste of ush-ca-bah from Rick and or Wolf became part of my happy memories of faire.
+I will forever have fond memories of Rick and Wolf.
+Thanks
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">[1j4zlzf6ubo8d]</span>
+            <span class="reply-date">August 15, 2009 at 07:22AM</span>
+            <div class="reply-content">and i do not get any creeds for teaching you
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">August 11, 2009 at 06:32AM</span>
+            <div class="reply-content">He later worked on wardrobe for the Garry Shandling Show.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">[126ln5dg00p4l]</span>
+            <span class="reply-date">August 11, 2009 at 04:18AM</span>
+            <div class="reply-content">I think I remember this---and I went to school with Alan.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">August 11, 2009 at 03:41AM</span>
+            <div class="reply-content">It was the last day of the Faire &amp; everyone was a little loony! The Queen&#x27;s show was full of characters who had switched costume genders. Dundii told me that Alan Trugman was wearing a dress, and I instantly replied &quot;Who&#x27;s wearing his costume?&quot; Richard &amp; Dundii &amp; I looked at each other &amp; immediately went to the costume shed &amp; got me decked out in Alan&#x27;s elaborate Pro Delecto ensemble, complete with cape &amp; feathered hat. I appeared onstage just in time to ask him for a dance!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">[126ln5dg00p4l]</span>
+            <span class="reply-date">August 10, 2009 at 11:02PM</span>
+            <div class="reply-content">So there I was in Witches Wood at Blackpoint in 1976; I was tired, it was late, i wanted to go to sleep, but I just had to go down to the privy one last time---so I took my little flashlight and made my way in the dark down to the nearest front privies. I opened the door and struggled with fabric and the flashlight, and I tucked the flashlight under my chin so I could see what I was doing---and in the middle of it all, the flashlight slipped and went splush right into the murk below---its one of those faire memories: the poor little fading light blinking for help as it sunk away into an indescribable fate.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">[0lye1lzh2a72j]</span>
+            <span class="reply-date">August 04, 2009 at 06:30PM</span>
+            <div class="reply-content">...so Jan Munro is reclining behind the Main Stage on a straw bale, dressed as a hermaphrodite (half in gown bodice and long wig, half in doublet, slops and beard-moustache). Someone comes backstage and says &quot;Hey, there&#x27;s a guy running around out there in a Superman costume!&quot; And Jan replies in all sincerity, &quot;Wow, that&#x27;s really strange...&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">[2dm7p3rumw1co]</span>
+            <span class="reply-date">July 25, 2009 at 07:34AM</span>
+            <div class="reply-content">The head of security was Bob Kammen. He was my first boss at the faire. Without his help I never would have gone as far as I did. I&#x27;ll always be greatful for his guidance and help. Like most of us he did like his party favors. One night at a red barn party he gave me the keys to his truck so I could got to town. He was surprised when I returned his keys, he had forgotton he loaned me his truck. He just looked at me and said something like &quot;I must really trust you&quot;. Hell of a guy and yes, it was a very loud boom..
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">June 05, 2009 at 03:56AM</span>
+            <div class="reply-content">So there I was, sitting at the Breezeway, Dickens 88 at Pier 45. I heard the unmistakable sound of Harleys rumbling down the pier. Being the guard on duty there I had the pleasure of greeting Irish and his friends who had come to visit Jim Hayes. I called Jim on the radio and he told me he’d be a few minutes. I relayed the message and asked if they’d like to sit on the benches and wait. Irish told me they’d been fitting for a while and asked if it was OK to stand. I said of course it was (as if I would have said anything else!). I am grateful that Jim introduced me to Irish. May he rest in peace.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 30, 2009 at 12:06AM</span>
+            <div class="reply-content">yeah sometimes the crowd would get a bit testy if it were too obvious we were having more fun than they were.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">May 29, 2009 at 08:59PM</span>
+            <div class="reply-content">So, there we were, myself, Bruce Northridge and is apprentice. We were in the blacksmith booth demonstrating on how to make some sort of widget. All three of us were at the same stage of exhaustion and getting the giggles. We had a few standing jokes... &quot;I heard you had to shoot your dog the other day?&quot; &quot;Yes, it&#x27;s true!&quot; &quot;Was he a mad dog?&quot; &quot;Well, he wasn&#x27;t pleased!&quot; was the one we were using that day. It had progressed to &quot;I heard you had to shoot your blacksmith the other day?&quot; and we all would giggle (exhaustion is such a cheap high!). We had a crowd of about two hundred watching the demonstration and listening to Bruce&#x27;s bantor on how he was making the &quot;widget&quot;. He was so great at that! He turned to me and said...&quot;I heard you had to shoot your dog the other day?&quot; I looked him square in the eye and said &quot;No!&quot; All three of us started this uncontrollable laughter and dropped to the ground, in hysterics. The once enraptured crowd at once became angry and mob like, which made us all laugh more. The more we laughed, the angrier the crowd became. At least we weren&#x27;t lynched.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">May 19, 2009 at 10:16PM</span>
+            <div class="reply-content">Yep, that he was. I imagine he still is.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 19, 2009 at 09:58PM</span>
+            <div class="reply-content">shows you trained him right.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">May 19, 2009 at 05:02PM</span>
+            <div class="reply-content">Kevin was awesome!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">May 19, 2009 at 05:00PM</span>
+            <div class="reply-content">So there I was, standing at the crossroads at 9:45am, holding the Ram and Glove standards waiting for folks to pick them up for opening parade. Kevin Cooper was standing next to me because I was showing him what to do so that in future I wouldn&#x27;t have to do it anymore...when up drives Roger (Smacky Duck) in Orange Crush and the passenger door pops open...
+&quot;Get In!&quot;, he said.
+&quot;Really? Where are we going?&quot;, I asked.
+&quot;GET IN! We&#x27;re on a MISSION&quot;, he barked.
+I turned to Kevin, said only &quot;Cover for me?&quot; and jumped up into the cab.
+We drove up into the Valley...parking at Jungleland North where Mark Mueller was mixing morning cocktails. I never did find out what we were celebrating. Of course radio didn&#x27;t work up there. I think I got back to the Show around 2:00pm, quite drunk and wondering if I still had a job. I found Kevin and Jimmy D. capably running everything for me.
+&quot;Oh, good, you&#x27;re back&quot;, he said. &quot;Not sure how much longer I could have evaded Carol&quot;
+&quot;Carol has been looking for me?&quot;, I groaned.
+&quot;Since about 10:30...but every time she calls we just tell her you&#x27;re really busy with something, or that you&#x27;ve just walked away and will be right back or we distract her with something else.&quot;
+What a great crew I had.
+So far as I know, Carol never knew I was AWOL for half a day.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 29, 2009 at 01:25AM</span>
+            <div class="reply-content">Mike - good to see you here, good to be here, surprised to still be alive. *grin*
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">Michael Kimball</span>
+            <span class="reply-date">April 28, 2009 at 08:09PM</span>
+            <div class="reply-content">Yeah, brunette then, now a wee bit salt&#x27;n-pepper.She&#x27;s moved up to Portland with her sis, she&#x27;s still doing hair-braiding though now for Ice skaters.
+I had Gourd Toss betwixt Fruit Ices and the potters wheels that year, Veggie Darts near Cheezwitz and giant Darts was kinda behind Stake on a Rake.
+Too busy, so missed out on the Buckets in the Serpentine show.
+- I swear she was in the mini, to make five of us but maybe she was the one that managed to get my attention at D-B&#x27;s to actually answer the pager - though as tight as E-beth and I were it&#x27;d be unlikely to go unanswered... Remember pagers? now there&#x27;s an age-definer. ouch. Hmm, thinking of it, if ann wasn&#x27;t in the mini I&#x27;d have probably tried to use her truck to fetch you guys, hmm... I&#x27;ll hafta ask!
+otherhoo,It was long ago, late at night and I swear there were lots of them. They were green, I swear officer...and They went That-a-way...hehe.
+...oh, hey, by the way, good to hear from you!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">April 28, 2009 at 12:19PM</span>
+            <div class="reply-content">Which means if we find someone creepy there is something majorly off with them!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 28, 2009 at 03:07AM</span>
+            <div class="reply-content">Or how natural it was to have a conversation about the same, and thinking it was perfectly natural to say (or be told); &quot;Sure, but wait until the shine wears off, OK?&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 28, 2009 at 03:01AM</span>
+            <div class="reply-content">Oh, Puh-leeze. Are there any shrinking violets here?
+We&#x27;re Faire folk.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">April 28, 2009 at 12:53AM</span>
+            <div class="reply-content">Speaking of airports
+So there we were, me and my girlfriend, &#x27;long about &#x27;75, driving north to check out RPFN. Maybe I had been to RPFS once before as a visitor, her too, and we wanted another look. But we had slept in a bit too long back home in Santa Cruz, cagged the morning, and were running late. In the approach to S.F. we realized that we were, in fact, way too late, so we hatched out an improvised plan B. Pulled into the airport, went in to the departure terminal, found a bunch of people just about to board. Stealthily we infiltrated the crowd and started kissing each other goodbye. As everyone passed through the ticket gate we slipped away to the next boarding area, joined the crowd, and resumed our affectionate faire wells. Then the next, and so it went, a lovely day indeed.
+All of which suggests that Faire is as much an attitude as a place. And that even those who have yet to work the Faire may already be participants that just haven&#x27;t landed there yet.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 27, 2009 at 09:37PM</span>
+            <div class="reply-content">But I&#x27;m pretty sure there were only the three of us stuck at the airport, although it may have been Ann Reed who joined us in &quot;Topless Buckets&quot;. Was she a Brunette? I recall that Beth and I thought that the topless thing was destined to be because the Buckets gals that Faire were 1 each Blonde, Brunette, and Redhead.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 27, 2009 at 04:40AM</span>
+            <div class="reply-content">Michael - good to see you!!!
+Yeah, as I recall you had taken out the passenger seat so we could all be shoe-horned into the Mini.
+That was one heck of a ride.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">Michael Kimball</span>
+            <span class="reply-date">April 27, 2009 at 02:34AM</span>
+            <div class="reply-content">Oooh, Kathe, you forgot the other body! I seem to recall Ann Reed was in there too! I remember you guys didn&#x27;t have the evil neccesary combination of plastic+age+documents to rent the car you&#x27;d reserved... Poor mini on the bump-stops and it seemed like a lifetime, I think it was only a two-hour trip, but that was probably 1:59 too long...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 26, 2009 at 12:44AM</span>
+            <div class="reply-content">So there I was, with Beth Rose and David McGregor, stuck in San Jose airport for *hours*, late at night/early morning. Eventually we manged to talk Michael Kimball into coming to get us - and we crammed David&#x27;s full plate armor, our luggage, and our three bodies into his Mini. By the time we got to the lot my legs were completely asleep, and I fell over in the parking lot when I tried to walk.
+But the fun began the next day, as there were a few gallons of &quot;Screaming Pink Death&quot; behind the booth (1/2 Everclear, 1/2 Strawberry nectar), and under the influence of that and too little sleep (when anything sounds like a good deal of fun), Beth and I and....another gal (whose name none of us can recall, so speak up if you read this) pulled open our chemises and lined up on the platform above Duelling Buckets (in front of Phyllis and everyone)...yelling &quot;Duelling Bosoms&quot; and &quot;Topless Buckets&quot;.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 24, 2009 at 02:38PM</span>
+            <div class="reply-content">So there I was, in the hooch under Main Stage, with Little Chris and Sean Scudder, drinking peach brandy on a Saturday night during the last Agoura Faire....and Sean suddenly got a worried look on her face and said, with great solemnity &quot;Can you walk me to the booth? I&#x27;m dark...and it&#x27;s drunk outside&quot;.
+There are a couple of other &quot;Main stage hooch&quot; stories, but I&#x27;ll post them separately.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">29</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 24, 2009 at 12:35AM</span>
+            <div class="reply-content">I definitely have mine. Still decorated with straw flowers and ribbons on the antenna tip.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">30</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 24, 2009 at 12:34AM</span>
+            <div class="reply-content">ROTFLMAO!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">31</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 15, 2009 at 08:14PM</span>
+            <div class="reply-content">The costume dept made the SS lightning bolts for Peter Brewer&#x27;s gang &amp; named the guys the Killer Elite
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">32</span>
+            <span class="reply-author">[1h6zysamq83un]</span>
+            <span class="reply-date">March 15, 2009 at 08:04PM</span>
+            <div class="reply-content">I have found that taking a shower in front of Big Red(because we were some of the first ones on the lot) a bit hard for anone else to grasp. Every day when I take a shower I appreciate it. How about when you need to get to work and you move a friend over thats already in the shower because they understand.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">33</span>
+            <span class="reply-author">[b5s6ko7u0ug7]</span>
+            <span class="reply-date">March 15, 2009 at 06:03PM</span>
+            <div class="reply-content">So there I was watching Lee Press on and the Nails at a hoppin&#x27; red bard party. I&#x27;ve always been a student of roof trusses and was gazing up at the red barn roof and checking out how they had cut all the posts in the center of the barn to make room for the audience, yet the roof hadn&#x27;t collapsed. I commented on this fact to the caprentry crew guy next to me (name escapes me) and he calmly said, &quot;yeah, that was a bitch. we had to pre-stress the truss by hanging 5000 pounds off it while we bolted the cross pieces in palce. The only thing we had that weighed that much was a fork lift. So we threw a chain hoist aound it and the beam and lifted it up. &#x27;course, we didn&#x27;t let anyone walk under it while it was hanging 50 feet in the air, safety concerns ya know. You hung a 3 ton folk lift from the ceiling? Yep.&quot; I&#x27;ve always been amazed at how a bunch of crazy hippies could get so much done with so little.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">34</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">March 14, 2009 at 09:14PM</span>
+            <div class="reply-content">During Northern in 1982 or so when I was in St. Paul&#x27;s, I was doing a gig with Phredd Wieser, a doxy vs. highwayman bit that involved him chasing me with a whip. Phredd grabbed me from behind, and during the course of struggling the whip became wrapped around both of us. I stepped on my skirt and had just a fleeting moment to think &quot;can I save this? No, I can&#x27;t, but this is going to look great!&quot; and then wham! we both hit the ground, Phredd having landed on top of me. There was a moment of utter silence as those around us, both cast members and patrons alike, thought for sure I had been horribly injured. Phredd at that time was 6&#x27;4&quot; and around 220 pounds, while I was all of 5&#x27;5&quot; and 117 pounds. I jumped up laughing, not at all hurt. Those outside of faire never understood the hilarity of the situation, nor why I was so pleased about it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">35</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">March 12, 2009 at 01:09AM</span>
+            <div class="reply-content">Yes, big guys ... some of the only ones that qualified for my statement that I was looking for a man with a bigger chest than mine that knew the color of my eyes! Ah well - still a great line!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">36</span>
+            <span class="reply-author">[2ivfmptlmexcq]</span>
+            <span class="reply-date">March 08, 2009 at 11:01PM</span>
+            <div class="reply-content">Why didn&#x27;t the ladies ever go on their own trip while the guys were off in the desert?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">37</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">March 03, 2009 at 09:27PM</span>
+            <div class="reply-content">When I described faire to non-faire folks, I would tell them that you get to faire and then change into costume next to somebody you don&#x27;t know and usually the opposite sex, and neither one of you cares. I never said anythng about sneaking peeks, which of course, I certainly never did! Oh, and neither did they. Hehe!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">38</span>
+            <span class="reply-author">[2ao3o6xb6daou]</span>
+            <span class="reply-date">March 03, 2009 at 01:37AM</span>
+            <div class="reply-content">For years at Black Point, we had to go through two closed gates to get out to the Ant Farm and the Props department, passing fields of cows, and often, getting stuck in the middle of a cattle driver, with cows leaping, poop flying, cowboys on horses whistling and Border Collies yipping and nipping. There&#x27;d be several cars stopped on the road as the cows rocked your vehicle. With cows on the brain, one night, we were sitting around getting drunk, and I had a guitar in hand, and started making up a song off the top of my head: &quot;Oh it sucks to be a cow, it really sucks to be a cow, you&#x27;re just standin&#x27; in the clover, and someone tips ya&#x27; over, oh it sucks to be a cow...&quot; It was interspersed with really bad cow jokes. The next day, a couple of the girls went from ale stand to ale stand, singing the song until someone would give them beer to make them go away. The next thing you know, it&#x27;s a cult classic, and people would come up to me for years with new verses and new bad cow jokes.
+So one Saturday night, not long after the birth of &quot;The Cow Song,&quot; I was standing in a very long line at the Mullah&#x27;s waiting to order dinner. Someone went by and said something so off the wall that the really straight looking guy in front of me and I looked at each other and laughed. I said to him &quot;my momma always told me if I can&#x27;t say something nice, say something surreal.&quot; I went on to invent the story that there was an entire underground cult of surrealists at the faire, and the way you could recognize another surrealist was if someone came up to you and said &quot;hey man, it sucks to be a cow!&quot; He just kind of stared at me. All at once, the crowds parted, and Allie Murbach, with skirts flying up, ran right up to me and yelled &quot;hey man! It sucks to be a cow!&quot; and then ran off. I just turned to the guy and shrugged my shoulders -- &quot;See?&quot; He turned and faced forward, and would not look at me for the rest of the 20 minutes in line.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">39</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 02, 2009 at 02:15PM</span>
+            <div class="reply-content">yes thats where i learned to light a flash heater as well. It makes you brave wanting that hot water.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">40</span>
+            <span class="reply-author">[b5s6ko7u0ug7]</span>
+            <span class="reply-date">March 01, 2009 at 06:49PM</span>
+            <div class="reply-content">I&#x27;ll never forget my first &quot;experience&quot; up at the actor showers in Blackpoint. After hiking for what seemed like miles straight UP, I come upon a ramshackle plywood building, rickey steps, no doors and a bunch of naked men, women and children just standing there washing off the dirt and grime of the day. Years later, after a stint on crew, was very proud of myself for knowing how to relight the flash water heaters. Always got chears from the brave souls freezing their asses off in the cold water.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">41</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">March 01, 2009 at 06:22PM</span>
+            <div class="reply-content">Ooh, I remember that, my booth was just missed, it was at the very start of the serpentine. They were still pumping water out of the area and putting down redwood bark when front gate was just starting to let in the customers. That weekend, Steak onna Stake&#x27;s food was moister than usual. Yum! A couple of years before that, there was a very heavy rain that caused a flood in the Serpentine. My booth was under six inches of water. Several of the boothes had chipped in for a private privvy and the smell lasted the rest of Faire.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">42</span>
+            <span class="reply-author">Michael Kimball</span>
+            <span class="reply-date">March 01, 2009 at 11:02AM</span>
+            <div class="reply-content">After a bit of fungus, convincing a host of friends at DB&#x27;s to go up to the quarry to watch rocks grow. I must&#x27;ve had seven or eight climb archery hill with me, we sat, and then it dawned on them what we had done.
+&quot;I don&#x27;t belive we came up here to watch rocks grow&quot; I think was the kindest words I got out of it.
+I just giggled.
+-well, maybe a bit more than just giggled, cause it was on the way to the tent of the evenings treat ;-P (and main-date of the following 6 months)
+By the way, the rocks don&#x27;t grow while you watch, it&#x27;s a private thing for them.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">43</span>
+            <span class="reply-author">Michael Kimball</span>
+            <span class="reply-date">March 01, 2009 at 10:54AM</span>
+            <div class="reply-content">Agoura, Dueling Buckets vs. Security, round 115-1/2:
+We&#x27;ve got a faux-motorola. We&#x27;ve got a maglight. Security du jour&#x27;s got squat. He asks for passes, we ask for passes. he can&#x27;t show his so we call it in on our radio... woulda been OK except that our good friends replied by singing the Gilligan&#x27;s Island theme. Can&#x27;t remember who was at G-Zero, but I recall the security guy had more explaining to do than we did (they razzed him for a week)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">44</span>
+            <span class="reply-author">Michael Kimball</span>
+            <span class="reply-date">March 01, 2009 at 10:48AM</span>
+            <div class="reply-content">Ok, I missed it, but I heard about it - anyone going to &#x27;fess up to waterskiing on Lake Elizabeth and knocking the I/O drive off when the boat hit a submerged car? I think it was a Foxworth story.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">45</span>
+            <span class="reply-author">Michael Kimball</span>
+            <span class="reply-date">March 01, 2009 at 10:36AM</span>
+            <div class="reply-content">Hey aminal, some of us got so p&#x27;o&#x27;d and flustered we had to get off lot that night - went to Bob&#x27;s Big Boy down the road to eat and maybe blow off some steam. It was well, hmm. it was interesting...
+A tale maybe I&#x27;ll give here later.
+Came back to find what we knew all along, and what you said, mom/gramma, et al. Loved the Red barn parody on it at northern that year tho&#x27;!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">46</span>
+            <span class="reply-author">Michael Kimball</span>
+            <span class="reply-date">March 01, 2009 at 10:27AM</span>
+            <div class="reply-content">ah yeah, the hydrant crash...
+hmm, the &quot;minor water leak&quot; causing Stake-on-a-Lake, perhaps slightly better and more prestigious than snake ona rake. (oh, and my hooch was in the ensuing swamp that year, causing me to find, um, other? accomodations nightly hehe.)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">47</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 28, 2009 at 06:10AM</span>
+            <div class="reply-content">One time Vesta Neuron gave me a ride in her truck from the showers down to the costume shed, the radio was playing &quot;Somewhere over the rainbow&quot; as we wound down through the RPFS village. I was passing one of the stages at DF and heard pianist Ellen Hoffman play &quot;Fly Me to the Moon&quot;. I went to investigate and got caught in a hail of rotten vegetables thrown by SS at the stage since that was their musical cue!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">48</span>
+            <span class="reply-author">[1h9ayd80981kd]</span>
+            <span class="reply-date">February 28, 2009 at 03:45AM</span>
+            <div class="reply-content">How to explain the solitude of folding a great kilt at sunrise; the sounds of people rising in a fairly primitive, yet modern environment; the feeling of safety at night walking amonst people; drumbeats and pipes in the soul; the wish to be nowhere else.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">49</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 23, 2009 at 11:19PM</span>
+            <div class="reply-content">we used to always get around the caretaker by using crystal canyon. If you knew the turnout you could park on Kanan and walk in witches wood way through crystal canyon. Not a bad walk really.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">50</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 23, 2009 at 05:00AM</span>
+            <div class="reply-content">I remember the geese at the &quot;Pond&quot; but I think I already knew about avoiding them. See, there I was at Paramount Ranch, in the off season (maybe fall, maybe early spring before Faire came) just walking around and checking things out. So I was walking around the Racetrack and started to take my usual shortcut, past the &quot;Whitehouse&quot;. What I didn&#x27;t know was that the caretaker who was using the house during the year had a guard goose. I wish I had know about the &quot;Sign of the U&quot; but instead I backed of and walked on the opposite side of the racetrack and the goose seemed (barely) satisfied that I was out of its territory.
+Of course, about half an hour later, the human caretaker found me and was not so easily dealt with. I had to leave the lot until the next time the Faire came to town.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">51</span>
+            <span class="reply-author">[b5s6ko7u0ug7]</span>
+            <span class="reply-date">February 23, 2009 at 03:22AM</span>
+            <div class="reply-content">So there I was in Pig Gulch at Castle St. Paul. We were packing up to head back to the &quot;real&quot; world but didn&#x27;t really want to leave. Not really wanting to eat another two-for-one turkey leg we decided to poke around in everyones ice chests. &quot;Oh I&#x27;ve got some salami&quot;, &quot;hey, I found some jam&quot;, &quot;I&#x27;ve got some crackers&quot;, &quot;Look here is a jar of Jalepenos&quot;, Someone runs up with a banana and some garlic spread. We piled it all together and the &quot;Nuclear Feast&quot; was born! Every Sunday we&#x27;d ransack the camp kitchens and see who could come up with (and eat) the weirdest, nastyest most disgusting mess &#x27;o food! Eat it! Eat it!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">52</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">February 22, 2009 at 07:44PM</span>
+            <div class="reply-content">Ah yes, the clothes swap. I&#x27;ve done that a time or two myself.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">53</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">February 22, 2009 at 07:32PM</span>
+            <div class="reply-content">Yes they did I know personally--hehe
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">54</span>
+            <span class="reply-author">[b5s6ko7u0ug7]</span>
+            <span class="reply-date">February 22, 2009 at 07:12PM</span>
+            <div class="reply-content">Oh my, just found this forum. I have a couple juicy ones to share. I was constantly trying to explain some of the weirder bit of faire life to my friends, without much success.
+So there I was, closing weekend, performing the annual ritual of hooking of with a member of the opposite sex, taking all our clothes off into two big piles, I put on hers, she put on mine, she&#x27;d help me lace my bodice, I&#x27;d help her adjust her cod piece and then we&#x27;d wander around fair in drag, drinking heavily, screaming “yes I am the queen, yes my tits hurt! I never understood why the faire had such a problem with closing weekend gags ;-)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">55</span>
+            <span class="reply-author">[3tjomb2csum08]</span>
+            <span class="reply-date">February 21, 2009 at 08:18PM</span>
+            <div class="reply-content">Thanks, Animal, for the insight... Yeah, whenever I was &quot;making the sign of the &#x27;U&#x27; when I had geese, it was pretty much always to VERY CLEARLY DEMONSTRATE to the gnarliest in my little flock of miscreant geese who the ALPHA &quot;creature&quot; was in their little world. So my intent was as clear as I could make it, and implied (to the goose at hand, at least) that I was, indeed, willing to &quot;invite&quot; them in for dinner... I never had to snap a gooseneck, but they ALWAYS went pretty much docile when I scooped them up, neck-first of course, into my arms, carried them the few feet back to their pen, and unceremoniusly dumped them back in, with an &quot;and STAY there&quot; for good measure. Worked for about 10 minutes, sometimes 15... ornery little escape artists! And how they loved to terrorize the wee ones!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">56</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 21, 2009 at 07:46PM</span>
+            <div class="reply-content">didnt they all stand 6&#x27; 4&#x27; and up?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">57</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">February 21, 2009 at 06:50PM</span>
+            <div class="reply-content">So there I was... walking into the Scalehouse to use the flush privy on a dark and stormy night when I turned on the light I noticed that there was water dripping off the bare light bulb in the ceiling. My instinct was to be alarmed by this, but I remember thinking &quot;remember where you are: this could be normal&quot; and I decided to go ahead and use the bathroom and then calmly mention it to someone after I was done. Sure enough - it was ok. It was explained to me that before, when the water dripped off the light bulb, the light cover would fill up with water and when the water hit the bulb, the bulb would burn out, so they &#x27;fixed&#x27; it by taking the light cover off. A classic case of Faire engineering.
+-L
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">58</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">February 21, 2009 at 05:34PM</span>
+            <div class="reply-content">Sabatoge &quot;smells&quot; very different, but its easy to get fooled by our pre-occupation over what we want, and we assume there&#x27;s an overlap when there really isn&#x27;t. If it seems like the other side is being a bit more provocative than they need to be in the situation, they may be desperate, ego-stupid, or tactically trying to incite a reaction on your part, which plays right into their hands. Once you &quot;lunge&quot; they gotcha, regardless of the situation. I wonder if sabotage has its own pheromone, we have so many ways as animals of broadcasting our intents and desires we are generally unaware of. Looked at your website, great stuff!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">59</span>
+            <span class="reply-author">Danese Cooper</span>
+            <span class="reply-date">February 21, 2009 at 05:28PM</span>
+            <div class="reply-content">Very, very true. Another thing that you need to be able to spot is the overlapping goals any negotiation. Take two circles, each represents what someone wants. As LONG as there is overlap negotiation can occur. For example, seller wants to sell, buyer wants to buy. You can negotiate a compromise where both get what they want. It is VERY important to recognize when there is NO overlap. As in don&#x27;t even waste your time trying to negotiate ... usually because the person isn&#x27;t negotiating at all, but rather setting you up.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">60</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">February 20, 2009 at 11:44PM</span>
+            <div class="reply-content">Any negotiation has this feel about it. The willingness to walk away, quit, call the strike, send the kid to the corner, file the lawsuit, whatever. A person needs to have that internal thought experiment about the end game and decide clearly whether they are really willing to go there before they sit down to talk terms. The other side senses it like a pheromone, will normally ease off and act more sensibly.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">61</span>
+            <span class="reply-author">Danese Cooper</span>
+            <span class="reply-date">February 20, 2009 at 11:04PM</span>
+            <div class="reply-content">You&#x27;re dad is a wise man.
+I will add that knowing you have done everything in your power to avoid the confrontation is an important tool. As in &quot;I tried to keep it from coming down to this, but you insisted.&quot; This allows you to do what you have to do with a clean conscious and without hesitation.
+An amazing paradox arises from this. Even though you don&#x27;t want to do it, the willingness to act changes your body language. People and animals sense it and usually change their minds about pushing you so you have to do it. The paradox is the willingness to do it, usually means you don&#x27;t have to.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">62</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">February 20, 2009 at 08:37PM</span>
+            <div class="reply-content">Wise words, Animal, and ones my father also impressed upon me over the years. Thank you.
+I understood the connotations behind the gesture and know it has to be backed up with intent. And if does come down to it and I find myself in that situation (gods forbid) and the goose wants to play chicken, I am more than able and prepared to carry through with the threat inherent in the &quot;Sign of the U.&quot;
+One thing my dad always said, and he impressed it upon me even more when I studying FMA years ago, was that the only way to win a (in this instance) knife fight, was not to get in one. Avoidance of situations and how to dispel potentially volatile ones are the mainstay of my philosophy, but if push comes to shove, I am prepared to do what&#x27;s necessary to survive.
+And it&#x27;s been a long time since we&#x27;ve had goose on the table!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">63</span>
+            <span class="reply-author">Danese Cooper</span>
+            <span class="reply-date">February 20, 2009 at 08:27PM</span>
+            <div class="reply-content">Ummm... a small qualifier on that. You have to be willing to snap the neck for that message to work. I&#x27;ve had run ins with geese and dogs. A BIG issue when dealing with any group animal (and this includes people) is that most conflict is inner-species and relates to establishing social dominance. So threat displays (making yourself bigger and more scary) and limited physical engagement (an actual &#x27;fight&#x27;) ARE the most common scenarios.
+One of the problems with animals kept with humans is that they consider humans as part of the pack/flock ... so in their little brains, they&#x27;re thinking they are establishing dominance over another member of the animal&#x27;s group(but one who is shaped differently). To stop this kind of problem -- especially with animals -- you have to send a different signal.
+An outright predator sends another signal and invokes a different dynamic. One that says &quot;EEK! He isn&#x27;t playing no status game!&quot; Now, this can backfire on you because if you ARE sending out predatory signals, the animal might attack out of self-defense. I had years of problems with dogs freaking out around me because -- having eaten dog in a survival situation -- I looked at them and part of me went &#x27;lunch.&#x27; I finally started watching the Dog Whisperer and him talking about pack behavior and social dominance within the pack before I learned how to send a message that said &quot;I&#x27;m the alpha dog, so everyone behave.&quot;
+Now I get along great with dogs. But, with the most aggressive dogs I now know how to send the signal, &#x27;if you attack I WILL kill you.&#x27; That keeps it within the dominance game and out of the outright predator mode (ergo, no attack out of self-defense).
+With the &quot;Sign of the U&quot; -- which I too can attest works -- the message you are sending is &quot;This is no silly dominance game. I WILL kill you if you keep up this unacceptable behavior.&quot; But it is a message you have to be willing to back up ... otherwise it&#x27;s a bluff.
+Believe it or not I&#x27;m working on a three set DVD project on intimidation (including Workplace Bullies), the social uses of violence ( http://www.nononsenseselfdefense.com/violencetypes.htm ) and how to recognize when a situation has left the threat display/status building stage and is about to become physical. Although human dynamics are more complicated, you need to know how to send UNDERSTANDABLE dominance signals to ANY animal that you deal with regularly. The &#x27;Sign of the U&#x27; is a good one for geese, but it&#x27;s not just the hand position alone.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">64</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">February 20, 2009 at 08:27PM</span>
+            <div class="reply-content">Those guys were big! I mean, I&#x27;m not quite 5&#x27;2&quot;, so everyone is taller than me, but I felt like a little kid around those guys!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">65</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 20, 2009 at 08:23PM</span>
+            <div class="reply-content">Yeah, at 6&#x27;2&quot; amd 200 lbs!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">66</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">February 20, 2009 at 07:20PM</span>
+            <div class="reply-content">Brilliant, Ron! Thank you for this. I will certainly remember it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">67</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 20, 2009 at 06:28PM</span>
+            <div class="reply-content">thats funny but you were kinda small for it
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">68</span>
+            <span class="reply-author">[3tjomb2csum08]</span>
+            <span class="reply-date">February 20, 2009 at 06:15PM</span>
+            <div class="reply-content">Not a faire &quot;And there I was...&quot;, but on-topic nonetheless: As a former goose-keeper, I learned to make &#x27;the sign of the U&#x27; with my hand as it IS the ULTIMATE defense against geese. They may be generally ORNERY suckers, but if you hold your hand out in their direction in a (conveniently goose neck-sized) &quot;U&quot;, they will UNIVERSALLY shy away. Deep In their little goose brains is a genetic memory of the farmer grasping them FIRMLY by the neck and simply (&quot;gently&quot;, of course...heh) returning them to the pen from which they had somehow escaped. (All geese are better escape artists than Harry Houdini, I swear!). This genetic memory may also be a truly mortal fear on the part of the goose, as that &quot;neck grasp&quot; may have well been the immediate precursor to being &quot;invited&quot; in for dinner, LOL! One Sunday morning, I was awakened by the sound of a police car P.A. &quot;chirp, uh, could you get your geese out of the road, please, chirrrp&quot; - And I was truly amazed to find my seven geese surrounding this CHP officer IN HIS PATROL CAR in the middle of my street... at like 6:30 in the morning... cop was PETRIFIED! So I explained the &#x27;make the sign of the &quot;U&quot;&#x27; universal goose mollifying technique, and he was ever so grateful as he had feared the ornery little nippers since his youth. No doubt he was terrorized by geese as a child, as several of you have related here... Just always remember - Make the &#x27;sign of the &quot;U&quot;&#x27;, and they will RUN AWAY, I Gar-An-Tee it!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">69</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 20, 2009 at 01:29AM</span>
+            <div class="reply-content">What a &quot;red zone&quot; was. What a Security/Actor &quot;Flying Wedge&quot; was and what it was used for. What the &quot;Goon Squad&quot; was and why I was to small to be on it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">70</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 19, 2009 at 01:22PM</span>
+            <div class="reply-content">um...vytas...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">71</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">February 19, 2009 at 08:07AM</span>
+            <div class="reply-content">Geese are notoriously nasty. I never had a run-in with the geese in question, but there was a guard goose on a farm near where I spent some years living as a child and we were terrified of the thing.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">72</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 19, 2009 at 07:17AM</span>
+            <div class="reply-content">So there I was... strolling down the lower road , below snob hill, minding my business on a beautiful day, I’d been hanging out at the Zombie Room and was feeling no pain. Everything was mellow a bit psychedelic and I came around the bend, near the little lake, and the geese were honking and flapping their wings at someone’s dog. No problem I just smiled at the scene and continued walking and next thing I know the friggin geese are honking and flapping their wings at me, I try shooing them away but they keep getting closer, and closer, and they start nipping at the backs of my legs, they were making a racket and so was I, screaming my head off, I pick up a rock and throw it at them and that just made them madder, then I’m surrounded and really scared, It was starting to really hurt, and in my altered state, I was beginning to Panic. When I hear someone yelling in the distance and here to my rescue comes Lance, on his horse and he gallops up and the geese scatter, and he scopes me up behind him, it was straight out of a movie, I actually landed behind him and we ride off down the road. He takes me up to my camp and helps me get ice packs together and sits with me the rest of the evening until I calmed down. From then on I stayed clear of that area near the little lake…..Thats not the only time Lance was my champion, but I will save those stories for another time...
+I’ve been trying to remember whose geese they were and who lived right there, seems that Marcellus was one person who lived in that area. Anyone else have geese stories, or remember them….or was it all a hallucination …No it wasn’t, I had bruises on my legs for weeks after that.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">73</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">February 18, 2009 at 06:59PM</span>
+            <div class="reply-content">My memory--It&#x27;s fading--hehe--not really--hehe
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">74</span>
+            <span class="reply-author">[tihrvb7lyzv9]</span>
+            <span class="reply-date">February 18, 2009 at 03:10PM</span>
+            <div class="reply-content">yep. but how would one explane the champaine brunch?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">75</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">February 18, 2009 at 07:41AM</span>
+            <div class="reply-content">Wow spike that was back when we all meet--yes the foss twins--one of them married me to my 1st husband.I remember alot actually--Real cool old Novato House--right!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">76</span>
+            <span class="reply-author">[tihrvb7lyzv9]</span>
+            <span class="reply-date">February 18, 2009 at 05:16AM</span>
+            <div class="reply-content">so there i was back from leave and going to collage on the ARMYs nickel and run into heather crotty-foss. get invited to a breakfast at her house. vickie you want to add to this........
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">77</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">February 12, 2009 at 02:23AM</span>
+            <div class="reply-content">thank you!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">78</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 06, 2009 at 06:04AM</span>
+            <div class="reply-content">Ritchie and the lolly pop guild! That is priceless! I wish there was a clip of the marks&#x27; faces (and yours!).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">79</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 06, 2009 at 05:29AM</span>
+            <div class="reply-content">So there I was, my first or maybe 2nd year at Northern Faire. So the year was either 1976 or &#x27;77 or &#x27;78 (still not sure whether I started Faire in &#x27;76 or &#x27;77). During the week preFaire, having dinner (or was it breakfast?) at Dennys in Novato with Craig (ran Children&#x27;s Dell / Animal Farm and gave me my first faire gig - wonder whatever happened to him) and Richard Von Healy, aka Ritchie. I think there may have been some crew folks at another table, whom I either didn&#x27;t know or barely knew then. And of course, the restaurant was full of marks, er, Citizens. All of the sudden, out of nowhere, Ritchie starts singing &quot;We represent the Lolly Pop Guild, the Lolly Pop Guild ...&quot; I wanted to melt into the red vinyl booth cushions.
+I think Craig and I basically stared him in to stopping the singing.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">80</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">February 05, 2009 at 05:01PM</span>
+            <div class="reply-content">It&#x27;s a compliment, you put the words together nicely, and it made me think of those times... Ah, well... those times that brought a great smile to my face, a time of joy and satisfaction of fulfillment as it were, and I thank you for that.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">81</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 05, 2009 at 01:28PM</span>
+            <div class="reply-content">sitting on a thursday ditching high school. sitting on the fancy stuffed burlap bag cushions mary and i used to make for the spool table. Silas comes by as Bob is getting up to go take the sun (There is one God...he is the SUN God...RAH...RAH....AAAAAHmen Rah!&quot;). Somehow the conversation suddenly turns to how Bob is a lizard (he used to draw himself as a lizard even). Suddenly he and silas are flat on the ground next to each other doing a &quot;Lizard off&quot;. Both sort of pumping their thin lizard like frames up and down on their :claws&quot; and making lizard face and lizard tongue.
+Tahanksfully my childhood was whimsical as well as instructive.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">82</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">February 05, 2009 at 12:17PM</span>
+            <div class="reply-content">ROTFLMAO - Rolling On The Floor Laughing My Ass Off
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">83</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">February 05, 2009 at 08:06AM</span>
+            <div class="reply-content">r....right..o...on..t..to..f..flummoxed..l..le..la..mm..madre..ao..aaaaaoooooowwww! what the hell does that mean?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">84</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">February 05, 2009 at 08:03AM</span>
+            <div class="reply-content">rotflmao? meow? rott flow mao?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">85</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">February 05, 2009 at 07:36AM</span>
+            <div class="reply-content">ROTFLMAO!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">86</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">February 04, 2009 at 05:09PM</span>
+            <div class="reply-content">postcards??!!lol
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">87</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">February 04, 2009 at 07:30AM</span>
+            <div class="reply-content">So there I was, in Patty Farber&#x27;s hootch (it was very late, quite dark with just enough ambient light to make out the exquisite decor)..with...oh, I just can&#x27;t say. But it was..seminal.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">88</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">February 04, 2009 at 07:11AM</span>
+            <div class="reply-content">That&#x27;s a keeper for your future grandchildren.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">89</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">February 04, 2009 at 07:10AM</span>
+            <div class="reply-content">ooooo, I&#x27;ve a similar shower story to Julien&#x27;s...at Agoura, 1978..everyone was gathering on the hill to watchf the full lunar eclipse...early evening and all shower stalls were filled..I was washing my impossible hair and..the hot water was rapidly running out...and Paul Bacca walked up and..and..needed a shower..and that&#x27;s how I met an ale server from heaven.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">90</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">February 04, 2009 at 07:02AM</span>
+            <div class="reply-content">That was a beautiful day!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">91</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">February 04, 2009 at 07:00AM</span>
+            <div class="reply-content">I remember that, Catt.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">92</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 03, 2009 at 01:54PM</span>
+            <div class="reply-content">yes once Bob Thomas solemnly and totally silently took me down to the privy lockup by the teahouse and showed me three bags that were being &quot;ripened&quot; (by someone else...pretty sure). I was completely mystified, here he was showing me three bags of old garbage like it was some sort of amazing thing. He only said one thing as we left the privy bank, in that deep melodious velvet voice he said quite clearly &quot;Live rice!&quot;. With his eyes he spoke volumes to me about the vagaries of men, the need for a system of justice, and in general how funny live rice is.
+Keep going Bradley, your photos say a lot. In some ways your photos say more than a lot of adult photos because people knew that they had to tolerate you making pictures because this really was your life. Sometimes people forget that about us faire brats, they think we get put away with the monopoly board at the end of the season with all the fun. Our lives go on however, and these really are our family moments. Also you made some great images of what it looked like to build it up and tear it down. I hope you have the negatives.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">93</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 03, 2009 at 01:48PM</span>
+            <div class="reply-content">yes or &quot;shiny side up rubber side down&quot; as they say here and there (from Leroy)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">94</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 02, 2009 at 03:10PM</span>
+            <div class="reply-content">try to explain why rotten eggs were so valuable.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">95</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 02, 2009 at 06:47AM</span>
+            <div class="reply-content">Why Heavy Karma was named that and why we put a ranch water tank on the back of an old dump truck!
+Why it was a position of honor to ride the fenders of Orange Crush after the stashes had been pulled and loaded.
+Why being able to hit the open back of OC with a full garbage bag from 20 feet away was a big deal!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">96</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 02, 2009 at 06:15AM</span>
+            <div class="reply-content">Try to explain why the Faire was the only place where both a drunk AND HIS HORSE could get punched out!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">97</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 02, 2009 at 06:09AM</span>
+            <div class="reply-content">Oh god Greg, thats bad! I would have hit you too!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">98</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 04, 2009 at 08:05PM</span>
+            <div class="reply-content">&quot;So there I was&quot; on a Memorial Day weekend, Saturday, marching in Queen&#x27;s Progress towards Mainstage as a German. Phyllis leaps out in front of me and says &quot;Hi Greig, it&#x27;s good to see you&quot;, then leaps back into the audience. I finished the march behind mainstage and thought I would go back and say hi. When I got back to her, she totally ignored me.
+Then there was the time Phyllis hit me... I was at stake out at Northern, sitting on a hay bale. Phyllis comes over to me and says to scoot over. I did and she sat down with me. I looked at her and then the hay bale a couple of times and asked Phillis if this meant we were bale bonding. She hit me...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">99</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 03, 2009 at 02:46AM</span>
+            <div class="reply-content">yes my oldest often set her friends in line...&quot;you think my moms a goody two shoes?&quot; she says then...oh dear...she starts laying it on them.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">100</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 03, 2009 at 01:30AM</span>
+            <div class="reply-content">When my kids wanted to freak out a new friend or put the scare into some problem kid, they would have me related tales of the old days from a world that they really had no way of relating to. Those stories sure helped keep my boy&#x27;s friends in line and kept wandering hands off of my 14 y/0 niece when she came to stay with us!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">101</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 02, 2009 at 06:59PM</span>
+            <div class="reply-content">ohgodohgod I am laughing SO hard at these !!
+What a bunch of great stories !
+I hope they never make it into the outside world.
+People would think we were some kinda freaks....oh sorry,
+... too late.
+Thanks for this thread, Marc.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">102</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 02, 2009 at 02:17PM</span>
+            <div class="reply-content">So there I was, fairly new to the northern lot, chatting up a really cute blond at a red barn party. Her boyfriend shows up, and introduces himself with one of the best opening lines going; &quot;My name&#x27;s Lump. I suck shit.&quot;
+My interest in her poetry waned somewhat.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">103</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 02, 2009 at 10:22AM</span>
+            <div class="reply-content">yes up here the Yurok have a &quot;Yurok dollar&quot; which is similar. Its the stake of all sorts of bets, and sometimes if you have wronged someone you can pay them off publically this dollar as a way of making amends. They took me in fast because I was already used to this sort of thing and I could understand it easily. Considering my upbringing.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">104</span>
+            <span class="reply-author">Danese Cooper</span>
+            <span class="reply-date">January 02, 2009 at 08:03AM</span>
+            <div class="reply-content">Doc and I were walking up the Valley at Blackpoint. Doc and I had an imaginary buck that we always bet. The reason it was imaginary was neither one of us ever go more than $3 ahead. One would lose the buck and then on the next bet win it back. Finally it just became a virtual dollar.
+Mitch came rolling down the valley in the water truck. He&#x27;d hosed it down on the way up so the sprayer was off. Doc was drinking a Pepsi as we walked up the road. He finished it and said &quot;watch this.&quot; Doc set the can in the road as we stepped aside.
+&quot;No way&quot; I said.
+&quot;I&#x27;ll bet a buck&quot; Doc said.
+&quot;You&#x27;re on.&quot;
+Without effort, Mitch, guided the driver side front wheel over the can crushing it flat. Not knocking it over or to the side. He nailed it dead on and squished it better than a can compressor. That was one hell of an example of driving skill. I lost the buck that day.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">105</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 02, 2009 at 03:11AM</span>
+            <div class="reply-content">That was Lumpy all right. That was one of his beliefs, don&#x27;t act like one and you won&#x27;t be one! One evening right after work, Lumpy, Ron, Ace, Mad dog (and his lady, can&#x27;t remember that saint&#x27;s name) myself, Rubin, Lisa, Erin Cassady and a bunch of the misc crew decided to go the the Petaluma Drive Inn theater and catch some action flick. We loaded the couch from the scale house into the back of someones long bed pickup along with various and sundry &quot;consumables&quot; (drinkable, munchable and munchy causing), piled into it and someone&#x27;s station wagon and away we went. We had just set up off to one side, took up couch positions and had begun to enjoy ourselves (a passing security guard took one look at us and decided that discretion was the better part of valor!) when a young &quot;gentleman&quot; pulled up near us with a very loud stereo (harbinger of today&#x27;s youth). Lumpy (still resplendent in his working attire and appearance) got down off the couch and walked over to the guy&#x27;s car (followed by Ron and Mad Dog) leaned the window and said &quot;nice stereo&quot;. When the kid nervously agreed, Lumpy said &quot;I&#x27;ll make you a deal, you turn it down and I&#x27;ll let you keep it&quot;! Needless to say, it got suddenly quiet! That Lumpy, what a way with words......
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">106</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">January 02, 2009 at 01:58AM</span>
+            <div class="reply-content">Oh Lumpy, oh yes. A lovely force of nature shambling towards a port-a-potty with a large sucking hose. &quot;So there I was&quot; at the end of a long faire day, not exactly paying attention to the real world, wandering about down by main gate probably enjoying the swirls of dust motes in the air which must have been generated by an oncoming water truck bearing down behind me when a thundering voice like the wrath of god bellowed &quot;Hey! Asshole! Get out of the road!&quot; Not to be outdone, I went into a slow double take and turned around and looked up and said something to the effect: &quot;Hey, who you calling an asshole. I work here.&quot; At this point we are starting to share challenging grins, squint of eye, cock of head. His retort, I will never forget: &quot;Well, if more assholes got out of the way, less people would be called assholes!&quot; I adjusted my position according to his irrefutable logic. It is that kind of philosophy I try to remember during &quot;some of those days.&quot; Lumpy, a gentleman and scholar.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">107</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 01, 2009 at 10:46PM</span>
+            <div class="reply-content">Not a particular incident but rather a general one: so there I would be on duty as a Security Guard. As a relatively small guy trying to &quot;persuade&quot; two or three obnoxious drunks that &quot;you can&#x27;t go back there&quot; or &quot;leave her alone&quot; or something similar. It would be going &quot;so so&quot; ... not bad enough to call for backup, not good enough that the &quot;gentlemen&quot; seemed inclined to follow my &quot;suggestions.&quot; And then, suddenly, they would become very polite and cooperative. Without looking over my shoulder, I would continue to send the fine gents on their way. When they were gone, I would turn around and there would be one of the big guys. Not always Security, either. Somehow, the one I remember this happening with most, and who got what I remember as the quickest results, was Lumpy (Mitch). All by himself and without saying a word, he had great way of changing attitudes.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">108</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 01, 2009 at 10:36PM</span>
+            <div class="reply-content">No, I was asking which girl. I&#x27;m still trying to remember the 3rd &quot;missing girl&quot; (quotes &#x27;cuz all of them were found safe) and it&#x27;s making my brain hurt.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">109</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 01, 2009 at 10:34PM</span>
+            <div class="reply-content">Tabitha. For years after that, I would find some little girl to say &quot;Tabitha copies&quot; for the noon alestand announcement. There was always a few moments of silence after that. It would be fun to hear Tabitha&#x27;s side.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">110</span>
+            <span class="reply-author">Danese Cooper</span>
+            <span class="reply-date">January 01, 2009 at 10:32PM</span>
+            <div class="reply-content">Uhhhh... Tabitha. If you&#x27;re asking which set of grandparents, I don&#x27;t remember.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">111</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 01, 2009 at 10:25PM</span>
+            <div class="reply-content">Which one?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">112</span>
+            <span class="reply-author">Danese Cooper</span>
+            <span class="reply-date">January 01, 2009 at 10:20PM</span>
+            <div class="reply-content">BTW, she was with grandma because mom got drunk.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">113</span>
+            <span class="reply-author">Danese Cooper</span>
+            <span class="reply-date">January 01, 2009 at 10:19PM</span>
+            <div class="reply-content">ARRRRRRRRRRGGGHH!!!!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">114</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 01, 2009 at 10:00PM</span>
+            <div class="reply-content">Tabitha, Nicholle Sullivan, and ??? (one more girl who&#x27;s name escapes me at the moment). Turned the lot upside down each time. Everyone on crew, most of MacColin, + 1/2 of the rest of the performers; checking hooches, trailers, vans, and sleeping bags. And each time, it turned out that the girl was safe either off lot with friends or relatives, or at family / friend&#x27;s booth.
+Funny thing is that my daughter, D&#x27;vora (who is here on Teahouse from time to time) was at her high school a 2 or 3 years ago and this gal in her 30&#x27;s comes up to her and says &quot;are you Sequoia Schroeder&#x27;s daughter&quot; (I think someone had said D&#x27;vora&#x27;s last name, plus D&#x27;vora kinda has the family voice) ... and it turns to be Tabitha, all grown up and working with some program with LAUSD. Not a teacher, but a visiting something or other. She told D&#x27;vora about &quot;looking for Tabitha&quot; ... from the kid&#x27;s point of view!
+Does anyone remember the name of the &quot;3rd missing girl&quot; ?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">115</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 01, 2009 at 09:12PM</span>
+            <div class="reply-content">Remember looking for Tabitha at Southern?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">116</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 31, 2008 at 05:21AM</span>
+            <div class="reply-content">So there I was &quot;guarding&quot; the crossroads on a Monday morning at Agoura, sometime in the late &#x27;70s (I think) when this big, shiny, white Buick convertible with two 50-ish white guys come driving down the entrance road. I stop them, of course, and they say ...
+&quot;Where are our daughters? They came to the Faire yesterday and haven&#x27;t come home. You have to let us drive on and find our daughters.&quot; Of course, I tell them no, I don&#x27;t have to let them on the lot and I&#x27;m not going to let them on the lot. They are insistent, I&#x27;m insistent, etc. Obviously, no resolution here, so I call for a supervisor. The only high mukety-muck on the lot turns out to be Bruce Bagnoli (at least, I think was Bagnoli ... it was a long time ago). He comes out from his trailer, which was in the Corp Yard not far from Crossroads. At some point in the conversation w/ these two guys he asks the question I forgot to ask ... &quot;How old are your daughters?&quot; The guys answer &quot;21&quot; and &quot;23&quot; Bruce says &quot;The Sheriff&#x27;s Dept. is up the road a bit - go file a missing persons report. You&#x27;re not coming on the lot and we&#x27;re not looking for your daughters.&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">117</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">December 27, 2008 at 09:44PM</span>
+            <div class="reply-content">We&#x27;d all decided in advance we could conjure sun from morning fog by device of sword lock. Noon stage show, we&#x27;d hollered at a large southern faire crowd to start yelling and chanting &quot;Sun! Sun! Sun!&quot; during a sword dance. Sol obliges with a blinding shaft of light precisely at the point of a raised sword lock in perfect rhythm, right at the moment we&#x27;d collectively intended. Crowd goes nuts. We all felt it coming so clearly it scared the bejeezus out of us. Afterward we sat down back stage and all resolved to never, ever try to do something like that again, powers beyond understanding at work. We were basically dancing for fun and money though we knew there was living history going on and honored that at well, but this was something very different, like tapping into a current. I&#x27;ll never forget that moment, or the intention we all felt, for as long as I live. The connection between agriculture and dancing had never been more clear. The evidence is empirical.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">118</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 21, 2008 at 06:15AM</span>
+            <div class="reply-content">I WISH I WUZ THERE TOO !!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">119</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 21, 2008 at 05:49AM</span>
+            <div class="reply-content">Saw Ms. Bigglestone and Ms. Schultz last weekend at Dickens and just did Postcards
+for the first time since Fort Mason. Wish you were her Morgan your spirit is missed.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">120</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 20, 2008 at 06:29PM</span>
+            <div class="reply-content">This seemed so normal at the time...
+So there I was, visiting a Dickens at the Pier(1980 or thereabouts ),backstage at the V&amp;A where my good friend was the stage manager.
+I was relaxing having a cuppa tea, when all of a suddy he comes to me in a bit of a tizzy saying...&quot; We&#x27;re threre girls down on French Postcards.Take off your top and get out there ! &quot;
+Janet Bigglestone WInter was in that tableau and said to me &quot;.. oh don&#x27;t worry dear, just stick your chest out &amp; smile!&quot;
+So I did.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">121</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">December 20, 2008 at 12:52AM</span>
+            <div class="reply-content">So there I was, at southern, the nobles guild had grouped on either side of the road, near mainstage. The closing parade started to pass through and the nobles all whipped out score cards. Stopped closing parade in their tracks
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">122</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">December 19, 2008 at 12:28AM</span>
+            <div class="reply-content">you could say that
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">123</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 18, 2008 at 06:34PM</span>
+            <div class="reply-content">...so there I was, onstage with a dance troop night show...the volunteers&#x27; job was to keep those onstage smoking, almost everyone onstage was...highly altered...and the dances were color-coordinated, and there was a most psychadellic Mummers&#x27; play, and all had a MARVEOLUS time.
+I kept hearing in the ensuing days how much audience members had enjoied the show, most prefaced by &quot;...and I was just coming on as the dancers did the color thing...&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">124</span>
+            <span class="reply-author">Danese Cooper</span>
+            <span class="reply-date">December 18, 2008 at 06:14PM</span>
+            <div class="reply-content">Sheeeeeeeit ... that was just after work. (That&#x27;s a variation of my response to Jack Kerouac&#x27;s &#x27;On the Road.&#x27; I&#x27;d heard all about how it changed a generation with it&#x27;s wild rebellion. When I read it, my response was &quot;That wasn&#x27;t wild, that was a Wednesday night&quot;)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">125</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 18, 2008 at 05:59PM</span>
+            <div class="reply-content">Seems you were having a very exciting faire in those days--hum
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">126</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">December 18, 2008 at 01:46AM</span>
+            <div class="reply-content">&quot;So there I was&quot;....in the crew shower at Northern. All of the stalls were occupied. Creature began complaining rather loudly that he needed to shower and was unhappy that all of the showers were taken. I stuck my head out and said something like &quot;Well shut up and get in here then!&quot;. He did and that was that. Seemed like the most logical solution to the problem.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">127</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">December 17, 2008 at 10:25PM</span>
+            <div class="reply-content">I was visiting Jim Hayes at his trailer. Brian Patterson was there as well. I was telling them about all the people on the lot I had to deliver Girl Scout cookies to. After a while I went out to my car, came back in, and gave Jim the boxes he had ordered. Brian looked very surprised, then said &quot;Oh! You really do have Girl Scout cookies! I thought it was a front for drugs.&quot; I cracked up and explained to Brian that I in fact worked as a Field Director for the Girl Scout Council. Jim proceeded to tease Brian for accusing a Girl Scout of selling drugs. Brian was embarrassed, but very good natured about it.
+This was not exactly a story I could share back at the office. But one thing I can say for sure, I sold several boxes of cookies on the lot!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">128</span>
+            <span class="reply-author">Danese Cooper</span>
+            <span class="reply-date">December 17, 2008 at 05:31AM</span>
+            <div class="reply-content">I don&#x27;t know if the original message got through because my mail server was acting up. But do you have any photos of you with the beard when you ran walking guards? The wife and kid want to see a photo of the guy who I got into a roaring argument with over who was going to eat the lunch of an abusive husband/would-be gate crasher at Northern. Red Robert was at the gate, wife decided to stay the night and hubby felt he didn&#x27;t have to go talk to Murray. For some reason you and I standing there screaming at each other as to who was going to &#x27;get him&#x27; did wonders for convincing him he wanted to talk to Murray instead of us.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">129</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 17, 2008 at 01:12AM</span>
+            <div class="reply-content">Have to bragg a little bit and say that when I ran the Ale stand security crew, they were pretty on top of it. I still have my collection of fake ID&#x27;s from back then (badly stained from the pouch I kept them in). I used to have ccontests for my team to see who could collect the most fake ID&#x27;s.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">130</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">December 17, 2008 at 12:23AM</span>
+            <div class="reply-content">I do remember some of the stories and results of people that were clueless and thought we would all be ignorant and easy to fool. Never really went well for them!
+I knew it was a different world, one of the last years in Devore when I found a security guy to report a cut off to and after doing a detailed description with where he was headed and the guy asked me for a more detailed description. I could have vaulted the counter and gone and grabbed the cut off more quickly than this guy was able to tell me the description was not good enough!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">131</span>
+            <span class="reply-author">[31te9gnwzgefw]</span>
+            <span class="reply-date">December 16, 2008 at 05:41PM</span>
+            <div class="reply-content">Cheri does live back east, but she is not married. She does have a little boy, probably about 5 yrs old by now.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">132</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 16, 2008 at 05:26AM</span>
+            <div class="reply-content">The older ones took even more abuse and were heavy enough to be useful in a pinch. I&#x27;ll have to tell you about one such case offline sometime, some of our more peaceful brethren might not appreciate the details and I don&#x27;t want to crimp the vibe man!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">133</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 16, 2008 at 05:20AM</span>
+            <div class="reply-content">I still have one given to me by as a gift by a young lady named Kristy (Talmy?). Unfortunately she engraved a &quot;cutesy&quot; nickname into it and anytime the radio guys worked on it, I caught flack! My wife isn&#x27;t too thrilled with it either. I kept it in a case to hide the name... Anybody remember the old metal sided ones? The ones that had a very convenient and useful flat metal side that could also get a certain blond Ale crew girl named Gail in big trouble when she forgot to turn the radio off!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">134</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">December 16, 2008 at 04:36AM</span>
+            <div class="reply-content">I think I still have mine somewhere...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">135</span>
+            <span class="reply-author">Danese Cooper</span>
+            <span class="reply-date">December 16, 2008 at 04:27AM</span>
+            <div class="reply-content">&quot;YOU KILLED ME!&quot;
+&quot;Base, 10-32?&quot;
+&quot;10-2&quot;
+&quot;No I didn&#x27;t&quot;
+Man those old Motorolas could take a lot of abuse &gt;:D
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">136</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 16, 2008 at 02:52AM</span>
+            <div class="reply-content">And the hill was so steep and he was handcuffed and I swear he just ran into Foxworthy&#x27;s coiled lariat rope! And I swear I have no idea how my radio broke or why he has a radio shaped bruise on his face! Yes officer, next time we will be more careful with our dirtbags errrr suspects!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">137</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 16, 2008 at 02:19AM</span>
+            <div class="reply-content">chuckle...snort
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">138</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">December 16, 2008 at 02:15AM</span>
+            <div class="reply-content">Hey Patty, I knew that....sorry, got you confused with DangerAngel.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">139</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">December 16, 2008 at 02:14AM</span>
+            <div class="reply-content">Actually I am Patty from Ale 3 on the hill in Devore - the infamous one with the spitting fish.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">140</span>
+            <span class="reply-author">Danese Cooper</span>
+            <span class="reply-date">December 16, 2008 at 02:04AM</span>
+            <div class="reply-content">Why he was clumsy of course, the terrain outside the fence was very unstable.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">141</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 16, 2008 at 01:57AM</span>
+            <div class="reply-content">About the same as trying to explain to the LASO why their suspect (whom had hit a horse guard with a rock after trying to start a fire and fled up a ridge through the brush) had &quot;fallen&quot; so many times and couldn&#x27;t wait to be taken to jail!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">142</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 16, 2008 at 01:46AM</span>
+            <div class="reply-content">lol
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">143</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">December 16, 2008 at 01:39AM</span>
+            <div class="reply-content">Jefe (Jimmy Dumas&#x27; brother Jeff) is living with their Mom (at least that&#x27;s what Jimmy said *last* Christmas). Not sure what happened to Sherry (unless she&#x27;s the same one Jenny Holmes aka Mayhem is talking about), but she and Jefe broke up in any case.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">144</span>
+            <span class="reply-author">Danese Cooper</span>
+            <span class="reply-date">December 16, 2008 at 01:24AM</span>
+            <div class="reply-content">How about trying to explain why &quot;The fire hydrant just exploded when I drove by it&quot; will cause certain people to cringe &gt;:D
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">145</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">December 16, 2008 at 12:39AM</span>
+            <div class="reply-content">If you are talking Cherie from crew and the mistress of Ice deliveries I believe she is happily married to her high school sweetheart and back east somewhere. I am sure Cory or Venta would have more info. If not that one then I am clueless and will stand down!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">146</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">December 15, 2008 at 09:27PM</span>
+            <div class="reply-content">Remember when the burlap crew went topless until someone from the press showed up on the lot? And btw, what happened to Jefe and Sherry?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">147</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">December 15, 2008 at 09:26PM</span>
+            <div class="reply-content">Ah, the desert trip is still alive and well! I&#x27;ll try to send out an invite (but my memory is getting fuzzy) next July.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">148</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 15, 2008 at 07:37PM</span>
+            <div class="reply-content">Try explaining what a &quot;Lot Bomb &quot; or Bomber was or Lot Rot! Or why there was a Danish (?) foreign exchange student pitching softball topless......
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">149</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 15, 2008 at 07:35PM</span>
+            <div class="reply-content">Or why the Sevice and Supply crew wore SS lightning bolts and own a large amount of guns!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">150</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 15, 2008 at 07:02PM</span>
+            <div class="reply-content">hehe
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">151</span>
+            <span class="reply-author">[31te9gnwzgefw]</span>
+            <span class="reply-date">December 15, 2008 at 06:45PM</span>
+            <div class="reply-content">Try explaining a &quot;desert trip&quot; without sounding like a member of the Aryan Brotherhood.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">152</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 14, 2008 at 06:49AM</span>
+            <div class="reply-content">So there I was, dancing on Main Stage, when I took a NASTY fall and hurt my foot quite badly.
+Enter Bruno.
+They carried me down to First Aid,shouting and gesticulating...&quot; ...make way !! She&#x27;s BLEEDING ( I wasn&#x27;t ) !! She&#x27;s in TERRIBLE PAIN ( I was , but I was laughing pretty hard at those guys) !!! MAKE WAY !!!
+When we got to First Aid, the EMT said &quot; We would have sent a stretcher for you !&quot;
+&quot; No Way !&quot; said I,&quot; Bruno was MUCH better than a stretcher ! &quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">153</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 14, 2008 at 05:35AM</span>
+            <div class="reply-content">It was, wasn&#x27;t it! But those were different days.....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">154</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">December 14, 2008 at 04:24AM</span>
+            <div class="reply-content">I could never quite explain why swapping &quot;dates&quot; with your best friend seemed like the most natural thing in the world.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">155</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 13, 2008 at 04:01AM</span>
+            <div class="reply-content">I had forgotten all about the pike pole incident!
+Ever try to explain the Bubba Bud Easter Beer hunt? Or night shows? How about trying to describe to others how funny Dennis Day was as St Cuthbert the uncorrupted and why it was so funny?
+As far as &quot;it seemed like a good idea at the time&quot;, does anybody remember back in the late 70&#x27;s when Bobcat (I think) and his partner thought it would be great fun to fill a garbage bag with acetylene and light it off next to the Security bosses (help someone, I can’t remember his name, this would be around 78-79) trailer? They thought that it would only make a loud noise. The resulting explosion blew his trailer off of its blocks and the flash was visible for a mile. We thought someone has set off a bomb!
+One I was involved with goes back to when I was a booth brat. We were invited to take our Pyrenees dogs into the procession. I came up with the bright idea of bring ALL of them (we had several friends there that day and had somewhere around 15 dogs there). We had 2-3 dogs per kid and we doing great until we came to the main stage, went up on the stage around and lined up across the front of the stage, 15 huge white dogs being handled by kids…………….. And proceeded to upstage the queen! She was NOT happy!!!! Everyone wanted our pictures and we really interfered with the show. The word later came down that although we could be in the procession, we were not to ever upstage her majesty again.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">156</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 12, 2008 at 01:35PM</span>
+            <div class="reply-content">&quot;so there i was&quot;... in the iron pig, drinking champagne and having a morning soak (during faire hours behind ale 5 in agoura) naked with Jane, when one of the musos from pipe and Bowl (barely called bruno yet) comes and finds me, possibly even Bob (nekked wymmen!), and says &quot;go get Peg we have a surprise for her&quot;. I was a bit disgruntled, like do you see how comfortable I am ? (Jane P and i were alone sipping Michaels champagne in the fanciful hot tub stoned and happy).
+&quot;You have to do it because only you will be able to trick her&quot;... it had to of been Bob.
+&quot;meet up over here&quot;
+So I recall it was still a cold desert morning, likely destined to be a hot afternoon. I got dressed fast and sloppy. Excitedly I drug Peg out of her lair, the lock up behind main in the great green room.&#x27;You have to see this &quot; I said (I had no idea what, I was in on a joke or a trick or a treat and I wanted to see what myself) come on come on!. I tugged, I cajoled, I insisted. I drug her to the appointed spot at the path coming down from procession hill, behind the pig where we had been cosy moments before. We stood and heard a thin waft of music. We were on the other side of the burlap so that the crowd faded away in importance or presence.
+down the hill out of the mist they danced and played, horns in the air all in a line.
+Right then, for the very first time, Burger led the Pipe and Bowl down the hill in the Abbotts Bromley. Bob was leading the band in the tune which had nearly wandered off. Bob and Peg had talked a lot about it, and she was pretty fervent that we revive the lost ancient tradition. This was a treat for her, a kiss on the cheek.
+It was stunning, she cried, I cried, the guys were stoic.
+Years later when I began attending Yurok dances out at Hupa and in witchipec, I was stunned to see the deerskins that are used for ceremonial dance every two years or so. Some of them are white of course and grey which is unusual, mostly the feeling was so much the same as abbots bromley that it gave me chills. My yurok adopted family are dance makers, and after explaining our revival of the Abbots Bromley Tiger decided that our clan was also clan butterfly, that we are also dance makers.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">157</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">December 12, 2008 at 08:03AM</span>
+            <div class="reply-content">Seeing the sailing ship with a big plastic Mickey Mouse head on top of the main mast at Black Point
+after we were open.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">158</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 12, 2008 at 05:58AM</span>
+            <div class="reply-content">Jon Berger had a tee-shirt that said &quot; Heavy Karma Fan Club&quot;
+Try explaining THAT to an outsider !!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">159</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">December 12, 2008 at 02:59AM</span>
+            <div class="reply-content">Why Orange Crush had the &quot;Blue Sky Up / Brown Earth Down&quot; sticker on the dashboard (and why it was funny).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">160</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 11, 2008 at 03:49AM</span>
+            <div class="reply-content">live rice
+i can never manage to explain why an exploding bag of garbage with live rice in it is funny.
+they just give you that &quot;Oh you poor dear...&quot; look.
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

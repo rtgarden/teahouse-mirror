@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2sk15g05jiyux Photos - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/photos/">Photos</a> <span>›</span> <span>2sk15g05jiyux</span></div>
+            
+    <div class="module">
+        <div class="module-header">2sk15g05jiyux's Photos</div>
+        <div class="module-content">
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/100E_102552.jpg" alt="100E_102552.jpg" loading="lazy">
+                    <div class="photo-contributor">100E_102552.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/10E_102462.jpg" alt="10E_102462.jpg" loading="lazy">
+                    <div class="photo-contributor">10E_102462.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/11E_102464.jpg" alt="11E_102464.jpg" loading="lazy">
+                    <div class="photo-contributor">11E_102464.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/12E_102466.jpg" alt="12E_102466.jpg" loading="lazy">
+                    <div class="photo-contributor">12E_102466.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/13EMaruja,Maggie,Kathy,Nina,Russel,Arm_102474.jpg" alt="13EMaruja,Maggie,Kathy,Nina,Russel,Arm_102474.jpg" loading="lazy">
+                    <div class="photo-contributor">13EMaruja,Maggie,Kathy,Nina,Russel,Arm_102474.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/14E_102476.jpg" alt="14E_102476.jpg" loading="lazy">
+                    <div class="photo-contributor">14E_102476.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/16E_102478.jpg" alt="16E_102478.jpg" loading="lazy">
+                    <div class="photo-contributor">16E_102478.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/17E_102480.jpg" alt="17E_102480.jpg" loading="lazy">
+                    <div class="photo-contributor">17E_102480.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/18E_102482.jpg" alt="18E_102482.jpg" loading="lazy">
+                    <div class="photo-contributor">18E_102482.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/19E_102484.jpg" alt="19E_102484.jpg" loading="lazy">
+                    <div class="photo-contributor">19E_102484.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/1E_102442.jpg" alt="1E_102442.jpg" loading="lazy">
+                    <div class="photo-contributor">1E_102442.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/22E_102486.jpg" alt="22E_102486.jpg" loading="lazy">
+                    <div class="photo-contributor">22E_102486.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/23E_102488.jpg" alt="23E_102488.jpg" loading="lazy">
+                    <div class="photo-contributor">23E_102488.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/25E_102490.jpg" alt="25E_102490.jpg" loading="lazy">
+                    <div class="photo-contributor">25E_102490.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/27E_102492.jpg" alt="27E_102492.jpg" loading="lazy">
+                    <div class="photo-contributor">27E_102492.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/28_102494.jpg" alt="28_102494.jpg" loading="lazy">
+                    <div class="photo-contributor">28_102494.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/2E_102444.jpg" alt="2E_102444.jpg" loading="lazy">
+                    <div class="photo-contributor">2E_102444.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/33E_102498.jpg" alt="33E_102498.jpg" loading="lazy">
+                    <div class="photo-contributor">33E_102498.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/34E_102500.jpg" alt="34E_102500.jpg" loading="lazy">
+                    <div class="photo-contributor">34E_102500.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/36E_102502.jpg" alt="36E_102502.jpg" loading="lazy">
+                    <div class="photo-contributor">36E_102502.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/38E_102504.jpg" alt="38E_102504.jpg" loading="lazy">
+                    <div class="photo-contributor">38E_102504.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/39E_102506.jpg" alt="39E_102506.jpg" loading="lazy">
+                    <div class="photo-contributor">39E_102506.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/43E_102508.jpg" alt="43E_102508.jpg" loading="lazy">
+                    <div class="photo-contributor">43E_102508.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/44E_102510.jpg" alt="44E_102510.jpg" loading="lazy">
+                    <div class="photo-contributor">44E_102510.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/45_102512.jpg" alt="45_102512.jpg" loading="lazy">
+                    <div class="photo-contributor">45_102512.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/46E_102514.jpg" alt="46E_102514.jpg" loading="lazy">
+                    <div class="photo-contributor">46E_102514.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/47E_102516.jpg" alt="47E_102516.jpg" loading="lazy">
+                    <div class="photo-contributor">47E_102516.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/48E_102518.jpg" alt="48E_102518.jpg" loading="lazy">
+                    <div class="photo-contributor">48E_102518.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/4E_102446.jpg" alt="4E_102446.jpg" loading="lazy">
+                    <div class="photo-contributor">4E_102446.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/56E_102524.jpg" alt="56E_102524.jpg" loading="lazy">
+                    <div class="photo-contributor">56E_102524.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/5EMaruja_102454.jpg" alt="5EMaruja_102454.jpg" loading="lazy">
+                    <div class="photo-contributor">5EMaruja_102454.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/62E_102528.jpg" alt="62E_102528.jpg" loading="lazy">
+                    <div class="photo-contributor">62E_102528.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/6E_102456.jpg" alt="6E_102456.jpg" loading="lazy">
+                    <div class="photo-contributor">6E_102456.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/78E_102530.jpg" alt="78E_102530.jpg" loading="lazy">
+                    <div class="photo-contributor">78E_102530.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/7E_102458.jpg" alt="7E_102458.jpg" loading="lazy">
+                    <div class="photo-contributor">7E_102458.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/90E_102534.jpg" alt="90E_102534.jpg" loading="lazy">
+                    <div class="photo-contributor">90E_102534.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/92E_102536.jpg" alt="92E_102536.jpg" loading="lazy">
+                    <div class="photo-contributor">92E_102536.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/94E_102538.jpg" alt="94E_102538.jpg" loading="lazy">
+                    <div class="photo-contributor">94E_102538.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/95E_102540.jpg" alt="95E_102540.jpg" loading="lazy">
+                    <div class="photo-contributor">95E_102540.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/96E_102542.jpg" alt="96E_102542.jpg" loading="lazy">
+                    <div class="photo-contributor">96E_102542.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/99EMaruja&Maggie_102550.jpg" alt="99EMaruja&amp;Maggie_102550.jpg" loading="lazy">
+                    <div class="photo-contributor">99EMaruja&amp;Maggie_102550.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/9E_102460.jpg" alt="9E_102460.jpg" loading="lazy">
+                    <div class="photo-contributor">9E_102460.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Amadeus & Laura_107556.jpg" alt="Amadeus &amp; Laura_107556.jpg" loading="lazy">
+                    <div class="photo-contributor">Amadeus &amp; Laura_107556.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Amadeus & Laura_107559.jpg" alt="Amadeus &amp; Laura_107559.jpg" loading="lazy">
+                    <div class="photo-contributor">Amadeus &amp; Laura_107559.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Carla Waldo Ochoa_102496.jpg" alt="Carla Waldo Ochoa_102496.jpg" loading="lazy">
+                    <div class="photo-contributor">Carla Waldo Ochoa_102496.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Catana_107562.jpg" alt="Catana_107562.jpg" loading="lazy">
+                    <div class="photo-contributor">Catana_107562.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Catana_107565.jpg" alt="Catana_107565.jpg" loading="lazy">
+                    <div class="photo-contributor">Catana_107565.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Catana_107568.jpg" alt="Catana_107568.jpg" loading="lazy">
+                    <div class="photo-contributor">Catana_107568.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Faire-Lourdes_107626.jpg" alt="Faire-Lourdes_107626.jpg" loading="lazy">
+                    <div class="photo-contributor">Faire-Lourdes_107626.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Freddie Mejia and group_107574.jpg" alt="Freddie Mejia and group_107574.jpg" loading="lazy">
+                    <div class="photo-contributor">Freddie Mejia and group_107574.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Freddie portrait great_2_102554.jpg" alt="Freddie portrait great_2_102554.jpg" loading="lazy">
+                    <div class="photo-contributor">Freddie portrait great_2_102554.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Karen & friend_107577.jpg" alt="Karen &amp; friend_107577.jpg" loading="lazy">
+                    <div class="photo-contributor">Karen &amp; friend_107577.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Karen & friend_107580.jpg" alt="Karen &amp; friend_107580.jpg" loading="lazy">
+                    <div class="photo-contributor">Karen &amp; friend_107580.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Karen Lynch & Lee Gold_107583.jpg" alt="Karen Lynch &amp; Lee Gold_107583.jpg" loading="lazy">
+                    <div class="photo-contributor">Karen Lynch &amp; Lee Gold_107583.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/KarenLynch_107598.jpg" alt="KarenLynch_107598.jpg" loading="lazy">
+                    <div class="photo-contributor">KarenLynch_107598.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Lee y Freddie_107601.jpg" alt="Lee y Freddie_107601.jpg" loading="lazy">
+                    <div class="photo-contributor">Lee y Freddie_107601.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Maggie,Maruja,Gayle_102560.jpg" alt="Maggie,Maruja,Gayle_102560.jpg" loading="lazy">
+                    <div class="photo-contributor">Maggie,Maruja,Gayle_102560.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Marcellus Agustin_107607.jpg" alt="Marcellus Agustin_107607.jpg" loading="lazy">
+                    <div class="photo-contributor">Marcellus Agustin_107607.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Marcellus_107610.jpg" alt="Marcellus_107610.jpg" loading="lazy">
+                    <div class="photo-contributor">Marcellus_107610.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Maruja dancing 1_102566.jpg" alt="Maruja dancing 1_102566.jpg" loading="lazy">
+                    <div class="photo-contributor">Maruja dancing 1_102566.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Maruja dancing group2_102570.jpg" alt="Maruja dancing group2_102570.jpg" loading="lazy">
+                    <div class="photo-contributor">Maruja dancing group2_102570.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Maruja portrait_102576.jpg" alt="Maruja portrait_102576.jpg" loading="lazy">
+                    <div class="photo-contributor">Maruja portrait_102576.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Maruja profile_102582.jpg" alt="Maruja profile_102582.jpg" loading="lazy">
+                    <div class="photo-contributor">Maruja profile_102582.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Maruja_107604.jpg" alt="Maruja_107604.jpg" loading="lazy">
+                    <div class="photo-contributor">Maruja_107604.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Steve Peterson_102520.jpg" alt="Steve Peterson_102520.jpg" loading="lazy">
+                    <div class="photo-contributor">Steve Peterson_102520.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Tom Payne & Agustin Rios_107613.jpg" alt="Tom Payne &amp; Agustin Rios_107613.jpg" loading="lazy">
+                    <div class="photo-contributor">Tom Payne &amp; Agustin Rios_107613.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Tom Payne_107616.jpg" alt="Tom Payne_107616.jpg" loading="lazy">
+                    <div class="photo-contributor">Tom Payne_107616.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Zumi_107619.jpg" alt="Zumi_107619.jpg" loading="lazy">
+                    <div class="photo-contributor">Zumi_107619.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/Zumi_107622.jpg" alt="Zumi_107622.jpg" loading="lazy">
+                    <div class="photo-contributor">Zumi_107622.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/karenLynch, Booth2_107592.jpg" alt="karenLynch, Booth2_107592.jpg" loading="lazy">
+                    <div class="photo-contributor">karenLynch, Booth2_107592.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/karenLynch, Booth_107586.jpg" alt="karenLynch, Booth_107586.jpg" loading="lazy">
+                    <div class="photo-contributor">karenLynch, Booth_107586.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/karenLynch, Booth_107589.jpg" alt="karenLynch, Booth_107589.jpg" loading="lazy">
+                    <div class="photo-contributor">karenLynch, Booth_107589.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="/photos/downloaded/2sk15g05jiyux/karenLynch,egg 2_107595.jpg" alt="karenLynch,egg 2_107595.jpg" loading="lazy">
+                    <div class="photo-contributor">karenLynch,egg 2_107595.jpg</div>
+                </div>
+                </div>
+        </div>
+    </div>
+    
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

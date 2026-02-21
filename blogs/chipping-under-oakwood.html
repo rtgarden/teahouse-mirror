@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chipping Under Oakwood - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/blogs/">Blogs</a> <span>›</span> <span>Chipping Under Oakwood</span></div>
+            
+    <div class="module">
+        <div class="module-header">Chipping Under Oakwood</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By [1eyv1wdew4ssy]</span> | <span>January 19, 2011</span> | <span>31 comments</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Comments (31)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 07, 2011 at 03:19AM</span>
+            <div class="reply-content">@Danny:  Yes, the cobwebs can be quite dense at times.  I recall some details quite clearly, but others are elusive as all &#x27;get out.&#x27;  For instance, I have it in one corner of my mind that &#x27;Chipping-Under_Oakwood&quot; was christened during RPFS76.  Then again, another part of my so-called brain begs to differ and suggests that it was RPFS77.  {SIGH!}  I may have copies of Geri&#x27;s presentation (if she distributed any, that is) in my Faire archives (within the &#x27;Barn of Wonders&#x27;).  Of course, I have to dig in the correct corner there, now won&#x27;t I?  &lt;tee-hee-hee, cough-cough!&gt;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 07, 2011 at 03:15AM</span>
+            <div class="reply-content">Oh Noodles!  How can you say you&#x27;re &#x27;useless&#x27; as such?  After all, you got me to come *back* to the teahouse, now, didn&#x27;t you.  As for the interface, la-ha, we&#x27;ll just muddle through some how.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">February 03, 2011 at 03:24PM</span>
+            <div class="reply-content">I&#x27;m useless on Ning&#x27;s interface I&#x27;m afraid to say.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">[tlvy10fzmxwr]</span>
+            <span class="reply-date">February 03, 2011 at 03:02PM</span>
+            <div class="reply-content">Oh your welcome Luisa. It never fails to amaze me what memories are tangled up in the cobwebs in  the attic.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 03, 2011 at 05:44AM</span>
+            <div class="reply-content">BTW: I&#x27;ve noticed that this topic is not &#x27;threading&#x27; like some of the older forum thinger&#x27;s did; that is to say, the messages are appearing in date order in a linear fashion, instead of the option of replying within the thread to (and in response of) someone else&#x27;s post.  
+For instance, I wanted to thank Danny for remembering it was Geraldine who originated the name.  However, I don&#x27;t see a &#x27;comment&#x27; feature that would connect my reply directly under his post.
+Noodles, can you help me here?  Catt?  Bueller?  Bueller?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 03, 2011 at 05:40AM</span>
+            <div class="reply-content">Hi Joy,
+Yes, Geraldine *is* a member of the teahouse, after all.  She wrote that to me yesterday along with her reply which I posted here (below).  Actually, it took Noel&#x27;s message to me on FaceBook to remind me that *I* have membership here, too.  So glad he did, as I really like the atmosphere here at the teahouse more than the &#x27;parading wall&#x27; thing at FB.  OTOH, FB is so, SO, terribly, TERRIBLY addictive, y&#x27;know?  Sometimes I&#x27;m just a moth fluttering around the flame, and totally forget the *joy* of *real* communication, like we share here.
+Whoa!  Gotta stay here more, and &#x27;detox&#x27; with a good chai!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 02, 2011 at 07:05PM</span>
+            <div class="reply-content">By the way, the amount of my bi-monthly check was $325.65!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">SilverUnicorn (Joy Toney)</span>
+            <span class="reply-date">February 02, 2011 at 12:34PM</span>
+            <div class="reply-content">Luisa, Geraldine is already here:
+http://teahouseofthedonkey.ning.com/profile/GeraldineDuncannakaTheBrewersWife?xg_source=profiles_memberList
+I invited her and got her to join quite some time ago.  (She may have forgotten, though. )  You might suggest she come visit ...  (Perhaps remind her she already has a profile here? )
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 02, 2011 at 06:51AM</span>
+            <div class="reply-content">Hi Everybody!  Luisa here again.  Just got this from Geraldine Duncann, in response to the origins of Chipping-Under-Oakwood, specifically &#x27;where in England is it?&#x27;
+Begin forward from Geri:
+&quot;Hi Louisa,
+Chipping –under-Oakwood! Talk about a blast from the past!
+Where was Chipping –under-Oakwood? There is a spot on modern map of England where the counties of Oxfordshire, Wiltshire and Royal Barkshire meet. If however, you are fortunate enough to find a copy of a very old map printed in a sometime-somewhen, and you look very, very carefully, and if you are not a doubting-Thomas, you may be able to see that the borders of each shire have been pushed back just a bit and in the space this creates, there sits the wee community of Chipping-under-Oakwood. 
+The Thames River is nearby and it is just off The Great Foss Way, which was a major rout from London to the major West Country communities of Bristol, and onwards to Exeter and Plymouth. From north to south it sat just off the main rout from London to Oxford, Banbury, Stratford and on to York, New Castle on Tine and beyond, the wilds of the barbarous Scots. Being on this major crossroads gave us the excuse for the disproportionate number of “exotic,” personas that existed at the Faire. 
+Also, remember that the Queen and her court visited us. Although Lizzy Tudor traveled extensively, she never in her life was further than 50 miles from London, despite Hollywood. AND the average peasant never traveled more than 3 miles from the place of his birth in his lifetime.
+Why Chipping-under-Oakwood. Chipping is an old Saxon word for market place. The Oakwood part for the Northern Faire in Novato goes without saying. I wanted to come up with a different name for Southern Faire but Phyllis vetoed it.
+And so, who am I to say all this as if it were the true and only truth about Chipping-under-Oakwood. I invented it after having traveled extensively in the correspon
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 02, 2011 at 06:39AM</span>
+            <div class="reply-content">I believe Theme Events remained a legal entity for some years thereafter, but the fog in my brain cannot remember precisely what it was for or how it &quot;appeared.&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 02, 2011 at 04:50AM</span>
+            <div class="reply-content">My last paycheck from Theme Events was in June 1976. Starting in July, the name was Living History center.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">[1eyv1wdew4ssy]</span>
+            <span class="reply-date">February 02, 2011 at 04:09AM</span>
+            <div class="reply-content">I like where this is heading. Thanks, Luisa!
+As for &quot;the Shire,&quot; I remember lots of references to both &quot;the Northern Shire&quot; and &quot;the Southern Shire,&quot; to differentiate betwixt RPFS and PRFN whilst in character.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">February 01, 2011 at 10:56PM</span>
+            <div class="reply-content">I knew Luisa could get to the bottom of this, if anyone could!  Brava, bella!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 01, 2011 at 10:52PM</span>
+            <div class="reply-content">Okay youse guys: Noel pulled me away from the FaceBook vortex and I thank him greatly for that lifeline tug. 
+For the record: the name, Chipping-Under-Oakwood, was invented and promoted by Geraldine Duncann.  She had traveled around England quite a bit by the mid-1970&#x27;s, and was impressed by the similarity of the woodland oak forests around Oxford, and surmised that our Faire Village (hitherto as yet un-named, unless referred to as The Shire, by Tolkien fans), was probably in a similar place, metaphorically speaking. 
+The official naming of the village market town coincided with the push to create a more authentic history-time-travel experience for our patrons.  This movement included the move to a more &#x27;authentic&#x27; dialect (introduced by Robert Easton before RPFS75), more authentic costuming for the villagers and craftsmen (on-going, actually, from the early 1970&#x27;s), and Phyllis&#x27;s desire to promote the Living History Center as an educational outlet for both schools (Workshop-in-the-Woods) and community outreach.
+Since Geraldine is one of my friends on FaceBook, I&#x27;m going to ask her to print her timeline and reasonings for the specific name &quot;Chipping-Under-Oakwood.&quot;  IIRC, she did an entire pre-Faire workshop on the premise of CUO beginning in at least spring 1976, and continuing through at least RPFN77.
+More to follow (when / if Geraldine has time to add to this conversation)
+PS - I&#x27;ll invite her to the teahouse, too, of course.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">February 01, 2011 at 11:43AM</span>
+            <div class="reply-content">An additional bit of info on the LHC.  I poked around a bit and found a DCF ad from the Chronicle from December, 1977, which showed the LHC as presenting the event.  A parallel ad from 1975 did not.  So that puts the LHC as far back as December, 1977.  But, as with all of this, Luisa is without per.  Although I believe she might have been on hiatus around 1976 to 1979 or so....?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">[1eyv1wdew4ssy]</span>
+            <span class="reply-date">February 01, 2011 at 04:48AM</span>
+            <div class="reply-content">Thanks, Noel, 79 sounds right. The &quot;still in suspense&quot; comment below was directed at Catt, who hasn&#x27;t explained  about being imprisoned at Taco Bell yet...  ;-)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">February 01, 2011 at 03:49AM</span>
+            <div class="reply-content">Okay, ran it by my better half (of the day). Chipping-Under-Oakworm&quot; rang a bell with her, too, so that places it in use @ RPFN 1979, her last year as well.  She steered clear of all Faire-related stuff after that, so there&#x27;s no room for bleed-through.  I might even be 1978, but I have no recollection of Peg as QE1 using the expression.  But that doesn&#x27;t mean much......
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">[1eyv1wdew4ssy]</span>
+            <span class="reply-date">February 01, 2011 at 03:47AM</span>
+            <div class="reply-content">and yet somehow i am still feeling left in suspense
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 01, 2011 at 03:39AM</span>
+            <div class="reply-content">it was jack in the box i remembered wrong.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">February 01, 2011 at 03:29AM</span>
+            <div class="reply-content">Okay, I&#x27;ll take a stab at this.  The name isn&#x27;t unfamiliar to me, and my last year was 1979.  I have LHC document from 1980 (a rehersal/workshop schedule c. June, 1980) which begins &quot;Welcome All to Chipping-Under-Oakwood, the home of the Living History Centre&#x27;s College of Renaissance Delight.&quot;  Etc., etc.  So my guess would be 1978 (annus horribilus) or 1979.  Luisa should be able to shed light on it as she took over as QE1 at RPFN in 1979 and would have had to have had the locale firmly in mind.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">[1eyv1wdew4ssy]</span>
+            <span class="reply-date">January 28, 2011 at 05:26PM</span>
+            <div class="reply-content">@Catt -- &quot;Internment at Taco Bell?&quot; Sounds like a good story...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">[tlvy10fzmxwr]</span>
+            <span class="reply-date">January 28, 2011 at 04:29PM</span>
+            <div class="reply-content">I believe Grealdine Duncan came up with the name and I am pretty sure it was 1981.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 27, 2011 at 05:07PM</span>
+            <div class="reply-content">Steve, it was the MOST FABULOUS TRIP EVER !!!!!!
+I wish I still had some photos....oh well...!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 27, 2011 at 12:42AM</span>
+            <div class="reply-content">Louise &amp; I went to London in 1992. We stayed at Mrs. Mack&#x27;s house in Brixton with Luisa&#x27;s recommendation. Toured England &amp; Wales by train, made it to Stratford, but no little villages.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">[1eyv1wdew4ssy]</span>
+            <span class="reply-date">January 26, 2011 at 05:45PM</span>
+            <div class="reply-content">sounds about right-- must have been a fun trip!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 26, 2011 at 04:38PM</span>
+            <div class="reply-content">I believe it was 1980 or 1981 - right after a Trip to Britain by a few LHC types - Phyllis, Will, young Kevin &amp; Brian,Kevin Brown, Luisa, meself, Doug Burger, Lynanne Hanson, Mitchell Sandler, etc.
+We put on shows throughout the English Southwest, and I remember a conversation with Phyllis about &quot; Chipping&quot; villages.
+Shortly after our return Our Village received it&#x27;s name.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 22, 2011 at 02:49AM</span>
+            <div class="reply-content">that was my first &quot;paycheck&quot;, prior to my brief internment at taco bell on Kanan rd (ended by a visit from Cock n Feathers no less).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 20, 2011 at 07:08AM</span>
+            <div class="reply-content">During that same period, Crew paycheck were simply considered highly perishable: Run to the bank and cash it as soon as you can, before it evaporates. Or at least gets rather bouncy.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">29</span>
+            <span class="reply-author">[1eyv1wdew4ssy]</span>
+            <span class="reply-date">January 19, 2011 at 04:14AM</span>
+            <div class="reply-content">Yep, The College of Renaissance Delights, I believe. This is the period when all of our paychecks for performing were considered scholarships for attending the workshops, the faire itself was our &quot;recitals.&quot; I had a lovely talk with the IRS about that. Silas helped. They bought it. :-)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">30</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 19, 2011 at 03:37AM</span>
+            <div class="reply-content">Sally Schneider did that map, I remember seeing her sketches, mostly she welded together a bunch of artwork and then wove it together with village bits that reflected the actual &quot;shire&quot;. I think it might be on the League Wiki, I know I have chased after it a bunch it was so seminal. I think I wore my copy out.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">31</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 19, 2011 at 03:35AM</span>
+            <div class="reply-content">pretty sure that was after the chaper 11 that caused theme events to become living history center like 77? That was mostly Peg figuring out a way that we could be a sort of open school of sorts, at least thats how she explained it as i recall.It was like living history center, but there was some other organ that was the college of elizabethan politics or something.
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

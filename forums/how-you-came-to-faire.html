@@ -1,0 +1,2693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How you came to Faire? - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>How you came to Faire?</span></div>
+            
+    <div class="module">
+        <div class="module-header">How you came to Faire?</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Eric Lethe</span> | <span>November 23, 2007</span> | <span>200 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (200)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author"><a href="/members/kevin-cooper.html">Kevin Cooper</a></span>
+            <span class="reply-date">March 20, 2010 at 07:19PM</span>
+            <div class="reply-content">The year was 1980 and two of my friends from High School---Stacey Flanders and Jocelyn Reina (nee Kim Reina) - very exicitely told my friend Walt (Dethlefs...also a Faire participant) and I, that they had spent the weekend at something called a Renaissance Faire and that we just HAD to check it out! We were also told that the only way to really enjoy it, was to be in costume. They took it upon themselves to make us costumes and said we would be going in two weeks...I was intrigued of course and had only 2 weeks to prepare for this thing...in the days before Google, you couldn&#x27;t just look up something like that. Won&#x27;t bore you with the details of preparation, suffice to say i was completely oblivious as to what to expect...all i knew was that it was Shakesperean Theatre...but that it was &quot;all around you.&quot; &quot;A bunch of stages everywhere?&quot; i wondered...&quot;Yeah, that too, but EVERYwhere...the whole place is like a country faire&quot; was the answer. Still had no clue. I think we smoked a joint or a bowl on the way there...first to LA and the house of the guy who played Christopher Marlowe [he directed the early Pyramus &amp; Thisby...i think his name is Dennis?], then further north to Agoura. When we arrived in the Parking Lot, I was told i needed to buy a &quot;FairEver Pass&quot; because i would want to come again and it was the cheapest way to go...Walking through the front gate was like walking into a movie...being suddenly transported through Time and Space to another world. I moved ahead slowly, taking it all in...i don&#x27;t know if it was the smells, the sights, the sounds coming from the Armory, the Thai stick, or a combination of them all...but i remember being totally in awe, fascinated that this lttle enclave of the past was living in the hills just off the 101. It was like Brigadoon...like walking onto the set of Monty Python&#x27;s &quot;Holy Grail&quot;---it was unlike anything i had ever seen or imagined [but not dreamnt...but that&#x27;s another story-Ed.] The girls went off with Marlowe and we agreed to meet somewhere later for lunch. I do not remember any part of the rest of that day...but like so many others before me...i came away with a sense of belonging...that i had finally found &quot;my people&quot; ---I was hooked! I never went again on that 1st FairEver Pass...but i was determined to return, and in a better costume. The following year Stacey had said she found out how we could work there, and had the dates for Workshops. I was a senior in High School by then and ready to kick up my heels...so in 1981 I went to my First Faire as an unpaid, willing actor in the hills above Malibu in Agoura.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 25, 2010 at 10:45PM</span>
+            <div class="reply-content">we are all thankful to him for it as well. You have a unique and very evocative view of our time together out there doing the show, truly it takes many types and especially more than one history snob.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">[1k7yfe86iwp1h]</span>
+            <span class="reply-date">February 25, 2010 at 05:53AM</span>
+            <div class="reply-content">I blame Rory.
+I was a sensitive, shy, creative kid with few friends and a whole lot of disillusionment. My older brother took me under his wing and (I suppose) tried to provide me with better company. He had been involved with the court at faire, and (I suppose) he felt it would be a rewarding experience for me. I don&#x27;t know what his thinking was at the time, but I thank him for it. It opened up a far better world to me.
+Ultimately, I think it saved my sanity, if not my life.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">November 24, 2009 at 06:26AM</span>
+            <div class="reply-content">Thanks for the link, John. Sigh ... sad to hear of his passing, even when it was so long ago. Glad to see he is not forgotten, and that the stories, as well as the art work, still live on.
+Hey, ho, and a nonney-nonney, noh!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 19, 2009 at 04:28AM</span>
+            <div class="reply-content">Check out http://www.therumph.com/bio.php
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">November 19, 2009 at 01:55AM</span>
+            <div class="reply-content">Yes, Eric, I remember Jim Rumph very well. *Very* imaginative and original mugs, flower pots, containers of all sorts. I had (have?) one brown stoneware coffee mug of his making that I got way back in the early 1970&#x27;s Agoura Faire (circa &#x27;72 - &#x27;73 ish).
+Then Rumph left the Faire scene. I know he had an art/pottery studio for a while in LA area (West LA, or Silverlake, Atwater Districts?). I vaguely recall a *wonderful* poster for it. Done as a Black&amp;White cartoon in the style of R. Crumb and/or Max Fleischer, it proclaimed &quot;By the Banks of The Los Angeles River!&quot; and it showed the concrete banked dry &#x27;river&#x27; with a clogged freeway overpass over head. On one bank of the river, center of the poster, were two very LA beach lover types, very Venice Beach, waving at the viewer and drinking martinis (or something).
+Then he was unfindable. Rumor had it that Elton John had invited Rumph to London, and that Jim just up and went, leaving LA (and the Beautiful Los Angeles River) behind.
+Any idea where Jim Rumph is/went to and/or what became of him?
+I wish I knew where that mug was. catt, you would have *loved* Jim Rumph and his pottery. Very, very Fools Delight, cartoony, wicked yet sharp and gentle wit. A true talent.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">[3qnqaz9pllozw]</span>
+            <span class="reply-date">November 04, 2009 at 11:51PM</span>
+            <div class="reply-content">Hey, it didn&#x27;t taste as bad as it looked.... ( I think).... but then with my fairly new woodcut print booth and all I only joined in for the companionable swill of free booze in passing... that and the observers reactions of course. Most times I preferred to drink from my conch horn. Others they would inevitably try to drink from the wrong side and the contents poured down their neck.
+The other Foss is twin is Wolf.
+Some memories one tends to forget until jogged.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">[xm1076ubiyb0]</span>
+            <span class="reply-date">August 24, 2009 at 03:17PM</span>
+            <div class="reply-content">How came I to Faire? Simple. I was hanging out that the Concord gaming store &quot;Multiversal Trading Company&quot; way back in 1978, when the manager asked me how old I was.I told him, and he asked me to hawk for his ale-stand. The rest is rewritten History
+And, to any Queen&#x27;s Guards who were bearing the litter when Peg stopped for a Pint at Ale 2, mea culpa. I told Peg I was at Ale 2 an to stop by for a brew....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">[126ln5dg00p4l]</span>
+            <span class="reply-date">August 10, 2009 at 05:12PM</span>
+            <div class="reply-content">Hi Grego---I started in 1974 at RPFS, and I think the program started the Northern Faire previous, so 1973. I know I was hired by Dick, but the program may have been started by Phyllis and Audrey Sheets (maybe?).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">August 10, 2009 at 01:10PM</span>
+            <div class="reply-content">Patrick, I&#x27;ve asked Dick, and he&#x27;s having a hard time remembering; do you know what year WIW started?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">[126ln5dg00p4l]</span>
+            <span class="reply-date">August 10, 2009 at 02:39AM</span>
+            <div class="reply-content">Actually you and I sat next to each other at Dickens a couple of years ago, but we didn&#x27;t know each other! 1989 was my last year at Workshops, I moved the following year and it was too far to commute; I thought WIW was the best of the old LHC programs; I was there almost from the beginning with Dick Bagwell, watching the culture change as we went. I would have loved to continue and grow with it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">August 10, 2009 at 02:05AM</span>
+            <div class="reply-content">Hey, there are so many people that I likely know, if I run into them...but I cannot recall who you are. I started working for LHC in 1989 as Director of Marketing &amp; Corporate Sponsorship, and did that untile 1996. Who knows...we probably bumped into each other...Linda Overthehill worked for me after that, when we moved the LHC to San Rafael, for a few years...we continued WIW...but could not find any funding, so that ended.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">[126ln5dg00p4l]</span>
+            <span class="reply-date">August 10, 2009 at 01:58AM</span>
+            <div class="reply-content">As I&#x27;ve said elsewhere recently, my parents were KPFK listeners in the early 60&#x27;s and I went to the first public Faire with them; my memories are fragmentary but the experience was compelling enough for me to doodle rustic stages and read about commedia characters for years. As I grew older we visited the Faires; when I was about fifteen I volunteered to sell lemonade for a couple of weekends. I think the only Faire I missed in that time was the one just over the county line in Ventura that was canceled. Then in 1972 I was in college (LACC, with J. Paul etc.) and found actors who wanted to perform, so I sent for the forms and filled them out. We wanted to do a commedia show and I wrote a scenario and the actors improvised the dialog, which I later wrote down. We were called The Children of the Holy Bottle (SEE &#x27;Gargantua et Pantagruel&#x27;) We rehearsed weekly, then daily for three months! The show was 30 minutes long, fer gawdsake. Following the audition with Donna Larsen we were hired---big thrill. We performed &#x27;The Prince of Moscow&#x27; three times daily for two weekends. The following year we reworked The Prince and did it again; we were called to fill in a Northern Faire for one weekend. We did &#x27;the Flying Doctor&#x27; (adapted from Moliere) and &#x27;The Twin Paradox&#x27; (about twin doctors), Pyramus and Thisby, and a couple of mountebank shows (one with Jim Bohlin who also went with us to Dickens in &#x27;75). After awhile I burned out and wanted to do something Faire related but different, so I disappeared from the weekend follies and I went on teaching at Workshop in the Woods from 1974 to 1989. I taught Strolling Plays for years, then took over the Schoolroom. I loved workshops with the kids---we taught almost the same number of days as a Faire run, but it was a different, quieter experience.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">August 05, 2009 at 03:18AM</span>
+            <div class="reply-content">So let us know next time you have a booth somewhere, eh? So we can come out and support and all that.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">[2b9fvunfove9x]</span>
+            <span class="reply-date">August 04, 2009 at 06:36PM</span>
+            <div class="reply-content">Hi Carolie, Dianne Longdo (the Dye Spot) and I recently had a booth at a puppet festival. I crocheted jester cap and bells. Lots of bright colors. Last week I gave a little girl
+a multi-use, ruffled crown/collar/crownless bonnet, in woodsy colors, to wear to the new Harry Potter movie. I told her, &quot;If anybody asks, just say that Mrs. Weasley made it.&quot; (in case you don&#x27;t know, that character wears lots of hippy crochet) maybe I should have a business as Mrs. Weasely&#x27;s Woolen Wear!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">August 01, 2009 at 07:59AM</span>
+            <div class="reply-content">I remember your crocheted hats just like crowns with bright yarn &quot;jewels&quot;!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">[39daehseb7ca4]</span>
+            <span class="reply-date">August 01, 2009 at 05:43AM</span>
+            <div class="reply-content">i had no choice, born into the faire life. not a bad way to enter the world eh? sure beats pre school and day care. i had people all over taking care of me as i ran a muck. if any one of you reading this fed me or took me to the archery stand when i was a youth id like to thank you. OH! Art, he fed me well.! mmmmmmmmmmmmmmm......... sticky buns, mmmmmmmmmm!!!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">April 17, 2009 at 10:31PM</span>
+            <div class="reply-content">OH I DO SO REMEMBER RUMPH POTTERY..... Beautiful stuff with faces in the mold and Gremlin cups.....He got a great offer from Macy&#x27;s or one of the other big department stores .. and disappeared for a while but did come back a few years latter....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">April 17, 2009 at 10:04PM</span>
+            <div class="reply-content">I do remember that party..... I got hung up in the kitchen talking with someone who produced porn. A very beautiful lady as I recall ..... My cousin Marcus was there too and well lets say he had way too much fun... Where oh where are our dear friends Kirsten and Gunter ... I knew Kirsten from my Pacific Heights days.... They were the ones who brought me to faire .... Though as a partner in the Ableskiver Booth...Might have been different if I had come to play.... and M&#x27;gawd there were times ,at the Palace ,that I had 2 hour conversations with my coat tails.... I do remember that we were never disappointed in the show....Did you ever get to see the film they made about the Cockettes?.......
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 08, 2009 at 03:05PM</span>
+            <div class="reply-content">Oh, golly, that reminds me! One day at Southern (musta been around &#x27;84?) I was at the booth, and one of the other folks who &quot;worked&quot; there came in late....told Mathew that there had been a road accident, which was why: this person had hit and killed a deer on the road. Mathew asked &quot;Where was that, exactly?&quot;, and got a very precise location description.
+Well, Mathew and his wife looked at each other (I forget her name), Mathew said &quot;Watch the booth&quot; kind of to all and sundry, and they took off nearly at a run. We knew that they were off to claim that deer carcass, gut it, cut it, and try to find a cooler to keep it in.
+I don&#x27;t know if the deer was still there when they arrived, but that was Mathew.
+Waste not, want not.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 08, 2009 at 04:39AM</span>
+            <div class="reply-content">Yes, the Armory was before the Constabulary. The &quot;other brother&quot; was Wolf, BTW (for William O&#x27;Neill Lawrence Foss), to whom I was briefly married, though not, in fact, legally, it turns out. Neither he nor I remembered to file the paperwork with the state.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">[29p7u2atfcx87]</span>
+            <span class="reply-date">March 30, 2009 at 01:44AM</span>
+            <div class="reply-content">Reposting as requested
+It was 1970. I was a hairdresser/make-up artist at the time and hung out with lots of my gay sister guy friends.
+Also at that time I was involved with alot of the SF Cockettes. Performed in many of their stage productions at the
+&quot;Palace Theatre&quot; Midnight Movies in North Beach and &quot;The Secret Cinema&quot; in the Mission.
+I had been close friends with Raggedy Robyn who used to be a street performer in Union Sq.
+A friend of mine and I played Romeo &amp; Juliet at Robyn and Raggedy Anne&#x27;s spectaular circus wedding.
+If I&#x27;m remembering correctly it was at Glyde Memorial?
+I wore the most beautiful burgandy velvet Rennaissance (hooped) dress with long flowing chiffon veil and my friend David had a matching color schemed outfit that we wore in the wedding.
+So okay, where else could we get into drag in these wonderful costumes????
+We planned our first trip to the Rennaissance Pleasure Faire at the old original site in Marin with about a dozen of our crazy friends.
+I&#x27;ll never to this day forget that day!
+We arrived in full regailia and ready for whatever the day would bring. Never being there before, we had no idea what to expect. We parked our car and waited for the bus to arrive to bring us to the entrance/gates.
+Well just having survived the 60&#x27;s and living in the Haight Ashbury, shall I say we all still would partake in some of the social mind expanding experiences if you know what I mean?
+Well, back to getting on the bus at the Faire. While waiting for the bus, we all ate a little Mescalline (spelling?)
+For some reason, it started hitting us almost immediately and that bus ride all of a sudden turned into a ride like being on the Magical Mystery Tour. Woa! Yes, what a trip.
+I floated all around the fair that day and especially in that incredible dress with the big hooped skirt which felt like being in the middle of a parachute when ever I would sit down and oh trying to manuver it amongst all the crowds.
+The whole experience was really like being in a time warp and really felt like we had been transported into that time, era, and period of history.
+There are a lot of things I remember about that day but the two that stand out the most I&#x27;ll tell now.
+The first and most funniest was trying to get into a port-o-pottie.
+If any of you remember, the original ones were spaced out around the fairgrounds. Individual and cutely decorated not like all the current blue plastic and stuck together.
+The one I chose was made of wood painted blue with a yellow cresent moon and star cut out on the door.
+They were kind of propped up on two by fours or something.
+Anyway, there I was getting into this outhouse with this humungus velvet dress and don&#x27;t forget gigantic hoop skirt.
+After doing what I had to do in there, I stood up to try and find my panties to pull up and..............all of a sudden,
+the damn outhouse started swaying. No, I wasn&#x27;t hallucinating it actully was rocking back and forth and finally tipped over backwards with me in it.
+From outside, it must of looked like some big coffin laying on its back.
+Thank God, it must of recently been cleaned out cause what a mess that could of been.
+But there I was stuck inside. Screaming for help to get out.
+I remember a couple of guards finally came to my rescue and helped pull me out. I was soooo embarrassed!
+But then for some reason, they threw me in jail?
+I think I was being charged with being one of the fairest maidens at the Faire?
+At that point I had to be auctioned out of the jail and whoever paid for me, I had to give them a kiss....Cute!
+The second most memorable experience and lasting impact on my life then and now was finding Bal Anat.
+I saw a crowd of people watching something on one of the stages. Being the vertically challenged person that I am, I couldn&#x27;t see so I pushed and shoved my way up to the front of the stage. Just as I arrived and looked up, right in front of me this dancer was in the middle of a spin, did a back bend and at the same moment stabbed this huge sabor into the stage just right above from where I was standing. I jumped back and it was at that very moment.....................
+For the first time I saw the entire troup of Belly Dancers. Bal Anat.
+Wow! What is this????????????????? I had never seen anything like it before and was immediately struck with
+&quot;Oh My God, I want to do that!&quot;
+Well, the rest is history.
+A year past and I started taking classes with Jamila Salimpour and found myself performing with the troup at the fall Northern Faire in 1972. I worked the Faire off and on for 20 years and retired from dancing in 1992.
+My memories of those years will always stay with me and I say sincerely that they were some of the best years of my life! I thank God for letting me be a part of its great history. And I send my love to all of those who crossed my path in those glorious days. Thank you all and God Bless..........Mish Mish
+► Reply to This
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 29, 2009 at 11:39PM</span>
+            <div class="reply-content">Richard Chase brought me.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 29, 2009 at 11:38PM</span>
+            <div class="reply-content">Wise security guard once said &quot;Is it paranoia or is it perception&quot;. Yeah, one season you&#x27;d call &amp; call and get the brush off, next season you&#x27;d be accused of not being available.sigh, really don&#x27;t miss that part.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">March 09, 2009 at 09:39PM</span>
+            <div class="reply-content">Mish,,,
+I&#x27;ts trentsbiz@pacbell.net
+Just thought it was very funny.
+Thanks,
+Trent
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 09, 2009 at 09:23PM</span>
+            <div class="reply-content">post it that would be great!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">[29p7u2atfcx87]</span>
+            <span class="reply-date">March 09, 2009 at 08:55PM</span>
+            <div class="reply-content">Back in the late 60&#x27;s early 70&#x27;s did some performances with &quot;The Cockettes&quot; at the Midnight Movies held at the Palace Theatre in North Beach. There was also an old warehouse in the Mission converted into an underground movie &amp; stage production theatre called &quot;The Secret Cinema&quot; where we also did experimental &amp; controversial plays.
+A directer named Les Irons formally from the Baltimore area arrived on the scene.
+He had been working back east at the Cafe LaMaMa and had the script which I believe was performed there.
+Anyway it was great fun and all this talking about it made me go look for my copy.
+After 30 something years can&#x27;t find it but looked on the internet and came up with the writer was Gordon Porterfield.
+I also found a blurb about it that I could send you. Its even more informative of what I remember and more on all the characters. Want to give me your email address and I&#x27;ll send it to you? Or, I could post it here?
+As far as other actors.................? So long ago, don&#x27;t remember names and you probably wouldn&#x27;t know them anyway. Auditions were held and people came out from the woodwork. Especially those that wanted to eventually be onstage at the Palace.
+Mish
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">March 09, 2009 at 03:09PM</span>
+            <div class="reply-content">Mish: Sounds hysterical. Where and when was it staged? I had never heard of this. Who wrote it? Who else was in it? I love crazy comedy. Thanks, keep in touch.
+I am busy, busy, film and video production.
+Trent
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">29</span>
+            <span class="reply-author">[29p7u2atfcx87]</span>
+            <span class="reply-date">March 09, 2009 at 01:23AM</span>
+            <div class="reply-content">Hey........Hi Trent
+Happy Sunday!
+Just walked in the door and got your message. Actually I&#x27;m a Capricorn. Just hit the big six 0.
+A movie sounds fun!
+The play was actually kind of a spoof of the Wizard of Oz.
+There was a character like Dorothy &amp; her dog who went to the Land of Zero looking to ask God to make a better Universe in the 20th century. Something like that, my minds a bit foggy.
+There were of course other characters along the way that she met and I can&#x27;t remember them all but one was Princess Nelly Fagot who went to see if he could become a woman, another one and forgot his name but he walked around with a skull who had his enitre family that was killed in concentration camp, and a Nun dressed in a red outfit with holes cut out where her boobs were and a big crucifix on her crotch and she was the Transindental Twat.
+There was a guy named Sammy Taninbaum that when he became the super hero named Super Pecker was dressed up in a big pink satin penis outfit with two big giant balls on his feet.
+It was hysterical and wish I could find the old script.
+Anyway, how ya been? Good hearing from you..........Mish
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">30</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">March 09, 2009 at 01:08AM</span>
+            <div class="reply-content">Mish Mish: We need to make a movie. I never saw the play, but it sounds hysterical. God&#x27;s receptionist? Holy Moly Batwoman. I am an Aquari with Asparagus Rising, and my moon is mooning as often as possible...how come I did not know you were a Genuinemy.
+Trent
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">31</span>
+            <span class="reply-author">[29p7u2atfcx87]</span>
+            <span class="reply-date">March 08, 2009 at 09:37PM</span>
+            <div class="reply-content">Yes, but do you also remember the crazy Gemini party and Denny Felder &amp; Frank Baroni ?
+If I&#x27;m remembering correctly, that is where we all first met? Kirsten &amp; Gunther were there also.
+I lived in the upstairs flat with David Erickson &amp; John Carini who were also Gemini&#x27;s and we had both flats open for the party.
+Also, did you ever see our play at the Palace WhatIsOneHolyCatholicBrownAndStinksUpTheUniverse?
+I played God&#x27;s receptionist. It was hysterical!
+Ohhhhhhhh the memories!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">32</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">March 08, 2009 at 01:21PM</span>
+            <div class="reply-content">oH M&#x27;GAWD MISH.... We really go back together...I never missed a performance of the Cocketts(prefered drug meescalline though schrooms were ok too) My favorite,that I can remember is &quot;JOURNEY TO THE CENTER OF URANUS&quot;...and I was also at the wedding.... How many people did we have in common ?....The hoop skirt at the fair was hilarious...I rescued many a faire maden from those privvies and yes I did follow your dance career as often as I could....when they would let me out of the booth...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">33</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 02, 2009 at 02:26AM</span>
+            <div class="reply-content">Bizarre sculptures of imps &amp; gargoyles. See my photo of his booth decor.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">34</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 02, 2009 at 02:23AM</span>
+            <div class="reply-content">I remember you sulking in the Clay St basement when you &quot;had&quot; to go to the faire. Your Dad got a kick out of dressing up, but not you at age 8 or so.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">35</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 01, 2009 at 11:48PM</span>
+            <div class="reply-content">I am sorry to say that any photos that were taken of that show were taken by people not associated with the production. Dundii wasn&#x27;t much on that kind of documentation. He was always in the present, and though he loved to gossip about the past in regard to people, he never did the same thing twice, costume-wise. I do remember that he used medieval patterns. I especially remember that the patterns for the women&#x27;s clothes used EVERY scrap of cloth from the cutting as some part or other of the dress. Cloth was so precious in medieval times that NOTHING went to waste. He was especially proud of those garments. They went in the auction of the Hollywood Costume Company.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">36</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 01, 2009 at 11:43PM</span>
+            <div class="reply-content">I think Dennis was in that house, too. I remember him commenting, since we were so close to Candlestick Park, that he had once lived in that neighborhood, in a house at the intersection of &quot;Bellbrook and Candle.&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">37</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 01, 2009 at 04:58AM</span>
+            <div class="reply-content">I decided to go to LA in March 1970, my grandmother lived in Lynwood, and I called Carol to tell her I was ready to work and really put her on the spot. But I was hired and the rest is (Living) History! Carol used to tell me stories of terrorizing people who worked for her. Then we commissioned her to make a batch of peasant shirts in different colors. She sewed them all with white thread because she did&#x27;t want to stop &amp; change it. Boy, was I peeved!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">38</span>
+            <span class="reply-author">[2b9fvunfove9x]</span>
+            <span class="reply-date">February 25, 2009 at 05:39PM</span>
+            <div class="reply-content">Hi Carolie, You made the most incredible costumes for me. ..and they lasted and lasted. All I had to do was ask for what I wanted, and you could make it! Your artistic craftmanship made it possible for me to create characters that were believable. Thank you so much for your gifts. What are you doing now, where do you live?
+Lately, I&#x27;m crocheting an elaborate granny-square afghan, ( I had the House on Chicken Legs booth, for my woolen wares, in 1970 at Agoura) coaching Accent Reduction for the foreign born, and will be teaching Hawking workshops at the RPF in Irwindale (LA country) on March 22nd and 28th.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">39</span>
+            <span class="reply-author">[3jiiarjwczptn]</span>
+            <span class="reply-date">February 24, 2009 at 02:42AM</span>
+            <div class="reply-content">Hello John, Jim Letchworth here. We did a production of &quot;Pierre Patelin&quot; in the 80&#x27;s at Blackpoint. We anglizied the title into &quot;Peter Littlepate&quot; or more completely, &quot;The Comedy of Peter Littlepate&quot;.
+Do you have any photos of the Dundii costumes? I would love to see them. I remember his Cape Booth at Blackpoint in the late 60&#x27;s. What a memorable person!
+My wife, Marilyn Prince &amp; I were joined by Theives&#x27; Theater veterans, Jim Bohlin &amp; Bruce Parry plus Stu White fit in there somewhere. Being in permanent Commedia mode (still am) I submitted proposed very commedia looking costumes, Il Dottore, Pantalone, Arlecchino &amp; Columbina to ...Carol la Fleur. Marilyn &amp; I working in the Entertainment Office with Dorrie Karnes &amp; Ernie, Mitchell Sandler, Kevin Brown and Carol. Carol looked at my drawings and sputtered &quot;that&#x27;s Commedia!&quot; I replied they were traditional garb for the classes. She looked at me with that &quot;well, if you can pull it off, buster&quot; expression and she let us do it. It worked fine, of course. They are all architypes. Carol mentioned your production and of course Doris was familiar with it, too. I think Carol said no one had done a &quot;Pierre Patelin&quot; since yours, but I could be wrong.
+I sure would love to see some photos of Dundii&#x27;s costumes.
+Best,
+Jim
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">40</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 23, 2009 at 10:09PM</span>
+            <div class="reply-content">I was wardrobe mistress for &quot;Oh Calcutta&quot; in SF 1969 when a friend of mine told me about an sewing/alteration job she didn&#x27;t want. So I went to CG Sevilla&#x27;s house on Lake St &amp; applied for the job to Carol La Fleur. We worked in CG&#x27;s house and later in the Patterson Clay St basement. I did my first RPF on Lucas Valley Rd, then Agoura 1970, and Dickens at the Icehouse, and the Cannery. Due to problems with the Pattersons, Carol quit after the Cannery Dicken&#x27;s faire. Ronald called me in spring 1971 to come to LA for the next faire and Penny Brogden &amp; I ran the Costume Dept. I stayed in J Paul Moore&#x27;s apt where he had a tent in his living room. We worked in Patterson&#x27;s Wonderland Ave house, where I hosted the first annual Easter Bunny Barbeque &amp; invited the crew to come over for the party. At that time it included Randy &amp; John Woodjack and Richard Smith who later parted ways in &quot;hail of gunfire&quot;! (Phyllis later co-opted the event) In fall of 1971, Phyllis hired Doris Karnes as Artistic Director and I was her assistant, later Costume Co-ordinator. Phyllis is particular about titles! We had a workshop at Project Artaud in SF where we made the first hobby horses and real costumes. I worked all of the events: Hyde St, Shindig, Busch Gardens, Gilligan&#x27;s Island set party, North &amp; South RPF &amp; Army St, Cow Palace Dickens, until spring 1978, when I left to join Santa Fe Opera &amp; work my way to New York City. When I left NY in 1983, I drove across the country and ended up at the Fox Dickens faire. I assisted Louise Jensen at the Pier 45 DF in 1988, and worked for Mildred Holland at the DF pass house in 1994. I also served tea at Ernie &amp; Dennis&#x27;s booth at Agoura RPF &#x27;89 &amp; &#x27;90. WHEW!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">41</span>
+            <span class="reply-author">[29p7u2atfcx87]</span>
+            <span class="reply-date">February 18, 2009 at 08:37AM</span>
+            <div class="reply-content">It was 1970. I was a hairdresser/make-up artist at the time and hung out with lots of my gay sister guy friends.
+Also at that time I was involved with alot of the SF Cockettes. Performed in many of their stage productions at the
+&quot;Palace Theatre&quot; Midnight Movies in North Beach and &quot;The Secret Cinema&quot; in the Mission.
+I had been close friends with Raggedy Robyn who used to be a street performer in Union Sq.
+A friend of mine and I played Romeo &amp; Juliet at Robyn and Raggedy Anne&#x27;s spectaular circus wedding.
+If I&#x27;m remembering correctly it was at Glyde Memorial?
+I wore the most beautiful burgandy velvet Rennaissance (hooped) dress with long flowing chiffon veil and my friend David had a matching color schemed outfit that we wore in the wedding.
+So okay, where else could we get into drag in these wonderful costumes????
+We planned our first trip to the Rennaissance Pleasure Faire at the old original site in Marin with about a dozen of our crazy friends.
+I&#x27;ll never to this day forget that day!
+We arrived in full regailia and ready for whatever the day would bring. Never being there before, we had no idea what to expect. We parked our car and waited for the bus to arrive to bring us to the entrance/gates.
+Well just having survived the 60&#x27;s and living in the Haight Ashbury, shall I say we all still would partake in some of the social mind expanding experiences if you know what I mean?
+Well, back to getting on the bus at the Faire. While waiting for the bus, we all ate a little Mescalline (spelling?)
+For some reason, it started hitting us almost immediately and that bus ride all of a sudden turned into a ride like being on the Magical Mystery Tour. Woa! Yes, what a trip.
+I floated all around the fair that day and especially in that incredible dress with the big hooped skirt which felt like being in the middle of a parachute when ever I would sit down and oh trying to manuver it amongst all the crowds.
+The whole experience was really like being in a time warp and really felt like we had been transported into that time, era, and period of history.
+There are a lot of things I remember about that day but the two that stand out the most I&#x27;ll tell now.
+The first and most funniest was trying to get into a port-o-pottie.
+If any of you remember, the original ones were spaced out around the fairgrounds. Individual and cutely decorated not like all the current blue plastic and stuck together.
+The one I chose was made of wood painted blue with a yellow cresent moon and star cut out on the door.
+They were kind of propped up on two by fours or something.
+Anyway, there I was getting into this outhouse with this humungus velvet dress and don&#x27;t forget gigantic hoop skirt.
+After doing what I had to do in there, I stood up to try and find my panties to pull up and..............all of a sudden,
+the damn outhouse started swaying. No, I wasn&#x27;t hallucinating it actully was rocking back and forth and finally tipped over backwards with me in it.
+From outside, it must of looked like some big coffin laying on its back.
+Thank God, it must of recently been cleaned out cause what a mess that could of been.
+But there I was stuck inside. Screaming for help to get out.
+I remember a couple of guards finally came to my rescue and helped pull me out. I was soooo embarrassed!
+But then for some reason, they threw me in jail?
+I think I was being charged with being one of the fairest maidens at the Faire?
+At that point I had to be auctioned out of the jail and whoever paid for me, I had to give them a kiss....Cute!
+The second most memorable experience and lasting impact on my life then and now was finding Bal Anat.
+I saw a crowd of people watching something on one of the stages. Being the vertically challenged person that I am, I couldn&#x27;t see so I pushed and shoved my way up to the front of the stage. Just as I arrived and looked up, right in front of me this dancer was in the middle of a spin, did a back bend and at the same moment stabbed this huge sabor into the stage just right above from where I was standing. I jumped back and it was at that very moment.....................
+For the first time I saw the entire troup of Belly Dancers. Bal Anat.
+Wow! What is this????????????????? I had never seen anything like it before and was immediately struck with
+&quot;Oh My God, I want to do that!&quot;
+Well, the rest is history.
+A year past and I started taking classes with Jamila Salimpour and found myself performing with the troup at the fall Northern Faire in 1972. I worked the Faire off and on for 20 years and retired from dancing in 1992.
+My memories of those years will always stay with me and I say sincerely that they were some of the best years of my life! I thank God for letting me be a part of its great history. And I send my love to all of those who crossed my path in those glorious days. Thank you all and God Bless..........Mish Mish
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">42</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 04, 2009 at 09:53PM</span>
+            <div class="reply-content">Sometimes drench a wench led to clench a wench. It was also know to take place between the hay bales of the Ale garden stage and one of the game booths near the front area.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">43</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 04, 2009 at 08:40PM</span>
+            <div class="reply-content">clench a wench was a private after hours game.
+(usually held in the tweelzy wop pit)
+drench a wench was a booth.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">44</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">February 04, 2009 at 07:58PM</span>
+            <div class="reply-content">To be sure!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">45</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 04, 2009 at 04:46PM</span>
+            <div class="reply-content">Fun practicing for it though!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">46</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">February 04, 2009 at 08:15AM</span>
+            <div class="reply-content">Catt, you were beautiful when pregnant.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">47</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">February 04, 2009 at 08:11AM</span>
+            <div class="reply-content">Clench a Wench. Very dangerous game.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">48</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">February 04, 2009 at 08:10AM</span>
+            <div class="reply-content">Several of Mystic Knights worked at the Faire: Jan Munroe, an acrobat and actor (who played a trumpet in the Knights)..and Todd Manley, drummer, who played an enormous drum in my little medieval band. Some of us lived in the same house with other Knights in Mid-Wilshire.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">49</span>
+            <span class="reply-author">[112khxhf7hjvg]</span>
+            <span class="reply-date">February 04, 2009 at 07:36AM</span>
+            <div class="reply-content">I was about 24-25ish, and brought to faire by a magical imph named Leonard Moore (whom I&#x27;d known since age 10). We&#x27;d been doing freelance art work throughout the eastbay and San Francisco, he had worked for Elinore Harold in the props department before, and knew there would be work.
+Since Elinore knew nothing about me, she put me through the ringer. She had me pull out the gnarliest piece of wood to work on, had me paint a sign on it, then had me do some caligraphy. Once I&#x27;d finished all of her tests, I wandered out of the Grey Barn to use the facilities. Uh, yeah, that was my real first introduction to Faire.
+Out I walk toward the old green crap boxes near the showers, and just as I&#x27;m approaching, out runs Hippy Jim and (oh, I can&#x27;t remember the other one&#x27;s name now, he always called Elinore his future ex wife), but he had one of the newly installed swing doors from the showers in his hands, cursing who ever it was that installed them, and flung it at least 25 feet. It was at this moment, I knew I was going to die.
+That was my very first couple of hours on lot at Fiare.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">50</span>
+            <span class="reply-author">[02v9sfrs8abuf]</span>
+            <span class="reply-date">January 20, 2009 at 02:14AM</span>
+            <div class="reply-content">Hey Morgan,
+I just got Jackie/Nilos&#x27; new email. I sent her an invite to the teahouse...hopefully she responds positively soon!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">51</span>
+            <span class="reply-author">[02v9sfrs8abuf]</span>
+            <span class="reply-date">January 20, 2009 at 02:10AM</span>
+            <div class="reply-content">Hey Judy,
+Not as much mischief as I&#x27;d like some days...some days...more. Haven&#x27;t really been in theatre as of late...unless you count my kids plays...THEY COUNT! I&#x27;m selling advertising, writing my 2nd book, raising kids, keeping my eyes open for that special man who will bring a smile to my lips...for MORE than one night LOL...Actually life has been amazing. Ifinally lost all that extra weight...that&#x27;s been the biggest thing in my life lately...learning a new lifestyle with food and activity. You look GREAT by the way!
+What are you doing?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">52</span>
+            <span class="reply-author">[2jg1ezg44pwe8]</span>
+            <span class="reply-date">January 17, 2009 at 04:27AM</span>
+            <div class="reply-content">Hi Randy
+I don&#x27;t think I was ever MAD.. a bit shocked when I saw how the trailer looked. That baby was really wrecked. The company reimbursed us and well then life just stumbled along. I think I remember that I like you, your voice and mine... we could fill rooms :-)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">53</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 16, 2009 at 03:50AM</span>
+            <div class="reply-content">Yeah, I groan to myself...a lot! LOL
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">54</span>
+            <span class="reply-author">[3tjomb2csum08]</span>
+            <span class="reply-date">January 16, 2009 at 03:47AM</span>
+            <div class="reply-content">deserves a groan... GROAN!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">55</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 16, 2009 at 02:54AM</span>
+            <div class="reply-content">i set you up for it!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">56</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 16, 2009 at 02:52AM</span>
+            <div class="reply-content">Sorry, I just couldn&#x27; resist the pun.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">57</span>
+            <span class="reply-author">[3tjomb2csum08]</span>
+            <span class="reply-date">January 16, 2009 at 01:46AM</span>
+            <div class="reply-content">...something about the blonde leading the blonde, er, um, blessed are the cheesemakers... not sure if I heard that one quite right, I ain&#x27;t!
+Seriously, though, whatever there was, I hope Mathew does join... would love to &quot;see&quot; him!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">58</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 16, 2009 at 12:22AM</span>
+            <div class="reply-content">snort lol
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">59</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 16, 2009 at 12:19AM</span>
+            <div class="reply-content">I went to Matthew&#x27;s website yesterday and downloaded (stole) the two photos. I also sent him an email asking him to join. As I remember it, wasn&#x27;t there some hard feelings between him and faire? Remember that the one-eyed man is king in the land of the blind! LOL!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">60</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 16, 2009 at 12:18AM</span>
+            <div class="reply-content">Catt, seems that I new a knight and he was addressed as Sir Real! (snort, LOL)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">61</span>
+            <span class="reply-author">[3tjomb2csum08]</span>
+            <span class="reply-date">January 15, 2009 at 05:14AM</span>
+            <div class="reply-content">Yep, mostly mock fights, and always great theatre! I recall one twilight sparring match between Ceithric and Bob Furber(God, I miss them both!), where sparks were sparkin&#x27; on swords in the looming magical dark. About a minute after this one photo of sparking swords was taken, there was a bit of a slip that resulted in a trip to the hospital and some stitches for Ceithric. As they used to tell us when we were kids playing with sticks is all fun and games until somebody loses an eye... Then its fun with a one-eyed friend! LOL! All for theatre and fun and life!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">62</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 14, 2009 at 07:08PM</span>
+            <div class="reply-content">I remember going into Matthew&#x27;s hooch, it had the look, sounds and smells of something straight off the Steppes. All the puppies...He was just up from the blacksmith&#x27;s booth as I remember. I also seem to remember that his booth/compound/yert/yard/playstation had all of these wooden constructs and there was always mock sword fights going all over the place, on the ground and in the air!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">63</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 14, 2009 at 03:51AM</span>
+            <div class="reply-content">Glad used to say (or was it Daniels?) that after 12:30 am 98.6 degrees had a whole new allure out in the desert. Like &quot;hey you look really WARM&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">64</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">January 14, 2009 at 03:15AM</span>
+            <div class="reply-content">I used to tell people that faire is the only place I know of where you can be flat out propositioned, turn them down and be wished a sincere &quot;have a great day&quot;. It was the sensations to be experienced. From kisses to flirtatious glances and communicating without words, without a net and somehow knowing that it was safe to do so.
+Then again it was also where I learned the sensous has nothing to do with sex and sexual attraction - it is sensation and again the wordless communication.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">65</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">January 13, 2009 at 09:31PM</span>
+            <div class="reply-content">Bri, How right you are, we were very fortunate indeed. I could never quite explain that whole concept to outsiders, how you could just walk up and kiss someone, and then go on about your business. Sheer joy, sheer pleasure.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">66</span>
+            <span class="reply-author">[0grgrunot1fm3]</span>
+            <span class="reply-date">January 13, 2009 at 09:08PM</span>
+            <div class="reply-content">We also had the great good fortune to be allowed -in our little cultural moment- to enjoy a kiss for the pure sensation. Not every kiss was a commitment. We could flirt and kiss and walk away smiling from the sheer joy of the act.
+So much importance and symbolism is placed on the kiss. Just watch any romance film.
+How lucky we were!!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">67</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 11, 2009 at 05:08AM</span>
+            <div class="reply-content">i was there it was all real even the unreal parts.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">68</span>
+            <span class="reply-author">[3tjomb2csum08]</span>
+            <span class="reply-date">January 11, 2009 at 03:48AM</span>
+            <div class="reply-content">I seem to recall the brothers Foss from hanging out with the gang at Blankenshield Armory, right down the road apiece from Ale One at Blackpoint. I&#x27;m guessing &#x27;81... Mathew Cross has since gone on to create some pretty high caliber suits of armor! I definitely recall Rick joining us when we&#x27;d collect ale tax from passing customers. It was a great bit of street theatre, having them add some of whatever they were drinking into this sheep-coat lined conquistador helm, and then gleefully drinking down the resulting mixed swill (sometimes gargling it...), while the marks were just dumbfounded! Mathew Cross, Bob Furber, Peter Hicks, Ceithric, ah... those were Rusty Sluts I tell ya&#x27;! Amazing that I still have any brain cells left to remember that bit, but, by golly, I DO!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">69</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 10, 2009 at 06:31AM</span>
+            <div class="reply-content">Rick Foss of the infamous Foss Brothers? I don&#x27;t recall the other brother, but I know there was at least one.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">70</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 09, 2009 at 09:36AM</span>
+            <div class="reply-content">Okay, that sounds right...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">71</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 09, 2009 at 06:37AM</span>
+            <div class="reply-content">His (Snake&#x27;s husband) name was Carl. I don&#x27;t recall the last name, but I just saw Carl Levi mentioned in another thread and it reminded me of this Carl.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">72</span>
+            <span class="reply-author">[u27mqhvfbw9b]</span>
+            <span class="reply-date">January 08, 2009 at 02:20AM</span>
+            <div class="reply-content">Dear Judy Cory we miss the fair do you ever make it dcf2008!! What a blast our 8th year as
+Set /Drapes/Seco miss you Hippie Jim and Blue!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">73</span>
+            <span class="reply-author">[2b9fvunfove9x]</span>
+            <span class="reply-date">January 03, 2009 at 11:53PM</span>
+            <div class="reply-content">Hi Kaylyn! I remember you....you brought your delight and enthusiasm to the Faire. It was always a joy to be with you. What kind of happy mischief are you into in Arizona?
+Love,
+Judy Kory
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">74</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">January 03, 2009 at 11:31PM</span>
+            <div class="reply-content">What better place?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">75</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 03, 2009 at 10:00PM</span>
+            <div class="reply-content">Definitely something that couldn&#x27;t be accomplished these days! We were the lucky ones. So time spent at Drench (or Clench) a Wench was considered practice?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">76</span>
+            <span class="reply-author">[0grgrunot1fm3]</span>
+            <span class="reply-date">January 03, 2009 at 09:48PM</span>
+            <div class="reply-content">All that practice with so many different mouths... makes perfect of us all
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">77</span>
+            <span class="reply-author">[0grgrunot1fm3]</span>
+            <span class="reply-date">January 03, 2009 at 08:53PM</span>
+            <div class="reply-content">Gordon of the Hospitalers of St. John took over that booth from my mother Rae. It had been in the back of the faire not far from the end of the world but one year they decided that they needed to legitimize massage and bring it up front. She lost the space they had for so many years and worked so hard on. They created level areas the size of the three haybail rests they used...
+Well all things change and Gordon could be difficutl to deal with. Thank goodness I was well into my other activities at Faire and didn&#x27;t need to rely on the booth!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">78</span>
+            <span class="reply-author">[10uohx0w9yo9f]</span>
+            <span class="reply-date">January 03, 2009 at 03:11PM</span>
+            <div class="reply-content">In the 1980s, I regularly attended science fiction conventions, at least on per month. May of 1983 was coming up, and there wasn&#x27;t one in my area. I called my travel agent to the stars (Rick Foss, who specialized in bookings for such events) and asked him to find me anything West of the Mississippi to attend. He said he was too busy with Faire to do a search like that, but would I be interested in attending a weekend at the Southern California Pleasure Faire, as a guest of the Constabulary? I went, and didn&#x27;t miss another a weekend for years.
+It&#x27;s ALL HIS FAULT!! ;o)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">79</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">January 03, 2009 at 03:03AM</span>
+            <div class="reply-content">I am reminded (again) of the parking lot 1/4 mile drag race between Boo-Boo (driving the lowboy the Faire bought him) and Roger Senn (driving Orange Crush). Roger asked Jennifer Benane to sit in the passenger seat so she could flash Boo-Boo her tits at some critical moment in the shift progression...in a quarter mile those two big trucks could reach a top speed of maybe 15 mph because they had to go through so many gear changes...anyway as I remember it, Jennifer did her thing but Boo-Boo was un-phased, didn&#x27;t miss any changes and calmly beat Orange Crush by more than a trailer-length...so sometimes tits didn&#x27;t win :-(. BTW, ran into Jennifer on New Year&#x27;s Eve at the Dead show and have invited her to join Teahouse...maybe she has more details. She got roped into a lot of these kinds of pranks.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">80</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 03, 2009 at 12:20AM</span>
+            <div class="reply-content">those were epic games too. well worth ditching high school for.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">81</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 03, 2009 at 12:16AM</span>
+            <div class="reply-content">Beer and topless women used to win us softball games... until the other teams started bringing on-duty guys and their wives!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">82</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 02, 2009 at 11:54PM</span>
+            <div class="reply-content">bob T used to say &quot;Of course were popular...we bring the money...the drugs and the beautiful women...&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">83</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 02, 2009 at 11:03PM</span>
+            <div class="reply-content">So that&#x27;s how we got away with it!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">84</span>
+            <span class="reply-author">Richard Beard</span>
+            <span class="reply-date">January 02, 2009 at 10:40PM</span>
+            <div class="reply-content">I can&#x27;t remember who may have worked days, no clue whatever. Don&#x27;t recall McQueen anywhere other then Agoura and Northern. Most of the prowling we did was in the Bar. We were able to Bribe a QM employee with &quot; Party Favors &quot; however, so we pretty much had the run of the ship.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">85</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 02, 2009 at 10:12PM</span>
+            <div class="reply-content">What is that they say, &quot;if you can remember the 60&#x27;s (70&#x27;s) you weren&#x27;t really there? You could very well be right, my memory is suspect at best.
+Who else worked with us there? Was McQueen on that crew? Do you remember prowling around the QM at night after hours? That was one weird show.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">86</span>
+            <span class="reply-author">Richard Beard</span>
+            <span class="reply-date">January 02, 2009 at 08:25PM</span>
+            <div class="reply-content">Seeing as it was still in the era of &quot; Sex, Drugs and Rock and Roll &quot; Who can really be sure about anything ? All I know is that Patty asked Rollie and me to help out and that&#x27;s what we did.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">87</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 02, 2009 at 02:03AM</span>
+            <div class="reply-content">Yep, that was the place Randy! Seemed fitting to keep the actors &quot;Under the Big Top&quot;.And though the people around me now call me Patricia, I will always be Patti to faire folk.And Ron, I think I do remember that night show. Always believed the crew was a hot bed of talent.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">88</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 02, 2009 at 01:20AM</span>
+            <div class="reply-content">Allison! Hi there, are you still mad at me for wrecking your trailer?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">89</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 02, 2009 at 01:18AM</span>
+            <div class="reply-content">Are you sure? Are we talking about the infamous Santa Ana Wind event fair in the parking lot of the Queen Mary where the wind blew it away the last day? The one that had the fake parking crew that charged people a parking fee then directed them back on to the Long Beach Freeway? I thought that was one of Snakes? I remember spending the last evening hanging out in their camper watching the place blow away. Now that you mention it, It could have been Patty that ran it but I still think Snake was involved. I still have some stuff from that event around somewhere.
+Patty also was the voice of Security Base the first year I did Night Security ( 78 ) in Agoura. Was that the year of the rumored Allman Brothers night show where we had 100&#x27;s of fence jumpers? Or was that the year of the full moon equinox that got a little weird?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">90</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 02, 2009 at 01:13AM</span>
+            <div class="reply-content">I think that was Ryan&#x27;s old silver Pugeot. I think it only took 4 guys to lift it off the ground and put in up on the bales. I believe Ryan was rather amused. Yup, Little old car. If I remember right, it was Fezor and some of the parking crew that did it.
+Richard Smith, who I think is the guy you&#x27;re thinking of (maybe?). It was said that whoever had to wake him up in the morning would leave a cup of coffee, a shot of whiskey, and a line of white stuff on his table, tap Richard on the shoulder, and run like hell. Now that you mention Richard, he was the one before Bob. He was the security boss when the misc/garbage crew had the run in with Larry Pogler. Of course the &quot;run like hell&quot; line could also apply to Mad Dog!
+I believe Snake&#x27;s husband was a Sheriff&#x27;s deputy, or a former deputy, or reserve I think you are right, I think he was a reservist or something. I could swear he was more reddish than blond but you maybe right.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">91</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 02, 2009 at 01:07AM</span>
+            <div class="reply-content">THAT&#x27;S IT! Bob Kamen! That&#x27;s the guy! Nice job Patty. Thanks. Was that when actors camp was in the field along the road just below the Misc crew barn and the showers? Wasn&#x27;t there a big tent there for awhile?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">92</span>
+            <span class="reply-author">Richard Beard</span>
+            <span class="reply-date">January 01, 2009 at 10:38PM</span>
+            <div class="reply-content">That Long Beach Gig was Headed by Patty Lynch. I know this because Rollie and I worked for her along with her adopted brother who was a former Pres. of the L.A. Hells Angels. Patty also was the voice of Security Base the first year I did Night Security ( 78 ) in Agoura.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">93</span>
+            <span class="reply-author">[3tjomb2csum08]</span>
+            <span class="reply-date">January 01, 2009 at 10:10PM</span>
+            <div class="reply-content">I recall writing a parody song for a night show &quot;Workin&#x27; at the Renn Faire&quot; to the tune of Elvis Costello&#x27;s &quot;Watching the Detectives&quot; wherein I allude to the time (at least one of several) that we had to wait to cash our last check from Northern until AFTER the second weekend of Southern, the following May... yeah.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">94</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 01, 2009 at 10:04PM</span>
+            <div class="reply-content">I forgot about Bob Kamen. Fits Randy&#x27;s description better than Richard does. Plus, I think Richard was actually before my time and I only knew him by reputation. I also remember waiting for paychecks (and waiting, and waiting ...).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">95</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 01, 2009 at 09:03PM</span>
+            <div class="reply-content">I think that was Ryan&#x27;s old silver Pugeot. I think it only took 4 guys to lift it off the ground and put in up on the bales. I believe Ryan was rather amused. Certainly took it a lot better than Richard Smith, who I think is the guy you&#x27;re thinking of (maybe?). It was said that whoever had to wake him up in the morning would leave a cup of coffee, a shot of whiskey, and a line of white stuff on his table, tap Richard on the shoulder, and run like hell.
+I believe Snake&#x27;s husband was a Sheriff&#x27;s deputy, or a former deputy, or reserve. His name is trying to get out of my brain right now but keeps running up against a wall. He was tall, and as I recall, blond rather than auburn. I&#x27;ll probably remember the name in the middle of the night. I remember one incident @ Southern where some drunk was acting even stupider than the amount of beer he and consumed gave him a reason to. The drunk was a little guy, I think Snake was the one who originally dealt with him, and by the time I got to the incident, there were at least a dozen of LHC&#x27;s finest surrounding the guy. He kept goading us, tryin&#x27; to get someone to swing on him. He finally tired of waiting and swung on Snake&#x27;s husband, who took him down quick and clean.
+I don&#x27;t think I ever found out just how many times the guy tripped and fell while being escorted off the lot.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">96</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 01, 2009 at 09:02PM</span>
+            <div class="reply-content">Could that security boss have been Bob Kamen? I actually worked for him one northern faire around that time, night security at actor&#x27;s camp on the weekends, back when actor&#x27;s camp was on the left side of the road entering the faire site, just past the weigh station. That was the year of my infamous slap heard around faire. More about that some other time(or not). The alleged victim hunted Bob Kamen down to report me. Bob asked me if it was true. After laughing his butt off, he told me &quot;Well you know I have to kick you off the lot now&quot;,(me) &quot;Yes, Bob I understand&quot;,pause...(Bob)&quot;You WILL be reporting for duty tonight&quot;, (me)&quot;Of course Bob&quot;.Another smile from Bob. Nice man.He had some issues with pay. That was the year of Ron Patterson said to the crew before Dicken&#x27;s(who were STILL waiting for their paychecks from RPFN). &quot;Why do we do this?Certainly not for the money&quot;. Then offered money for help moving into a new house.sigh. Rough times, but we survived and the show went on.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">97</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 01, 2009 at 08:23PM</span>
+            <div class="reply-content">Oh definitely not Lance! I can never forget him. There was a character! A study in the long term effects of leather work and drugs if I ever saw one. He was horse guard boss for awhile if I remember right. The guy I&#x27;m talking about left the company (I think) after he quit/was fired/whatever. This would have been somewhere around 1978 or maybe even 79.
+Thinking about then made me think about a security supervisor (a rare female, by the time I left there only had been 2 that I know of) that went by the nick of &quot;Snake&quot;. She bragged that she could &quot;out bitch a bitch&quot;. Had a real tall auburn (?) haired husband also on security. A bunch of us did some side security jobs for her, 1 at the L.A. bicentennial fair in the Sepulveda basin and another at the Long Beach international craft fair in the parking lot of the Queen Mary. It was weird bringing the faire security &quot;culture&quot; to other events.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">98</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 01, 2009 at 07:52PM</span>
+            <div class="reply-content">sterling? kinds looked like a mosquito hawk?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">99</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 01, 2009 at 07:24PM</span>
+            <div class="reply-content">Wow, I had forgotten about the wee one! Didn&#x27;t a bunch of us put his car on hay bales at RPFS in the mid 70&#x27;s? The security boss I was talking about was the one before him. All I can remember was a guy just a bit taller than Ryan with a black mustache. He had a trailer in the Paramount ranch set just down from the old garbage shack (the one with the dead squirrel&#x27;s foreleg sticking up from the flytrap goo in a hanging jar!). He was blown out of bed on night by an acetylene bomb lit off outside his trailer one year. Ryan was the one (I think) that made me the front area lieutenant my second year on security.
+-- I always think of you as Security / First Aid / Fire Watch. I remember, for instances, that several folks w/ bee and wasps allergies would have had a much harder time (to put it mildly) if you hadn&#x27;t been there.
+I really enjoyed giving something back to the people that were giving me so much (even though my first aid supplies were often paid for out of my own pocket!). It also gave me a bit a freedom as well. Not many in my profession get to do field work quite like that!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">100</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 01, 2009 at 01:03AM</span>
+            <div class="reply-content">Hi Randy,
+Great to have you around the Teahouse. Somehow, I had forgotten that you were ever on Garbage Crew -- I always think of you as Security / First Aid / Fire Watch. I remember, for instances, that several folks w/ bee and wasps allergies would have had a much harder time (to put it mildly) if you hadn&#x27;t been there.
+I don&#x27;t know about the timing, but when I started on Security in the late &#x27;70s, Ryan Brandenburg (sp?) was the Head of Security. He was succeeded a few years later by Larry V.
+I try to go out to Paramount Ranch at least once a year. Yup, Procession Hill is still there, but somehow it seems steeper to climb and descend (hay, I&#x27;ve had a desk job for almost 20 years, what can I say).
+See you around the Teahouse!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">101</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">December 31, 2008 at 05:23PM</span>
+            <div class="reply-content">&quot;...I learned how to kiss at the Faire...and to this day I can honestly say that there is something about a man from the faire and his kisses that are different than other men. Better...than other men.&quot;
+Oh my, yes! Such sweet, sweet memories...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">102</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">December 31, 2008 at 05:20PM</span>
+            <div class="reply-content">I thoroughly enjoyed playing peasant. So much more freedom. The more dirt and stains on the clothing the better! Taking a group nap on the side of the road after having a feast was always a favorite in St. Paul&#x27;s. It&#x27;s amazing the number of people that take your picture while you&#x27;re eating or sleeping.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">103</span>
+            <span class="reply-author">[3tjomb2csum08]</span>
+            <span class="reply-date">December 31, 2008 at 05:05PM</span>
+            <div class="reply-content">It&#x27;s very much like that old Motown song says: &quot;It&#x27;s in his (or her) kiss!&quot; yes indeedy-do!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">104</span>
+            <span class="reply-author">[2jg1ezg44pwe8]</span>
+            <span class="reply-date">December 18, 2008 at 04:35PM</span>
+            <div class="reply-content">When I started working at the faire, I was Alison Fleck but in 78 married Ian and was Alison Ferguson for a number of years... now I am back to just plain Fleck though my kids are both Fergusons. I began faire life in my early teens, was a wandering minstrial and a boothie on weekends. In 72 or 73, I started working Ale Stands and did that (mostly) full time until around 81 or 82. There was a blink of an eye when I got to coordinate caterers and later there were weekends when Suzi let me sell hats. I have visited and been a weekend wanderer a few times since.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">105</span>
+            <span class="reply-author">[02v9sfrs8abuf]</span>
+            <span class="reply-date">December 18, 2008 at 03:36PM</span>
+            <div class="reply-content">Helen OH MY GOD! It&#x27;s Kalyn Wolf...I was Sally&#x27;s roommate in San Francisco and had numerous dinners with you and your family. How is Chris doing? What happened to Sally? I hear all of these rumors that are very hard to believe. I hope you are well.
+Kalyn
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">106</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 18, 2008 at 02:32PM</span>
+            <div class="reply-content">&quot;...I learned how to kiss at the Faire...and to this day I can honestly say that there is something about a man from the faire and his kisses that are different than other men. Better...than other men.&quot;
+The same can be said for the ladies. The ladies of the Faire could live and love (and kiss) like no other!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">107</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 18, 2008 at 01:51PM</span>
+            <div class="reply-content">besides they used to say in Hollywood:
+There are the girls that chase the rock stars
+and the girls the rock stars chase
+AND
+the girls the rock stars *wish* they could chase.
+we were the latter.
+scorning the strip for the dirt road.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">108</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 18, 2008 at 01:49PM</span>
+            <div class="reply-content">wow Kalyn we had almost the same teenager experienced being mothered by dennis day and riding the bus. I was later and we had tents by then tho. Lovely to be greeted as you come off of the actors bus by a beloved and walked up cardiac hill to a readymade bed. Good times.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">109</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">December 18, 2008 at 06:59AM</span>
+            <div class="reply-content">&quot;...I learned how to kiss at the Faire...and to this day I can honestly say that there is something about a man from the faire and his kisses that are different than other men. Better...than other men.&quot;
+Amen, sister!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">110</span>
+            <span class="reply-author">[02v9sfrs8abuf]</span>
+            <span class="reply-date">December 18, 2008 at 06:39AM</span>
+            <div class="reply-content">Hey Luisa,
+I saw Jackie&#x27;s brother Larry last week. I will get her email and share this site with her. I remember she took me to the house on Fairfax and I auditioned for Dennis Day. We were doing improv and I was quiet, but I said something brilliant and he said, &quot;Kalyn! That was BRILLIANT but no body but me heard you! PROJECT!&quot; From that moment on he took me under his wing and mentored me. How could I be so lucky. I remember my first costume. OMG! My high school uniform was jeans and a work shirt. I had NO idea I had a waist let alone breasts. I think I hid under hay bales for the first two weeks of faire. Then I got brave and followed Julie Meredith around before the opening show and mimicked her doing &quot;LOVE FOR SALE&quot;... she stopped me and stated in a loud voice &quot;HEY! STOP STEALING MY CUSTOMERS&quot; and I replied to her, &quot;I&#x27;m not stealing them, I&#x27;m your apprentice!&quot; From that moment I became an apprentice bawd to Julie...of course I had no idea she was also playing Queen Bess in the afternoon, but I found out that day. Judy Corey took me under her wing as well, and I fell into the Scudder clan from there. I was able to understudy for Judy a couple of times for the Boat Show...what a blast that was. And what a great way for a formerly shy girl to end her high school years. I always felt like a fish out of water in the &quot;real&quot; world, but at home with Faire Folk.
+After my first faire (I was 16) management found it in their hearts and pocket book to put me on the Faire bus, give me food tickets AND pay me! I was 17 now and boy was I in heaven. I will never forget driving to Dundii&#x27;s house to catch the bus by 6pm...stopping in Buttonwillow to dine at EAT...I wonder what they townies thought of us. Praying the bus didn&#x27;t break down so we could find a hay bale to lay on before 2am...being awakened by Big Red in the morning and HOPEFULLY not by the water. Manny&#x27;s for breakfast...costume up for the work day....then the nights....Remember Clench a Wench? Sandey Oxenhorn was always good at that game hmmmm....Maybe the girls just wanted to get caught by him. Great conversation...great um...everything. I learned how to kiss at the Faire...and to this day I can honestly say that there is something about a man from the faire and his kisses that are different than other men. Better...than other men. Falling asleep for a couple of hours if we were lucky, then up again for a full day of work, looking a little more authentic on Sunday than we did on Sat. (it&#x27;s good to be a peasant on Sunday morning). Catching the bus by 6:30 making our way down the hwy to Anderson&#x27;s Pea Soup for dinner...HOPING The bus didn&#x27;t break down so we could be in bed by sunrise...but more times than not driving the Hollywood Fwy to sunrise and going back to school...longing for Friday to arrive and to start all over again.
+My kids would never believe I once had THIS much fun and was THAT tired all at once. Where did all the energy come from?
+After my first Northern Faire I was hooked. I followed that up with Dickens, moved to Northern California and took the bus to Southern while in college. Did that every year from 1974-1978...then back to Southern CA to start my career...Oh god I did that BiCentennial Faire too...almost forgot about that one. I took a few years off from working the entire faire but did some retail on the weekend for Feather and Eastern Star. Then came back to the Faires from 1980-1984. I was a proud member of Snob Hill the summer of &#x27;84 (I&#x27;ll post photos as soon as I can). Living on the Fairegounds for an entire summer was the bomb...WHAT FUN! And what better company to be in than Feather&#x27;s girls? Sold Madelyn&#x27;s cookies for a while, Thanksgiving and Christmas with The Scudders....Wow, the memories are pouring back.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">111</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 18, 2008 at 06:23AM</span>
+            <div class="reply-content">PLEASE PLEASE WHERE IS NILOS NEVERTHELESS AKA JACKIE JACOBSEN ??? She &amp; I were catering partners - BOY can she cook - and I MISS HER !!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">112</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 18, 2008 at 06:08AM</span>
+            <div class="reply-content">Hi Kalyn:
+I remember Jackie Jacobson; fun gal. Was Southern &#x27;74 the year the Faire opened on Easter Sunday and Jackie went around with the &quot;Pascal Lamb&quot; on a pageant cart?
+Last time I saw her was in the mid-late 90&#x27;s after hours at Northern Faire at the Green Man Inn where &#x27;Brunos Nite&#x27; was happening (an annual &#x27;all night&#x27; Morris Team &amp; Folk Dance festival-thingie). She looked *exactly* the same as she had in the &#x27;70&#x27;s! Seemed very happy with herself and her life, too, which is always good.
+Don&#x27;t know if you still see Jackie, but if you do, say &quot;hi&quot; to her for me.
+Ciao for now.
+Luisa Puig Duchaineau
+old Faire folk, retired
+ps - I still have my Robert Eastman tape of his &quot;Elizabethan Language&quot; lecture.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">113</span>
+            <span class="reply-author">[02v9sfrs8abuf]</span>
+            <span class="reply-date">December 18, 2008 at 05:49AM</span>
+            <div class="reply-content">I came to Faire originally because my uncle Art owned the land and gave my family passes. But I came as a participant via Jackie Jacobson (Nilos). In 1974 I had a choice to go to the Faire or go to Strip and be a groupie....I think I chose wisely. Where else would I have EVER been given the opportunity to learn Elizabethan from Robert Eastman?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">114</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 13, 2008 at 07:19AM</span>
+            <div class="reply-content">Some of the dates maybe a bit off, my memory is pretty bad; if somebody remembers different, please let me know. I hope this isn’t to long……
+I am very sorry for not mentioning too many names, I have a real problem with them and don&#x27;t want to make mistakes.
+I first came to Northern Faire in 1969 when it was out by the Marin Civic center. It may have been China Basin but I’m not sure. My father worked for an ambulance company that had the contract for first aid. I was just 12 years old. He brought me out for 2 weekends because I had an advanced first aid card and could sit at the first aid booth and give out band aids and stuff if they were with a patient (and it was free childcare!).
+It was one big colorful weird blur. Even though I spent some time in San Francisco and Berkley, I was primarily a country boy from Sonoma and had never been close to such people and sounds and sights and smells. I had found my people.
+One thing that my father and I both noticed is that there was nothing for kids to do. We were just getting into the dogs and dog carting and my father was always looking for extra money so they talked to somebody about giving dog cart rides.
+The next year, when the ambulance company was contracted again, my parents got in touch with Phyllis and we were given permission to sell dog cart rides. This was 1970 and the first year at Black Point.
+We didn’t get started in time so we didn’t really have a booth that year, just a table up near Witch’s wood and a curtained off area behind someone’s booth to keep the dogs and out stuff. There were five kids in my family (I am the oldest) and we also had help from some members of our dog club. The first carts were nowhere near period but we were allowed to get away with it the first year. We were right next to a booth run by a couple named Cliff and Suzy that sold Sauncy Cake (It was some type of wonderful apple cake with powdered sugar on top). Thank god they gave away samples because we had no money for faire food that year and I was a growing boy!
+That is when we also met Bob Carr (who became sort of a protector for my sisters) and Manny (whom my mother threatened, in spanish, to castrate!). After a few weekends, my parents relaxed and we were let free during off times to play and explore (hey remember when there was no snow fencing just “perimeter guards” with shovels?). That is when I/we met Mike and Mark McCool, April Poppet (Bobs Daughter) and the girls from the Diablo’s (Blanchards?), Richard the Piper, Clan Colen, as well as many others.
+I’m not sure if it was that year or the following that we did our first Dickens Faire (it would have been the first year at Army Street? I don’t think we did the Cannery but I could be wrong). I will never forget the London Bridge. We also sold Christmas Trees there and used the dogs to escore nervous visitors to their cars (rough neighborhood!).
+I have always had a (too) loud voice and acted (out) in school plays. I was ecstatic when I discovered hawking. Over the next few years I became a hawker for hire. I would work the dog carts and hawk for others (steak on a stake, piroshkies, sauncy cake, as well as make up racy/funny items to yell about) all generally from some tree or booth top (okay, so my life centered around food and girls, hey I was a teenage boy on the loose, what did you expect?)
+It was around 1972 or so when next two younger sisters and I were allowed to go down to RPFS and work/hang out for 2 weeks with the diablos. I did that every year until 1976.
+1973, Hyde street. We had our dogs there as well. Talk about giving a faire and nobody making any money! It was great fun. For some reason I rode down to it one day (maybe hiring day of northern faire or something) with Bob Poppet in his old Bel Aire hot rod. That was when I learned why they called him “151”. For years after, Rum and Coke was my favorite mixed drink (with or without Bob’s added kick).
+1974, I turned 17, it was my senior year in High School and I decided to try for the crew. Hiring day, 1974, a day I will never forget. Ed Lynch was doing the hiring for the Garbage crew (I have no idea why I picked them; I think it was because of Bob Brewer). We were up on the side if the hill near main stage and he was wearing a pair of jeans with the crotch ripped open and his “twig and berries” very exposed. When it was commented on, he said, if you can’t handle the view, you can’t handle the job! I didn’t get hired at first (still kinda clean cut, my high school had a grooming code) and was pretty bummed and went back down to help work on our booth. About an hour or so later somebody yelled fire and I looked up to see the haystack along the front road on fire. Some kids had stolen a joint from their mother’s purse and were up in the stack smoking it when they saw mom coming and dropped the joint into the stack. Several hundred tons of straw bales going up in smoke. It was mass pandemonium. Because I was on a volunteer fire department and had been to hay fires before and because nobody was in charge or could even be heard I started yelling out orders (mostly repeating ones from my father or from others that sounded like good things to do.)My big mouth was one of the only things that could be heard! We got the fire out and I got hired on the Garbage Crew.
+I worked Garbage crew for several years (though the Army and a fire season with CDF) at Northern Fair and the Dickens Faire.
+1978 I lose my ambulance job and am invited south for a job on the miscellaneous crew. I was living out of the back seat (and camping IN the trunk of) a 68 Ford Galaxy (which I later sold to Lumpy and he and a bunch of others shot it full of holes and blew it up in the desert!). That was the year that Althea Krim and I got together and even though I had seen her around (we both were at Hyde st) I got to know Sylvia and really got to know people from props, costumes and the acting guilds. Somewhere in here is when Wild Bill took over the S&amp;S crew I think (remember his dog Martha? Big furry black thing that accidentally killed herself hitting a tee-post?). It was also somewhere in here the famous Larry Pogler Raid occurred at RPFN. Somewhere around here I think was the music camps and the GAMF failure as well (or was that earlier?). It was also in here that I wrecked Ian and Allison Fergusons (Is that right? It just suddenly came to me) new (to them) trailer during a shanty shake outside of Gilroy!
+Around 1980, I was talked into coming over to security (as I mentioned elsewhere, I cannot for the life of me remember the name of the security boss back then…It’s driving me nuts!) as a walking guard. Althea and I broke up at the end of the year (she wanted to civilize me then didn&#x27;t like what she had changed me into) and I moved to my dad’s house in Chico.
+I continued to work the faire over the next few years (sometimes just run of faire and sometimes full time), going from walking guard to Front Area Lieutenant (RPFS), to Ale Stand Lieutenant, To Walking Guard Captain and responsible for lot security during the week (RPFS, where the famous pike pole incident occurred!). I also handled most of the medical needs after hours as well)
+If I remember right, I met Danese in 1982 and got to know Cat and Charles Taylor then as well.
+I met my wife-to-be in 1983 at RPFS when I busted the booth she was working at for noise (they were playing the sound track to Rocky Horror Picture Show from a quadraphonic stereo system mounted in the back of the booth after hours and the windmill booth hated them!) and we were married in 1984.
+My last Southern faire was spring 1985 and I left altogether (because of a dispute over the company paying for my son’s injury) in 1986. Since then, I went to RPFS once in Devore (89 or 90), once to a Dickens Fair in a theater in Oakland and once to RPFN when it was at the Nut Tree.
+They were fun and it was great to see everyone, but like they say, you can’t go home. It wasn’t home anymore and that made me very sad. To this day I will not drive east bound on hwy 37. If I go west bound, I’ll look at the hillside where the camps were but I can’t look back at the valley. I have been down south for many fires but have yet to have the chance to go onto the old Paramount ranch. Maybe I will go south this spring and see if procession hill is still there.
+I’m sorry this is so long. I’m sitting in beautiful downtown Ballico California, working a fire shift by myself and I haven’t thought this much about those days in years and I couldn’t stop. The memories are pouring back in……….
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">115</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">November 23, 2008 at 01:54AM</span>
+            <div class="reply-content">Jeffrey....I thought it was &quot;Drench a Wench&quot;? Was that later?
+T
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">116</span>
+            <span class="reply-author">[3c81l6i4s3fe3]</span>
+            <span class="reply-date">November 23, 2008 at 01:30AM</span>
+            <div class="reply-content">Ah yes...they sang &quot;shirts&quot; by Bonzo Dog Band, those guys at TW who also hired many faire folk to do the &quot;Fantasy Faire&quot; in &#x27;74 I think, in Holly wood with Mystic Knights of the Oingo Boingo, ad lasers (the first time ever) and other great musicians)..There was a great game we used to ply after hours called &quot;Clench A Wench&quot; where many were injured, but many babies were made in the aftermath.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">117</span>
+            <span class="reply-author">Richard Beard</span>
+            <span class="reply-date">November 23, 2008 at 12:13AM</span>
+            <div class="reply-content">Your Right on about that LAPD rent-a-cop being involved and without doubt Pflagler was in on it. I seem to recall hearing about a couple of outstanding debts being settled by the end of that day allowing Ron to breath a bit easier. Theres more to the story but I&#x27;m not talking.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">118</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">November 22, 2008 at 08:46PM</span>
+            <div class="reply-content">Okay...have to say that it wasn&#x27;t Pflagler who did the deed...it was the LAPD rent-a-cop liason guy we had then (the one with the back room cocaine habit).
+And about the Nazi stuff, that was biker wanna-be (and real biker in some cases) fashion at the time. Not saying it was great (bothered me too, and I used to spend a *lot* of time with the crew), but it was more about their version of punkness than anything else I could discern. And plenty of the crew was jewish too (Mitchell Wade Arownowitz, for instance).
+And yes, Ron Plegler worked for Finance, as did his immediate crew at the time (the guys with the guns in the picture).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">119</span>
+            <span class="reply-author">[3tjomb2csum08]</span>
+            <span class="reply-date">November 22, 2008 at 09:00AM</span>
+            <div class="reply-content">Yes, well, considering his aforementioned &quot;vaguely&quot; Nazi-like proclivities, and the general ethnicity of his crew (mostly Jewish), there were several others who shared your sigh of relief when he was &quot;relieved&quot; of his duties(!) And, you are absolutely correct, he worked for Finance, not Security, I distinctly recall, and in fact, I don&#x27;t think he ever worked for Security, although you&#x27;re no doubt closer to that than I Sequoia!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">120</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">November 22, 2008 at 07:18AM</span>
+            <div class="reply-content">Personally, I was less than amused by the &quot;Panzer&quot; and the other Nazi paraphernalia and German martial music (blasted from the &quot;Panzer&quot; on Finance Hill).
+As far as I remember, Pfagler was didn&#x27;t actually work for Security but rather for Finance. Thus, he wasn&#x27;t &quot;one of the guards.&quot; As someone who was &quot;one of the guards&quot; I take some small comfort in that. As I recall, quite a few folks were pleased or relieved that Pfagler was fired.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">121</span>
+            <span class="reply-author">[3tjomb2csum08]</span>
+            <span class="reply-date">November 16, 2008 at 04:06PM</span>
+            <div class="reply-content">Yes, that &quot;disappearing $60,000&quot; silver-haired guy was none other than Ron Pfagler... an even more curious fact is that he wasn&#x27;t fired until the following Dickens Fair, at the Fox, in Oakland. That was 1983, as I recall...yup, I still have the tee shirt! I wonder what ever happened to Ron, or Hollywood Danny. &quot;Fun&quot; guys, despite Ron&#x27;s slightly(?) over-the-top fascination with all things Third Reich...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">122</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">November 16, 2008 at 03:16PM</span>
+            <div class="reply-content">I remember one time, several years prior to my becoming Director of Marketing &amp; Sponsorship in 1989, I heard that one Saturday at the Southern Faire, one of the guards (silver haired guy with an old pickup truck), was given a suitcase/briefcase with like $60,000 in cash from the finance office, and told to take it to the bank somewhere out near Aguroa. He came back and told them he had been robbed. Oh Gee. And, try to imagine how much of the parking fees ever actually reached the finance office at any faire
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">123</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 16, 2008 at 04:25AM</span>
+            <div class="reply-content">oh yeah besides all that stuff was just myth.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">124</span>
+            <span class="reply-author">[3tjomb2csum08]</span>
+            <span class="reply-date">November 16, 2008 at 03:53AM</span>
+            <div class="reply-content">&#x27;Tis a small circle in which we spin! My first wife, Susan Rudin, who I fell in love with at Southern Faire in &#x27;76, was your sister Hadassah&#x27;s assistant in the Finance office in the early 80&#x27;s at Black Point, and at the Dickens Fair when it was at Fort Mason. I distinctly recall seeing a picture of her and Hadassah playing Monopoly with real money in the Finance office, with Hollywood Danny and Ron Pflagler standing guard over the proceedings with their shotguns(!) I suspect she still has that picture in a scrapbook somewhere...perhaps I can persuade her to send it to me so I can post it up here. I mean, the statute of limitations has long since expired on all that &quot;nefarious&quot; activity in which we all (ahem!) used to indulge, now hasn&#x27;t it?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">125</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 04, 2008 at 06:47PM</span>
+            <div class="reply-content">geez all of the fools guild worked at Canters when they first moved to town too!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">126</span>
+            <span class="reply-author">[3c81l6i4s3fe3]</span>
+            <span class="reply-date">November 04, 2008 at 06:41AM</span>
+            <div class="reply-content">\WEshould get William, Billy, Mark and Sandy to talk about their 1520AD daze as &quot;acting/waiters.&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">127</span>
+            <span class="reply-author">[2vk9pswnkqroa]</span>
+            <span class="reply-date">October 28, 2008 at 01:00AM</span>
+            <div class="reply-content">Never underestimate the power of fish....says I.
+It has been almost 15 years since I donned the fish and the itch is getting to me. They put me in hoops and Middles this year (and last) and I just about had a melt down. Sometimes you just need to be a scruffy peasant monging disgusting .... er I mean *variety* meats.
+And..........any time you want to join me, grab the apples I will grab the fish and we can sell scrumpy cider!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">128</span>
+            <span class="reply-author">[2b9fvunfove9x]</span>
+            <span class="reply-date">October 27, 2008 at 05:49PM</span>
+            <div class="reply-content">I remember the first Faire, in &#x27;63, where another woman and I &quot;monged&quot; apples, which we got out of an old garage which wasn&#x27;t even hidden from customers by burlap!....... Flash forward: Blackpoint- After the opening ceremonies, I climb down from the balcony of front gate, walk a few paces, when I am suddenly confronted by a gauntlet of mongers, some offering the most disgustingly funny offal. I hide my giggles, stay in character, and order the finest entrails to be delivered to my kitchen door....What fun! It was all so brilliant and perfect theatre. Many thanks Sandra. I remember that fish as if it were fresh yesterday......
+Did you know that you inspired my father? I was making the Lady Mayoress&#x27;s morning rounds, when I was astonished, yes astonished, to see my old Daddy, dressed as an old woman, in a long skirt, an old, grey blanket on his head, hawking his home-smoked fish from an insulated basket. I watched with mouth agape, as he held up a trout, wordlessly enticed a customer to touch it, then said in a loud voice, &quot;You touch it, you buy it!&quot; and they did!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">129</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">October 27, 2008 at 01:35PM</span>
+            <div class="reply-content">very many of us got hooked in around that age. i feel a kindred spirit with you having worked both the well and mongers myself. Of course mongers was an act of love by a group of people, a member of that group i was lucky to be. Rest in Peace Glad Pickering we love you.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">130</span>
+            <span class="reply-author">[2vk9pswnkqroa]</span>
+            <span class="reply-date">October 27, 2008 at 03:29AM</span>
+            <div class="reply-content">Wow....my first year was when I was a freshman in High School. My art teacher told me that I needed to go to this wonderful place in Agoura and told me about Faire. We did a field trip (gotta love San Marino High...they can figure out some swell ways to spend our parent&#x27;s money...) and we went. I went bought a Fairever pass after the field trip and did so again the following year. The next time, my best friend&#x27;s mom Peggy asked if we liked it so much, why we just didn&#x27;t work there....(?!?). I remember her asking me to drive her to the old site and it was a rain day so the workshops were being held at a school in the area. There I saw Julie St. Germain and Gerald Zepeda doing their recruitment speeches. Julie was impressive but Gerald and Sherman did their translation gig where Gerald kept repeating &quot;We need to force the US out of Nicaragua now&quot; in Spanish, while Sherman Kahn did the acutal intro and pitch (i.e.&quot;He says he is Gerald Zepeda&quot; &quot;He says I am Sherman Kahn&quot; &quot;He says the mongers are a street improv group&quot; , etc.) I was hooked. I joined the circus that year and never looked back. I have been and run Mongers, I have been and run the Well, I started and fine tuned the old Boar&#x27;s Head Feast for Terry and had the pleasure of working a few Red Barn parties behind the bar. And it all started with a fish.................
+Oh and my first costume as a turkey? It was a Job&#x27;s Daughter robe with some embroidery on it, an old girdle I covered with cotton velvet and a pair of china flats. Yup, pretty awful. But beautiful in its sincerity.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">131</span>
+            <span class="reply-author">[0focr76owiqxh]</span>
+            <span class="reply-date">October 26, 2008 at 09:08PM</span>
+            <div class="reply-content">How I came to Faire....
+We moved to Novato (Hamilton AFB) in 1971. The Jr HS I was attending had a &quot;win 4 tix to Renn Faire&quot; contest going on in the English Lit classes. I wrote a 5 page paper on Mary, Queen of Scots and won those tickets.
+I had spent the last 8 years of my young life living in England and Germany and my Mom, who is German and an avid Historian, had dragged me to Castles and Palaces, Churches, Cathedrals, Ruins...well, you name it. I can remember doing Brass Rubbings with her when I was 8 years old. In any case, going through all of these wonderful historic places gave me a real &quot;taste for the past&quot;, as it were. We attended the Faire and I thought I&#x27;d died and gone to heaven! Ok, it wasn&#x27;t a Castle or a Palace, but people were in costume and speaking in &quot;funny accents&quot;! I was hooked. I pestered my Mom to take me back again for the next two years. When I got my driver&#x27;s license, I bought a &quot;Faire Ever Pass&quot;, made a &quot;bad&quot; peasant costume and started to Haunt the Faire with, my then, best friend. In 1975, straight out of High School, we officially joined up with Clan Colin and that was that. I worked Faire for 33 years and it&#x27;s been a grand ride. Most of those years have been with St. Michaels. Eventually, I became GM of that Guild, which was a lot of work, but also a terrific honor. I&#x27;m sad that the &quot;only&quot; Renn Faire is now in Gilroy. It&#x27;s just too far to go. When Kevin Patterson wins the lottery and starts a new &quot;north bay branch&quot;, I&#x27;ll be there in a flash. Meanwhile, Dickens is proving to be a load of fun and I get to see almost all the same faces....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">132</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">October 19, 2008 at 11:55PM</span>
+            <div class="reply-content">I started out by going to the Faire at Peacock Gap/China Camp in, I think &#x27;66 or &#x27;67 as a customer. Then a few times at Black Point, again, as a turkey. In &#x27;76, I worked The Great American Shindig as a mountain man. I had always thought how great it would be to actually do something at faire, but didn&#x27;t really know, or at that time, care enough to follow through. I was a partner with Bruce Northridge (the blacksmith) in 1977 and he decided to work faire at the blacksmith&#x27;s booth in 1978. I worked with him there and was hooked. I had started doing Germans a year before kind of with an SCA group. They started at faire at the same time I did and so I acted with them whenever I could get away from the booth (I never really liked being in the booth). Well, that first year at faire changed my life. I look back at it now and I don&#x27;t think I would have done anything differently, except maybe opening up an IRA or 401k. The experiences and the people will always be with me.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">133</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">October 16, 2008 at 06:13AM</span>
+            <div class="reply-content">I was really &quot;full of shirt&quot; in them days, no? ... though my shirt was as full of me as it is now!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">134</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">October 14, 2008 at 08:59PM</span>
+            <div class="reply-content">yea, sequoia, i remember you as the great dye guy, full of colour, and hawking..i thought at the time, what a lot of wonderful noise about shirts...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">135</span>
+            <span class="reply-author">[3dpm4dqeacwki]</span>
+            <span class="reply-date">October 10, 2008 at 01:57AM</span>
+            <div class="reply-content">in the early 70&#x27;s i was in high school in the east bay.
+i was a 4.0 college-prepped student
+my first period class was history...and i&#x27;d spent a whole school year sleeping through it.
+there was a really cool drama teacher at my school. he had long hair, and a big handlebaqr mustache. i never took his class, was never interested in performing.
+what i remember vividly about wayne ward was that he would come to the football field of the school after classes were over in full kilt with bagpipes.
+he would then proceed to play many top 40 songs and sing-along classics on those pipes.
+as soon as i figured this out, i was his stalwart and very appreciative audience.
+i had won a full schlorship to berkeley, and was in danger ofd losing it becaquse i was failing history.
+wayne ward made some kind of deal with my teacher that cost me a large, detailed, researcxh project and six weekends in novato cutting, carding, and spinnimng wool at his booth...
+i fabricated some g-wd-awful cocktail dress-cum ren costume, and later that day wayne introduced me to his girlfriend (she forbade him from playing the bagpipes at home, so he played on campus)
+peg long helped me get faire-worthy...i wasn&#x27;t even aware she was queen...
+suffice it to say, i finished school, blew berkeley off, and went to live in europe for a few years...
+got married and had babees, came back to faire as a customer.
+thaqt day in the early 80&#x27;s i ended up aqt drench.
+there was peg...with a sign above her bale that said &quot;we are still the queen&quot;
+she remembered the doufus i&#x27;d been a few years earlier, and welcxomed me...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">136</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 16, 2008 at 08:17PM</span>
+            <div class="reply-content">yes faire helped me to re-shape my vision of what a family could be.
+Spending time with really true pals you learn to expect more from the world.
+The faire has helped my family to heal more than once and more than one way.
+somehow for me the &quot;faire&quot; that I once knew sort of dissapeared and yet the family renews itself and remains.
+one thing i learned at Pegs knee is that
+&quot;change is the only constant&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">137</span>
+            <span class="reply-author">[2bo9fa56a321y]</span>
+            <span class="reply-date">September 16, 2008 at 07:30PM</span>
+            <div class="reply-content">I came to Faire when we moved from Agoura to Devore... desperately needed a job, and a place that I could safely have my daughter at least in eye shot of me...
+Ended up working multiple jobs that year, started at Baked Potato, and my daughter found a home with St. Genesis in the morning, and the washer women in the afternoon! There is nothing like coming out to check on the child, and having someone from the &#x27;village&#x27; tell the mom to shush because she is asleep... (she was soundly asleep on a hay bale, being camera fodder for all those shutterbugs, with the cacophony of faire sounds about her... ) and the questions of... who are you... why are you wanting her... which when I write this sounds like I never checked on her... but... she would come in with one shift noonish... and be gathered up with another shift at 6pm ish...
+I found a family, a chosen family, and learned how to love again, how to like again, and how to trust again...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">138</span>
+            <span class="reply-author">[26kgu3wb8vyq7]</span>
+            <span class="reply-date">September 06, 2008 at 06:15PM</span>
+            <div class="reply-content">this is very GOOD...dislexics untie
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">139</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">September 06, 2008 at 04:51AM</span>
+            <div class="reply-content">That would have been too cool.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">140</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">September 06, 2008 at 02:19AM</span>
+            <div class="reply-content">I remember once a friend of mine, suggested that the garbage crew at the faires, wear T shirts that said, &quot;Waste is a terrible thing to mind&quot;. I suggested it, but Phyllis did not think it was appropriate.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">141</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">September 06, 2008 at 01:45AM</span>
+            <div class="reply-content">I remember the big vats of dye too. I remember filling them up. I remember draining them (before we had to have AndyGump pump them, which was before AndyGump stopped pumping them because they were &quot;hazardous materials&quot; ... slightly more hazardous than table salt, but anyway). I remember dying the clothes and pushing them in with big sticks and pulling them out. I remember &quot;wearing&quot; the dye. But it was a lot of fun - even hanging the freshly dyed clothing on the line, which was a pain, but they looked so cool up there.
+And I loved hawking as the &quot;dye guy.&quot; &quot;We dye so you can look good,&quot; &quot;I&#x27;m dying to help you,&quot; &quot;I&#x27;ve been dying all day - how about you?&quot; and many more I can&#x27;t recall.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">142</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">September 05, 2008 at 02:07PM</span>
+            <div class="reply-content">I always liked looking at the clothes hanging up to dry, so bright and festive.
+I hawked for Soak-a-Bloke/Drench-a-Wench and worked the weapons at Northern in 1981 and 1982.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">143</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 05, 2008 at 01:28PM</span>
+            <div class="reply-content">i vaguely remember Jim, what sort of pottery? was there anything specific we would recall about his work?
+I remember those big vats of Dye, and the long ropes of freshly dyed clothes festooned across the lane.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">144</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">September 05, 2008 at 01:22PM</span>
+            <div class="reply-content">Back in the mid 70&#x27;s I had a co-worker who had a friend that made pottery(anyone remember Jim Rumph?) and wanted booth workers. My girlfriend, the co worker and his girlfriend went to Dye-Spot and got &quot;costumes&quot;. After 1 Southern run, we were hooked, made real garb and did workshops. I ended up at Drench-A-Wench. My girlfriend left, and my co worker and sweety were &quot;costumed Turkeys&quot; for a couple of years. I did NO&amp;SO Faires for 10 years until the earthquake in &#x27;89 sent me North to Washington.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">145</span>
+            <span class="reply-author">[2b9fvunfove9x]</span>
+            <span class="reply-date">August 25, 2008 at 08:53PM</span>
+            <div class="reply-content">Hi Catt, You continue to amaze me. Correcting: Bernie played clarinet for AVAZ, also founded by Tony Shay. His brother, Victor Sirelson danced with Aman. Ah, and what wonderful, inspiring music and dancing enthralled us at bygone Faires. Another thought: You danced with Aman, your writing; I brought Faire folk to enliven exhibitions at the De Young...my point being that so many of us (from Faires) have contributed, and continue to contribute our passions to Life. I think of Vikki, Nell, Don, Carol, Greg, Dick, Jeffrey, Kevin, Phyllis, Geraldine, etc. oh so many of us. You all are what I love about my life.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">146</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">August 23, 2008 at 01:21PM</span>
+            <div class="reply-content">yes Judy I was the youngest dancer in the troupe for several years of their big shows. O even opened the Dorothy Chandler Pavillion with then, to standing room only audiences. Those are some hot lights. Tell Bernie that there is an AMAN! group on Myspace now.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">147</span>
+            <span class="reply-author">[2b9fvunfove9x]</span>
+            <span class="reply-date">August 23, 2008 at 06:38AM</span>
+            <div class="reply-content">When you say Aman, Catt, do you mean the dance troupe? Small world....I recently found out that my roomate, Bernie, who is part of my Landmark Education Community, played a Balkan stringed instrument with Aman, and his brother danced with them.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">148</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">August 22, 2008 at 04:05PM</span>
+            <div class="reply-content">a little kid...like one of the kids watching you behind the curtain. i was there with AMAN!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">149</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">August 22, 2008 at 03:42PM</span>
+            <div class="reply-content">What the heck is an &quot;anklebiter&quot;?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">150</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">August 22, 2008 at 02:48PM</span>
+            <div class="reply-content">i remember the Torchy act with Yogala.(an anklebiter at the time)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">151</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">August 22, 2008 at 02:32PM</span>
+            <div class="reply-content">I was living in Sausalito and working as a Marketing Executive with ATT/Pacbell in SF. One Sunday morning, I was awakened very early by the sound of a bagpipe blarring just outside my window. I thought, &quot;I&#x27;m gonna go kick this guys ass&quot;, so I went outside, looked up, and there was Bill Gilkerson, standing on his deck nextdoor, playing his pipes and glaring into my eyes. I thought, &quot;well, maybe not&quot;. He came over later, apologized, and we became lifelong friends. I took LSD with him for the first time, tuned in, turned on, dropped out, became a member of the Golden Toad, played a part in a performance he put together at Grace Cathedral in SF, bought an old International Van, and used it as a kitchen to cook for the Toad at the Renaissance Faire in China Camp, 1969. I was then asked to be an assistant to Harland Towner aka Torchy the Magician. My job each morning, dressed as a sort of Robin Hood character, was to fill Torchy&#x27;s little cigar tubes full of white gas, which he carried in a leather pouch made by R. Lance Sterling. He would mouth the gas, and then blow it into a lighted torch, thereby creating a giant fireball, which would astound the audience. One night, Torchy took LSD and drank Tequila, went nuts and fired me. So, I did not fill his tubes, and the next day, still stoned as he began his act and reached for the tubes, he discovered they were empty. You should have seen the look on his face. He then spied a can of Coleman fuel at the edge of the stage, which a young woman named Yogala had left there the night before. So, he ran over, and instead of just &quot;mouthing it&quot; he swallowed a big gulp of it, began to cough violently, spit it all over the stage, then spun around and bowed and left the stage. The audience was dumbfounded, and Gilkerson and I sat there on a hay bale laughing hysterically. Also, as another part of his act, I would be backstage behind the curtain, cranking up this old machine that raised &amp; lowered a &quot;paper-clip&quot; shaped platform draped with a cloth, which stuck out from behind the curtain, on which Yogala would lie. As she began to rise up, Torchy would then run a hoop back and forth part-way over her body, from either side, to give the appearance that he had made her float in air. One morning, as I craked away, two kids managed to sneak back behind the stage, and peeked into where I was standing. I felt like the &quot;Wizard of Oz&quot;, trying to crank the machine, and keep them quiet. I pretty much attended the faires from then on. Those were the days.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">152</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">August 22, 2008 at 01:40AM</span>
+            <div class="reply-content">Yes, Will Wood taught there, although he left before I got there. One of my older sisters and my older brother were there with him though. David worked on The Crucible with Will, he helped design the sets. David also used to have a crush on Diane. Serramonte was closed at the end of my junior year in 1981, so I had to finish at Westmoor.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">153</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">August 22, 2008 at 01:21AM</span>
+            <div class="reply-content">Freddie Mejia is in Spain as we speak, and I think will be back in Oct. He had a stroke, but has recoved and is doing well.
+Trent
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">154</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">August 22, 2008 at 12:14AM</span>
+            <div class="reply-content">If Diane Streeter was your drama teacher, did Will Wood teach English at your school? Serramonte?? I went to visit him there once.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">155</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">August 21, 2008 at 11:56PM</span>
+            <div class="reply-content">I got started at Dickens 79 at the age of 15,when my high school drama teacher, Diane Streeter, suggested that we try out for parts for the Children&#x27;s Pantomime. I got the part of Ali Baba, my sister was cast a Little Red Riding Hood. I knew at once I belonged. These people understood me, I was one of them. I was told by everyone that if I liked Dickens, I should try Ren Faire in the summer. I convinced my parents to take me and several of my friends there for my 16th birthday. We made costumes and had a blast. I remember hearing the most gorgeous voice calling &quot;kisses for prizes&quot;. I looked around and found the voice came from an equally gorgeous guy in a tree, and I fell in lust. I worked as a stage hand for Terry Collier at the Ben Johnson for the remainder of that faire, and came back in 1981 with my best friend intending to be a street performer.Instead, I hawked for Soak-a-Bloke/Drench-a-Wench and for the dunk tank, and was recruited into St.Pauls thieves guild by Phredd and Doug. Now I really new where I belonged! After missing a faire or two due to an insecure fiance and living in Europe for a year, I returned in 1987 and joined security, again recruited by Phredd. Worked security through 1990. I made some of the best friends of my life working faire. I love them all dearly.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">156</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">February 15, 2008 at 03:18PM</span>
+            <div class="reply-content">Yep, Freddie and Marianna are living in Santa Cruz. He had a stroke a couple of years ago, but has mended up and doing pretty well. I understand they are off to Spain for a while this April. I am going to try to get down to see him before they leave.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">157</span>
+            <span class="reply-author">[2rwkjlvel97js]</span>
+            <span class="reply-date">February 15, 2008 at 04:31AM</span>
+            <div class="reply-content">I was just wondering about Freddie earlier today, is he out there?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">158</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">February 14, 2008 at 03:45PM</span>
+            <div class="reply-content">My first faire was in 1969, at China Camp State Park. I was living in Sausalito at the time, and working in SF as a marketing executive with ATT/Pacific Telephone Company. One day, I met my new neighbor, Bill Gilkerson, who was part of the Golden Toad. Within a month or so, he had turned me on to LSD, and within several months, I had tuned in, turned on and dropped out, and ran off to join the &quot;circus&quot;. Bill got me a job with the Toad, and I appeared with them at Grace Cathedral in SF at a show that they did there. I also began to promote them and find them jobs. I was their cook at my first faire in 1969, and also became Torchy&#x27;s assistant. I wanted to be a drummer with the Toad, but Don Brown was better than I at that than me. From then on, I attended the faires, in Agoura several times, and here in Marin nearly every year, worked for Paul and Marleena Gagnon at their candle booth, became a belly dance drummer with Jamila&#x27;s troupe, worked with Freddie Mejia and built booths for various participants, was hired as a carpenter with Michael O&#x27;Connor&#x27;s crew to build stages for the Dicken&#x27;s Fair when It was at Ft. Mason, etc. In 1989, I was hired as Director of Marketing &amp; Corporate Sponsorship, a position I held until the faires were sold in 1995. I will add some old photos soon.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">159</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 20, 2008 at 07:15PM</span>
+            <div class="reply-content">I think I remember it from Pumkin festival more.
+Billy early on tricked apol by (as jack of the green) producing erm...lit objects...from inside his mouth. It really made her mad. He always had funny tricks for me and often they were just too much for her...harlequino stuff. Bending reality a little.
+I imagine your boys went right for him. She did run with Nancy&#x27;s boys and Billy in a little pack in Agoura for a spell. I still have her green leather outfit I made her after he asked her to roll with him.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">160</span>
+            <span class="reply-author">[3tzvsoeqsy2g]</span>
+            <span class="reply-date">January 20, 2008 at 07:09PM</span>
+            <div class="reply-content">Don&#x27;t remember ever seeing that cage again. It only exists in that one earliest of faire memories for me...
+Billy used to make my boys stop crying when they were little and just arriving on site. Elfrick! They spoke the same language...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">161</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">January 20, 2008 at 06:50PM</span>
+            <div class="reply-content">Adi used to be totally afraid of the Bones Band (even when the Bones showed him their faces under the scary masks). Whenever they passed by he would climb my body like a cat avoiding water...it was a BIG moment when he got to be in the band when he was 7 or so and not afraid anymore.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">162</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 20, 2008 at 06:48PM</span>
+            <div class="reply-content">wow was that gold cage around for awhile?...it really rings a bell.
+Apol used to cry when everyone was dressed up and in character. It would kind of mess with her...BIlly S in particular.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">163</span>
+            <span class="reply-author">[3tzvsoeqsy2g]</span>
+            <span class="reply-date">January 20, 2008 at 05:36PM</span>
+            <div class="reply-content">My mom and dad put me in the car. It was May 11, 1963. They told me I cried when I saw all our family friends in weird clothing. I was three and I have very clear pictures of it in my head: there was a hidden area inside a bamboo grove; there was a beautiful woman painted gold inside a human sized gold cage; there was David Osmond, (KPFK DJ and later of the the Firesign Theater), leading the parade with fur around his collar and walking with a big staff, (I only knew him as my best friend Alizon&#x27;s dad); there were ginger bread cookies! I think they were warm... Someday I will get hypnotized so I can find more.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">164</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 19, 2008 at 11:07PM</span>
+            <div class="reply-content">Hi Appo,
+Hope this don&#x27;t embarrass you too much, but what I remember most about the irrepressible Apple Bubble Baby is that you were completely and utterly at home at Faire, whether dancing on the Coffee House stage or crashed out on the platform directly behind the stage -- with music, dancing, and conversation at full (non-amplified, of course) volume. That, and the very rosy cheeks.
+I hope I get a chance to me you sometime now that you&#x27;re all grown up.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">165</span>
+            <span class="reply-author">[2rwkjlvel97js]</span>
+            <span class="reply-date">January 19, 2008 at 05:24AM</span>
+            <div class="reply-content">all true, and he eventually rescued it. I don&#x27;t know from where, I asked, he did not tell. I think he wanted to resurrect it as he has his own fond memories.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">166</span>
+            <span class="reply-author">[13qe99mcck3nb]</span>
+            <span class="reply-date">January 19, 2008 at 03:27AM</span>
+            <div class="reply-content">i was at agoura [across the highway, it seems] as a middle-skooler in 1965, having been enticed by two upperclassgirls [a year ahead of me, no moneybags families involved] in the poetry club at my school. they told me that it was a really freeky show and that i should buy and fill a botabag for the trip. of course, i packed up some crapweed that i had bicycled from glendale down to macarthur park to buy [&#x27;shave in a matchbox, five bucks&#x27;] from a &#x27;pothead&#x27;...
+i rember that the onelane road was blocked blocked blocked, and the drivers just turned off their engines and got out of the cars, and we opened our trunk and all sat in the back under the shade of the trunklid and drank wine and smoked weed with people from other cars around us.
+and then the faire... of course this was kpfa days and it seems in the dimness of my memory that we got in free by being costumed. now this was a trip: my mother agreed to help me make a renaissance faire costume [which agreement always meant that i would drive her crazy by designing something that was wacky to sew or by demanding something that the machine couldn&#x27;t do] so i wound up in a sky-blue *felt* tunic with lawn sleeves folded back and held in place with several basted lines of multi-colored acrylic yarn. this tunic had *two* keyhole yokes around the neck, also made out of felt and in two contrasting colors, one slightly smaller than the other for effect and both stitched down with - can you guess? - acrylic yarn. this sweat-producing weightloss device was worn over a pair of grey tights, which i at first refused to wear without short pants but the damn tunic took too long to make and the pants weren&#x27;t done. add that to jesus sneakers and i was set to go out for a full day of fembarrassment - i was a 14-yo in a short shift and pantyhose, after all.
+a bit of wine, a puff of weed, and i forgot the costumial humliation to my budding male persona... and of course the wondrous faire helped matters there too. i was captivated, entranced, beguiled. i was 14 and in love with the world, and especially that brigadoon.
+so i kept coming back. [but i left felt out of the equation after that]...
+i had more-or-less embarrassing costumes - it was all home-made back then, see? - until my next bright idea, which was to show up as friar tuck in like 1969. i knew that it would be scorching [i had plenty of sense-memories still twitching from 1964] so, in a moment of what *seemed like* absolute lucidity, i decided to wear *nothing at all* under the damn frock and scapula [yes, it was an actual franciscan winter robe - i was at that time a seminarian, or, as history has proven out, an &#x27;artificial seminarian&#x27;...]. so by lunchtime, i was losing weight are a rate of about a pint every six minutes, and i couldn&#x27;t take off a thing because, well, there was too much fabric to wear and not enough discrete pieces to take off. i wound up in only the scapula, which was barely wide enough to cover the front and back of my body, leaving the sides bare - and the damn thing was still heavy wool and made me sweat even through all the itching. oh, and did i mention that i was on acid that day? when i doused myself with water, i realllllly got miserable.
+i did a number of faire-days on acid back then, and it was pretty amazing. i wasn&#x27;t working for the company yet - or even actually working at faire - but i managed to get night passes when necessary. i was there one time [1971] poking in the dirt when i found a silver nugget as big as the end of my thumb but only half as thick - and about a minute later my uncle ironhand came out of the crowd and scared the shit out of me because he looked like death coming for my soul [partly the acid and partly the scars and wounds my uncle had...].
+i was at the top of a little hill overlooking the crowd when it suddenly parted like the red sea. and out of that weirdly undulating crowd came an absolutely horrifying apparition – nine feet tall and white as bone he was, and headed straight for me. ironhand looked nothing like himself, and i didn’t recognise him – he was recovering from some accidents and a few surgeries at that time, and he’d lost weight and was quite pale. on one side of his face were three or four long parallel and rather livid scars running from what was left of his ear down into his neckline, the result of a leopard attack. on the other side of his face stretched the thick welt of a bright purple saber-scar that ran from the corner of his mouth to just about his ear. one eyesocket was covered with a black custom-leather eyepatch out of which radiated a few other scars [the wound courtesy of that same leopard], while the other eye glowed a wicked railroad-lantern red.
+he wore a huge panama with a snakeskin hatband [rattler – he was a part-time collector of venom for ucla] and that hatband looked like it was alive in my acidy eyeballs: a writhing snake around the crown of his hat. he wore a safari jacket with pants tucked into knee-high boots. in one hand he held a long staff that he used to help him move with a stiff-legged walk, since he had some damage to the legs too. that walking stick kept changing into a devil’s trident, and other weird hallucinal stuff, but my eyes were stuck on the what was going on at the end of his *other* arm – where the hand was missing entirely, replaced by a gigantic steel hook that gleamed with fiery menace in the sunlight. people were moving away from him – and i could see why… this was clearly some devil from the pit of hell, come to claim my soul.
+he strode up that little hill, coming right for me, that eye blazing like i imagined medusa’s would. and he walked right past me, not recognising me, while i whimpered on the ground, fearful and clutching that nugget like a sacred amulet against all the malfeasance in the world, not realising that i knew him [i hadn’t seen him since his last accident]. but more about that trip later...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">167</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">January 19, 2008 at 01:16AM</span>
+            <div class="reply-content">Now Laurie (and Helen)...I remember Kear running through the pig with a fork lift one winter when he was pissed that unfettered Pig use had run us out of communal propane and there were no hot showers to be had...I have a picture of Mark Mueller hunkered down next to a rusting and very much on its side Pig with green grass on the ground (so must have been Pre-Agoura some Springtime). Did this really happen as I remember it with Kear incapacitating the Pig, or did I just imagine it? (there&#x27;s an awful lot of detail for it to have been a dream)...But before that...Star-gazing from inside a hot-water-filled Pig in the middle of the winter was oh so wonderful :-).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">168</span>
+            <span class="reply-author">[13qe99mcck3nb]</span>
+            <span class="reply-date">January 19, 2008 at 01:15AM</span>
+            <div class="reply-content">now *there&#x27;s a quote worth repeating: &quot;a village, a vaudeville trunk and a pack of fools to help...&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">169</span>
+            <span class="reply-author">[13qe99mcck3nb]</span>
+            <span class="reply-date">January 19, 2008 at 01:04AM</span>
+            <div class="reply-content">err, just to keep the history straight... the last faire a black point was 1998, so the 2nd to last faire at bp would have been 1997... just sayin&#x27;...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">170</span>
+            <span class="reply-author">[2rwkjlvel97js]</span>
+            <span class="reply-date">January 19, 2008 at 12:02AM</span>
+            <div class="reply-content">OMG! I remember meeting you now. I kept thinking your name sounded familiar...You came out to play when Tracy &amp; I were on Service and Supply. I remember the guys (Ron, Ace, Smacky,et al.) wanted me to feel threatened or challenged or something. They had so much fun messin&#x27;&#x27; with my gullible/naive young self. We&#x27;ll have to swap stories
+sometime.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">171</span>
+            <span class="reply-author">[2rwkjlvel97js]</span>
+            <span class="reply-date">January 18, 2008 at 11:56PM</span>
+            <div class="reply-content">not sure if we know each other, Helen...neither of us has posted a picture. Love the image of the early security crew. Frank Stony was already on his way out and Hamburg was definately in when I arrived in 1980. I saw the pig a few years ago in Kear Koch&#x27;s driveway in Monte Rio. I&#x27;m hoping it is too big to have been washed away in the now yearly floods. Just wanted to let you know the Pig Lives!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">172</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 18, 2008 at 08:18PM</span>
+            <div class="reply-content">you were in the belly at Agoura and a newborn on site at Blackpoint...July birth etc. Also yes at Agoura as a mobile toddler.
+wow what a handfull its a good thing I had a village, a vaudeville trunk and a pack of fools to help me raise this one.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">173</span>
+            <span class="reply-author">[1hhsph0zphnge]</span>
+            <span class="reply-date">January 18, 2008 at 07:28PM</span>
+            <div class="reply-content">I was born to Mullette, for reals. My mom, the infamous Catt Avery, brought me to Agoura Site soon after my arrival. Most of my baby pictures are on site: bathing in a bucket, dancing, or eating fruit ices. I don&#x27;t really think of myself as a true Faire Brat since my faire days were inconsistent and many years were missed. But I am a Mullette forever and can make one mean Turkish Coffee and a spicy pot of chai!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">174</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 17, 2008 at 03:57PM</span>
+            <div class="reply-content">man were we ever lucky!
+anywhere you are is home for me!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">175</span>
+            <span class="reply-author">[26kgu3wb8vyq7]</span>
+            <span class="reply-date">January 17, 2008 at 04:11AM</span>
+            <div class="reply-content">How did I get to the lot??? I drove up in my 1970 cadillac ambulance,
+out rolled the 125cc scooter, Bud the real nice dog and my guy Steve.
+We had been invited by Joan and Bill Cook.... RPFS 84 my my my.
+Stuck with Roast Beef for a nice round number of years,
+out came that large bundle of baby,
+When I landed a gig with Venta , finally I found my post with Bob and Sal
+home sweet hom.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">176</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 15, 2008 at 05:01AM</span>
+            <div class="reply-content">I sneaked in. Well, actually, that was the 2nd time I came to Faire ... and maybe the 3rd, too -- over 30 years ago, memory is fuzzy. The 1st time I went to Faire, my older sis Linda brought me an&#x27; younger sis Laura when we was both teenagers. Linda a boyfriend (I think) who ran or at least worked at Tweezly-Wop. I think the guy was a fireman in real life. This would have been in the early to mid 70&#x27;s. I think Linda had comp tickets, or maybe we were gate listed. We had a great time, but all I remember from that time is Tweezly-Wop, street music, and booths with Indian bedspreads for walls / roofs. And I must have fallen in love with Faire right then and there, &#x27;cuz the first time I snunk in was that same Faire. I must have hitchhiked out to site, and then I came in on the back fire trail and through the &quot;secret&quot; opening in the snowfence behind Tweezly-Wop. Don&#x27;t remember much that day, either &#x27;cept that the folks @ TW didn&#x27;t think that a teenage kid with 2 thin blankets should be sleepin&#x27; behind their booth, so I they sent me home. Security didn&#x27;t have to kick me out &#x27;cuz the boothies did it for them. I don&#x27;t remember if someone from the booth gave me a ride back to the valley or I hitchiked home.
+The last time I snuck in, I think, was a year or 2 later. I hitchicked out with a couple of friends, and we didn&#x27;t have $$ for tickets (or didn&#x27;t want to spend it), so we ran through Rattlesnake Gulch. Of course, we didn&#x27;t KNOW it was called Rattlesnake Gulch at the time. Don&#x27;t know if the other guys ever found out that particular tidbit. I seem to remember that we also had some really bad fake ID, with which we none the less managed to buy beer. I do know that there was quite a bit of low-grade weed involved, and maybe other things, which might be why my memory of the event is less than clear.
+The first time I actually worked Faire was in 1976 or &#x27;77 or &#x27;78 ... &#x27;77, I think. I met Craig, who ran the Children&#x27;s Dell and Animal Farm, at Pierce College (I think we had a class together... I think he actually finished college). It turns out that he had graduated from Valley Alternative School (VAS), where Laura was a Senior or maybe a Junior. I used to hang out at VAS &#x27;cuz they had cute hippie chicks and good smoke. Anyway, Craig gave me a job working at Children&#x27;s Dell, for something like $10 a day plus food tickets. And I helped load and unload the goats for free -- Craig borrowed the goats, sheep, ducks, and other farm animals from VAS and from some small farms in the Valley (back when the Valley still had a few small farms left). I think I moved out to Faire Site the 2nd weekend. On the weekends I slept in the haybales of Children&#x27;s Dell. During the week, I stayed in Craig&#x27;s tent while he stayed @ his folks house in Encino.
+I was so enthralled w/ Faire I hitchiked up to Novato prefaire for Northern and wound up working for Harvey @ the Falafel booth making Falafel balls and hawking (&quot;We&#x27;re playing with our balls.&quot; &quot;Come have a Falafel; you won&#x27;t feel awful&quot; and some vaguely Arabic sounding nonsense). I think that was also the year I washed dishes for Will Spires in the Red Barn and camped in the Dust Bowl.
+The next year at Southern, I got a job on the crew painting the privies and stages, and either that year or the next, I started working Security as Lost Kids guard, which I did for a couple years before backstage ... I think. I also started working Coffee House at night ... without accepting wages, other than meals and tips, for the first couple years.
+The rest, as they say, is History. Living History, I guess.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">177</span>
+            <span class="reply-author">[2b9fvunfove9x]</span>
+            <span class="reply-date">January 03, 2008 at 12:03AM</span>
+            <div class="reply-content">Hi John, Remember when Phyllis put us up in an old house (that was to be torn down) in S.F., to do the 1st Dickens Fair? (Ginger, Keny, Me, You, Robert Shields, and who else?) You hinted that I had a nose-job
+(no, but my Mom did). I wanted to direct a commedia, and told Carol La Feur. I called it &quot;Il Salami dell&#x27; Amore. The cast was Keny Millikan as Lelio, Billy Scudder as Arlequinno, Marque as Pantalone, Carol Williams as Isabella, Carl Arena as Capitano, and I as Parmigiana, like hot, melting cheese. It was a very flavorful Commedia, with a 4&#x27; real salami. At the night show, we all jumped on it while shaving cream seemed to come out of one end. I played Columbina in the 1st Faire Commedia, in Agoura in 1964 (?) performed by Rachel Rosenthal&#x27;s Instant Theatre. Tho&#x27; not in the commedia, Ron and Phyllis were in her company. I.T. workshops gave me brilliant structures from which to improvise, and the knowledge and the skill to teach that anyone can be a player on the Faire&#x27;s stage.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">178</span>
+            <span class="reply-author">[3tjomb2csum08]</span>
+            <span class="reply-date">December 11, 2007 at 04:10AM</span>
+            <div class="reply-content">90&#x27;s when you ran the Costume Department - March of &#x27;94 to be precise - I was working for Vytas as the Computer Support/Network Administrator person...A friend has a recent picture of me in that shirt at this past Casa - I&#x27;ll post it up here next chance I get! Bruce and Bob Ward&#x27;s shirts may well be from the earlier times...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">179</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 10, 2007 at 04:25PM</span>
+            <div class="reply-content">? When did I do your shirt--80&#x27;s in Alestand--or 90&#x27;s when I ran costumes--?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">180</span>
+            <span class="reply-author">[3tjomb2csum08]</span>
+            <span class="reply-date">December 10, 2007 at 04:06PM</span>
+            <div class="reply-content">Yes, Mr. &quot;Info Bruce&quot; Bramson has his, as does Bob Ward, although theirs have been well and truely worn, and worked in at Faire(s) for lo these past many years, and, yes, still hold up quite well. The one you made me has a very old (late 60&#x27;s-early 70&#x27;s?) Cup &amp; Glove patch, a &quot;stash&quot; of which you had found just prior to your re-making of the older Ale Stand Manager shirts, and that was in &#x27;94 when I was working for Vytas as the Computer Support person down at Devore. Mine is rather more like a &quot;closet classic&quot;, having been my perennial costume at Faire, but as I haven&#x27;t really worked a whole Faire since &#x27;96 (2nd to last &quot;Last Faire&quot; at Black Point), has seen much less of the &quot;good faire dust&quot; than either of theirs...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">181</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 10, 2007 at 03:38AM</span>
+            <div class="reply-content">I hereby bequeath the Shirt which I made for you as payment for modeling it&#x27;s style and durability through all the years. I BELIEVE THAT SHIRT is probably around 20-23 years old. Now that&#x27;s construction. Consider it now officially yours. I saw Bruce Bramson in the LA Renfaire also wearing one of my old Shirts. I am sure your shirt was not the first to escape the clutches of Beverage or any of the other crews. Those shirts started my career.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">182</span>
+            <span class="reply-author">[3tjomb2csum08]</span>
+            <span class="reply-date">December 10, 2007 at 02:03AM</span>
+            <div class="reply-content">One more bit about the Ale-Stand Manager shirt you made for me... Venta reminded me that she had harassed my (nicely) for years to give that back to the company, but I stuck to my story as related previously, and always contended it was your gift to me (tee hee) - &quot;all the richer in the spinning&quot; says the tailor! You have noticed how easy it is to add pictures to a reply, I see... I have to get a few new ones up here, too!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">183</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">December 09, 2007 at 06:27PM</span>
+            <div class="reply-content">My sister was the El Camino College newspaper editor in the early 70&#x27;s - since she is gone I sometimes wonder if I will run across friends of her&#x27;s in the faire circles. Sometimes think if she had lived longer she would have ended up at faire. We were somewhat alike.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">184</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 08, 2007 at 09:38PM</span>
+            <div class="reply-content">Ok maybe here
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">185</span>
+            <span class="reply-author">[3tjomb2csum08]</span>
+            <span class="reply-date">December 08, 2007 at 06:49PM</span>
+            <div class="reply-content">Awesome! - so where&#x27;s the rest of the pix? Come on, I KNOW you&#x27;re not shy... Like Catt said, it really would be a great resource for the teahouse to have the examples of period costumery from a resource like you, with all that wonderful Living History and pro theatre experience, serious and for real like! I&#x27;m starting to think about how I want to look for next year&#x27;s DCF meself...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">186</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 08, 2007 at 05:37PM</span>
+            <div class="reply-content">Yes
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">187</span>
+            <span class="reply-author">[3tjomb2csum08]</span>
+            <span class="reply-date">December 08, 2007 at 07:37AM</span>
+            <div class="reply-content">That&#x27;s your design? Nice piece! Got More?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">188</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">December 08, 2007 at 07:14AM</span>
+            <div class="reply-content">Well I went and looked at our Tribe.net archives for what I had already written there. And I&#x27;ve pasted what I could find here, but there needs to be a bit of back story and a epilogue to this first.
+My father had been working at Caltech in LA as a technician and for KPFK as a tech on their Mt. Wilson outpost. So naturally he was involved with the early faires, as a benefit for KPFK. My sister Hadassah (then Horowitz) was almost 9 when I was born in November 1965, so mom was pregnant with me out at one of those first faires. Hadassah tells the story best (being the oldest of the five of us) of how mom and dad had a booth selling grape juice with dry ice in it and calling it love potion.
+&quot;From the &quot;&#x27;giving tree&#x27; stump thread&quot; posted Dec. 9th 2006. I&#x27;m slightly modifying just a little, it to bring out a few points for our crowd here.
+&quot;But when Ron and Phyllis decided to make it an independent (from KPFK) for-profit, dad wanted nothing more to do with it. But the seeds had already been planted and by the time I was 7 my sister was dancing on the little round rouge jugglers stage with a troupe. And here is where my first memory of main stage come in. I remember ditching the family and running around by myself and ending up over near mainstage, sitting on the stump and watching Belly dancing! I remember a rather talented woman dancing with a snake. The entire audience was mezmorized. That stump was a great place to sit and watch the shows! The one towards the back of the hay bales which has been there forever and never moved.
+Fast forward about ten years or so. I&#x27;m now 19 and working at the salad booth. My sister is now running the finance office and I am generally being a scamp and running around having a good old time. It&#x27;s after hours and I&#x27;ve taken some shrooms and set out to watch the night show. I&#x27;m back on that stump, which has been smoothed over by wear and time, enjoying Cock and Feathers. The show as usual was excellent. I&#x27;m laughing my ass off. Literally. I start laughing at the night show and can&#x27;t stop. The show is of course very funny, (which was actually the first and only time I ever got to see Cock and Feathers, rumor had it at the time they were no longer allowed to do it during the day and this was a late encore performance with all the bawdy jokes out in the open), Then suddenly it&#x27;s over and the crowd is dispersing and I can&#x27;t stop laughing. The shrooms are taking effect and I fall of the stump laughing. I literally crawl across the road and try to stop laughing, but I can&#x27;t. I sit in the front of the booth (behind the counter) and someone comes by, I think a co-worker at the booth, and he&#x27;s having a bummer night, but I still can&#x27;t stop laughing and he thinks I&#x27;m laughing at him. I apologize and try to explain through the laughter that I&#x27;m not laughing at him at all. He goes off in search of something. I eventually (after what felt like 15-20 minutes) calmed down enough to get my shit together to go out to the showers and take one. I used to love to take my showers later by moonlight to avoid the crowds. And since I liked to take showers at the crew showers, having once been on crew, but knew the rules (or at least vaguely remembered them) I would go when I knew no one would be there. Didn&#x27;t want to piss off a crew member.&quot;
+So that&#x27;s just a taste of my early years at faire. I worked as a privy queen in &#x27;82 southern, as my first ever faire. Then at northern that year I actually lived there for three weeks, Hadassah arranged for Mom and I to stay at John Shultz&#x27;s booth that year sort of babysitting his booth so he could leave stuff there safely during the week, driving into Berkeley for allergy treatments during the week and playing at the faire on the weekends. I didn&#x27;t have much of a costume yet and I didn&#x27;t really need to work, so I just fucked off all weekend. Being 16 (going on 27) and not actually needing to work faire, was a dangerous combination. Waaay too much time on my hands!
+Then I didn&#x27;t work for faire again till the Spring of 1985. That was when I got a job at the Salad booth. Worked there at Southern that year. Then again the following year. I can&#x27;t remember if my first northern working was &#x27;86 or &#x27;87 but one of those years I worked at both Northern and Southern again, but by &#x27;87 I had moved from LA to Santa Cruz, I think &#x27;86 was the last faire I actually worked in Agoura. I think it was around that time that Allen Stead stopped working for the Salad booth and I didn&#x27;t really know Stan, so out of loyalty to Allen, I sort of found other work,...at Ray Griswold&#x27;s Hat&#x27;s Adorned booth.
+In &#x27;87 and &#x27;88 I stopped working at faire at all for a few years I think, I know I was in Mt. Shasta in August of both of those years, so I couldn&#x27;t have been at faire? Unless those were the years faire started really late, which just might be? Anyhow, sometime around then I decided I wouldn&#x27;t do faire again till I could do it as a massage therapist, my truest calling, as far as faire jobs and being a boothy went. Some time between &#x27;88 and &#x27;89 I would get rides to faire with Lauren, the woman who made the wood-block prints. I still have some of her handkerchiefs. Her then partner Tara recommended the Cypress Health Institute in Santa Cruz, which I checked out and eventually attended in Spring of &#x27;89. Then in &#x27;91 I moved to the Eastbay and again attended another massage school, NHI, that Blue mentioned. By faire of &#x27;91 I had enough schooling for Gordon of the Hospitaler&#x27;s of St. John to let me work for him, even though I wasn&#x27;t finished with school at NHI yet. I worked for him till just two years shy of when we lost BP. That last year I got fed up with some of his political games at the booth and defected to Paula&#x27;s booth up at Passiflora&#x27;s in the end-of-the world area.
+Then we lost BP I gave up faires altogether! With the acception of one year at Stafford (&#x27;&#x27;03) when I
+1. actually needed a real world job
+2. had a car available to me and
+3. lived just up the road in Santa Rosa, closer to a faire site than I had since I left Van Nuys and Agoura!
+But that is it, my entire faire history *smirck*
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">189</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 08, 2007 at 02:19AM</span>
+            <div class="reply-content">Yes I knew, remembered, and worked with Sally. Very fond memories in fact. Lived in Marin county when she dissappeared.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">190</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 08, 2007 at 02:16AM</span>
+            <div class="reply-content">The Costumer who did La Femme Nikita was Tamara Tudor--Hi guys
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">191</span>
+            <span class="reply-author">[24bvy5zx41tjd]</span>
+            <span class="reply-date">December 08, 2007 at 12:59AM</span>
+            <div class="reply-content">Blue ... did you work Southern for Paula? Coleen was the manager and so many boys as well as Mary Stuart worked there. One of my first places to be backstage after ale shifts.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">192</span>
+            <span class="reply-author">[u27mqhvfbw9b]</span>
+            <span class="reply-date">December 07, 2007 at 11:09PM</span>
+            <div class="reply-content">Hippie Jim and Blue met at Don Browns Tea house in the fall of 1990. I came to Fair the year before to
+attend another Massage School in Oakland, NHI and after being here for a year decided to sell my Home in
+Springfield Missouri and move to Black Point and the Faire.
+I worked at first for Paula doing massage on Sat and Sun. I would also give massages infront of the
+Fools Stage on Fridays and Mondays. The massage booth owner did not understand when I wanted to stop working and go play fair after I had enough money for what I needed and came looking for me in the Ale Stands. (I had met most of the Crew the first year at Devore, California.through Chris Adams or Crash Adams.
+I brought this beautiful girl named Carla from Brazil with me and she fell in love and helped me
+sell bamboo flutes! I worked for Craig Hirsh at the time and then got hired onto the Costume shop by
+the Gal that had done costumes for LA Fem Nickita what was her name?
+Then after my infatuation for Chris was over and I met Hippie we both worked for the Design department and then we moved to Cobb Mtn. and since I was doing Massage and Jim became one too! Hippie Jim is
+a wonderfull Massage Therapist and health Educator and has a true gift in his hands!!
+Jim will be layed off for a while as the spa will rebuild so if you want a good massage please call us
+any time!! LOve Blue 501-581-6092 Sleigh phone!!
+Just got done with building the Dickens Fair 2007 this was our seventh year and we still love it!
+We do the Drapes and Highwork Deco
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">193</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">December 07, 2007 at 07:41PM</span>
+            <div class="reply-content">A lot of us knew Sally, some more than others. She is dearly loved by many and still missed.
+Welcome home.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">194</span>
+            <span class="reply-author">[1rlkj4ppbtgim]</span>
+            <span class="reply-date">December 07, 2007 at 07:39PM</span>
+            <div class="reply-content">You mentioned Costume Dept in the 70&#x27;s.....................Props &amp; Costume were closely intertwined &lt; I know, Duh&gt;
+Did you know my sister, Sally Schneider? She worked Props &amp; was an actor during the show: Washing Woman, Fezziwigs Ballroom etc.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">195</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 07, 2007 at 06:47PM</span>
+            <div class="reply-content">It was like when we were kids and would go up into the attic and pull out the old clothes stored there and play dress-up, but then when we were dressed, having this fantastic fantasy world to run and play in!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">196</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 07, 2007 at 06:42PM</span>
+            <div class="reply-content">oh wow Carolie...that brings back a flood of memories.
+Once you were in with her that place was like a giant playhouse and fun wardrobe. Back then she dressed all the stage managers, and one year Jane even made me an impossibly small waisted skirt that I think sean scudder wore later. It was like a barbie stash or something. soooo good.
+she would let you just grab something together for one hour street gigs and stuff. It was the best.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">197</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 07, 2007 at 06:27PM</span>
+            <div class="reply-content">Dundii took me to the second RPFS, the first one held in Agora. I think that was in 1964. We had a wonderful time, but were not in costume. Captured, we agreed to come back the next year in proper clothes... but if you think you know what you will be doing next year, guess again! Instead, we came back with a troup of players and a production of &quot;Master Pierre Patelin.&quot; The actors came from the Actor&#x27;s Theatre of Hollywood acting school, which I had gotten involved with. We chose Patelin because I had done it in high school (we had won the state one-act-play competition with it in my junior year), so it was easy to both direct and play the role I had done before, Pierre. Dundii did the wardrobe from scratch, from medieval patterns. This was our introduction to Carlol la Fleur, and ever afterwards we got priority treatment from her in our several and separate enterprises. We had a rapport and intimacy with her that, I gather from these pages, not everyone enjoyed. She always went out of her way to cast me in the projects that she comissioned... Sir Frances Drake in Mark Twain&#x27;s &quot;1603,&quot; as Shakespeare in the Queen&#x27;s Progress Stage Show, Doggrass, the villain in &quot;Blackeyed Susan&quot; at first Dickens, the &quot;Scenes from Shakespeare&quot; that I directed for the wagon stage, and I was originally to have been in the Commedia show with Silly Butter, Suzie Marceau, Mark, Judy and Kenny, but Judy and Kenny took a snit at me and bumped me from that. Still, Carole let Therl, Ginger Osburn and I pretty much do whatever we wanted with the Houndsditch Thespians. Carolie Tarble was very friendly too, she would let us come raid the wardrobe department whenever we had a spur of the moment thing, like the parades we created for crowd control. I guess the key to the good relations all those years was the wardrobe that Dundii had made for &quot;Pierre Patelin.&quot; Entertainment department was in my corner as long as I chose to follow the Call O&#x27; the Faire.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">198</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 07, 2007 at 06:06PM</span>
+            <div class="reply-content">I came to the Faire in the mid Seventies. I was doing several career thing&#x27;s I was occasionally working as a professional actor in LA, and working as an RN in a Labor and Delivery Dept. in Long Beach. I was taking a couple of brush up acting classes at Orange Coast College and meet an actress who did faire. She took me to faire that year and I wore a totally wrong medievalish satin costume(very ironic later). I quickly got enamored by this phenomenon.
+The next year I became a participant--Priscilla Edwin Farmington--the Sausage Seller with the then 6 person group of Mongers--lead by Glad Pickering. I was about to change my life forever. 2 years later I left nursing to join the circus so to speak.
+I quickly became an employee of the Costume Shop--Starting as a lowly stitcher--and eventually over the years rising through the ranks holding every position to at one point become the Costume Designer and Supervisor for the Ren Faires and eventuall the refurbished Dicken&#x27;s Christmas Faire. Also serving shortly as their Props Artisan.
+Along the way I began a trully wonderful relationship with The Beverage Dept. which is where I beleive I trully experienced Faire. Even as the Costume Designer I made time each day to make in an Ale Stand.
+I in my adventures found some of the greatest loves of my life--Some I simply experienced, some I lived with, some I married, some I divorced, all I will cherish and love forever. I had three children in the process--all experiencing faire in their own way.
+The Faire experience gave me a career of my dreams. I went on to get a Masters of Fine Arts Degree in Technicial Production Design. I am a Costume Set and Prop Designer. I have done Movies, Videos, Operas, Musicals and all type of production. I have worked all over the United States and lately in Germany, Italy, The Caribbean, &amp; the Meditterean all doing costuming. I am literally walking with giants at this point in the business. Now living 20 minutes out side of NYC. I am just pinching myself.
+The Faire, Phyliss Patterson, Venta Leone, and a scade of others molded me into someone I am proud to be. The Faire and an amazing education at both College of Marin and SFSU created an expert in Shakespearean Theatre--which has effected my entire career. more on all this later when I can,
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">199</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 07, 2007 at 05:51PM</span>
+            <div class="reply-content">i love fringe
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">200</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 07, 2007 at 05:07PM</span>
+            <div class="reply-content">I just tried this==this is frim the Norwegian Gem in Germany
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

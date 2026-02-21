@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love of Literature - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Love of Literature</span></div>
+            
+    <div class="module">
+        <div class="module-header">Love of Literature</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Eric Lethe</span> | <span>December 12, 2008</span> | <span>38 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (38)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">June 06, 2009 at 09:21PM</span>
+            <div class="reply-content">Carrie you will have to ask Danese but I have a feeling that these are some of what she has read. I don&#x27;t think the &quot;eurocentric&quot; nature was intentional. I &#x27;ve read some of your choices as well. Good additions!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">June 06, 2009 at 09:17PM</span>
+            <div class="reply-content">I&#x27;ve read pretty much all of Heinleins works and still reread them even now. I have to look through my boxes of books and see which Vonnegut&#x27;s I have other than Slaughter House 5 (which I do not remmebreber any of and have to reread. One of the advantages of memory &quot;issues&quot;, rediscovering old favorites for the first time!). I have cases of books that someday I will get to put on shelves. Someday I will have my library!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">June 05, 2009 at 06:54PM</span>
+            <div class="reply-content">Actually, you are mistaken Gereg. The Romans lifted their mythos pretty much directly from the Greeks. Originally his name was Odysseus, the Romans called him Ulysses. I really dug the Greek myths when I was a kid and vehemently hated the Roman versions and I always use the Greek names.
+Possession *was* a great book. I haven&#x27;t read it since it was first published. Perhaps it&#x27;s time for a reread.
+Have you read Jonathan Strange and Mr Norrell by Susanna Clark? Not a &quot;perfect&quot; book, but a damned good and entertaining one.
+And why isn&#x27;t Lawrence Durrell&#x27;s Alexandria Quartet on here?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">[wenmrrvgrjwo]</span>
+            <span class="reply-date">June 05, 2009 at 04:52PM</span>
+            <div class="reply-content">As I understand it, &quot;Odysseus&quot; simply means Wanderer or Journeyer - his name appears to be Ulysses. (Do please correct me if I&#x27;ve remembered that wrong, but I don&#x27;t think I have.)
+In response to another sub-thread, Byatt&#x27;s _Possession_ has got to be the most literary piece of literature I can recall - endlessly self-referential without being in the least boring, it&#x27;s pretty near perfect. (Skip the movie.)
+...Which reminds me - there&#x27;s no Robertson Davies on that list! The Deptford Trilogy comes to mind, as well as the Salterton Trilogy (he seems to specialise in them, as there&#x27;s another one too - _Rebel Angels_, _What&#x27;s Bred in the Bone_ and, um, the other one). Canadian mainstream literature with an edge of magic-realism - that is, he writes a world like that most of us live in, with brief moments of real magic or mysticism impinging suddenly on day-to-day normalcy.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">June 05, 2009 at 04:09PM</span>
+            <div class="reply-content">Good call, Gereg! Ulysses appeared as a character in both The Iliad and The Odyssey by Homer (Ulysses is known in the Greek mythological canon as Odysseus.)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">[wenmrrvgrjwo]</span>
+            <span class="reply-date">June 05, 2009 at 01:34PM</span>
+            <div class="reply-content">Has anyone yet pointed out that Homer&#x27;s work is known, not as &quot;Ulysses&quot;, but as &quot;The Odyssey&quot;? (Yes, my sister is a Classics professor.) If Ning (or else my computer) weren&#x27;t moving so glacially slowly this morning, I&#x27;d check, but it&#x27;s taken me ten minutes just to get this paragraph entered.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">[wenmrrvgrjwo]</span>
+            <span class="reply-date">June 04, 2009 at 06:41PM</span>
+            <div class="reply-content">1. Pride and Prejudice - Jane Austen
+2. The Lord of the Rings - JRR Tolkien
+3. Jane Eyre - Charlotte Bronte
+4. Harry Potter series - JK Rowling - got bored - with the plagiarism from Gaiman, and with the hype - after the first two.
+5. To Kill a Mockingbird - Harper Lee
+6. The Bible - most of the Old T and most of the Gospels, but I can&#x27;t say I&#x27;ve read it
+7. Wuthering Heights - Emily Bronte
+8. Nineteen Eighty Four - George Orwell
+9. His Dark Materials - Philip Pullman
+10. Great Expectations - Charles Dickens
+11. Little Women - Louisa M Alcott
+12. Tess of the D’Urbervilles - Thomas Hardy
+13. Catch 22 - Joseph Heller
+14. Complete Works of Shakespeare - complete? Not hardly. The plays I&#x27;d rather see anyway - love the BBC versions.
+15. Rebecca - Daphne Du Maurier - &quot;Saw the movie.&quot;
+16. The Hobbit - JRR Tolkien
+17. Birdsong - Sebastian Faulks
+18. Catcher in the Rye - J D Salinger
+19. The Time Traveller’s Wife - Audrey Niffenegger
+20. Middlemarch - George Eliot
+21. Gone With The Wind - Margaret Mitchell
+22. The Great Gatsby - F Scott Fitzgerald
+23. Bleak House - Charles Dickens
+24. War and Peace - Leo Tolstoy
+25. The Hitch Hiker’s Guide to the Galaxy - Douglas Adams
+26. Brideshead Revisited - Evelyn Waugh
+27. Crime and Punishment - Fyodor Dostoyevsky - In one sitting, the night before a final - first time I ever understood the appeal of suicide.
+28. Grapes of Wrath - John Steinbeck
+29. Alice in Wonderland - Lewis Carroll
+30. The Wind in the Willows - Kenneth Grahame
+31. Anna Karenina - Leo Tolstoy
+32. David Copperfield - Charles Dickens
+33. Chronicles of Narnia - CS Lewis
+34. Emma - Jane Austen
+35. Persuasion - Jane Austen
+36. The Lion, The Witch and The Wardrobe - CS Lewis - Hang on, didn&#x27;t we just cover this with # 33?
+37. The Kite Runner - Khaled Hosseini
+38. Captain Corelli’s Mandolin - Louis De Bernieres
+39. Memoirs of a Geisha - Arthur Golden
+40. Winnie the Pooh - AA Milne
+41. Animal Farm - George Orwell
+42. The Da Vinci Code - Dan Brown - No thanks, I was annoyed enough by _Holy Blood, Holy Grail_ - the nominally non-fiction book on which the Brown novel was based. Look up &quot;Priory of Sion hoax&quot; on Google
+43. One Hundred Years of Solitude - Gabriel Garcia Marquez
+44. A Prayer for Owen Meaney - John Irving
+45. The Woman in White - Wilkie Collins
+46. Anne of Green Gables - LM Montgomery
+47. Far From The Madding Crowd - Thomas Hardy
+48. The Handmaid’s Tale - Margaret Atwood
+49. Lord of the Flies - William Golding
+50. Atonement - Ian McEwan
+51. Life of Pi - Yann Martel
+52. Dune - Frank Herbert
+53. Cold Comfort Farm - Stella Gibbons
+54. Sense and Sensibility - Jane Austen
+55. A Suitable Boy - Vikram Seth
+56. The Shadow of the Wind - Carlos Ruiz Zafon
+57. A Tale Of Two Cities - Charles Dickens
+58. Brave New World - Aldous Huxley
+59. The Curious Incident of the Dog in the Night-time - Mark Haddon
+60. Love In The Time Of Cholera - Gabriel Garcia Marquez
+61. Of Mice and Men - John Steinbeck
+62. Lolita - Vladimir Nabokov
+63. The Secret History - Donna Tartt
+64. The Lovely Bones - Alice Sebold
+65. Count of Monte Cristo - Alexandre Dumas
+66. On The Road - Jack Kerouac
+67. Jude the Obscure - Thomas Hardy
+68. Bridget Jones’ Diary - Helen Fielding
+69. Midnight’s Children - Salman Rushdie
+70. Moby Dick - Herman Melville
+71. Oliver Twist - Charles Dickens
+72. Dracula - Bram Stoker
+73. The Secret Garden - Frances Hodgson Burnett
+74. Notes From A Small Island - Bill Bryson
+75. Ulysses - James Joyce
+76. The Bell Jar - Sylvia Plath
+77. Swallows and Amazons - Arthur Ransome
+78. Germinal - Emile Zola
+79. Vanity Fair - William Makepeace Thackeray
+80. Possession - AS Byatt
+81. A Christmas Carol - Charles Dickens
+82. Cloud Atlas - David Mitchell
+83. The Color Purple - Alice Walker
+84. The Remains of the Day - Kazuo Ishiguro
+85. Madame Bovary - Gustave Flaubert
+86. A Fine Balance - Rohinton Mistry
+87. Charlotte’s Web - EB White
+88. The Five People You Meet In Heaven - Mitch Albom
+89. Adventures of Sherlock Holmes - Sir Arthur Conan Doyle
+90. The Faraway Tree Collection - Enid Blyton
+91. Heart of Darkness - Joseph Conrad
+92. The Little Prince - Antoine De Saint-Exupery
+93. The Wasp Factory - Iain Banks
+94. Watership Down - Richard Adams
+95. A Confederacy of Dunces - John Kennedy Toole
+96. A Town Like Alice - Nevil Shute ( I might have read this but I can&#x27;t remember )
+97. The Three Musketeers - Alexandre Dumas
+98. Hamlet - William Shakespeare
+99. Charlie and the Chocolate Factory - Roald Dahl
+100. Les Miserables - Victor Hugo
+Okay, where&#x27;s Beowulf, Sir Gawain &amp; the Green Knight, The White Company, Canterbury Tales, Book of Five Rings, Zelazny&#x27;s Amber books (among others), The Faerie Queen, Chretien de Troyes&#x27; Arthurian Romances, the Mabinogion, Gaiman&#x27;s _American Gods_, Dorothy Sayers&#x27; Lord Peter Wimsey mysteries, the Quran (which I haven&#x27;t read myself, but it seems to belong on the list) Tim Powers&#x27; _On Stranger Tides_ (not to mention _Drawing of the Dark_, one of the best Arthurian novels ever done... and a fine beer fantasy besides), Lloyd Alexander&#x27;s Prydain Cycle, and Patricia McKillip&#x27;s &quot;Riddle-Master&quot; trilogy?
+Gilman&#x27;s &quot;Moonwise&quot;, a personal favourite filled with Morris music references, Steeleye Span quotes, and fairy traditions, is probably too obscure... but mix Joyce with Maddy Prior and Neil Gaiman, and give it a try.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">May 21, 2009 at 04:56PM</span>
+            <div class="reply-content">Danese, I stumbled on the key to reading &quot;Ulysses&quot; about 20 years ago: read it aloud.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">May 21, 2009 at 04:50PM</span>
+            <div class="reply-content">1. Pride and Prejudice - Jane Austen
+2. The Lord of the Rings - JRR Tolkien
+3. Jane Eyre - Charlotte Bronte (Also &quot;Wide Sargasso Sea&quot; by Jean Rhys which is a perfect companion and which I love).
+4. Harry Potter series - JK Rowling (I&#x27;ve read most but not all.)
+5. To Kill a Mockingbird - Harper Lee
+6. The Bible (and the Koran [but not in Arabic])
+7. Wuthering Heights - Emily Bronte
+8. Nineteen Eighty Four - George Orwell
+9. His Dark Materials - Philip Pullman
+10. Great Expectations - Charles Dickens
+11. Little Women - Louisa M Alcott
+12. Tess of the D’Urbervilles - Thomas Hardy (I *hate* Hardy)
+13. Catch 22 - Joseph Heller
+14. Complete Works of Shakespeare
+15. Rebecca - Daphne Du Maurier
+16. The Hobbit - JRR Tolkien
+17. Birdsong - Sebastian Faulks
+18. Catcher in the Rye - J D Salinger
+19. The Time Traveller’s Wife - Audrey Niffenegger
+20. Middlemarch - George Eliot
+21. Gone With The Wind - Margaret Mitchell
+22. The Great Gatsby - F Scott Fitzgerald
+23. Bleak House - Charles Dickens
+24. War and Peace - Leo Tolstoy
+25. The Hitch Hiker’s Guide to the Galaxy - Douglas Adams
+26. Brideshead Revisited - Evelyn Waugh
+27. Crime and Punishment - Fyodor Dostoyevsky
+28. Grapes of Wrath - John Steinbeck
+29. Alice in Wonderland - Lewis Carroll
+30. The Wind in the Willows - Kenneth Grahame
+31. Anna Karenina - Leo Tolstoy
+32. David Copperfield - Charles Dickens
+33. Chronicles of Narnia - CS Lewis
+34. Emma - Jane Austen
+35. Persuasion - Jane Austen
+36. The Lion, The Witch and The Wardrobe - CS Lewis
+37. The Kite Runner - Khaled Hosseini
+38. Captain Corelli’s Mandolin - Louis De Bernieres
+39. Memoirs of a Geisha - Arthur Golden
+40. Winnie the Pooh - AA Milne
+41. Animal Farm - George Orwell
+42. The Da Vinci Code - Dan Brown (What an *awful* book!)
+43. One Hundred Years of Solitude - Gabriel Garcia Marquez
+44. A Prayer for Owen Meaney - John Irving
+45. The Woman in White - Wilkie Collins
+46. Anne of Green Gables - LM Montgomery
+47. Far From The Madding Crowd - Thomas Hardy
+48. The Handmaid’s Tale - Margaret Atwood
+49. Lord of the Flies - William Golding
+50. Atonement - Ian McEwan
+51. Life of Pi - Yann Martel
+52. Dune - Frank Herbert
+53. Cold Comfort Farm - Stella Gibbons
+54. Sense and Sensibility - Jane Austen
+55. A Suitable Boy - Vikram Seth
+56. The Shadow of the Wind - Carlos Ruiz Zafon
+57. A Tale Of Two Cities - Charles Dickens
+58. Brave New World - Aldous Huxley
+59. The Curious Incident of the Dog in the Night-time - Mark Haddon
+60. Love In The Time Of Cholera - Gabriel Garcia Marquez
+61. Of Mice and Men - John Steinbeck
+62. Lolita - Vladimir Nabokov
+63. The Secret History - Donna Tartt
+64. The Lovely Bones - Alice Sebold
+65. Count of Monte Cristo - Alexandre Dumas
+66. On The Road - Jack Kerouac
+67. Jude the Obscure - Thomas Hardy
+68. Bridget Jones’ Diary - Helen Fielding
+69. Midnight’s Children - Salman Rushdie
+70. Moby Dick - Herman Melville
+71. Oliver Twist - Charles Dickens
+72. Dracula - Bram Stoker
+73. The Secret Garden - Frances Hodgson Burnett
+74. Notes From A Small Island - Bill Bryson
+75. Ulysses - James Joyce
+76. The Bell Jar - Sylvia Plath
+77. Swallows and Amazons - Arthur Ransome
+78. Germinal - Emile Zola
+79. Vanity Fair - William Makepeace Thackeray
+80. Possession - AS Byatt
+81. A Christmas Carol - Charles Dickens
+82. Cloud Atlas - David Mitchell
+83. The Color Purple - Alice Walker
+84. The Remains of the Day - Kazuo Ishiguro
+85. Madame Bovary - Gustave Flaubert
+86. A Fine Balance - Rohinton Mistry
+87. Charlotte’s Web - EB White
+88. The Five People You Meet In Heaven - Mitch Albom
+89. Adventures of Sherlock Holmes - Sir Arthur Conan Doyle
+90. The Faraway Tree Collection - Enid Blyton
+91. Heart of Darkness - Joseph Conrad
+92. The Little Prince - Antoine De Saint-Exupery
+93. The Wasp Factory - Iain Banks
+94. Watership Down - Richard Adams
+95. A Confederacy of Dunces - John Kennedy Toole
+96. A Town Like Alice - Nevil Shute
+97. The Three Musketeers - Alexandre Dumas
+98. Hamlet - William Shakespeare
+99. Charlie and the Chocolate Factory - Roald Dahl
+100. Les Miserables - Victor Hugo
+I have problems with this list. It is inconsistent and wildly incomplete.
+A few examples:
+Why are the Complete Works of Shakespeare listed and then &quot;Hamlet&quot; alone toward the end of the list? Same thing with Chronicles of Narnia and &quot;The Lion, the Witch and the Wardrobe.&quot;
+Why is the Bible listed but not the Koran?
+I hate the Eurocentric nature of this list. Where is Naguib Mahfouz (one of my favorite authors) who won a Nobel in the 80s? Where are Neal Stephenson and Mary Shelley? How about Zora Neale Hurston, Doris Lessing and Toni Morrison? Where are &quot;Don Quixote&quot; and &quot;The Decameron?&quot; &quot;The Cantebury Tales?&quot;
+Dante&#x27;s &quot;Divine Comedy&quot; isn&#x27;t even on this list, for goodness sake! Edgar Allan Poe and Marcel Proust? How can &quot;Remembrances of Things Past&quot; *not* be here?!? Where are Rumi, Jonathan Swift and Ovid?
+And where the hell is Virgina Woolf?!?!?!?!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">[10uohx0w9yo9f]</span>
+            <span class="reply-date">January 03, 2009 at 03:03PM</span>
+            <div class="reply-content">1. Pride and Prejudice - Jane Austen
+2. The Lord of the Rings - JRR Tolkien
+3. Jane Eyre - Charlotte Bronte
+4. Harry Potter series - JK Rowling
+5. To Kill a Mockingbird - Harper Lee
+6. The Bible Old Testament entirely, only the synoptic Gospels in the New
+7. Wuthering Heights - Emily Bronte
+8. Nineteen Eighty Four - George Orwel
+9. His Dark Materials - Philip Pullman--didn&#x27;t care too much for this, took three or four tries to get all the way through
+10. Great Expectations - Charles Dickens
+11. Little Women - Louisa M Alcott
+12. Tess of the D’Urbervilles - Thomas Hardy
+13. Catch 22 - Joseph Heller
+14. Complete Works of Shakespeare--can&#x27;t STAND reading the plays, love to SEE them.
+15. Rebecca - Daphne Du Maurier--movie only
+16. The Hobbit - JRR Tolkien
+17. Birdsong - Sebastian Faulks
+18. Catcher in the Rye - J D Salinger--required in jr. high school
+19. The Time Traveller’s Wife - Audrey Niffenegger
+20. Middlemarch - George Eliot--BBC only
+21. Gone With The Wind - Margaret Mitchell--movie only
+22. The Great Gatsby - F Scott Fitzgerald
+23. Bleak House - Charles Dickens--BBC only
+24. War and Peace - Leo Tolstoy
+25. The Hitch Hiker’s Guide to the Galaxy - Douglas Adams
+26. Brideshead Revisited - Evelyn Waugh--BBC only
+27. Crime and Punishment - Fyodor Dostoyevsky
+28. Grapes of Wrath - John Steinbeck
+29. Alice in Wonderland - Lewis Carroll
+30. The Wind in the Willows - Kenneth Grahame
+31. Anna Karenina - Leo Tolstoy
+32. David Copperfield - Charles Dickens
+33. Chronicles of Narnia - CS Lewis
+34. Emma - Jane Austen--BBC only
+35. Persuasion - Jane Austen
+36. The Lion, The Witch and The Wardrobe - CS Lewis--this is a partial duplicate, being the first book in Narnia series.
+37. The Kite Runner - Khaled Hosseini
+38. Captain Corelli’s Mandolin - Louis De Bernieres
+39. Memoirs of a Geisha - Arthur Golden
+40. Winnie the Pooh - AA Milne
+41. Animal Farm - George Orwell
+42. The Da Vinci Code - Dan Brown
+43. One Hundred Years of Solitude - Gabriel Garcia Marquez
+44. A Prayer for Owen Meaney - John Irving
+45. The Woman in White - Wilkie Collins
+46. Anne of Green Gables - LM Montgomery
+47. Far From The Madding Crowd - Thomas Hardy
+48. The Handmaid’s Tale - Margaret Atwood
+49. Lord of the Flies - William Golding
+50. Atonement - Ian McEwan
+51. Life of Pi - Yann Martel
+52. Dune - Frank Herbert
+53. Cold Comfort Farm - Stella Gibbons
+54. Sense and Sensibility - Jane Austen--BBC only
+55. A Suitable Boy - Vikram Seth
+56. The Shadow of the Wind - Carlos Ruiz Zafon
+57. A Tale Of Two Cities - Charles Dickens
+58. Brave New World - Aldous Huxley
+59. The Curious Incident of the Dog in the Night-time - Mark Haddon
+60. Love In The Time Of Cholera - Gabriel Garcia Marquez
+61. Of Mice and Men - John Steinbeck
+62. Lolita - Vladimir Nabokov
+63. The Secret History - Donna Tartt
+64. The Lovely Bones - Alice Sebold
+65. Count of Monte Cristo - Alexandre Dumas
+66. On The Road - Jack Kerouac
+67. Jude the Obscure - Thomas Hardy
+68. Bridget Jones’ Diary - Helen Fielding
+69. Midnight’s Children - Salman Rushdie
+70. Moby Dick - Herman Melville--only half--bored me to tears
+71. Oliver Twist - Charles Dickens
+72. Dracula - Bram Stoker
+73. The Secret Garden - Frances Hodgson Burnett
+74. Notes From A Small Island - Bill Bryson
+75. Ulysses - James Joyce
+76. The Bell Jar - Sylvia Plath
+77. Swallows and Amazons - Arthur Ransome
+78. Germinal - Emile Zola
+79. Vanity Fair - William Makepeace Thackeray--BBC only
+80. Possession - AS Byatt
+81. A Christmas Carol - Charles Dickens
+82. Cloud Atlas - David Mitchell
+83. The Color Purple - Alice Walker--movie only
+84. The Remains of the Day - Kazuo Ishiguro
+85. Madame Bovary - Gustave Flaubert
+86. A Fine Balance - Rohinton Mistry
+87. Charlotte’s Web - EB White
+88. The Five People You Meet In Heaven - Mitch Albom
+89. Adventures of Sherlock Holmes - Sir Arthur Conan Doyle
+90. The Faraway Tree Collection - Enid Blyton
+91. Heart of Darkness - Joseph Conrad
+92. The Little Prince - Antoine De Saint-Exupery
+93. The Wasp Factory - Iain Banks
+94. Watership Down - Richard Adams
+95. A Confederacy of Dunces - John Kennedy Toole
+96. A Town Like Alice - Nevil Shute ( I might have read this but I can&#x27;t remember )
+97. The Three Musketeers - Alexandre Dumas
+98. Hamlet - William Shakespeare
+99. Charlie and the Chocolate Factory - Roald Dahl
+100. Les Miserables - Victor Hugo
+I would love to see a similar list of seminal NON-fiction reading.
+My first pick would be &quot;Guns, Germs, and Steel&#x27;&quot; by Jared Diamond. Any suggestions?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 03, 2009 at 02:13AM</span>
+            <div class="reply-content">Okay, I&#x27;ve read 37, started a couple more I just couldn&#x27;t get into.I notice we&#x27;re basically talking fiction here,with at least a couple life stories.I too liked the Pern series (Mom named her dog Lessa). Vogon poetry! hehehe. Let&#x27;s add complete works of Edgar Allen Poe,My daughter has instructions for a memorial inscription from one of his poems&quot;To Helen&quot;.It was one of the poems I read when I held The 10 Minute Poetry Readings in Devore.Then the complete works of Vonnegut(See the cat?See the cradle?). The works of Tom Clancy,just the Jack stories(none of that Op Center stuff),&quot;The Bear and the Dragon&quot; rocks!And I love the Stephanie Plum novels of Janet Evanovich.Cloris Leachman should definitely play Grandma Mauser.On life stories there&#x27;s a book titled&quot;The California I Love&quot; by Leo Carillio. For poetry&quot;Box of Rain&quot;by Robert Hunter.I plow through 4-8 books a month.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 01, 2009 at 11:08PM</span>
+            <div class="reply-content">Le Guin is great. Hate what the jerks who made &quot;Earthsea&quot; into a &quot;movie&quot; (in quotes because it was so bad it doesn&#x27;t even come close to being a B movie) did with it.
+I have to jog my memory a bit more &#x27;fore I reply to the main thread.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">[3g5jpp335ee5w]</span>
+            <span class="reply-date">December 30, 2008 at 09:52AM</span>
+            <div class="reply-content">1. Pride and Prejudice - Jane Austen
+2. The Lord of the Rings - JRR Tolkien
+3. Jane Eyre - Charlotte Bronte
+4. Harry Potter series - JK Rowling
+5. To Kill a Mockingbird - Harper Lee
+6. The Bible
+7. Wuthering Heights - Emily Bronte
+8. Nineteen Eighty Four - George Orwell
+9. His Dark Materials - Philip Pullman
+10. Great Expectations - Charles Dickens
+11. Little Women - Louisa M Alcott
+12. Tess of the D’Urbervilles - Thomas Hardy
+13. Catch 22 - Joseph Heller
+14. Complete Works of Shakespeare
+15. Rebecca - Daphne Du Maurier
+16. The Hobbit - JRR Tolkien
+17. Birdsong - Sebastian Faulks
+18. Catcher in the Rye - J D Salinger
+19. The Time Traveller’s Wife - Audrey Niffenegger
+20. Middlemarch - George Eliot
+21. Gone With The Wind - Margaret Mitchell
+22. The Great Gatsby - F Scott Fitzgerald
+23. Bleak House - Charles Dickens
+24. War and Peace - Leo Tolstoy
+25. The Hitch Hiker’s Guide to the Galaxy - Douglas Adams
+26. Brideshead Revisited - Evelyn Waugh
+27. Crime and Punishment - Fyodor Dostoyevsky
+28. Grapes of Wrath - John Steinbeck
+29. Alice in Wonderland - Lewis Carroll
+30. The Wind in the Willows - Kenneth Grahame
+31. Anna Karenina - Leo Tolstoy
+32. David Copperfield - Charles Dickens
+33. Chronicles of Narnia - CS Lewis
+34. Emma - Jane Austen
+35. Persuasion - Jane Austen
+36. The Lion, The Witch and The Wardrobe - CS Lewis
+37. The Kite Runner - Khaled Hosseini
+38. Captain Corelli’s Mandolin - Louis De Bernieres
+39. Memoirs of a Geisha - Arthur Golden
+40. Winnie the Pooh - AA Milne
+41. Animal Farm - George Orwell
+42. The Da Vinci Code - Dan Brown
+43. One Hundred Years of Solitude - Gabriel Garcia Marquez
+44. A Prayer for Owen Meaney - John Irving
+45. The Woman in White - Wilkie Collins
+46. Anne of Green Gables - LM Montgomery
+47. Far From The Madding Crowd - Thomas Hardy
+48. The Handmaid’s Tale - Margaret Atwood
+49. Lord of the Flies - William Golding
+50. Atonement - Ian McEwan
+51. Life of Pi - Yann Martel
+52. Dune - Frank Herbert
+53. Cold Comfort Farm - Stella Gibbons
+54. Sense and Sensibility - Jane Austen
+55. A Suitable Boy - Vikram Seth
+56. The Shadow of the Wind - Carlos Ruiz Zafon
+57. A Tale Of Two Cities - Charles Dickens
+58. Brave New World - Aldous Huxley
+59. The Curious Incident of the Dog in the Night-time - Mark Haddon
+60. Love In The Time Of Cholera - Gabriel Garcia Marquez
+61. Of Mice and Men - John Steinbeck
+62. Lolita - Vladimir Nabokov
+63. The Secret History - Donna Tartt
+64. The Lovely Bones - Alice Sebold
+65. Count of Monte Cristo - Alexandre Dumas
+66. On The Road - Jack Kerouac
+67. Jude the Obscure - Thomas Hardy
+68. Bridget Jones’ Diary - Helen Fielding
+69. Midnight’s Children - Salman Rushdie
+70. Moby Dick - Herman Melville
+71. Oliver Twist - Charles Dickens
+72. Dracula - Bram Stoker
+73. The Secret Garden - Frances Hodgson Burnett
+74. Notes From A Small Island - Bill Bryson
+75. Ulysses - James Joyce
+76. The Bell Jar - Sylvia Plath
+77. Swallows and Amazons - Arthur Ransome
+78. Germinal - Emile Zola
+79. Vanity Fair - William Makepeace Thackeray
+80. Possession - AS Byatt
+81. A Christmas Carol - Charles Dickens
+82. Cloud Atlas - David Mitchell
+83. The Color Purple - Alice Walker
+84. The Remains of the Day - Kazuo Ishiguro
+85. Madame Bovary - Gustave Flaubert
+86. A Fine Balance - Rohinton Mistry
+87. Charlotte’s Web - EB White
+88. The Five People You Meet In Heaven - Mitch Albom
+89. Adventures of Sherlock Holmes - Sir Arthur Conan Doyle
+90. The Faraway Tree Collection - Enid Blyton
+91. Heart of Darkness - Joseph Conrad
+92. The Little Prince - Antoine De Saint-Exupery
+93. The Wasp Factory - Iain Banks
+94. Watership Down - Richard Adams
+95. A Confederacy of Dunces - John Kennedy Toole
+96. A Town Like Alice - Nevil Shute
+97. The Three Musketeers - Alexandre Dumas
+98. Hamlet - William Shakespeare
+99. Charlie and the Chocolate Factory - Roald Dahl
+100. Les Miserables - Victor Hugo
+I bolded more than I didn&#x27;t bold. I don&#x27;t know which ones I have seen the movie on, because I honestly do not pay that much attention to which movies I have and haven&#x27;t seen for very long.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">[Chriswaterguy]</span>
+            <span class="reply-date">December 28, 2008 at 05:34AM</span>
+            <div class="reply-content">Galapagos by Kurt Vonnegut was a work of twisted genius.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">[Chriswaterguy]</span>
+            <span class="reply-date">December 28, 2008 at 05:28AM</span>
+            <div class="reply-content">I&#x27;ve read 19 on this list, and partly read another 5.
+I&#x27;ll link my blog post where I&#x27;ve done this before, rather than having to format the list again. I&#x27;ll list the ones I loved though:
+19 The Time Traveller&#x27;s Wife - Audrey Niffenegger
+25 The Hitch Hiker&#x27;s Guide to the Galaxy - Douglas Adams
+51 Life of Pi - Yann Martel
+55 A Suitable Boy - Vikram Seth
+84 The Remains of the Day - Kazuo Ishiguro
+Thinking again, I could add the two Jane Austen&#x27;s novels and The Lord of the Rings to the list of those I love.
+But my opinions don&#x27;t stop there. Oh no. I&#x27;m definitely not a fan of Dostoyevsky, James Joyce (Vogon poetry, I call it) or Gabriel Garcia Marquez. Dan Brown&#x27;s work deserves to be burnt - not in the interests of censorship, just good taste. (I wouldn&#x27;t really burn it, but I&#x27;d be tempted.) No need to burn James Joyce&#x27;s work - there&#x27;s little risk of anyone actually being able to read it. (If I actually studied it I might have a different opinion, I&#x27;ll admit, but I can&#x27;t imagine it being anything other than painful to read.)
+If I start to add good books, I won&#x27;t know where to stop. The Kite Runner for sure, but many of the greatest books in my opinion (Stasiland, Nine Parts of Desire, any of Orwell&#x27;s non-fiction, The Fifties by David Halberstam and The Mote in God&#x27;s Eye) are too obscure for this particular list. It was after Stasiland and Nine Parts of Desire that I decided never to read merely &quot;okay&quot; books again. There are simple too many great books waiting to be read.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">[3oefrto8fzcmi]</span>
+            <span class="reply-date">December 18, 2008 at 06:53AM</span>
+            <div class="reply-content">Definitely agree about Charles de Lint. I think I own almost everything he has written (except for his horror book). (Can&#x27;t do horror) - I don&#x27;t know Tom Robbins.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">[2ao3o6xb6daou]</span>
+            <span class="reply-date">December 15, 2008 at 08:15PM</span>
+            <div class="reply-content">I read at least half of the list, saw some of the movies, and have a very long &quot;someday&quot; list. I would also add &quot;Stranger in a Strange Land&quot; by Robert Heinlein, &quot;Cat&#x27;s Cradle&quot; and many other books by Kurt Vonnegut, &quot;Arms and the Man&quot; by George Bernard Shaw, &quot;The Kin of Ata&quot; by Dorothy Bryant, &quot;The Name of the Rose&quot; by Umberto Eco, and anything written by Charles DeLint or Tom Robbins.
+&quot;The Handmaid&#x27;s Tale&quot; gave me such bad nightmares that I have never been able to read another Margaret Atwood book.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">December 14, 2008 at 06:03AM</span>
+            <div class="reply-content">Always Coming Home :-)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">December 14, 2008 at 03:54AM</span>
+            <div class="reply-content">I love Anne McCaffrey as well. I was just telling my kids about the Pern books the other day. I also really like Ursula K. Le Guin.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">December 14, 2008 at 03:52AM</span>
+            <div class="reply-content">My son has read the Artemis Fowl series, but I have not yet. I&#x27;ll look for Handmaid&#x27;s Tale at the library.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 14, 2008 at 01:46AM</span>
+            <div class="reply-content">I love Anne McCaffery. I use the name Freeholder on Yahoo Answers but nobody has caught on yet! I want a Fire Lizard! I have seen Mercedes&#x27; books but I have to start with book 1 of any series and I have never seen them.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">[3oefrto8fzcmi]</span>
+            <span class="reply-date">December 13, 2008 at 11:44PM</span>
+            <div class="reply-content">For Kid Lit - ANYTHING by Tamora Pierce is really really good. And of course the same goes for Mercedes Lackey and Anne McCaffrey. I am revisiting Pern right now.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 13, 2008 at 09:27PM</span>
+            <div class="reply-content">So add Tess to my list. Have not heard of Jude
+Dumbledore being gay sure added fire to a certain group&#x27;s objections to the entire series.ooooo EVIL!!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">December 13, 2008 at 08:38PM</span>
+            <div class="reply-content">Romance? I read a lot of historical mystery (Brother Cadfael is only the beginning) but every so often I get ahold of one that is actually a bodice-ripper in disguise and I have to admit that I *love* them. Probably wouldn&#x27;t just go buy one, though. Has to be well-researched historically and well-written.
+Consider the Pink Carnation series by Lauren Willig...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">December 13, 2008 at 08:35PM</span>
+            <div class="reply-content">I&#x27;m thinking you would really like Handmaid&#x27;s Tale, Julien. Its sci fi, but written as feminist literature and really its more cautionary futurism about what could happen in North America (conceivably in our lifetimes).
+Also, since you like Kid Lit (so do I)...how about the Artemis Fowl series?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">December 13, 2008 at 07:53PM</span>
+            <div class="reply-content">Supposedly the relationship between Cosette and Marius in Les Misérables is the most perfect love in literature...
+If you loved Tess, then you might also love Possession by A.S. Byatt. Its a love-story cum mystery about two parallel relationships: the secret one between two famous Victorian poets and the suspenseful one between two researchers in 20th century London trying to uncover the truth about the poets. Most interesting is that Byatt actually created a canon of work for the poets (the clues are in the writing and in letters they wrote to each other).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">December 13, 2008 at 07:46PM</span>
+            <div class="reply-content">I always wonder why these lists always include both Tess of the D&#x27;Urbervilles and Jude the Obscure (as if one novel about grinding poverty and sexual stereotypes in rural Victorian England wasn&#x27;t enough)...Agree that there are some fun ones here as well. After the first couple of Harry Potter books I switched to listening to Jim Dale read them to me. Great voices. Very soothing...and now that we know Dumbledore was gay, well...there&#x27;s all this interesting fan writing...sorry, couldn&#x27;t resist.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">December 13, 2008 at 07:33PM</span>
+            <div class="reply-content">I married Binky on Bloomsday in 1985...and we read Molly&#x27;s speech (the last few pages) as part of the ceremony...
+&quot;...I was a flower of the mountains yes when I put the rose in my hair like the Andalusian girls used or shall I wear a red yes and how he kissed me under the Moorish wall and I thought well as well him as another and then I asked him with my eyes to ask again yes and then he asked me would I yes to say yes my mountain flower and first I put my arms around him and yes and drew him down to me so he could feel my breasts all perfume yes and his heart was going like mad and yes I said yes I will yes.&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">29</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">December 13, 2008 at 07:11PM</span>
+            <div class="reply-content">It is subtitled The Adventures of a Reluctant Messiah.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">30</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 13, 2008 at 06:24PM</span>
+            <div class="reply-content">Vicky, you have missed some fun ones there! You have got to read the Harry Potter series..Sure there is a lot of hype, but they are fun! With your love of the period, you would also like Dumas&#x27; works!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">31</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 13, 2008 at 06:22PM</span>
+            <div class="reply-content">I knew that it was considered one of the great novels of it&#x27;s time. I will have to make a point of reading it someday. I could not think of the name Homer! I knew they couldn&#x27;t be the same.... I have always wanted to go to Ireland, now I want to go on Bloomsday!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">32</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 13, 2008 at 06:19PM</span>
+            <div class="reply-content">Don&#x27;t know that one. I will need to look that on up.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">33</span>
+            <span class="reply-author">[3oefrto8fzcmi]</span>
+            <span class="reply-date">December 13, 2008 at 05:42PM</span>
+            <div class="reply-content">36 read and some not read but movies seen. Tess of the D’Urbervilles was great - I read it after seeing a PBS Masterpiece series of it. Les Miserables was the best book I ever had to read in high sshool, I couldn&#x27;t put it down.
+I tend to lean towards reading Fantasy and then to Science Fiction, with the odd Mystery and then Romance very occasionally.
+1. Pride and Prejudice - Jane Austen
+2. The Lord of the Rings - JRR Tolkien
+3. Jane Eyre - Charlotte Bronte
+4. Harry Potter series - JK Rowling
+5. To Kill a Mockingbird - Harper Lee
+6. The Bible
+7. Wuthering Heights - Emily Bronte
+8. Nineteen Eighty Four - George Orwell
+9. His Dark Materials - Philip Pullman
+10. Great Expectations - Charles Dickens
+11. Little Women - Louisa M Alcott
+12. Tess of the D’Urbervilles - Thomas Hardy
+13. Catch 22 - Joseph Heller
+14. Complete Works of Shakespeare
+15. Rebecca - Daphne Du Maurier
+16. The Hobbit - JRR Tolkien
+17. Birdsong - Sebastian Faulks
+18. Catcher in the Rye - J D Salinger
+19. The Time Traveller’s Wife - Audrey Niffenegger
+20. Middlemarch - George Eliot
+21. Gone With The Wind - Margaret Mitchell
+22. The Great Gatsby - F Scott Fitzgerald
+23. Bleak House - Charles Dickens
+24. War and Peace - Leo Tolstoy
+25. The Hitch Hiker’s Guide to the Galaxy - Douglas Adams
+26. Brideshead Revisited - Evelyn Waugh
+27. Crime and Punishment - Fyodor Dostoyevsky
+28. Grapes of Wrath - John Steinbeck
+29. Alice in Wonderland - Lewis Carroll
+30. The Wind in the Willows - Kenneth Grahame
+31. Anna Karenina - Leo Tolstoy
+32. David Copperfield - Charles Dickens
+33. Chronicles of Narnia - CS Lewis
+34. Emma - Jane Austen
+35. Persuasion - Jane Austen
+36. The Lion, The Witch and The Wardrobe - CS Lewis
+37. The Kite Runner - Khaled Hosseini
+38. Captain Corelli’s Mandolin - Louis De Bernieres
+39. Memoirs of a Geisha - Arthur Golden
+40. Winnie the Pooh - AA Milne
+41. Animal Farm - George Orwell
+42. The Da Vinci Code - Dan Brown
+43. One Hundred Years of Solitude - Gabriel Garcia Marquez
+44. A Prayer for Owen Meaney - John Irving
+45. The Woman in White - Wilkie Collins
+46. Anne of Green Gables - LM Montgomery (And all the rest of this series)
+47. Far From The Madding Crowd - Thomas Hardy
+48. The Handmaid’s Tale - Margaret Atwood
+49. Lord of the Flies - William Golding
+50. Atonement - Ian McEwan
+51. Life of Pi - Yann Martel
+52. Dune - Frank Herbert
+53. Cold Comfort Farm - Stella Gibbons
+54. Sense and Sensibility - Jane Austen
+55. A Suitable Boy - Vikram Seth
+56. The Shadow of the Wind - Carlos Ruiz Zafon
+57. A Tale Of Two Cities - Charles Dickens
+58. Brave New World - Aldous Huxley
+59. The Curious Incident of the Dog in the Night-time - Mark Haddon
+60. Love In The Time Of Cholera - Gabriel Garcia Marquez
+61. Of Mice and Men - John Steinbeck
+62. Lolita - Vladimir Nabokov
+63. The Secret History - Donna Tartt
+64. The Lovely Bones - Alice Sebold
+65. Count of Monte Cristo - Alexandre Dumas
+66. On The Road - Jack Kerouac
+67. Jude the Obscure - Thomas Hardy
+68. Bridget Jones’ Diary - Helen Fielding
+69. Midnight’s Children - Salman Rushdie
+70. Moby Dick - Herman Melville
+71. Oliver Twist - Charles Dickens
+72. Dracula - Bram Stoker
+73. The Secret Garden - Frances Hodgson Burnett
+74. Notes From A Small Island - Bill Bryson
+75. Ulysses - James Joyce
+76. The Bell Jar - Sylvia Plath
+77. Swallows and Amazons - Arthur Ransome
+78. Germinal - Emile Zola
+79. Vanity Fair - William Makepeace Thackeray
+80. Possession - AS Byatt
+81. A Christmas Carol - Charles Dickens
+82. Cloud Atlas - David Mitchell
+83. The Color Purple - Alice Walker
+84. The Remains of the Day - Kazuo Ishiguro
+85. Madame Bovary - Gustave Flaubert
+86. A Fine Balance - Rohinton Mistry
+87. Charlotte’s Web - EB White
+88. The Five People You Meet In Heaven - Mitch Albom
+89. Adventures of Sherlock Holmes - Sir Arthur Conan Doyle
+90. The Faraway Tree Collection - Enid Blyton
+91. Heart of Darkness - Joseph Conrad
+92. The Little Prince - Antoine De Saint-Exupery
+93. The Wasp Factory - Iain Banks
+94. Watership Down - Richard Adams
+95. A Confederacy of Dunces - John Kennedy Toole
+96. A Town Like Alice - Nevil Shute ( I might have read this but I can&#x27;t remember )
+97. The Three Musketeers - Alexandre Dumas
+98. Hamlet - William Shakespeare
+99. Charlie and the Chocolate Factory - Roald Dahl
+100. Les Miserables - Victor Hugo
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">34</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">December 13, 2008 at 05:41PM</span>
+            <div class="reply-content">Good adds to the list, Randy! BTW. Ulysses by James Joyce is not the same as Homer&#x27;s Ulysses (which is probably the one you read in school). Joyce&#x27;s Ulysses is considered by some to be the greatest work of fiction written in the 20th century, while others think its an overhyped pile of drivel. Its generally not taught in High Schools in America because for the first 40 years or so of its existence it was a banned book (for being too explicit about sex). Most people who read it have to have a second book at hand (a Key) to figure it out, because its written as stream of consciousness from the point of view of an Irish Jew walking around Dublin on June 16, 1904, and there are tons of deep references about Joyce&#x27;s life, and the life of Dublin as well as mythological, biblical, biological and historical references layered in there. See article about Bloomsday in Wikipedia.
+Yes, I did teach English at one point in my life...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">35</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">December 13, 2008 at 05:23PM</span>
+            <div class="reply-content">I agree with adding Jonathan Livingston Seagull, and would probably add Illusions by Richard Bach as well.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">36</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">December 13, 2008 at 05:07PM</span>
+            <div class="reply-content">1. Pride and Prejudice - Jane Austen
+2. The Lord of the Rings - JRR Tolkien
+3. Jane Eyre - Charlotte Bronte
+4. Harry Potter series - JK Rowling (multiple times)
+5. To Kill a Mockingbird - Harper Lee
+6. The Bible
+7. Wuthering Heights - Emily Bronte
+8. Nineteen Eighty Four - George Orwell
+9. His Dark Materials - Philip Pullman
+10. Great Expectations - Charles Dickens
+11. Little Women - Louisa M Alcott
+12. Tess of the D’Urbervilles - Thomas Hardy
+13. Catch 22 - Joseph Heller
+14. Complete Works of Shakespeare(Most of them, anyway)
+15. Rebecca - Daphne Du Maurier
+16. The Hobbit - JRR Tolkien
+17. Birdsong - Sebastian Faulks
+18. Catcher in the Rye - J D Salinger
+19. The Time Traveller’s Wife - Audrey Niffenegger
+20. Middlemarch - George Eliot
+21. Gone With The Wind - Margaret Mitchell
+22. The Great Gatsby - F Scott Fitzgerald
+23. Bleak House - Charles Dickens
+24. War and Peace - Leo Tolstoy
+25. The Hitch Hiker’s Guide to the Galaxy - Douglas Adams (and the sequels)
+26. Brideshead Revisited - Evelyn Waugh
+27. Crime and Punishment - Fyodor Dostoyevsky
+28. Grapes of Wrath - John Steinbeck
+29. Alice in Wonderland - Lewis Carroll
+30. The Wind in the Willows - Kenneth Grahame
+31. Anna Karenina - Leo Tolstoy
+32. David Copperfield - Charles Dickens
+33. Chronicles of Narnia - CS Lewis
+34. Emma - Jane Austen
+35. Persuasion - Jane Austen
+36. The Lion, The Witch and The Wardrobe - CS Lewis
+37. The Kite Runner - Khaled Hosseini
+38. Captain Corelli’s Mandolin - Louis De Bernieres
+39. Memoirs of a Geisha - Arthur Golden
+40. Winnie the Pooh - AA Milne
+41. Animal Farm - George Orwell
+42. The Da Vinci Code - Dan Brown
+43. One Hundred Years of Solitude - Gabriel Garcia Marquez
+44. A Prayer for Owen Meaney - John Irving
+45. The Woman in White - Wilkie Collins
+46. Anne of Green Gables - LM Montgomery
+47. Far From The Madding Crowd - Thomas Hardy
+48. The Handmaid’s Tale - Margaret Atwood
+49. Lord of the Flies - William Golding
+50. Atonement - Ian McEwan
+51. Life of Pi - Yann Martel
+52. Dune - Frank Herbert(and the sequels)
+53. Cold Comfort Farm - Stella Gibbons
+54. Sense and Sensibility - Jane Austen
+55. A Suitable Boy - Vikram Seth
+56. The Shadow of the Wind - Carlos Ruiz Zafon
+57. A Tale Of Two Cities - Charles Dickens
+58. Brave New World - Aldous Huxley
+59. The Curious Incident of the Dog in the Night-time - Mark Haddon
+60. Love In The Time Of Cholera - Gabriel Garcia Marquez
+61. Of Mice and Men - John Steinbeck
+62. Lolita - Vladimir Nabokov
+63. The Secret History - Donna Tartt
+64. The Lovely Bones - Alice Sebold
+65. Count of Monte Cristo - Alexandre Dumas
+66. On The Road - Jack Kerouac
+67. Jude the Obscure - Thomas Hardy
+68. Bridget Jones’ Diary - Helen Fielding
+69. Midnight’s Children - Salman Rushdie
+70. Moby Dick - Herman Melville
+71. Oliver Twist - Charles Dickens
+72. Dracula - Bram Stoker
+73. The Secret Garden - Frances Hodgson Burnett
+74. Notes From A Small Island - Bill Bryson
+75. Ulysses - James Joyce
+76. The Bell Jar - Sylvia Plath
+77. Swallows and Amazons - Arthur Ransome
+78. Germinal - Emile Zola
+79. Vanity Fair - William Makepeace Thackeray
+80. Possession - AS Byatt
+81. A Christmas Carol - Charles Dickens
+82. Cloud Atlas - David Mitchell
+83. The Color Purple - Alice Walker (twice)
+84. The Remains of the Day - Kazuo Ishiguro
+85. Madame Bovary - Gustave Flaubert
+86. A Fine Balance - Rohinton Mistry
+87. Charlotte’s Web - EB White
+88. The Five People You Meet In Heaven - Mitch Albom
+89. Adventures of Sherlock Holmes - Sir Arthur Conan Doyle
+90. The Faraway Tree Collection - Enid Blyton
+91. Heart of Darkness - Joseph Conrad
+92. The Little Prince - Antoine De Saint-Exupery (In English and French)
+93. The Wasp Factory - Iain Banks
+94. Watership Down - Richard Adams
+95. A Confederacy of Dunces - John Kennedy Toole
+96. A Town Like Alice - Nevil Shute ( I might have read this but I can&#x27;t remember )
+97. The Three Musketeers - Alexandre Dumas (In English and French)
+98. Hamlet - William Shakespeare
+99. Charlie and the Chocolate Factory - Roald Dahl
+100. Les Miserables - Victor Hugo
+I would also add
+I Know Why the Caged Bird Sings - Maya Angelou
+Roll of Thunder, Hear My Cry - Mildred Tayor
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">37</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">December 13, 2008 at 04:59AM</span>
+            <div class="reply-content">1. Pride and Prejudice - Jane Austen
+2. The Lord of the Rings - JRR Tolkien
+3. Jane Eyre - Charlotte Bronte
+4. Harry Potter series - JK Rowling
+5. To Kill a Mockingbird - Harper Lee
+6. The Bible
+7. Wuthering Heights - Emily Bronte
+8. Nineteen Eighty Four - George Orwell
+9. His Dark Materials - Philip Pullman
+10. Great Expectations - Charles Dickens
+11. Little Women - Louisa M Alcott
+12. Tess of the D’Urbervilles - Thomas Hardy
+13. Catch 22 - Joseph Heller
+14. Complete Works of Shakespeare
+15. Rebecca - Daphne Du Maurier
+16. The Hobbit - JRR Tolkien
+17. Birdsong - Sebastian Faulks
+18. Catcher in the Rye - J D Salinger
+19. The Time Traveller’s Wife - Audrey Niffenegger
+20. Middlemarch - George Eliot
+21. Gone With The Wind - Margaret Mitchell
+22. The Great Gatsby - F Scott Fitzgerald
+23. Bleak House - Charles Dickens
+24. War and Peace - Leo Tolstoy
+25. The Hitch Hiker’s Guide to the Galaxy - Douglas Adams
+26. Brideshead Revisited - Evelyn Waugh
+27. Crime and Punishment - Fyodor Dostoyevsky
+28. Grapes of Wrath - John Steinbeck
+29. Alice in Wonderland - Lewis Carroll
+30. The Wind in the Willows - Kenneth Grahame
+31. Anna Karenina - Leo Tolstoy
+32. David Copperfield - Charles Dickens
+33. Chronicles of Narnia - CS Lewis
+34. Emma - Jane Austen
+35. Persuasion - Jane Austen
+36. The Lion, The Witch and The Wardrobe - CS Lewis
+37. The Kite Runner - Khaled Hosseini
+38. Captain Corelli’s Mandolin - Louis De Bernieres
+39. Memoirs of a Geisha - Arthur Golden
+40. Winnie the Pooh - AA Milne
+41. Animal Farm - George Orwell
+42. The Da Vinci Code - Dan Brown
+43. One Hundred Years of Solitude - Gabriel Garcia Marquez
+44. A Prayer for Owen Meaney - John Irving
+45. The Woman in White - Wilkie Collins
+46. Anne of Green Gables - LM Montgomery
+47. Far From The Madding Crowd - Thomas Hardy
+48. The Handmaid’s Tale - Margaret Atwood
+49. Lord of the Flies - William Golding
+50. Atonement - Ian McEwan
+51. Life of Pi - Yann Martel
+52. Dune - Frank Herbert
+53. Cold Comfort Farm - Stella Gibbons
+54. Sense and Sensibility - Jane Austen
+55. A Suitable Boy - Vikram Seth
+56. The Shadow of the Wind - Carlos Ruiz Zafon
+57. A Tale Of Two Cities - Charles Dickens
+58. Brave New World - Aldous Huxley
+59. The Curious Incident of the Dog in the Night-time - Mark Haddon
+60. Love In The Time Of Cholera - Gabriel Garcia Marquez
+61. Of Mice and Men - John Steinbeck
+62. Lolita - Vladimir Nabokov
+63. The Secret History - Donna Tartt
+64. The Lovely Bones - Alice Sebold
+65. Count of Monte Cristo - Alexandre Dumas
+66. On The Road - Jack Kerouac
+67. Jude the Obscure - Thomas Hardy
+68. Bridget Jones’ Diary - Helen Fielding
+69. Midnight’s Children - Salman Rushdie
+70. Moby Dick - Herman Melville
+71. Oliver Twist - Charles Dickens
+72. Dracula - Bram Stoker
+73. The Secret Garden - Frances Hodgson Burnett
+74. Notes From A Small Island - Bill Bryson
+75. Ulysses - James Joyce
+76. The Bell Jar - Sylvia Plath
+77. Swallows and Amazons - Arthur Ransome
+78. Germinal - Emile Zola
+79. Vanity Fair - William Makepeace Thackeray
+80. Possession - AS Byatt
+81. A Christmas Carol - Charles Dickens
+82. Cloud Atlas - David Mitchell
+83. The Color Purple - Alice Walker
+84. The Remains of the Day - Kazuo Ishiguro
+85. Madame Bovary - Gustave Flaubert
+86. A Fine Balance - Rohinton Mistry
+87. Charlotte’s Web - EB White
+88. The Five People You Meet In Heaven - Mitch Albom
+89. Adventures of Sherlock Holmes - Sir Arthur Conan Doyle
+90. The Faraway Tree Collection - Enid Blyton
+91. Heart of Darkness - Joseph Conrad
+92. The Little Prince - Antoine De Saint-Exupery
+93. The Wasp Factory - Iain Banks
+94. Watership Down - Richard Adams
+95. A Confederacy of Dunces - John Kennedy Toole
+96. A Town Like Alice - Nevil Shute ( I might have read this but I can&#x27;t remember )
+97. The Three Musketeers - Alexandre Dumas
+98. Hamlet - William Shakespeare
+99. Charlie and the Chocolate Factory - Roald Dahl
+100. Les Miserables - Victor Hugo
+`
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">38</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">December 13, 2008 at 04:33AM</span>
+            <div class="reply-content">Okay...I&#x27;ve got 47 with one &quot;I&#x27;ve seen the movie&quot;. Could be better but unfortunatly now I have very little time to read.
+1. Pride and Prejudice - Jane Austen
+2. The Lord of the Rings - JRR Tolkien
+3. Jane Eyre - Charlotte Bronte
+4. Harry Potter series - JK Rowling
+5. To Kill a Mockingbird - Harper Lee
+6. The Bible
+7. Wuthering Heights - Emily Bronte
+8. Nineteen Eighty Four - George Orwell
+9. His Dark Materials - Philip Pullman
+10. Great Expectations - Charles Dickens
+11. Little Women - Louisa M Alcott
+12. Tess of the D’Urbervilles - Thomas Hardy
+13. Catch 22 - Joseph Heller
+14. Complete Works of Shakespeare (not the comlete works but quite a few back in high school and early faire days)
+15. Rebecca - Daphne Du Maurier
+16. The Hobbit - JRR Tolkien
+17. Birdsong - Sebastian Faulks
+18. Catcher in the Rye - J D Salinger
+19. The Time Traveller’s Wife - Audrey Niffenegger
+20. Middlemarch - George Eliot
+21. Gone With The Wind - Margaret Mitchell
+22. The Great Gatsby - F Scott Fitzgerald Going to reread!
+23. Bleak House - Charles Dickens
+24. War and Peace - Leo Tolstoy And saw the movie
+25. The Hitch Hiker’s Guide to the Galaxy - Douglas Adams
+26. Brideshead Revisited - Evelyn Waugh
+27. Crime and Punishment - Fyodor Dostoyevsky
+28. Grapes of Wrath - John Steinbeck
+29. Alice in Wonderland - Lewis Carroll
+30. The Wind in the Willows - Kenneth Grahame
+31. Anna Karenina - Leo Tolstoy
+32. David Copperfield - Charles Dickens
+33. Chronicles of Narnia - CS Lewis
+34. Emma - Jane Austen
+35. Persuasion - Jane Austen
+36. The Lion, The Witch and The Wardrobe - CS Lewis Never got to finish it and have seen the movie.
+37. The Kite Runner - Khaled Hosseini
+38. Captain Corelli’s Mandolin - Louis De Bernieres
+39. Memoirs of a Geisha - Arthur Golden
+40. Winnie the Pooh - AA Milne
+41. Animal Farm - George Orwell
+42. The Da Vinci Code - Dan Brown
+43. One Hundred Years of Solitude - Gabriel Garcia Marquez
+44. A Prayer for Owen Meaney - John Irving
+45. The Woman in White - Wilkie Collins
+46. Anne of Green Gables - LM Montgomery
+47. Far From The Madding Crowd - Thomas Hardy
+48. The Handmaid’s Tale - Margaret Atwood
+49. Lord of the Flies - William Golding High Scool assignemnt. Hated it but it proves a point of mine about man&#x27;s nature!
+50. Atonement - Ian McEwan
+51. Life of Pi - Yann Martel
+52. Dune - Frank Herbert ANd quite a few of the sequels
+53. Cold Comfort Farm - Stella Gibbons
+54. Sense and Sensibility - Jane Austen
+55. A Suitable Boy - Vikram Seth
+56. The Shadow of the Wind - Carlos Ruiz Zafon
+57. A Tale Of Two Cities - Charles Dickens
+58. Brave New World - Aldous Huxley
+59. The Curious Incident of the Dog in the Night-time - Mark Haddon
+60. Love In The Time Of Cholera - Gabriel Garcia Marquez
+61. Of Mice and Men - John Steinbeck
+62. Lolita - Vladimir Nabokov
+63. The Secret History - Donna Tartt
+64. The Lovely Bones - Alice Sebold
+65. Count of Monte Cristo - Alexandre Dumas
+66. On The Road - Jack Kerouac
+67. Jude the Obscure - Thomas Hardy
+68. Bridget Jones’ Diary - Helen Fielding
+69. Midnight’s Children - Salman Rushdie
+70. Moby Dick - Herman Melville
+71. Oliver Twist - Charles Dickens
+72. Dracula - Bram Stoker
+73. The Secret Garden - Frances Hodgson Burnett
+74. Notes From A Small Island - Bill Bryson
+75. Ulysses - James Joyce Now this one I am not dure of. I have read the greek (/) story of Ulysses, is the same or not?
+76. The Bell Jar - Sylvia Plath
+77. Swallows and Amazons - Arthur Ransome
+78. Germinal - Emile Zola
+79. Vanity Fair - William Makepeace Thackeray
+80. Possession - AS Byatt
+81. A Christmas Carol - Charles Dickens
+82. Cloud Atlas - David Mitchell
+83. The Color Purple - Alice Walker
+84. The Remains of the Day - Kazuo Ishiguro
+85. Madame Bovary - Gustave Flaubert
+86. A Fine Balance - Rohinton Mistry
+87. Charlotte’s Web - EB White
+88. The Five People You Meet In Heaven - Mitch Albom
+89. Adventures of Sherlock Holmes - Sir Arthur Conan Doyle and every one of the Holmes series!
+90. The Faraway Tree Collection - Enid Blyton
+91. Heart of Darkness - Joseph Conrad
+92. The Little Prince - Antoine De Saint-Exupery
+93. The Wasp Factory - Iain Banks
+94. Watership Down - Richard Adams
+95. A Confederacy of Dunces - John Kennedy Toole
+96. A Town Like Alice - Nevil Shute ( I might have read this but I can&#x27;t remember )
+97. The Three Musketeers - Alexandre Dumas
+98. Hamlet - William Shakespeare
+99. Charlie and the Chocolate Factory - Roald Dahl
+100. Les Miserables - Victor Hugo
+I would add to this list the following:
+Zen and the Art of Motorcycle Maintenance by Robert Pirsig
+A Connecticut Yankee in King Arthur’s court By Mark Twain
+Huck Finn by Mark Twain
+Atlas Shrugged by Ayn Rand
+Fahrenheit 451 by Ray Bradbury
+The Teachings of Don Juan by Carlos Castaneda
+Jonathan Livingston Seagull — a story by Richard Bach (this book is the basis for some of my life beliefs)
+When I do read now, it tends toward fire tech textbooks or sword and sorcery stories (hey, I have to escape somehow!)
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

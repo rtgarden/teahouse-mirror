@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Barn Memories - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Red Barn Memories</span></div>
+            
+    <div class="module">
+        <div class="module-header">Red Barn Memories</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By [1qa7et6qcxzb2]</span> | <span>March 11, 2008</span> | <span>44 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (44)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">[b5s6ko7u0ug7]</span>
+            <span class="reply-date">November 09, 2011 at 08:52PM</span>
+            <div class="reply-content">Lee Presson and the Nails
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">[3tjomb2csum08]</span>
+            <span class="reply-date">August 07, 2011 at 05:45PM</span>
+            <div class="reply-content">The Golf Course Clubhouse sits today atop what was the Grey Barn up on the hill... A few years back, I was temping for a company in Novato, and their XMAS party was there, so I went. It was WAY weird standing there, a few feet fron my old office in the barn, long gone... We had the BEST Faire! And I don&#x27;t really care who disagrees!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">August 07, 2011 at 04:24PM</span>
+            <div class="reply-content">we are still waiting
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">August 07, 2011 at 07:35AM</span>
+            <div class="reply-content">Oleeeeee!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">August 07, 2011 at 07:34AM</span>
+            <div class="reply-content">Hey Rick: I was flipping omelettes for Will during that tiff year..must&#x27;ve been 1975, when Will sold his kitchen to DB for .25 cents. What a cozy place the Red Barn was, so dark.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author"><a href="/members/judy-drury.html">Judy Drury</a></span>
+            <span class="reply-date">March 30, 2011 at 02:49AM</span>
+            <div class="reply-content">We buried a time capsule under the floor of the red barn.  A number of us who worked there at the time put in various kinds of Faire memorabilia.  I&#x27;ve often wondered if anyone unearthed it when the golf clubhouse was built.  Maybe it&#x27;s still there....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">[39daehseb7ca4]</span>
+            <span class="reply-date">August 01, 2009 at 05:38AM</span>
+            <div class="reply-content">i remember watching some amazing musicians there. i also had a few birthday partys in there. i only wish i was of age at the time, i hardly remember anything.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 14, 2009 at 06:59AM</span>
+            <div class="reply-content">When the faire site flooded, all the costumes in the shed got mildewed. We slogged through the muck and brought them out by hand. They were stored in the Red Barn during Louise&#x27;s reign, and she told me about the Ant Farm and the Barn owl that pooped on the costumes.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">March 10, 2009 at 04:59AM</span>
+            <div class="reply-content">I was wondering if anyone would bring up the Blackpoint Music Fest. I worked with Cookie and Art, who were providing food to ya&#x27;all,where the coffeehouse had been. Peter Kennedy was there trying to show us how to dance Morris. At the time, there was only one 16mm print of Morris Dancing extant (I think he said) that we could see how it was done in England. Now, you can see it on the web! What a change! We were really at the turn of the &quot;oral tradition&quot; there.
+Someone asked Peter if he had always been into trad. dance. His response: &quot;Not as a child. I was so embarrassed. My folks were always off &#x27;gathering peascods&#x27; somewhere.....&quot;
+And the Boys of the Loch! Libba Cotton, the Balfa Bros......amazing! And who was the Viet Namese composer? I remember listening to his work, and suddenly hearing Irish motifs.....I didn&#x27;t think to ask him if he had added those, or were a part of trad Viet Namese music. Did anyone find out?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">March 10, 2009 at 04:51AM</span>
+            <div class="reply-content">Quilters was *so* much fun. I always remember you making bird sounds, Grego. Some of those songs still haunt me (in a good way).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">March 10, 2009 at 04:41AM</span>
+            <div class="reply-content">I used to wonder what I had done in my Elizabethan incarnation that I kept showing up at the RenFaire! It probably had to do with having too much fun!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">March 08, 2009 at 04:46PM</span>
+            <div class="reply-content">Sweetness and Ricker. What a cocktail!
+Saludos from spain, y´all. Or should I say Vos .
+V
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 08, 2009 at 04:32PM</span>
+            <div class="reply-content">whenever i would invoke that time to Ricker, he would get all happy and sometimes I could even get him to play banjo. He was a dynamite banjo player, however the banjo demands a note of sweetness.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">March 08, 2009 at 02:17PM</span>
+            <div class="reply-content">Ah, the barn of many incarnations.
+My first northern the teahouse was there. Our country dancers needed musos, and at a spool table sat a couple learning the tunes on recorders and fiddle. Ricker and Rita. History conniving to be made.
+The next year there was an 11th hour scramble to shlep livestock-related stuff into improvised storage areas to make floor space for the Balckpoint Music Fest. Piano on forklift. Elizabeth Cotton on stage. Redwing&#x27;s girlfriend Daphne falling for Cathal of the Boys of the Loch, and later bugging off to Edinburgh to marry him.
+Later, as a carpenter, I was in on the long, adventurous transformation of that cinderella shed to a pretty princess of a theater. The sordid details of that project would best be thought of as having seeped into the bog with the sweat and second hand beer, but the results were the stuff of real fairey tales.
+Along with the night shows, dances, parties, et al, there were at least three shows to which we actually invited the public. (odd idea, but there you go...) The Music Fest I&#x27;m counting as one, even though there were a variety of events. Then there was a grand westward-ho themed production, Richard Beard designed, Will Wood etc, as part of the Old Cal show. What was the name of that show?
+And the fems-on-the-prairie musical, &quot;Quilters&quot;. Kate Hefflin directed, Karan Hanson sang and acted beautifully with an otherwise non-faire-folk cast of women, and the orchestra was a piano guy served up with side orders of me and Ricker for folky flavor. Thus was germinated the oh-so-aromatic duet of Coot and Cag.
+Thus were made to be things that could barely have been dreamed.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">[2ao3o6xb6daou]</span>
+            <span class="reply-date">February 12, 2009 at 11:32PM</span>
+            <div class="reply-content">Red Barn Memories -- there are so many! One that particularly stands out was after one of the Hedonist&#x27;s Picnics up at the End of the World, with the requisite Grand Marnier injected strawberries and the Dill-Dough -- several of us climbed up the ladder and onto the roof of the Red Barn. One of the men taught me the fundamentals of dancing the Tango up on the slanted roof. Many of the folks were in a bit of an &quot;altered state&quot;, and one of the women stopped breathing every time the Tango brought us closer to the edge than she was comfortable with. A grand time was had by all! All of a sudden, someone shouted out the alarm that Rick Bowman (Security) was driving by. Everyone FROZE and pretended to be invisible. Rick&#x27;s car screeched to a halt, backed up, and then took a different road. After a collective letting out of our held breath, we all started laughing and continued on with our revels...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">[112khxhf7hjvg]</span>
+            <span class="reply-date">February 04, 2009 at 07:51AM</span>
+            <div class="reply-content">Beyond all of the shows, fun, and debauchery that I lovingly recall, the one thing that stands out more than any other memory is when Mary Jo and Michael O&#x27;Conner were married in the Red Barn. That stands out more than the Mud Fest, the parties, after parties, etc.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 05, 2009 at 08:55PM</span>
+            <div class="reply-content">I seem to remember a some photos. Maybe Jim Hayes or Greg Lynch.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 05, 2009 at 08:36PM</span>
+            <div class="reply-content">It was really weird using a fishing boat to go around the back to Rogers camp! Very strange. Somewhere someone had got to have pictures!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 05, 2009 at 06:49PM</span>
+            <div class="reply-content">I remember that there was some waterskiing in the parking lot with the one in &#x27;82. The skier was pulled by a car. Also there were fish skeletons in the parking lot after it had dried out.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 05, 2009 at 06:44PM</span>
+            <div class="reply-content">yes there was a lot of water towards the endof the 70&#x27;s, I remember nearly losing Jane in the hugen flooded &quot;drury creek&quot;. Paul reid was following us like a gentleman with this sodden colored paper umbrella, his curls streaming in the rain, janes hair also curly and streaming in the rain. We were slipping on the rocks and trying to remember where the path went before all the water showed up. That year and for a few after we had that really tall mustard that stood way above your head and made you feel small again.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 05, 2009 at 06:41PM</span>
+            <div class="reply-content">that was really cool. I remember that. like 79 or 80
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 05, 2009 at 05:53PM</span>
+            <div class="reply-content">There was also a flood back in the late 70&#x27;s I think. Bob Brewer took a bunch of us boating.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">January 05, 2009 at 05:42PM</span>
+            <div class="reply-content">The floor was still dirt when the flood happened (1982). I know because I was asked to go in there the following Spring to retrieve payroll records from boxes that had been stored on the floor (eww). The flooring was put in about summer 1983 to raise the floor so the costumes could be stored more safely. I remember Chris Zaida working in a basement in winter &#x27;82 for weeks (somewhat successfully) to try to get the mildew out of the Dickens bonnets.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 05, 2009 at 05:31PM</span>
+            <div class="reply-content">I think we (Garbage crew) did a Toga party there when there was a dirt floor.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">[31te9gnwzgefw]</span>
+            <span class="reply-date">January 05, 2009 at 05:11PM</span>
+            <div class="reply-content">I remember one hell of a blowout party the last year that the barn had a dirt floor. Don&#x27;t remember the year. I think the band was &quot;The John Belushi Memorial Blues Band&quot;. That was a great party! And of course,t he crew shows when they moved to the barn.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">January 05, 2009 at 04:46PM</span>
+            <div class="reply-content">Hi, Jim, for some reason I never got this message when you first sent it. I don&#x27;t have any copies left, they always sold out pretty much on the spot. One of these days, I&#x27;ll convert my copies to dvd&#x27;s - I&#x27;ll let you know when I get a
+round tuit
+v
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">[1wcyzp8bjdk89]</span>
+            <span class="reply-date">January 05, 2009 at 09:12AM</span>
+            <div class="reply-content">People who forget history are doomed to re-enact it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">[faho7u8nxzug]</span>
+            <span class="reply-date">January 05, 2009 at 04:42AM</span>
+            <div class="reply-content">Crew show song 1987?
+to the tune of: &quot;We are the world&quot;
+We are the crew
+We are the damaged
+we are the ones who Phyllis calls when she can&#x27;t manage.
+There&#x27;s a fair we&#x27;re building
+where it is we&#x27;re not quite sure.
+but we know
+We&#x27;ll build The Dick in a day!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">29</span>
+            <span class="reply-author">[10uohx0w9yo9f]</span>
+            <span class="reply-date">January 03, 2009 at 03:15PM</span>
+            <div class="reply-content">Phoenix onstage, Cat and Heather head to head, burning up the air with their fiddles....
+Linda Underhill&#x27;s final performance, of &quot;With Her Head Tucked Underneath Her Arm&#x27;...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">30</span>
+            <span class="reply-author">[2xnemqyqyep1e]</span>
+            <span class="reply-date">May 07, 2008 at 04:40PM</span>
+            <div class="reply-content">Cheri Mele&#x27; has endless amount of footage, and I&#x27;m pretty sure they taped some of the shows, I wonder if she is on here. If not, she should be.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">31</span>
+            <span class="reply-author">Richard Beard</span>
+            <span class="reply-date">May 07, 2008 at 01:23AM</span>
+            <div class="reply-content">Hey Vytas ! Do you know if there are any tapes of the crew show available for purchase anywhere ?
+Probably not, but I have to ask. Lenore turned me on to this site and its really great to get back in touch with the crew. Hope life is treating you well.
+Jim Hayes
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">32</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 12, 2008 at 02:01PM</span>
+            <div class="reply-content">Daniel that was a sight to see. It must gave been great to see her do it without all the commotion and distraction of the back of main south. As I recall she would sort of get very intense and larger than life in even a bigger way than usual. She loved Bess.
+More often I saw her decompress into her peasant character...another memorable transformation.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">33</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 12, 2008 at 01:59PM</span>
+            <div class="reply-content">one of the dancers was &quot;linda&quot; Sols &quot;wife&quot; or &quot;woman&quot;at that time. She had this lovely curly brown hair, and curvy figure, and she danced in a ble dress with big lunares (polka dots). You would only remember her smile and that she danced impeccably if you saw her. That one was a keeper what was he thinking.I remember her well because she had about half the actors totally charmed and convinced that she was theirs alone. There they would be (the three of them as I recall) right in the front row of every show. I think they were even there at the Flamencos Gitanos. No clue.
+That show still gives me chills to think about. In my youth it was dancing for Freddie and the guys that really led me to faire. I would come out and dance with AMAN! and hang out with the group (puff puff pass with the hippies). We remembered each other from my stage sets as a child (probably they made memorable cash that day).There was that rare air, the dreams the suenos, and we remembered. And then at The Red Barn there it was again.
+In buckets.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">34</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 12, 2008 at 01:49PM</span>
+            <div class="reply-content">yes, however they do so separately.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">35</span>
+            <span class="reply-author">[tlvy10fzmxwr]</span>
+            <span class="reply-date">March 12, 2008 at 12:36PM</span>
+            <div class="reply-content">Ah yes I remember it well. I remember Peg getting changed there and slowly &quot;turning on&quot; good Queen Bess.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">36</span>
+            <span class="reply-author">[2c9hwt6yphj6c]</span>
+            <span class="reply-date">March 12, 2008 at 06:12AM</span>
+            <div class="reply-content">A couple of scenes vividly crackle my memory synapses. Both from when the Red Barn was just a dirt floor barn. The first time Dickens was at the Cow Palace (I&#x27;ve always loved that name) around the early &#x27;70&#x27;s or so, Wayout Willie and I and some other burlappers were charged with making and installing decorations. Some of these included pine wreaths - boas actually. Very labour intensive. Pine boughs were cut and brought to the barn on the &quot;beer van&quot;. We&#x27;d trim them, then wire &#x27;em together so we had these conifer snakes that were about 3 to 4 inches fat and anywhere from 4 to 10 feet long. The joke was that we were making giant Thai sticks. We set up a tank with flame retardent and ropes and pulleys. Dipped &#x27;em, hung &#x27;em out to dry then trucked &#x27;em to the site and did the instalations. Many hands for many days and for all that they were good for just the one show. Man, nobody could spend the deco-budget like Mom (Phyllis) bless her heart.
+Then there was the Spires/Brown Fracas. Some of it I recall viividly. A curious thing is that neither Will nor Don seem to have any recollection....hmmmm? Anyhow, the coffee house was first exiled to the barn sometime around &#x27;74 or so? It served as the participants commissary both during and after hours. I don&#x27;t recall the public coming out to the barn at all then, but it had a small stage in the northwest corner all the same - for music, dance and of course the occasional poker game. So it was agreed that Don would do the coffee house stuff and Will would cook omlettes. One morning, I believe it was during set-up, I was sitting at the table on the little stage noodling on my guitar or rolling a smoke or something and our boys were in the coffee house; there may have been others in the barn but certainly not many. I become aware that there is a disagreement coming from inside the coffee house/kitchen. Voices are raised, then re-raised and a full blown argument is taking place. Somebody shoves somebody else then gets shoved back, then again once or twice more and the next thing I know Don and Will are rollin&#x27; and a tumblin&#x27; across the floor - I kid you not - coffeehouse rat as my witness. I jump up to go and try to break it up and my memory gets hazy about there -but I&#x27;ll tell you this: no one was about to throw the first blow so no blows were thrown, but boy, those boys were trey-pissed at each other for a few days. It looked like the partnership was dissolved before it fully took off but somehow it survived that season and the Red Barn became ours for a while. P.S. - Don and Will (as many of you know) still make some of the finest coffee and omlettes available.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">37</span>
+            <span class="reply-author">[1qa7et6qcxzb2]</span>
+            <span class="reply-date">March 11, 2008 at 08:25PM</span>
+            <div class="reply-content">Please do let&#x27;s keep pumping those memories
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">38</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">March 11, 2008 at 07:00PM</span>
+            <div class="reply-content">The gitanos flamencos gig was astounding. I produced &amp; ran sound for that show, with my jaw dropped the whole time. La Tania, Catana, Agustin Rios, Sol, Roberto Zamora, Freddie, two other bailaoras I fell in love with. Giants of baile toque y cante. That event grabbed me by the cojones, pues me puso en mi sendero flamenco. That was the moment.
+V
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">39</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">March 11, 2008 at 06:50PM</span>
+            <div class="reply-content">When I get a little time, I&#x27;ll transfer some of the crew show videos and upload clips here.
+Pardon me boys, is that the truck that sucks the poo-poo?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">40</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 11, 2008 at 02:03PM</span>
+            <div class="reply-content">Yes Morgan now I do remember having to fish Sally out of the Barn from her gig at props. Each time lays over another you have to peel them apart. Its strange each incarnation was so strong in flavor...watching the bats circling around the ceiling. The beatniks up here all had bats circling their ceilings too when i arrived it was good preparation.
+Sequoia; mostly at those parties we all stood around outside in the dark, sometimes in the mud. It was our way.
+Rory: do tell.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">41</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">March 11, 2008 at 05:49AM</span>
+            <div class="reply-content">I think my first North Faire was in &#x27;77 ... or was it &#x27;76 ? Anyway, it was the year (or the last year?) that Don Brown&#x27;s was in the Red Barn. I washed pots &amp; pans for Will Spires (who was doing the food part of the Coffee House) in exchange for grub and perhaps a little cash (very little cash, I&#x27;m sure, if it was any). It was a great scene and I felt like I got my foot in the door, so to speak.
+I also recall a night show, some years later, where crew (mostly) &quot;adapted&quot; Rocky Horror Picture Show. I can&#x27;t recall who was in the show, but it was a gas!
+I think the Red Barn was also a major part of the first (ill-fated) &quot;Old California&quot; show, before LHC tried to do &quot;Old Cow&quot; (as I called it) @ one or another of the SF piers.
+I also recall quite a few Red Barn Parties ... but the problem is, I don&#x27;t remember much about them!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">42</span>
+            <span class="reply-author">[2ahrq5vm40bp7]</span>
+            <span class="reply-date">March 11, 2008 at 02:05AM</span>
+            <div class="reply-content">My first year, 78, the court lock up was in the red barn. Rats, bats and all manner of critters.
+Later, that end of the barn was the Queen&#x27;s lock up. We had some jolly times waiting for her to get ready.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">43</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 11, 2008 at 01:45AM</span>
+            <div class="reply-content">I remember a Morris Workshop in the Red Barn that Bruno Jason &amp; I taught for pre Faire workshops one year.
+I think we had about ten sets going. It was quite amazing.
+Vicky, do you remember the Barn BEFORE it got turned into a Performance Space ? When it was costume &amp; props storage &amp; rats &amp; bats ?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">44</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 11, 2008 at 12:40AM</span>
+            <div class="reply-content">i have the flyer Bob made for the gitanos flamencos show. We got a treat that night.
+That was the first time understood that we had created more than a show...we creted a cultural phenomenon...and at the same time we birthed our tribe.
+Our Vista.
+our people.
+all thos faire digntaries in one place...that was some bad ass scene.
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Events - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Other Events</span></div>
+            
+    <div class="module">
+        <div class="module-header">Other Events</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Carrie Smith</span> | <span>May 18, 2009</span> | <span>19 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (19)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">August 05, 2009 at 03:20AM</span>
+            <div class="reply-content">Jay and Judy were good friends of mine, but I&#x27;m afraid that I haven&#x27;t seen them since around &#x27;84. I heard that Jay&#x27;s back got really bad, but other than that, I don&#x27;t know anything. I guess that they are still living in San Leandro. I worked that faire with them (the Shindig).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">[126ln5dg00p4l]</span>
+            <span class="reply-date">August 05, 2009 at 03:14AM</span>
+            <div class="reply-content">I just saw this thread---my cousin Jay Harris used to do mountain men re-enactments with his family: the last time I saw him was one morning at Shindig in 1976 in his gear. Haven&#x27;t seen or heard from him since.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">[2dm7p3rumw1co]</span>
+            <span class="reply-date">July 19, 2009 at 08:56PM</span>
+            <div class="reply-content">I worked a game booth at shindig I think the booth owner name was Bob Leff. I haven&#x27;t head from him for years but, a very clever guy. The booth was alot of fun. We had a complete deck of cards which you tried to knock over using bean bags. The better the hand the bigger the prize. What I remember the most is one sat. nite we were drinking and smoking in our hootch behind the booth. Somehow Jon ended up hanging with us . He was still dressed as Mark Twain he hung with us for most of the nite. The funny thing was he never stopped being Mark Twain!! It was just like time machine had dropped Mark Twain right in the middle of our little party. He told stories and answered all our questions even offered his opinon on our stories. It was a nite that I&#x27;ll never forget.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">June 25, 2009 at 07:26PM</span>
+            <div class="reply-content">If it wasn&#x27;t for the scarf, my memories would be moldier than Gorganzola. The thing I remember most vividly about that faire, was that buckskins were not good heat protection, ow.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">June 24, 2009 at 05:41AM</span>
+            <div class="reply-content">Okay, so my memory of what happened what year is rather moldy? It was over 20 years ago, I&#x27;ll take your word for it. I remember the firesale, or at least, the after effects.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">June 19, 2009 at 04:48PM</span>
+            <div class="reply-content">Sequoia,
+I have a scarf from the last Old Cal. and it is dated &#x27;86. There were three at BP. The first one was the Mudfest in &#x27;84, the last one was the Firesale, where the archery booth was weedeating and struck a spark that set the side of the hill on fire. That one ended on a Saturday with a BBQ for Bank of America. Workshops started for faire the next day (Sunday). I remember a lot of crew and actors trying to help the NFD moving hoses and trying to help out on the fireline. NFD was going nuts trying to keep us away from the flames. I remember the kife sharpening stand.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">June 17, 2009 at 07:11AM</span>
+            <div class="reply-content">Luisa,
+Thanks for the &quot;history lesson&quot; and for the clearing up the dates in my mind. I can now recall clearly that I missed Shindig altogether (before my time) but I was at Old Cal the year (&#x27;78?) that it was held at Blackpoint (before it was on the Pier). I didn&#x27;t actually DO anything at Old Cow that year, &#x27;cuz I had just returned from the Rainbow Gathering, where I got my current name and a case of Montezuma&#x27;s Revenge, which I was still recovering from.
+The next year (I think) Old Cow was at the Pier and I had a &quot;Knive Sharpening&quot; stand.
+Peace,
+- Sequoia
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">May 29, 2009 at 04:28AM</span>
+            <div class="reply-content">You know Jon still plays Twain for Phyllis&#x27; events. I keep forgetting to send him an invite to the Teahouse. Must rectify that.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 29, 2009 at 02:45AM</span>
+            <div class="reply-content">John Achorn was Emperor Norton, and Jon deCles was Mark Twain at the Hyde St Fair, 1973. The Shindig was held in 1976 for the centennial.Some Shindig stuff: Chataqua, Suffragettes, Abolitionists, carnival characters including Richard Beard as sword swallower. Phyllis was delighted with the Buffalo Bill/Cookie Jester transformation!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">May 27, 2009 at 01:35AM</span>
+            <div class="reply-content">Thanks Luisa,
+I did Shindig, but have almost no recollection of it, not sure why. All of what you said rang true and I could pull up the mental pictures to match. Keep it coming... might patch that hole in my mind yet.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">May 26, 2009 at 08:46PM</span>
+            <div class="reply-content">Hi all, Luisa here:
+I was at Shindig, playing &#x27;Miss Russmore,&#x27; the school marm (a completely fabricated character). My gigs included lecturing at the Chitaquaw Tent, narrating &quot;The Midnight Ride of Paul Revere&quot; with Brian Patterson miming all the action alluded to in the poem, and doing a bunch of audience participation gigs in and around the Shindig site.
+I also got to play a minor role in Dale Hill&#x27;s &quot;Richard III&quot; (a truncated Shakespeare production that was thrown together by &#x27;Edward Boothe&#x27; (Dale) and his company with the purpose of earning just enough money to get the heck out of the tiny town of Blackpoint). The entire production was a delibrate farce, and a lot of fun to do.
+If I recall correctly, Michael Levine (aka Cookie Jester) played the part of Wild Bill Hickoc (sp?) while hawking from a platform above his catering booth that featured buffalo burgers, buffalo chili, and other such &#x27;western themed&#x27; foods. His costume was outrageous, huge white leather rodeo parade chaps, gawdy vest, and a cowboy hat that would have shaded a family of ten, at least. Most memorable, though, was his astonishing long, white haired wig and possibly a huge handlebar mustashe as well - really can&#x27;t remember the facial hair, though: could not get past the halarious wig! God he was funny! Not always in period (Michael was infameously wicked in that way), but always a real scream. Sigh ... I miss his genuine spit-fire wit. The man was absolutely amazing.
+Hmmm ... other characters: Brett Kume (sp?) with Stuart White and others as the Blackpoint Mud Hens, the local baseball team (*great* period team uniforms, and a halarious (okay, no spell check, sue me ;-P)team song that I wish I had an audio for. Sigh ... another great memory.
+Karana Drayton and her husband Michael, hosted up a genuine fiddling competition that drew outstanding fiddlers from all over California (Michael, himself, was a past top fiddling champion from the same circuit that these others came from - of course they all knew each other, don&#x27;t we all?). That was held on an outdoor stage between the Red Barn and the parking lot. I *think* the success of that competition lead to the later Blackpoint Music Festival, but I can&#x27;t document that, alas.
+BTW: Blackpoint Music Festival dates: it definitely was later than Shindig, but not in the 1980&#x27;s at all. I was elsewhere during the summers of 77 - 79, so all I know is that it was one of those summers.
+Back to Shindig: Janet Bigglestone Winters (she was still Bigglestone then) did a wonderful Women&#x27;s Sufferage character (Elizabeth Cady Staton or Susan B. Anthony? Alas, can&#x27;t recall specifically). Her bustle skirt walking dress was spot-on accurate and she handled the audience participation of signing the petition for women&#x27;s sufferage in a wonderful, sincere, and gentle yet amusing way. Really, her personal best at street theater, I thought, even though some thought it a bit too &#x27;low key.&#x27; I loved what she did.
+John Achorn as Emperor Norton, Jon Decles/Don Studebaker as Mark Twain, Will Wood as Rutherford B. Hayes, candidate for the US Presidency, ... ummm ... oh dear, can&#x27;t remember more right now.
+Peck away, oh fine Historic Leagionnaires!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">May 22, 2009 at 09:25AM</span>
+            <div class="reply-content">Yeah, the red barn was used for storage when I started in &#x27;78. I don&#x27;t remember the red barn being open for Shindig, but I remember some activity in the gray barn. The first that I remember of the red barn being open for other than storage was one of the parties in the early 80&#x27;s. There was a stage built in the red barn, I think in the mid 80&#x27;s as well. It was used for Old Cal. There was also a play, I think &quot;Oh, Pioneers&quot;, but I could be wrong about the title. I was working with Berkely Ed at that time. So, that would have been around &#x27;86 or &#x27;87. Unfortunately, all those memories are a bit fuzzy now. I was dating Karan at that time, so it should be &#x27;86. The more I talk about this stuff, the more I remember.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">May 22, 2009 at 08:59AM</span>
+            <div class="reply-content">The Red Barn theater opened kind of inclimentally, but maybe the we could say the ribbon was cut for an Old Cal event mid 80s (?)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">May 22, 2009 at 07:13AM</span>
+            <div class="reply-content">Yeah, the Shindig. That was my first time as a participant. We had a fur trade era re-enactment group and we were the mountain men. Every morning, we would be out front facing the crowds, and fire a volley into the air over their heads. Ron P. was Buffalo Bill and rode around all day, and it seems as though he was the MC and yelled out announcements for different performances. Most of the activity seemed to be centerd around red barn and gray barn. Our group did tomahawk throws (one of the tomahawks bounced back and hit a customer in the hand and sent him to the hospital), I&#x27;m sure we did other stuff, but I can&#x27;t remember. It did seem rather disorganised. But we had fun.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">[02v9sfrs8abuf]</span>
+            <span class="reply-date">May 18, 2009 at 06:04PM</span>
+            <div class="reply-content">I also remember it being VERY hot and VERY dusty and yes, my costume was also flannel...a light flannel but still....I do also remember it being pretty deserted.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">[02v9sfrs8abuf]</span>
+            <span class="reply-date">May 18, 2009 at 06:03PM</span>
+            <div class="reply-content">The thing I remember most about the Shindig was a mixture of good and bad. The good...I remember helping Carolie and Doris make my costume. It was from scratch and they showed so much patience with me...I remember sitting with them sewing on my buttons. Okay...that&#x27;s about it. This was my LAST faire working as an entertainer. My memory is a bit foggy on it (hey it&#x27;s been 33 years folks) but I remember it was SO disorganized that it was stupid. I was a Theatre Arts Major at San Francisco State at the time, and I was ALL about professionalism in my craft. I had a Make-up emphasis but I still LOVED acting. I was young (not even 20 yet), and probably a bit naive and VERY idealistic. I can&#x27;t remember what exactly it was that broke this camels back but I do remember my mentor Dennis Day saying to me, &quot;Kalyn...your problem is that you think this (ALL FAIRES not just this one) is a professional gig. You aim to be a professional and you have to understand this is non-professional, amateur theatre.&quot; WOW! The penny dropped for me BIG TIME. I figured because there was money exchanged, be it through food tickets or salary...both of which I received, it was a professional gig. I realized that I had lost the magic and awe and considered Faire a real gig. I WANTED that feeling of happiness and innocence back, so I quit and continued on for only food tickets in the middle of the run. Well...it didn&#x27;t help unfortunately. I remember crying a lot during that faire. I might have been me and my age and mind set, but the following Faire (can&#x27;t remember if it was Dickens or RPFS) I was a stage manager and hawker. Made more money, got more stuff and had MORE fun than I ever had as an actor. Eventually I went into retail with Feather. I ALWAYS had a foot in the acting field...I always did my gig as a washer woman because I loved it. Always did my bit with J Paul when he was Drake (I was Bethany Drake his twice removed neice...we did a bit at the well on his way to the Queen&#x27;s Show that was pretty funny if I do say so myself), and mostly I joined him onstage for that show...one of the only peasants allowed on stage because after all...I was a Drake.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">May 18, 2009 at 10:58AM</span>
+            <div class="reply-content">It was rather deserted. I helped a videographer with a promo Phyllis had made for it. I held the boom. I also remember it being amazingly hot one weekend, hitting 103 in the Mission. Not the best time to be wearing a flannel shirt!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">May 18, 2009 at 10:35AM</span>
+            <div class="reply-content">Jason and I came and visited one weekend. Hung out a bit with LNR. She always said it was a beautiful fair that nobody saw. It was like a ghost town.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">May 18, 2009 at 10:31AM</span>
+            <div class="reply-content">I did OSF in 1988 at Pier 17. I have a program from that, the front cover of which has been scanned and posted. Weekends July 2nd through August 14th, and July 4th. 11 a.m. to 7 p.m. I have also scanned my gate pass from it.
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briana Waters GreenScare update - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Briana Waters GreenScare update</span></div>
+            
+    <div class="module">
+        <div class="module-header">Briana Waters GreenScare update</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Kathe Walters Scott</span> | <span>March 07, 2008</span> | <span>9 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (9)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">[3ps78rnilakw0]</span>
+            <span class="reply-date">September 11, 2008 at 07:49PM</span>
+            <div class="reply-content">Here&#x27;s the current info:
+Letter writing is one of the most important ways you can support Briana. Phone and e-mail access are restricted and cost her money so letters are the best way to communicate with Briana and she can keep them with her to read anytime. She needs to hear from her friends and loved ones regularly to make it through this ordeal. It is possible this will be a long haul so making a commitment to a regular letter writing schedule you can sustain is important.
+What to Write:
+Currently Briana can use love, caring, support and good intentions for her and her family&#x27;s future. Spiritual, nourishing and uplifting messages and stories are good and give her something to focus on. Hearing everything about time you&#x27;ve been spending with Kalliope, even seemingly trivial details, is very important to Briana. Images of nature and artwork are good.
+Do not discuss legal matters. Talking about how bad the situation is, is also hard for her. Stay empathetic and positive. It is also hard for her to hear too much about fun events in your personal life (like travel) or about how your children are growing. She is struggling to cope day by day so think how you can nourish her. If you don&#x27;t really know what to write that is ok too. She will appreciate hearing from you even if it is something short and simple. It is also ok to repeat yourself in subsequent letters.
+She would love to be getting more images of things to copy in drawings for Kalliope. &quot;Mermaids, faeries, elves, dragons, unicorns, phoenix, peacocks, dogs, cats, frogs, snakes, kids, dolphin, whale, fish, octopus, nature, trees, ocean scenes, dragonflies, bear, turtle, princesses, dancers, instruments, fairy tales, royalty,&quot; are all requested. Sheet music of children&#x27;s songs is also requested.
+Briana Waters
+36432-086
+FCI Danbury
+Federal Correctional Institution
+Route 37
+Danbury, CT 06811
+Use Briana&#x27;s full name and inmate number in the address on the envelope. Letters MUST include your full name and return address. Your letter will be opened and read.
+Letters are sliced open across the top with a knife. If the folds of your letter are near the top of the envelope then all the pages get sliced in two and lines get lost. Find a way to fold your letter so that the folds are away from the top of the envelope. 8-1/2 x 11 envelopes are good too and don&#x27;t have this problem, plus Bri can reuse them to store letters.
+Letters, cards, drawings, things torn from magazines etc are all okay. You cannot send &quot;anything of value.&quot; They can also potentially reject anything they deem suspicious but it seems like things are getting through fine and Briana really enjoys getting more beautiful things.
+Getting nice paper that she can reuse is a huge plus for Bri. You cannot send her blank paper but you can use just a portion of it in some creative way to leave the rest for her to reuse. Thick quality paper, colored paper and stationary are all good for this and she would love to have more of this to make creative things for Kalliope.
+Briana cannot access the internet for looking at web pages. Print out and mail web pages you would like her to see.
+A single photocopy of a news or magazine article may be sent. Multiple copies of the same article are not allowed. Color copies of photos are allowed.
+Oversized envelopes and packages require special approval.
+No: obscenities, discussion of anything illegal, coded messages, relaying messages from other people, sexual material
+Do not send money, stamps, blank paper, blank cards or &quot;anything of value.&quot;
+If your letter is rejected it should be returned to you with an explanation after who knows how long.
+Briana has a limited number of books she is allowed. We have a book program set up to manage this process and to keep her book quota from becoming overfilled. Please do not send her books directly. If there is a book you would like to offer to her you can write to her about it and she can request it when she has space.
+E-mail option:
+If you are having trouble getting your thoughts down on paper and in the mail to Briana on a regular basis then as an alternative you can e-mail letters to: briana.proxy@gmail.com
+Letters received at this address will be printed and mailed to her regularly. If you put something at the top like &quot;Private Mail for Briana&quot; then I will know it is a letter and it will be printed, mailed and deleted without anyone reading it. Of course she loves to get paper you actually touched too so send her the real thing whenever you can.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">[3ps78rnilakw0]</span>
+            <span class="reply-date">September 11, 2008 at 06:25PM</span>
+            <div class="reply-content">Please keep letters and thoughts with Briana, she is in a really dark place, and she needs to know that we, while we cannot share her situation, have not forgotten her.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 11, 2008 at 05:50PM</span>
+            <div class="reply-content">Briana has been moved to the east coast sadly, we had all hoped she would be placed in Dublin so that she could be close to family. There is a new motion pertinent to her case i will attach the .pdf
+thanks to Anna on this one for keeping us all updated on tribe.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">[3ps78rnilakw0]</span>
+            <span class="reply-date">April 05, 2008 at 08:49AM</span>
+            <div class="reply-content">Hey, it&#x27;s time to send our letters about Briana&#x27;s character to the judge. Let&#x27;s get on it!
+From: davidaue@gmail.com
+Subject: Briana Waters - Write the judge
+Date: April 4, 2008 11:09:18 PM PDT
+To: davidaue@gmail.com
+Dear Friends,
+Briana Waters has been wrongfully convicted of a crime she did not commit.
+For more information about that, please visit http://www.supportbriana.org.
+She is currently awaiting her sentencing hearing, scheduled for May 30th.
+This is the moment when the original trial judge will impose a decision on
+how long Briana is supposed to spend in prison. Of course, Briana is
+already preparing to appeal her conviction and continue to prove her
+innocence and that the trial was not fair. However, the length of the
+sentence is needless to say, critical.
+Briana and her legal team have agreed that it would be helpful for the judge
+to receive a large number of letters (on the order of a few hundred, if
+possible) from people who know Briana, asking for leniency in sentencing.
+We are asking for him to impose the minimum possible sentence. You can
+state you don&#x27;t think Briana should serve any time at all, but if she has to
+be sentenced, it should be the minimum.
+Although there is only a small chance that the judge will be moved by our
+personal testimonials, these letters may also turn out to be important for
+the appeals process and for other purposes. Therefore, even if the judge
+ignores them, they can still be of significant value to Briana and her case.
+Briana has told us that if you only have time to do one thing for her,
+writing this letter should be it.
+Given the delicate situation, there are some extremely important guidelines
+for these letters:
+1) The letters should be personal testimonials about Briana. How you know
+her to be a good, kind, generous, loving person. Ways that she&#x27;s been
+important in your life, helped you out in tough times, brought you joy.
+Stories about what an amazing mother she has been for Kalliope. Whatever is
+meaningful to yourself about why you want Briana to be out of jail as soon
+as possible. Basically, this is your chance to be a &quot;character witness&quot;.
+Here are some suggested topics you could mention in your letter if they ring
+true for you. You do not need to include all of them, just the one(s) that
+are meaningful for yourself:
+- Discuss the type of human being that you know Briana to be.
+- Use specific examples of how she exemplifies those traits/aspects.
+- Express the effect/impact/inspiration Briana has upon/is in your life.
+- What that means, what she represents to you and to the larger community as
+a whole.
+2) No two letters should be the same, or minor edits of a &quot;sample&quot;. Each
+letter should be original and unique in some way; it should be written in
+your own words, telling your own stories. The intention is to express in
+your own way your reasons for making this plea to the judge. This is
+important to the Judge&#x27;s evaluation of them as a whole, and to the weight
+they could potentially carry in his decision.
+3) The letters should NOT go into legal details of the case. This is not an
+opportunity to talk about why you think Briana is actually innocent, the
+problems in the trial, and so on. You are just sharing with the judge your
+direct personal experience of Briana as a loving friend, asking for him to
+impose the minimum possible sentence.
+4) While we all have our personal opinion of the trial judge, it is very
+important to NOT express that, either. DO NOT insult the judge in any way.
+This is a plea for his help.
+5) The letters should be one or two pages long. Typed is better, but if you
+don&#x27;t have access to a computer/typewriter, hand-written is fine so long as
+you print very neatly. You should include the date on the letter when you
+finish writing it.
+6) At the top of the letter, include your full name and address. In the
+letter&#x27;s body or when you sign it, you can include a job title or other
+identifying information that would add more credibility or legitimacy to
+your letter. Definitely be sure to include how you know Briana.
+7) Letters should be addressed to &quot;The Honorable Judge Franklin Burgess&quot;,
+but should be sent or delivered to Briana&#x27;s lawyer:
+Robert Bloom
+3355 Richmond Blvd.
+Oakland, CA 94611
+8) The deadline for sending your letter is April 30th.
+Many thanks for participating in this effort.
+Sincerely,
+Marilyn Waters and Derek Wright
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">March 14, 2008 at 10:26PM</span>
+            <div class="reply-content">Wrong indeed.
+Bastards.
+To catch everyone up on the details, she&#x27;s being jailed until sentencing on May 20, while those who snitched were released on bond pending sentencing. Prosecutors plan to ask for the max. If you don&#x27;t want to play their game and serve up your friends, guilty or not, you will be treated with no mercy.
+The point of this, the reason it&#x27;s called the Green Scare - it harks back to the Red Scare of the 50&#x27;s where people were whipped up into a lather of jibbering paranoia, searching for communists under every bed. The Bush Abu Ghraib Gitmo thugs now in charge of everything Federal aren&#x27;t interested in whether she&#x27;s guilty or not, they just want to terrify and smear anyone involved with environmentalism. Make no mistake -they are at war with America&#x27;s children. They rip babies from their mothers. If you&#x27;re any kind of activist, they use the media to equate you with &quot;terrorism&quot;, a meaningless term.
+Totalitarianism is alive and well in the White House.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">[3ps78rnilakw0]</span>
+            <span class="reply-date">March 13, 2008 at 10:48PM</span>
+            <div class="reply-content">Write Brianna to give her your love and support!
+Briana Waters
+36432-086
+FDC - Seatac
+Federal Detention Center
+P.O. Box 13900
+Seattle, WA 98198
+There are a few guidelines for writing to her to keep in mind:
+All letters must have a return address on the envelope.
+Put your name and address on each page of a letter, as it will be opened, and she may not get the envelope.
+Written correspondence and drawings may be in pencil, standard ink pen, typewritten, or computer generated. No felt pens, markers, crayon, or colored pencil, etc.
+Do not discuss her case or anything related to illegal activities. Keep in mind that all mail is read by authorities.
+Most facilities will NOT accept stamps or envelopes mailed to prisoners.
+Avoid using white-out, stickers, tape, colored ink or glitter.
+All personal artwork must be in black &amp; white, copied pages can be in color.
+Most facilities do not allow torn pages from books, magazine or newspaper clippings. Photocopies, however, are accepted
+And of course, there are many costs that have come up through the course of this ordeal. Donations are needed by Briana and her family to continue fighting for justice in this upcoming period. If you can, donate through Briana&#x27;s website: www.supportbriana.org Local donations can be arranged through Olympia Civil Liberties by emailing us. Thank you!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">[3ps78rnilakw0]</span>
+            <span class="reply-date">March 13, 2008 at 10:15PM</span>
+            <div class="reply-content">This is just so wrong. I really don&#x27;t think Briana is capable of this, and to send her to jail is really really awful. She really needs to be with her child ...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">March 11, 2008 at 06:47PM</span>
+            <div class="reply-content">Yeah, you&#x27;re right. I can never tell those soggy states apart... ;-)
+V
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">[isw2k6t3av2r]</span>
+            <span class="reply-date">March 11, 2008 at 01:54AM</span>
+            <div class="reply-content">Thank you for posting this. We have been following this and are keeping her, Jon and Kalliope in our thoughts. ((Briana and family))
+(Isn&#x27;t this happening in WA though? I thought the most recent trial was in Tacoma?)
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

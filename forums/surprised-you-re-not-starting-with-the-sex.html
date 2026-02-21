@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprised you&#x27;re not starting with the sex - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Surprised you&#x27;re not starting with the sex</span></div>
+            
+    <div class="module">
+        <div class="module-header">Surprised you&#x27;re not starting with the sex</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Eric Lethe</span> | <span>January 29, 2009</span> | <span>109 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (109)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 09, 2010 at 03:12AM</span>
+            <div class="reply-content">Therl said I had been an Irish King and he had been my war chief... and that I had been deposed for poor hospitality!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">[001ajch8kdr9f]</span>
+            <span class="reply-date">May 09, 2010 at 01:37AM</span>
+            <div class="reply-content">I don&#x27;t know what the math would be for how many years were packed into each faire season, I do wonder how to measure the connection to past time and current time via our sensory and extra sensory perception. Another ponder...the people with whom one connected so intensely...had they perhaps known one another before? Clearly, we cannot know for certain, but it is good fodder for contemplation.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">April 21, 2010 at 09:44PM</span>
+            <div class="reply-content">8,000 on Memorial Day is only slightly less than the WEEKEND total for the current (pathetic) Damn Faire. I believe the numbers on the newsletter for first weekend totaled about 9,000, give or take.
+What I usually say is that a GOOD weekend at the Damn Faire is about equal to a BAD day at Blackpoint (let alone Agoura).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">[126ln5dg00p4l]</span>
+            <span class="reply-date">April 15, 2010 at 06:17PM</span>
+            <div class="reply-content">Four thousand is more than twice the size of the town where I currently live.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 13, 2010 at 04:20PM</span>
+            <div class="reply-content">A village, verily!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 13, 2010 at 03:12PM</span>
+            <div class="reply-content">I just picked up on this thread, so my comment may be a little late, but all these estimates about attendance are mostly correct in one way or another. The slowest gate at Faires (north and south) was almost always on the Monday of the run (Memorial Day/Labor Day), which rarely exceeded 8000 paid admissions. Other days that drew over 20,000 were considered good ones. But there were many days when attendance at Southern was over 30,000, at which point the Highway Patrol would put out traffic warnings to the local media, because the 101 freeway had become so backed up.
+Regarding the number of participants, everyone is essentially correct again. During my 2 decades at Faire, the number of performers (from the lowly to the exalted) probably maxed out at somewhat more than 2000 on any given weekend. And then there were also all the boothies, and their seemingly endless number of daily workers, some working for the entire run, and others who would &quot;help out&quot; only for a day or two now and then. I was once asked by an unknowing staffer at a staff meeting why the site seemed so crowded on Faire days before the public gates had even opened. I informed him that by opening time, the number of various particicpants on site (counting all the crew folks too) with gate passes or on the daily worker lists was sometimes in excess of 4000. All in all, the total could occasionally indeed approach close to 40 thou over the course of a very busy day and counting everyone on the lot, public and otherwise.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">October 11, 2009 at 01:31AM</span>
+            <div class="reply-content">Amie, you were the Queen of May;
+It couldn&#x27;t have been any other way!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">October 09, 2009 at 05:03AM</span>
+            <div class="reply-content">&quot;Hugest Double Standard: or Unclear on the Concept Award&quot; goes to.....
+My ex-boyfriend called me up to say he may have gotten the clap from his ex-wife. I had finally had sex with a fellow who&#x27;d been flirting with me. So I called him up, to let him know about the possibility, just in case he was thinking of &quot;seeing&quot; someone else. His response:
+&quot;I&#x27;ve spent two years trying to finalize a relationship that means everything to me, and if she ever finds out I&#x27;ve been messing around, it will be all over!&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">October 09, 2009 at 04:49AM</span>
+            <div class="reply-content">So *that&#x27;s* where it came from?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">October 09, 2009 at 04:35AM</span>
+            <div class="reply-content">I keep trying to add a replay to the Pig&#x27;s Gulch post, but keep ending up somewhere here! I&#x27;ve not been on this site for far too long, but I think I&#x27;ll try to add my two cents worth later.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">October 09, 2009 at 04:31AM</span>
+            <div class="reply-content">I think I may know of whom you are speaking. Can&#x27;t remember if it was in the biblical sense, though. I think so.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">October 09, 2009 at 04:20AM</span>
+            <div class="reply-content">regarding &quot;The beatniks were warming the seat for us.&quot; A quote from Bob Thomas: When I mentioned a mutual friend with whom I had lived, who had been married to Julie Meredith, Bob had replied, &quot;Ah, yes. He was a real beatnik. We were only apprentice beatniks!&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">October 08, 2009 at 06:11AM</span>
+            <div class="reply-content">LOL
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">October 05, 2009 at 06:39AM</span>
+            <div class="reply-content">&quot;We treated the customer like royalty, but secretly spoke ill of them when their backs were turned. It was us against them, I guess.&quot;
+Whadda ya&#x27; mean? We never bad-mouthed the Turkeys!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">October 03, 2009 at 04:36PM</span>
+            <div class="reply-content">Eloquently put, Sequoia,
+When I started working security, there was a lot of animosity towards security. There were three reasons that I joined the &quot;brotherhood of the tunic&quot;. 1) I was tired of wearing pounds of wool. 2) I wanted to change the ugly perception of security, and 3) since, as a booth owner, I had to be at faire and I figured that working for the company, they could pay me to be there (and it was the coolest job at faire). This was in &#x27;86. The idea of protecting our own against the tide of customers, was already in my mind, and as it turns out was still a priority with security. Access control played a big part at that point in time and continued to be a priority.
+When I started working security, there were a number of other people that joined the team at the same time, who also wanted to change the the face of security as well. Most notably, Eric Worth and a little later on, Sarah. Together, they brought a great deal of levelheadedness and humor to the job.
+Tearing participants a new asshole began to disappear and a more courteous security staff began to emerge. But, the idea of protecting our own was still there and at least for me, the customer was the second class citizen. We treated the customer like royalty, but secretly spoke ill of them when their backs were turned. It was us against them, I guess.
+And, yes, everybody at faire watched out for everybody else, security did not have a monopoly on that, for sure. But what security did have, was the authority, and that helped a great deal in putting teeth into the final decisions of what happened to the bad guy.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">September 08, 2009 at 05:00AM</span>
+            <div class="reply-content">When I was on Security, it was both spoken and unspoken that a good part of our job was keeping Faire Family safe from the outside world. That was both during Faire hours, after hours, and during the week. It meant watching out for pervs bagging on teeny-booper fairebrats ... but not (at the time) stopping the teens from experimenting and doing their thing, as long as all parties were consenting (no, we didn&#x27;t always get that right).
+It meant keeping the private areas private, and occasionally meant keeping some of our own (performers, boothies, crew, or staff) from making complete arses of themselves in the public areas. Sometimes it meant making a few people feel very UNwelcome - usually those we perceived to be thieves, pervs, or otherwise a danger to our community and our home.
+It meant that, during faire hours, we allowed and encouraged the public to have a good time, but when (a few) got out of hand, it was our job to be the buffer and to &quot;shepard&quot; troublemakers out of our world (okay, sometimes they tripped a few times on the way out). And it meant keeping our playground private during the week.
+Did we always do it right? Hell no! Did the vast majority of us do it from the right place, and with the goal of protecting our unique Family? I submit we did, and that we did a damn good job of it considering everything. Our failings and failures have been discussed elsewhere on this group, and sometimes wiser heads have advised that we NOT discuss them. A few of those failures will haunt me (and I s&#x27;pect many other Security alumni) for the rest of our days. Security certainly was not the only thing keeping our family safe - we ALL did that. But those of us who wore that tunic did do our part, I believe, in creating a safe place for all of us to play - and for some of us to hide.
+When the job of Security became more about &quot;Access Control&quot; and less about watching out for our own, I found other work at the Faire.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 07, 2009 at 12:27AM</span>
+            <div class="reply-content">yeah the meanest thing you could say to someone right about then was &quot;Call your mother!&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">September 06, 2009 at 09:08PM</span>
+            <div class="reply-content">I was sort of hiding out at Blackpoint at one point (hiding from crazy Moroccan boyfriend who kept threatening to &quot;come get me&quot; (shades of Thomas Hardy))...and I felt mighty happy to be living where the standard answer to any stranger seeking me was &quot;Who?&quot; followed by a more hostile &quot;No idea who that is, but I would know her if she was here&quot;. Even Carol LaFleur knew to give that answer. Never felt so safe in my life as sleeping on the Lot.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 06, 2009 at 05:44PM</span>
+            <div class="reply-content">somehow the dangers were the same as everywhere else, however it was safer because we acknowledged them altogether. at that time society itself was very fond of the protestant cocoon and the horse and buggy with blinders approach to reality. It was nice to be able to walk around with your eyes wide open unobstructed and also to have fellow company who also seemed to be truly looking around.
+I was not very surprised to find so many early adapters in our alumni.
+there was a sort of spirit of discovery and participation and engagement that was created and crafted quite consciously by bob and many others.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">September 06, 2009 at 05:31PM</span>
+            <div class="reply-content">Interesting. I remember always feeling safe at Faire, though there wasn&#x27;t any rational reason for that what with the potential for haywire mischief and mayhem at any moment. But then I enjoyed riding motorcycles without helmets and thought nothing of hitch-hiking back in those days. I guess whatever would ground me in the moment sort of felt right. Did those security folks make me feel safer? I dunno some of them were a bit unhinged themselves but I always felt good about having our own private security buffer from the outside world, that did make a difference.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 06, 2009 at 04:12PM</span>
+            <div class="reply-content">i like the safe asylum idea. There is dignity and respect in that and in reality most of the time that was something we offered to each other.
+You need safety to be able to be creative, you need to have a safe place to play in order to let your imagination expand and explore. Our ability to really raise the bar on environmental theater and site specific installation as well in great part came from our unique and intimate relationship we had with our security team. The roustabouts and the performers blended and it was hard to see where the crafts stopped and the show started so many craftspeople were also great performers. The one element which had to be intact and in great supply was safety.
+I still think we did a great job considering we had way more people onsite than was legal and we were just kids keeping the madness at bay for the most part. What like 30 guys patrolling? couple on horseback?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">August 29, 2009 at 09:36PM</span>
+            <div class="reply-content">While I don&#x27;t think &quot;mental asylum&quot; fits, it was an &quot;asylum&quot; as in the sense of &quot;haven&quot; or safe place for many of us. Especially for those of us who lived on site, whether for a month, a season, or years. The family at Faire let us be who we might not have been able to be in the larger world (at least, not w/o getting arrested or into other serious trouble). I remember when I was on front gate during the week (Scale House @ Black Point, &quot;Cross Roads&quot; @ Agoura). If the sheriff came on site, we couldn&#x27;t necessarily stop them, but what we could do was delay them and, via walkie talkie, let everyone else know he was there. That was one of the more important parts of that job, along with keeping the outside world out of our world for that part of the week.
+While the &quot;suspending&quot; (or ignoring) of some of the rules of the &quot;outside world&quot; occasionally did result in grief, which has been amply covered elsewhere here ... or wisely left alone, it also allowed many of us to play, to work, to live, and to grow. To have relationships that the wider world would have frowned up, to discover parts of ourselves that we suppressed &quot;out there&quot; ... to do what much of the rest of society said NO to. And to put on a Hell of a Show, which would NOT have been the same w/o the &quot;safe asylum&quot; for those of us who were &quot;out of phase&quot; with the larger world, and has NOT been the same since what is left of Faire has changed hands and become more of a &quot;family show&quot; and (much) less of an &quot;asylum&quot; for misfits and wild peoples.
+Some of us WERE broken or &quot;strange&quot; ... but we were safe in our community (most of the time) and were given a safe space to be who we wanted to.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">August 29, 2009 at 04:07PM</span>
+            <div class="reply-content">I didn&#x27;t sleep on site either. Nor did I artificially alter my reality. Nice to know I wasn&#x27;t the only &quot;goodie two-shoes&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">August 29, 2009 at 02:16AM</span>
+            <div class="reply-content">what do you think annie about the whitewashing of our history? Our performance was only in some part coming from that frenetic crazy place, there were many more like you who never participated in the madness. Its really important to me that even in our private visions of those years we can brook a compromise between how much we were a part of our time, how much it meant to have this huge nioonprofit run by a woman, and how much we accomplished that extends beyond the ensemble (including the resultant countrywide faires not limited to them though).
+To my thinking its simpler to say..yes there was drama and sex and cocaine and maybe a little underage drinking even (oh my!). My intention is that the effort be seen as diverse creation springing from an equally diverse group of extremely talented and hardworking people who went on to accomplish many things in a wide area of arts and industry especially branching into the computer &quot;industry&quot;. Some of this is in direct response to the way our community.
+I hate the &quot;mental asylum&quot; metaphor of faire..really really dislike it ...it rankles me. We did not accomplish what we did because we were broken or strange, we accomplished what we did because we worked hard at it and we created a community. Also I think we really referenced the human condition and occasionally made some good and even great art. If nothing else we were entertaining and I think edutaining as well.
+Hey do you have a copy of that article Annie? that would be a dynamite first document for the project.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">[0lye1lzh2a72j]</span>
+            <span class="reply-date">August 28, 2009 at 10:40PM</span>
+            <div class="reply-content">Wowza, I must be a relative innocent—all of the great dramas, money problems, Palace coups, etc. just passed me by, probably because I was so frequently a solo roving act and didn&#x27;t sleep onsite often. I do remember the &quot;cocaine years,&quot; and also that Phyllis wanted to recall my night pass one year in the seventies when I wrote (for a small magazine) an article that implied there might be occasional sex behind the haybales (Carol LaFleur jollied her out of it). Much of this stuff is a revelation to me, and I&#x27;m glad of the 40-year time-lag.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">August 05, 2009 at 05:25AM</span>
+            <div class="reply-content">Wow! Craig Miller. I haven&#x27;t heard of or from him in decades (at least two decades, maybe 2.5).
+Craig was the very first person who ever gave me a job at Faire. I met him at Pierce College when he was running Children&#x27;s Dell, we somehow got to talking about Faire and he offered me a job. $10 or $15 / day + food tickets, for moving animals, shoveling manure, and watching kids. I borrowed his pup tent during the week and lived on the lot (in the back of Children&#x27;s Dell, next to the goat sh**). On weekends, he used the tent and I slept in the Dell. Without Craig, I may never have started working Faire.
+I lost touch with him a few years after he moved into that apt. in Novato. I also worked (volunteered) with him on the 1st Calif. Assembly campaign he ran (the article didn&#x27;t mention the name of the candidate, and I can&#x27;t remember). As I recall, the candidate ran again, with a different manager. Craig had, I think, moved on to other things. I again volunteered. The candidate lost, again. I may be mis-remembering this part, though - not about the losing, but about the 2nd run. It was a LONG time ago and somehow, those memories are not as vivid as Faire memories.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">August 02, 2009 at 12:02AM</span>
+            <div class="reply-content">beautiful Wayne. And so true.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">August 01, 2009 at 11:46PM</span>
+            <div class="reply-content">Hear Hear.... I&#x27;ll drink to that....( Though I&#x27;ve tried to keep quiet on this particular subject.) I must ,for this once, call to the Gods and Goddesses of Love to whom we did worship .( particularly well I might add) The joys of Love flowing over under and through everyone who set foot on our sacred ground... Swept up with the passion of living a life that only we could imagine.... Ahh the memories , the joy of falling in love so deeply and creating the perfect mate (for that moment) ....and every time I tried to recreate that passion outside of faire ,having it dump on me... It was a moment in time that will always be cherished....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">29</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">August 01, 2009 at 08:14PM</span>
+            <div class="reply-content">Oh my dear we were SO YOUNG then !!
+The very air in springtime was redolent with Rampant Carnality!
+If I had it to do all over, I probably wouldn&#x27;t change very much.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">30</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">August 01, 2009 at 03:26PM</span>
+            <div class="reply-content">So many times I confused sex and love. I told myself I just looking for love or just looking for sex. Seems I&#x27;d just muck it all up. Still, in an effort to &quot;not regret the past nor shut the door on it&quot;, I can look back to my faire sexual past with all the mix of emotions it created. When I hear the term &quot;friends with benefits&quot; I just shake my head. I tried that at faire and while it seemed good in theory it just never seemed very &quot;friendly&quot; afterwards. And oh the many times I fell in love. Years past now, I can smile at some sweet (and hot) memories. Silly me, some of my sweetest thoughts go out to those men I had crushes on that were never,uh,consummated. Faint threads of those crushes remain, but I won&#x27;t name you, at least a couple of you are on this site. I must admit, the smell of native sages still awakens something in me, but I keep a lid on it. With a daughter in the house I find a chaste lifestyle is the better choice for me. For now. Working in a nursery with all that fresh air and exercise surrounded by men with trucks and tools brings out the elemental faire girl in me. Sometimes I have to retreat to the back of the nursery because the bad girl on my shoulder starts suggesting, um, certain lurid scenarios that would get me in deep kimchee. Perhaps that kind of restraint would have served me well at faire, but I am at peace with that. Mostly.I am still a work in progress.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">31</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">July 27, 2009 at 08:15PM</span>
+            <div class="reply-content">i ahve kissed the gross airport carpet at LAX waaay too many times. Nothing like California and really nothing quite like our tribe!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">32</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">July 25, 2009 at 06:29PM</span>
+            <div class="reply-content">A real shock for me was going from &#x27;our&#x27; Faire to Texas Renaissance Festival (TRF) ... running Feather&#x27;s booth @ TRF, sometime in the mid 1980&#x27;s. Aside from the fact that it was not Feather&#x27;s finest hour and I was not getting very much stock (Feather stayed in Calif. &#x27;till the 5th weekend of TRF), it was a real culture-shock. I hung out / worked @ Feather&#x27;s during the day and Mullah&#x27;s at night @ Blackpoint that year (and previous? I don&#x27;t recall). I may have worked crew as well. Anyway, in Calif. we were very hands-on. Many of the customers encouraged us to be MORE hands on! I prolly could have taken several back behind the booth for more &quot;in depth&quot; personal demonstrations of the products (we had edible massage lotions at the time - very fun!) but ... Anyway, the first weekend @ TRF, about 30 miles (I think) outside of Houston, deep in the Bible Belt, I found out that it was strictly Hands Off!
+That was an incredibly boring, stressful, and lonely fair for me. I won&#x27;t go into the sordid details of business with Feather, but when she finally came out on the 5th weekend (she was s&#x27;posed to be there on the 2nd or 3rd), I flew back to Calif. the next Monday. DB &amp; Buffy drove me to the airport and I took a red-eye back to SF. I think my car was at the Ranch in Preston, but I don&#x27;t remember how I got there from the airport. Maybe it was at the lot, I forget. But I remember, not fondly, the &#x27;no touch&#x27; attitude of the locals, along w/ the fact the guys in green polyester frog suits thought they were in Ren. costume, the mosquitoes were constantly trying to eat me alive, and the humidity made me feel that I was never dry from the day I landed in Houston until I got back to Calif. I don&#x27;t remember if I kissed the ground when I got back to Preston or Blackpoint or wherever, but I might have!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">33</span>
+            <span class="reply-author">[2dm7p3rumw1co]</span>
+            <span class="reply-date">July 19, 2009 at 09:21PM</span>
+            <div class="reply-content">As far as I remember I ordered the I like boys and I like girls buttons. I know I helped pay for them. The reason behind the buttons was to avoid problems. Alot of my crew was kind of old school and I wanted to give them a non insulting way to express their views. I really enjoyed the fact that Silas wore both, one on each side of his shirt. The dumbest thing the faire did was put the gay kissing booth right across from Big John&#x27;s booth.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">34</span>
+            <span class="reply-author">[0grgrunot1fm3]</span>
+            <span class="reply-date">May 01, 2009 at 08:45PM</span>
+            <div class="reply-content">In about &#x27;75, I was working for a booth at Blackpoint. One of the booth owners was rumored to be having sex with not only the participants but the paying customers while the faire was open. Security knew about it and checked around more often. Lots of horse patrols (what a magnificent man Marcellus was!).
+It was more than a rumor. He had magically good timing and was never caught. And he never had any complaints from the women he was with. To me it was just a marvel he never got into any trouble, although there were times when the other booth owner was pissed because he was off with someone again, instead of working.
+Yes, it was a time, wasn&#x27;t it?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">35</span>
+            <span class="reply-author">[0grgrunot1fm3]</span>
+            <span class="reply-date">May 01, 2009 at 08:10PM</span>
+            <div class="reply-content">Maybe I&#x27;m misremembering but I recollect gay weekends and homophobia from the crew (among others) before AIDS was known about... 80-82..?
+I could have been in my own world but my mother was involved in the gay community and had access to good info early on and I was lectured in all of it even after I moved out. Glad I was of that too!
+I&#x27;m not saying it didn&#x27;t cross over,...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">36</span>
+            <span class="reply-author">[0grgrunot1fm3]</span>
+            <span class="reply-date">May 01, 2009 at 08:03PM</span>
+            <div class="reply-content">Do you remember the ads &quot;Take a ferry to the Faire&quot; ? Posted all over SF...
+This was around the same time the gay weekends were happening.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">37</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">April 21, 2009 at 06:42PM</span>
+            <div class="reply-content">Avery Watts ? A.K.A. Lobelia Pfaffner ?
+That sounds like something she would say.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">38</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">April 13, 2009 at 01:09PM</span>
+            <div class="reply-content">The name Avery springs to mind.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">39</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">April 13, 2009 at 05:06AM</span>
+            <div class="reply-content">I remember in &#x27;93 or &#x27;94 we (security) were told to keep an eye out for PDA, because it was not conducive to family values. The hawkers were told to tone things down and not to talk suggestively, and, under no circumstances was anyone allowed to touch a customer.
+Sarge and I were walking down by PB one when an older gent approached us and said that he was the ex Sheriff or DA or some such, of Sac. county, and that he was highly offended about some public sexual activity, and if nothing was done, he would call in favors from his muckity muck friends and they would come down hard on faire. So we calmed this guy down, and went to see this sex show. Well, tucked away in a fold of the burlap fence was a guy and a girl kissing. They were only kissing and out of view of the public. Geez, what a total dick this guy was, but we had to tell the couple to find a more private area. To me, that was the de-sexing of faire.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">40</span>
+            <span class="reply-author">[1ko42xhlxlfoq]</span>
+            <span class="reply-date">April 13, 2009 at 03:50AM</span>
+            <div class="reply-content">I asked the question my first Faire in Augora &quot;Why is it called Pigs Gulch?&quot; and was told that I would have to be shown not told that answer. A couple weeks later I was drug away from an Ale Stand party and taken down into Pigs Gulch and told &quot;now listen&quot; and yes the sound of I don&#x27;t know how many people (hundreds) making Sweet Love does really sound like PIGS. It was an ear opening experience that quickly sent me in search of that night’s afaire!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">41</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">April 12, 2009 at 03:45PM</span>
+            <div class="reply-content">Wish I could remember her name, I was living on caterer&#x27;s row at northern, must have been about 1978, she said she no longer had sex at faire because &quot;it&#x27;s like f**king in a fish bowl&quot;. Everyone seemed to know who was doing who.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">42</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 07, 2009 at 01:09AM</span>
+            <div class="reply-content">Hmmmm, here&#x27;s a (newspaper? magazine?) article about the de-sexing of the Faire.
+http://www.metroactive.com/papers/sonoma/08.06.98/ren-faire-9831.html
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">43</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 06, 2009 at 05:38PM</span>
+            <div class="reply-content">The other thing that&#x27;s intriguing to me is how often you&#x27;ll run across mention of the Faire on dating sites. No, I&#x27;m not kidding.
+Here&#x27;s one example: http://www.okcupid.com/profile?u=webboyo
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">44</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 06, 2009 at 05:33PM</span>
+            <div class="reply-content">This may be tangental, but I find it interesting.
+It turns out that Craig Miller, who is pretty well-known in AIDS-walk circles, moved to Marin, in part, *because of RPFN*
+http://www.marinij.com/marin/ci_4059498
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">45</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">April 06, 2009 at 01:48AM</span>
+            <div class="reply-content">Gay days...??? No gay person EVERY attended the Renaissance Faires...did they?
+I remember the first time Jamila&#x27;s troupe had a male belly dancer...
+It was probably after I quit drumming for Jamila, and I was sitting in the crowd watching and looking the peoples faces, and suddenly you would see some guy with his gal...going &quot; HEY honey, what is that...did you see that belly dancer with a moustache? That was a guy!&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">46</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">April 06, 2009 at 01:44AM</span>
+            <div class="reply-content">OK, I don&#x27;t know what section to put this in...but here goes:
+1) It was at the Northern Faire in the 1970&#x27;s, and I was dating a hottie, and I cannot remember where we met, but anyway...she was an Angel. We would sleep together in bedrolls at night in Paul and Marlena Gagnon&#x27;s Candle booth, and well we would....well, none of your business. One faire day, I was playing drums for Jamila, on the Main Stage, and as the set ended, she of course was sitting right there on a hay bale, and before she could even get up, two young, hot twin sisters came up to the stage smiling, stairing directly in my eyes, holding hands, and they said&quot; would you like to come home with us and have some fun with us right now&quot;, and of course I looked away, and there was Angel staring in me...like WELL Trent, now whatca gonna do. Times were tough then...I used to wish I knew how to duplicate myself.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">47</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 06, 2009 at 01:27AM</span>
+            <div class="reply-content">oh sure you had to count the topless female wonders in among the &quot;no shirts with cups stacked&quot;.
+thats how us reality checks kept up on how dangerous (potentially) the crowd was getting. Terry Collier taught me that is there was like one no shirt (stacked cups implied) for every hundred people, things were starting to get funny, one no shirt to fifty trouble brewing, one to a dozen call security or at least make sure someone special was standing around. Scenes like duelling buckets could have an alarming number of no shirts, although there we used to ad a lot of wet t shirts to the mix...and shorts!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">48</span>
+            <span class="reply-author">[18ujoe25axrv5]</span>
+            <span class="reply-date">April 06, 2009 at 01:06AM</span>
+            <div class="reply-content">What? How dare you talk about SEX on the Teahouse Web Site? I NEVER, EVER heard of ANYONE having sex at the Renaissance Faires...well, except ME.
+So, well, so...well...I remember walking through the faire at Blackpoint in like the 1970&#x27;s, and I had just finished playing with Jamilia and the belly dancers, and it was late in the afternoon, huge, but dminishing crowds that day...and here comes this lovely young maiden walking down &quot;memory lane&quot;, this beautiful girl...WITH NO TOP ON! Yep, gorgeous boodoos, and just strolling along through near Don Brown&#x27;s,walking past me and everyone else...as if we were not there. Stay tuned...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">49</span>
+            <span class="reply-author">Cat Taylor</span>
+            <span class="reply-date">March 10, 2009 at 05:56AM</span>
+            <div class="reply-content">Oi, I wore your old blue doublet for 12 years : ). Long enough in fact for the let out seems to acquire the same faded blue as the rest of the garment.
+I met my ex-wife in that doublet. Many fine memories. I&#x27;d like to start a rakes of faire group for that informal, linked only in their placement and object brotherhood of street distractors. What attention whores we all were. Me more than most. I adored a number of faire-ever pass ladies and vice versa : ). My heart beats faster in recollection.
+Glory Days, etc.
+Sas
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">50</span>
+            <span class="reply-author">Cat Taylor</span>
+            <span class="reply-date">March 10, 2009 at 05:43AM</span>
+            <div class="reply-content">Ah, german campers and sex. I have a story. I came back to Negra Khan Armory (my home household) early on Sunday am and walked into the booth only to behold one of those burly lads rising from a sleeping bag in the canvas filtered full moon light. He was positively covered in streamers of steam, curling toward the light. Mistress Goodwench was in the bag, giggling delightedly.
+I was voluably admiring.
+Sas
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">51</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 24, 2009 at 05:20PM</span>
+            <div class="reply-content">So many more stories than these...but &quot;Gay Days&quot; was about appealing to the Russian River crowd to come play at our beach for a weekend, right? Pure Marketeerism.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">52</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 24, 2009 at 12:31PM</span>
+            <div class="reply-content">&quot;Patterson&#x27;s marriage ended in the parking lot, Wendy ran away with Sol, Leigh Brewer beat up Bob&#x27;s girlfriend, Pete Ronzoni took up with his wife&#x27;s best friend, and night shows were full to the brim with wanton behavior. Nobody waited for &quot;Gay Days&quot; to get it on. It was definitely a looser population at the faires!&quot;
+(from Carolie)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">53</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 24, 2009 at 05:05AM</span>
+            <div class="reply-content">I sent you a message when I meant to reply! Feel free to post it at the group. Thanks
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">54</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 23, 2009 at 05:18AM</span>
+            <div class="reply-content">I remember being with some characters in the dark at Faire. And then .. I don&#x27;t remember some of the characters I was with in the dark.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">55</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 22, 2009 at 04:14AM</span>
+            <div class="reply-content">i forgot about that. vague memories coming back to me...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">56</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">February 22, 2009 at 04:05AM</span>
+            <div class="reply-content">During one of the Gay Days I remember hawking for Soak-a-Bloke/Drench-a-Wench and telling patrons where the gay-friendly version was towards the end of the world.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">57</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">February 18, 2009 at 06:00AM</span>
+            <div class="reply-content">&quot;A character is who I was with, in the dark.&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">58</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">February 18, 2009 at 04:18AM</span>
+            <div class="reply-content">&quot;Character is what you are in the dark.&quot;
+~ Dr. Emilio Lizardo
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">59</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">February 17, 2009 at 09:12PM</span>
+            <div class="reply-content">61 in human years, but timeless in faire years. 21 years at faire, not counting the 7 year hiatus. I feel so old, oh, wait, I am. When I did faire at Blackpoint stake-out, we all would talk about how much partying we did, how many days we stayed up to work on inventory, etc., etc. When I did Stafford Lake, stake-out was the same (easier though) but the boothies were talking about pictures of their grandkids and how much their arthritis was bothering them. So it goes.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">60</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 17, 2009 at 08:40PM</span>
+            <div class="reply-content">five is what jane used to say. five years for every one faire full season.
+how old are you?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">61</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">February 17, 2009 at 06:08PM</span>
+            <div class="reply-content">I agree about a season at faire being a year. We also have to take into account the massive amount of time before and after faire. I would start building inventory a couple of months before Faire. Usually it entailed working three or four hours after the day job, Monday through Friday, then eight hour days on the weekends, then around the time of stake-out, organizing my crew and hiring replacements, putting up the booth, going to faire on hiring day and getting rehired by security and visiting with everbody I could find that I hadn&#x27;t seen since last faire. Workshops, costume approval and making sure that all my employees had gone through the same (I confess that I would have friends sign me off on their workshops so I would have more time to take care of other stuff) Excitement would be building up the whole time, and the night before Faire opening, not being able to sleep. When faire closed, there were the tearful goodbyes and post-partum depression, teardown and the inevitable cold that followed a week or so, after faire close. After that, jonesing for the next faire. So, how many dog years is one season at faire?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">62</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">February 17, 2009 at 04:41PM</span>
+            <div class="reply-content">I thought character was what I got into when the gate opened?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">63</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 17, 2009 at 04:04PM</span>
+            <div class="reply-content">i knew back pack girls that carried the money. those were freaking heavy backpacks too..
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">64</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 17, 2009 at 03:38PM</span>
+            <div class="reply-content">i thought that was
+&quot;in the dark, a mouth is a mouth is a mouth&quot;-Gertrude Stein.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">65</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 17, 2009 at 03:16PM</span>
+            <div class="reply-content">ah you are a star in the crown of the teahouse carrie. i have those dreams too. Once i dreamt we were pirates alltogether, and that we made a blood pact that someday we would gather, and be peaceful and merry. We were all toasting with this bitter red spanish wine that we had procured. That is what inspired the pirate420 classes at lark.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">66</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">February 17, 2009 at 09:11AM</span>
+            <div class="reply-content">I&#x27;m with you on the Faire seasonal cycle, starts with noticing the mustard growing on the hills and crescendoes up and up. Also I have recurrent dreams, since I was eight, about all of us together, in various situations, but always us and always grouped together, on ships, floating on water, in odialisque positions atop clouds, in spindly tall hippy houses but somehow in the heart of deserted downtowns of cities..always drinking chai and some having sex and others earnestly conversing. Always some inverted form of or within the teahouse.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">67</span>
+            <span class="reply-author">Danese Cooper</span>
+            <span class="reply-date">February 16, 2009 at 06:39PM</span>
+            <div class="reply-content">Wait a minute, I thought &quot;Character is who you are in the dark&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">68</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 14, 2009 at 06:34PM</span>
+            <div class="reply-content">Discretion is the better part of valor...Especially in light of recent arrivals! Like a collectable red wine, somethings are better left unopened in the dark!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">69</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 14, 2009 at 04:57AM</span>
+            <div class="reply-content">Okay...a capacity crowd in Agoura once they opened the front area was 35K (so figure it got up to 40K when you added in the boothies, performers and crew). Blackpoint capacity was 18K. Entertainment roster for Agoura at the height of the boom was 2500. Blackpoint had a smaller ent roster (around 2000).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">70</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">February 14, 2009 at 03:45AM</span>
+            <div class="reply-content">Whistling innocently and minding my own business.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">71</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 14, 2009 at 02:35AM</span>
+            <div class="reply-content">There were always different opinions on numbers, and rumors of fudging. One of the early whistles that blew a somewhat believable account was from the parking lot. Stories abound of days when the gate showed 20k, but the car count was 15k, with and average per-car body count of 2.x. Days that sold out early afternoon, but saw perhaps thousands more come in later after attrition.
+Comps and sneaks made up some of the difference. How big the rest of the gap was, and to what extent it was due to sloppiness or conniving may forever be debated.
+But certainly beyond debate is the point that a cool chunk of change was pumped into the &quot;hip&quot; economy. I believe that the votes I cast with thoughtful dispersion of my dollars every day, combined with the ripple effects of the consciously chosen work I do, have more influence on local and world affairs than the ballots that hit the box every couple of years.
+That famous statue on Iwo Jima tells us that there&#x27;s a lot more than just pageantry happening when you hoist a flag.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">72</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">February 14, 2009 at 02:06AM</span>
+            <div class="reply-content">No basis than recollection, which I&#x27;ve noticed on a few other instances isn&#x27;t quite what others recall about the same stuff, one of the things I&#x27;m enjoying about the TeaHouse, makes it possible for different memories to come together and sort out. I never worked gate directly but knew folks who did. For some reason I&#x27;m thinking northern Faire as getting some of the larger crowds on average. I do very much recall numbers in the 35-40K range but also recall excitement about that, definitely unusual and high end so I think your speaking to the average gate. May have been days like Memorial Day weekend, Labor Day where the gate was higher. As to participants, I think 2,000 is much closer again on average, but I also have a recollection of the 4,000 number, I wonder if that might have been the year of the Blackpoint Music Festival when the company had some extra funds via LHS grants and really tried to pull out the stops. Otherwise, yeah, mind plays tricks, and I also might be remembering inflated numbers, rumors, one-two degrees removed from the folks doing the counting. Someone says, wow we got 15,000 and the next person tells her friend, did you hear, nearly 20,000 today! Jungle telegraph.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">73</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">February 13, 2009 at 11:56PM</span>
+            <div class="reply-content">Just curious when your numbers are from. They are roughly double the numbers that were floated around the office when I was on staff in the mid - late seventies. Then the discussions were of a good gate of around 17,000 and around 2000 participants.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">74</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">February 13, 2009 at 07:46PM</span>
+            <div class="reply-content">I love the notion of node, in a larger network, and the larger network is still very much alive. I also think the Faire generated in the league of the Super Bowl or the OktoberFest (thinking of the economic multiplier again). I&#x27;ll use those two examples as Mr. Peter Brewer pointed out to me one day in a lunch break in the barn, that the RenFaire, according to the Bud distributor guys who dropped by the site occasionally was the third largest beer consuming event on planet earth, after the Super Bowl and the German Oktoberfest. That&#x27;s what you call an &quot;indicator&quot; for other spending transactions that flew off like water on a spinning ball. Super Bowl: One afternoon. The Oktober Fest, not sure, a weekend or a week? RenFaire, probably have to think about a 5 month season, but remember there were 30,000 - 40,000 people a day flowing through the gates, and close to 5,000 performers, vendors and crew living on site between set up and tear down. That is real significant economic activity carried on annually for many years. Take the hundreds of thousands of personal spending decisions (choices) that came out of that, and carried value in cash and in kind to small hip centers of bubbling craft ethic in little out of the way very groovy towns up and down the coast year after year until it began to mainstream. That, I think is &quot;generative.&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">75</span>
+            <span class="reply-author">Danese Cooper</span>
+            <span class="reply-date">February 13, 2009 at 06:17PM</span>
+            <div class="reply-content">Yes, sex was a way to learn about yourself. And sex was a way to find out &#x27;who&#x27; the other person is too.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">76</span>
+            <span class="reply-author">Danese Cooper</span>
+            <span class="reply-date">February 13, 2009 at 06:15PM</span>
+            <div class="reply-content">Self- preservation is a wonderful thing :D
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">77</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 13, 2009 at 05:06AM</span>
+            <div class="reply-content">yes thats what holds water in fine art, this sense of movement and of nodes. It is important to identify the things which we borrowed from and which pre-ceded us or affected us by being part of the same movement and times as well as how the shifting of the ideas into a larger scale system may have helped them to pass into new and sometimes old-but-renamed new again ideas.
+From fine art an example is the craft movement which was located here in California as well as the east coast and Europe. Our show was uniquely able to hold and celebrate a lot of ideas at once, and so a lot of bits and starts and even fully formed ideas passed among us. Theatrically we inherited a lot from Actors workshop and even more from traditional vaudeville practices. In true practice at times we were as much of a &quot;harold &quot; (long form improv named after Hal Taylor) during the weekend making the show or during the week playing baseball. Fiber arts, fine art crafts in the form of jewelry and yes shoes. Our musicians nurtured all summer at mill by brian and michael byxbe, by the folksongs through Virgil&#x27;s boys,
+while we did it all we were pretending to be england which made it hard to recognize how properly a Californian tradition we were undertaking. The seasonal fiesta, the workers fandango, One i remember thinking that &quot;I wonder why all my uncles like to dress up and go up and down the coast of California pretending they are in the desert&quot;. and realizing that we are in a desert! 2nd stage chapparrel.
+the beatniks were warming the seat for us before we got set into form as a faire scene. The ashgrove and the coffeehouses out in venice beach.
+loots of ideas run a cable in one side and out the other, Its good to be reminded that the combination of nodes that we saw were important and worth articulating while at the same time being a part of other systems in play.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">78</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 13, 2009 at 04:17AM</span>
+            <div class="reply-content">Bells of praise for lofty ideas, and a word of caution about a word. We might want to be careful about talking about what the Faire &quot;generated&quot;. Easy to forget it was not the Source, but a node. It didn&#x27;t come from nowhere, but was informed by a glorious pre-history. While so much, and so many, were born of it, vast amounts of people, stuff, and ideas, were passing through, tarried there for a while, and continue on. It was itself an expression of a &quot;diaspora&quot; nurtured on post-industrial, humanizing influences of human rights struggles, folk music boom, searches for lost identity via primitivism and back to nature movements, blablabla. This might be particularly pertinent in light of the cast being so predominantly white middle class. The digital explosion is a parallel movement, as are green tech, and, if I may presume to beat my breast a bit, the whole attempt to turn this world away from it&#x27;s suicidal dead end course and towards a sustainable future.
+As for the naughty bits, I don&#x27;t think we invented that stuff, not even the liberated approaches to it. But with the rare gift of tools that enabled us to get away with more, we weren&#x27;t too awful shy about carrying the flag, pushing on to explore expanded rules of engagement.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">79</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 13, 2009 at 03:01AM</span>
+            <div class="reply-content">Brian B would say &quot; Open Government&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">80</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 13, 2009 at 02:39AM</span>
+            <div class="reply-content">thats what i am saying...you already did that...what next?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">81</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 13, 2009 at 02:08AM</span>
+            <div class="reply-content">Where do you think we got the idea for Open Source ;-)?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">82</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 13, 2009 at 01:49AM</span>
+            <div class="reply-content">we could transfer it over in some sort of craft ethic oriented undertaking like coding, and bring the commons back to life with something like and open source movement..OH WAIT! you guys already did that,. Mmmmm. Hhhhmmm. Gotta think awhile on that one.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">83</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 13, 2009 at 01:14AM</span>
+            <div class="reply-content">Me, I&#x27;m going to stay completely out of this discussion! I could get myself into SO much trouble!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">84</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 12, 2009 at 06:49PM</span>
+            <div class="reply-content">One of my more recent spiritual teachers is David Martinez who helped create Theatro De Campesino and their own revival of Frida Kahlo. At one point he walked to Mexico with our teacher Andre. Representing our dance group in San Juan Bautista they walked all the way to the ocean outside of DF in Mexico and joined the dance team there near winter solstice to do the Velacion of La Virgin de Guadalupe together in the ocean, the ancient ritual of Tenochtitlan, the corn goddess.
+He says that Andre taught him:
+&quot;The only sin is mediocrity&quot;.
+I think the Craft Ethic is the most predominant theme at this point for our own ensemble.
+I think often the Craft ethic and a society of mutual admiration go hand in hand.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">85</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">February 12, 2009 at 06:24PM</span>
+            <div class="reply-content">Savoring these several lovely essays to the sensual. I&#x27;d been going through old boxes of pictures and Buck &#x27;n Mugs lately I&#x27;d completely forgotten about, and have so far ran across at least three nice photos reminiscent of Faire romances; warm updrafts through the canyons of my mind; two of which transcended the blood-brain barrier to the outside world, with college or home town, and one exclusively Faire-based where we arranged to accommodate various partners like a ball room dance card. I remember a friend of mine remarking upon the general talents of one: &quot;Everything she does, she does well.&quot; Oh my my oh hell yes baby put on that party dress. I digress. What I think I am trying to say, in the greater picture to &quot;contextualize&quot; these kind of experiences, is to come back to the larger notion of the &quot;craft ethic.&quot; This particular individual could dance delightfully, speak many languages, write with caligraphic elegance, had a wit like the best minds of our generation, loved to rock-climb, designed back country equipment, and that&#x27;s just for starters. Why not place these experiences within the larger yearning to understand and pursue a craft ethic in all its permutations, given the Lost Angeles world of traffic jams, strip malls, mind-numbing TV and Ralph Spoil Sport Motors &quot;They&#x27;re piling up folks, come on down, we can&#x27;t get rid of &#x27;em!&quot; (Now, that old Firesign Theater absurdist routine is reality).
+I would invite us to reflect back on our collective Xanadu as the greater pursuit of the craft ethic in a world gone numb with mendacity. We sought to perform creatively, and well, in all our pursuits. Maybe at some period of history, the Irish saved Western Civilization. Maybe somehow during the mid-70&#x27;s a California Renaissance generated a diaspora of creativity that was far more powerful than the forces arrayed against is, and I know is not just the Faire but other tightly wound galaxies of localized creative force around the world in those days. But now has grown up, and come into its time, like well aged wine. And, what now shall we do with what we have learned?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">86</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 12, 2009 at 05:36PM</span>
+            <div class="reply-content">Interesting points in here, Marc. People often comment that I&#x27;ve packed a few lifetimes into one, and your post has me wondering whether that&#x27;s just who I was or whether my formative years at the Faire set the pace for the balance of my life?
+One thing I know for sure (which is also called up by your post)...the cyclic nature of Faire time is deeply engrained in me. I still sleep through the months of January and February, wake up (attentionally and libidinally) in Mid-March and dance through the Summer and Fall. Christmastime still sparkles for me like bubbles in champagne.
+But to answer your question directly...yes, I think I used sex at Faire as a way to explore and understand myself. It was a bit jarring to discover that people in the mundane world had a different understanding of the purpose of that activity, and I had some rough spots when my Faire-bred assumptions didn&#x27;t match the limited experience of my mundane friends. Within the Faire I wasn&#x27;t excessively experimental (compared to many folks I knew) but in the mundane world I was far out in left field.
+I wonder what Kinsey would think if he&#x27;d done his research with us in the 1970s rather than in mainstream America of the 1950s...of course that work helped inform the sexual revolution we were caught up in, so perhaps its useless to speculate.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">87</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 12, 2009 at 05:21PM</span>
+            <div class="reply-content">crazy cross linked layers. Somehow we did have to learn how to go far fast. Using speed like that you had to learn tactics for dealing with abiguities, stories that have many sides, you learn the practicalities of these sorts of engagements.
+like I used to say
+&quot;If they cant take a joke *DONT FUCK* them.&quot;
+You learn to see past each other&#x27;s human qualities, and yes Marc you learn some practical groundrules for what is essentially other peoples dreams.
+Also I learned that falling in love has a lot of permutations. Sometimes you can get quite a lot out of a situation of intense ardor that never passes beyond a state of respectful admiration. We were a society of poets, fond of the fire, fond of the verse that is thrown on the air like perfume.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">88</span>
+            <span class="reply-author">Danese Cooper</span>
+            <span class="reply-date">February 12, 2009 at 04:35PM</span>
+            <div class="reply-content">Sex and Animal. There&#x27;s a land of extremes ... both unbelievably wild, informative, eye opening and --occasionally --painful. (No not in that way sheeesh! Oh wait, then there was that crazy brunette who got off on ... never mind.) Although it is wildly lurid, I wouldn&#x27;t start with sex. That&#x27;s because I think the context would suffer.
+I often said that six weekends at faire, equaled one year of life. I mean it condensed time and emotions. Take for example faire flings. I saw relationships start, grow, bloom, whiter and die in the run of just one faire. I learned so much about human emotions, interactions and the cost/benefits/consequences/importance of actions because faire was such a &#x27;fast forward&#x27; event.
+And it quite literally changed how I looked at the world and especially people. For example, after doing faire for a few years, I ran into a pair of brothers that were old high school buddies. We went back to their place and were getting stoned. As it is prone to do among young men, the conversation drifted to their sexual fantasies. I was trying to keep quiet except for the occasional &#x27;yeah.&#x27; One of them handed me the bong as both agreed that a menage a trois with two women was the hottest thing they could think of. Without thinking I said &quot;Make sure they&#x27;re bisexual or you&#x27;re going to die of exhaustion&quot; (I was focused on working the bong). A wave of roaring silence told me that something was wrong and I looked up into stunned faces. This was their wildest fantasy. Yet here was a guy they had gone to school with who had done it so often he had rules of thumb about it. And no, it didn&#x27;t turn into a brag fest about all the wild sex I had been having at faire. In fact, it kind of hurt because I felt a door closing between me and &#x27;normal people&#x27; that I had once known.
+The reason I say the the context needs to be established can be best summed up by this. When asked why he hadn&#x27;t been writing as much E.B. White said &quot;I wish instead I were doing what my dog is doing at this moment, rolling in something ripe he has found on the beach in order to take on its smell. His is such an easy, simple way to increase one&#x27;s stature and enlarge one&#x27;s personality.&quot;
+How many of us used faire -- and sex -- to, for the lack of a better word, adjust ourselves to this world? I ask this not in the sense of &#x27;escaping the world,&#x27; but as Suzy Cooksey once said to me when I was wondering why my life was such a fast forward &quot;You had further to go.&quot; Danese said &#x27;liberating,&#x27; but I&#x27;m talking about being the kind of people who needed to learn stuff in fast forward mode because in the outside world it would take decades to pack in that much experience. How did faire affect you that way? And sure sex was VERY much a part of that learning curve. That&#x27;s why as tempting as it would be to start with a juicy topic, it might be better to establish how, like so many other things at faire, there were many different layers involved.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">89</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 10, 2009 at 07:13AM</span>
+            <div class="reply-content">I could talk about folks that aren&#x27;t here (at Teahouse) but that would be unfair and uncoth. Or I could talk about folks who are. But that would be awkward to put it mildly. So I will say I had great sex at the Faire. And not so great sex. And definitely (at least as I saw it), not enough sex, nor as much as I thought everyone else was.
+I did like the liberal sexual mores ... I just wished they were a little more liberal or I was a little better at it or something.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">90</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 10, 2009 at 07:08AM</span>
+            <div class="reply-content">Personal responsibility ... or the same awkwardness and fear of rejection as lot of other folks have. For mean, it was mainly the latter.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">91</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 30, 2009 at 10:21PM</span>
+            <div class="reply-content">That may be true, but I do remember some anger and homophobism associated with the buttons as well. I agree that the fear was pretty real and extensive. All the self righteous religious groups that were pointing fingers at the gay community and the closing of bath houses. The fear was very real. Yes, the sensationalism, all of it. It&#x27;s is interesting to me, that the problems that are being discussed ie. Jonestown, AIDS, Milk and Moscone were not just indicative of the departure from the sixties, but, rather a slamming of the door. We at faire, had our continuance, so to speak, of the sixties, and the chance to improve on it, maybe? It&#x27;s kind of ironic that we found the mosquitos to be just a nuisance, whereas today, they can carry the &quot;West Nile Virus&quot;.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">92</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">January 30, 2009 at 10:03PM</span>
+            <div class="reply-content">Well, the &quot;I like x&quot; badges were an attempt to calm old-guard Crew fears in the early days of our modern Plague (I refer here not to our former President, but rather to the AIDS pandemic). There was genuine fear. They were worried for instance about mosquitos. They were worried about working near the Privies on that weekend, too. There wasn&#x27;t much information available, and what was available was sensationalized.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">93</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 30, 2009 at 09:06PM</span>
+            <div class="reply-content">I remember talking to Sister CPR about something when this guy in a Tutu with wings and a wand comes up to us, touches Sister CPR with the wand and says &quot;Poof, you&#x27;re a fairy!&quot; I just died.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">94</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">January 30, 2009 at 08:31PM</span>
+            <div class="reply-content">I was at a party once where everybody who sat on the couch got tiny livestock...created some relationship tension until we figured out it was the couch ;-).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">95</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">January 30, 2009 at 07:46PM</span>
+            <div class="reply-content">I remember the Sisters of Perpetual Indulgence very well, they played at the mask booth a lot that summer. I guess I don&#x27;t remember or wasn&#x27;t around for other gay days, but this one in particular I sure do.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">96</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 30, 2009 at 07:29PM</span>
+            <div class="reply-content">I remember gay days at faire. I found them to be lots of fun. There were buttons printed for crew that said &quot;I like girls&quot; or &quot;I like boys&quot;. I always found that to be a little silly. I used to have a lot of gay friends and never did they overstep the bounderies. (Unfortunately here, in Nevada, a bible belt state, the gays aren&#x27;t very conspicuous) I got to know &quot;Sister CPR&quot; one of the &quot;Sisters of Perpetual Indulgence&quot;, pretty well at Faire. I was working security by then and was a liason between Faire and the &quot;Sisters&quot;, who put on gay day. When I had to let them know that something was getting a little too out there, they were always very responsive and compliant. The wild costumes and personalities were always a trip.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">97</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">January 30, 2009 at 06:18PM</span>
+            <div class="reply-content">Here&#x27;s a good one for the timeline and extraordinary historians. The Fabulous Weekend. &#x27;81 - &#x27;82 maybe, RPFN. Story I recall, Phyllis and friends had attended a big gay rights parade in SF a few months earlier, and sold/gave away thousands of discounted/free passes to a particular weekend at Black Point. I was back in school and hadn&#x27;t been working crew or theater for a year or so, but had a gig that summer managing Annie Hallet&#x27;s Masque Booth. What a &quot;safe place&quot; to play, I sort of retreated behind the booth and wore various wild masks all weekend and got into this wildly flirtatious and simultaneously vulnerable mind space I don&#x27;t think I had ever experienced before, or since. Didn&#x27;t alter my basic orientation but sort of left me wondering if maybe those old Greeks were on to something. Anyone have any recollection of this? It&#x27;s the high stepping wildness of it all that I remember, and I&#x27;ve used the term &#x27;wild&#x27; here three times now in one paragraph without thinking about it ...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">98</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 30, 2009 at 05:11PM</span>
+            <div class="reply-content">Yep, everyone was getting more than me, until they said the same to me. It&#x27;s funny too, that when you got to faire, you always heard &quot;You should have been here back in (whatever year they chose), it was so much better, wilder, drugier, crazier...&quot; Once you had been at faire for a while, then it was your turn to say that to the newbie. One of my friends said that when you first started, you heard stories about other people, you know you&#x27;ve been there (or arrived) when the &quot;they&quot; tell stories about you.
+You&#x27;re right Catt, I never slept with anyone I didn&#x27;t know either. I had to have the emotional connection as well as the physical one. There were a number of times that I had the chance, but didn&#x27;t want the ramifications that went with the deed. So, I didn&#x27;t. I know that kept the friendship in place. Friendships last much longer than a half hour in the sack.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">99</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 30, 2009 at 04:06PM</span>
+            <div class="reply-content">yes one thing I learned from faire was how to sort of size someone up from a distance. It was always mind boggling to me that people got involved with people they didnt at all know in the real world. It completely mystified me how anyone was supposed to get that intimate with someone else without the entire group or at least someone to vouch for them. Or tell you most of the gossip about them. Or lack therof.
+I learned to listen more to the backchatter for signs that my view of things might be manipulated or one sided also. To wait until I had heard several versions of a story until I constructed any kind of imaege of it in myself.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">100</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">January 30, 2009 at 03:44PM</span>
+            <div class="reply-content">&quot;Oh my my. Oh hell yes. Baby put on that party dress!&quot; I can relate to the sense that folks thought everyone else was getting more than they were. Under the surface, I think that actually points out a seam of personal responsibility and restraint running through it all, despite the raging hormones. Lots of faire-goers had come out of suburban working class, and middle class upbringing with all that it inherit. So there was some rebellion going on for sure, but everyone brushed their teeth at night and most were pretty good natured about it all and didn&#x27;t want to hurt anyone (with some colorful exceptions). Really now, how is this all any different from Sex and the City? We just got there first.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">101</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 30, 2009 at 02:33PM</span>
+            <div class="reply-content">ah yes when the most powerful men in hollywood and and rock and roll had access to beautiful young flesh. back when it was part of the sexual revolution that 14 year olds were &quot;fair game&quot;. In certain ways a nostalgic time to recall and fondly remember, and in other ways an akward potentially litigious aspect of some of our own personal histories.
+the faire and sex:
+I always thought everyone else was getting more than I was, and everyone else always thought I was getting more than they were. That was sort of the general sentiment.
+Its true about the window grego. My first couple of faires you could get the clap, and then you just went and got a shot. Thats how a lot of people felt anyway. Personally I biffed it several times attempting to casually sleep with friends, and in the process I did learn a lot about myself. Sometimes they developed more than a crush and sometimes I did, it was like in the Cameron Crowe Movie &quot;Untitled&quot; where they talk about how the band-aid girls and the rockstars always pretended they were keeping it light when really there were high power cables right under the surface every now and again and peoples feelings were often intensely high.
+In many ways it is the existence of these relational high power cables that creates the matrix which feeds the energy of the faire and shows like it.
+the light side and the dark side.
+the ugly side is as overheard (by two kind of gross longhair guys) walking along the road by the pass gate in black point at the very end) :&quot;The faire...the best place to find a cherry to pop ever&quot;.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">102</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 30, 2009 at 02:12PM</span>
+            <div class="reply-content">you can crouch above the hole
+you can stand above the seat
+but the crabs in this privy
+can jump ten feet
+-privy graffitti circa 78
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">103</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">January 30, 2009 at 06:01AM</span>
+            <div class="reply-content">There was a brief period of a few years, I didn&#x27;t really get it till much later, when maidens of the Valley presented themselves in the most delightful ways. That it was connected to dancing, and a time when I got to help choose who got to play, well, at the time it was heavenly and I have nothing but the fondest of recollection.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">104</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 30, 2009 at 04:59AM</span>
+            <div class="reply-content">It didn&#x27;t quell a lot of the activities. One night Lucinda was going in to german camp and heard a female voice &quot;Oh, that&#x27;s so big, you not going to stick that in me are you?&quot; She hesitated not sure of what she heard and went inside anyway. She said that on the floor, were three couples engaged, as it were. When she walked in, they all stopped and looked at her and one of them said, &quot;Hi Lucinda, wanna join us?&quot; She thanked them and said no, then quickly left.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">105</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">January 30, 2009 at 04:44AM</span>
+            <div class="reply-content">scabies from the showers hehehheee, well something for the timeline I guess might be the gradual awareness of AIDs as it began to dawn on all of us that many of us were awfully damn lucky and others so close to us succumbed tragically.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">106</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 30, 2009 at 02:49AM</span>
+            <div class="reply-content">Ah, that brief little window. Birth control was safe and easy, and there was nothing antibiotics couldn&#x27;t fix. For those few short years the only generation in the history of the world to find that window open is now, due to intersecting factors, blessed with memory lapses.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">107</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">January 30, 2009 at 12:08AM</span>
+            <div class="reply-content">moi?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">108</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">January 30, 2009 at 12:02AM</span>
+            <div class="reply-content">Fingers in ears isn&#x27;t a kink I would have suspected you of, Richard ;-*
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">109</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">January 30, 2009 at 12:01AM</span>
+            <div class="reply-content">My fingers are in my ears and I am shouting lalalalalalalala! LOL A good topic.
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

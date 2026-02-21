@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let&#x27;s build an event time line.....Or &quot;What was Where, When? - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Let&#x27;s build an event time line.....Or &quot;What was Where, When?</span></div>
+            
+    <div class="module">
+        <div class="module-header">Let&#x27;s build an event time line.....Or &quot;What was Where, When?</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Greg &quot;Grego&quot; Dana</span> | <span>January 25, 2009</span> | <span>113 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (113)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">October 21, 2010 at 05:52AM</span>
+            <div class="reply-content">Oh gee whiz: I meant to type &quot;1990&quot; not &quot;91.&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">October 21, 2010 at 12:52AM</span>
+            <div class="reply-content">Oh gee whiz: I meant to type &quot;1990&quot; not &quot;91.&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">October 21, 2010 at 12:23AM</span>
+            <div class="reply-content">Hi Murray: The Sacramento Dickens Christmas Faire (aka &#x27;freezer faire&#x27;) was in 1991, and held at the California State Fair Grounds. The event actually went through most of the weekends scheduled, but just before the last weekend (literally on the Friday night before) an Alaskan cold front came down the coast and, yes, pipes burst all over the Northern California area. I was in Davis, CA (15 miles +/- outside of Sacramento) at the time, and while the DCF did actually *open* that Saturday morning, it had to be shut down about 90 minutes into the day, as the fire sprinkler pipes were totally broken, and the Fire Marshall declared the situation too dangerous to have any public events there until the pipes were fixed. Needless to say, the pipes did not get fixed until spring of 1992, long after the DCF was long-long gone.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">October 20, 2010 at 04:19AM</span>
+            <div class="reply-content">try this link http://on.fb.me/9QQg03
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">October 20, 2010 at 04:18AM</span>
+            <div class="reply-content">http://www.facebook.com/photo.php?pid=30967474&amp;id=1225248688&amp;ref=notif&amp;notif_t=photo_tag#!/photo.php?pid=30967474&amp;id=1225248688&amp;notif_t=photo_tag&amp;fbid=1440540973264
+Anybody have a firm date on the two California shows done in the 80&#x27;s? The timeline shows 84 but this pict is from 85 or 86 (prob 86)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 25, 2010 at 05:27AM</span>
+            <div class="reply-content">Much of this has been entered at
+http://www.gregoland.com/timeline.html
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 25, 2010 at 04:10AM</span>
+            <div class="reply-content">Okay, that makes more sense to me becasue we were up here in the hills by then and had the lowest (and most) snow recorded in 30 years that winter.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">February 24, 2010 at 03:45PM</span>
+            <div class="reply-content">That fits perfectly into my recollection of this period from a horticultural standpoint. It was a drought and that, combined with record-breaking cold, killed a ton of usually much hardier plants. We&#x27;d moved to Napa in November, 1989, and the subsequent winter (1990) was amazingly cold. There was an 1&quot; sheet of ice of the swimming pool. Funny how a multiple perspective can get to the bottom of things, eh?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 24, 2010 at 08:01AM</span>
+            <div class="reply-content">Freezer Faire was 1990.
+Loma Prieta killed the S.F. Pier, so the &#x27;89 Dickens did not happen.
+We re-grouped next year in Sacto &amp; damn near froze our collective gonads off.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 24, 2010 at 07:35AM</span>
+            <div class="reply-content">I really wish I had been around for that one. Don&#x27;t know why I missed it because we didn&#x27;t quit the company until 86.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 24, 2010 at 07:21AM</span>
+            <div class="reply-content">Another Third hand account- Louise Jensen visited me in Sacramento during her stint at the &quot;freezer Fair&quot; &amp; regaled me with stories of the frozen pipes.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 24, 2010 at 07:04AM</span>
+            <div class="reply-content">I&#x27;m looking at my old records-I listed paychecks from Theme Events until July 1976, then Living History Center. There was no Dicken&#x27;s Fair. Phyllis laid me off in November, but wanted us to work for free until the business stabilized. Doris told me that Phyllis asked her why I left to get another job. (I went to work at Beach Blanket Babylon) Doris told her that I had to pay rent. I was back on Living History Center payroll in Feb of 1977
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 24, 2010 at 07:03AM</span>
+            <div class="reply-content">It is so very cool to see this discussion come alive again. After the start of the Wiki project, this discussion died off and I completely forgot about it. Looks like I will have to compile the list after all. Thank you all!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 24, 2010 at 06:45AM</span>
+            <div class="reply-content">We produced costumes for an event for Busch Gardens on the Gilligan Island set in 1976? Entertainers were at a party in LA Judy Kory, etc. Gregory Peck was there.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 24, 2010 at 06:42AM</span>
+            <div class="reply-content">There was a Dicken&#x27;s Fair at the Cow Palace in 1976 and 1977. I remember staying in a motel nearby with Louise &amp; a girl named Peggy who freaked out because she left her down pillow at the motel.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 24, 2010 at 05:58AM</span>
+            <div class="reply-content">Also, on the Teahouse HOME page, check out at the very top the link to Gregoland Timeline!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">[1k7yfe86iwp1h]</span>
+            <span class="reply-date">February 24, 2010 at 04:43AM</span>
+            <div class="reply-content">Freezer Fair at Cal Expo in Sacto was closer to 89 or 90 (the pier was made unsafe by the 89 quake).
+It was indeed freakin&#x27; COLD. We danced just to keep our blood moving. Pipes burst and the resulting water spills froze over.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">February 24, 2010 at 04:31AM</span>
+            <div class="reply-content">I didn&#x27;t go, but it&#x27;s known at &quot;The Freezer Fair.&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 24, 2010 at 04:26AM</span>
+            <div class="reply-content">Here&#x27;s one Dickens&#x27; Fair that I can speak of only from hearsay, since I had to be in SoCal that season for family caregiving. I believe it was &#x27;85, and the search for a site that year landed the event in the Sacramento area, in what would turn out to be one of the coldest periods in Central Valley history. I recall hearing stories of how pipes in the site building burst, flooding the floors, and freezing into solid ice. The event was cancelled for part of its run, and was remembered as a disaster by all who spoke of it.
+That Sacramento Dickens seems not to have been mentioned by anyone, altho one of the postings here had a &quot;?&quot; re &#x27;85. Anyone out there who can add some direct experience to my flawed third-hand knowledge of that frozen fair?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">February 24, 2010 at 03:35AM</span>
+            <div class="reply-content">I had the same issues, Carolie, trying to remember. That&#x27;s why I spent the time looking through the microfilms of the old Pink Sections at the Napa library. Definitely no DCF in 1976, but there was a rooftop thingie at The Emporium.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">February 24, 2010 at 03:23AM</span>
+            <div class="reply-content">It is right that we lost Army St. in &#x27;76. There was no Dicken&#x27;s that year. I&#x27;m positive about that because I produced my wedding to Stuart instead of doing Dickens. We were married Jan 4, 1977. Dickens 1977 and 1978 were at the Cow Palace.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 24, 2010 at 02:28AM</span>
+            <div class="reply-content">I thought 1978 was the year that the pre-LHC company Theme Events &quot;folded&quot; due in part to overspending on Dickens that year at the Cow Palace. I attended that year, and it really was amazing...best suspension of disbelief I ever achieved as a visitor at any Faire. But I gather it was too expensive to build and not enough people turned up...{sigh}
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 24, 2010 at 01:05AM</span>
+            <div class="reply-content">I remember a Dicken&#x27;s Faire at the Cow palace in 1976 and in 1977. Isn&#x27;t that right? We lost Army St during the RPFS 1976 &amp; Vikki Merkling went up north to help store the costumes. But I think we did the Emporium and Dickens.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">Richard Beard</span>
+            <span class="reply-date">February 23, 2010 at 08:20PM</span>
+            <div class="reply-content">Dickens Fair
+1983-84
+Fox Theater
+Oakland, Ca.
+&quot; On the Wrong Side of the Tracks &quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">February 23, 2010 at 07:57PM</span>
+            <div class="reply-content">That&#x27;s great, Danese. From an historical perspective, it&#x27;s interesting that there was also a party in 1976 to take the place of the missing DCF (in addition to the rooftop gig at the Emporium, which I stayed away from). I remember going to the party and have a vague recollection that it was at Mill College. I can&#x27;t recall who was there, but for some reason I remember a lot of the Fezzwig folks from the 1975 cast @ Army Street. For the longest time I thought this 1976 was the first PEERS or Gaskells, but, in fact, it wasn&#x27;t (when I looked into it).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 23, 2010 at 07:10PM</span>
+            <div class="reply-content">I can extend Noel&#x27;s work a tiny bit...
+1980 Fort Mason
+1981 No &quot;real&quot; Dickens...just a party (Carrie has a copy of the flyer)
+1982 no Dickens
+1983 Fox Oakland (including really late hours)
+1984 Fox Oakland
+1985 ?
+1986 Pier 45
+1987 Pier 45
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">February 23, 2010 at 06:36PM</span>
+            <div class="reply-content">I did the leg work on this a few years back. This will take you through 1979. I went and looked at old SF Chronicles on microfilm.
+1970 Unspecified wharehouses near the Embarcadero near Union &amp; Battery (first faire - 3 weeks) (I think it was the Old Icehouse, now gone). 5:00 to 11:00 pm, Tuesday through Friday, noon to 11 pm Saturday &amp; Sunday.
+The article mentions Jay Paul and James Kahlo, as well as Consortium Antiquum. It also says that Ron &amp; Phyllis &quot;have done a total of 12 Faires, here and in Los Angeles&quot; Yikes! Such babies. My favorite quote from the Pattersons references both fairs, Renn &amp; Dickens: &quot;Our favorite periods and both times when there were queens.&quot; Well, yes, and....LOL.
+1971 Wharfside, next to the Cannery, Fisherman&#x27;s Wharf. As I recall, this was when the Cannery was still in construction (more or less) and the fair was in the base of warren of brick buildings. Cold as hell. I was 13 or so and went with my sister in costume. Thursday and Friday, 5-11, Saturday noon to 11, Sunday noon to 8:00
+1972 Army Street, next to the produce market. Weekends, 11-11 Saturday, 11-9 Sunday.
+1973 same venue, Saturdays 11-9, Sundays 11 to 7.
+1974 same venue, Saturdays 11-10, Sundays 11 to 7. Think I went to this one as a volunteer.
+1975 same venue, Saturdays 10-10, Sunday 10-7. Volunteered at this one and worked Fezziwigs ad hoc.
+1976 no fair that year. Some promo stuff for the Emporium or Macys, and a ball at a college in the East Bay (Mills?--Aurie might remember), but no fair.
+1977 The Cow Palace. Friday and Saturday, 10-10, Sunday 10-7. I worke this one dancing and those were loooooooong weekends. I weighed 135 pounds at 6&#x27;2&quot; from dancing so much and got hammer toes. They really worked your butt off in those days. I&#x27;ve never worked so hard in my life!
+1978 The Cow Palace, again. Didn&#x27;t work this one. This was during one of the first major LHC/Faire meltdowns and there was a lot of bad blood at that time. I was sulking. No more Fridays. Saturday 10-10, Sunday 10-7.
+1979 Fort Mason. Saturday 10-10, Sunday 10-7.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">[hwtmndvaz593]</span>
+            <span class="reply-date">February 23, 2010 at 05:56PM</span>
+            <div class="reply-content">The first Dickens Faire was 1970, at the Anchor Works down by Peir 23, the second was The Cannery 1971, the 3rd. was the Cannery 1972.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">29</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 01, 2009 at 03:20AM</span>
+            <div class="reply-content">I think you&#x27;re spot on re: Dickens at the Fox. If I recall correctly, &#x27;84 was the year I was trying to establish myself in Marin (didn&#x27;t work -- had to move back to SoCal a few months later). Anyway, i worked the front entrance (w/ Jane as my supervisor) and, of course, Coffee House.\
+I loved the catacombs, the catwalks (and the &quot;Fagin&#x27;s Alley&quot; that was created there during Dickens), and the vent. shafts. The ventilation shafts in that building were big enough to walk in without stooping. And of course, completely non-functional.
+I also made a few (very few) bucks passing out fliers in the City during the week, mostly in the Financial District and such places. It was actually rather hard to get folks to take the fliers. The typical response I recall was something like &quot;Oh, that&#x27;s in Oakland ... we dont GO to Oakland. Turns out that the Faire itself was one of the safest places in Oakland. If you took the Bart from the City, you got out just in front of the old Broadway dept. store (I think) just across the street. The Broadway always had several big guys on its side of the street working security, and we had Kenji (sp?) and whoever he was partnered with.
+Kenji and / or other Security guys would often get escort detail taking folks back to their cars, but I got drafted for that a few times (I was not actually working for Security then - I was working Front Gate, which I believe was sort of its own dept.) ... but never alone.
+What I don&#x27;t recall is whether or not there was a Dickens at the Pier the following year or there was a gap.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">30</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">January 30, 2009 at 01:02PM</span>
+            <div class="reply-content">To augment that comment, there was much afoot at RPFN 1978 as well, and Jonestown (and the Milk assasination) were the final nail in the coffin. Bad times all around, but the storm was a-brewin even at RPFN 1978.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">31</span>
+            <span class="reply-author">[xj4gqw5wi0c2]</span>
+            <span class="reply-date">January 30, 2009 at 02:02AM</span>
+            <div class="reply-content">Oh my gosh yes, I was there, I saw it, magnificent. I remember fog, standing out on the pier before the Fair opened, people milling around in costume, drinking coffee. The ships must have come through all day, but its the memory of all these top hats and hoop skirts in the fog with a tall ship coming through the gloom that sticks with me. 1976 at Fort Mason, exactly.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">32</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 30, 2009 at 01:19AM</span>
+            <div class="reply-content">I remember the nightmare that was the Jonestown Faire. There was a play that has prop guns and gun shots that had to be scrapped because of it. That and the Milk-Moscone shootings!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">33</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 30, 2009 at 01:13AM</span>
+            <div class="reply-content">The Cow Palace, when the major LHC/Faire meltdown came about because Dickens opened the same weekend as the Jonestown massacre, which filled the press (depriving the DCF of the usual vital local publicity) and dangerously diminished attendance. The Buck &amp; Mug began then as a political outcry -- an outgrowth of a confrontational after-hours meeting between participants vs producers, with some frictions too unpleasant to rehash.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">34</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">January 30, 2009 at 12:57AM</span>
+            <div class="reply-content">Max, I ran into Carolie in Seattle, when I was doing a film with the Pacific Northwest Ballet, in 1986. Would she have been back from NY by then?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">35</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 30, 2009 at 12:43AM</span>
+            <div class="reply-content">Ah yes, Bob Poppet -- a VERY fine fella. Among other things, he was, as I recall, the &quot;designer&quot; of the 2nd DCF (at the Cannery) -- a lovely little fair that surprised everyone when it started drawing crowds that were lining up around the block. I remember a costumed Ron P. enticing cars that were driving through the congested street. Kevin P. would sometimes sit on Mildred&#x27;s lap &quot;helping&quot; her sell tix. I think admission was $2.50. We had a beginning bagpipist who would constantly &quot;entertain&quot; the lobby area with her screeching pipes. Since that&#x27;s where I spent much of my time, I&#x27;ve never since felt the same about bagpipes. That was the fair when I and Carolie Tarble, the costume coordinator (remember her? -- last I knew she&#x27;d moved to NYC, but found Broadway less fun than Faire) began our tradition of sharing an annual dance in Fezziwig&#x27;s.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">36</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">January 29, 2009 at 03:10PM</span>
+            <div class="reply-content">I was supposed to go to Santa Cruz that day with Butch to visit of friend of mine who lived there. We changed plans earlier in the day, putting it off for a couple of days since Faire just ended and we were tired. We would most likely have been on that mall, either at the Cooper House, or Book Shop Santa Cruz, my favorite places there. Both buildings collapsed.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">37</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 29, 2009 at 03:02PM</span>
+            <div class="reply-content">Mid-journey from RPFN southward, I was out for a stroll and looking for dinner with Ruth on the Pacific Garden Mall in Santa Cruz. 4 miles from the epicenter, it was made of turn-of-the-century unreinforced brick.
+As the dust cleared I noticed a scoop of ice cream in the road, with no cone or owner in sight.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">38</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 29, 2009 at 11:56AM</span>
+            <div class="reply-content">Thanks for posting that clip Luisa. My memories of the music fest are dim. I think it had a relatively short run (2 or 3 weekends?). I&#x27;d sure like to have my memory jogged more!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">39</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 28, 2009 at 05:03PM</span>
+            <div class="reply-content">i remember the info sheet for that fest, I think it was circulating at Black point during northern or something. time to dig through mementos
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">40</span>
+            <span class="reply-author">[1o1f61cl9xgq5]</span>
+            <span class="reply-date">January 28, 2009 at 06:13AM</span>
+            <div class="reply-content">And I remember that particular show - Sean was wonderful as always
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">41</span>
+            <span class="reply-author">[1o1f61cl9xgq5]</span>
+            <span class="reply-date">January 28, 2009 at 05:56AM</span>
+            <div class="reply-content">I know I was delivering a child during December 1984, and that 1983 was the last of my Dickenses... so I think the timeline is right as I remember the catacombs below the theatre.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">42</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 28, 2009 at 05:53AM</span>
+            <div class="reply-content">I used to have a Crew tee shirt from the first DCF at the Fox and it said &quot; We Made It Happen In &#x27;83 &quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">43</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 28, 2009 at 05:44AM</span>
+            <div class="reply-content">Hi Dawn:
+I know DCF&#x27;84 was at the Oakland Fox Theater. Look for a video clip I just posted the other day here on the teahouse of Sean Sharp doing a V&amp;A Music Hall turn as &quot;The Tempermental Artiste.&quot; The video quality is not very good, but Will Wood as the Chairman and Sean make up for my lack of video skills.
+I *think* that was the first of two Fox Oakland DCF&#x27;s, the second being 1984. Unless I&#x27;m wrong, of course.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">44</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 28, 2009 at 05:36AM</span>
+            <div class="reply-content">Other aspects of the Blackpoint Music Festival:
+Wasn&#x27;t Karana Drayton of the The Arkansas Sheiks (aka Northumbrian String Band at RenFaires) the music coordinator for that event?
+Also, wasn&#x27;t Micheal Drayton, Karana&#x27;s husband, involved with a fiddling competition both at Shindig (1976) and also BMF (1977)?
+Since I wasn&#x27;t there, personally, I don&#x27;t know first hand, but does anyone remember and/or have programs, PR flyers, or something from that event?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">45</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 28, 2009 at 05:24AM</span>
+            <div class="reply-content">Yup, look in the video archive here for the &quot;Blackpoint Music Festival.&quot; Or go to my home page and it should be right there (somewhere).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">46</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 28, 2009 at 05:23AM</span>
+            <div class="reply-content">Yes Murray (Max): there was a music festival held around the &#x27;quarry&#x27; and barn areas. I posted a video clip here at the teahouse and Ms. Cotton is, indeed, shown briefly playing her magic on guitar. The title of the video clip is:&quot;Blackpoint Music Festival&quot;
+PS - look for Greg Dana and Lynn Anne Hansen dancing in the straw off the side of one stage while the &quot;Boys of the Lough(sp?)&quot; play (near the end of the short clip).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">47</span>
+            <span class="reply-author">[1o1f61cl9xgq5]</span>
+            <span class="reply-date">January 28, 2009 at 05:23AM</span>
+            <div class="reply-content">Wasn&#x27;t there a Dicken&#x27;s Faire at the old Fox Theater in Oakland? 1982? 1983?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">48</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">January 28, 2009 at 04:11AM</span>
+            <div class="reply-content">I did not join DCF until 1979. I know 79 wasn&#x27;t the first year it was done, but it was my first year doing it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">49</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">January 28, 2009 at 01:40AM</span>
+            <div class="reply-content">Yes Julian, I did this event. It would have to have been in 1977 as BIng had just died (he usually did the show) and Phil Harris did it instead.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">50</span>
+            <span class="reply-author">[1k7yfe86iwp1h]</span>
+            <span class="reply-date">January 28, 2009 at 12:09AM</span>
+            <div class="reply-content">In regards to the original post, 1998 was the last year at Blackpoint.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">51</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">January 28, 2009 at 12:02AM</span>
+            <div class="reply-content">I remember several DCF performers doing a Christmas show at Laguna Salada Convalescent Hospital in San Francisco in 1979. I helped move patients in wheelchairs into the auditorium. If I recall correctly, the Crosby family was there.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">52</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 27, 2009 at 11:12PM</span>
+            <div class="reply-content">I&#x27;m getting slightly unfuzzed, and beginning to recall that Pete &amp; family may indeed have been at that music fest. What was the name of that show???
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">53</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 27, 2009 at 10:20PM</span>
+            <div class="reply-content">I was in the State Park Ranger&#x27;s academy in Asilomar (Pacific Grove Ca)and had just gotten out of class and was in my room when it hit. My roommate was yelling to get in a doorway and I said F#@&amp; that and bolted outside. One of my classmates witnessed a deer accidentally kill itself by bolting head on into a tree.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">54</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 27, 2009 at 10:16PM</span>
+            <div class="reply-content">I am pretty sure he or his brother (step/half?) that either played or was scheduled. I could be mistaking him/them for another somewhat widely known musician.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">55</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">January 27, 2009 at 10:05PM</span>
+            <div class="reply-content">I&#x27;m pretty sure that the Seeger family band (including Pete Seeger) did the same event as Elizabeth Cotton. But my mind is also fuzzy on this event and it does get tangled with Shindig. Not sure which year it was.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">56</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">January 27, 2009 at 09:17PM</span>
+            <div class="reply-content">I was on the lot during the quake, in front of Red Barn watching Gray Water rock side to side. I was off work that week. Had I not, in all likelihood I would have been on 880 heading toward the Bay Bridge when it struck, as that was my normal route home from San Leandro to San Francisco.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">57</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">January 27, 2009 at 09:16PM</span>
+            <div class="reply-content">I think Luisa posted an ancient video of this somewhere or other last year...Ms. Puig, can you help us out here?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">58</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 27, 2009 at 09:11PM</span>
+            <div class="reply-content">Jammin&#x27; everywhere! There was just that one music fair. Some of my memories of it get confused with the &#x27;76 Shindig. I think those are the only two summer events we did at Black Point -- they weren&#x27;t big draws. But they sure were fun in their own special way. Pete Seegar??? That I have no memory of. Not to be extraneous, but it was touching that he was at the DC inaugural concert, doing &quot;This Land...&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">59</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 27, 2009 at 08:48PM</span>
+            <div class="reply-content">Yeah...I still am not over that one.
+In some ways I hope never to be &quot; over &quot; it.
+You know my mind on this , Catt.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">60</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 27, 2009 at 08:09PM</span>
+            <div class="reply-content">It was one big jam session right? Weren&#x27;t there more than one? I seem to remember trying the music thing a couple of different years. One year we had Pete Segar I think.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">61</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 27, 2009 at 08:07PM</span>
+            <div class="reply-content">Ahhh the summer of 73..The summer I learned where Bob Poppet (anybody remember him?) got the name 151 and being introduced to one of my favorite mixed drinks....when I hadn&#x27;t even turned 16 yet!That was a fair I never forgot (for several reasons.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">62</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 27, 2009 at 08:07PM</span>
+            <div class="reply-content">Yup, there was a music camp that was part of that event (I can&#x27;t remember the exact name of that fair, which could&#x27;ve been in &#x27;78?). A modest number of folks had come from lotsa places to be there. During fair days they&#x27;d be playing their instruments in pickup groups around the site.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">63</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 27, 2009 at 08:02PM</span>
+            <div class="reply-content">Thanks D.. I thought that the bridge had been around longer than 78. You are right about the Todd Morgan work. It would have had to have been done the spring of 83 then because the fire was in late 82, deep in fire season. When they were cleaning up the debris was when it was discovered that there was a hydraulic jack that had been rented form somewhere that was being used to hold up part of the bridge and had been there for several years!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">64</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 27, 2009 at 07:57PM</span>
+            <div class="reply-content">Didn&#x27;t we also do some type of camp with that event? Or was that the year after? I know we did some other event in the summer after 1977 because (since I had been with CDF during the 77 fire season and had cut a lot of fireline that year!) either Bob or Bill detailed me to cut a handline firebreak/trail up the ridge from the road behind the Red Barn to the camps at the top for some music camp we were putting.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">65</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 27, 2009 at 07:41PM</span>
+            <div class="reply-content">Yeah, there was another summer event at Black Point after the &#x27;76 Great American Shindig -- the music fest (&#x27;77?) that featured elderly Elizabeth Cotton (&quot;Freight Train&quot;), appearing occasionally on the stage built inside the barn, a stage big enough for a group of clog dancers who always drew a crowd. I remember that event for the impromptu music that kept happening all over the site, among visitors as well as performers.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">66</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 27, 2009 at 07:26PM</span>
+            <div class="reply-content">Addendum -- The Old San Franscisco Waterfront Fair (summer &#x27;73) was on the Hyde St pier, as part of the city&#x27;s cable car centennial.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">67</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 27, 2009 at 02:29PM</span>
+            <div class="reply-content">a trick of the mind; I keep trying to trick myself that I never worked faire without Don, except that I did come back in 96 and work the last two years of Blackpoint. mentally I could never reconcile the thought of making the show really happen without him there, he was my goddamn crutch out there, and I know I am not the only one. Normally I am pretty accepting of the vagaries of fate however I still take this one exactly n the chin like a child.
+I really do miss him, he was an engine and a fountain of positive energy. WE need to have more big parties with dancing because when we do I start to feel him there.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">68</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 27, 2009 at 01:45PM</span>
+            <div class="reply-content">i remember that earthquake because Adam long and I were sitting in Shannon Derry&#x27;s apartment in Arcata when it happened.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">69</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 27, 2009 at 07:43AM</span>
+            <div class="reply-content">( omygawd Noodle - how cool is that !!?? )
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">70</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 27, 2009 at 05:55AM</span>
+            <div class="reply-content">Yes, Morgan:
+First year in Devore was RPFS89, and yes, sadly we lost Don Mills that same season. Loma Prieta earthquake was the Tuesday evening after RPFN&#x27;89 closed. The quake also coincided with the infameous &quot;Trans Bay World Series&quot; as both the Oakland A&#x27;s, and SF Giants were playing each other (that evening the game was at Candlestick Park).
+That year (1989) had a *lot* of historic, memorable events.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">71</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 26, 2009 at 06:55PM</span>
+            <div class="reply-content">It&#x27;s funny that you mention that hook ups, that is kind of how I came up with the idea! Somebody was talking about an old &quot;hookup&quot; and we were trying to pin down dates for him. My plan is, once consensus is reached and the time-line is documented, it would be available as the basis for any and all needs. Publicly it could be the basis for such things as the beginning and endings of shows, clans, troupes, guilds, etc; events like births, deaths, night shows, job changes; tracking who was the editor of the B&amp;M, who managed what stage when. Privately it would be the basis for who was with whom when as well as marriages and divorces. The possibilities are endless!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">72</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">January 26, 2009 at 06:34PM</span>
+            <div class="reply-content">Well, I think the last year in Agoura was 1988...so...seem&#x27;s likely that Devore started in 1989...those pics of me holding ice-cream eating Adi were at the last day of Agoura.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">73</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">January 26, 2009 at 06:27PM</span>
+            <div class="reply-content">Morgan, you know, you&#x27;re right. I&#x27;ve noticed that,too. Thanks for pointing that out. I guess I was picking up some offline chatter during phone conversations (weird comments which seemed old news). Thanks for correcting me on that. It makes me feel better. By the way, I was showing someone your video and they were very impressed. They even asked if you were American!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">74</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 26, 2009 at 06:14PM</span>
+            <div class="reply-content">Was that first year in Devore 1989 ? Same year as Loma Prieta, and when we lost Don Mills, or am I telescoping events ?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">75</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 26, 2009 at 05:57PM</span>
+            <div class="reply-content">my dream has always been to provide that ground for many many hatchets to be buried in.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">76</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 26, 2009 at 05:16PM</span>
+            <div class="reply-content">plus the internet is fast fast at that hour
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">77</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 26, 2009 at 05:15PM</span>
+            <div class="reply-content">I must say, I have noticed an awful lot of Responsible Adult behavior here. Folks who had LONG standing feuds, fights,acrimonious ex-lovers,etc, and I see here every day how they have become &quot; Friends&quot;
+Maybe we could hold that discussion now.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">78</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">January 26, 2009 at 05:02PM</span>
+            <div class="reply-content">Well, in the spirit of my last post...at least I can tell you Carrie and I weren&#x27;t together last night ;-).
+Mom&#x27;s often wake in the middle of the night and can&#x27;t resist grabbing a few kid-free moments of peace.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">79</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">January 26, 2009 at 02:53PM</span>
+            <div class="reply-content">There really wasn&#x27;t a DCF in 1976. I&#x27;d just started Court that year @ RPFN (after knocking about RPF as a volunteer for years with my last gig being Information in 1975). So I was pretty well-connected and had worked DCF, 1975, the last year at Army Street. As I mentioned in my post, there was something (on the rooftop at Macy&#x27;s, I believe), but no &quot;official&quot; DCF. It cranked up again (and I use the term advisedly--those were &quot;snowy days&quot; at Fair/es) at Le Palais du Vaches.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">80</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 26, 2009 at 02:21PM</span>
+            <div class="reply-content">we could do it in a private historians group here.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">81</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">January 26, 2009 at 02:19PM</span>
+            <div class="reply-content">Hi there --- I beg to differ on 1976 Dickens Fair.....We were at Fort Moson .... One of my favirite memories was at about 9:00 in the morning we were setting up for fair ,when someone came screaming thru the fair &quot;HAS ANYONE GOT A CAMERA&quot;
+Seems that that particular year was the Bicentenial,they had a Parade of tall ships in New York Harbor for 4th of July celebrations. and afterwards a number of ships went on World tour....well November we were blessed with one pulling in to San Francisco....When we ran out here we were in full Dickens garb ( about 100 of us)...and in the background was this tall ship with flags waving and all the sailors dressed in Victorian uniforms standing at the rail.....All you could see for background was Marin Headlands. It was a memory that lives with me always.....
+Sommewhere durring this time was the Hyde Street Pier Fair that we did one Summer....I still have the plackard somewhere in storage....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">82</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 26, 2009 at 02:15PM</span>
+            <div class="reply-content">thanks danese that clears that up, I remembered losing the stage in 78 and then the bridge. so the bridge in 82 then.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">83</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">January 26, 2009 at 12:43PM</span>
+            <div class="reply-content">Danese, are you trying to start WW IV? LOL. It&#x27;s strange to me how much old business is still floating around from my era (30 years past) on a strictly &quot;theatrical&quot; level. Throw sex into that stew of long-held slights and resentments and I&#x27;m sure you&#x27;d get some fireworks.....
+But it&#x27;s a great idea, if you have a sturdy emotional firewall and asbestos keyboard. Definitely something to be explored in the more salubrious climate of Ning than in the rollicking world of Facebook. Tribes seems a bit of a lame duck these days for pursuits other than academicesque.
+And if you&#x27;re PST, why are you and Carrie up at this hour??????
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">84</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">January 26, 2009 at 12:27PM</span>
+            <div class="reply-content">I was at a party yesterday in Berkeley (Bon Voyage for Rusty Wilson, son of Joyce Wilson Lively) where Silas and Vicky Nebeker and I had a little too much to drink and decided it would be just as fun to do a master timeline of who hooked up and unhooked with whom over the years. Just a thought ;-). Too bad this Teahouse is publicly archived ;-).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">85</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">January 26, 2009 at 12:23PM</span>
+            <div class="reply-content">The bridge burned in 82, along with Drury Creek stage. It couldn&#x27;t have been 78, because it was Todd Morgan and Boo-Boo who did the big fat culvert-and-dirt replacement (and they weren&#x27;t involved at that level by 78). Drury Creek actually burnt down in both fires. I used to drive out to check what had burned every winter. Years I worked for Carol LaFleur she actually called and asked me to do this for her, and I remember that call in 82.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">86</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 26, 2009 at 06:57AM</span>
+            <div class="reply-content">First year at Army St was &#x27;72. &#x27;71 was at the Cannery, and &#x27;70 (the very first -- ran 6 days a week, as I recall) was at the old Icehouse.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">87</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">January 26, 2009 at 06:23AM</span>
+            <div class="reply-content">It was also the site of OSF in 1988, very memorable for me as well. I worked security there. I also have photos from it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">88</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 26, 2009 at 05:22AM</span>
+            <div class="reply-content">The Pier 17 event was &quot;The Old San Francisco Waterfront Fair&quot; (I still have a mounted poster hanging in my bathroom -- it was a VERY memorable fair for me, in a lotta ways). It ran for 8 weeks (4 days a week) in July and August, &#x27;73.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">89</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">January 26, 2009 at 03:27AM</span>
+            <div class="reply-content">No Randy, you&#x27;re right. That was the title.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">90</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">January 26, 2009 at 03:24AM</span>
+            <div class="reply-content">&#x27;76, it was the bi-centennial. That&#x27;s why we had it. But as it was to turn out (because there was no Dicken&#x27;s that year) it kept us at 3 fairs.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">91</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 26, 2009 at 03:16AM</span>
+            <div class="reply-content">One year before I started working faire some friends and I came out and didn&#x27;t want to pay for tickets so we ran through &quot;the ditch&quot; ... I think we saw other guys do it so we did it too. Wasn&#x27;t that hard and there didn&#x27;t seem to be too many folks trying to prevent it. I was maybe 16. It wasn&#x27;t &#x27;till a few years later, when I started working on crew, that I learned that it was called Rattlesnake Gulch and for good reason.
+Boy, were we dumb.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">92</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 26, 2009 at 03:08AM</span>
+            <div class="reply-content">I thought that the Shindig was officially named &quot;The Great American Shindig&quot; but I may have that mixed up with a music fest.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">93</span>
+            <span class="reply-author">[02v9sfrs8abuf]</span>
+            <span class="reply-date">January 26, 2009 at 02:54AM</span>
+            <div class="reply-content">There was the Bi-Centennial Fair in 76...is that what we&#x27;re calling The Shindig? Everything was Americana. It was in the Red Barn and surrounding areas in Black Point in the summer between the two Pleasure Faires. LOL, that was the fair when Dennis Day said, &quot;Kalyn...you&#x27;re upset because YOU think this is a professional gig!...it ISN&#x27;T&quot;. That was my last Fair acting...after that I went to stage management, then finally to retail.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">94</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 26, 2009 at 02:37AM</span>
+            <div class="reply-content">That is kind of what I want to do with the base time line. Use it to tie in people, events, shows, etc. It could be like “a year in review&quot; or one of those &quot;this year in history&quot; things. Possibilities are endless.
+The Bridge burned during one of the Malibu fires. I just looked them up and there was one that fit the time line. It was the Kanan fire of Oct 1978. There was also a fire in late 82 that burned through the lot but I think the Bridge was gone by then. I thought the bridge burned later but 82 would have been to late. I was on security the year that one happened. We had a chase through the only brush patch left after the fire the following spring.
+In 78, I was on the Misc. crew and helped cut in the lower overflow road through rattlesnake gulch and the bridge was there then.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">95</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 26, 2009 at 02:33AM</span>
+            <div class="reply-content">I don&#x27;t know &#x27;bout anyone else, but I have a hard time recalling what happened in what year ... even after I sobered up (1982) before that is even hazier. Perhaps the recollections here will sharpen my memory.
+Peace,
+- Sequoia
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">96</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 26, 2009 at 02:31AM</span>
+            <div class="reply-content">When was the first &quot;Old Cal?&quot; (Old California Days) ... I seem to recall an event at Black Point between RPFS and RPFN after 1976 ... but my memory of what year was what is rather fuzzy. I know when also had Old Cal (which I referred to as &quot;Old Cow&quot;) at the Pier a year or two or ?? later, but I don&#x27;t remember whether it also existed at Black Point or if I&#x27;m remembering Shindig. Heck, I don&#x27;t even know for sure whether I started workin&#x27; faires (as opposed to sneaking in) in &#x27;76 or &#x27;77.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">97</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 26, 2009 at 02:31AM</span>
+            <div class="reply-content">76 or 77? How long did it run?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">98</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">January 26, 2009 at 02:30AM</span>
+            <div class="reply-content">Okay, I was able to do this sooner than I thought. For Dickens Fair, at least, here&#x27;s an edited verision of what I posted on Tribes (Ghosts of Dickens Fair Past, I think, in the thread &quot;Why This Tribe?&quot;) Upstream from my post there is some excellent editorialzing which fills out the early DCFs (Silas and Jon). So, here it is, based on the SF Chronicle:
+Locations for Dickens Fair
+1970 Unspecified wharehouses near the Embarcadero near Union &amp; Battery (first faire - 3 weeks) (I think it was the Old Icehouse, now gone). 5:00 to 11:00 pm, Tuesday through Friday, noon to 11 pm Saturday &amp; Sunday.
+The article in the S.F. Chronicle mentions Jay Paul and James Kahlo, as well as Consortium Antiquum. It also says that Ron &amp; Phyllis &quot;have done a total of 12 Faires, here and in Los Angeles&quot; Yikes! Such babies. My favorite quote from the Pattersons references both fairs, Renn &amp; Dickens: &quot;Our favorite periods and both times when there were queens.&quot; Well, yes, and....LOL.
+1971 Wharfside, next to the Cannery, Fisherman&#x27;s Wharf. As I recall, this was when the Cannery was still in construction (more or less) and the fair was in the base of warren of brick buildings. Cold as hell. I was 13 or so and went with my sister in costume. Thursday and Friday, 5-11, Saturday noon to 11, Sunday noon to 8:00
+1972 Army Street, next to the produce market. Weekends, 11-11 Saturday, 11-9 Sunday.
+1973 same venue, Saturdays 11-9, Sundays 11 to 7.
+1974 same venue, Saturdays 11-10, Sundays 11 to 7. Think I went to this one as a volunteer.
+1975 same venue, Saturdays 10-10, Sunday 10-7. Volunteered at this one and worked Fezziwigs ad hoc.
+1976 no fair that year. Some promo stuff for the Emporium or Macys, and a ball at a college in the East Bay (Mills?--Aurie might remember), but no fair.
+1977 The Cow Palace. Friday and Saturday, 10-10, Sunday 10-7. I worked this one dancing and those were loooooooong weekends. I weighed 135 pounds at 6&#x27;2&quot; from dancing so much and got hammer toes. They really worked your butt off in those days. I&#x27;ve never worked so hard in my life!
+1978 The Cow Palace, again. Didn&#x27;t work this one. This was during one of the first major LHC/Faire meltdowns and there was a lot of bad blood at that time. I was sulking. No more Fridays. Saturday 10-10, Sunday 10-7.
+1979 Fort Mason. Saturday 10-10, Sunday 10-7.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">99</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 26, 2009 at 02:11AM</span>
+            <div class="reply-content">when did the bridge burn down in Agoura? 78? 79? I think I remember Terry Collier actually calling me to tell me the boards were still standing. I would say 78
+we need a list of buck n mug editors too along with the volumes and years and shows
+big shows and their years are also good.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">100</span>
+            <span class="reply-author">[1xvdtzq634x8]</span>
+            <span class="reply-date">January 26, 2009 at 02:10AM</span>
+            <div class="reply-content">As soon as I get to a faster connection, I&#x27;ll remine the work I did on this which is indeed posted on Tribes. Some of these issues were driving me ba-zonkers, so I went to the library and looked at microfiche for DCF. I have a better recollection of RPFN (Sylvia and I are contemporaries almost to the day). So, stay tuned. It&#x27;s a interesting task, and it&#x27;s strange how contentious it can get. Some folks are fierce about their memories; I&#x27;m old enough at 50 to know I can&#x27;t be sure of anything without one or two ancillary backups.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">101</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">January 26, 2009 at 01:50AM</span>
+            <div class="reply-content">Shindig was summer 1976 between RPFS &amp; RPFN
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">102</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">January 26, 2009 at 01:47AM</span>
+            <div class="reply-content">Cow Palace is &#x27;77 &amp; &#x27; 78 only
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">103</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">January 26, 2009 at 01:31AM</span>
+            <div class="reply-content">Randy, look in photo albums at &quot;Odds and Ends&quot;. There are pics of the 1983 Northern Travelers Guide aka map.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">104</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 26, 2009 at 01:24AM</span>
+            <div class="reply-content">Great..thanks..I will add it to the list! Nice job..any more?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">105</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 26, 2009 at 01:16AM</span>
+            <div class="reply-content">Another question to go with this discussion. Does anybody have any old maps? Either the ones produced for the public or for some other reason (like legal?). If so, can I get a copy?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">106</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">January 26, 2009 at 01:12AM</span>
+            <div class="reply-content">Old San Francisco Fair
+Definitely in July, maybe June
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">107</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 26, 2009 at 01:08AM</span>
+            <div class="reply-content">SO when was the 1st year @ Army street? 71 or 72?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">108</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 26, 2009 at 01:07AM</span>
+            <div class="reply-content">What was the full name of the pier 17 event? and what months did it run?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">109</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 26, 2009 at 01:06AM</span>
+            <div class="reply-content">Okay, that explains why I didn&#x27;t do the Dickens Faire the year I came home from the Army (1976). Good start!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">110</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">January 26, 2009 at 12:58AM</span>
+            <div class="reply-content">There also was no Dickens in &#x27;76 that was when we lost Army St and had no where to have it. I know this because instead of doing Dickens that year, I produced mine and Stuart&#x27;s wedding (Jan &#x27;77)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">111</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">January 26, 2009 at 12:53AM</span>
+            <div class="reply-content">Dickens Fair was at Fort Mason in 1979 and 1980. There was no Dickens in 1981.
+1988 Old San Francisco at Pier 17
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">112</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 25, 2009 at 11:37PM</span>
+            <div class="reply-content">I thought about that but we have a lot of either Ludites or technologically challenged members who whould have a real problem with a wiki. I was going to do it in a basic simple format and let discussions bring about the resolution of any issues. Wiki&#x27;s end up with to much deletion and counter deletion and covering the already covered. A simple discussion with the results in a document format might work for those tech challenged or who don&#x27;t like confrontation.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">113</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">January 25, 2009 at 11:27PM</span>
+            <div class="reply-content">Randy, Catt and I have been discussing this for months. We&#x27;ve decided that we need a wiki in order to do this in a way that is not too much work to sort out. It&#x27;s been done before, if you read threads on tribe, but the problem is that after everyone has their linear say, it&#x27;s hard to put it in timeline form. So Catt has been going to get a wiki up so that we can keep it in some sort of chronological order.
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

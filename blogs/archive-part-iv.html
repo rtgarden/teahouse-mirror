@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive Part IV - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/blogs/">Blogs</a> <span>›</span> <span>Archive Part IV</span></div>
+            
+    <div class="module">
+        <div class="module-header">Archive Part IV</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By [isw2k6t3av2r]</span> | <span>November 23, 2007</span> | <span>0 comments</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;">it happened! just once so far but it happened! 
+
+Mon, February 12, 2007 - 1:54 PM
+
+Poo poo in the toilet. 
+
+YIPEEEEEEEEEEEE! 
+
+We did a celebratory dance. 
+
+It was just a little bit but it happened. 
+
+Happiness and a cookie for M.
+
+Mon, February 12, 2007 - 1:54 PM - permalink - 1 Comment
+
+post an entry
+
+edit this post delete this post
+
+1 Comment
+
+add a comment
+
+catt
+
+184
+
+Mon, February 12, 2007 - 2:20 PM
+
+my dog can herd pigs, bark at helicopters, kill bears and roll over.... but she will never ever poop in a pottie. 
+
+Congrats! 
+
+the first step to civilization!
+
+delete this comment
+
+add a comment
+
+« it happened! just once so ... | main | early day. »
+
+I am feeling discouraged.
+
+Thu, February 15, 2007 - 11:38 AM
+
+We had a speech evaluation for M today. It was a combo group/one on one evaluation. He played quite nicely with the two other kids (even though one of them was absolutely freaking out if M tried to touch the toy he had). During the group playtime, Miles also did some things that I had never seen and sort of freaked me out. I&#x27;d like to think it was just because he was excited but the first time, he started tensing up while he was standing and kind of hunched over. This &quot;episode&quot; lasted at least 5 seconds, maybe more. Then, he did it again later this time with his arms up in the air. It looked like a convulsion to me. How could I not have seen him doing this before? Is it possible that it just happened for the first time during his evaluation? I am plagued with questions and need to speak to his neurologist. 
+
+When it came time for the one-on one though, M wouldn&#x27;t sit still to work with the speech pathologist. He just wanted to thoroughly explore her office (in his usual style). She showed great concern over the fact that he often chokes a bit when he drinks liquids. I didn&#x27;t get a positive, happy, he&#x27;s just fine vibe from the visit at all but then again, he was the last kid she saw from the group so I guess she could have been a bit worn out. 
+
+She wanted to help me get the results from the EEG he had last week (I&#x27;ve called twice since Tuesday, no response) so she patched me through directly to neurology from her office. The neurologists&#x27; assistant couldn&#x27;t give me the results over the phone. Thanks for nothing. The pathologist was also a bit annoyed with that. 
+
+Even worse, the hearing test that was ordered for him back in December still has not found it&#x27;s way to Children&#x27;s in the form of an approval. Good grief. I just called his pede&#x27;s office not two days ago to make sure that it had been faxed over which they confirmed it had been. I spoke face to face with the appointment maker today and she had nothing from them. The pathologist and I were at the point of having UCSD fax me the approval and me faxing the approval over to speech and pathology to the attention of his SLP to finally get it done. I am so frustrated by all of this. I feel like we&#x27;re getting nowhere. He&#x27;s scheduled for a developmental evaluation at the end of April so even for that, we have to wait for over a month. 
+
+It all makes me want to cry and pull my hair out. At the same time. 
+
+*Sigh*
+
+Thu, February 15, 2007 - 11:38 AM - permalink - 0 Comments
+
+post an entry
+
+edit this post delete this post
+
+0 Comments
+
+add a comment
+
+early day.
+
+Fri, February 16, 2007 - 7:55 AM
+
+It&#x27;s been nice. M woke up before daybreak so we got to watch the sun rise. i slept well and am going to try and make that happen more often as it has resulted in a productive morning. 
+
+we were dressed and out the door for a walk before 7. up to the playgorund we went. the street was so quiet. M showed off his word for bee when he saw a lawn decoration. new word to add. we ran around on the grass at the park, smelled the flowers, and went up the stairs to the slide and back down again. we had it all to ourselves which was nice. 
+
+walking back home, M wanted to dig. he kept saying it and stopping at people&#x27;s yards who have dogs so, needless to say, i was not inclined to let him dig in the poo. we came back and he pointed to my car and said &quot;cooh&quot; and signed car. another word to add. woo hoo! 
+
+after digging in the dirt (he has his own gardening area) we changed our clothes and came in. it has been a good morning. i hope the day follows suit.
+
+Fri, February 16, 2007 - 7:55 AM - permalink - 0 Comments
+
+post an entry
+
+edit this post delete this post
+
+love coupons
+
+Sat, February 17, 2007 - 6:06 PM
+
+call it retail therapy at the grocery store. the biggest difference between myself and other women who love to shop is that i get my jollies from how much money i save. i am a confessed penny pincher and extremely proud of it. 
+
+i am reeling from the trip i just returned from: i brought home over $100 worth of groceries (that we will actually eat and use) for $6.09. that&#x27;s the beauty of double coupons and grocery chain promotional specials. combine that with a coupon savvy woman (helped out enormously by a free coupon website) and you get me: a shopper who, with a little planning, brings home all of the food and non perishables (including diapers, cat litter, and more) we&#x27;ll need for well under $100 per month, usually more like $25-$50. i think that&#x27;s not too shabby for a family of three. especially a family of our current financial means. 
+
+OK, I admit I don&#x27;t achieve world peace via these exploits but i do donate a lot of the items i get for free with the coupons to mama&#x27;s kitchen (food pantry for AIDS patients) or other groups. plus, i get to take M with me and he really loves to help. 
+
+All right. I&#x27;m done with my back patting session. however, i am still glowing. 
+
+*grin*
+
+Sat, February 17, 2007 - 6:06 PM - permalink - 0 Comments
+
+post an entry
+
+edit this post delete this post
+
+bits and pieces, pieces and bits
+
+Tue, February 20, 2007 - 10:13 AM
+
+i love looking through the Sunday paper. 
+
+this last Sunday, m had risen in his usual early manner so we got our coats on and headed up to the park and the newspaper vending machine. I had managed to scrounge up exactly enough coins for a paper. it will be fun, i thought, to let M help me put the coins in the machine. 
+
+after we had a little run at the park, we headed across the street to the vending machine. We were in luck! Since we got there before 7, it still had papers left (usually it&#x27;s empty). M had overheated at the park and had taken off his jacket so i set it down on top of the machine and proceeded to show him how to feed the coins into the slot. he was delighted to help. when we finished, i showed him that the door would open. we took our paper out and then i told him to close the door. In my haste and half awake state, i had failed to spy the corner of his jacket hanging down in front of the corner of the door. SLAM! He was pleased with himself for shutting the door. I grabbed the paper, his hand, and his jacket and got about half a step. we had slammed his sleeve shut in the machine. luckily the coat wasn&#x27;t on him but it was stuck. i began to pull. it wouldn&#x27;t budge. i checked my other pockets to see if, by some miracle, i did actually have more coins. the whole thing began to remind me of the Simpson&#x27;s episode where Homer shuts Maggie in the machine by mistake. At least it&#x27;s just my kid&#x27;s jacket, i thought. I pulled harder and M began to laugh and shout: pull! pull! It made me laugh and i said: yes, we need to pull the sleeve out of the machine. mama made a mistake! 
+
+he laughed and continued to tell me: pull! pull! the thing still wasn&#x27;t budging. could we make it back home to get more coins and back in time to still find it here? i kept pulling and M kept laughing and cheering me on. Help me, i said to him and he got behind me and pulled the jacket with me. just like that, it was out. he is capable of so much more than we give him credit for. 
+
+yesterday afternoon we stopped at a thrift store down the street from our house and spotted a kid sized guitar. missing a few strings but only $6! he grabbed it straight away and began to play it. needless to say, it came home with us but can only be used under supervision since he doesn&#x27;t quite have the concept of the fragility of the instrument and seems to want to sit on it while he plays it :) 
+
+this morning, i asked him if he wanted to check his snack bowl and choose a snack. he exclaimed: BOWL! and did the sign for it as well. I&#x27;ve pushed his omegas back up to two per day and the results are notable.
+
+Tue, February 20, 2007 - 10:13 AM - permalink - 2 Comments
+
+post an entry
+
+edit this post delete this post
+
+2 Comments
+
+add a comment
+
+catt
+
+184
+
+Thu, February 22, 2007 - 7:47 AM
+
+wow, he is probably going to be fluent in sign, english and Spanish eventuall eh? Great start. 
+
+I love him with his axe!
+
+delete this comment
+
+rosey
+
+34
+
+Thu, February 22, 2007 - 8:19 AM
+
+that would be awesome if we could manage getting him trilingual. 
+
+the cuteness factor of this photo kills me. such a contemplative little musician...
+
+delete this comment
+
+2 Comments
+
+add a comment
+
+Anna
+
+173
+
+Fri, February 23, 2007 - 11:20 AM
+
+has he had a seizure? This must be so frustrating for you guys the last few months, I love you and tell Mr. J big hugs. I so look forward to seeing all 3 of you this summer.
+
+delete this comment
+
+rosey
+
+34
+
+Fri, February 23, 2007 - 1:25 PM
+
+no seizures that we&#x27;ve been able to determine but i guess that&#x27;s still in quesiton. such an exhausting and frustrating process it has been. Oy. J sends his love and a big ol&#x27; hug back. i wish we could make it up for the 21st shindig of lil-miss-i-can&#x27;t-believe-she&#x27;s-that-old. send our love and a toast on our behalf. Salud!
+
+delete this comment
+
+add a comment
+comunicando
+
+Sat, February 24, 2007 - 6:47 AM
+
+Yesterday J swears he heard M say: &quot;I did it!&quot; It surprised me but not so much I guess seeing as how he was making another &quot;phrase&quot; last night: squeaking (his mouse sound) and snoring (sleep sound) . He was talking about the mouse we had just read about in his picture book who goes to sleep at the very end. Reading picture books to him makes it very obvious the type of learner that he is. while he might be able to recognize and say some of the words that are on each page, he instead always points to them and says :&quot; hm&quot; or &quot;fff&quot; which is his request to hear how something is said. 
+
+Last night, I also heard him say, for the first time, a word other than &quot;bye&quot; which would be totally intelligible by someone outside of our household: &quot;Bear&quot;. He said it just as it should be said; had no trouble with the intonation or details of the phonemes. Awesome. 
+
+This morning we&#x27;re off to our friends&#x27; house for a playdate with a little girl who&#x27;s a year younger to the day and very verbal. He loves her dearly and I can see how good it is for him. Hopefully today he&#x27;ll get an inclination to try and speak with her.
+
+Sat, February 24, 2007 - 6:47 AM - permalink - 0 Comments
+
+post an entry
+
+edit this post delete this post
+
+0 Comments
+
+add a comment
+
+it happened again!
+
+Wed, February 28, 2007 - 7:17 AM
+
+It was greatly overshadowed by the fact that i threw my neck out yesterday morning (this is the worst I&#x27;ve ever had it; I&#x27;m totally unable to turn my head and I&#x27;m in incredible pain) but when I went to check on M at one point yesterday afternoon, I found pee in his potty chair. Woo hoo! All other attempts we&#x27;ve made to this point to get the business in the pot have involved us sitting with him and repeatedly bringing him back to it to sit down and try again but this time, he did it without any prodding which is a great big step! Granted, the aim was a bit off but at least half of it made it in the right place :)
+
+Wed, February 28, 2007 - 7:17 AM - permalink - 2 Comments
+
+post an entry
+
+edit this post delete this post
+
+2 Comments
+
+add a comment
+
+catt
+
+184
+
+Wed, February 28, 2007 - 11:48 PM
+
+bravo!
+
+delete this comment
+
+Buffalo
+
+10
+
+Fri, March 2, 2007 - 12:35 PM
+
+Tuesday was a bad day!
+
+I don&#x27;t know if I did worse than you. On my way into OGGI&#x27;S in Mission Valley, I tripped over the curb in my oversize sheepskin boots, broke my left big toe, contused my right knee(hopefully no ligament damage) and slashed open my right palm on the broken jug! I had to drive myself to Sharpe Emergency because I couldn&#x27;t afford an ambulance(I&#x27;m paying $300/month for $7500 deductible insurance, can&#x27;t afford to even go to a doctor, really!) I could barely walk, but there was no parking for people driving themselves to Emergency(#@$%!!!!)I broke open the stitches using the crutches to get back to my car(on the second level!) and trying to open the childproof cap on my meds! Luckily my sister came down to change the overdue catbox, but I&#x27;m pretty useless right at the moment.
+
+delete this comment
+
+wanting to scream
+
+Fri, March 2, 2007 - 5:16 PM
+
+it&#x27;s what I want to do right now. I *just* got off the phone with audiology. we&#x27;ve been trying to schedule M&#x27;s hearing test since December 2006. The first obstacle i had to overcome was the Bermuda triangle that sucked up the doctor&#x27;s original orders for the hearing test. That led me to my daily calls to children&#x27;s and UCSD to figure out whodunnit. Then, finally last week, his neurologist offered to place orders for us. I thought I was home-free but boy was I wrong. The first available hearing test they&#x27;ve got for us is May 7th (!!!!!!!!!!). That&#x27;s the day before we go for our follow up with the neurologist. Given the snail&#x27;s pace that paperwork and information seems to travel between the departments, i am doubtful that our follow up will now include any of his hearing test results. 
+
+I am so...livid. Yes, livid describes it fairly well. Exhausted would be another fair description. I am beginning to doubt he&#x27;ll get any &quot;early&quot; intervention as i was urged to seek for him. it seems the only way he would have gotten that is if i had started this whole godforsaken process when he was still in utero. 
+
+overreactions aside, I am thankful that we at least have a date set for the hearing test. And, we are on the cancellation list so we *might* get in sooner. i am trying to reroute my frustration and turn it into energy that will bring us someones cancelled slot.
+
+Fri, March 2, 2007 - 5:16 PM - permalink - 1 Comment
+
+post an entry
+
+edit this post delete this post
+
+1 Comment
+
+add a comment
+
+Anna
+
+173
+
+Mon, March 5, 2007 - 12:46 PM
+
+Hearing test results are pretty immidiate.......make them give you copies of whatever they&#x27;ve got right then. Explain that you are seeing the neurologist the next day........ 
+
+and remember the squeaky wheel....... 
+
+keep calling to see if cancellations have come up, 
+
+I love you guys.
+
+delete this comment</div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Comments (0)</div><div class="module-content"></div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

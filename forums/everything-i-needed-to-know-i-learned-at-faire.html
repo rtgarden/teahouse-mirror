@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everything I needed to know, I learned at Faire... - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Everything I needed to know, I learned at Faire...</span></div>
+            
+    <div class="module">
+        <div class="module-header">Everything I needed to know, I learned at Faire...</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Eric Lethe</span> | <span>January 13, 2009</span> | <span>40 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (40)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">[1h6zysamq83un]</span>
+            <span class="reply-date">July 10, 2009 at 05:04AM</span>
+            <div class="reply-content">MY goodness what did I learn? The biggest and best thing was the golden rule. The next thing was trust.(The authorities came looking for me and no one knew who I was.) Friendship. This site proves that. I don&#x27;t know of anyone who has had the same friends for 30 years.How to have fun at no o0ne else&#x27;s expense. The list go on and on.
+One of my earliest and lasting memories is of Ron Chordas telling me that I can pick up that garbage can all by myself and dump it in the back of the truck.
+Daivd Coker and I being best friends (evil twins) with nothing else involved but love and caring for each other.Bob G and I being able to finish each others sentences. I guess what I&#x27;m getting at is we all knew we were in the same boat and only had each other to rely on.I wish the rest of the world could learn that one.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">May 15, 2009 at 06:04AM</span>
+            <div class="reply-content">Even before I started hanging out and working at coffee house, I benefited from the &quot;community/family kitchen&quot; at the Dust Bowl camp in Black Point (&#x27;76 or so, I think). &quot;Mama Gail&quot; (Burlap Queen) was the organizer and one of the chief cooks, but everyone pitched in. I think I contributed oatmeal and peanut butter. We at a lot of rice and black beans &#x27;cuz it was cheap and Mama Gail cooked &#x27;em good. At least, I recall they were good. I was hungry, they were good, and the family didn&#x27;t let me go hungry, even &#x27;tho I came up to Faire really unprepared.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 07, 2009 at 12:39AM</span>
+            <div class="reply-content">yes we used to have some great stone soups at coffee house.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">May 05, 2009 at 08:09PM</span>
+            <div class="reply-content">&quot;Hugs with butt grabs are perfectly normal.&quot;
+Indeed they are. *smile*
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">May 05, 2009 at 08:08PM</span>
+            <div class="reply-content">I learned...if everyone pitches in, you can feed - no, make that FEAST - a whole lotta people. Used to do that toward the end of the pay period pretty regularly; everyone had to contribute *something* - be it ingredients from dumpster-diving, or washing dishes, or cleaning and cutting things under my direction....
+Also, the give-away box on Snob Hill taught the same kind of lesson.
+It&#x27;s the same ethic that informs a lot of my activities now.
+Pitch in.
+Share.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">[2bxg1pa0vr8c7]</span>
+            <span class="reply-date">February 25, 2009 at 12:39AM</span>
+            <div class="reply-content">I learned how to work hard, play hard and sneak away from a party when you didn&#x27;t want to be followed home. I don&#x27;t sneak away anymore, it just takes me an hour to hug everyone goodbye.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Richard Beard</span>
+            <span class="reply-date">February 16, 2009 at 09:42PM</span>
+            <div class="reply-content">If I had a dollar for every time a radio was keyed up in some back room,but then you know the rest of it. Click, Click, Click, Click, Click ! What&#x27;s that sound ?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">[2bxg1pa0vr8c7]</span>
+            <span class="reply-date">February 15, 2009 at 04:47AM</span>
+            <div class="reply-content">I learned....Oh kissing and walking away...in public...during the day...to be continued maybe...or not. Walking in the dark. Feeling safe and secure in the woods all alone at night. Appreciation of the moon and so many stars...Holding hands and strolling with a girlfriend or guy friend with no further intentions. Hugs with butt grabs are perfectly normal.
+To be continued......
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 06, 2009 at 02:06PM</span>
+            <div class="reply-content">yes i still wish that everyone i know knew to say carbon condition.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 06, 2009 at 05:08AM</span>
+            <div class="reply-content">Yeah ... I didn&#x27;t add that &#x27;cuz my post was on lessons in communicating that can be translated to everyday life. But I guess it could translate as &quot;don&#x27;t open your mouth if you don&#x27;t know who&#x27;s listening.&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 06, 2009 at 05:06AM</span>
+            <div class="reply-content">For several years I was the &quot;Communications Coordinator&quot; (better know as the Walkie Talkie Guy) for the California Traditional Music Society (CTMS) Summer Solstice Music Festival. The last year was 2 years back due to difficulty with the site. One of my jobs was teaching Radio Etiquette -- not to Security types, but to (mostly aging) folkies. I created a radio procedures manual, a very abbreviated &quot;10-code&quot; list, and even taught them to say &quot;Carbon Condition.&quot; The Festival was such a tame event (no booze, biggest gate was prolly 4,000 for two days).
+I think I did that job for 4 or 5 years. Before that, I was the &quot;Gate B&quot; (i.e., staff and vendor gate) Coordinator. Where I also basically used what LHC taught me, and amazed many people by knowing what to do in various situations.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 04, 2009 at 05:25PM</span>
+            <div class="reply-content">That was because many of them had two wide flat metal sides! One side had the mike key but the other was perfect!that is IF you remembered to shut the radio of! The radio was heavy enough to key it&#x27;s self if you set it on the wrong side.
+Why would you set a radio on it&#x27;s side you ask? Lets just say that there were a few people that didn&#x27;t have a mirror to check their makeup or hairdo but did have an extra $5 or $10 bucks...
+One such person was poor Gail (at that time on the Ale crew and before she was with Reggie, this is the girl who later dropped a keg on her foot, and while still in a cast rubbed her eyes with gasoline on her hands and temporarily blinded herself!). After state parks took over the parking lot and western town, they were working with us in managing that area. Their dispatch had one of our radios (good old CB&#x27;s, man remember the skip? All those guys from Georgia! But I digress) so that they could monitor what was going on and respond if needed.
+Late one after noon, we suddenly hear over the radio the sounds of conversation, something that sounded like kegs clanging, and background music. Somebody has set their radio down on the key. Gail&#x27;s voice is clearly identifiable. The conversation begins to go into quality and pricing of certain recreational products! Then the tapping begins. I think it may have been either Jim or LV that was in Larry&#x27;s pickup outside near the front gate. He immediately stuffs the mike to the trucks mobile radio (more powerful that most of our handhelds) under the seat cushion under him with it keyed up (so it would override the other radio), looks at those of us that happened to be meeting with him and says &quot;find her now!&quot; We began to go from Ale stand to Ale stand (also checking garbage stashes and back stage areas, any place the people might be using to &quot;check their makeup&quot;!) looking for one that had background music that we had heard (we were not sure that was a keg banging we had heard.) Who ever was in the truck would un-key the mike occasionally to check if we had found it, and we could narrow in on the keyed up radio and the scraping sounds, the he would key it back up. During on such clear mike period you suddenly hear the sound of an Ale stand office door open and a guards (Rotney?) voice clearly say &quot;Hey shit head your radios on! And the last thing you hear is Gail&#x27;s &quot;Oh Fuck!&quot; &quot;click&quot;........... silence............ The next voice we hear is the state park dispatcher advising us that they are having some type of radio problem and wanted to know if we were also! Whew!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 04, 2009 at 04:14PM</span>
+            <div class="reply-content">I found myself as a stage manager with a radio at a major N. CA festival ( Grass Valley World Music Fest ), and my time at the LHC was priceless, as I had to teach Radio Etiquette to several Clueless Security guys.
+What Redwood said !
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 04, 2009 at 03:25PM</span>
+            <div class="reply-content">people used to set them down on the button and then do nefarious deeds. liveonstage on the radio.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">February 04, 2009 at 09:24AM</span>
+            <div class="reply-content">I would add to this...Be Aware and DON&#x27;T KEY THE RADIO unless you plan to talk.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">February 04, 2009 at 07:06AM</span>
+            <div class="reply-content">Sequoia, this is brilliant. Thank you.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 04, 2009 at 07:03AM</span>
+            <div class="reply-content">I learned some important conversation skills from using the old CB walkie talkies:
+(1) LISTEN before you talk and wait for an appropriate amount of silence before you open your mouth;
+(2) Only interrupt if what you have to say is vitally important, and more important that what anyone else is saying at the moment;
+(3) Clearly identify who you are and who you want to talk to and make sure they&#x27;re listening before going off at the mouth (&quot;Security Base, this is Tree Person, do you copy?&quot;);
+(4) Only one person should talk at a time;
+(5) You can&#x27;t talk and listen at the same time;
+(6) It&#x27;s okay to talk in code sometimes, but if you overdo it, no one will understand;
+(7) Speak clearly and in as few words as possible;
+(8) Sometimes you need to relay information from one person to another. Pay attention and repeat as closely as possible what the other person said;
+(9) When you&#x27;re done talking, let the other folks know you&#x27;re done and then shut up! (&quot;Sequoia Clear&quot;)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 03, 2009 at 05:27AM</span>
+            <div class="reply-content">i learned i werent no quarter mile-er.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 02, 2009 at 04:47PM</span>
+            <div class="reply-content">Oh Randy...that last bit is so true for ALL of us !
+I have tears in my eyes reading this. It seems we are all misfits in the Modern World who found acceptance and worth.
+God I love you guys.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 02, 2009 at 06:01AM</span>
+            <div class="reply-content">How to drink beer
+How to appreciate good beer (thanks Bob!)
+To love celtic music.
+That I love Bangers!
+To appriciate the differences in people.
+How to kiss (I&#x27;ve been told that I&#x27;m not too bad).
+How to make good chili-mac on one burner propane stove.
+The meaning of huie.
+How not to be a lightweight.
+That &quot;hippy chicks&quot; are hot.
+That you can make furniture out of hay bales and old wire spools and walls out of burlap.
+That an old horse tack shed makes a great first home.
+How to run across rough ground at night without a light.
+The meaning of peace by overwhelming force (Goon squad rules of logarithmic mathematics).
+How to make a camper out of a 67 ford galaxy, and a home out of a tent.
+The importance of backup.
+And most important of all to a 13 year old country kid who didn’t fit in at school……….
+That is was okay to be different.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 01, 2009 at 02:50AM</span>
+            <div class="reply-content">The first year I arrived at Black Point (1976? 77?) I learned I really could rely on the kindness of near strangers; that a person could survive quite well on a diet primarily consisting of black beans and rice, and oatmeal for breakfast, from the &quot;dust bowl&quot; community kitchen. I&#x27;ll remember names after I log off, I&#x27;m sure.
+I learned that a yellow jacket sting would not kill me (but hurt like a son of a b****).
+I learned that if I showed up, ready to give what I could and bust my butt, I would get what I needed.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">[15eq2ug3npsz6]</span>
+            <span class="reply-date">January 31, 2009 at 08:09PM</span>
+            <div class="reply-content">One of the first lessons I learned at the faire was to be my own person...I came to faire from a situation where people were trying to make me into something/someone I wasn&#x27;t....faire gave me a place to be whomever I wanted to be and to learn to be comfortable with myself.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">January 29, 2009 at 02:24AM</span>
+            <div class="reply-content">Definitely a good skill to have, and one I&#x27;ve found to come in pretty handy.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">Carrie Smith</span>
+            <span class="reply-date">January 29, 2009 at 02:04AM</span>
+            <div class="reply-content">I started working Faire at 14, so where do to start?
+I learned how to change clothes in public without showing any skin whatsoever, a skill which served me very well when I began surfing in my 30s.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">[1k7yfe86iwp1h]</span>
+            <span class="reply-date">January 28, 2009 at 11:12PM</span>
+            <div class="reply-content">I learned that I wasn&#x27;t ugly after all.
+And how to kiss.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">[lpyorxac6nhq]</span>
+            <span class="reply-date">January 28, 2009 at 08:40PM</span>
+            <div class="reply-content">I learned that I didn&#x27;t have to settle for the narrow little world that my parents were trying to push me into(I kept wondering what was wrong with me, the Faire taught me that nothing was wrong with me, something was wrong with them)... It was OK to be insane. Ok to have my own business, instead of being the slave of some corporation that could throw me away without a thought or a pension...Low overhead is the key, I&#x27;ve never needed a mansion to be happy. I learned the art of trading for what I need. Sometimes I am holding on by my fingernails, but the Faire taught me that there is always something I can do to survive. And I&#x27;ve done lots of things in between, from selling cherries by the side of the road, to temp work, to painting myself silver and playing the tin man in a Macy&#x27;s fashion flyer. And I made hats for WATERWORLD thanks to Jim Kelly&#x27;s sister-in-law, and was well paid...networking works! Thanks to Don Brown, I became a decent cook and baker, and I can make most things from scratch. Thanks to my life long fashion and costuming interests, I became a decent seamstress(though I still struggle with alterations and pattern making). Both skills are always needed, though perhaps not well paid, and cash flow is always good. I also know a lot more about Renaissance and Victorian history than most of the general population. Plus, I have a great cache of stories for my memoires...I think the statute of limitations has run out...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 28, 2009 at 04:12PM</span>
+            <div class="reply-content">so true, being able to live out of a hootch and look good is a key survival skill. Also understanding the use of things as tools rather than stuff as stuff. Like you say you can let go if things if you know what you really need. Bob was really into low overhead, and that transferred over to my training up here which was always bent towards zero overhead.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 28, 2009 at 06:34AM</span>
+            <div class="reply-content">I Learned how to live out of a camper with only the basic&#x27;s, and manage to look great for the show, taa daa! Its been a great life tool, for not being attached to the stuff that acumulates when you start to get rooted. Much easier to become a gypsy at a moments notice if you can let go of the stuff.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">29</span>
+            <span class="reply-author">[3tjomb2csum08]</span>
+            <span class="reply-date">January 26, 2009 at 03:38AM</span>
+            <div class="reply-content">I recall a night in Mendocino Woodlands with NO moon, myself and several females... and mushrooms... and a HUGE circle of redwoods, must&#x27;ve been 100 feet across... that was NOT Lark Camp, but at Mendocino Woodlands just the same... a very *special* place in my memory!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">30</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 26, 2009 at 03:11AM</span>
+            <div class="reply-content">Walking Black Point w/o flashlight was easy. It was Camp 3 @ Lark that was rather challenging. The trees are so dense there that NO moonlite or starlite comes through. That &quot;farthest tree&quot; was a lot closer (like 10 ft. away).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">31</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 26, 2009 at 03:09AM</span>
+            <div class="reply-content">I think it was Rollie who taught me how to walk the length of the Northern Faire site without a flashlight. It was basically a requirement. The close your eyes thing was part of it, but I also remember picking the farthest tree that was visible, focus on that, then pick out a tree farther away, etc. When you couldn&#x27;t stretch your vision any further, start walking and do it all over again.
+On Nite Security, flashlights were for reading passes and for shining in other people&#x27;s eyes to keep them off balance (but not very often).
+I also learned to tell the difference at 50 paces in light between a flashlight, a candle, a propane lantern, a white gas lantern, a kerosene lantern, and an honest to goodness carbon condition.
+Peace,
+- Sequoia
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">32</span>
+            <span class="reply-author">[2jg1ezg44pwe8]</span>
+            <span class="reply-date">January 17, 2009 at 04:38AM</span>
+            <div class="reply-content">Thanks Ron, that means a lot to me. If I was assistant, that was the first Northern Faire for me, Ken Coberly&#x27;s assistant. What a big batch of personalities we had that year in Ale two. I remember you as being kind and really blown away by how hot those beams of nastiness could be. You not only learned to not absorb other peoples negativity but to inhance other peoples positivity!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">33</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 16, 2009 at 12:00AM</span>
+            <div class="reply-content">yes no flashlight?
+just cover your eyes and count to 90
+open them and they will have adjusted
+terry taught me that too.
+also the path will appear suddenly white.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">34</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">January 15, 2009 at 11:57PM</span>
+            <div class="reply-content">One skill I picked up was being able to walk in the dark without a flashlight. The exception, of course, being while walking with a certain ale stand manager in a park with blackberrybramble filled ditches.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">35</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 15, 2009 at 11:02PM</span>
+            <div class="reply-content">training from terry collier:
+OK first we haveta learn how to do the tracheotomy (tracheotomy lesson ensue i kid you not)
+Ok kid, now you have two states of being as a stage manager, they are both pretty happy:
+One is &quot;man I am sure glad that I am not having to give a tracheotomy RIGH NOW&quot;
+and the other
+&quot;Gee I am aure glad I know how to give this tracheotomy&quot;.
+the rest is bliss.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">36</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">January 15, 2009 at 10:55PM</span>
+            <div class="reply-content">If plan A doesn&#x27;t work, go to plan B. No plan B? Give me a minute...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">37</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">January 15, 2009 at 10:46PM</span>
+            <div class="reply-content">Dennis told me, &quot;Don&#x27;t justify it, do it!&quot;
+I think Nike stole his line.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">38</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 15, 2009 at 10:11PM</span>
+            <div class="reply-content">The most useful lessons from the Faire for me involve being at ease with WHAT EVER happens onstage.
+In my forays into the &quot; real world &quot; of music performances, I have gained a reputation of being somewhat unflappable. Only because everything that can go wrong to a performer HAS ALREADY HAPPENED TO ME.
+Broken strings ? Begin the wrong tune ? Blow your line ? Lose costume pieces ? Have entire processions come through your show ? Embarrass yourself in front of the Queen ?
+Been There - Done That , and lived to tell the tale.
+So little things do not bother me.
+On with the Show !
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">39</span>
+            <span class="reply-author">[31te9gnwzgefw]</span>
+            <span class="reply-date">January 15, 2009 at 10:00PM</span>
+            <div class="reply-content">How to efficiently navigate through a crowd of people.
+The value of a good work ethic.
+Always surounding yourself with people that you can trust &amp; who trust you.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">40</span>
+            <span class="reply-author">[3tjomb2csum08]</span>
+            <span class="reply-date">January 13, 2009 at 11:56PM</span>
+            <div class="reply-content">When I was first working in the ale house (Ale 2, I think it was...), on a particularly &quot;hot&quot; day, certain beams of nastiness were raining down on me, and I was frustrated to the point of tears, yes I was. And my Assistant Manager, Allison Fleck, took me aside and told me &quot;You just need to bounce that stuff back into the universe it came from &#x27;cos it&#x27;s not yours&quot;, meaning don&#x27;t absorb other people&#x27;s negativity. I don&#x27;t know how many co-workers and others I&#x27;ve shared that with as words of wisdom that have certainly stood me in good stead through the years.
+That&#x27;s the &quot;bullet point&quot;: Don&#x27;t absorb other people&#x27;s negativity.
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part two: Lois Crane - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/blogs/">Blogs</a> <span>›</span> <span>Part two: Lois Crane</span></div>
+            
+    <div class="module">
+        <div class="module-header">Part two: Lois Crane</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By [18d4mpa3n2i74]</span> | <span>November 26, 2007</span> | <span>0 comments</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;">here is a post I made to my livejournal back in &#x27;03. It explains a lot of what I was talking about in my last blog post. But it&#x27;s not quite self explanatory here so I&#x27;ll try to trim it down a bit, and edited it for an updated audience.
+
+Warning,Long and may be TMI Health info and more about Lois
+ About six months after I found out Lois was channeling ( August, 1987), I got really
+sick, as I was prone to do in those days. It was January &#x27;88 and once
+again I was sick in bed for two weeks with a high fever and lots of
+green goo coming out of my lungs. I had the local health clinic in
+Santa Cruz test me for Epstein Bar syndrome because a family friend who
+was also an MD had mentioned years before that my symptoms sounded more
+like that than the severe allergies we already knew I&#x27;d had for years.
+Now
+I must go back a little further in time about my mothers health and my
+childhood allergies (1973). I had the first allergic reaction I can remember
+when I was about 5 (1970), mom wasn&#x27;t sure if it was to a new wool sweater I&#x27;d
+gotten or to the Spray&#x27;n Wash she had used on it to clean it, but
+either way I broke out in hives. Two years later mom ended up in the
+hospital with allergic pneumonia because the tailpipe on her car broke
+off. It was a very scary time for us kids cause we were left at home
+for three weeks with just my sister in charge of us (she was about 16 then).
+As a result of her stay in the hospital mom got in contact with a
+really good allergist who told her to leave LA and move up north to
+Humboldt. So she started to make plans to do just that, a process that took about two years. We moved to humboldt in Feb. 1975.
+When I was
+12 we found another allergist in Berkeley and started traveling down
+there to see her every six months.
+
+When I was 14 mom had invited anyone from the &quot;Envirnmental Illness Community&quot; up to check out Humboldt and see if it helped them get clear. But most folks found it too moldy. Like Pat and Lois Crane when they came through on their way to Mt. Shasta. I met Lois again three years later when I moved ot Mt. Shasta myself in 1983. She was just starting to do bodywork then.
+
+Then in August of 1987 the Harmonic convergence happened. I went to visit Mt. Shasta and watched an Angel appear on a Television there, in the house that I happened to be living in when I first had Lois do body work on me in 1983. This house had four, five, six and seven leaf clovers growing in the backyard. I still have some of them taped to an old diary. Ten thousand people came through that house to see the angel on the television when Diane Boettcher was living in my old place. Reporters from the local Mt. Shasta herald, People magazine and SF chronicle came to interview Diana, but none of them will ever know the sitation as I knew it. I stayed there with Diane for two weeks and helped her teenaged daughters handle the situation. there were about seven of us handling things.
+
+At the end of that two weeks I called Lois and asked her if this was the same angel, that she had put into me when we had done body work years before? She said no, so I went on to ask her what happened to that angel and where was it now. She said that the angel had left me when I had gone to LA in &#x27;85, but that a low-level Master was working with me now, I said; okaaaaay!
+
+But back to &#x27;88 when I first called Lois. I was living in Santa Cruz and since she was now doing channeling I thought she might know what was
+happening to me and why the doctors couldn&#x27;t determine what it was I
+had, their tests had only said I had an infection of the throat but it
+was not determined what sort of infection it was!
+When I called Lois
+to ask if they (the Masters) knew what was happening her immediate
+answer was &quot;yes, you&#x27;d better sit down&quot;. Well I happened to be already
+sitting and this is what she told me &quot;they are cleaning out some old
+infectious material in your body and respritory system in particular&quot;.
+By then it didn&#x27;t shock me, I had wished for some years already that
+there was some sort of machine that I could step into that could read
+my body and tell me what exactly was happening to me.
+Four months
+later the same thing happened with the local doctors not being able to
+determine what was happening with a urinary infection. I&#x27;d had many
+kidney infections since I was 8 years old and was quite allergic to
+every sort of birth control under the sun. I was always running to the
+doctor paranoid that I had a yeast infection during my early 20&#x27;s and
+didn&#x27;t figure out for years that I was just allergically reacting to
+various lubes and such that I was using. When I was 15 and had just
+lost my virginity I let my mother find my birth control pills in my
+purse while we were visiting my allergist in Berkeley and the allergist
+immediately told me to only take them for 10 months out of the year and
+take two months off, so I did for two years. They also started testing me
+for hormone allergies which they had already been doing to my mother
+for a few years. These were the days in which the term PMS had just
+been coined and my mother was very likely one of the first guinea pigs
+for such testing. The book The Yeast Connection had just come out too.
+
+I
+had received allergy treatment for just about everything: synthetic
+materials, molds, pollens, all foods, News print, chlorine, natural gas,
+glycerin, phenol, ethyl alcohol, methyl alcohol, perfumes. I was
+what my doctor called a universal reactor, it was a matter of how much
+I reacted, not if. When mom had done the first rotary diet I was on at
+age 12, we had gotten down to hamburger meat and potatoes as the only
+thing I could eat. And we aren&#x27;t talking a nice burger and fries here,
+just a naked patty with no condiments and plain boiled potatoes. Not
+even any oil to fry it all in.
+So when Lois told me they were
+cleaning out my body of old infectious material it wasn&#x27;t hard to
+believe at all. And the urinary infection four months later (spring of
+&#x27;88) was more of the same idea only in urinary tract instead of my
+respiratory system.
+A year or two later I got what looked like the
+only real cold sore I&#x27;d ever had, I used to get lots of canker and
+shanker soars on my tongue as allergic reactions, but nothing that was
+on the out side of my mouth or that looked like Herpes until this one
+episode. Of course by now I trusted Lois&#x27;s advice much more than any
+doctors since she always seemed to know exactly what was happening
+while doctors didn&#x27;t. She assured me that it was not Herpes, of course
+I was skeptical. She explained that there are many viruses that people
+get that are like herpes but are not. She also explained that now that
+the Masters were working on me that I need not worry about getting any
+major illnesses because once they took over a life they didn&#x27;t let
+anyone die accidently etc.. So of course I had to ask, if I didn&#x27;t have
+herpes what illneses DID I actually have before they got to working on
+me? Here is what she said:
+She confirmed I had contracted Chronic
+Fatigue when I was about 17. I asked what that was, she said that EB
+virus was one of many mono-type viruses that were floating around, the
+only one that had actually been isolated and named by modern science.
+The rest were being lumped together and called Chronic Fatigue Syndrome
+and I had contracted one of those. The only other thing she said I had
+besides CF and the allergies was a nerve virus. So of course I asked if
+modern science had a name for this nerve virus? Her answer surprised
+me, no they hadn&#x27;t even discovered it yet! I could see what it was
+doing to me, it was in the mono/herpes type catagory. It had gotten
+into me during childhood and showed itself as a series of tiny blisters
+or white head pimple looking bumps that were very painful when they
+appeared on my face. Of course my first reaction was to ask if I could
+give it to anyone? She said no, now that I was under their (the Masters) care they
+wouldn&#x27;t allow it to be active anymore. Of course I had been able to
+give it to anyone before that time though. She said that it was still
+in my system and it would take time for them to clean it out, but until
+that was done, it and the CF virus would just float around dead in my
+system. For many years I never saw another out break of much of
+anything. By the time I was 25 (1990) she finally told me that I was
+allergy free. In the last few years I have started to see signs of the
+flushing process. The main way the nerve virus showed itself most of
+the time was in deep blisters on my hands, usually only a few at a
+time. One day about three years ago I was at a client&#x27;s house and he had
+a visiting public health nurse there. The blisters had suddenly covered
+my whole hand after not appearing for years. The nurse looked at my
+hand and said she had never seen anything like it. This only confirmed
+to me what Lois had told me years before. I&#x27;ve tried to get the
+dermotology at general hospital to look at it, but without a really
+good out break it can be hard to spot and they always want to give me
+antibiotics for it, which I know won&#x27;t work on a virus!
+Which brings
+me to the present situation (2003). About four months ago I sat down hard and
+felt what seemed like a sliver going into my butt. It didn&#x27;t go away
+for some time and I happened to have an appointment with the
+dermatology clinic to get a rather sizable skin tag removed from under
+my arm that kept getting in the way of my clothing. So I asked the
+clinic what was going on in my butt (snicker). They said it was
+probably an abcessed hair follicle. But their poking around at it made
+thing worse and it swelled. Finally it burst open and cleared out. Then
+last month I had a few of those blisters appear on my arms, the two on
+my left arm healed just fine. But the one on my right arm, I guess I
+scratched it and it became infected after about a week. Suddenly it
+swelled to the point that I had to go to the doctors, not being able to
+work because it was so irritated and getting ugly. They gave me
+antibiotics which I hadn&#x27;t had to take in years! Of course I called
+Lois to find out what was going on. She said that the virus was of
+course still there and that although medical science still hadn&#x27;t
+discovered it, the Masters were beginning to clean it out. But while
+they are doing that the blisters are a little more vulnerable to
+bacteria and that is why I am suddenly having these problems with the
+swelling every time I get even the littlest cut. So this is what the
+swelling in my leg is about now. I rolled over in bed about a week ago
+and landed on a small piece of that new cat litter that is all
+crystaline. It was sharp enough to poke me awake and leave a small
+sliver. I haven&#x27;t talked to Lois about this latest episode yet, but
+after working with her for 17 and a half years now I have an idea of
+how the Masters work with me and I suspect they are using the
+antibiotics and the infections to get in and do some work on the viral
+tissue.
+To answer a few question people have had for me about some
+of this, I was tested for Diabetes a year ago or so and no I don&#x27;t have
+it. My Cholesterol is half what it should be for anyone to worry about
+it. I&#x27;m having momentary set backs but my health is really improving
+over all. but the only thing Lois has made clear is that although we no
+longer have allergies, we will always be sensitve and there IS a
+difference. I still don&#x27;t wear heavy perfumes, can&#x27;t eat bellpeppers or
+heavy spices, or even peanuts anymore. Too high in acid. I still don&#x27;t
+like to wear synthetic clothing, but it no longer matters, I can if I
+want to. I still like to follow green politics and buy green products,
+that is environmentally friendly stuff. But It&#x27;s no longer a
+requirement. I can eat almost anything I want to. After Lois told me I
+was allergy free I went crazy eating for two years, but that hasn&#x27;t
+stopped as much as I would like. I was almost anorexic as a teenager. I
+was so allergic to wheat, dairy and especially eggs that they made me
+narcoleptic. For years all I ate for breakfast was toast and tea during
+my 20&#x27;s. Wheatless bread is very strange!
+When I started gaining
+weight after my allergies left, I was actually excited that I COULD
+gain weight. Even at the weight I am now, 175 lbs, I am the skinniest
+woman in my family and the only one who has never been obese!
+The
+last thing I want to say here is that someone recently compared Lois&#x27;s
+putting an Angel into me to spiritual rape, how stupid! I would think
+that angels by definition are not capable of crossing anyone&#x27;s
+boundaries like that! But I will say this. The Angel knew exactly how
+much permission it had to get into me. I had started to channeling
+myself while I was still a born again Christian at church (age15, 1980). But I was
+petrified of getting up in front of the whole church to say what was
+coming through, but eventually I did. The full extent of that story I
+will save for another night, suffice it to day this: The Masters could
+and have occasionally said things to me directly, but because a lot of
+what they are working on with me is finding my own voice, separate and
+real from the voices of my family, they have mostly and very politely
+stayed out of my head. Particularly because mom is known as a certified paranoid schizophrenic. 
+I have never given permission for anything
+evil to come through and therefore it doesn&#x27;t. the rest of this
+conversation will have to happen in other entrees, this is long enough!
+I
+know a lot of this takes some really big leaps of faith for people who
+may be reading or listening to this. But I have yet to meet an athiest
+(not even Lois herself) who could convince me that there is no God. She
+once said, and I thought it was hilarious, that either this was all
+really happening, or we (her and all of her clients) were all crazy!
+Feel free to ask for her phone number if your curious as to whether you
+think she can help you. She&#x27;s helped me a lot.&quot;
+And that is the end of that entry. But the update to that post is that I left San Francisco just four months later to detox from living in San Francisco for seven years. I&#x27;ve been up here for four years now, and just now feel like I&#x27;m finding the audience I really want to be sharing all of this with. I&#x27;m writing this post to wwwteahouseofthedonkey.ning.com first but will prolly repost it to tribe and livejournal too. The updates are this. About three summers ago when I was living in Guerneville, I lost contact with Lois altogether. But not before I got an update about the nerve virus, they still haven&#x27;t discovered it (modern medicine that is) and they still haven&#x27;t named it. Since the cat litter had penetrated my legs, my skin regularly breaks out in an eczema type rash. The scar on my otherwise gorgeous leg, is an ugly and deep chemical burn, that ate into the flesh and muscle tissue of my leg, there is bound to be some nerve damage in that. Perhaps this will be a good place to put a tattoo in commemoration of Yvette and Allen. I never want to have someone leave again without taking the opportunity to get to know them better. I want to get to know everyone here. Even those of you who think you know me. Feel free to tell me what of this story you remember, if you were a part of any of this?</div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Comments (0)</div><div class="module-content"></div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

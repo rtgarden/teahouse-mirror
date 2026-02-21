@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The rigs...the vehicles...the trucks...the stories... - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>The rigs...the vehicles...the trucks...the stories...</span></div>
+            
+    <div class="module">
+        <div class="module-header">The rigs...the vehicles...the trucks...the stories...</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Murray then, now aka MAX</span> | <span>March 03, 2009</span> | <span>33 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (33)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">May 04, 2009 at 04:45PM</span>
+            <div class="reply-content">Yeah I once helped Kevin Emory get his huge truck out of the mud with a very large 2X4 (the real ones, the old ones) and some rather obscure Archimedian physics. When those rigs loved you out there they would be like magic and just respond. That truck just popped out of the hole and...well I know what you mean Doug.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">[b5s6ko7u0ug7]</span>
+            <span class="reply-date">April 28, 2009 at 08:47PM</span>
+            <div class="reply-content">Ah Big Red, I remember the first year in Devore, Big Red was shipped down on a flatbed and someone needed to unload it. I was the only one around in camp. The truck driver had backed it up to a retaining wall down in the river bed and expected me to back it across the 12&quot; gap with 4 of the 10 tires hanging off the edges of the flatbed. Now I had never actually driven it before, I just knew how to start it. So of course I was an expert. &quot;Hey you should know how just in case there&#x27;s a fire and you&#x27;re the only one around&quot; said the head of mechanics in Black Point a few months earlier. What was his name? I stomped on the starter peddle just the right way (a little to the right with some clockwise english on it), It started, I jumped the gap and grinned ear to ear all the way back to mechanics.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">April 14, 2009 at 07:34PM</span>
+            <div class="reply-content">Nope, the truck wasn&#x27;t moving yet. If it did, I would have had more than words with the driver, Ross, whom I was dating at the time and married in 1992. ;-)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 14, 2009 at 05:13PM</span>
+            <div class="reply-content">Orange crunch
+The Sooper Dooper Pooper Scooper
+the Turkey (plumbing truck, so called because it&#x27;s tranny made a gobbling noise)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">April 14, 2009 at 03:55PM</span>
+            <div class="reply-content">yes the payload on the volvo wagon I have (one of three i have had), is very good, full sheet of plywood, single bed size matress (foam). works for whatever plus you can sleep inside with a heater and a little table etc.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">April 14, 2009 at 03:22PM</span>
+            <div class="reply-content">I have owned a minivan since 2000,
+best damn pick-up I&#x27;ve ever owned.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">[2ivfmptlmexcq]</span>
+            <span class="reply-date">April 14, 2009 at 12:16PM</span>
+            <div class="reply-content">Dave used to &quot;roar&quot; while driving his family around Studio City, &quot;I used to be a rebel! Now I drive a minivan, and belong to the P.T.A.!&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">March 20, 2009 at 04:41AM</span>
+            <div class="reply-content">The first shot looks like you were almost in Big Red&#x27;s spray. I&#x27;ve been there, but I didn&#x27;t have a camera.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">March 11, 2009 at 02:34AM</span>
+            <div class="reply-content">You&#x27;re a freakin&#x27; poet!
+That was beautiful, Casey!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 10, 2009 at 10:50PM</span>
+            <div class="reply-content">Did Vesta Neuron&#x27;s truck have a name?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 10, 2009 at 10:48PM</span>
+            <div class="reply-content">Before we got the Green Goddess, we rented a cab over Hertz truck. I was picking up film at the fotomat by Whizin&#x27;s and I tweaked the booth with the top of the truck just enough to trap the cashier inside. They had to get someone to remove the door and get her out! Who knows what the insurance cost was on that one. Terry Mc Caskey was driving me around the RPFS site in the Green Goddess and he slammed the door on my thumb as I was getting in. Phyllis gave my costume crew salary raises to keep me from reporting my injury.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">March 10, 2009 at 10:55AM</span>
+            <div class="reply-content">&quot;Whaddya think Case?&quot; he said. I reached into my pocket and pulled out a wad and began to thumb out bills...
+&quot;How much?&quot; I replied.He just gave me a cat ate the canary look,slowly slid the window back up and
+muttered &quot;Not in this lifetime Jack, you&#x27;re gonna have to git your own.&quot; And then he majestically
+rumbled away,burlap girls giggling in the back......&quot;Eat your heart out Casey!&quot;
+Six days later I purchased the first in a long line of Caddilacs,every single one of them a tribute
+to David Coker and City Tank.......but that&#x27;s another story and I&#x27;ll need Ron Chortas to help cater my memory of that beginning.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">Sasquatch is Eric R. Apple</span>
+            <span class="reply-date">March 10, 2009 at 10:05AM</span>
+            <div class="reply-content">Ah...City Tank......My God...that was the very first timeI ever fell in love at first sight
+with a machine....dave coker took my breath away as he cruised past my booth.....
+steely gray exterior...enormous bolt heads studding every exterior surface..so long that I swear it slithered around the corners...it breathed menace..it loomed large...the ground began to quiver as it approached..the birds fell silent...the din of the grasshoppers and crickets just ..ceased....it was barely moving along, maybe four or five miles an hour, but you knew that it was a force of nature...
+there was nothing that was going to stop it.....slowly it rolled to a halt outside my door at the top of the hill
+above dddddddrury creek stage(I was starting to stutter).....the black tinted window just glared at me..
+and then it smoothly slid away...to reveal Coker&#x27;s shit eating grin.....
+Whaddya think
+It was like the look in Toads eye when he saw his first motorcar......I felt the same way....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Michael Kimball</span>
+            <span class="reply-date">March 10, 2009 at 07:01AM</span>
+            <div class="reply-content">Yellow Peril - woohoo... Shift by sector, as in clutch in, shove the gearshift near where a gear should-oughtta-be and it did the rest, but once in gear, well you could practically hand the passenger the gear knob and it wouldn&#x27;t matter. I remember he once had to drop the whole oil pan to change the oil &#x27;cause the plug was stripped, stuck (and maybe J-B welded in) and impossible. I think he got it by way of Kevin emery as the car you couldn&#x27;t kill.
+Cessna 140 tail-dragger, was that Bud? or Wayne? I remember but I don&#x27;t, ya&#x27;know how that is...did anyone get any pics of that?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">March 09, 2009 at 06:14AM</span>
+            <div class="reply-content">I had a powder blue VW in the late &#x27;70s (I think) too. It was a fastback, and the paint was really faded. Kimianne was the one who turned me on to E&amp;C Automotive in Reseda, the best darned VW mechanics in So. Calif. I wish I could find the picture of me sitting on the hood of that car at crossroads in Agoura (on a weekday, doing crossroads security).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">March 09, 2009 at 06:07AM</span>
+            <div class="reply-content">I don&#x27;t remember that one ... either it was on lot when I wasn&#x27;t or my memory is getting fuzzier. But the name is classic!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">March 07, 2009 at 02:32AM</span>
+            <div class="reply-content">That&#x27;s about it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">March 07, 2009 at 01:43AM</span>
+            <div class="reply-content">This is great...
+Ya got any other Crossroads pictures??
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">March 06, 2009 at 10:32PM</span>
+            <div class="reply-content">Big Red pic taken at RPFN 1990
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">March 06, 2009 at 10:30PM</span>
+            <div class="reply-content"></div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">March 06, 2009 at 12:02PM</span>
+            <div class="reply-content">Gray Water
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">[31te9gnwzgefw]</span>
+            <span class="reply-date">March 06, 2009 at 03:39AM</span>
+            <div class="reply-content">I have a pic of Theryl in Fino stuck on a rock on my photos
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 04, 2009 at 01:01PM</span>
+            <div class="reply-content">i had a powder blue VW and so did my bf in 1980 kimianne. more fidos!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">March 03, 2009 at 06:28PM</span>
+            <div class="reply-content">JoJo Limo was a pretty white stretch limo
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">March 03, 2009 at 06:25PM</span>
+            <div class="reply-content">I&#x27;d forgotten all about Fido!
+You made me smile - Thanks!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">March 03, 2009 at 06:20PM</span>
+            <div class="reply-content">There was also Orange Crush, the Turkey (plumbers truck), the War Wagon , 2 Big Reds (one called Chai Com Red), the War Wagon, K\W (a big yellow water truck that only Danny Clark could drive)
+And then there were the Parking lot Mobiles (mostly private vehicles): Mobile One (the Beverage truck - was the Grey Ghost until it gave up the Ghost, and then it was a small truck - Crazy Kelly &amp; I were Mobile Blonds in that vehicle one Southern - but that&#x27;s another story...), Mobile 13 (Mouse), Mobile 15 (Donny Breese), Mobile 43 (Ivan), Mobile 414 (DAD aka Aaron), the Lurchmobile (formerly called Palamino until Lurch started driving it), and Air/Sea Rescue (Stevie Bernard)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">[2ao3o6xb6daou]</span>
+            <span class="reply-date">March 03, 2009 at 05:58PM</span>
+            <div class="reply-content">Orange Crush, the garbage truck... The red security pick-up truck with the emergency brake release that would paralyze your hand for the rest of the day if you didn&#x27;t get immediately out of the way... There was another white pick-up truck with manual transmission that they gave us for awhile down in Devore -- I was the only one on deco who could drive it, but the seat wouldn&#x27;t move up, so I&#x27;d have to climb under the steering wheel to push in the clutch while Karan steered from the passenger seat, laughing her head off, because it looked like no one was driving...
+Then there was the &quot;Fido&quot; series -- the baby blue volkswagon bugs that Therl drove around the lot. One Monday brunch day at Black Point, when Therl had tippled a bit too much by mid-afternoon, he drove off. A few minutes later, there was a loud &quot;whirr, BASH!!&quot; Everyone from the coffee house went running, knowing that Therl had just crashed. We found Fido on it&#x27;s side, with Therl looking like a little leprechaun, sitting cross-legged on the side door that was now the top of Fido. He had gotten to where the high road and the low road split, and couldn&#x27;t decide which road to take, so he took them both! He wasn&#x27;t hurt, Fido wasn&#x27;t hurt, and a bunch of guys tipped Fido back on it&#x27;s wheels, and Therl drove off happily...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">catt avery</span>
+            <span class="reply-date">March 03, 2009 at 05:34PM</span>
+            <div class="reply-content">Jimmy had a little Subaru called the Yellow Peril (peril: not serious - just a little dangerous!)
+I had the Dirty Datsun - it loved the steep firetrails that company vehicle had to drive up backwards(:reverse was the strongest gear in any company vehicle)
+There was the Pumpkin (the truck with the water tank - they used it for Fireproofing and as the PL Carbon Vehicle), and I don&#x27;t know if the Keg Truck had another name (they sometimes used the Meatwagon as the keg truck...)
+We had JoJo Limo in the parking lot (a friend who would chauffer us around the lot at night &amp; talked about winter limo mudsliding - I&#x27;m not sure whether they ever actually accomplished that....but Jimmy did!)
+And then there&#x27;s the Polish Airforce who caused to San Bernadino Sheriffs to ask: how did that plane get here??? That was one of the greatest vehicle escorts into Faire ever: various golf carts and mopeds, a couple of atvs &amp; a go-cart escorting that little single prop Cessna up Devore Road to Mechanics - I guess it was an impromptu crew parade!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">29</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 03, 2009 at 04:48PM</span>
+            <div class="reply-content">yes irode in the back of Bobs &quot;boys of summer&quot; cadillac to the very first Pipe and Blowl &quot;show out&quot; at the Hopland Brewery. It was a Mr Toads wild ride...not so much there because on the way it was slow and steady and fulll of local folklore and information...the ride back!
+AY! typical Pasadena boy once he let loose the more tired and drunk he was the faster he would drive on the curvy roads...so he could be done quicker.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">30</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 03, 2009 at 04:14PM</span>
+            <div class="reply-content">The Green Goddess Costume van !
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">31</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 03, 2009 at 04:13PM</span>
+            <div class="reply-content">He called that van &quot; Persephone &quot; because it went to hell 6 months out of the year.
+And don&#x27;t forget... * sings * &quot;Whoa boys, take me back I wanna ride in Bob Thomas&#x27; Cadillac...&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">32</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 03, 2009 at 03:36PM</span>
+            <div class="reply-content">the van that berger drove that had the license &quot;ullshi&quot; and then handpainted at the front end a &quot;B&quot; and at the back end a &quot;T&quot; just outside the frame.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">33</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">March 03, 2009 at 02:41PM</span>
+            <div class="reply-content">Meatwagon
+Bobtale
+TooLoose L&#x27;truck
+City Tank
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

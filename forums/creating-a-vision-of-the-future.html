@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>creating a vision of the future - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>creating a vision of the future</span></div>
+            
+    <div class="module">
+        <div class="module-header">creating a vision of the future</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Murray then, now aka MAX</span> | <span>November 22, 2007</span> | <span>21 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (21)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 28, 2007 at 04:42AM</span>
+            <div class="reply-content">i hear that.
+it takes a lot more work to live out on land than it does to live in town. Way more hours driving, house gets dirty even when you are gone, scotch broom and blackberries every year...
+not to mention rats in the storage shed.
+The old system lowered everyone to the lowst common denominator. One of the main guys from The Farm wrote about how he was working over 40 hour weeks in town to pay for the land and his own kids had ricketts!
+Like major malnutrition.
+they had 11 guys supporting over 1,000 people.
+like ouch.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 28, 2007 at 04:38AM</span>
+            <div class="reply-content">sandwiches?
+so hum style...
+go to the river
+get wet
+lay in the sun
+swim
+go home
+eat
+no tube
+no towel
+no sunscreen
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">[3ps78rnilakw0]</span>
+            <span class="reply-date">November 27, 2007 at 04:20PM</span>
+            <div class="reply-content">Well, I got the land, the south slope, the 10 gpm, fruit trees...I love the land...
+My neighbors, on the other hand!... Wouldn&#x27;t mind an artist&#x27;s community, assuming the artists worked...bad thing about &#x27;community&#x27; is what killed a lot of the back to the land movements...everyone gotta dream, not everyone likes to work. One person doing all the work gets bitter and burnt out.
+I would like to see more of us get work in the off seasons...it&#x27;s harder and harder to make those land payments!
+Hey, what about a pension! (don&#x27;t fall off your chair laughing...)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">November 25, 2007 at 08:43AM</span>
+            <div class="reply-content">Your near the Eel, right? Well how &#x27;bout a coller full of sandwiches, the point is the extra tube is for trailing the rest of the picnic behind, so you don&#x27;t have to go back for it.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 25, 2007 at 04:04AM</span>
+            <div class="reply-content">yes I have been above the river now for a decade.
+the river is sweet.
+and still 45 minutes from surf.
+Its a cultural thing.
+no need for an extra inner tube...no six pack for me.
+plus the river here is pretty tame..or if it isnt you better stay out of it.
+Its one or the other very calistyle.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">November 25, 2007 at 03:39AM</span>
+            <div class="reply-content">LOL, I once thought about the coast that way, but I was never a surfer. I find that lakes, rivers and a good innertube works just as well for me. Don&#x27;t forget the extra tube to put the six pack in, as it trails down the river behind you.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 24, 2007 at 10:27PM</span>
+            <div class="reply-content">stability
+is when inside you have this magic donut hole, so that when people tell you hard things to hear you hear them and yet the pain of it goes right through you. Its like a state of grace where you are not swum all the time.
+Stability is making friends with your body again, because that is where you live on this planet in this plane. Daily walking, daily yoga, daily meditation. Self care creates stability.
+Sometimes stability is being able to live out of one suitcase, even if it just sits in your bedroom every day.
+Sometimes stability is showing up for a job, showing up for family, showing up for your community.
+Always, stability is all about
+showing up.
+every day.
+Because remember...
+you are enough.
+Visualize a clean closet.
+visualize every box of things you own sorted
+Visualize your tools in order and your bed made up.
+Grease your pans and keep your knives clean.
+check the oil in your rig
+File like a mad woman.
+thats how Bob taught me.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 24, 2007 at 10:15PM</span>
+            <div class="reply-content">dude I still get the willies if I am more than an hourfrom the beach. Not like I can surf anymore...still.
+Thats the interior!
+The last coastal property with lots of water is Del Norte...thats sooooo far itmakes humboldt look close. Mostly its res too.
+We have to just subvert the corporate mentality entirely. Take time for tea, have a walk, smile at each other.
+remember:
+conviviality is the enemy off the state.
+oh and anything with a south slope, 10 gal per minute and is 2,000 an acre is affordable.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">November 24, 2007 at 08:56PM</span>
+            <div class="reply-content">Come on down ! It&#x27;ll be soo cool !
+I lived in Santa Rosa in the early &#x27;80s, and it was starting to go corporate then. Chico is getting bigger now, but there are places to go to from here - Tehama County is nice &amp; remote, Glenn Co. even parts of Shasta County are still nice, and then you get into the Sierras and Klamaths. But you know that, don&#x27;t you?
+With the Real Estate market like it is, land might even be affordable in a few years.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">November 24, 2007 at 08:05PM</span>
+            <div class="reply-content">Wow, Morgan! What a dream come true that would be for me! When you described Ms. Preston I got this gripping feeling feeling in my stomach, like this woman was such a kindred spirit that I may have known her or been her in a past life. (and I don&#x27;t even believe in that past life stuff, LOL) And right here in our own back yard!
+So I don&#x27;t think that I will be able to do it any time really soon. But somewhere out in the ethers of international markets I have about five grand in frozen assets, the last of my inheritance. Someday when king george is no longer hunting rebels, I might get my money back and have it as a nice nest egg to plunk down somewhere. I&#x27;d be thrilled throw it into a permanent place to perch where I can have workshop space available in the form of a permanent massage/workshop/meditation/dance space. Where you live now sounds really nice Morgan. I lived in Arcata from &#x27;75 till &#x27;83 and then moved to Mt. Shasta from &#x27;83 to &#x27;85. I miss the foothills, the heat and the rivers and lakes. I need to get out of Santa Rosa, it&#x27;s too suburban for me, I need the extreme of the country or the city, but being here is too much like the suburbs of the san fer-fucking-nando! Yuck!
+BTW it&#x27;s nice to feel safe enough to talk about some of this stuff. I wouldn&#x27;t be telling just anyone this stuff, but I&#x27;ve known Hakim since &#x27;82 and Catt since at least &#x27;85, few people besides them know me as well, besides my actual family.
+So if in a few years I have gotten my traveling bugs worked out, can I come live on your land Morgan, for a litte sweat equitty? :) I&#x27;m totally jealous that you got to live in the Preston Ranch. *giggle*
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">November 24, 2007 at 06:47PM</span>
+            <div class="reply-content">Preston Ranch. Where to begin ?
+In the 1870s a Strong Woman Healer came to Cloverdale, CA to open a healing spa. I know no details of Madame Prestons&#x27; life before she came to California. She was a Faith Healer, and a believer in Nutrition, Pure Water and Exercise.
+At its&#x27; height, the Preston Coloony had around 500 people living there.
+Madam Preston built a beautiful house for herself, and many other structures.
+A lot of this is conjecture and hearsay on my part, I will admit. But I did live there briefly in the winter of 1978, and visited Edwin and Lisa for the next two decades or so, until they were forced to leave.
+After Madam Prestons&#x27; death, the property was uninhabited for a generation or so. Weeds covered the old graveyard on the hill where Madam was laid to rest, along with some of her followers.
+I believe it was in the late 60s that the heirs allowed some Artists to come in and try to do something with the genteel ruin, before it fell into worse repair.
+Some names are well known in this forun: Bob Thomas, Will Spires,Don Brown, Woodworkers, musicians, Flamenco dancers,and somehow it all came together for the Renaissance Faires.
+This Artists&#x27; colony succumbed to a fire in the 80s, and all of the beautiful Victorian buildings are now gone.
+But ... we could do it again elsewhere. Which is where MY version of &quot;stability &quot; would be.
+I can no longer physically tolerate a gypsy lifestyle, so my stability would be 10 acres with a farmhouse and workshop and &quot;event&quot; space. Gardens. Animals.Stages. Hootches.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">November 24, 2007 at 05:58PM</span>
+            <div class="reply-content">Oh, do tell me about Preston ranch? And tell me more about what stability looks like to you (anyone) I need something to visualize and create affirmations around.
+Stability to me would be a really cool hybrid vehicle that I could live out of, LOL. I came so close to having my dream car a few years ago, I converted an old mercedes into a veggie oil car. But it broke down for good within a year.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 24, 2007 at 05:35PM</span>
+            <div class="reply-content">yes first stabilize
+then...
+southern exposure
+10 gallons per minute
+bring your own gallon jug and a watch with a second hand...
+after you have seen the landmarkers with your own eyes, have them show you the spring and calculate it yourself.
+Good land is oddly the same to pay as crap land with a north slope and less than 1 gal a minute in the summer (which is when you should check of course).
+Yes if you can get your business going online you can probably bootstarap up a chunk of land.
+yes Preston Ranch had some very cool moments.
+I would love a place like that to visit again.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">November 24, 2007 at 05:21PM</span>
+            <div class="reply-content">What a great discussion.
+I have been contemplating a lot of these very things - Sustainability, Self - Sufficiency, Passing on Skills to the Next Generation. The advent of new energy technologies is really exciting to me - I really want to keep using my sewing machines and Cuisinart - but doing so in a way that is renewable.
+Where I am now in Butte Co. is an interesting mix of urban / wildland interface. There is a lot of Ag. land, ranches, nature preserves, and the Sierra Foothills. It is also an economically depressed part of CA, and my new buisness MAY make it possible for me to buy a nice chunk o&#x27; sod here in the next few years.
+My Dream is to start some sort of Artists&#x27; community - remember Preston Ranch? - maybe a stop on Ravens&#x27; Caravan...? But I&#x27;m just blowing bubbles right now.
+Catt is right - Satbilize First.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 24, 2007 at 12:19AM</span>
+            <div class="reply-content">The first step is to stabilize ourselves.
+we need to offer a model of some stability and self-sufficiency.
+And yes in order to that we need to be that way.
+second: figure out where you are in your learning process. The best place to be is surrounded by great role models, and striving for your very best. Thats another reason I wanted to create something special here (less than 48 hours ago now). Personally I missed being surrounded by my great pals, the people that I truly admire.
+Living up here 20 years now, really living the 2nd generation back to the land thing I have learned to &quot;Take what you have and turn it into what you need&quot;.
+That is the major concept.
+The idea is: You are enough.
+Its OK to be a faire refugee and its ok to be barely scraping by and clown road is enough sometimes.
+You are enough.
+we are enough.
+we do not need a rest home, or a Disneyland utopia to be creative. We can all be creative and collaborate and share every day. Its just normal, its part of the civilized world that we lost when we lost the secret pathways between each others walled gardens.
+Time for Tea.
+Now we can sit by the fountain, have a sip of tea and hear the birds sing.
+We can shake off the economy of scarcity that had all of us treated like comodoties.
+We are NOT comodoties.
+Not our personas or our talent or our bodies.
+First Phase: Stabilize
+then we can see where to go next.
+(visioning underway)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">November 23, 2007 at 11:36PM</span>
+            <div class="reply-content">OH, tell me more about the vision? Yes, I&#x27;m wanting to do more traveling than I have been and will do what I can to help as much as I can. I currently have a reasonably working car, a canopy for festivals, a massage chair, and I still have a few costumes left. LOL
+I did something stupid this last year that set me off of the schedule I would have liked to keep, but now that the car is running well, I plan to do as much traveling as I can this year, as soon as the winter rains let up. Maybe after the New Year I&#x27;ll start out by going to LA for a visit. Then north for the sunmer.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 10:42PM</span>
+            <div class="reply-content">Oh I am all about getting together face to face. Multimedia is aboutthattoo...why the internet was created to facilitate learning groups and that always included conferences.
+Right now I am taking the time to keep my mind open and see what develops.
+This is an art which required a rapid response, and that means making very concise and very candid assessments of what we really have available.
+First off: lots of my good pals already have shows going that I would like to give full support to.
+second: I live in the littered aftermath of the back to the land dream. Its not very sustainable. What I am interested in is very pragmatic, I am interested in what we can do right now with what we have.
+Thats part of really making a survey of what we do have.
+we do have a vibrant community of musicians that live worldwide, mostly in the East Bay. Many of them live and study in Istanbul part of the year. Some of us live mostly in suitcases on the road. Often professional goals overshadow any sort of social experiment.We do have an incredible network of people on Clown Road and people who are interested in vaudeville skills and circus arts. We do have a shared history.
+we know each other.
+This is a great treasure, and there are some very real ways that it can light our way right now.
+Some of you may really want to go on a piece of land eventually...and I would love to see the teahouse help to make that happen.
+Right now I am very deeply involved in creating a program that will bring OLPC education programs and laptops to 1/4 million Rroma kids in Europe. Despite the &quot;Humanitarian&quot; view we have of Europe, they have essentially an aparteid system there with my own people...the Rroma really in desperate need of help. Many children are warehoused in porphanages because of dark skin, seperate schools often provide &quot;special&quot; education. Its true, and its time to try and help do something abut it.
+Mostly we have our needs met here, eventually I would like to find a way to intersect this community with events that will help bring this vision of mine to life.
+I hope that you can help.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">November 23, 2007 at 10:17PM</span>
+            <div class="reply-content">Well the reply I tried to send out yesterday apparently didn&#x27;t make it, so let&#x27;s try again.
+I hear you about not wanting to do events, I imagine any one of us can throw together an event with our hands tied behind out backs, sleep walking. If I were to do anything in the material world event-wise, I would want to do it on a permanent piece of land, and have it be open all year around. What I had in mind more, was a network of land, I think there are probably enough of us living scattered allover the place in different pieces of land that this might just be possible. A friends of mine has a cooperate that she owns in Tallahassee Florida but set it up so she could travel as well as live there, renting out when she is not there. I think she and many others in the co-housing community might be able to see this vision.
+Anyhow, let me see if I can explain; I like the idea of multimedia, but I am slow at learning some of this, and I know there are others here who are slower yet. Catt I know that you know a lot, but would you, could you teach some of this stuff? I had a insta-matic camera, but I know nothing of camcorders, video or DVD burning, ipods, youtube, or any of the things I would need to express myself as a photographer today. And there may be much that you can teach over the net, but sometimes we will need to be altogether to really share ideas and inspiration, and for that I would plan an event in a heartbeat. Just like the CHBP, we need to see each other face to face once in a while. But I&#x27;m thinking something more creatively productive.
+I know a lot of you have Lark to go and play at, and if I can ever really dance again, maybe I&#x27;ll get my ass over to that, but it is really more for musicians, singers and dancers. Maybe if I get it together to sing in a choir or group again...
+But I digress, I&#x27;m thinking a workshop, studio, art colony type thing, just for us. JUST FOR US. That could be sooo fun.
+See I dream of cohousing, sustainability, all that creative, communal cooperative stuff. I think it&#x27;s important to have that around. I like what Gary over on tribe is writing in his faire fantasy book, and I think, what if we created a commune like that BEFORE the &quot;great population implotion&quot; that so many people are predicting. What if we were already living off the land? With the way we all traveled up and down the coast of cali for the last three decades, we already live like gypsies, what if we were doing it by traveling from land to land to land?
+I&#x27;m not sure where I&#x27;m going with this, but I do know this; I miss having a really good reason to get up, out of my daily routine, and into a whole other world for a few weeks, weekends, or whatever, every year and being creative in new ways that my everyday life doesn&#x27;t afford me. In many ways that was what faire was for me. A wonderful magical break from the daily grind.
+I know also that I want to travel around and teach my workshops. I want to play with people, teach them relaxation techniques, let them dress up and teach them how to let their creative inner child out. I want to help people who have suffered any sort of major trauma, emotional trauma, natural disasters or abuse. And with all the theatrical talent, writing talent and healing skills I have, I am really a bit over ready to get these workshops happening. I want all of YOU to look into where and how I might host a set of workshops near you, in your home, at your facility etc.. I will be talking to Michael, and maybe Danese, about creating a website. And from there I intend to start scouting out sites for places to do the workshops. The Radical Faerie community has a lot of places I could do them. I&#x27;m looking forward to doing them in places like Lark or Solfest etc..
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 22, 2007 at 03:15PM</span>
+            <div class="reply-content">my sony cybershot is pretty sweet, it does vid and pretty decent photos. For christmas I got Apol a super sweet small vid camera.
+It would be neat to see what sorts of projects we could get going using the newwer media, I have a wikicatt, and some other tools on mysite that can allow collaboration on a decent scale spread out. This is way more interestingto me than creating gatherings which I have been doing for over twenty years and which is not so much of a challenfe for me. I would like to be able to use more of the parts of myself that I developed in school. There is lots more to me now than just the barefoot gypsy grrl who can make a party swing. I got skills and I am a scientist now as well as a cnceptual artist. Its such a talented group iy will be neat to see what emerges.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">November 22, 2007 at 06:35AM</span>
+            <div class="reply-content">BTW, I&#x27;ve been drooling over a new digital out there that has youtube capacity.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">November 22, 2007 at 06:31AM</span>
+            <div class="reply-content">Well madame, pick your medium? I&#x27;ve been thinking that among the lot of us there isn&#x27;t a medium we can&#x27;t cover! and I don&#x27;t mean just in the cybershire! I know between you and me alone Catt, we do photography, acting, stage/hand craft, writing, and that&#x27;s just to name the ones I KNOW we have in common. So add either Morgan or Carrie to that lot, not to mention other talents that we don&#x27;t have in common, and, well like I said...
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

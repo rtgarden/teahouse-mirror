@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>favorite part of living at faire? - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>favorite part of living at faire?</span></div>
+            
+    <div class="module">
+        <div class="module-header">favorite part of living at faire?</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By [3ps78rnilakw0]</span> | <span>November 28, 2007</span> | <span>42 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (42)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 07, 2009 at 07:43AM</span>
+            <div class="reply-content">I remember Larissa, I think it was - maybe not - but anyway, scoring big time from Manny at the end of one Faire and feeding BUNCHES of people &quot;thistles and tiny birds&quot;.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 06, 2009 at 07:24PM</span>
+            <div class="reply-content">Plus, having Hippy Jim as a neighbor was always fun.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">April 06, 2009 at 07:24PM</span>
+            <div class="reply-content">How easily we all were amused, pleased, entertained. Pick-up super-cribbage games that went on for hours. Reading aloud to each other.
+I also miss very much cooking for and with a crowd. Even if some of what I cooked was various foodstuffs from folks who had &quot;dumpster-dived&quot; for ingredients.
+I miss the Monday after-Faire communal breakfasts.
+I miss hearing owls hoot, and seeing deer, and the wild artichoke plants and the smell of the lot after it had returned to &quot;normal&quot;. And how I miss the utterly lovely nature-filled quiet during the first Devore faire (I stayed on Northern lot and worked at &quot;Santa Fe Mary&#x27;s&quot; in town as a cook.)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 20, 2009 at 12:22PM</span>
+            <div class="reply-content">yeah I never did that either. nice view.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">[36bqyr9r25jtw]</span>
+            <span class="reply-date">February 20, 2009 at 05:06AM</span>
+            <div class="reply-content">I remember when My Mom and Ralph brought up the bedroom set including a king size bed and mirrored dresser....no ceiling, and three walls against the snow fence accross the road from Mullahs and Juggling/phones up north.... During the weeks it was so peaceful ... the deer used to come right up to the room. On the weekends, One could lie there and listen to the snippets and sounds of the gypsy road in all its GLORY!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 20, 2009 at 05:05AM</span>
+            <div class="reply-content">ANybody remember the post weekend potlucks? All left overs?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">[36bqyr9r25jtw]</span>
+            <span class="reply-date">February 20, 2009 at 04:58AM</span>
+            <div class="reply-content">I loved swimming in the water tower...er ...I mean I know Im not supposed to swim in the water tower... Im sorry... Talk to Brian Patterson! It was his idea!!!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 20, 2009 at 04:47AM</span>
+            <div class="reply-content">So many to list but my most favorite part was the lack of stress. No bills. Easy slow life. Coconut Grove. Sitting around that picnic table with friends eating food booth leftovers. Evening walk/ride to the Grey BArn Showers. That and Franks Chili!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">[2wocipnw664xf]</span>
+            <span class="reply-date">February 20, 2009 at 03:43AM</span>
+            <div class="reply-content">i used to build my old friend/s booth--apple-dolls--and live there for run-of-faire-and more-in the back of the booth--spike was just a fall-down away carrie and i played music one nite for spikes sister/s b-day---what a nite!!!!---and then i learned--how to stab bees with a kinfe---boy !!i sure miss that l.s.d--owsely of course--love you all--mr. tomate--ex flamenco guitarst------
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 04, 2009 at 03:38PM</span>
+            <div class="reply-content">i think that was cowboy camp or pig gulch. I think Jane camped by you over there. She even brought t a dresser drawer set out she was beyond sheets already.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">February 04, 2009 at 03:28PM</span>
+            <div class="reply-content">yes we could shine as much as we could shine.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">February 04, 2009 at 06:57AM</span>
+            <div class="reply-content">Below the Iron Pig.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">February 04, 2009 at 06:56AM</span>
+            <div class="reply-content">at Brooks?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">February 04, 2009 at 06:42AM</span>
+            <div class="reply-content">First I lived in and under a tree somewhere north of the Coffeehouse; soon Security/Fire Control found me and kicked me out of it..then I had primo acerage (first one there)..at the bottom of the hill behind Kenny&#x27;s (is that Troll Hollow?)..Springhorn helped me build a beautiful nomadic parachuted tent over the gulley, which eventually filled up and destroyed all my belongings. Still, it was a great home for most of that year, although dusty. Bad for books.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">[112khxhf7hjvg]</span>
+            <span class="reply-date">February 04, 2009 at 06:33AM</span>
+            <div class="reply-content">I lived on Snob Hill for years, and was lucky enough to ride/walk to the Ant Farm passing by the back 40 each morning. We were all so lucky. The only way I can describe it to non-faire folk, the closest I can come for a description is &quot;Watermelon-Sugar&quot;, a utopia. How else could it be described?
+It wasn&#x27;t just the location, it was the &quot;family&quot; that evolved. A built in army of big brothers, not found in any other environment. How lucky were we? Really? You couldn&#x27;t imagine such a fanatsy.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 01, 2009 at 03:48AM</span>
+            <div class="reply-content">I think &#x27;84 was the year I had my old blue Ferd van, and thus didn&#x27;t actually have a hootch at DBs, but DB and Feather were neighbors for several years running and most years there was back door between the two back areas. I prolly might as well have lived there, as I spent most of the time I wasn&#x27;t working elsewhere at Coffee House or nearby.
+Its hard to sort who was at DBs or Feathers which year, but it was a great place to hang my hat for a while -- even when I actually had a camp elsewhere.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 31, 2009 at 04:55PM</span>
+            <div class="reply-content">hal cox was around, he always helped looked after the baby, also hippie jim, i think vicky was at teahouse, we were still doing monday brunch with bobby at serenas i am pretty sure.
+the outings were supurb.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">[02v9sfrs8abuf]</span>
+            <span class="reply-date">January 31, 2009 at 04:50PM</span>
+            <div class="reply-content">something like that. you, me, burgundii, jeanine, kym, feather, sequoia I seem to remember....who else was there? Gar dropped in but didn&#x27;t live with us. Unca Rick dropped by every so often....
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 31, 2009 at 04:42PM</span>
+            <div class="reply-content">yes we had an amazing scene.
+must have been about 9 of us at feathers and another ten at DB&#x27;s?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">[02v9sfrs8abuf]</span>
+            <span class="reply-date">January 31, 2009 at 03:28PM</span>
+            <div class="reply-content">Besides weekends, which wasn&#x27;t really living at the faire but just visiting...I did actually spend the summer in Novato living IN the faire behind Feather&#x27;s booth in 1984. I&#x27;ll post a photo of my digs...they were fantastic! I loved all of it, but I think my very favorite part was living dormitory style with all those fantastic women, partaking of the evening events...what was the name of our pub? I just remember the button...The Zombie Room maybe? Licker in the front, poker in the rear I think the button said. Someone (Marque maybe?) made a huge hammock in the trees, music...relaxation...field trips to the wine country...but the friendship for me was the best.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 31, 2009 at 03:15PM</span>
+            <div class="reply-content">i know right where that is, my daughter lived right down the street when she was at brooks there. she ended up working at the big theatre.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 31, 2009 at 03:14PM</span>
+            <div class="reply-content">were you in troll hollow or living at the coffee house?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">January 31, 2009 at 06:37AM</span>
+            <div class="reply-content"></div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">24</span>
+            <span class="reply-author">[3t1tqnio9tgdg]</span>
+            <span class="reply-date">January 31, 2009 at 06:32AM</span>
+            <div class="reply-content">I lived out at Agoura during 1977...Kenny Millikin kept me alive with sourdough lettuce mayo sandwiches.. and excellent coffee.. and readings from Robt. Graves&#x27;s book The White Goddess whenever I was blue.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">25</span>
+            <span class="reply-author">[360yq79w676f2]</span>
+            <span class="reply-date">January 06, 2009 at 01:06AM</span>
+            <div class="reply-content">My first occasion for living at Faire was in &#x27;88, when we were prepping for Old San Francisco on the Pier. Michael Beard was in charge of Camping then and he stuck me and my tent on the Gray Barn Hill flats. Mine was the only tent there. I had the flimsy plastic pegs that came with my six-man (read: one-woman) tent, so there wasn&#x27;t much purchase in the hardpan dirt. The wind came up that night, the tent pulled most of its pegs, and I ended up crawling out of the flattened, twisted heap next morning. Rope Joe then loaned me a sledge, so I managed to sink or break all the pegs. The wind came up again that night, etc.
+I don&#x27;t remember if I got permission or forgiveness, but I moved my tent to a platform under a tree, right across from Crew showers and the Burlap dye vats. The platform was just big enough for my tent, my &quot;kitchen&quot; (milk crates, ice chest and camp stove) and a folding canvas rocking chair. After work and a shower, I sat on my front porch and watched the sun set behind the Mt. Tam range. I had the view all to myself for maybe two weeks, and I slept soundly every night. For whatever reasons, Michael waived my camping fees, so I got the million dollar view for free.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">26</span>
+            <span class="reply-author">[10uohx0w9yo9f]</span>
+            <span class="reply-date">January 04, 2009 at 06:06PM</span>
+            <div class="reply-content">Oh my goodness yes!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">27</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 01, 2008 at 04:40PM</span>
+            <div class="reply-content">we have oaks, bay laurel and madrone here so I have had continuity.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">28</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">November 01, 2008 at 02:43AM</span>
+            <div class="reply-content">laying on my back on cardiac hill, looking up thru the lace work of live oak at the moon ringed in color, feeling the breeze waft over me, so soft. my daughter is just starting to get into watching the night sky through a tree canopy. She prefers the eucalyptus
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">29</span>
+            <span class="reply-author">[3dpm4dqeacwki]</span>
+            <span class="reply-date">October 09, 2008 at 10:17PM</span>
+            <div class="reply-content">i was mostly a weekender at northern...had a spot in the east bay where i grew up...
+ken e and i lived in the dragon-wagon on lot at southern and northern...
+i sure did lo9ve that town and my neighbors...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">30</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">September 14, 2008 at 01:47AM</span>
+            <div class="reply-content">it was a civilized life if a bit buccaneer.
+i miss that too.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">31</span>
+            <span class="reply-author">[16doimw2vlf47]</span>
+            <span class="reply-date">September 13, 2008 at 08:47PM</span>
+            <div class="reply-content">I think it was the ability, after waking up after a long weekends work (i.e. Noon, Tuesday), to be able to have a pleasant morning walk with ones wife, neighbor and carnivorous monitor lizard while having a simple discussion about existential terrorism while slamming back doubles of vodka and have it be accepted without question or glance.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">32</span>
+            <span class="reply-author">[mmv0eh5ajs31]</span>
+            <span class="reply-date">January 18, 2008 at 02:05AM</span>
+            <div class="reply-content">Oh my yes! Sure, I lived in an ancient 16&#x27; trailer. But, my goodness, what a backyard! And such interesting neighbors. All in all, probably the coolest neighborhood I have ever lived in, always a playmate just around the corner. Sometimes even a soulmate or two. What a privilige to have called it home for 4 1/2 years.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">33</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 16, 2008 at 03:38PM</span>
+            <div class="reply-content">she could really stop traffic too.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">34</span>
+            <span class="reply-author">[3ps78rnilakw0]</span>
+            <span class="reply-date">January 16, 2008 at 09:46AM</span>
+            <div class="reply-content">Hey, nothing like a late reply, still gettin the hang of this thang. I lived out way past Michael&#x27;s down that back road near where they used to take the hay to dump. We were on firewatch, and watched the back road for about three years. My favorite was walking out to the turtle shaped island, and watching all the flora and fauna, although watching the weather on Mt. Tam was pretty special too. I connected with the land in a deep way there...and darn, it was cold in the winter. How &#x27;bout those outdoor showers?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">35</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 16, 2008 at 07:47AM</span>
+            <div class="reply-content">The image of Jane stopping traffic brings a smile to my face
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">36</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">January 16, 2008 at 07:45AM</span>
+            <div class="reply-content">I never lived on site more than a few weeks past closing, but between the end of Southern and the end of Northern,
+I lived on snobhill ... one season; Cardiac Hill (two or three seasons? can&#x27;t remember for sure; in the &quot;Dustbowl&quot; one or two seasons (I can&#x27;t remember, but that might be from all the dust). Later on, I just had a hooch behind the Coffeehouse.
+My favorite part of being on site was always just after Southern, getting to the Northern lot when relatively few other folk were around. The wet years were especially fun, since the front area (Ale 1 / Market Cross) was still a big pond. I also liked walking the fire roads and hiking the &quot;back country&quot; on the horse / game trails. As nice as the relative solitude was, the community that formed when more folks got on site and we all did what we did was magical too.
+I think I always aspired to winter over, but never managed to have (1) a job on a crew that justified staying; and (2) a trailer that I could actually survive the winter in.
+All the same, I thought of the Lot as home for years.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">37</span>
+            <span class="reply-author">Eric Lethe</span>
+            <span class="reply-date">December 07, 2007 at 02:23PM</span>
+            <div class="reply-content">Alwyn,
+Where on the back 40 did you live? I spent a lot of time out there at one point, and what I loved was the egrets in the canal ditches and the morning mist in the winter.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">38</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 07, 2007 at 11:33AM</span>
+            <div class="reply-content">yep...foxworth
+the inimitable talent who wrote some of the lyrics of the Garbage Show.
+&quot;Your garbage belongs to me...&quot;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">39</span>
+            <span class="reply-author">[1rlkj4ppbtgim]</span>
+            <span class="reply-date">December 07, 2007 at 06:17AM</span>
+            <div class="reply-content">Oh good gods............I&#x27;d forgotten all about hypnotizing chickens!!
+For me.....it&#x27;s the smell of damp bay leaves that brings it all back.
+As for living there......others came to party on the week-ends. After tripping around, I would walk the firebreak over the hill and home. And when the show was over....and the booths were down &amp; those folks had gone back to their lives.......I was still home.
+Just to be able to walk the empty site whenever.....what a gift. Tho we sure complained alot at the time.
+(Wasn&#x27;t his name really Foxworth?)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">40</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 05, 2007 at 06:15PM</span>
+            <div class="reply-content">Oh definitely money cant buy the tunes I have heard, or eyefulls either.
+especially those days onlot where the dust sizzled in the sun and we all live in our own other world.
+its also like I learned so much out there...
+how to talk to sparrows (Ed Holmes)
+how to hypnotize a chicken (Smacky Duck)
+how to hammer a nail (Michael foxworthy)
+how to foot a Ukie pole (Kevin Emory)
+how to clean a frying pan (Bob thomasZ)
+how to make a stew (Dave Ricker)
+how to throw a party (Don Mills)
+how to make beans (Bobby Vierra)
+how to stop traffic (Jane Pollack)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">41</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">December 05, 2007 at 06:04PM</span>
+            <div class="reply-content">I only lived in the lot briefly, one year for three weeks, in &#x27;82 when I was just 16. But my mother had to literally drag me off the lot when I came down with Strep throat and she drove me all the way home to Arcata. I cried as we drove away. In spite of loving and living among the redwoods, it is the Oaks that still call to my soul, I miss a low dry Oak branch to sit in and hang out with.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">42</span>
+            <span class="reply-author">[2nqhxsrgjvtho]</span>
+            <span class="reply-date">November 30, 2007 at 07:04PM</span>
+            <div class="reply-content">I couldn&#x27;t agree more, It was, especially for the area an amazing place to live. I always felt truly blessed to be able to live on the faire site year round. I saw some of the most amazing things that stay with me till this day. I think that is one of the reasons Catt&#x27;s writings and discriptions of nature and just experiencing the day sometimes effect me so much.....cause I&#x27;ve been there, seen it, smelled it, experienced it.
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

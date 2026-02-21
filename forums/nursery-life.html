@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nursery Life - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Nursery Life</span></div>
+            
+    <div class="module">
+        <div class="module-header">Nursery Life</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By PatriciaBlanco</span> | <span>December 30, 2008</span> | <span>18 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (18)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">September 20, 2009 at 03:30PM</span>
+            <div class="reply-content">Honey, in this economy one has to do for one&#x27;s self !!
+All the best to you in your new endeavor - it sounds like you have contacts &amp; folks who like your work.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">September 20, 2009 at 02:24PM</span>
+            <div class="reply-content">Nursery life 9-20-09 &quot;Last post??&quot; Well, not last post in the Garden Path group, but possibly in this &quot;Nursery life&quot; discussion. I lost my very favorite job, working at a nursery I&#x27;d have stayed at until they dragged my corpse out back and added it to the compost pile. So the question is, Where now? I&#x27;ve been getting a lot of feedback from the contractor community about doing consult and design as an independent. Got a couple of small consult jobs and a lecture at a local garden club lined up so far. Many suggest that this is the way to go. My particular skill set fills an under served niche. Time to pull on my big girl galoshes and go for it? I&#x27;ve got the chops, the contacts, the reputation. Landscape installers have been calling to tell me they would like to hire me for future installations. Being the sole support for me and Mae puts that pressure on, but I am certainly not giving in to fear. &quot;Fear is the mind killer...&quot;. So stand by folks, I&#x27;ll be starting a new discussion soon, &quot;Californiano Blanco - Gardens for the Golden State&quot;. Change is good, I think I like it.
+Just a little reminder, Fall is like a second spring. If you haven&#x27;t done so already, a light pruning and good feeding is in order right now. Our garden has expended a lot of energy during the summer. It&#x27;s a little stretched and depleted. Lightly prune your plants to remove dead flowers and to give some shaping to your shrubs and perennials. Now give your plants a good feeding. The days are still long enough for your plants to use the food and create a beautiful fall showing.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">April 18, 2009 at 02:13PM</span>
+            <div class="reply-content">Nursery Life - &quot;Bea Grow&#x27;s Rose Formula - April&quot;- 4-18-09. Your roses should be starting to bud/bloom by now.Watering becomes important now. Roses really should be watered by hand. It much easier to monitor them individually this way. Water in the morning. Especially near the coast. It gives the leaves that get wet a chance to dry off, thus reducing the chance of powdery mildew. Mild cases should not concern you. In more extreme cases, plucking off leaves may be in order. No, no fungicide sprays. Remember, we&#x27;re going organic here.Let the plants develop their own defenses.A strong plant is more resistant to disease and pests. And let&#x27;s feed our hungry, hungry roses some more. Get a bucket and make a solution of seaweed extract and fish emulsion according to packaging directions and feed them all. A rose I&#x27;m getting to know this season is &quot;Barbra Streisand&quot;. All you violet lovers will love the color of this one. Wonderful fragrance. Large blooms with a high pointed center on long stems.Word is the lady herself made this choice and was very, uh,&quot;exacting&quot; in her selection. It paid off. This will become a real classic.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">April 09, 2009 at 02:02PM</span>
+            <div class="reply-content">Nursery life &quot;New design job - Old California style&quot; 4-9-09, Besides my nursery job I also do garden consults and design as a side gig. Landed a great gig last night.This family loves the whole Old California style, which becomes more and more popular in this area. They are tearing out their entire front with the exception of an Aleppo pine and a bouganvilla. All the concrete and stucco - gone. Sadly the roses go too. Ah well, circle of life. I will create pathways of decomposed granite and stone pavers (rough cut) that will follow their walking patterns from the street and driveway to their enclosed patio, replacing rigid and symmetrical concrete paths that make the walkers conform to it&#x27;s pattern.The flat surface will be altered with soft mounding and and rock groupings.I love the large tree sized manzanita and will use Arbutus marina, which is related but grows taller and more quickly. Also Romneya , the matillija poppy (I&#x27;ve been recording the growth on one planted in the nursery and will post those pics when it comes into bloom).I&#x27;ll also be using Ceanothus Concha, a large dark flowered variety; Sedum Cape Blanco (of course) a pale grey succulent ground cover; Agave medio picta, a green and white agave that stays a reasonable size and won&#x27;t eat up the yard; Callandrina, a succulent that grows knee high and has profuse bright fuchsia blooms 9 months out of the year. Okay, okay, I&#x27;m getting carried away here. Yes, I am very excited.(hmmm, maybe I can use a coastal redwood here). I&#x27;ll keep you posted. Happy Spring!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 27, 2009 at 01:18AM</span>
+            <div class="reply-content">Nursery life &quot;Snails&quot; - an addition. Snails don&#x27;t like gypsum. It dries them out too quickly for them to try to cross. If they&#x27;re attacking a particular plant just surround that plant with a ring of gypsum. It&#x27;s cheap, it&#x27;s easy, it&#x27;s good for your garden. have you ever seen those white rinds around the trunks of citrus trees in an orchard. Yep. Gypsum, Keeps the snails out of the fruit. Of course in Ojai our neighbor Dr. Bee keep a flock of Peacocks. They love snails. Kept his orchard clear of snails. Not a practical solution for the rest of us, but effective.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 26, 2009 at 03:05AM</span>
+            <div class="reply-content">Nursery life 3-25-09 &quot;Snails, aphids and whiteflies&quot; Recently I saw some discussion on chat regarding snails in the garden. I saw the recommendation of using beer to deal with snails. Well, it is true that snails are attracted to beer. Fill a pan with brew and you&#x27;ll get a pan full of dead drunk snails. One little problem with this. It REALLY attracts snails. LOTS of snails. It&#x27;s like a snail party in your garden. Now if you happen to eat snails this might be cool. Beer fattened snails. Yum! (not) Actually a very effective way to deal with snails is the time old method of plucking the pests when you see them, Early morning and early evening when they migrate gather them up and dispose of them. Dispose? Well, my condo fronts on a creek, so I toss them over the fence into the creek. Water birds love them. Live on a street? Ah, nothing like the satisfying crunch of the snail landing on the asphalt. I read of a normally sweet natured old auntie who gathered them up and gleefully incinerated them. Actually if you just keep up the plucking you can keep your garden remarkably snail free. Snail bait is so very expensive, and can be dangerous to small critters. My friend uses Deadline with some success. Sluggo and &quot;It&#x27;s it&quot; are also very good. For those going nuclear, Methaldahide (sp?) is a very dangerous, ultra effective method. Don&#x27;t do it. Really. Don&#x27;t. Now to my favorite pest determent. Worm poop. Yep, worm poop. Sold at many nurseries as &quot;Worm Glow&#x27; or&quot;Worm Gold&quot;. Very effective for the repelling of aphids and white flies. When the worm poop gets into the system of the plant it makes it taste nasty to pests. A really good control on food crops. Safe and, for those to whom such things are important, vegan. Lay the poo on top of the soil under your plant about 1-2 inches thick and water. Not smelly. Dislodging aphids and whitefly with a hard spray of water works well. If whitefly has started sticking to the undersides of the plant pluck off those leaves. That&#x27;s how they lay eggs. Ladybugs! You&#x27;ve seen them for sale in nurseries, or heard of using them. 2 things, 1- use correctly. You can&#x27;t just let them go in your garden,they&#x27;ll fly away. They feed in the early morning and early evening. Spray your foliage first (they like moist) then shake them about the plants that host pests (roses maybe?)They can be a little sluggish at first, no worries, they&#x27;ll wake up. 2 - If you use any kind of chemical insecticide it will kill the ladybugs as well as any other beneficial insects. Start this integrated pest management now. Prevention is your best strategy.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 11, 2009 at 05:02AM</span>
+            <div class="reply-content">Nursery life 3-10-09 &quot;Bea Grow&#x27;s Rose Guide - March&quot; Ive posted a picture of Bea &amp; I on my page. By now roses should be starting to leaf out with new red growth. It&#x27;s time to feed again. Roses are hungry plants that need a lot to really produce loads of blooms. Fill a wheelbarrow with mulch, mix in 4 cups alfalfa meal, 4 cups kelp meal, 1 cup bone meal, 1 cup blood meal then mulch your roses with this mix. There is a flurry of activity at the nursery as the people whose gardens will be featured in the many upcoming garden tours ready their gardens. Some will also be readying their gardens for photo shoots or for scouts from various publications looking for gardens to feature. Me, I&#x27;m doing a lot of cleanup as well. A couple of our guys are out, either ill, or visiting family.So it&#x27;s rake, rake, rake for me. All that winter debris. Also doing lots of bids as the landscapers start picking up jobs. Really rather a yearly cycle.My advice, weed, rake, prune, and prep your soil for planting. Healthy soil makes for healthy plants. Healthy plants fare better against diseases, viruses, insects etc. Maybe a talk about integrated pest management would be a good thing to start discussing.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 22, 2009 at 03:45PM</span>
+            <div class="reply-content">Thanx Lucinda. Good info here, and thanx for the i.d. on &quot;Which Euphorbia is this&quot;pic.I&#x27;ll take this info straight back to the nursery first thing. I wonder, will your ice cube tip work on a pointsettia so that it can be used as a cut flower? I&#x27;ll give it a try, we have some in the back. Though my boss will dump plants at times, the lead field guy loves the noche buena ,as I do ,and resists tossing them. Yesterday I consulted on a garden redo, it&#x27;s going to be all succulents.Fun Fun
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">[11e3598d3q1zz]</span>
+            <span class="reply-date">February 22, 2009 at 01:22AM</span>
+            <div class="reply-content">I am being picky here, but Euphorbia&#x27;s are succulents, they are not cacti. All Cacti are Succulents, but most Succulents are not Cacti.
+Euphorbia evovled in Africa when Cacti evolved in the Amercas. They are poisioness to a greater or lesser degree (as Patricia said.) If anyone remembers the scene in &quot;The Gods must be Crazy&quot; where the guy goes crazy after being hit with the sap from the plants he was hiding in that got shot with bulletts? Those were Euphorbias.
+Generally, washing the sap off immediately with cold water eases the poision/pain. You also need to put an ice cube on the cut of the plant to stop it from &#x27;sapping to death&#x27;
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 16, 2009 at 08:09PM</span>
+            <div class="reply-content">Grieg Fors informs me that he had quite a large Euphorbia collection. He just sent me some Euphorbia Horrida(love that name) pups.It resembles a cactus. Great family the Euphorbia. There&#x27;s a variety called &quot;Diamond Frost&quot;. Very low growing with sprays of white flowers resembling Baby&#x27;s Breath. I always encourage frequent hand washing when working with plants. Glad you&#x27;re okay.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 16, 2009 at 07:58PM</span>
+            <div class="reply-content">Nursery Life - 2-16-09 &quot; Succulent Basket&quot; - I recently attended a San Clemente garden club meeting because the guest speaker was Debra Lee Baldwin, author of one of my favorite garden books &quot;Designing with Succulents&quot;. She showed a photo of a succulent basket and described it&#x27;s creation. The next day at the nursery I created one, see photo of it on my page. You start with a wire basket about 12&quot; or so in diameter. Next you get a ground cover flat of a well established Sedum. A ground cover flat is a flat of dirt into which cuttings have been planted directly, no separate pots.I used Sedum Angelicum, other suitable Sedums are, Brevifolia, or Spurium.Then you flip the flat of Sedum face down into the basket. This creates a living liner for the basket.Make sure you select a fully filled &amp; established flat. Next fill in with enough soil to support the gallon sized focus plant (nursery gallons are not true gallons, they are smaller, which is why women make better nurserymen than carpenters, sorry, old joke).The top of the soil of the focus plant should be even with the top of the basket. Back fill with potting soil.Plant small succulents into top soil around focus plant. Nestle some into the wall of the basket. We also used a couple of Alpine strawberries in the walls. Pretty &amp; edible. Now bear in mind, this basket will be HEAVY. You will need chains to hang it. We just set it into a cast iron pot holder till we could get the chains. It sold before we got that far. Be creative! My next succulent basket will explore the orange, yellow, red succulents.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">Kathe Walters Scott</span>
+            <span class="reply-date">February 16, 2009 at 07:56PM</span>
+            <div class="reply-content">I had a euphorbia cactus that had grown to the size of a huge tree in the backyard, called it &quot;the cactus that attacked us.&quot; I tried to trim it one day, got the milky sap all over me, and nearly went blind. My face puffed up and my eyes sealed like Chairman Mao, I went to the emergency room and got informed not to mess with that plant. Years later, I had a tree guy remove it, and I warned him to wear protective gear. He had a young macho guy working with him who refused to cover up, and was sick in bed the next day.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">February 12, 2009 at 01:49AM</span>
+            <div class="reply-content">Nursery life- 2-11-09 &quot; Bea Grow&#x27;s Rose Guide - February&quot; - Bea likes to stagger her bloom time in the garden. She staggers her pruning and conditioning so that she staggers her bloom time. If you haven&#x27;t done so already, see previous post for January and get started on your rose care, Bea Grow style.For those of you who need simple, simple, simple, prune your roses then feed with one cap full of Bayer rose care peer rose every 2 months for hassle free roses. It is not the organic way.Use of non-organic plant products can negate certain organic practices. No judgment here.Just be aware. How to prune? Hold your hand out palm up, spread your fingers, and curl them upward.That&#x27;s the shape you want.Open in the center, well spaced canes, cut out crossed or down turned canes.I do love roses, I named my Morris team &quot;Red Rose&quot;, and my daughter&#x27;s middle name is &quot;Rose&quot;.How appropriate.She&#x27;s high maintenance, and can be a little &quot;thorny&quot; , but she&#x27;s worth the care and when she blooms (sigh) she&#x27;s lovely beyond compare.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 29, 2009 at 05:14AM</span>
+            <div class="reply-content">Nursery Life - 1-28-09 - &quot;On Cleaning Vines...&quot;. I&#x27;ve been spending many hours in our vine section these past 2 weeks. They get overgrown and full of dead leaves. I start by clipping the ties that affix them to their stakes. I really dislike wire ties.They cut into the vines as they grow, much better is plastic plant tie tape. It gives as the vine grows.Next I untangle the growth, fingers flying through the tangles, dislodging dry leaves, dust, and twigs. After trimming the vines I retie them, holding the vines to the stake and working the tie tape around twice and tying off with a square knot. As I&#x27;m working I realize - This is really easy for me, it&#x27;s as if I had muscular memory - Then it hits me, of course!, the faire! Waking up on Sunday mornings at faire after sleeping in sawdust and hay. Having no comb in my pocket (only a mangled Night Pass), I rake my fingers through my tangled hair, dislodging straw, hay and sawdust. After twisting a quick braid I use a piece of ribbon to tie off my braid(wrap twice around, finish with a square knot) and hasten off to my morning dance set. Who would have guessed that that particular set of skills would have become so useful after all these years!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 15, 2009 at 02:33AM</span>
+            <div class="reply-content">Nursery Life-1-14-09-&quot;Bea Grow&#x27;s Rose Formula-January&quot;. There lives in San Clemente the most delightful of women. Her name is Bea Grow, she is 83 and is much beloved by gardeners in this area. In fact a number of us want to &quot;be&quot; her when we &quot;grow&quot; up.(get it? be/Bea her when...sorry nursery humor).Among the many gifts she&#x27;s shared with us is her month by month recipe for growing roses.With her permission I will bring you this plan month by month.This is serious rose growing.JANUARY- First you prune your roses, vigorously. &quot;They bloom better on new growth&quot;. She then conditions her soil with the following formula-(per rose)- 1TB. iron, 1 TB. Epson salt, 1 TB. soil sulfer, &amp; 1 cup gypsum.This dry mixture is sprinkled on top of the soil around your rose. Top off with 3&quot; compost. Homemade if you have it.(she mixes her own in large trash bins, that&#x27;s another story). Everything is then well watered in. Bea notes&quot;I never disturb the soil around my roses by digging around them, It makes the weeds pop up.&quot; At a meeting of one of the Rose societies she belongs to they made the poor choice of asking a rep from a commercial chemical fertilizer company to be that month&#x27;s speaker. Now, Bea is a lady, and is not one to be confrontational, but my understanding is that she almost had to be restrained while listening to this bloke and spent the time muttering,ahem, &quot;harsh&quot; statements. She&#x27;s a treasure.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 08, 2009 at 02:23AM</span>
+            <div class="reply-content">Nursery life 1-7-09, &quot;Baby it&#x27;s cold out there&quot; Back to the nursery and the first thing is dealing with the cold damage. This brings to mind,what to do to mitigate damage.Cold damage happens, but we can do things to reduce damage. Sure, it would be nice to just heat up the area, but smudge pots are a no-no.Keeping a supply of nursery cloth to insulate your plants would be nice, but bulky to store and costly and difficult to procure. Use what you have on hand. The most simple thing is to just spread sheets of newspaper over sensitive plants. It&#x27;s cheap, easy, and recyclable. You can also use old sheets, those foil-like space blankets, mesquito netting, plastic,just try to provide a little insulation. Don&#x27;t forget to remove it in the morning after the temp raises a bit. Making teepees helps taller shrubs. Form a tripod of sticks bound at the top. Drape with one the previous mentioned covers.Now lets say your plants have already been smacked by the cold and have frost damage. Don&#x27;t be so quick to remove the damaged part. Those drooping or mushy leaves can provide insulation against further cold damage. We had a crop of banana trees get hit hard during a really bad frost, hit low, stayed low ,repeatedly, for three days in a row.Those leaves just drooped down dead around the trunk. The heart of the trees survived and they recouperated 100%.Trimming off the damaged or dead parts exposes more of your plant to further damage. Here in south Orange county it&#x27;s hard to get some folks to let things be.They want their yard cleaned up NOW. They think they can buy replacements. Clue- if the plant is dead or damaged in your yard, chances are they are the same in your local nursery. So be prepared, be patient, and remember, todays dead plant is tomorrow&#x27;s compost, is food for the next crop. Wise woman says&quot;Your garden and your library are never complete&quot;.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">January 06, 2009 at 03:23AM</span>
+            <div class="reply-content">Poinsettias are part of the Euphorbia family. All these plants have a milky sap that can be mildly to very irritating. Points are generally mild,reactions vary by individual.The plant sold as&quot;Gopher purge&quot;is another euphorbia.Their sap is what drives off gophers who nibble it. Bunnies don&#x27;t like euphorbias either. There are many common plants that are way more problematic.Of course, we all know oleander, it is so poisonous it can make you ill just handling it. Even deadly. People new to California often pick these sweet smelling, profuse bloomers. Bad, very bad. Also of some concern is our English garden favorite Digitalis, &quot;Foxglove&quot;. Wash your hands people, plants &amp; soils can contain all kinds of problems.I rarely wear gloves, being blessed with a resistance to most irritants. But I wash my hands often. As for the medicinal use for Poinsettias, I just read it in the past couple of weeks and will try to re-locate my source.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 31, 2008 at 08:10AM</span>
+            <div class="reply-content">Hi Patti:
+Thanks for sharing your nursery life and expertise.
+Quickie Question: This time of year I always read &#x27;household warnings&#x27; regarding holiday plants, including Poinsettia plants. However I also read recently (and have of course lost hold of) an article that said the &#x27;common knowledge&#x27; of Poinsettias being poisonous was a myth.
+So, what&#x27;s the real scoop? Are they toxic or harmful? Or are they possibly harmful to some creatures (like little folks, or mammal-pets) but perhaps not so bad for maybe birds and large persons?
+Thanks in advance for any info you share.
+Hugs, etc.,
+Luisa
+PS - would also like to know their medicinal uses. Thanks.
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

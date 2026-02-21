@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>got gigs? cd? - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>got gigs? cd?</span></div>
+            
+    <div class="module">
+        <div class="module-header">got gigs? cd?</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Murray then, now aka MAX</span> | <span>November 23, 2007</span> | <span>19 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (19)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">[u27mqhvfbw9b]</span>
+            <span class="reply-date">August 28, 2009 at 10:50PM</span>
+            <div class="reply-content">Santa Jim and Blue are;
+Santa &amp; Mrs. Claus for closed parties. This year Santa wants to play it safe with gems etc. We have fun at parties where the children get to tell Santa what they wish for. Mom&#x27;s take pictures of the darlings and all sing Christmas songs, or your favorite Holiday Songs. We have many elves working hard to make all the gifts. Mrs C making cookies for the Reindeer and Santa.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">[7msjrkok1fgj]</span>
+            <span class="reply-date">April 22, 2009 at 04:29AM</span>
+            <div class="reply-content">Culann&#x27;s Hounds and the Zydepunks... think the Pogues with hot female talent. Think Gogol Bordello with zydeco on the side. Folk + punk = fun. The Zydepunks are our brothers (and sisters) in the folk-punk genre, on tour from New Orleans. If you love the accordion and fiddle, and you want to share a magically delicious night of stomping and dancing to two great high-energy bands, come to one of these shows:
+May 21st at Monterey Live, Monterey, CA
+May 22nd at the Red Devil Lounge, San Francisco, CA
+May 23rd at the Starry Plough, Berkeley, CA
+sfhounds.com
+zydepunks.com
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">[7msjrkok1fgj]</span>
+            <span class="reply-date">April 01, 2009 at 06:23AM</span>
+            <div class="reply-content">Hell yeah! I have a really fun gig with Jenny Kerr on April 5th at the Rancho Nicasio in Nicasio, CA 94946. It&#x27;s 5pm, free, (except for the cost of driving to Nicasio), I hope folks can make it!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">[02v9sfrs8abuf]</span>
+            <span class="reply-date">March 19, 2009 at 01:50PM</span>
+            <div class="reply-content">No gigs per se, but I did just put my book up for sale online at www.kalynwolf.com. If anyone from The Teahouse purchases it, just mark that&#x27;s where you found out about it on the contact page and I&#x27;ll donate $1 from every sale back to the Teahouse!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">[1eyv1wdew4ssy]</span>
+            <span class="reply-date">March 17, 2009 at 10:42PM</span>
+            <div class="reply-content">Well, it looks like The Dogwatch Nautical Band will be performing at the Pirate Festival again this year, in Vallejo on June 20th-- it&#x27;s a little TBD at this point in terms of showtimes and such. We&#x27;re also starting to talk seriously about some studio time for a CD but so far, nothing laid down.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">[7msjrkok1fgj]</span>
+            <span class="reply-date">January 27, 2009 at 08:38PM</span>
+            <div class="reply-content">No official show dates in New Orleans until April, when the Hounds are opening for the Zydepunks at Jazzfest. I&#x27;ll be busking near the French Quarter and sniffing out the local jam sessions, heading out to Eunice and Lafayette for the folk music (and also to see Marc Savoi&#x27;s accordion shop!) I would love to meet up with Daniel, or any friendly network out there, since I only have a room booked for my first 5 days of travel. Maybe let David know that a real feisty-yet-clean pink-haired accordion babe is visiting, and she could use a place to crash for a few days. He can have my number it&#x27;s: 415.385.9879
+I&#x27;m just hoping I come back with my music a little spicier and some new contacts for the Spring tour. And a dozen more zydeco tunes yeah!
+Thanks for posting these shows it&#x27;s such a help. Love and hugs to you Catt!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 27, 2009 at 02:59PM</span>
+            <div class="reply-content">http://www.fridaynightwaltz.com/BayCeltic/
+this one is good
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 27, 2009 at 02:57PM</span>
+            <div class="reply-content">link is not going to a real page...hmmm
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 27, 2009 at 02:13PM</span>
+            <div class="reply-content">got it and i will re-post it to events on the main page, unless you would rather do so. The events area is working out well now, I think we have a regular set of pertinent events at least for the west coast. Hey we have Daniel in new orleans so you better tell me those dates too!
+its a worldwide teahouse now.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">[7msjrkok1fgj]</span>
+            <span class="reply-date">January 27, 2009 at 10:15AM</span>
+            <div class="reply-content">I&#x27;m going to New Orleans on Feb. 1st. I&#x27;ll be gone for three weeks, but I&#x27;m coming back to play this show:
+San Francisco Bay Area Celtic Festival
+February 21, 2009
+3pm to midnight
+Oakland Veterans Hall
+200 Grand Avenue Oakland CA 94610 X Harrison
+$20 per person at door $10 students with id
+Culann&#x27;s Hounds, Black Brothers, Tempest, Molly&#x27;s Revenge, Avalon Rising,Siamsa,
+Steve Baughman, Music Showcase, hard shoe class, soft shoe classe,Irish Ceilidh, scottish ceilidh, waltz dance, more
+http://www.BayCeltic.com
+P.S. bring a flask; last time they couldn&#x27;t sell booze! I recommend this event for folks who love dancing.
+I also put out the Bay Area Accordion Babes calendar and CD, we are sold out but you can view the photos and hear the tracks online at my website:
+squeezeboxgoddess.com
+Come over and see the Bay Area&#x27;s hottest accordion babes!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">[1m176wdmi0eh2]</span>
+            <span class="reply-date">March 27, 2008 at 03:10PM</span>
+            <div class="reply-content">Next gig for Daddy Bone is at B.B. King&#x27;s in Universal City on Monday, March 31st. It&#x27;s a Battle Of The Bands showcase event and Daddy Bone goes on at around 7:00 pm. Your daddy has no idea what he is going to play. I mean, what does a solo acoustic act play in a battle of the bands event? So whatever happens, I am pulling out all the stops.
+You can get the Daddy Bone CD at CD Baby. Just look up Daddy Bone. It&#x27;s 13 bucks and plays for over 42 minutes. It has everything you would expect from a frustrated rocker stuck in the folk music genre and loosing grasp of reality a little more each day. You can also find a link for the CD at the Daddy Bone web site... www.daddybone.com
+By the way, I will be in New York City on April 11 &amp;12. If anyone knows someone who will book me for a gig there, please get in touch.
+- Daddy Bone
+(877) 55-DADDY
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">[142hggrca13dj]</span>
+            <span class="reply-date">March 27, 2008 at 01:49AM</span>
+            <div class="reply-content">I just got a gig from Kevin Patterson, with Jeffrey Weissman. It&#x27;s at that amazing winery castle built in Napa: Castello di Amorosa. The place is phenominal! Should be a lot of fun. Even better, I&#x27;ll be playing with old friends again here in the big CA!
+I&#x27;m teaching at my sword school (Albion) again - good to be back, mucho thanks to John Woodruff and all the regulars for keeping it going in my absence!
+I&#x27;m also creating a Pirate show for Steve and Anna for the Nor Cal Pirate Fest in June. Pirates... no sense leaving it to the suits, sez I... aarrrgggh.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">[1fcq6q3hmoscx]</span>
+            <span class="reply-date">February 06, 2008 at 07:53PM</span>
+            <div class="reply-content">We got gigs &amp; cds. My husband Dayan Kai is a multi-instrumentalist, vocalist, songwriter, composer. He is as diverse as I. We released a gospel cd last spring. This was a commission. We are working on a new record that he is writing songs for me to dance to. We will be releasing &amp; touring that soon. And yes, the kids are on stage too. Paulina loves to dance and play drums. Ovid mostly sings but he seems to really love the sax.
+As a side project Dayan started to record some fun stuff with Armando Mafufo. Not sure where that will go. But Dayan really loves working with Mando. We often stay with him &amp; Hanya when we are on the road in SC.
+Now, we are preparing to go on the icy road to Reno. Dayan &amp; I are working for The Juan L. Sanchez Ensemble. This will be my first performance since Ovid (7 months old) was born. It&#x27;s going to be a tight fit back into the old costumes.
+Then Dayan is doing some session work in Santa Cruz, and then we play the Applegate Lodge and up through the Oregon coast for more gigs.
+That&#x27;s the update.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 26, 2007 at 01:05PM</span>
+            <div class="reply-content">i do second life Morgan.
+If you would like any help there, or to hang out there together let me know.
+my name there is catt Heron.
+It definitely has potential for musicians.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 26, 2007 at 04:51AM</span>
+            <div class="reply-content">We had a really sucessful gig on a local radio station last weekend. It is a &quot; Community&quot;radio station-,run by hippies &amp; lefties - some of our best friends! We have been backing up a local singer-songwriter named Sherri Quammen, and we call the band &quot;Wake Up Whirled&quot;
+We are also looking at this live-on the-web broadcast thingie.A good friend back east is in on the ground floor of something on &quot; Second Life&quot;, and had a nice little webcast a couple of weeks ago. It sounded GREAT . During that broadcast he said &quot; Hey Mik &amp; Morgan - get yer Avatars up and git on down here!&quot;
+I also am starting to do the CD Baby thing. Our first album (from 1999), &quot;Beltain&quot;, will be the first offering.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 07, 2007 at 01:02PM</span>
+            <div class="reply-content">It looks like a packed weekend with the Brass Menazerie gig in Sonoma on Saturday, and also Springhorns benefit which is closed but whatever. I might actually make it down this weekend yet, although right now i doubt it.
+Also it looks like yvettes memorial will likely be on the 20th.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">December 05, 2007 at 06:11AM</span>
+            <div class="reply-content">Well I&#x27;m about to make a whole bunch of room in my life for more massage gigs. I was sick in bed for the last three weeks (until last weekend) and now I really need the money. But this is also an excellent time for me to get into the swing of things with my massage practice again.
+This holiday season I&#x27;m offering the last &quot;general public&quot;massages I will ever offer. I am offering out-call massages as an in-call rate, if you have anywhere you can have me come to you. That&#x27;s just $60, if you live in Sonoma County. I&#x27;ll be in SF probably this weekend and on the weekend of the 23rd, so could do massages in SF then. Or I can do one in the eastbay or Marin
+as I pass through to SF those weekends.
+I&#x27;m also available to do chair massage at Fairs, Christmas faires or even ones any time next year. Right now I&#x27;m contemplating doing massage at Pantheocon and maybe mapping out other fairs I&#x27;d like to do next year. Feel free to toss me ideas for fairs where you think my work would fit in (anyone).
+After New Years I&#x27;m launching the new practice:
+#1 all public massage rates will go up to $100 an hour.
+#2 I will start advertising my workshops all over the bay area.
+#3 The main bulk of my massage clients will be people who take my workshops, on going rates to them will be cheaper than to the general public.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">[17kdjzdg2v9b]</span>
+            <span class="reply-date">December 02, 2007 at 08:03PM</span>
+            <div class="reply-content">Winter time I don&#x27;t get too many gigs. I do have one this coming Friday evening. Healing Hearts, a local peer counseling center in Willits, is putting on a Stone Soup evening. I have been asked to participate as one of the local story-tellers. We did one a year ago, in a different Venue and with a different sponsoring organization. Parts of that went well and parts needed improvement. I think this year the program will work better, but we didn&#x27;t get the word out soon enough.
+I made a tape years ago with a harper. I was always unhappy with the engineering and have never duplicated it past the first run (which have all sold now). I would like to do a CD, but time always seems to be at a premium.
+Liam
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">November 26, 2007 at 01:51AM</span>
+            <div class="reply-content">Haven&#x27;t been gigging so much...that small buisness takes up a lot of my time now, but CDs we got. Tons. My Husband has been recording stuff since his Punk days in Berkeleyin the late &#x27;70s, early &#x27;80s, when he played with a band called &#x27; the JARS&#x27;. We have material from a band we had called Beltain, and then there&#x27;s my Midaeval Feast CD.
+It&#x27;s hard to play gigs out of town when ones&#x27; motion sickness is as bad as mine.I believe that in future I will be doing more studio projects. I have a nice new set of Recorders, and have some more Early Music pieces I want to record, as well as an English Country Dance project.Our Home Studio is quite cozy and useful, and it is no small help that my Husband was also a professional recording and live sound engineer for many years.
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

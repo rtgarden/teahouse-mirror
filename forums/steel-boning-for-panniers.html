@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>steel boning for panniers? - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>steel boning for panniers?</span></div>
+            
+    <div class="module">
+        <div class="module-header">steel boning for panniers?</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By [lpyorxac6nhq]</span> | <span>December 11, 2008</span> | <span>14 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (14)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">[lpyorxac6nhq]</span>
+            <span class="reply-date">December 18, 2008 at 02:39AM</span>
+            <div class="reply-content">Splendid dress! The Maeder book is on its way to me(I&#x27;m spending money as though I have it again. More good news from Dover, they&#x27;ve just reprinted the R. Turner Wilcox classics: THE MODE IN HATS AND HEADDRESS, 16.95. THE MODE IN FOOTWEAR, 12.95 . THE MODE IN COSTUME, 19.95. I now have a xerox copy of all the illustrations from the Mode in Hats up for grabs(of course, I bought it!) They have only published a small fraction of the magnificent Paul Louis de Giafferi illustrations from the 1920&#x27;s(?) of Feminine Costumes of the world....I wrote them when the WOMEN&#x27;S COSTUME OF THE ANCIENT WORLD came out, which just covers Ancient Egypt, Greece and Rome(maybe Babylonia.) I insisted that they should publish the rest, but so far they haven&#x27;t. I was lucky enough to have the loan of an original, folio version with what looked like hand colored illustrations and lots of metallics. I xeroxed the whole thing at the time, and returned the original a week before my house burned down. Luckily I had made copies for a friend too, who re-copied them back to me. But my copies are b&amp;W. Hmmm...none of this has anything to do with panniers!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">December 17, 2008 at 01:07PM</span>
+            <div class="reply-content">wow that is really lovely Luisa. and kodos on figuring how and where to hit the teens weensy ning buttons to display...you are getting the hang of this.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 17, 2008 at 05:56AM</span>
+            <div class="reply-content">Okay, second try on the scan and post of image thing. First time failed me big time. Wish me luck on this go-round. 
+ W00t! I&#x27;ve got it, now. Disclaimers on this particular dress: No doubt you&#x27;ve noticed that it is from *very* late in the period, year 1800 in fact. Time of transition from the &#x27;royal&#x27; influence to the more &#x27;Republic&#x27; look that was just before the Imperial Age and later Romantic. No panniers, no hoops, however I definitely *did* have a corset (of course!). This style was much easier to wear, and (quite frankly) much easier to copy for my very simple version of it for wedding gown. Also must mention, while I did do my own natural hair up in loose dangling curls, I did *not* go with the feathers. Not only did I doubt that I could &#x27;swing&#x27; that look, but also the ceremony was outdoors in my Mother&#x27;s back yard, and heaven only knows what a rouge wind would have done with those! BTW: yes, I do have photos of the wedding and of the gown I made. Alas, the album is in a far away corner, deep down in the pile o&#x27;boxes. Will have to excavate that era at another time (after eating my Wheaties, of course!). Ciao for now. Luisa, off in nostalgia time again.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 17, 2008 at 05:27AM</span>
+            <div class="reply-content">Oh YES! I went to see that very same show &quot;An Elegant Art&quot; with Doris Karnes and Carol LeFleur! I still have the Exhibition Guide (which takes the viewer from gallery to gallery, each decked out as a &#x27;scene&#x27; from 18th Century life and literature). The show ran from March 8 through June 2 of 1983, and had lots of wonderful lectures and other special events scheduled along with it.
+Like you, Buffy, I also bought the official &#x27;program&#x27; book, compiled by LACAM Costume Curator, Edward Maeder, and (in fact) that was one of the books I reached over to thumb through to see if I could find a photo (or drawing) of any panniers they may have had on exhibit. Alas, while the exhibit itself started off with the elaborate scene of a lady dressing in her boudoir (and hence having the rational of exposing the underpinnings of her attire) the book does not have any photos of that scene at all.
+I *loved* that exhibit so much that I went back several times by myself, just to drool over the lace exhibits and the gowns on display.
+The exhibit affected me so much that later, when I was preparing for my wedding to Mark in 1989, I drafted a pattern for my wedding gown based on my favorite dress from the show. I&#x27;m going to scan and post the exhibit photo from the book here in a couple of minutes.
+BRB!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">[lpyorxac6nhq]</span>
+            <span class="reply-date">December 16, 2008 at 08:50PM</span>
+            <div class="reply-content">Yes, Morgan&#x27;s site recommendation is quite tasty! The patterns I have are all by the big three commercial pattern producers: Simplicity, McCalls and Butterick. (Voque only does Retro pattern reprints from 1920&#x27;s on) JoAnn&#x27;s has regular 3-day sales where you can acquire them for $1.99, or( .99 sometimes)so you could get the actual printed pattern cheaper than I could mail you one. Simplicity has some very elaborate historical stuff these days. If they are out of print, I hear that their website offers old patterns(for a price though). I can trace them on tissue paper if worse comes to worse. I went to the LA County Art Museum show of 18th C Costume called An Elegant Art, it must have been in the late 1970&#x27;s or early 1980&#x27;s. I fell in love with that era, especially the decorative details of embroidery, pinking, and fabrics. And frock coats...it&#x27;s that pirate thing. I just re-bought the two books that were being sold as tie-ins to the show(my original copies burned in 1988) The reproduction of the embroidery book by the master embroiderer to Louis XIV(in English with the complete text in French in the back)had examples of each technique from the costumes in the show: THE ART OF THE EMBROIDERER BY CHARLES GERMAIN DE SAINT AUBIN. I have a large collection of costume, needlework and cookbooks again. I hope I will be able to post pictures soon. Thanks for all of your help! I am trying to teach myself how all these styles are put together. I still don&#x27;t know flat pattern making or alteration(except for simple stuff)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 16, 2008 at 01:14AM</span>
+            <div class="reply-content">Hi Buffy:
+Yes, go with the separate panniers on either side: much more stable.
+Can you scan and share the pattern you have? Or at least a photo?
+Books sound wonderful. I might treat myself to some of the books from Morgan&#x27;s recommended site (above.)
+Be sure to share in photos what you are working on right now. I&#x27;d LOVE to see your 18th century stuff ... and the 19th C ... oh gee, share as many as you can.
+Hugs, etc.
+Luisa
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">[lpyorxac6nhq]</span>
+            <span class="reply-date">December 15, 2008 at 10:50PM</span>
+            <div class="reply-content">Tee-Hee! I already made the panniers from one of the Simplicity patterns(which is really a big hoop skirt with ribbon ties on the inside to pull the hoops into the shape. It has 4 diagonal boning pieces for structure, from waist to top hoop.) But I have another pattern that appears to have the two panniers separate, which I might try next...in my copious spare time(HA!) I am currently making a corset in handmade needlelace(DMC linen embroidery thread is great!!!Comes in nice muted colors and I can split to one strand because it is strong) using heavy plastic coated wire to hold the shape...19thC style...I already have the 18thC style made from the same set of patterns, but sewn in fabric. I think there was over $20 worth of that plastic featherboning in that piece alone. I just bought a new book on corsetmaking, THE BASICS OF CORSET BUILDING by Linda Sparks. Black &amp; White photos and line drawings of the very basics, but not much more than that. Less than 80 pages. I prefer lots more pictures of examples. Then I got the Autumn Books on Cloth catalog from Fred Struthers Books(P.O. box 2706 Fort Bragg, CA 95437 (707)964-8662) He deals the R.L. Shep publications and used books. He had two corset building books that sounded interesting, but too expensive for me sight unseen. Robert Doyle&#x27;s: WAISTED EFFORTS; Illustrated Guide to Corset Making for $65.00(1997 235 pages quarto 9-10&quot; tall, paper bound..well illustrated incl. patterns) and Jill Salen&#x27;s: Corsets Historical Patterns and Techniques for $35.00(128 p, 11-13&quot; size..illustrated with patterns, photos and line drawings. Hardbound. Oh-Oh, too much info. I&#x27;m a luddite, some day I may be able to mastermind taking pictures and sending them here, but I need a new computer right now. I&#x27;m limping along with this one(motherboard failing)til after the new year.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 15, 2008 at 06:07PM</span>
+            <div class="reply-content">Oh Morgan:
+What a FAB site!
+Thanks.
+*L*
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 15, 2008 at 04:57PM</span>
+            <div class="reply-content">www.corsetmaking.com has all the supplies - corset bones as well as hoop boning by the yard - and the proper tools !
+This sounds like so much fun Buffy - will you post photos?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 15, 2008 at 06:32AM</span>
+            <div class="reply-content">Yikes! The text is HUGE! Oh well, at least we can read it, eh?
+However, this isn&#x27;t the way we made the panniers for our summer stock production of &quot;School for Scandal&quot; way back in the seventies. Think more like a baby&#x27;s bonnet, only with boning (we used the cheap but strong plastic in fabric ribbon boning).
+Using the idea of &#x27;bread basket&#x27; try to imagine this:
+A regular, large, loaf of french bread.
+Cut off one end about 4-6 inches long.
+You should have now a cylinder with a round top (the cut, flat end is on the bottom).
+Now cut that cylinder in half, lengthwise, from the curvy top to the flat bottom.
+You now have two halves, curving out away from the straight vertical cut.
+Now imagine creating two fabric and boning &#x27;baskets&#x27; that would resemble those two halves of cut french bread.
+We used solid fabric to hold the boning (much like the outer crust of the cut bread),
+and also used a flat piece of fabric where the &#x27;inside cut&#x27; is on your bread analogy.
+This held up very well, though I don&#x27;t think our panniers were collapsible. Then again, it was an outdoor ampitheater.
+Anyhow, I&#x27;ll try and find better illustrations in other books.
+BTW: did you notice in the first paragraph, the author mentions that an earlier mentioned dress had the supports (ie, panniers) *inside* the skirt fabric itself? Can&#x27;t find the exact figure referred to, however. Hey ho.
+BTW(2): the book is &quot;History of Costume - from the ancient Egyptians to the Twentieth Century&quot; by Blanche Payne (drawings by Elizabeth Curtis). Harper &amp; Row, New York, 1965 (no ISBN).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 15, 2008 at 06:20AM</span>
+            <div class="reply-content">Opps -not a &#x27;photo&#x27; but a drawing of the original, per reference. Next will be the text about the above panniers (which apparently also translates to &#x27;hen&#x27;s baskets&#x27; as well as &#x27;bread baskets&#x27;). Oh ... wonder if I can attach the scan directly into this reply? Well ... here it goes! 
+ Ooooh, I think I did it (didn&#x27;t I?).
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 15, 2008 at 06:13AM</span>
+            <div class="reply-content"></div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 15, 2008 at 05:47AM</span>
+            <div class="reply-content">Hi again:
+Not getting very far, alas, with finding a pattern or picture of what I was trying to describe, exactly, in earlier post. However, I have found a reference to *another* style of pannier (with photo of historic artifact), and I&#x27;ve scanned the page. Hope I can post it here.
+Wish me luck!
+Luisa
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">December 15, 2008 at 05:19AM</span>
+            <div class="reply-content">Greetings Buffy:
+If I recall correctly from making similar 18th century costumes back in the 1970&#x27;s for stage, the trick was to make two small panniers for either side (as opposed to one big hoop skirt with ties to make it wide and narrow, if you take my meaning).
+The panniers (which meant &#x27;breadbaskets&#x27; originally, but you already knew that, of course), would actually be sewn flat, with smaller length of &#x27;boning&#x27; at the top, and gradually the strips of boning would get longer towards the bottom. Then the entire thing was folded over from the middle and attached to a five to seven inch &#x27;inside&#x27; piece that would be flat against the lady&#x27;s hip, and the boning flaring out in a semi-circular half-bee-hive-sort of shape. Boning was put across the very top seam (going out from hip curving to outer side of &#x27;basket&#x27;) to reinforce the upward curve against the downward weight of the skirt fabric(s).
+Ummmm ... too much text, not enough illustration. Will look thru a couple of books nearby to see if there is a pattern I can scan and post here.
+Ciao for now.
+Luisa
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zak Schulps - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/members/">Members</a> <span>›</span> <span>Zak Schulps</span></div>
+            
+    <div class="module">
+        <div class="module-header">Zak Schulps</div>
+    </div>
+    <div class="module"><div class="module-header">Profile Information</div><div class="module-content"><div class="profile-info">
+        <div class="profile-field">
+            <span class="profile-label">Location:</span>
+            <span class="profile-value">Chico, CA</span>
+        </div>
+        
+        <div class="profile-field">
+            <span class="profile-label">Joined:</span>
+            <span class="profile-value">July 31, 2010</span>
+        </div>
+        
+        <div class="profile-field">
+            <span class="profile-label">Status:</span>
+            <span class="profile-value">active</span>
+        </div>
+        
+        <img src="http://storage.ning.com/topology/rest/1.0/file/get/353258069?profile=original&amp;crop=1%3A1" alt="Profile photo" class="profile-photo">
+        </div></div></div><div class="module"><div class="module-header">Profile Answers</div><div class="module-content">
+            <div class="profile-field" style="margin: 1rem 0; padding: 0.75rem; background: #fafafa; border-radius: 2px; border-left: 2px solid var(--nav-text);">
+                <div class="profile-label" style="margin-bottom: 0.3rem;">what brings you round the teahouse?</div>
+                <div style="margin-top: 0.3rem; color: var(--content-text); font-size: 0.9rem;">Just learned about this from other friends of faire! :)</div>
+            </div>
+            
+            <div class="profile-field" style="margin: 1rem 0; padding: 0.75rem; background: #fafafa; border-radius: 2px; border-left: 2px solid var(--nav-text);">
+                <div class="profile-label" style="margin-bottom: 0.3rem;">Have a seat, ignore the questions if you feel like it, our caravan serves all who seek shelter. Have you ever participated in faire?</div>
+                <div style="margin-top: 0.3rem; color: var(--content-text); font-size: 0.9rem;">yes I am from the original ensemble, Yes I worked later faires, Yes I have enjoyed a Faire</div>
+            </div>
+            
+            <div class="profile-field" style="margin: 1rem 0; padding: 0.75rem; background: #fafafa; border-radius: 2px; border-left: 2px solid var(--nav-text);">
+                <div class="profile-label" style="margin-bottom: 0.3rem;">Did you work Faire? what did you do? which years which show?</div>
+                <div style="margin-top: 0.3rem; color: var(--content-text); font-size: 0.9rem;">Schulps pottery and Knives and Security/Goon Squad</div>
+            </div>
+            </div></div><div class="module"><div class="module-header">Wall Comments (40)</div><div class="module-content">
+            <div class="reply">
+                <span class="reply-date">September 18, 2010</span>
+                <div class="reply-content">Hi Zak,</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 26, 2010</span>
+                <div class="reply-content">Hey Zak, I have something I want to send you but I need your Snail Mail address. You can email me at ( bayonet732@yahoo.com.</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 15, 2010</span>
+                <div class="reply-content">Hi Zak Great Picture of Papa added by Mary Ellen Cranston! I have just edited it best I could so you could seem Him a tad Better in the Wonderful Picture of him just a tad on the dark side... Have an amazing day with all that come to Honor your Dad! Love ya Aileen xoxox Sorry I will miss seeing you!</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 15, 2010</span>
+                <div class="reply-content"></div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 14, 2010</span>
+                <div class="reply-content">Hey Sweetie - Wish I could be there tomorrow, but work calls :( Waiting for the date on ride to Casa &#x27;cuz I WILL make that. Email hugs to you for now, real hugs when I see you next. -Carol G.</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 10, 2010</span>
+                <div class="reply-content">Zak, thinking of you and your family during this time of loss. You are in my prayers. We have a sweet alter going for John here at my clay studio and remember him with many smiles. Still have your cast in the studio. Many blessings to you.</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 10, 2010</span>
+                <div class="reply-content">I remember being at Black point one night walking the Faire with your Dad! He was singing a Song of the Sons of Pioneers &quot; Cool Water&quot; I was quite entertained at his trying! I had loved those guys in John Wayne Movies! I then went on a search for their Music! No easy feat at the time to Locate it and ordered some Tapes and got Jon the Best of the son&#x27;s of the Pioneers Cassette! He was surprised I remembered! Please Big Jon Singing is Happily burned on my Memory for all time! ha ha!</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 09, 2010</span>
+                <div class="reply-content">Good morning Zak! Roman &amp; I will be riding up in Sept. I will be in touch with as many So. Ca. riders as possible so we all can ride together. Jon is on my mind and in my heart every second. love you, Kirsten</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 06, 2010</span>
+                <div class="reply-content">Zak, Thanks for the welcome. Good to reconnect with you, brother. Seems to be the way of things - that a passing is what brings old friends together most often. Hope you&#x27;re doing well; I look forward to seeing you again.</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 05, 2010</span>
+                <div class="reply-content">WEEP NOT FOR ME</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 04, 2010</span>
+                <div class="reply-content">Hi Zak! So good to hear from you! So heartbroken over your Dad&#x27;s passing! He has a special place in my heart! Bob and I really look forward to seeing you in September! What a great tribute to your Dad. I plan on scanning my photos of the faire and any others you may want and put them on a CD for you to have. Take care and see you soon! Love, Jeannie</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 04, 2010</span>
+                <div class="reply-content">Hi Zak You are so welcome!!! and I am so Sorry for you loss! I lost my own dad at 17 and still Miss him! I am so glad that I got to be a part of your Dads life! and to have known him and you! I have taken Many pictures over the years of him and some of you. When I can get to the pictures I will surely get you some. I will try come to Faire the 18th I will let you know. God bless you and all your Family! Keep in touch! Aileen xoxoxo</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 02, 2010</span>
+                <div class="reply-content">Ya-Tah-Hey, my friend.</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 02, 2010</span>
+                <div class="reply-content">Today I lost a Very Dear Friend! Jon Schulps!</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 02, 2010</span>
+                <div class="reply-content">Zak I am so sorry for your Loss!</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 02, 2010</span>
+                <div class="reply-content">I am so sorry to hear about your Dad. I have fond memories of a man who had a gentle and caring presence and made this serving wench feel safe when working the ale stands. My heart and prayers go out to you and your family during this difficult time.</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 02, 2010</span>
+                <div class="reply-content">Thanks Zak. I think we should do one at Dickens as well.</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 02, 2010</span>
+                <div class="reply-content">Zak: Thom &amp; I were so sorry to hear news of your father&#x27;s passsing. He will be sorely missed by us all. Unfortunately, September 18th is Yom Kippur and it will not be possible for us to join our faire family on that day.</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 02, 2010</span>
+                <div class="reply-content">A great big empty spot... and a hard one to fill. Love to you and yours during this difficult time.</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 01, 2010</span>
+                <div class="reply-content">My heart goes out to you and your family...</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 01, 2010</span>
+                <div class="reply-content">Zak, Your dad made the tobacco booth a one of a kind cigar box opener knife. We used it in the booths for years and years and I have it proudly sitting in the cabinet displaying Willie&#x27;s oddities. Big John will be missed very much.</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 01, 2010</span>
+                <div class="reply-content">Please let me know if there will be a service or memorial as I would like to attend and pay my respects if possible. If not, I&#x27;ll be there in spirit.</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 01, 2010</span>
+                <div class="reply-content">Hi Zak, I can only hope to come. Finances suck as we are both unemployed and will probably be in a forced move to Vegas. I&#x27;ll do my best.</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 01, 2010</span>
+                <div class="reply-content">Zak, you got to know the the memory of your dad and the man he was will live in the hearts of all who knew him forever and I can see much of him in you. Carry on my friend. Our thoughts and prayers are with you.</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 01, 2010</span>
+                <div class="reply-content">Zak, I am so sorry about your dad. Not only was he a friend, but he was someone that I looked up to. I sorely miss him.</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 01, 2010</span>
+                <div class="reply-content">Hey Zak...So sorry you&#x27;re having to go through the loss of your beloved Dad. It took me a long time to reconstruct myself when my Dad left the planet (a decade ago now)...Know please that the Faire Family loves you, and you can come to us whenever you want to talk to somebody else who loved him. We&#x27;re always here.</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 01, 2010</span>
+                <div class="reply-content">It wasn&#x27;t his size that made him Big Jon, it was the way he walked on this earth. He had qualities that exemplified what a man could be... Smart, Sense of Hummor, Creative, Caring, Compassion, Comfortable in his own skin, a Great listener, a Fun Faire Flirt n a really good friend, Gentle yet Strong, Could talk most people out of acting stupid but willing &amp; able to subdue a situation with force if it came down to that, not that he had to. Great with kids and animals, A simple man with many levels of depth. I agree... &quot;The heavenly collection of friends are increasing at too fast of a pace.&quot; &quot; I am Not ready for this&quot; May you be at Peace as you join all of the tribe that has gone before you, You are already missed &amp; I will carry you in my heart always dear Jon. Who will be the role model now??? Zac will because he is so like his father and yet very much his own man. I surround you Zac and your family with my loving thoughts, if there is anything that I can do, anything at all, just ask.</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 01, 2010</span>
+                <div class="reply-content">Zak, please let me know if there&#x27;s anything I can do.</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 01, 2010</span>
+                <div class="reply-content">Zak I loved your father dearly--We always spoke of our children whenever we met--that was our commonality. In my younger days at faire he made me feel safe and accepted. We were fellow artists. I made two of his security Shirts always custom made for the goons. Women adored him, Men envied him. In Ancient Rome he would have been a warrior--a commander of men. I have known your father since the day I walked on faire site. I wrap my arms around you and your family in their time of loss. Hand to heart.</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 01, 2010</span>
+                <div class="reply-content">words fail me at this news. Your father was a remarkable man. He was one of the few that could look to a man&#x27;s heart and soul and Know. I will miss our conversations terribly, and I will treasure the functional pieces I have left of him. Condolences to you and your family. A hole like this is not easily overcome, but knowing John, you are all remarkable people.</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 01, 2010</span>
+                <div class="reply-content">Thank you, Zak, for the update. Please know that Greg and I will be happy to come, let me know the details as they come available. all my prayers and thoughts are with you, Georgia, Marty and the girls. Greg also sends his thoughts.</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 01, 2010</span>
+                <div class="reply-content">Zak, my heart grieves for you and all of Jon&#x27;s children and Georgia right now. Jon was such a huge part of my life, both literally and figuratively! My first regular boss, besides Phyllis herself, at faire. Having him come visit me at the press pavillion and feeding him and his horse snacks. Shouting to the crowd from the top of his booth in the front area at Southern. Being nicknamed by Jon, first &quot;ferret woman&quot;, later &quot;Frau Lynch&quot;. My first knife, red mycarta! Stealing hats from him.Listening to his stories, first about his old football days, then about you, the girls, Marty. He loved you all so much and was so proud of his children, rightfully so. I learned a lot from Jon, as did we all. Rest in Peace, big Jon. One of my personal, true heroes.</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 01, 2010</span>
+                <div class="reply-content">Zak, thank you for coming to the teahouse and allowing all of us to share our memories of your dad with you. I&#x27;ve always admired and respected Jon. When I was a young and scrawny area guard, he saved me from a few tight situations. Later, when I had stopped working Security at the Faires, I always felt safer when I saw that Big Jon was on the job; I would literally breath easier ... especially when Dickens or Old Calif. was at one of the docks or at the Fox. I&#x27;ve also always been a fan of Schulps pottery and knives. I have a small scrimshawed knife from 1982 and I will always treasure it. When my daughter turned 18 last year, we bought her a knife very similar in size. Jon told us couldn&#x27;t get the micarta anymore and I think my daughter&#x27;s is one of the last few dozen or less scrim knives Jon made. I&#x27;m sure she will treasure it always as wel</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 01, 2010</span>
+                <div class="reply-content">Zak, It&#x27;s been a long time since I last saw John. But I thought of him often. Some of my most fondest memories of the faire include him. All the way back from the late seventy&#x27;s when he ran the horse guard in Aguora. &quot;It&#x27;s gettin real western out there&quot; That&#x27;s what he told me when I was asking him about the guy they had just lassoed and dragged out of the hills. Starting the Goon squad was one of the smartest thing I did. The Goons quickly became more then what was planned for them. Before the Goons there was a good number of fights and other distasteful drunkin behavior. After the Goons started all that stopped even Phyllis noticed (she hated the name Goon Squad that&#x27;s where Easy Company started). But to everyone they were always the Goon Squad. The reason I brought this up is, without your dad the Goon Squad never would have been any more than a bunch of huge guys that broke up fights. John became more than a lt. he became their leader. All the Goons knew what John wanted and knew better then piss him off. It got to the point that becoming a goon was a honor and people knew it. Your father was a very special person that touched many lives. John may be gone now but he lives on in our story&#x27;s, our memories, and in our hearts</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">August 01, 2010</span>
+                <div class="reply-content">Zak, We met @ Ashleigh&#x27;s 18th B&#x27;day party. . .your lady taught me how to shuck oysters!? . .anyway, I write you now, wishing it were not so. . .your Dad, so very dear to all of US! Just thinking of you and yours. . . holding you close in prayer and thought (and we will party BIG when the time is right). Much Love and Support,</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">July 31, 2010</span>
+                <div class="reply-content">Zak, your Dad was an incredible man, and many of us loved him. Thanks for joining so we could tell you. Best wishes to you and your family in this dark time.</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">July 31, 2010</span>
+                <div class="reply-content">I can&#x27;t find the words to express the sense of loss and sadness I feel. I knew your dad for over thirty years. He was a true and valued friend. I will never forget him.</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">July 31, 2010</span>
+                <div class="reply-content">Zak,</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">July 31, 2010</span>
+                <div class="reply-content">Hey Zack, don&#x27;t know if you remember me but I worked with your Dad on Security back in the 80&#x27;s. He meant a great deal to me and lives on in my stories to freinds and family.</div>
+            </div>
+            
+            <div class="reply">
+                <span class="reply-date">July 31, 2010</span>
+                <div class="reply-content">Big hugs to you and the family Zak. The picture I see... is your old man sitting behind the knife counter and smiling at me when I&#x27;d come in to the booth. But I have to admit, the picture you posted here is pretty awesome :)</div>
+            </div>
+            </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

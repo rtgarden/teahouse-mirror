@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Planting - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>Spring Planting</span></div>
+            
+    <div class="module">
+        <div class="module-header">Spring Planting</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By PatriciaBlanco</span> | <span>March 02, 2008</span> | <span>19 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (19)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 31, 2008 at 01:10PM</span>
+            <div class="reply-content">thank goodness for the greenhouses here. I have two small ones.
+I get everything started in there, and mostly I just have to reemberto water them.
+sue you may want to start some scarlet runner beans early for that shade. The hops will likely make it and just be slow coming. 22 is pretty cold.
+I have some finches here too, i feed them flax seed.
+lots of hummers in the vinca and the pineapple sage.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 31, 2008 at 02:37AM</span>
+            <div class="reply-content">I may have lost a casaba melon in the cold last night. I think I missed the poor thing with the cover.
+I shall start another tonight.
+Have you tried covering your hops with some kind of fabric ? Newspaper ? Probably any insulating layer will help.
+Brrr!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">[12qb7e04dtezw]</span>
+            <span class="reply-date">March 30, 2008 at 03:33PM</span>
+            <div class="reply-content">Oh, I hope you do!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">[12qb7e04dtezw]</span>
+            <span class="reply-date">March 30, 2008 at 03:31PM</span>
+            <div class="reply-content">congratulations!
+We have had two very hard freezes (22 degrees last night!), and it&#x27;s snowing now. The migrating goldfinches have decided to tarry here! There is a flock of about 50 of them in our backyard. We hung out extra thistle seed bags yesterday. They are eating a ton of seed. We are also putting out warm hummingbird nectar first thing for our tiny jewels!
+The hops are worrisome. Yesterday, they were looking a little translucent, but they seemed OK later on in the day.
+This morning, they are looking a bit marginal. We are concerned, because they are our main source of shade in the summer.
+Congrats again on your garden coming up! xoxox
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 30, 2008 at 03:19PM</span>
+            <div class="reply-content">THEY ARE ALL COMING UP!!!!
+Peas and beets ! I was starting to worry - I put the seeds in the ground on the 18th - it just took them awhile in this chilly spring weather.
+Nightime temps have been dipping down to just above freezing.I&#x27;m hoping I did not put my tomatoes and melons in too soon, but I have been covering them with an old cotton sheet just before I go to bed, and so far everyone seems fine.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 24, 2008 at 03:44AM</span>
+            <div class="reply-content">Ferret Hopping !
+I love these pics, Sue.
+I had some Ethiopian Honey Wine in Berkeley that was brewed with hops. It was a DIVINE beverage, and I have always wanted to try to reproduce it.
+I think the bitterness of the hops cut the sweetness of the honey just enough to make it...mmmmm ...wonderful.
+Maybe I will visit you at Hop Season next year !
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 22, 2008 at 01:24AM</span>
+            <div class="reply-content">Inside the fence, in the back yard proper. Our neighbors did some pretty radical tree trimming over the winter- what with that big storm and all - and now our yard gets MUCH more sun.
+So far everything looks happy.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">[12qb7e04dtezw]</span>
+            <span class="reply-date">March 21, 2008 at 10:47PM</span>
+            <div class="reply-content">Quelle drag, about the shit in the yard. We used to have neighbors in LA with a yard like that. Nothing would grow in their backyard, because the soil was so impregnated with these kind of auto fluids. We were forbidden to play there, because the dirt would ruin our clothes, and it pissed my mom off. I think they were Hell&#x27;s Angels too.
+Where is the garden now?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 21, 2008 at 09:16PM</span>
+            <div class="reply-content">All the time that I was working with this particular patch of ground I found auto parts, and empty cans of auto fluids, etc.
+I have been wondering about that myself.
+The garden is now relocated. I imported soil, and my landscape guy says it should all be great.
+I have just a few things in the ground now, but they seem quite happy.I am planting more this weekend.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">[12qb7e04dtezw]</span>
+            <span class="reply-date">March 21, 2008 at 09:15PM</span>
+            <div class="reply-content">I love plants.
+Today, I am getting the trellis netting up for my bodacious hops.
+When I first planted them, they were small and pathetic. The next year 15 shoots came up. Eight years out, and I can&#x27;t even count the shoots. They look like little cannabis plants when they come up. The leaves especially. The best thing about them is that they grow so fast that they create a shady bower to enjoy by the time the summer comes on strong. Then they die back in the winter. I give the ripe baskets to my friends who brew. (they are organic Cascade hops, after all). We also use them to make a very bitter tea that, frankly, packs quite a buzz. (if you can take the bitterness) I remember drinking the ale from the Hopland brewery. It was extra potent, and Bob taught me that it was the hops. BTW- that&#x27;s why Ranier Ale was the choice among that crowd. It was the hoppiest, and therefore the trippiest. (I guess we were pioneers in Trip Hop!)
+In a few weeks, the aphids will come on strong in the hop forest, but I will just release ladybugs. They love to live in the hops. In fact, a whole eco system springs up in the well- watered shade. The first winds of autumn make them rustle. They turn brown and go to powder. When I finally tear them down, I am always careful not to disturb the mantis eggs that always appear on the pergola beneath the broad leaves. We have a very healthy population of mantids.
+Attached are photos of one of my ferrets, enjoying the autumn hops. They crinkle and rustle quite a bit when they get dry, which is very exciting to a ferret.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 21, 2008 at 07:50PM</span>
+            <div class="reply-content">yes to the botany of desire.
+I live in that reality.
+today I am putting out peas and carrots and more thyme around the stones.
+If I get really ambitious I will put out some of the sunflowers I have started already in a huge pot in the greenhouse, although the ground will need to be worked over for stray blackberries. No ignoring them.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">[12qb7e04dtezw]</span>
+            <span class="reply-date">March 21, 2008 at 04:59PM</span>
+            <div class="reply-content">What kind of pollution was in your ground?
+Pobre cita. I had wondered what happened to the garden?
+I was reading up on the autoimmune epidemic yesterday. I guess the thinking is that the autoimmune thing kicks in when your body has had enough toxins. It made me think of you, and the polluted dirt. Maybe it was the straw that broke the camel&#x27;s back.
+How is your garden growing now that you have new dirt?
+I heard that there are weeds you can plant that pull toxins out of the ground. Some inner city gardeners have used them. I don&#x27;t know if you should eat the weeds that do this, however.
+Plants are amazing masters of chemistry. They have figured out how to make animals do everything for them, in exchange for their beneficial qualities. Have you ever read &quot;The Botany of Desire&quot; (Michael Pollan)? It takes the plant&#x27;s point of view, and shows how they have worked it out.
+Enjoy your veggies!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 18, 2008 at 11:52PM</span>
+            <div class="reply-content">Melons, zukes , onions and celery in the ground !
+Peas and beets planted !
+Flowers scattered strategecally !
+* does little happy dance*
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 18, 2008 at 03:00PM</span>
+            <div class="reply-content">My garden boxes go in TODAY !!!!! I am SO stoked !!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">March 11, 2008 at 06:30AM</span>
+            <div class="reply-content">I kinda started gardening backwards. That is, I started with the compost pile and then had to do something with the compost. Unfortunately, the last couple of years I haven&#x27;t had as much time and energy to put in to the garden. I still compost, and there&#x27;s a little flower garden on the path from the main house to the Mother In Law house, but all the flowers there started from pony packs from Home Dope-Oh or Green Arrow. I have not very good luck / skill startin&#x27; plants from seed.
+We had a good crop of tomatoes goin&#x27; for a few years, but didn&#x27;t grow any at all last year. When my BIL (Ian Abramovitch) passed away in &#x27;06, I suddenly had a lot of things to do higher on the priority list than gardening. I&#x27;m also not very good about working in the &quot;cold&quot; (I put it in quotes &#x27;cuz I live in Van Nuys - So. Calif. and our cold season is quite mild in comparison to others). These days I prefer to hang out by the fireplace than to bundle up and get the garden ready for Spring. Because we have such mild winters, it&#x27;s actually a good time to get a head start on the garden.
+Of late, I&#x27;ve been doing well just to mow the motely meadows that pass for our front and back yards. I did most of the front a couple weeks ago, and the back this weekend after coming home from workshops. I still have a bit of the front to most -- East side of the driveway. Weeds about 2 ft. tall. And I&#x27;m still gonna plant some &#x27;maters and some basil ... guess I&#x27;ll have to head to Green Arrow after work one day this week.
+Night all.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 08, 2008 at 05:20PM</span>
+            <div class="reply-content">No brush burning here ! My lot is somewhat small, and inside city limits.
+I am looking more towards the &quot;French Intensive&quot;, or &quot;Square Foot&quot; model.
+My guys are bringing in soil and putting boxes on top of the existing soil, which is too polluted.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 08, 2008 at 05:10PM</span>
+            <div class="reply-content">yes singing helps, lulu used to sing to the garden and it got huge...good idea to remind me.
+yes dance the ground.
+side note: never ever burn a fire where a garden will go (to put ash there) it will bake the clay.
+Instead burn your ceremonial brush fires where you want to bake the clay up.
+Yes we say &quot;its not organic if it flew on a jet&quot;, in other words count in the fossil usel use of your foodcorp5 food as a hidden &quot;cost&quot; and well...its cheaper to go local. Especially your yard or minimally the giant nearest agrigultural areas...in California its easy to stay pretty local and eat well.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">March 08, 2008 at 04:47PM</span>
+            <div class="reply-content">I got into this whole gardening thing with motovation from two sources- #1. was that I LOVE TO EAT, and organic veggies are WAY too expensive, and #2 was an article I read in National Geographic about a year and a half ago about &quot; Eating Locally &quot; ; how an awful lot of our fossil fuels are going to transport food from point A to point B.
+I thought that, as a Californian with some workable ground at my house, this was a situation that I had some control over.
+I started digging !
+I am also looking into Gourmet mushroom production. I have a catalogue from Fungi Perfecti, and it looks pretty easy.
+I am planting flower seeds in the front yard today. I think the Garden boxes will go in next weekend.Most of my veggie starts have come up ! Do you think that&#x27;s because I sing to them ? Maybe I should Morris dance where my boxes will go !
+Foot up !!
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">March 04, 2008 at 02:43PM</span>
+            <div class="reply-content">so far...green beans and nastursiums are my starter trays. I will likely put more in this year after I fix my fence around the upper garden. If its isn&#x27;t in a green house the deer eat it. Since we have even had problems with deer on the roof (One even fell through the greenhouse roof and partially ruined Tobias&#x27;s fix-it job), everything outside of the greenhouses and fenced places is browsed by the lovelies. Therefore i have become an artichoke farmer. I have lots of pineapple sage and clary sage and butterfly bush for the hummingbirds and wild bees. I collect bamboo in big pots, and i grow some trees in pots from seed...like japanese maples.
+Ideally I would like to be able to get varieties in the store that are local, and heirloom, and just grow what I think tastes good. There are so many great new varietals. Happily some of this dream is starting to come true for me as local food policy work has resulted in local food production getting center stage here.
+Everyone understands that it makes our community stronger and healthier than foodcorp5 food.
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>

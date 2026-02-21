@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hey guys anything to share here? - Teahouse of the Donkey Archive</title>
+    <style>
+
+/* Teahouse of the Donkey Archive - Original Ning Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg: #4B3831;
+    --title-color: #996633;
+    --tagline-color: #B3BA5D;
+    --nav-text: #B3BA5B;
+    --content-bg: #F9F9F9;
+    --content-text: #333333;
+    --module-header: #4C3831;
+    --banner-top: #33CCFF;
+    --black: #000000;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--body-bg);
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/3870804818?profile=RESIZE_1024x1024');
+    background-repeat: repeat-y;
+    background-position: center 0;
+    background-attachment: scroll;
+    color: var(--content-text);
+    line-height: 1.6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #A4AB4D;
+    text-decoration: underline;
+}
+
+/* Layout wrapper */
+main {
+    flex: 1;
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Banner/Header Area — matches original Ning layout */
+.header-wrapper {
+    max-width: 955px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url('http://storage.ning.com/topology/rest/1.0/file/get/986873004?profile=original');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--title-color);
+    height: 400px;
+    position: relative;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 49px;
+    font-weight: 400;
+    color: var(--title-color);
+    margin: 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+header p {
+    text-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.6);
+    font-size: 15px;
+    color: var(--tagline-color);
+    margin: 0.5rem 0 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--body-bg);
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 955px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    margin: 0;
+    border-right: 1px solid rgba(179, 186, 93, 0.3);
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--nav-text);
+    font-size: 13px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(153, 102, 51, 0.2);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0 0.7rem;
+        font-size: 12px;
+    }
+}
+
+/* Main Content */
+.container {
+    max-width: 955px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Page layout - three columns for home, two columns for others */
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 235px;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sidebar-left {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-content {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-right {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Module Box - standard Ning module */
+.module {
+    background-color: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.module-header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--module-header);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    padding: 1rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--content-bg);
+    border-left: 2px solid var(--nav-text);
+    color: var(--content-text);
+}
+
+.breadcrumbs a {
+    color: var(--nav-text);
+    margin: 0 0.3rem;
+}
+
+.breadcrumbs span {
+    margin: 0 0.3rem;
+    color: var(--content-text);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--content-bg);
+    color: var(--content-text);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--module-header);
+}
+
+.hero p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Stats Bar */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--title);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--content-text);
+}
+
+/* Navigation Cards */
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.nav-card {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nav-card:hover {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-card h3 {
+    color: var(--module-header);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--content-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.nav-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--nav-text);
+    color: white;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-card a:hover {
+    background-color: #8FA74F;
+    text-decoration: none;
+}
+
+/* Chat Sections */
+.chat-section {
+    background: var(--content-bg);
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2rem;
+    margin: 1rem 0;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#community-chat, #archive-chat {
+    background: var(--content-bg);
+    border-color: #ddd;
+}
+
+/* Listing Pages */
+.listing {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listing-item {
+    background: var(--content-bg);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.listing-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fafafa;
+}
+
+.listing-item h3 {
+    margin: 0 0 0.3rem 0;
+    color: var(--module-header);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.listing-item h3 a {
+    color: var(--nav-text);
+}
+
+.listing-item h3 a:hover {
+    color: #8FA74F;
+}
+
+.listing-meta {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.listing-meta span {
+    margin-right: 1rem;
+}
+
+.listing-item p {
+    color: var(--content-text);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Detail Pages */
+.detail-header {
+    background-color: var(--content-bg);
+    color: var(--module-header);
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.detail-header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.detail-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.detail-meta span {
+    margin-right: 1rem;
+}
+
+.content-section {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #ddd;
+}
+
+.content-section h2 {
+    color: var(--module-header);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-section h1 {
+    color: var(--module-header);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Replies/Comments */
+.reply {
+    background: #fafafa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--nav-text);
+    border-radius: 2px;
+}
+
+.reply-author {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 0.5rem;
+}
+
+.reply-number {
+    background-color: var(--nav-text);
+    color: white;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.reply-content {
+    margin-top: 0.5rem;
+    color: var(--content-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* Member Profile */
+.profile-info {
+    background: var(--content-bg);
+    padding: 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.profile-field {
+    margin-bottom: 0.75rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: var(--module-header);
+    font-size: 0.9rem;
+}
+
+.profile-value {
+    color: var(--content-text);
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.profile-photo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-item {
+    background: var(--content-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.photo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.photo-contributor {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.photo-contributor strong {
+    color: var(--module-header);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Search */
+.search-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--content-bg);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--nav-text);
+    box-shadow: 0 0 3px rgba(153, 102, 51, 0.2);
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    color: var(--nav-text);
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    background-color: var(--content-bg);
+}
+
+.pagination a:hover {
+    background-color: var(--nav-text);
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background-color: var(--nav-text);
+    color: white;
+    border-color: var(--nav-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--body-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: var(--nav-text);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--nav-text);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #8FA74F;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    header h1 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+        font-size: 2rem;
+    }
+
+    .nav-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, .back-to-top, .search-box {
+        display: none;
+    }
+
+    a {
+        color: var(--nav-text);
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>teahouseofthedonkey</h1>
+        <p>join us at the little spool table...</p>
+    </header>
+    
+    <nav><ul><li><a href="/">Home</a></li><li><a href="/forums/">Forum</a></li><li><a href="/blogs/">Blogs</a></li><li><a href="/members/">Members</a></li><li><a href="/photos/">Photos</a></li></ul></nav>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs"><a href="/">Home</a> <span>›</span> <a href="/forums/">Forums</a> <span>›</span> <span>hey guys anything to share here?</span></div>
+            
+    <div class="module">
+        <div class="module-header">hey guys anything to share here?</div>
+        <div class="module-content">
+            <div class="detail-meta" style="margin-bottom: 1rem; font-size: 0.85rem; color: #666;">
+                <span>By Murray then, now aka MAX</span> | <span>November 23, 2007</span> | <span>23 replies</span>
+            </div>
+            <div class="reply-content" style="border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1rem;"></div>
+        </div>
+    </div>
+    <div class="module"><div class="module-header">Replies (23)</div><div class="module-content">
+        <div class="reply">
+            <span class="reply-number">1</span>
+            <span class="reply-author">[08ugjrwf0uu9h]</span>
+            <span class="reply-date">February 19, 2009 at 11:48PM</span>
+            <div class="reply-content">I programmed computers from 1975 until my &#x27;retirement&#x27; in 2000, data strings, Fortran77, Cobol, Basic, accounting, publishing and graphical software applications. I am just recently coming out of said&#x27; retirement&#x27; and attempting to catch up with technology that has almost passed me by...what with living in tents and trailers and random couches and such...
+I have been playing with making movies, both from Flash animations and youtube &#x27;slideshows&#x27;, but am limited by my clinton-era computer and software. I can storyboard, have an unlimited supply of ideas, but zero ability to promote and sell anything I create, from feeling that nothing is good enough.
+My best skill is copy-editing, I can find blatant errors in anything I read at least 12x a day. I have seen the word &#x27;Oganic&#x27; printed multiple times on things like packages of tea. I find errors on the &quot;ticker-tape&quot; news updates as well as subtitles. I can find six misspellings on any given sheet of newspaper, magazines not so much. I do not edit my own writings so don&#x27;t use any of my works as examples LOLOL Everyone now says &quot;we don&#x27;t need an editor, I have spellcheck on my computer&quot; ok let it distinguish between for, four, fore; their, they&#x27;re, there; your you&#x27;re..etc
+my editing skills not only apply to text and computer code, but accounting practices as well. Every number will match, and every book is balanced perfectly. Again, not my own. While I cannot account for most of my own spending, you can certainly believe that the companies I have worked for could find where every penny went and why (not to mention the reason why those figures may or may not have been comparable to last years).
+I am also good at filling blank space with text, as evident here. Managing to clickety-clack onward to a half-page post without saying anything.
+Other random skills: an affinity for growing meditative and medicative gardens. &quot;Mary Mary quite contrary&quot; is how my garden grows. an affinity for baking sweet and tasty treats as a result of aforementioned gardens. 30+ years of home and professional kitchen experience has taught me to keep it clean while keeping everyone well-fed, with special attention to dietary restrictions.
+Add &#x27;jackass of all trades&#x27; to my warm and mellow personality, excellent vibe and positive karma, and that makes me a very handy person to have around.
+If I can think of anything more substantial, I won&#x27;t hesitate to add! &lt;3
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">2</span>
+            <span class="reply-author">Greg &quot;Grego&quot; Dana</span>
+            <span class="reply-date">February 16, 2009 at 01:27AM</span>
+            <div class="reply-content">Hey Greg, ask Debi. We are usually not big on full trades but you never know. Check out our website at Bright Hope Designs Website Solutions and surf the portfolios
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">3</span>
+            <span class="reply-author">Greig Fors</span>
+            <span class="reply-date">February 16, 2009 at 12:31AM</span>
+            <div class="reply-content">I had Rockett&#x27;s Forge at Faire. I do metalwork of all sorts, from blacksmithing to jewelry. I guess I&#x27;m known for selling the eating utensils (knives, forks and spoons), goblet holders and the penannular celtic brooches and Santa Skulls. I made Luisa&#x27;s scepter and orb (which was made from a copper toilet float. Little did the customers know!) My non-functioning website is www.rockettsforge.com . If anybody knows websites and would like to do a trade for some of my metalwork, please let me know.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">4</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">September 04, 2008 at 02:12AM</span>
+            <div class="reply-content">A few more examples of my work.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">5</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">September 01, 2008 at 02:15AM</span>
+            <div class="reply-content">Will try to add some photos.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">6</span>
+            <span class="reply-author">[1m2dkokp1oiys]</span>
+            <span class="reply-date">September 01, 2008 at 02:02AM</span>
+            <div class="reply-content">I make custom chocolate creations, from character lollipops and soft centered candies to chess sets and masks. My specialty is dipped oreo cookies. I am working on setting up a website.
+I also like to edit videos and make slide shows set to music using my computer.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">7</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">January 18, 2008 at 08:31PM</span>
+            <div class="reply-content">she is also secretly an internet ninja with mad skills from a special training program produced by Wired Magazine. Apol works well with computers and has excellent understanding of interface issues. She is trained on FCP in editing from her days at Brooks. She makes movies for fun.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">8</span>
+            <span class="reply-author">[1hhsph0zphnge]</span>
+            <span class="reply-date">January 18, 2008 at 08:16PM</span>
+            <div class="reply-content">I am a student. My special skillz are film and anthropology. I have 1 year film school, and am especially trained in lighting. Also am an anthropologist (on my way to my BA) specializing in Cultral/Social Anthropology with an emphasis in globalization and development. So I have good article resources and knowledge of modern cultures. ^_^
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">9</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 26, 2007 at 02:47PM</span>
+            <div class="reply-content">laughs
+its just funny
+still laughing wandering off to putthe kettle on...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">10</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">November 26, 2007 at 06:27AM</span>
+            <div class="reply-content">You mean like voice-overs? Radio commercials and such? My brother was a DJ as KROQ in the early &#x27;80s.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">11</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">November 26, 2007 at 06:17AM</span>
+            <div class="reply-content">BTW, I have to admit a guilty pleasure of mine, that I took a mime class in Arcata when I was 12, yanno through the local park and rec&#x27;s dept. or something like that, but it is where my Charisma the Clown persona was born. She comes out once in a while and parks her ass on my head and doesn&#x27;t give my body back usually until the next day. LOL You should see the shit she dresses me in. rotflmao
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">12</span>
+            <span class="reply-author">PatriciaBlanco</span>
+            <span class="reply-date">November 26, 2007 at 02:52AM</span>
+            <div class="reply-content">Every Clan needs its&#x27; Barrister ! &quot; Unusual clientele&quot; ? Yup. That&#x27;s us...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">13</span>
+            <span class="reply-author">[vb69j6eb76pl]</span>
+            <span class="reply-date">November 26, 2007 at 12:10AM</span>
+            <div class="reply-content">Well, I do arts/entertainment law, general business law, a bit of plaintiff&#x27;s personal injury and, as I delicately put it, &quot;unusual clientele&quot;. You know, the kind you&#x27;d find hanging out at a teahouse.
+Is that good enough, or should I elaborate?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">14</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 25, 2007 at 09:43PM</span>
+            <div class="reply-content">darling my friend Juris the great Latvian artist used to say
+&quot;always say &#x27;Conceptual Artist&#x27;&quot;
+and I think that you are one of us. Its about being trained in all 13 arts (or sciences whichever way you look at it).
+Have you ever thought of voice acting?
+If you can voice act
+storyboard (thats cartooning)
+and work on computers you can make movies now
+for reals
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">15</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 25, 2007 at 09:39PM</span>
+            <div class="reply-content">no worries.
+I stumble even when my fingers are warmed up.
+You have such attention to detail I bet that you would be a great set dresser.
+Also you would make a great moulette...
+(tee hee)
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">16</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 25, 2007 at 09:37PM</span>
+            <div class="reply-content">dud if you can cartoon and do html you were born in the right era. Download gimp.org and also blender.org and then tell me when you have done that part.
+want to be one of the first of my many Merlins?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">17</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 25, 2007 at 09:36PM</span>
+            <div class="reply-content">what kind of Law specifically Paul?
+I have always wondered...probably known in the past.
+any specialties or areas of interest?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">18</span>
+            <span class="reply-author">[vb69j6eb76pl]</span>
+            <span class="reply-date">November 25, 2007 at 09:09PM</span>
+            <div class="reply-content">Well, some people say I&#x27;m a pretty good lawyer. Anybody need a hand with anything?
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">19</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">November 24, 2007 at 08:23PM</span>
+            <div class="reply-content">Oh, and um, I&#x27;m sort of shy about a few of my lesser known skills, I also write cartoons, I&#x27;ve done around three or four of them now, since I was about twelve years old, around the time I started writing Haiku also.
+And the other skill is that I at one point wrote an entire website with 37 pages of content, hand coded the HTML myself. But I need to expand that skill and learn how to do the image tags, or just learn dreamweaver or perl or some such.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">20</span>
+            <span class="reply-author">[3aq1320fqbnzt]</span>
+            <span class="reply-date">November 23, 2007 at 11:56PM</span>
+            <div class="reply-content">oh yeah, I know how to arrange flowers somewhat. I did all the flowers for my mom&#x27;s wedding, along with her veil and cake topper.
+and you have to excuse my typos today, I&#x27;ve been up for over 24 hours now, lol.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">21</span>
+            <span class="reply-author">[18d4mpa3n2i74]</span>
+            <span class="reply-date">November 23, 2007 at 11:08PM</span>
+            <div class="reply-content">Well let&#x27;s see, in childhood I: was in more Ballet recitals than I can remember, about five years worth stretched out over 8 years, including three years of private lessons and group classes at the same time. I also took a year of tap while still in LA (B4 I was 9).
+Then in Humboldt, going to an alternative hippy-kid school I learned how to camp, throw a clay pot and do creative visualization. I was also in several plays at that shcool. Casca in Shakespeare&#x27;s Julius Cesar, The Doctor-mouse in an adapted play (from the book) The Rats of NIHM, an imp in a children&#x27;s book, Katrina in the Legend of Sleepy Hollow, and a fish in an all-in-french play. I also got to write a script for and direct a 16 mm movie, with the help of the teachers there, wish I knew where that film ended up! I also learned how to write Haiku there.
+In Junior hIgh and Highschool I was in three church choirs, two highschool choirs. In College at COS (college of the siskiyous, in weed CA) I was part of Summer Rep one year, I was in three out of the four plays we put on: I was River Rat in a musical rendition of Wind in the Willows, the cook in Agatha Christie&#x27;s Ten Little Indians, and the understudy for both female roles in Bullshot Crummond. For that I ended up being mostly a stagehand, and got to do the special effects, the spider on the wall, literally. I also took courses in nutrition and psych while at COS.
+In Spring of &#x27;89 I went to the Cypress Health Institute and got a certificate in Polarity and Swedish massage. Then in the winter of &#x27;90 I took a weekend workshop in working with massage and Hospice/AIDS patients at the Santa Cruz AIDS project (SCAP). Next I went to the National Holistic Institute in Emeryville.
+I&#x27;ve taken one Samba and one Bellydancing class, not to mention one Tango class. I also was trained through the city of SF in homecare. First Aide and CPR were part of my massage therapy training at NHI too.
+Oh and there is the two years I spent as a Copy Editor for ANYTHING THAT MOVES, a magazine for the out and proud bisexual. I did events for them, threw a brunch for the exiting managing editor. I&#x27;ve done more catering than I care to admit.
+I also lived in two different communal cooperatives in my life, one was full of artists and other creative people. I attended Burningman in 2000, and was a sacred whore/priestess at the Temple Of Ishtar there. I have been part of the Dada festival in San Francisco one year, and was part of SpaceWalk, when it was in San Fran&#x27;s Mission District:24 hours of movable art, all over the Mission! I was a clown cop, it was my job to make sure the crowd was under control and to hand out Fashion Citations (you should have seen what I was wearing that night, it was ghastly!)
+That&#x27;s enough for now, maybe I&#x27;ll add to this later.
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">22</span>
+            <span class="reply-author">Murray then, now aka MAX</span>
+            <span class="reply-date">November 23, 2007 at 09:48PM</span>
+            <div class="reply-content">exactly right.
+nice to hear and I am sure that there is more...
+</div>
+        </div>
+        
+        <div class="reply">
+            <span class="reply-number">23</span>
+            <span class="reply-author">[3aq1320fqbnzt]</span>
+            <span class="reply-date">November 23, 2007 at 09:46PM</span>
+            <div class="reply-content">I&#x27;m a Registered Nurse currently working in Labor and Delivery, with experience in dialysis, allergy clinic, psych ward, and nursing home care. I&#x27;m also what is called a &quot;travel nurse.&quot; I&#x27;ve practiced all across the country-- coast to coast and in-between (I&#x27;m from the midwest). So I guess you could say I have a lot of practical geographical and travel knowledge/experience.
+I&#x27;m good with electronics (usually-- but they are ganging up on me today). I have experience building and modifying computers, graphic design, and web design. I like gadgets (as we speak, my roomba is vacuuming the bedroom), and I do a lot of research online (and in my Consumer Reports) about gadgets.
+I English Country dance, and enjoy playing up a good Faire.
+I&#x27;m just learing the violin.
+I can sew fairly well.
+I hope this is what you&#x27;re talking about. :)
+</div>
+        </div>
+        </div></div>
+        </div>
+    </main>
+
+    
+    <footer>
+        <p>Teahouse of the Donkey Archive — Preserved by Catt Avery, 2026. Originally teahouseofthedonkey.ning.com</p>
+    </footer>
+    
+    
+    <div class="back-to-top" id="back-to-top">↑</div>
+    <script>
+        const backBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
+            }
+        });
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+</body>
+</html>
