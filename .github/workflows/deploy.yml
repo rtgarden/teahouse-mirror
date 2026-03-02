@@ -15,7 +15,7 @@ jobs:
       - name: Install sshpass
         run: sudo apt-get install -y sshpass
 
-      - name: Deploy via rsync with password
+      - name: Upload files to server
         env:
           SSHPASS: ${{ secrets.SERVER_PASSWORD }}
         run: |
@@ -26,4 +26,12 @@ jobs:
             --exclude '.DS_Store' \
             --exclude '*.py' \
             --exclude '.github' \
-            ./ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/html/
+            ./ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/tmp/teahouse/
+
+      - name: Copy to web root with sudo
+        env:
+          SSHPASS: ${{ secrets.SERVER_PASSWORD }}
+        run: |
+          sshpass -e ssh -o StrictHostKeyChecking=no \
+            ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} \
+            "echo $SSHPASS | sudo -S cp -r /tmp/teahouse/* /var/www/html/ && sudo chown -R www-data:www-data /var/www/html/ && sudo chmod -R 755 /var/www/html/ && rm -rf /tmp/teahouse"
