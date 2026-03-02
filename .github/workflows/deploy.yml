@@ -21,7 +21,6 @@ jobs:
         run: |
           sshpass -e rsync -avz \
             -e "ssh -o StrictHostKeyChecking=no" \
-            --delete \
             --exclude '.git' \
             --exclude 'DEPLOY.sh' \
             --exclude '.DS_Store' \
